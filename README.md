@@ -7,6 +7,10 @@ In this project we are going to be building a news feed reader. The goal is to h
   * import
 * Javascript:
   * ES6 classes and the constructor function.
+* DOM
+  * Element selection
+  * Basic DOM manipulation
+  * Events and event listeners
 		
 ### Setup
   * Run `less-watch-compiler` from the top level of the Newsfeed-Components folder. 
