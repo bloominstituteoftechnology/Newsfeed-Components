@@ -13,5 +13,5 @@ menuButton.addEventListener("click", toggleMenu);
 TweenMax.to(".heading", 1, { x: 0, rotation: 360 });
 
 menuButton.addEventListener("click", () => {
-  TweenMax.to(".menu", 1, { left: 200 });
+  TweenMax.to(".menu", 1, { left: 400 });
 });
