@@ -186,7 +186,7 @@
 
     <div id="id01" class="modal">
 
-      <form class="modal-content animate" action="" onsubmit="addArticle('THOMAS', 'CONTENT and more content'); modal.style.display = 'none';return false;">
+      <form class="modal-content animate" action="" onsubmit="addArticle(document.getElementById('newName').value, document.getElementById('newContent').value); modal.style.display = 'none';return false;">
         <div class="imgcontainer">
           <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
         </div>
@@ -195,12 +195,12 @@
           <label for="title">
             <b>Title</b>
           </label>
-          <input type="text" placeholder="Enter Title" name="title" required>
+          <input type="text" placeholder="Enter Title" name="title" id="newName" required>
 
           <label for="content">
             <b>Content</b>
           </label>
-          <input type="text" placeholder="Enter Content" name="content" required>
+          <input type="text" placeholder="Enter Content" name="content" id="newContent" required>
 
           <button type="submit">Post</button>
         </div>
