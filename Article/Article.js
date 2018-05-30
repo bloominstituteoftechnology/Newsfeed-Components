@@ -16,7 +16,6 @@ class Article {
 
   expandArticle() {
     // Using our reference to the article element, add or remove a class to expand or hide the article.
-    console.log("I was clicked");
     this.element.classList.toggle("article-open");
   }
 }
