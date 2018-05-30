@@ -10,11 +10,18 @@ class Article {
     this.expandButton.innerHTML = "expand";
     // Set a click handler on the expandButton reference (or article element), calling the expandArticle method.
     this.expandButton.addEventListener("click", () => {this.expandArticle()});
+
+    this.expandButton.addEventListener("click", () => {
+      TweenMax.staggerFrom(".article-open", 1, {
+        top:-100
+      })
+    } )
   }
 
   expandArticle() {
     
     this.element.classList.toggle("article-open");
+    
     // Using our reference to the article element, add or remove a class to expand or hide the article.
 
   }
@@ -27,7 +34,10 @@ let articles = document.querySelectorAll(".article");
 articles = Array.from(articles).map(element => new Article(element));
 
 // TweenMax.staggerFrom(".stop", 2, {left:-100});
-TweenMax.staggerFrom(".article", 1, {left:-100});
+TweenMax.staggerFrom(".article", 1, {
+left:-100,
+ease: Elastic.easeOut,
+});
 // TweenMax.staggerFrom(".stop", 2, {left:-100});
 
 

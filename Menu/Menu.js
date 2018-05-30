@@ -13,7 +13,9 @@ const menuButton = document.querySelector(".menu-button");
 menuButton.addEventListener("click", toggleMenu)
 
 menuButton.addEventListener("click", () => {
-  TweenMax.staggerFrom(".menu",1, {left:-100});
+  TweenMax.staggerFrom(".menu",1, {
+    left:-100,
+    ease:Elastic.easeOut});
 });
 
 TweenMax.from(".header", 2, {top:-100});
