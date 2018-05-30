@@ -43,8 +43,8 @@
 .menu {
   display: none;
   position: fixed;
+  left: 0px;
   top: 75px;
-  left: 0;
   width: 350px;
   height: 100vh;
   /* This give the height 100% of the screen or, '100% of View Height' */
@@ -63,6 +63,18 @@
 }
 .menu--open {
   display: block;
+  animation-name: menu-slidein;
+  animation-duration: 1s;
+}
+@keyframes menu-slidein {
+  0% {
+    left: -350px;
+    top: 75px;
+  }
+  100% {
+    left: 0px;
+    top: 75px;
+  }
 }
 .articles {
   margin-top: 95px;

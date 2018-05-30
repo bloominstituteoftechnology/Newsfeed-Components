@@ -7,6 +7,8 @@
 .menu {
   display: none;
   position: fixed;
+  left: 0px;
+  top: 75px;
   width: 350px;
   height: 100vh; /* This give the height 100% of the screen or, '100% of View Height' */
   background-color: #81C784;
@@ -24,11 +26,12 @@
 }
 
 .menu--open {
-  animation-name: menu-slideout;
-  animation-duration: 3s;
+  display: block;
+  animation-name: menu-slidein;
+  animation-duration: 1s;
 }
 
-@keyframes menu-slideout {
+@keyframes menu-slidein {
   0%   {left: -350px; top: 75px;}
-  100% {display: block; left: 0px; top: 75px;}
+  100% { left: 0px; top: 75px;}
 }
