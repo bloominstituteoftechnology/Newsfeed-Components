@@ -18,11 +18,11 @@ In this project we are going to be building a news feed reader. The goal is to h
 
 ### Part 1: The Menu
 
-* Import menu.less from the correct path into index.less (follow the example for `Header.less` if you’re not sure how to write the correct path)
+* Import `Menu.less` from the correct path into index.less (follow the example for `Header.less` if you’re not sure how to write the correct path)
 * Follow the instructions found in the Menu.js file to complete the JavaScript functionality.
 
 ### Part 2: The Articles Component
-
+* Import `Article.less` from the correct path into index.less (follow the example for `Header.less` if you’re not sure how to write the correct path)
 * Follow the instructions found in the Articles.js file to complete the JavaScript functionality.
 
 ### Part 3: Add Articles
