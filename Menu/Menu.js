@@ -10,7 +10,11 @@ const menu = document.querySelector(".menu");
 const menuButton = document.querySelector(".menu-button");
 // Using your menuButton reference, add a click handler that calls toggleMenu
 
-menuButton.addEventListener("click", toggleMenu);
+menuButton.addEventListener("click", toggleMenu)
+
+menuButton.addEventListener("click", () => {
+  TweenMax.staggerFrom(".menu",1, {left:-100});
+});
 
 TweenMax.from(".header", 2, {top:-100});
- 
+

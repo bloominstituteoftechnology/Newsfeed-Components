@@ -26,3 +26,12 @@ let articles = document.querySelectorAll(".article");
 // Use .map() to iterate over the articles array and create a new instance of Article by passing in each article element as a parameter to the constructor.
 articles = Array.from(articles).map(element => new Article(element));
 
+// TweenMax.staggerFrom(".stop", 2, {left:-100});
+TweenMax.staggerFrom(".article", 1, {left:-100});
+// TweenMax.staggerFrom(".stop", 2, {left:-100});
+
+
+// TweenMax.from(".header", 2, {top:-100});
+
+
+
