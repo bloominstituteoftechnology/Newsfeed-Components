@@ -5,8 +5,8 @@
 }
 
 .menu {
-  display: none;
   position: fixed;
+  display: block;
   top: 75px;
   left: 0;
   width: 350px;
@@ -16,6 +16,9 @@
   border-left: none;
   border-bottom: none;
   z-index: 2; /* This set the layer level of the element, it has precendence over initial level of 1*/
+  opacity: 0;
+  transform: translateX(-350px);
+  transition: transform .3s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity .15s linear;
 }
 
 .menu ul li{
@@ -26,5 +29,6 @@
 }
 
 .menu--open {
-  display: block;
+  opacity: 1;
+  transform: translateX(0);
 }
