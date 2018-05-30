@@ -12,3 +12,7 @@ const menuButton = document.querySelector(".menu-button");
 menuButton.addEventListener("click", toggleMenu);
 
 TweenMax.from(".header", 1.25, {top:-100});
+
+menuButton.addEventListener("click", () => {
+TweenMax.from(".menu", 1.25, {left:-100});  
+});
