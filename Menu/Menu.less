@@ -5,10 +5,8 @@
 }
 
 .menu {
-  display: none;
   position: fixed;
   top: 75px;
-  left: 0;
   width: 350px;
   height: 100vh; /* This give the height 100% of the screen or, '100% of View Height' */
   background-color: #81C784;
@@ -25,6 +23,28 @@
   text-align: center;
 }
 
-.menu--open {
-  display: block;
+.menu--init {
+  left: -350px;
 }
+
+.menu--open { 
+  animation-name: slide-on;
+  animation-duration:1s;
+  animation-fill-mode: forwards;
+  animation-direction: alternate;
+  }
+
+  @keyframes slide-on {
+    0% {transform: translate(-350px, 0px;)}
+    100% { transform: translate(0px, 0px);}
+}
+
+.menu--close {
+  animation-name: slide-off;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slide-off {
+  100% { transform: translate(-350px, 0);}
+  }

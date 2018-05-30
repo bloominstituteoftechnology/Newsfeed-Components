@@ -1,7 +1,14 @@
 
+let init = true;
+
 const toggleMenu = () => {
   // Toggle the "menu--open" class on your menu refence.
   menu.classList.toggle('menu--open');
+  menu.classList.toggle('menu--close');
+  if (init) {
+    menu.classList.remove('menu--init');
+    init = false;
+  }
 }
 
 // Start Here: Create a reference to the ".menu" class
