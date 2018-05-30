@@ -63,6 +63,18 @@
 }
 .menu--open {
   display: block;
+  animation-name: menu-slideout;
+  animation-duration: 3s;
+}
+@keyframes menu-slideout {
+  0% {
+    left: -350px;
+    top: 75px;
+  }
+  100% {
+    left: 0px;
+    top: 75px;
+  }
 }
 .articles {
   margin-top: 95px;
