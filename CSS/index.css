@@ -89,6 +89,8 @@
   height: 50px;
   overflow: hidden;
   box-shadow: 2px 2px 2px lightgrey;
+  animation-name: article-slideclosed;
+  animation-duration: 3s;
 }
 .article h2 {
   font-size: 28px;
@@ -116,6 +118,24 @@
 }
 .article-open {
   height: 400px;
+  animation-name: article-slideopen;
+  animation-duration: 3s;
+}
+@keyframes article-slideopen {
+  0% {
+    height: 50px;
+  }
+  100% {
+    height: 400px;
+  }
+}
+@keyframes article-slideclosed {
+  0% {
+    height: 400px;
+  }
+  100% {
+    height: 50px;
+  }
 }
 html,
 body {
