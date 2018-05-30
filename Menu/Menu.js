@@ -11,6 +11,9 @@ const menuButton = document.querySelector(".menu-button");
 // Using your menuButton reference, add a click handler that calls toggleMenu
 menuButton.addEventListener("click", toggleMenu);
 
-// Green Sock Animations
+menuButton.addEventListener("click", function() {
+  TweenMax.from( ".menu", 2, {left: -100});
+});
+
+
 TweenMax.from( ".header", 2, {top: -100});
-TweenMax.from( ".menu", 2, {left: -1000});
