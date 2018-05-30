@@ -6,7 +6,7 @@ class Article {
     this.element = element;
     
     // create a reference to the ".expandButton" class. 
-    this.expandButton = element.querySelector('.expandButton'); 
+    this.expandButton = this.element.querySelector('.expandButton'); 
     
     // Using your expandButton reference, update the text on your expandButton to say "expand"
     this.expandButton.innerHTML = 'EXPAND' 
