@@ -103,11 +103,7 @@
   background-color: white;
 }
 .article-open {
-  height: 400px;
-  overflow: scroll;
-}
-.article-open .expandButton {
-  position: fixed;
+  height: 600px;
 }
 html,
 body {
