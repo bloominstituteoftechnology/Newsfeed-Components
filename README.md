@@ -3,8 +3,8 @@
 In this project we are going to be building a news feed reader. The goal is to have a collapsing menu, and expandable news articles. The HTML and CSS is already done for you, you simply need to connect the pieces. After the CSS is connected it is time to move on to building out our components using Javascript. We will be adding common functionality and styling to build reusable components.
 
 ### Need to know:
-* CSS:
-  * import
+* CSS (LESS):
+  * @import
 * Javascript:
   * ES6 classes and the constructor function.
 * DOM
@@ -18,21 +18,12 @@ In this project we are going to be building a news feed reader. The goal is to h
 
 ### Part 1: The Menu
 
-* Import menu.less from the correct path into index.less (follow the lead for header if you’re not sure how to write the correct path)
-* Select the menu and menu button elements from the HTML. Look at the HTML code to determine the class names of both.
-* Write a callback function that adds and removes a class to the menu when called. Hint: Look in the Menu.less file for the name of the class. 
-* Look at the LESS and determine what Is happening when the classes are added or removed. Pass the callback to a click event listener on the button.
+* Import menu.less from the correct path into index.less (follow the lead for `Header.less` if you’re not sure how to write the correct path)
+* Follow the instructions found in the Menu.js file to complete the JavaScript functionality.
 
+### Part 2: The Articles Component
 
-### Part 2: The Articles
-
-* Make sure the Article LESS rules are being applied to the page.
-* Look over the LESS to see what is happening, but don’t change anything yet.
-* USelect all articles. Map over the array creating individual instances of the Article class.
-* Within the Article class, set properties for the element, and expandButton.
-* Add text to the expand button reading: ‘Click to Expand’
-* Add a click event to the expand button (or entire article if you need to at first), pass the click event the ‘expandArticle’ method.
-* Within the expand article method add or remove the open class from the article. (Check the LESS for the correct class name)
+* Follow the instructions found in the Articles.js file to complete the JavaScript functionality.
 
 ### Part 3: Add Articles
 
