@@ -26,3 +26,6 @@ let articles = document.querySelectorAll(".article");
 // Use .map() to iterate over the articles array and create a new instance of Article by passing in each article element as a parameter to the constructor.
 articles = Array.from(articles).map( article => new Article (article));
 
+
+var picture = document.getElementById("picture");
+TweenLite.to(picture, 5, {width:"500px", height:"300px"});

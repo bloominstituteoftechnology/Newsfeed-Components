@@ -105,6 +105,9 @@
 .article-open {
   height: 400px;
 }
+#picture {
+  margin-left: 25%;
+}
 html,
 body {
   margin: 0;
