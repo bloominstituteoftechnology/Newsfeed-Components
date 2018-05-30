@@ -6,7 +6,7 @@ class Article {
     this.element = element
 
     // create a reference to the ".expandButton" class. 
-    this.expandButton = Array.from(document.querySelectorAll('.expandButton'))
+    this.expandButton = Array.from(this.element.querySelectorAll('.expandButton'))
 
     // Using your expandButton reference, update the text on your expandButton to say "expand"
     this.expandButton.forEach( span => span.innerHTML = 'expand')
