@@ -13,3 +13,6 @@ const menuButton = document.querySelector(".menu-button");
 menuButton.addEventListener("click",function(e){
 	 toggleMenu();
 });
+
+var headerLambda = document.getElementById("lambdaHeader");
+TweenLite.to(headerLambda, 3, {color:"pink"});
