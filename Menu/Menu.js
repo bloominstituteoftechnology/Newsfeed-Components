@@ -13,3 +13,5 @@ console.log(menuButton);
 
 // Using your menuButton reference, add a click handler that calls toggleMenu
 menuButton.addEventListener("click", toggleMenu);
+
+TweenMax.to(".menu", 2, {left:100, ease:Bounce.easeOut});
