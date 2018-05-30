@@ -5,9 +5,11 @@ class Article {
     // assign this.element to the passed in article element
     this.element = element;
     // create a reference to the ".expandButton" class.
-     this.expandButton = Array.from(document.querySelectorAll('.expandButton'));
+     // this.expandButton = Array.from(document.querySelectorAll('.expandButton')); // my solution
+     this. expandButton = this.element.querySelector(".expandButton");  //Instructor Solution
     // Using your expandButton reference, update the text on your expandButton to say "expand"
-     this.expandButton.forEach( span => span.innerHTML = 'expand');
+     // this.expandButton.forEach( span => span.innerHTML = 'expand'); //my solution
+     this.expandButton.innerText = 'expand'; //instructor solution
     // Set a click handler on the expandButton reference (or article element), calling the expandArticle method.
     this.element.addEventListener('click', this.expandArticle);
   }
