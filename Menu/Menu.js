@@ -15,4 +15,7 @@ menuButton.addEventListener("click",function(e){
 });
 
 var headerLambda = document.getElementById("lambdaHeader");
-TweenLite.to(headerLambda, 3, {color:"pink"});
+TweenLite.to(headerLambda, 3, {color:"red"});
+
+var headerColor = document.getElementsByClassName("header");
+TweenLite.to(headerColor, 2, {backgroundColor:"#ffe6e6"});

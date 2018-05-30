@@ -28,4 +28,4 @@ articles = Array.from(articles).map( article => new Article (article));
 
 
 var picture = document.getElementById("picture");
-TweenLite.to(picture, 5, {width:"500px", height:"300px"});
+TweenLite.to(picture, 6, {width:"500px", height:"300px"});
