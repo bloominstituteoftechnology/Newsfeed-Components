@@ -7,28 +7,6 @@
     <script src="./Menu/Menu.js" async></script>
     <script src="./Article/Article.js" async></script>
     <script src="./Header/Header.js" async></script>
-    <script>
-        window.onload = function(){
-          let header = document.getElementsByClassName("header");
-          TweenLite.from(header, 1, {
-            left:"632px",
-            backgroundColor:"white",
-            opacity:0,
-            ease:Back.easeOut});
-
-          // let articles = document.querySelectorAll('.article');
-          let tl = new TimelineMax();
-          tl.staggerFrom(".article", 1, {
-            opacity:0,
-            delay:1,
-            cycle:{
-              rotationX:[-90,90],
-              transformOrigin:["50% top","50% bottom"]
-            }
-          },.1)
-
-      }
-    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.0/TweenMax.min.js"></script>
   </head>
   <body>

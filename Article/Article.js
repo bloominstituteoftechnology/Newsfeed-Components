@@ -59,3 +59,13 @@ articles = Array.from(articles).map( art => {
   new Article(art)});
 // console.log(articles)
 
+
+let tl = new TimelineMax();
+    tl.staggerFrom(".article", 1, {
+    opacity:0,
+    delay:1,
+    cycle:{
+        rotationX:[-90,90],
+        transformOrigin:["50% top","50% bottom"]
+    }
+},.1)
