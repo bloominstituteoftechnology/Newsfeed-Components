@@ -7,7 +7,7 @@ class Article {
     // create a reference to the ".expandButton" class.
     this.expandButton = this.element.querySelector('.expandButton')
     // Using your expandButton reference, update the text on your expandButton to say "expand"
-    this.expandButton.innerHTML = '<strong>expand</strong>'
+    this.expandButton.innerHTML = '<strong>Expand</strong>'
     // Set a click handler on the expandButton reference (or article element), calling the expandArticle method.
     this.expandButton.addEventListener('click', this.expandArticle)
   }
@@ -16,6 +16,7 @@ class Article {
     // Using our reference to the article element, add or remove a class to expand or hide the article.
     if (!this.parentNode.classList.contains('article-open')) {
       this.parentNode.classList.add('article-open')
+      this.parentNode.children[5].innerHTML = '<strong>Close</strong>'
       TweenMax.fromTo(
         this.parentNode.children[2],
         1,
@@ -47,11 +48,10 @@ class Article {
       )
     } else {
       this.parentNode.classList.remove('article-open')
-      console.log('herebiych')
+      this.parentNode.children[5].innerHTML = '<strong>Expand</strong>'
     }
   }
 }
-
 // START HERE: Select all classes named ".article" and assign that value to the articles variable
 let articles = document.querySelectorAll('.article')
 console.log(articles)
