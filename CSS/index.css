@@ -47,7 +47,7 @@
   cursor: pointer;
 }
 .menu {
-  display: none;
+  visibility: visible;
   position: fixed;
   top: 75px;
   left: 0;
@@ -68,7 +68,7 @@
   text-align: center;
 }
 .menu--open {
-  display: block;
+  visibility: visible;
 }
 .articles {
   margin-top: 95px;
