@@ -2,6 +2,14 @@
 const toggleMenu = () => {
   menu.classList.toggle('menu--open');
   articleBody.classList.toggle('squeeze');
+  let menuBounce = menu.querySelectorAll('li');
+    TweenMax.staggerTo(menuBounce, 1, {
+      x: 20,
+      ease: Circ.easeOut,
+    }, .1)
+
+ 
+
   // Toggle the "menu--open" class on your menu refence. 
 }
 
