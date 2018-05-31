@@ -10,21 +10,22 @@
     <script>
         window.onload = function(){
           let header = document.getElementsByClassName("header");
-          TweenLite.from(header, 3, {
+          TweenLite.from(header, 1, {
             left:"632px",
             backgroundColor:"white",
             opacity:0,
-            ease:Bounce.easeOut});
+            ease:Back.easeOut});
 
           // let articles = document.querySelectorAll('.article');
           let tl = new TimelineMax();
-          tl.staggerFrom(".article", 3, {
+          tl.staggerFrom(".article", 1, {
             opacity:0,
+            delay:1,
             cycle:{
               rotationX:[-90,90],
               transformOrigin:["50% top","50% bottom"]
             }
-          },1)
+          },.1)
 
       }
     </script>
