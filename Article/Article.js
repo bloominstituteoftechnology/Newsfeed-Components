@@ -48,6 +48,10 @@ class Article {
     // Using our reference to the article element, add or remove a class to expand or hide the article.
     console.log(this)
     this.element.classList.toggle('article-open')
+
+      // Update!!!
+      // This attempt can work. This is handler be modified to just be this:
+      // event.target.parentNode.classLast.toggle('article-open')
   }
 }
 
