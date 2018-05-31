@@ -21,13 +21,18 @@ class Article {
     // this.expandButton.addEventListener('click', this.expandArticle)
     
     // Problem with Attempt #1
-    // The expand button is part of the `this.element`. Doing the above results in the `this` keyword 
-    // in the eventHandler will have a context of expand Button. 
+    // The expand button is a child of the `this.element`. Doing the above results in the `this` keyword 
+    // in the eventHandler will have a context of expandButton. When firing the eventHandler....
 
       // this.expandArticle(){
-      //   console.log(this) // <span class="expandButton">EXPAND</span>  Uncaught TypeError: Cannot read property 'classList' of undefined at HTMLSpanElement.expandArticle
+      //   console.log(this) // <span class="expandButton">EXPAND</span>  
       // }
 
+    // The console log shows that we get a span which is not a DOMTokenList
+
+    // We also get an error
+    // Uncaught TypeError: Cannot read property 'classList' of undefined at HTMLSpanElement.expandArticle
+    
     // Since the 'this' isn't a DOMTokenList it doesn't have the classList method available
     
     // Attempt #2 - Working with Allen helped us discover that we could change the context of `this` by using .bind()
@@ -36,7 +41,7 @@ class Article {
     // What's happening here is that .bind is taking the Article `this` and binding it to the local `this` which is for the .expandButton
     
     // Attempt #3 - ES6 arrow takes care of the context of `this` binding mentioned above.
-    this.element.addEventListener('click', () => {this.expandArticle()})  // Works!
+    this.expandButton.addEventListener('click', () => {this.expandArticle()})  // Works!
   }
 
   expandArticle() {
@@ -50,8 +55,6 @@ class Article {
 // When doing querySelector it returns a nodeList. These can usually be accessed via list[index].attributeName
 let articles = document.querySelectorAll('.article')
 // console.log(articles, 'NodeList')
-// console.log(articles[0].className, 'NodeList[0].className')
-// console.log(articles[0].classList, 'NodeList[0].classList')
 
 // Use .map() to iterate over the articles array and create a new instance of Article by passing in each article element as a parameter to the constructor.
 articles = Array.from(articles).map( art => {
@@ -60,6 +63,8 @@ articles = Array.from(articles).map( art => {
 // console.log(articles)
 
 
+//Animation for Articles
+// function staggerArticles(){
 let tl = new TimelineMax();
     tl.staggerFrom(".article", 1, {
     opacity:0,
