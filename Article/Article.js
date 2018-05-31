@@ -14,7 +14,41 @@ class Article {
 
   expandArticle () {
     // Using our reference to the article element, add or remove a class to expand or hide the article.
-    this.parentNode.classList.toggle('article-open')
+    if (!this.parentNode.classList.contains('article-open')) {
+      this.parentNode.classList.add('article-open')
+      TweenMax.fromTo(
+        this.parentNode.children[2],
+        1,
+        {
+          opacity: 1,
+          y: -400
+        },
+        { y: 0 }
+      )
+
+      TweenMax.fromTo(
+        this.parentNode.children[3],
+        1,
+        {
+          opacity: 1,
+          y: -400
+        },
+        { y: 0 }
+      )
+
+      TweenMax.fromTo(
+        this.parentNode.children[4],
+        1,
+        {
+          opacity: 1,
+          y: -400
+        },
+        { y: 0 }
+      )
+    } else {
+      this.parentNode.classList.remove('article-open')
+      console.log('herebiych')
+    }
   }
 }
 
