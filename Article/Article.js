@@ -87,5 +87,17 @@ function formatDate(date) {
   var monthIndex = date.getMonth();
   var year = date.getFullYear();
 
-  return monthNames[monthIndex] + ' ' + day + 'th, ' + year;
+  let dateStr = `${monthNames[monthIndex]} ${day}`;
+  if (day == 1) {
+    dateStr += 'st, ';
+  } else if (day == 2) {
+    dateStr += 'nd, ';
+  } else if (day == 3) {
+    dateStr += 'rd, ';
+  } else {
+    dateStr += 'th, ';
+  }
+  dateStr += year;
+
+  return dateStr;
 }
