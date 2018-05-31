@@ -11,6 +11,11 @@ class Article {
     // Set a click handler on the expandButton reference (or article element), calling the expandArticle method.
     /* prettier-ignore */
     this.expandButton.addEventListener('click', this.expandArticle.bind(this));
+    // ES6
+    // this.expandButton.addEventListener('click', this.expandArticle.bind(this));
+    // DOM specific
+    // this.expandButton.addEventListener('click', this.expandArticle);
+
     // Mark Read
     this.readButton = element.querySelector('.readButton');
     this.readButton.innerHTML = 'Mark Read';
@@ -20,6 +25,10 @@ class Article {
   expandArticle() {
     // Using our reference to the article element, add or remove a class to expand or hide the article.
     this.element.classList.toggle('article-open');
+    // DOM specific
+    // expandArticle(event) {
+    //  event.target.parentNode.classList.toggle('article-open');
+    // }
   }
   markRead() {
     this.element.style = 'display: none;';
