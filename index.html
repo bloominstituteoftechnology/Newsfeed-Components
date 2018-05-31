@@ -6,12 +6,34 @@
     <link rel="stylesheet" type="text/css" media="screen" href="./CSS/index.css" />
     <script src="./Menu/Menu.js" async></script>
     <script src="./Article/Article.js" async></script>
+    <script src="./Header/Header.js" async></script>
+    <script>
+        window.onload = function(){
+          let header = document.getElementsByClassName("header");
+          TweenLite.from(header, 3, {
+            left:"632px",
+            backgroundColor:"white",
+            opacity:0,
+            ease:Bounce.easeOut});
+
+          // let articles = document.querySelectorAll('.article');
+          let tl = new TimelineMax();
+          tl.staggerFrom(".article", 3, {
+            opacity:0,
+            cycle:{
+              rotationX:[-90,90],
+              transformOrigin:["50% top","50% bottom"]
+            }
+          },1)
+
+      }
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.0/TweenMax.min.js"></script>
   </head>
   <body>
     <div class="header">
       <img class="menu-button" src="./assets/menu.png"/>
-      <h1>Lambda School Newsfeed</h1>
+      <h1 class='title'>Lambda School Newsfeed</h1>
     </div>
     <div class="menu">
       <ul>
