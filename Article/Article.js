@@ -16,6 +16,9 @@ class Article {
     // Using our reference to the article element, add or remove a class to expand or hide the article.
     if (!this.parentNode.classList.contains('article-open')) {
       this.parentNode.classList.add('article-open')
+      // this.parentNode.style.height = '100%'
+      TweenLite.set(this.parentNode, { height: '100%' })
+      TweenLite.from(this.parentNode, 2, { height: 'auto' })
       this.lastChild.innerHTML = '<strong>Close</strong>'
       TweenMax.fromTo(
         this.parentNode.children[2],
@@ -48,6 +51,9 @@ class Article {
       )
     } else {
       this.parentNode.classList.remove('article-open')
+      // this.parentNode.style.height = '50px'
+      TweenLite.set(this.parentNode, { height: '50px' })
+      TweenLite.from(this.parentNode, 1, { height: '0' })
       this.lastChild.innerHTML = '<strong>Expand</strong>'
     }
   }
