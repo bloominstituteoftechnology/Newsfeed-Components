@@ -1,5 +1,4 @@
 // Start at `let articles`
-
 class Article {
   constructor(article) {
     // assign this.element to the passed in article element
@@ -9,9 +8,7 @@ class Article {
     // Using your expandButton reference, update the text on your expandButton to say "expand"
     this.expandButton.textContent = 'expand';
     // Set a click handler on the expandButton reference (or article element), calling the expandArticle method.
-    this.expandButton.addEventListener('click', function () {
-      this.expandArticle();
-    }.bind(this));
+    this.expandButton.addEventListener('click', this.expandArticle.bind(this));
 
   }
 
