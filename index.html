@@ -186,7 +186,7 @@
 
     <div id="id01" class="modal">
 
-      <form class="modal-content animate" action="" onsubmit="addArticle(document.getElementById('newName').value, document.getElementById('newContent').value); modal.style.display = 'none';return false;">
+      <form class="modal-content animate" action="" onsubmit="submitting(); return false;">
         <div class="imgcontainer">
           <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
         </div>
@@ -209,6 +209,14 @@
           <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
         </div>
       </form>
+      <script>
+        function submitting() {
+          addArticle(document.getElementById('newName').value, document.getElementById('newContent').value);
+          document.getElementById('newName').value = "";
+          document.getElementById('newContent').value = "";
+          modal.style.display = 'none';
+        }
+      </script>
     </div>
 
     <script>
