@@ -17,3 +17,4 @@ menuButton.addEventListener("click", function() {
 
 
 TweenMax.from( ".header", 2, {top: -100});
+TweenMax.from( ".header h1", 2, {scale: 0.5, color: '#388E3C', delay: 2,});
