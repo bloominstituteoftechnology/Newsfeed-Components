@@ -10,6 +10,9 @@ class Article {
     this.expandButton.innerHTML = "expand"
     // Set a click handler on the expandButton reference (or article element), calling the expandArticle method.
     this.expandButton.addEventListener("click", this.expandArticle);
+    this.expandButton.addEventListener("click", function () {
+      TweenMax.to( ".article-open", 2, {borderColor: "#388E3C", borderWidth: "5px"})
+    });
   }
 
   expandArticle() {
@@ -26,3 +29,6 @@ let articles = document.querySelectorAll(".article");
 // Use .map() to iterate over the articles array and create a new instance of Article by passing in each article element as a parameter to the constructor.
 articles = Array.from(articles).map(element => new Article(element));
 
+// expandButton.addEventListener("click", function () {
+//   TweenMax.from( ".article-open", 2, {backgroundColor: "#388E3C"})
+// });
