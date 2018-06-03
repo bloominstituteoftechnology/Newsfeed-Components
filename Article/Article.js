@@ -32,3 +32,5 @@ articles = Array.from(articles).map(element => new Article(element));
 // expandButton.addEventListener("click", function () {
 //   TweenMax.from( ".article-open", 2, {backgroundColor: "#388E3C"})
 // });
+
+TweenMax.staggerFrom(".article", 1.5, {left: -2000, delay: 2}, 0.5)
