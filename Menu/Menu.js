@@ -1,6 +1,12 @@
 const toggleMenu = () => {
   //  Toggle the "menu--open" class on your menu refence. 
-	menu.classList.toggle("menu--open");
+	//if (menu.classList.contains("menu--open") === true) {
+		menu.classList.toggle("menu--open");
+//		TweenMax.fromTo('.menu', 1.5, {left:'0px'}, {left:'-350px'});
+	//} else {
+	//	menu.classList.toggle("menu--open");
+		TweenMax.fromTo('.menu', 1.5, {left:'-350px'}, {left:'0px'});
+//	}
 }
 
 // Start Here: Create a reference to the ".menu" class
@@ -15,7 +21,8 @@ menuButton.addEventListener("click",function(e){
 });
 
 var headerLambda = document.getElementById("lambdaHeader");
-TweenLite.to(headerLambda, 3, {color:"#0080ff"});
+TweenLite.to(headerLambda, 3, {color:"black"});
 
-var headerColor = document.getElementsByClassName("header");
-TweenLite.to(headerColor, 2, {backgroundColor:"#b3d9ff"});
+//var headerColor = document.getElementsByClassName("header");
+//TweenLite.to(headerColor, 2, {backgroundColor:"#b3d9ff"});
+
