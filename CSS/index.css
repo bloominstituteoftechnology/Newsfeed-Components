@@ -112,3 +112,14 @@ body {
   font-family: 'Roboto';
   background-color: #fffef7;
 }
+.header {
+  animation: pulse 5s infinite;
+}
+@keyframes pulse {
+  0% {
+    background-color: pink;
+  }
+  100% {
+    background-color: lightseagreen;
+  }
+}
