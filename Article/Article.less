@@ -1,51 +1,100 @@
 .articles {
-  margin-top: 95px;
+  margin: 95px auto 0 auto;
+  max-width: 800px;
+  width: 100%;
 }
 .article {
-  margin: 20px 10%;
-  padding: 0 20px 25px;
-  border: 1px solid lightgrey;
-  border-radius: 10px;
-  background-color: white;
-  position: relative;
-  height: 50px;
-  overflow: hidden;
-  box-shadow: 2px 2px 2px lightgrey;
-  transition: height .275s ease-in-out;
+  margin: 20px 0px;
+	padding: 0 20px 25px;
+	border: 1px solid lightgrey;
+	border-radius: 10px;
+	background-color: white;
+	position: relative;
+	height: 50px;
+	overflow: hidden;
+	box-shadow: 2px 2px 2px lightgrey;
+  transition: height 0.275s ease-in-out;
 
-  h2 {
-    font-size: 28px;
-    padding: 0;
-    margin: 15px 0 0;
-  }
+	h2 {
+		font-size: 28px;
+		padding: 0;
+		margin: 15px 0 0;
+	}
 
-  .date {
-    margin: 0;
-    font-size: 14px;
-  }
+	.date {
+		margin: 0;
+		font-size: 14px;
+	}
 
-  .close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-  }
+	.close {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+	}
 
-  .expandButton {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    font-size: 12px;
-    color: grey;
-    cursor: pointer;
-    transform: translate(-50%);
-    background-color: white;
-  }
+	.expandButton {
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		font-size: 12px;
+		color: grey;
+		cursor: pointer;
+		transform: translate(-50%);
+		background-color: white;
+	}
 }
 
 .article-open {
-  height: 400px;
+	height: 400px;
 }
 
+form {
+  margin: 50px auto;
+  max-width: 800px;
 
+	input {
+		width: 100%;
+		margin:10px 0px;
+		padding: 15px;
+		border-radius: 10px;
+		border: 1px solid #cdcdcd;
+		&:focus,
+		&:active {
+      outline: none;
+      border-color: #007fff;
+		}
+	}
+  
+	textarea {
+    width: 100%;
+		margin: 10px 0px;
+		padding: 15px;
+		min-height: 200px;
+		border-radius: 10px;
+		border: 1px solid #cdcdcd;
+		&:focus,
+		&:active {
+      outline: none;
+      border-color: #007fff;
+		}
+	}
 
-
+	button {
+		border-radius: 10px;
+		border: 1px solid #232323;
+		margin: 10px 0px;
+		padding: 15px;
+		background-color: transparent;
+		color: #232323;
+		transition: all 0.275s;
+		cursor: pointer;
+		&:hover {
+			background-color: #232323;
+			color: #f7f7f7;
+		}
+		&:focus,
+		&:active {
+			outline: none;
+		}
+	}
+}

@@ -52,3 +52,10 @@ createArticle({
         Hutt calamari darth jabba. Darth dooku amidala organa moff. Boba darth binks solo hutt skywalker dantooine skywalker. Qui-gonn
         jar twi'lek jinn leia jango skywalker mon.`,
 })
+
+document.querySelector('form').addEventListener('submit', (event)=> {
+  event.preventDefault();
+  let headingSubmission = document.querySelector('.title').value;
+  let paragraphSubmission = document.querySelector('.paragraph').value;
+  createArticle({headingData: headingSubmission, paragraphData: paragraphSubmission});
+});
