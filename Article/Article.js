@@ -5,20 +5,20 @@ class Article {
     // assign this.element to the passed in article element
     this.element = element;
     // create a reference to the ".expandButton" class. 
-    this.expandButton = document.querySelectorAll('.expandButton');
+    this.expandButton = this.element.querySelector('.expandButton');
     // Using your expandButton reference, update the text on your expandButton to say "expand"
-    this.expandButton.forEach(button=> {
-      button.innerText = 'Expand';
-      button.addEventListener('click', ()=> this.expandArticle());
-    })
-    // Set a click handler on the expandButton reference (or article element), calling the expandArticle method.
-    // this.expandButton.addEventListener('click', ()=> this.expandArticle());
+    // this.expandButton.forEach(button=> {
+    //   button.innerText = 'Expand';
+    this.expandButton.innerText = 'Expand';
+    // // Set a click handler on the expandButton reference (or article element), calling the expandArticle method.
+    //   button.addEventListener('click', ()=> this.expandArticle());
+    // })   
+    this.expandButton.addEventListener('click', ()=>this.expandArticle());
   }
 
   expandArticle() {
     // Using our reference to the article element, add or remove a class to expand or hide the article.
     this.element.classList.toggle('article-open');
-    console.log(this.element);
   }
 }
 
@@ -28,3 +28,4 @@ let articles = document.querySelectorAll('.article');
 // Use .map() to iterate over the articles array and create a new instance of Article by passing in each article element as a parameter to the constructor.
 articles = Array.from(articles).map(article => new Article(article));
 
+console.log(articles);
