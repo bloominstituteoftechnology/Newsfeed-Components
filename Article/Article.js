@@ -8,8 +8,8 @@ class Article {
     this.expandButton.addEventListener('click', this.expandArticle);
   }
 
-  expandArticle() {
-    document.querySelector('.article').classList.toggle('article-open');
+  expandArticle(e) {
+    e.target.parentNode.classList.toggle('article-open');
   }
 }
 
