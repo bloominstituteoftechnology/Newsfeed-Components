@@ -119,6 +119,13 @@
 .article-open {
   height: 400px;
 }
+.addForm h2 {
+  display: block;
+}
+.addForm .content-input {
+  display: block;
+  width: 1000px;
+}
 html,
 body {
   margin: 0;

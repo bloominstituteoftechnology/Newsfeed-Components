@@ -38,3 +38,31 @@ let articles = document.querySelectorAll('.articles .article');
 
 // Use .map() to iterate over the articles array and create a new instance of Article by passing in each article element as a parameter to the constructor.
 articles = Array.from(articles).map(article => new Article(article));
+
+
+const ArticleConstructor = function(head = 'Title', dateIn = new Date().toLocaleString('en-US'), text = 'filler') {
+  let article = document.createElement('div');
+  let title = document.createElement('h2');
+  let date = document.createElement('p');
+  let closeBtn = document.createElement('span');
+  let expandBtn = document.createElement('span');
+  let content = document.createElement('p');
+
+  article.classList.add('article');
+  date.classList.add('date');
+  closeBtn.classList.add('closeButton');
+  expandBtn.classList.add('expandButton');
+
+  document.querySelector('.articles').appendChild(article);
+  article.appendChild(title);
+  article.appendChild(closeBtn);
+  article.appendChild(date);
+  article.appendChild(content);
+  article.appendChild(expandBtn);
+
+  title.innerText = head;
+  date.innerText = dateIn;
+  content.innerText = text;
+
+  new Article(article);
+}
