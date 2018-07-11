@@ -62,7 +62,18 @@
   text-align: center;
 }
 .menu--open {
-  display: block !important;
+  display: block;
+  animation-name: slide-in;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes slide-in {
+  from {
+    transform: translateX(-352px);
+  }
+  to {
+    transform: translateX(0px);
+  }
 }
 .articles {
   margin-top: 95px;
