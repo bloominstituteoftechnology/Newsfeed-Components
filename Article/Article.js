@@ -10,6 +10,10 @@ class Article {
     this.expandBtn.innerText = 'expand';
     // Set a click handler on the expandButton reference (or article element), calling the expandArticle method.
     this.expandBtn.addEventListener('click', e => this.expandArticle());
+
+    this.closeBtn = this.article.querySelector('.closeButton');
+    this.closeBtn.innerText = 'close';
+    this.closeBtn.addEventListener('click', e => this.closeArticle());
   }
 
   expandArticle() {
@@ -22,6 +26,10 @@ class Article {
       this.article.style.transition = 'height .75s ease-in';
       this.expandBtn.innerText = 'Click to expand';
     }
+  }
+
+  closeArticle() {
+    this.article.style.display = 'none';
   }
 }
 
