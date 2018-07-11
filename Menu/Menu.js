@@ -4,7 +4,7 @@ const toggleMenu = () => {
 }
 
 // Start Here: Create a reference to the ".menu" class
-const menu;
+const menu = querySelector(".menu");
 // create a reference to the ".menu-button" class
-const menuButton;
+const menuButton = querySelector(".menu-button");
 // Using your menuButton reference, add a click handler that calls toggleMenu
