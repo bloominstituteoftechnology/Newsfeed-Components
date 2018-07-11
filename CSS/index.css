@@ -99,9 +99,6 @@
   transform: translate(-50%);
   background-color: white;
 }
-.article-open {
-  height: 400px;
-}
 .close-btn {
   position: absolute;
   top: 10px;
