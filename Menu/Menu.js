@@ -4,9 +4,9 @@ const toggleMenu = () => {
   // Toggle the "menu--open" class on your menu refence. 
   open=!open;
   if (open) {
-    TweenLite.to(menu, 1, { opacity: 1, width: '350px', display:"block", ease: Power4.easeOut} );
+    TweenLite.to(menu, 1, { width: '350px', display:"block", ease: Power4.easeOut} );
   } else {
-    TweenLite.to(menu, 1, { opacity: 1, width: '0px', display:"none", ease: Elastic.easeIn} );
+    TweenLite.to(menu, 1, { width: '0px', display:"none", ease: Elastic.easeIn} );
   }
 
 }
