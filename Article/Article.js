@@ -1,5 +1,5 @@
 // Start at `let articles`
-
+// Test comment
 class Article {
   constructor(element) {
     // assign this.element to the passed in article element
