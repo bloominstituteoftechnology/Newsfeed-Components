@@ -61,9 +61,6 @@
   padding: 30px 0;
   text-align: center;
 }
-.menu--open {
-  display: block;
-}
 .articles {
   margin-top: 95px;
 }
@@ -101,9 +98,6 @@
   cursor: pointer;
   transform: translate(-50%);
   background-color: white;
-}
-.article-open {
-  height: 400px;
 }
 html,
 body {
