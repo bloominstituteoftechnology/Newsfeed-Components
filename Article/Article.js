@@ -10,6 +10,12 @@ class Article {
     this.expandButton.innerHTML='Click To Open';
     // Set a click handler on the expandButton reference (or article element), calling the expandArticle method.
     this.expandButton.addEventListener('click', this.expandArticle.bind(this));
+
+    this.closeButton=this.element.querySelector('.close')
+    
+    this.closeButton.innerHTML='Read';
+
+    this.closeButton.addEventListener('click', this.close.bind(this));
   }
 
   expandArticle() {
@@ -22,6 +28,9 @@ class Article {
       TweenLite.to(this.element, .7, { height: '50px', ease: Elastic.easeIn});
       this.expandButton.innerHTML='Click To Open';
     }
+  }
+  close() {
+    document.querySelector('.articles').removeChild(this.element);
   }
 }
 
