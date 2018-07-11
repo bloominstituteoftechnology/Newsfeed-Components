@@ -15,10 +15,10 @@ class Article {
 
   expandArticle() {
     // Using our reference to the article element, add or remove a class to expand or hide the article.
-    this.expandButton.addEventListener("click", this.expandArticle.bind(this));
+    //this.expandButton.addEventListener("click", this.expandArticle.bind(this));
+    this.element.classList.toggle("article-open");
   }
 }
-
 // START HERE: Select all classes named ".article" and assign that value to the articles variable
 let articles = document.querySelectorAll(".article");
 
