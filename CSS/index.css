@@ -56,7 +56,7 @@
   /* This set the layer level of the element, it has precendence over initial level of 1*/
   transition: 0.5s;
 }
-.menu .closeButton {
+.closeButton {
   position: absolute;
   text-decoration: none;
   top: 0;
@@ -71,8 +71,8 @@
   text-align: center;
   transition: 0.3s;
 }
-.menu ul li :hover {
-  color: gray;
+.menu ul li:hover {
+  color: white;
 }
 .articles {
   margin-top: 95px;

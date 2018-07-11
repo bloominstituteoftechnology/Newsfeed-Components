@@ -24,5 +24,4 @@ menuButton.addEventListener("click", () => {
 
 closeButton.addEventListener("click", () => {
   document.querySelector(".menu").style.width = "0";
-  document.querySelector(".articles").style.marginLeft = "0";
 })
