@@ -1,6 +1,6 @@
 # Newsfeed-Components
 
-In this project we are going to be building a news feed reader. The goal is to have a collapsing menu, and expandable news articles. The HTML and CSS is already done for you, you simply need to connect the pieces. After the CSS is connected it is time to move on to building out our components using Javascript. We will be adding common functionality and styling to build reusable components.
+In this project we are going to be building a news feed reader. The goal is to have a collapsing menu, and expandable news articles. The HTML and CSS is already done for you; you simply need to connect the pieces. After the CSS is connected it is time to move on to building out our components using Javascript. We will be adding common functionality and styling to build reusable components.
 
 ### Need to know:
 * CSS (LESS):
@@ -31,7 +31,7 @@ In this project we are going to be building a news feed reader. The goal is to h
 
 ### Stretch Goals:
 
-If you complete the main goals of the page let's play around with some cool animation libraries
+If you complete the main goals of the page let's play around with some cool animation libraries.
 
 A few things to check out: 
 * Native CSS Animations. 
@@ -52,7 +52,7 @@ Note: Just a reminder the stretch goals are just extra practice using the tools 
 
 * Close Button
 
-  Add a close (or 'read') button to each Article component. When clicked the article will dissapear.
+  Add a close (or 'read') button to each Article component. When clicked, the article will dissapear.
 
 * Component Constructor
   
