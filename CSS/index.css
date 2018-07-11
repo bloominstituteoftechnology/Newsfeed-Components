@@ -102,6 +102,16 @@
   transform: translate(-50%);
   background-color: white;
 }
+.article .removeButton {
+  position: absolute;
+  bottom: 0;
+  left: 60%;
+  font-size: 12px;
+  color: grey;
+  cursor: pointer;
+  transform: translate(-50%);
+  background-color: white;
+}
 .article-open {
   height: 400px;
 }
