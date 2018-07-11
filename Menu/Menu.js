@@ -28,3 +28,5 @@ const menuButton = document.querySelector('.menu-button');
 menuButton.addEventListener('click', event => toggleMenu(event));
 
 document.querySelector('body').addEventListener('click', closeMenu);
+
+document.querySelector('.menu ul').addEventListener('click', event => event.stopPropagation());
