@@ -1,13 +1,43 @@
 class Article {
   constructor(article) {
     this.element = article;
+    this.isOpened = false;
     this.expandButton = this.element.querySelector('.expandButton');
-    this.expandButton.innerHTML = 'expand';
+    this.expandButton.innerHTML = 'Expand';
     this.expandButton.addEventListener('click', this.expand);
   }
 
   expand(e) {
-    e.target.parentNode.classList.toggle('article-open');
+    const individualArticle = e.target.parentNode;
+    // to get the height for animation
+    // since package does not support %
+    individualArticle.classList.toggle('article-open');
+    
+    if (!this.isOpened) {
+      const openHeight = individualArticle.clientHeight;
+
+      // animation for opening
+      TweenMax.from(individualArticle, 1, {
+        height: 0
+      })
+    
+      TweenMax.to(individualArticle, 3, {
+        height: openHeight,
+        ease: Linear.easeOut
+      });
+
+      this.isOpened = true;
+      e.target.innerHTML = 'Click to Close';
+    } else {
+
+      // animation for closing
+      TweenMax.to(individualArticle, 2, {
+        height: 50,
+      });  
+      
+      this.isOpened = false;
+      e.target.innerHTML = 'Click to Expand';
+    }
   }  
 }
 
