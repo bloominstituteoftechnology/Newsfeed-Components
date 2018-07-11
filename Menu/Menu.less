@@ -8,22 +8,28 @@
   display: block;
   position: fixed;
   top: 75px;
-  width: 350px;
+  width: 200px;
   height: 100vh; /* Ths give the height 100% of the screen or, '100% of View Height' */
-  background-color: #81c784;
+  background-color: darken(#81c784, 10%);
   border: 1px solid #004d40;
   border-left: none;
   border-bottom: none;
   z-index: 2; /* This set the layer level of the element, it has precendence over initial level of 1*/
-  transform: translateX(-350px);
+  transform: translateX(-200px);
   transition: transform 0.2s ease-in-out;
 }
 
-.menu ul li {
+.menu nav li {
   list-style-type: none;
-  font-size: 32px;
+  font-size: 18px;
   padding: 30px 0;
+  color: white;
   text-align: center;
+  cursor: pointer;
+
+  &:hover {
+    background: darken(#81c784, 20%);
+  }
 }
 
 .menu--open {
