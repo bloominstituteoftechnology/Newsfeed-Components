@@ -3,7 +3,7 @@
 class Article {
   constructor(element) {
     // assign this.element to the passed in article element
-    this.element;
+    this.element = element;
     // create a reference to the ".expandButton" class. 
     this.expandButton;
     // Using your expandButton reference, update the text on your expandButton to say "expand"
