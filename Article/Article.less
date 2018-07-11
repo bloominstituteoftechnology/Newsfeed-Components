@@ -1,6 +1,13 @@
 .articles {
   margin-top: 95px;
+  border: 1px solid green;
+  max-width: 95%
 }
+
+.articles-while-menu {
+  filter: blur(3px);
+}
+
 .article {
   margin: 20px 10%;
   padding: 0 20px 25px;
@@ -32,7 +39,7 @@
   .expandButton {
     position: absolute;
     bottom: 0;
-    left: 50%;
+    left: 95%;
     font-size: 12px;
     color: grey;
     cursor: pointer;
@@ -41,9 +48,19 @@
     border: 1px solid black;
     border-radius: 5px;
     padding: 3px;
+    margin-bottom: 3px;
+
+    &:hover {
+      background-color: black;
+      color: white;
+    }
   }
 }
 
 .article-open {
   height: 100%;
+  background-color: lightgrey;
+  border: 1px solid black;
+  box-shadow: 3px 3px 3px darkgrey;
+
 }
