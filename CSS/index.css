@@ -19,10 +19,22 @@
 }
 /* Below this line is where you will start your work */
 /* It is important to note, you will not be writing any CSS in this file*/
+@keyframes nudge {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(150px, 0);
+  }
+  80% {
+    transform: translate(-150px, 0);
+  }
+}
 .header {
   width: 100%;
   height: 75px;
-  background-color: #388E3C;
+  background-color: #a0001e;
   color: white;
   display: flex;
   justify-content: center;
@@ -33,23 +45,25 @@
 }
 .header h1 {
   margin: 0;
-  font-size: 48px;
+  font-size: 1.5rem;
 }
 .menu-button {
   position: absolute;
   left: 20px;
   cursor: pointer;
+  transform: scale(0.5);
 }
 .menu {
   display: none;
   position: fixed;
   top: 75px;
   left: 0;
-  width: 350px;
+  width: 200px;
   height: 100vh;
   /* This give the height 100% of the screen or, '100% of View Height' */
-  background-color: #81C784;
-  border: 1px solid #004D40;
+  background-color: #a0001e;
+  border: 1px solid #d63e5a;
+  color: white;
   border-left: none;
   border-bottom: none;
   z-index: 2;
@@ -57,21 +71,49 @@
 }
 .menu ul li {
   list-style-type: none;
-  font-size: 32px;
-  padding: 30px 0;
+  font-size: 12px;
+  padding: 50px 0;
   text-align: center;
+}
+.menu a {
+  cursor: pointer;
+}
+.menu a:hover {
+  text-decoration: underline;
 }
 .menu--open {
   display: block;
+}
+@keyframes pulse {
+  0% {
+    background-color: white;
+  }
+  100% {
+    background-color: #a0001e;
+  }
+}
+@keyframes stretch {
+  0% {
+    transform: scale(0.5);
+    background-color: black;
+    border-radius: 80%;
+  }
+  50% {
+    background-color: grey;
+  }
+  100% {
+    transform: scale(1);
+    background-color: white;
+  }
 }
 .articles {
   margin-top: 95px;
 }
 .article {
+  color: black;
   margin: 20px 10%;
   padding: 0 20px 25px;
-  border: 1px solid lightgrey;
-  border-radius: 10px;
+  border: 1px solid #d3d3d3;
   background-color: white;
   position: relative;
   height: 50px;
@@ -79,12 +121,16 @@
   box-shadow: 2px 2px 2px lightgrey;
 }
 .article h2 {
-  font-size: 28px;
+  font-size: 20px;
   padding: 0;
-  margin: 15px 0 0;
+  margin: 25px 0 0;
+}
+.article p {
+  margin-top: 25px;
 }
 .article .date {
-  margin: 0;
+  float: right;
+  margin-top: 0;
   font-size: 14px;
 }
 .article .close {
@@ -97,13 +143,19 @@
   bottom: 0;
   left: 50%;
   font-size: 12px;
-  color: grey;
+  color: black;
   cursor: pointer;
   transform: translate(-50%);
-  background-color: white;
+  padding: 2px 2px;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+.article .expandButton:hover {
+  background: black;
+  color: white;
 }
 .article-open {
-  height: 400px;
+  height: 100%;
 }
 html,
 body {

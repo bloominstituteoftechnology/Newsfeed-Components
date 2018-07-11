@@ -1,11 +1,36 @@
+@keyframes pulse {
+  0% {
+    background-color: white;
+  }
+  100% {
+    background-color: #a0001e;
+  }
+}
+
+@keyframes stretch {
+  0% {
+    transform: scale(.5);
+    background-color: black;
+    border-radius: 80%;
+  }
+  50% {
+    background-color: grey;
+  }
+  100% {
+    transform: scale(1);
+    background-color: white;
+  }
+}
+
 .articles {
   margin-top: 95px;
 }
 .article {
+  color: black;
+  // animation: pulse 20s;
   margin: 20px 10%;
   padding: 0 20px 25px;
-  border: 1px solid lightgrey;
-  border-radius: 10px;
+  border: 1px solid #d3d3d3;
   background-color: white;
   position: relative;
   height: 50px;
@@ -13,13 +38,18 @@
   box-shadow: 2px 2px 2px lightgrey;
 
   h2 {
-    font-size: 28px;
+    font-size: 20px;
     padding: 0;
-    margin: 15px 0 0;
+    margin: 25px 0 0;
+  }
+
+  p {
+    margin-top: 25px;
   }
 
   .date {
-    margin: 0;
+    float: right;
+    margin-top: 0;
     font-size: 14px;
   }
 
@@ -30,21 +60,25 @@
   }
 
   .expandButton {
+    // animation: stretch 3s linear 2s alternate none running;
     position: absolute;
     bottom: 0;
     left: 50%;
     font-size: 12px;
-    color: grey;
+    color: black;
     cursor: pointer;
     transform: translate(-50%);
-    background-color: white;
+    padding: 2px 2px;
+    border: 2px solid black;
+    border-radius: 5px;
+
+    &:hover {
+      background:black;
+      color: white;
+    }
   }
 }
 
 .article-open {
-  height: 400px;
+  height: 100%;
 }
-
-
-
-
