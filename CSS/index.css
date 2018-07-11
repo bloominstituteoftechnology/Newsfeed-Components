@@ -62,7 +62,8 @@
   text-align: center;
 }
 .menu--open {
-  display: block;
+  display: flex;
+  flex-direction: column;
 }
 .articles {
   margin-top: 95px;
