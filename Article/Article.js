@@ -9,7 +9,6 @@ class Article {
   }
 
   expandArticle(element) {
-    console.log(this.element)
     this.element.classList.toggle("article-open")
   }
 }

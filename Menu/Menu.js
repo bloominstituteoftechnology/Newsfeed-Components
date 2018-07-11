@@ -1,11 +1,10 @@
 
 const toggleMenu = () => {
-  console.log(menu)
-  menu.classList.toggle("menu--open")
+  t.reversed() ? t.play() : t.reverse();
 }
 
 const menu = document.querySelector(".menu");
 const menuButton = document.querySelector(".menu-button");
-// Using your menuButton reference, add a click handler that calls toggleMenu
-
 menuButton.addEventListener("click", toggleMenu);
+let t = TweenMax.to(".menu", 1, { x:350 })
+t.reversed(true);
