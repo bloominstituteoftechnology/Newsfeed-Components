@@ -5,10 +5,13 @@
     <title>Lambda School Newsfeed</title>
     <link rel="stylesheet" type="text/css" media="screen" href="./CSS/index.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+
     <script src="./Menu/Menu.js" async></script>
     <script src="./Article/Article.js" async></script>
   </head>
+
   <body>
+    <!--Start Header -->
     <div class="header">
       <img class="menu-button" src="./assets/menu.png"/>
       <h1>Lambda School Newsfeed</h1>
@@ -23,6 +26,9 @@
         <li>Log Out</li>
       </ul>
     </div>
+    <!--End Header -->
+
+    <!--Start Articles -->
     <div class="articles">
       <div class="article">
         <h2>Lambda School Students: "We're the best!"</h2>
@@ -225,5 +231,30 @@
         <span class='launchButton'></span>
       </div>
     </div>
+    <!--End Articles -->
+
+    <!--Start Form -->
+    <form action="" method="post">
+        <div>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="user_name">
+        </div>
+      
+        <div>
+          <label for="mail">E-mail:</label>
+          <input type="email" id="mail" name="user_email">
+        </div>
+      
+        <div>
+          <label for="msg">Message:</label>
+          <textarea id="msg" name="user_message"></textarea>
+        </div>
+       
+        <div class="button">
+          <button type="submit" class="submitFormButton">Send your message</button>
+        </div>
+      </form>
+      <!--End Form -->
+
   </body>
 </html>

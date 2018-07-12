@@ -10,14 +10,33 @@ class Article {
     // Using your expandButton reference, update the text on your expandButton to say "expand"
     this.expandButton.innerHTML = "expand";
 
+    this.launchHeadline = this.element.querySelector("h2");
+    // console.log(this.launchHeadline)
+    // adding pointer to headline, so you know to click
+    this.launchHeadline.style.cursor = "pointer";
+    // console.log(this.launchButtons)
+    // Set a click handler on the expandButton reference (or article element), calling the expandArticle method.
+    // This works, only one element being used
+    this.launchHeadline.addEventListener("click", this.launchH2.bind(this));
+    // event.target.parentNode.classList.addEventListener("click", this.launchH2);
     // Set a click handler on the expandButton reference (or article element), calling the expandArticle method.
     this.element.addEventListener("click", this.expandArticle);
   }
 
-  expandArticle() {
-    // Using our reference to the article element, add or remove a class to expand or hide the article.
-    this.classList.toggle("article-open");
-  }
+    launchH2() {
+      // console.log(this.element)
+      console.log('Hey')
+      // console.log(this.indArticle)
+      // TweenMax.to(this.element, .5, {x:200, opacity: 0, scale:0.5});
+      TweenMax.to(this.element, 2.5, { ease: Bounce.easeInOut, y: -500 });
+    }
+    
+    
+    expandArticle() {
+      // Using our reference to the article element, add or remove a class to expand or hide the article.
+      this.classList.toggle("article-open");
+    }
+
 }
 
 // START HERE: Select all classes named ".article" and assign that value to the articles variable
@@ -26,85 +45,44 @@ let articles = document.querySelectorAll(".article");
 articles = Array.from(articles).map( article => new Article(article));
 
 
-/// Stretch Goals, adding Green Sock
-/// Would have made a new js file, and imported
-/// afraid of merge conflicts
+// First element of Nav
+let submitFormButton = document.querySelector('.submitFormButton');
 
-// // Got the text to fill new buttons on my html when active, just can't get them to show up
-// class LaunchButton {
-//   constructor(article) {
-//     // assign this.element to the passed in article element
-//     this.element = article;
-//     // console.log(this.element)
-//     // create a reference to the ".expandButton" class. 
-//     this.launchButtons = this.element.querySelector(".launchButton");
+// submitFormButton.addEventListener("click", (event) => {
+//   // stopping bubbling
+//   event.stopPropagation();
+//   // Changes inner text of Nav to say Hey
+//   articlesElement = document.querySelector(".article");
+//   articleAdditionText = document.createElement("h2")
+//   event.articleAdditionText.innerHTML = "Test";
+//   event.articlesElement.appendChild(articleAdditionText);
+// })
 
+let articleHTML = document.createElement('div');
 
-//     this.indArticle = this.element.querySelector(".article")
-//     console.log(this.indArticle)
-//     // Adding h2 selector so I can create click event
-//     this.launchHeadline = this.element.querySelector("h2");
-//     // Using your expandButton reference, update the text on your expandButton to say "expand"
-//     this.launchButtons.innerHTML = "launch";
+articleHTML.className = 'article';
 
-//     // adding pointer to headline, so you know to click
-//     this.launchHeadline.style.cursor = "pointer";
-//     // console.log(this.launchButtons)
-//     // Set a click handler on the expandButton reference (or article element), calling the expandArticle method.
-//     this.element.addEventListener("click", this.launchButton);
+articleHTML.innerHTML = 
+  "<div class='article'>\
+  <h2>Lambda School Students: 'We're the best!'</h2>\
+  <p class='date'>Nov 5th, 2017</p>\
+  <p>Lucas ipsum dolor sit amet ben twi'lek padmé darth darth darth moff hutt organa twi'lek. Ben amidala secura skywalker lando\
+  moff wicket tatooine luke. Solo wampa wampa calrissian yoda moff. Darth grievous darth gonk darth hutt. Darth baba skywalker\
+  watto fett jango maul han. Mon ewok sidious sidious lando kenobi grievous gamorrean solo. Yoda wedge utapau darth calamari.\
+  Hutt calamari darth jabba. Darth dooku amidala organa moff. Boba darth binks solo hutt skywalker dantooine skywalker. Qui-gonn\
+  jar twi'lek jinn leia jango skywalker mon. </p>\
+  <p>Grievous fett calamari anakin skywalker hutt. Alderaan darth kenobi darth r2-d2\
+  windu mothma. Sidious darth calamari moff. Wampa mothma sith wedge solo mara. Darth gonk maul sith moff chewbacca palpatine\
+  mace amidala. C-3po solo skywalker anakin yoda leia. Maul wampa bespin watto jade ewok darth jabba. Lando dantooine moff\
+  k-3po dantooine luke. Fisto mandalore darth wedge c-3p0 ahsoka. Secura moff palpatine fett. Anakin sith darth darth. Moff\
+  solo leia ben ponda jade. Binks jango aayla skywalker skywalker cade. Mustafar darth ventress anakin watto. Yavin jawa sebulba\
+  owen jinn tatooine sith organa.</p>\
+  <p>Dagobah hutt jawa leia calamari ventress skywalker yoda. Binks wicket hutt coruscant sidious\
+  naboo ackbar tatooine. Hutt lars padmé darth. Maul solo darth darth jabba qui-gon chewbacca darth maul. Moff baba wicket\
+  han. C-3po antilles moff qui-gon ahsoka aayla dooku amidala. Palpatine droid amidala droid k-3po twi'lek padmé wookiee. Leia\
+  moff calamari mon obi-wan. Solo grievous lando coruscant. Jinn darth palpatine obi-wan mon.</p>\
+  <span class='expandButton'></span>\
+  <span class='launchButton'></span>\
+</div>";
 
-//     this.launchHeadline.addEventListener("click", this.launchH2);
-    
-//   }
-
-//   launchButton() {
-//     // 
-//     // TweenMax.to(".article", .5, {x:200, opacity: 0, scale:0.5});
-//     // console.log("test")
-//   }
-
-//   launchH2() {
-//     // console.log(this.element)
-//     console.log('Hey')
-//     TweenMax.to(this.indArticle, .5, {x:200, opacity: 0, scale:0.5});
-//   }
-
-// }
-
-// let articles2 = document.querySelectorAll(".article");
-
-// articles2 = Array.from(articles2).map( article => new LaunchButton(article));
-
-
-
-
-
-class LaunchHeadline {
-  constructor(articles) {
-    // articles array containing all ind articles
-    this.element = articles;
-    this.indArticle = this.element.querySelector(".article")
-    // console.log(this.indArticle)
-    // Adding h2 selector so I can create click event
-    this.launchHeadline = this.element.querySelector("h2");
-    console.log(this.launchHeadline)
-    // console.log(this.launchHeadline)
-    // adding pointer to headline, so you know to click
-    this.launchHeadline.style.cursor = "pointer";
-    // console.log(this.launchButtons)
-    // Set a click handler on the expandButton reference (or article element), calling the expandArticle method.
-    this.launchHeadline.addEventListener("click", this.launchH2.bind(this));
-  }
-
-  launchH2() {
-    // console.log(this.element)
-    console.log('Hey')
-    // console.log(this.indArticle)
-    TweenMax.to(this.indArticle, .5, {x:200, opacity: 0, scale:0.5});
-  }
-
-}
-
-let articles3 = document.querySelectorAll(".articles");
-
-articles3 = Array.from(articles3).map( articles => new LaunchHeadline(articles));
+document.querySelector(".articles").appendChild(articleHTML);
