@@ -145,6 +145,7 @@
   border: 1px solid #888;
   width: 80%;
   transform: scale(0);
+  border-radius: 20px;
 }
 .form-modal .form-content input {
   width: 90%;
