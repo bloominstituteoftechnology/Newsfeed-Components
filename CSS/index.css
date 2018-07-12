@@ -123,3 +123,261 @@ body {
     background-color: lightseagreen;
   }
 }
+animate {
+  background: #ddd;
+}
+section {
+  width: 800px;
+}
+.box {
+  background: #f60;
+  color: #fff;
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  line-height: 200px;
+}
+.circle {
+  background: #460;
+  color: #fff;
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  line-height: 200px;
+  border-radius: 100%;
+}
+.absolute {
+  position: absolute;
+}
+.relative {
+  position: relative;
+}
+/* creates parameters for animation called 'movebox' */
+@-webkit-keyframes movebox {
+  0% {
+    bottom: 0;
+    left: 0px;
+    background: #f00;
+  }
+  33% {
+    bottom: 0px;
+    left: 340px;
+    background: #ffd630;
+  }
+  66% {
+    bottom: 140px;
+    left: 40px;
+    background: #ffd630;
+  }
+  100% {
+    bottom: 0;
+    left: 40px;
+    background: #f00;
+  }
+}
+@-moz-keyframes movebox {
+  0% {
+    bottom: 0;
+    left: 0px;
+    background: #f00;
+  }
+  33% {
+    bottom: 0px;
+    left: 340px;
+    background: #ffd630;
+  }
+  66% {
+    bottom: 140px;
+    left: 40px;
+    background: #ffd630;
+  }
+  100% {
+    bottom: 0;
+    left: 40px;
+    background: #f00;
+  }
+}
+@-ms-keyframes movebox {
+  0% {
+    bottom: 0;
+    left: 340px;
+    background: #f00;
+  }
+  33% {
+    bottom: 340px;
+    left: 340px;
+    background: #ffd630;
+  }
+  66% {
+    bottom: 340px;
+    left: 40px;
+    background: #ffd630;
+  }
+  100% {
+    bottom: 0;
+    left: 40px;
+    background: #f00;
+  }
+}
+@keyframes movebox {
+  0% {
+    bottom: 0;
+    left: 0px;
+    background: #f00;
+  }
+  33% {
+    bottom: 0px;
+    left: 340px;
+    background: #ffd630;
+  }
+  66% {
+    bottom: 140px;
+    left: 40px;
+    background: #ffd630;
+  }
+  100% {
+    bottom: 0;
+    left: 40px;
+    background: #f00;
+  }
+}
+.box {
+  -webkit-animation-name: movebox;
+  /*must be same as animation named above*/
+  -webkit-animation-duration: 10s;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-iteration-count: 5;
+  -webkit-animation-direction: normal;
+}
+.box {
+  -moz-animation-name: movebox;
+  /*must be same as animation named above*/
+  -moz-animation-duration: 10s;
+  -moz-animation-timing-function: ease;
+  -moz-animation-iteration-count: 5;
+  -moz-animation-direction: normal;
+}
+.box {
+  -ms-animation-name: movebox;
+  /*must be same as animation named above*/
+  -ms-animation-duration: 10s;
+  -ms-animation-timing-function: ease;
+  -ms-animation-iteration-count: 5;
+  -ms-animation-direction: normal;
+}
+.box {
+  animation-name: movebox;
+  /*must be same as animation named above*/
+  animation-duration: 10s;
+  animation-timing-function: ease;
+  animation-iteration-count: 5;
+  animation-direction: normal;
+}
+.circle {
+  -webkit-animation-name: movecirc;
+  /*must be same as animation named above*/
+  -webkit-animation-duration: 10s;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-iteration-count: 5;
+  -webkit-animation-direction: normal;
+}
+.circle {
+  -moz-animation-name: movecirc;
+  /*must be same as animation named above*/
+  -moz-animation-duration: 10s;
+  -moz-animation-timing-function: ease;
+  -moz-animation-iteration-count: 5;
+  -moz-animation-direction: normal;
+}
+.circle {
+  -ms-animation-name: movecirc;
+  /*must be same as animation named above*/
+  -ms-animation-duration: 10s;
+  -ms-animation-timing-function: ease;
+  -ms-animation-iteration-count: 5;
+  -ms-animation-direction: normal;
+}
+.circle {
+  animation-name: movecirc;
+  /*must be same as animation named above*/
+  animation-duration: 10s;
+  animation-timing-function: ease;
+  animation-iteration-count: 5;
+  animation-direction: normal;
+}
+/* creates parameters for animation called 'movebox' */
+@-webkit-keyframes movecirc {
+  0% {
+    bottom: 0;
+    left: 0px;
+    background: #460;
+  }
+  15% {
+    background: #460;
+  }
+  25% {
+    bottom: 0px;
+    left: 440px;
+    background: #ffd630;
+  }
+  50% {
+    bottom: 140px;
+    left: 140px;
+    background: #006;
+  }
+  75% {
+    bottom: 140px;
+    left: 40px;
+    background: #006;
+  }
+  90% {
+    background: #f00;
+  }
+  100% {
+    bottom: 0;
+    left: 40px;
+    background: #460;
+  }
+}
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Orbitron Regular'), local('Orbitron-Regular'), url(https://fonts.gstatic.com/s/orbitron/v9/yMJRMIlzdpvBhQQL_Qq7dyg.ttf) format('truetype');
+}
+@-webkit-keyframes typing {
+  from {
+    width: 0;
+  }
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+@-webkit-keyframes blink-caret {
+  50% {
+    border-color: transparent;
+  }
+}
+@keyframes blink-caret {
+  50% {
+    border-color: transparent;
+  }
+}
+.header h1 {
+  font: bold 200% Consolas, Monaco, monospace;
+  border-right: .1em solid;
+  width: 16.5em;
+  /* fallback */
+  width: 12ch;
+  /* # of chars */
+  margin: 2em 1em;
+  white-space: nowrap;
+  overflow: hidden;
+  font-family: 'Orbitron', sans-serif;
+  -webkit-animation: 0.5s blink-caret step-end infinite, typing 30s steps(30, end);
+  /*,  # of steps = # of chars */
+  animation: 0.5s blink-caret step-end infinite, typing 10s steps(20, end);
+  /*,  # of steps = # of chars */
+}
