@@ -11,6 +11,8 @@ class Article {
     this.expandButton.style.color = 'green';
     // Set a click handler on the expandButton reference (or article element), calling the expandArticle method.
     this.expandButton.addEventListener("click", this.expandArticle);
+    // ES6 option: this.expandButton.addEventListener('click', () => {this.expandArticle()})
+    // ES5 option: this.expandButton.addEventListener('click', this.expandArticle.bind(this)); Bind makes the ES 6 method below work.
   }
 
   expandArticle() {
@@ -18,6 +20,7 @@ class Article {
     this.parentElement.classList.toggle("article-open");
     //The following also works:
     // event.target.parentNode.classList.toggle('article-open');
+    //ES6 option: this.element.classList.toggle('article-open');
   }
 }
 
