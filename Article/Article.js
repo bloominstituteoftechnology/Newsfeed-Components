@@ -11,7 +11,7 @@ class Article {
     // Set a click handler on the expandButton reference (or article element), calling the expandArticle method.
     this.element.addEventListener('click', () => {this.expandArticle()});
     this.remove = document.querySelectorAll('.close');
-    this.remove = this.remove.forEach(index => index.innerText = 'close');
+    this.remove = this.remove.forEach(index => index.innerText = 'Remove');
     this.element.addEventListener('click', () => {this.removeArticle()});
   }
   expandArticle() {
@@ -19,7 +19,7 @@ class Article {
     this.element.classList.toggle('article-open');
   }
   removeArticle(){
-    event.target.remove();
+    event.target.parentNode.remove();
   }
 }
 

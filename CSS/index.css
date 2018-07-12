@@ -64,11 +64,6 @@
 .menu--open {
   display: block;
 }
-
-.menu--close{
-  display: none;
-}
-
 .articles {
   margin-top: 95px;
 }
