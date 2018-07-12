@@ -1,8 +1,6 @@
-
+//
 const toggleMenu = () => {
   // Toggle the "menu--open" class on your menu refence. 
-  
-  
   menu.classList.toggle("menu--open");
   // menu.classList.toggle("flex-column");
 }
@@ -17,4 +15,3 @@ const menuButton = document.querySelector(".menu-button");
 menuButton.addEventListener("click", (event)=>{
   toggleMenu();
 });
-console.log(menu);

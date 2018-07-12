@@ -112,9 +112,6 @@ body {
   font-family: 'Roboto';
   background-color: #fffef7;
 }
-.display-flex {
-  display: flex !important;
-}
 .article-open {
   display: flex !important;
 }
