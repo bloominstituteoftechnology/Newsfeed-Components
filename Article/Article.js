@@ -25,9 +25,9 @@ class Article {
     console.log(event);
   }
 
-  changeButton(event) {
-    event.target.classlist.toggle()
-  }
+  // changeButton(event) {
+  //   event.target.classlist.toggle()
+  // }
 }
 
 // START HERE: Select all classes named ".article" and assign that value to the articles variable

@@ -7,12 +7,12 @@ const toggleMenu = () => {
   //show menu when clicked
   menu.classList.toggle("menu--open");
   console.log(menu.classList)
-  TweenMax.to(menu, 2, {ease: Power4.easeOut, x: 250, } );
+  TweenMax.to(menu, 2, {ease: Power4.easeOut, width: 250, } );
 
   //hide menu when mouse leaves
   articles2.addEventListener('mouseover', (event) => {
     console.log("mouseover articles2")
-    TweenMax.to(menu, .2, {x: -25})
+    TweenMax.to(menu, .2, {width: 0})
   });
 }
 
@@ -23,7 +23,7 @@ const toggleLeftMenu = () => {
 
 const blurPage = () => {
   console.log(articles2.classList + " blurPage function invoked");
-  articles2.classlist.toggle("articlesWhileMenu");
+  articles2.classList.toggle("articlesWhileMenu");
   console.log("blurPage function executed");
 }
 
