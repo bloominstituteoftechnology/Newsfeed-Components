@@ -50,10 +50,11 @@ const createArticle = articleData => {
 
   newDiv.appendChild(newDate);
 
-  const newPara = document.createElement('p');
-  newPara.innerHTML = articleData.para;
+  const newContent = document.createElement('div');
+  newContent.classList.add('article-content');
+  newContent.innerHTML = articleData.para;
 
-  newDiv.appendChild(newPara);
+  newDiv.appendChild(newContent);
 
   const newSpan = document.createElement('span');
   newSpan.classList.add('expandButton');

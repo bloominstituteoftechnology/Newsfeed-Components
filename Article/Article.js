@@ -20,9 +20,9 @@ class Article {
   // Using our reference to the article element, add or remove a class to expand or hide the article.
     this.element.classList.toggle('article-open');
     if(this.element.classList.contains('article-open')){
-      TweenLite.to(this.element, 1, {height: 400});
+      TweenLite.to(this.element, 1, {height: 400 });
     }else {
-      TweenLite.to(this.element, 1, {height: 50})
+      TweenLite.to(this.element, 1, {height: 50 });
     }
   }
 

@@ -82,6 +82,12 @@
   padding: 0;
   margin: 15px 0 0;
 }
+.article .article-content {
+  height: 350px;
+  overflow: scroll;
+  margin-bottom: 10px;
+  margin-top: 12px;
+}
 .article .date {
   margin: 0;
   font-size: 14px;
