@@ -28,8 +28,7 @@ class Article {
 
   closeArticle() {
     let node = event.target.parentNode;
-    TweenLite.to(node, .5, {height: 0, opacity: 0});
-    TweenLite.to(node, .5, { marginTop: -20, marginBottom: -20 });
+    TweenLite.to(node, .5, {height: 0, opacity: 0, marginTop: -20, marginBottom: -20});
     setTimeout(() => node.style.display = 'none', 500);
   }
 }
