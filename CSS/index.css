@@ -64,7 +64,7 @@
   cursor: pointer;
 }
 .articles {
-  margin-top: 95px;
+  margin-top: 20px;
 }
 .article {
   margin: 20px 10%;
@@ -111,6 +111,86 @@
   background: white;
   padding: 2px 5px;
   border-radius: 5px;
+}
+.new-article-btn {
+  margin: 96px auto 0;
+  border: 1px solid black;
+  background: green;
+  color: white;
+  border-radius: 5px;
+  width: 150px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.form-modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 196px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: #000000;
+  background-color: rgba(0, 0, 0, 0.4);
+  transform: scale(0);
+}
+.form-modal .form-content {
+  background-color: #FFFEF7;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+.form-modal .form-content input {
+  width: 90%;
+  margin: 10px 0px;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #cdcdcd;
+}
+.form-modal .form-content input:focus,
+.form-modal .form-content input:active {
+  outline: none;
+  border-color: #007fff;
+}
+.form-modal .form-content input textarea {
+  width: 100%;
+  margin: 10px 0px;
+  padding: 15px;
+  min-height: 200px;
+  border-radius: 10px;
+  border: 1px solid #cdcdcd;
+}
+.form-modal .form-content input textarea:focus,
+.form-modal .form-content input textarea:active {
+  outline: none;
+  border-color: #007fff;
+}
+.form-modal .form-content input button {
+  border-radius: 10px;
+  border: 1px solid #232323;
+  margin: 10px 0px;
+  padding: 15px;
+  background-color: transparent;
+  color: #232323;
+  transition: all 0.275s;
+  cursor: pointer;
+}
+.form-modal .form-content input button:hover {
+  background-color: #232323;
+  color: #f7f7f7;
+}
+.form-modal .form-content input button:focus,
+.form-modal .form-content input button:active {
+  outline: none;
+}
+.modal-show {
+  display: block;
 }
 html,
 body {
