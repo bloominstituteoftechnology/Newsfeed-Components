@@ -1,7 +1,11 @@
 
 const toggleMenu = () => {
   // Toggle the "menu--open" class on your menu refence. 
-  menu.classList.toggle("menu--open");
+  if (menu.classList.contains("menu--open")===true){
+    menu.classList.toggle("menu--close"); 
+  }else{
+    menu.classList.toggle("menu--open"); 
+  }     
 }
 
 // Start Here: Create a reference to the ".menu" class
