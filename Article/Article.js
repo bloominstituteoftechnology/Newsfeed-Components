@@ -2,7 +2,7 @@
 
 class Article {
   constructor(element) {
-    // assign this.element to the passed in article element
+    // assign this.element to the passed in article element.  we need this to do this.element.querySelector('.expandButton') below.
     this.element = element;
     // create a reference to the ".expandButton" class. 
     this.expandButton = this.element.querySelector('.expandButton');
