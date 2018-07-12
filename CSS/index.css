@@ -22,7 +22,7 @@
 .header {
   width: 100%;
   height: 75px;
-  background-color: #1f65ae;
+  background-color: black;
   color: white;
   display: flex;
   justify-content: center;
@@ -34,7 +34,8 @@
 }
 .header h1 {
   margin: 0;
-  font-size: 48px;
+  font-size: 32px;
+  font-family: monospace;
 }
 .menu-button {
   position: absolute;
@@ -59,6 +60,8 @@
   font-size: 32px;
   padding: 30px 0;
   text-align: center;
+  font-family: monospace;
+  font-weight: 600;
 }
 .menu--open {
   display: block;
@@ -78,9 +81,11 @@
   box-shadow: rgba(72, 76, 87, 0.21) 0px 1px 3px;
 }
 .article h2 {
-  font-size: 28px;
+  font-size: 24px;
   padding: 0;
   margin: 15px 0 0;
+  font-family: monospace;
+  font-weight: 400;
 }
 .article .date {
   margin: 0;
@@ -112,5 +117,5 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Roboto';
-  background-color: #fffef7;
+  background-color: white;
 }
