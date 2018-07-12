@@ -15,7 +15,7 @@ class Article {
   expandArticle() {
     // Using our reference to the article element, add or remove a class to expand or hide the article.
     event.target.parentNode.classList.toggle('article-open');
-  }
+  } // using fix from Josh as I originally was trying to use this.element.classList.  Don't fully understand why this is needed yet. //
 }
 
 // START HERE: Select all classes named ".article" and assign that value to the articles variable
