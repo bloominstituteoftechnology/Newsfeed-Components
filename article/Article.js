@@ -5,10 +5,12 @@ let articles = document.querySelectorAll(".article");
 class Article {
   constructor(button){
     this.element = button;
-    this.expandButton.addEventListener('click', this.btnClick);
+    this.expandButton = this.element.querySelector('.expandButton');
+    this.expandButton.addEventListener('click', this.btnClick.bind(this));
   }
   btnClick(){
-    console.log("I was clicked")
+    this.element.classList.toggle("article-open");
+    // console.log("I was clicked")
   }
 
 }
