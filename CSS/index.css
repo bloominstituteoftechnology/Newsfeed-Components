@@ -43,6 +43,7 @@
 .menu {
   display: block;
   position: fixed;
+  opacity: 0;
   top: 75px;
   left: -360px;
   height: 100vh;

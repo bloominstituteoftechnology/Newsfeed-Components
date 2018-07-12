@@ -14,7 +14,7 @@ const closeMenu = () => {
 
 const animOpen = () => {
   TweenLite.to(menu, 2, {left: 0, ease: Bounce.easeOut});
-  TweenLite.from(menu, 1, { opacity: 0 });
+  TweenLite.to(menu, 1, { opacity: 1 });
 }
 
 const animClose = () => {
