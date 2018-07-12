@@ -22,7 +22,8 @@ const getTheDate = date => {
     ordinal = 'rd';
   }else{
     ordinal = 'th';
-  }
+  }//copied this from stackoverflow, if I'm understanding it right j=last num, k=last two.
+   //could probably remove k and just use day in edge case checks.
 
 
   return `${months[monthIndex]} ${day}${ordinal}, ${year}`;
@@ -65,9 +66,11 @@ const createArticle = articleData => {
 const toggleModal = () => {
   if(!formModal.classList.contains('modal-show')){
     formModal.classList.toggle('modal-show');
-    TweenLite.to(formModal, .5, {scale: 1});
+    TweenLite.to(formModal.querySelector('.form-content'), .5, { scale: 1 });
+    TweenLite.to(formModal, 1, { backgroundColor: 'rgba(0, 0, 0, 0.4)' });
   }else{
-    TweenLite.to(formModal, 1, {scale: 0});
+    TweenLite.to(formModal.querySelector('.form-content'), 1, { scale: 0 });
+    TweenLite.to(formModal, .25, { backgroundColor: 'rgba(0, 0, 0, 0)' });
     resetForm();
     setTimeout(() => formModal.classList.toggle('modal-show'), 1000);
   }

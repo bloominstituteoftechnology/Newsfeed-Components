@@ -136,8 +136,7 @@
   height: 100%;
   overflow: auto;
   background-color: #000000;
-  background-color: rgba(0, 0, 0, 0.4);
-  transform: scale(0);
+  background-color: rgba(0, 0, 0, 0);
 }
 .form-modal .form-content {
   background-color: #FFFEF7;
@@ -145,6 +144,7 @@
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
+  transform: scale(0);
 }
 .form-modal .form-content input {
   width: 90%;
