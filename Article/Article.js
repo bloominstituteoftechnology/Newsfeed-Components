@@ -30,7 +30,9 @@ function createArticle (articleData) {
 
   const articleHeading = document.createElement('h2');
   articleHeading.textContent = articleData.headingData;
+
   articleDiv.appendChild(articleHeading);
+
   const articleParagraph = document.createElement('p');
   articleParagraph.textContent = articleData.paragraphData;
   
@@ -55,7 +57,7 @@ createArticle({
 
 document.querySelector('form').addEventListener('submit', (event)=> {
   event.preventDefault();
-  let headingSubmission = document.querySelector('.title').value;
-  let paragraphSubmission = document.querySelector('.paragraph').value;
-  createArticle({headingData: headingSubmission, paragraphData: paragraphSubmission});
+  let headingData = document.querySelector('.title').value;
+  let paragraphData = document.querySelector('.paragraph').value;
+  createArticle({ headingData, paragraphData });
 });
