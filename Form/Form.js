@@ -71,7 +71,7 @@ const toggleModal = () => {
     TweenLite.to(formModal, 1, { backgroundColor: 'rgba(0, 0, 0, 0.4)' });
   }else{
     TweenLite.to(formModal.querySelector('.form-content'), 1, { scale: 0 });
-    TweenLite.to(formModal, .25, { backgroundColor: 'rgba(0, 0, 0, 0)' });
+    TweenLite.to(formModal, 1, { backgroundColor: 'rgba(0, 0, 0, 0)' });
     resetForm();
     setTimeout(() => formModal.classList.toggle('modal-show'), 1000);
   }
