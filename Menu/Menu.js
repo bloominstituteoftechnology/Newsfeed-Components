@@ -3,7 +3,7 @@ const toggleMenu = () => {
   // Toggle the "menu--open" class on your menu refence. 
   
   
-  menu.classList.toggle("display-flex");
+  menu.classList.toggle("menu--open");
   // menu.classList.toggle("flex-column");
 }
 
