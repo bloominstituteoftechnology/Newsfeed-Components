@@ -98,15 +98,15 @@
 }
 .article .expandButton {
   position: absolute;
-  bottom: 0;
-  left: 50%;
+  top: 23px;
+  right: 0%;
   font-size: 12px;
   padding: 8px 16px;
-  color: #777;
+  color: black;
   cursor: pointer;
   transform: translate(-50%);
   background-color: white;
-  border-radius: 4px 4px 0 0;
+  border-radius: 4px;
   border: 1px solid #eee;
   font-family: monospace;
 }
