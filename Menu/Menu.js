@@ -14,10 +14,11 @@ const closeMenu = () => {
 
 const animOpen = () => {
   TweenLite.to(menu, 2, {left: 0, ease: Bounce.easeOut});
+  TweenLite.from(menu, 1, { opacity: 0 });
 }
 
 const animClose = () => {
-  TweenMax.to(menu, 2, {left: -360});
+  TweenMax.to(menu, 2, {left: -360, opacity: 0 });
 }
 
 // Start Here: Create a reference to the ".menu" class
