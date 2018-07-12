@@ -50,7 +50,7 @@ const createArticle = articleData => {
   newDiv.appendChild(newDate);
 
   const newPara = document.createElement('p');
-  newPara.innerText = articleData.para;
+  newPara.innerHTML = articleData.para;
 
   newDiv.appendChild(newPara);
 
