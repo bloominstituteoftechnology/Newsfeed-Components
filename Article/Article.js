@@ -22,8 +22,6 @@ class Article {
     } else {
       event.target.innerHTML = "Expand"
     }
-
-
     console.log(event);
   }
 

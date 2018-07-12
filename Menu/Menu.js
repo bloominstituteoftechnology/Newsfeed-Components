@@ -2,35 +2,48 @@
 const toggleMenu = () => {
   // Toggle the "menu--open" class on your menu refence.
   console.log("menuButton clicked");
+  leftMenu.classList.add('leftMenuOpen');
 
   //show menu when clicked
   menu.classList.toggle("menu--open");
-  TweenMax.to(menu, 1, {ease: Power4.easeOut, x: 250, } );
-  
+  console.log(menu.classList)
+  TweenMax.to(menu, 2, {ease: Power4.easeOut, x: 250, } );
 
   //hide menu when mouse leaves
   articles2.addEventListener('mouseover', (event) => {
     console.log("mouseover articles2")
-    TweenMax.to(menu, 1, {x: -25})
+    TweenMax.to(menu, .2, {x: -25})
   });
+}
 
+const toggleLeftMenu = () => {
+  console.log("toggleLeftMenu function invoked")
+  leftMenu.classList.add("leftMenuOpen")
 }
 
 const blurPage = () => {
-  console.log("blurPage function invoked")
-  articles2.classlist.toggle("articles-while-menu")
+  console.log(articles2.classList + " blurPage function invoked");
+  articles2.classlist.toggle("articlesWhileMenu");
+  console.log("blurPage function executed");
 }
 
+const articleHover = () => {
+  console.log(article2)
+  leftMenu.classList.toggle("menu--open")
+}
 
-
-// Start Here: Create a reference to the ".menu" class
+// A reference to the ".menu" class
 const articles2 = document.querySelector(".articles");
-
+const article2 = document.querySelector(".article")
 const menu = document.querySelector(".menu");
-// create a reference to the ".menu-button" class
-
 const menuButton = document.querySelector(".menu-button");
+const leftMenu = document.querySelector(".leftMenu");
 
-menuButton.addEventListener("click", toggleMenu)
-// Using your menuButton reference, add a click handler that calls toggleMenu
-menuButton.addEventListener('click', blurPage)
+
+// Listeners
+
+menuButton.addEventListener("click", toggleMenu);
+menuButton.addEventListener("click", blurPage);
+menuButton.addEventListener("click", toggleLeftMenu);
+article2.addEventListener("mouseover", articleHover);
+leftMenu.addEventListener("mouseover", toggleMenu)
