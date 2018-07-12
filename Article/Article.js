@@ -19,7 +19,7 @@ class Article {
     this.element.classList.toggle('article-open');
   }
   removeArticle(){
-    event.target.style.visibility = 'hidden';
+    event.target.remove();
   }
 }
 
