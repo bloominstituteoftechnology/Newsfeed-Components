@@ -5,6 +5,7 @@
   <head>
     <title>Lambda School Newsfeed</title>
     <link rel="stylesheet" type="text/css" media="screen" href="./CSS/index.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
     <script src="./Menu/Menu.js" async></script>
     <script src="./Article/Article.js" async></script>
   </head>
@@ -13,14 +14,15 @@
       <img class="menu-button" src="./assets/menu.png"/>
       <h1>Lambda School Newsfeed</h1>
     </div>
+    <div class="opacity"></div>
     <div class="menu">
-      <ul>
-        <li>Students</li>
-        <li>Faculty</li>
-        <li>What's New</li>
-        <li>Tech Trends</li>
-        <li>Music</li>
-        <li>Log Out</li>
+      <ul class="menu-items">
+        <li class="menu-item"><span class="menu-item__button">Students</span></li>
+        <li class="menu-item"><span class="menu-item__button">Faculty</span></li>
+        <li class="menu-item"><span class="menu-item__button">What's New</span></li>
+        <li class="menu-item"><span class="menu-item__button">Tech Trends</span></li>
+        <li class="menu-item"><span class="menu-item__button">Music</span></li>
+        <li class="menu-item"><span class="menu-item__button">Log Out</span></li>
       </ul>
     </div>
     <div class="articles">
