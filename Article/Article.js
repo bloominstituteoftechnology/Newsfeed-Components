@@ -31,7 +31,6 @@ class Article {
       TweenMax.to(this.element, 2.5, { ease: Bounce.easeInOut, y: -500 });
     }
     
-    
     expandArticle() {
       // Using our reference to the article element, add or remove a class to expand or hide the article.
       this.classList.toggle("article-open");
