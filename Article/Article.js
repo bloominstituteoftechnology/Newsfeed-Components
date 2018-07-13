@@ -45,44 +45,90 @@ let articles = document.querySelectorAll(".article");
 articles = Array.from(articles).map( article => new Article(article));
 
 
-// First element of Nav
+
+
+
+
+
+
+
+
+// === Stretch ===
 let submitFormButton = document.querySelector('.submitFormButton');
 
-// submitFormButton.addEventListener("click", (event) => {
-//   // stopping bubbling
-//   event.stopPropagation();
-//   // Changes inner text of Nav to say Hey
-//   articlesElement = document.querySelector(".article");
-//   articleAdditionText = document.createElement("h2")
-//   event.articleAdditionText.innerHTML = "Test";
-//   event.articlesElement.appendChild(articleAdditionText);
-// })
 
-let articleHTML = document.createElement('div');
+// function addArticle() {
+//   let articleHTML = document.createElement('div');
 
-articleHTML.className = 'article';
+//   articleHTML.className = 'article';
 
-articleHTML.innerHTML = 
-  "<div class='article'>\
-  <h2>Lambda School Students: 'We're the best!'</h2>\
-  <p class='date'>Nov 5th, 2017</p>\
-  <p>Lucas ipsum dolor sit amet ben twi'lek padmé darth darth darth moff hutt organa twi'lek. Ben amidala secura skywalker lando\
-  moff wicket tatooine luke. Solo wampa wampa calrissian yoda moff. Darth grievous darth gonk darth hutt. Darth baba skywalker\
-  watto fett jango maul han. Mon ewok sidious sidious lando kenobi grievous gamorrean solo. Yoda wedge utapau darth calamari.\
-  Hutt calamari darth jabba. Darth dooku amidala organa moff. Boba darth binks solo hutt skywalker dantooine skywalker. Qui-gonn\
-  jar twi'lek jinn leia jango skywalker mon. </p>\
-  <p>Grievous fett calamari anakin skywalker hutt. Alderaan darth kenobi darth r2-d2\
-  windu mothma. Sidious darth calamari moff. Wampa mothma sith wedge solo mara. Darth gonk maul sith moff chewbacca palpatine\
-  mace amidala. C-3po solo skywalker anakin yoda leia. Maul wampa bespin watto jade ewok darth jabba. Lando dantooine moff\
-  k-3po dantooine luke. Fisto mandalore darth wedge c-3p0 ahsoka. Secura moff palpatine fett. Anakin sith darth darth. Moff\
-  solo leia ben ponda jade. Binks jango aayla skywalker skywalker cade. Mustafar darth ventress anakin watto. Yavin jawa sebulba\
-  owen jinn tatooine sith organa.</p>\
-  <p>Dagobah hutt jawa leia calamari ventress skywalker yoda. Binks wicket hutt coruscant sidious\
-  naboo ackbar tatooine. Hutt lars padmé darth. Maul solo darth darth jabba qui-gon chewbacca darth maul. Moff baba wicket\
-  han. C-3po antilles moff qui-gon ahsoka aayla dooku amidala. Palpatine droid amidala droid k-3po twi'lek padmé wookiee. Leia\
-  moff calamari mon obi-wan. Solo grievous lando coruscant. Jinn darth palpatine obi-wan mon.</p>\
-  <span class='expandButton'></span>\
-  <span class='launchButton'></span>\
-</div>";
+//   articleHTML.innerHTML = 
+//     "<div class='article'>
+//     <h2>Lambda School Students: 'We're the best!'</h2>
+//     <p class='date'>Nov 5th, 2017</p>
+//     <p>Lucas ipsum dolor sit amet ben twi'lek padmé darth darth darth moff hutt organa twi'lek. Ben amidala secura skywalker lando
+//     moff wicket tatooine luke. Solo wampa wampa calrissian yoda moff. Darth grievous darth gonk darth hutt. Darth baba skywalker
+//     watto fett jango maul han. Mon ewok sidious sidious lando kenobi grievous gamorrean solo. Yoda wedge utapau darth calamari.
+//     Hutt calamari darth jabba. Darth dooku amidala organa moff. Boba darth binks solo hutt skywalker dantooine skywalker. Qui-gonn
+//     jar twi'lek jinn leia jango skywalker mon. </p>
+//     <p>Grievous fett calamari anakin skywalker hutt. Alderaan darth kenobi darth r2-d2
+//     windu mothma. Sidious darth calamari moff. Wampa mothma sith wedge solo mara. Darth gonk maul sith moff chewbacca palpatine
+//     mace amidala. C-3po solo skywalker anakin yoda leia. Maul wampa bespin watto jade ewok darth jabba. Lando dantooine moff
+//     k-3po dantooine luke. Fisto mandalore darth wedge c-3p0 ahsoka. Secura moff palpatine fett. Anakin sith darth darth. Moff
+//     solo leia ben ponda jade. Binks jango aayla skywalker skywalker cade. Mustafar darth ventress anakin watto. Yavin jawa sebulba
+//     owen jinn tatooine sith organa.</p>
+//     <p>Dagobah hutt jawa leia calamari ventress skywalker yoda. Binks wicket hutt coruscant sidious
+//     naboo ackbar tatooine. Hutt lars padmé darth. Maul solo darth darth jabba qui-gon chewbacca darth maul. Moff baba wicket
+//     han. C-3po antilles moff qui-gon ahsoka aayla dooku amidala. Palpatine droid amidala droid k-3po twi'lek padmé wookiee. Leia
+//     moff calamari mon obi-wan. Solo grievous lando coruscant. Jinn darth palpatine obi-wan mon.</p>
+//     <span class='expandButton'></span>\
+//     <span class='launchButton'></span>\
+//   </div>";
 
-document.querySelector(".articles").appendChild(articleHTML);
+//   document.querySelector(".articles").appendChild(articleHTML);
+// }
+
+class ArticleAdd {
+  constructor(element) {
+    this.article = element;
+    this.articleDiv = document.createElement('div');
+    this.articleDiv.className = 'article';
+    this.article.appendChild(this.articleDiv);
+    // create a reference to the ".tabs-link" class nested in your tab object
+    this.articles = this.article.querySelectorAll(".article"); 
+  //   // console.log(this.links) works
+  //   // This step will map over the array creating new TabsLink class instances of each link.  No need to update anything here, just study what is going on.  Notice that we are creating another new object using the TabsLink class.
+  //   this.links = Array.from(this.links).map( link => {
+  //     console.log(this)
+  //     return new TabsLink(link, this);
+  //   });
+  //   // console.log(this.links)
+  //   // Set the active link to the first item in the array
+  //   this.activeLink = this.links[0];
+  //   // Nothing to update here, just notice we are invoking the init() method
+  //   this.init();
+  // }
+
+  // init() { 
+  //   // invoke the method select() on activeLink
+  //   this.activeLink.select();
+  // }
+
+  // updateActive(newActive) {
+  //   // invoke the method deselect() on activeLink
+  //   this.activeLink.deselect();
+  //   // assign this.activeLink to the new active link (newActive)
+  //   this.activeLink = newActive;
+  // }
+
+  // getTab(data) {
+  //   // return a reference to the element's data attribute
+  //   return this.element.querySelector(`.tabs-item[data-tab="${data}"]`);
+  // }
+
+}}
+
+let articles2 = document.querySelectorAll(".articles");
+// map through each tabs element and create a new Tabs object.  Be sure to pass in a reference to the tab when creating the Tabs object.
+articles2 = Array.from(articles2).map( article => new ArticleAdd(article));
+
