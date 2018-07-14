@@ -40,7 +40,7 @@ let articles = document.querySelectorAll('.articles .article');
 articles = Array.from(articles).map(article => new Article(article));
 
 
-const ArticleConstructor = function(head = 'Title', dateIn = new Date().toLocaleString('en-US'), text = 'filler') {
+const ArticleConstructor = function(head, dateIn, text) {
   let article = document.createElement('div');
   let title = document.createElement('h2');
   let date = document.createElement('p');
@@ -66,3 +66,15 @@ const ArticleConstructor = function(head = 'Title', dateIn = new Date().toLocale
 
   new Article(article);
 }
+
+let submit = document.querySelector('.addForm .submit');
+
+submit.addEventListener('click', e => {
+  const title = document.querySelector('#title-input').value;
+  const date = document.querySelector('#date-input').value;
+  const content = document.querySelector('#content-input').value;
+
+  e.preventDefault();
+
+  new ArticleConstructor(title, date, content);
+})

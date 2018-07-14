@@ -67,8 +67,28 @@
     display: block;
   }
 
+  input {
+    margin: 5px 0;
+    
+    &:nth-child(2) {
+      width: 300px;
+    }
+    &:nth-child(4) {
+      width: 500px;
+    }
+  }
+
   #content-input {
-    display: block;
-    width: 1000px;
+    width: 100%;
+    padding-bottom: 200px;
+  }
+
+  .submit {
+    border-radius: 5%;
+    padding: 2px auto;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 }

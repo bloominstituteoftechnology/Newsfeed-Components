@@ -122,9 +122,25 @@
 .addForm h2 {
   display: block;
 }
-.addForm .content-input {
-  display: block;
-  width: 1000px;
+.addForm input {
+  margin: 5px 0;
+}
+.addForm input:nth-child(2) {
+  width: 300px;
+}
+.addForm input:nth-child(4) {
+  width: 500px;
+}
+.addForm #content-input {
+  width: 100%;
+  padding-bottom: 200px;
+}
+.addForm .submit {
+  border-radius: 5%;
+  padding: 2px auto;
+}
+.addForm .submit:hover {
+  cursor: pointer;
 }
 html,
 body {
