@@ -1,5 +1,4 @@
 // Start at `let articles`
-
 class Article {
   constructor(element) {
     // assign this.element to the passed in article element
@@ -9,8 +8,8 @@ class Article {
     // Using your expandButton reference, update the text on your expandButton to say "expand"
     this.expandButton.TextContent = "Expand";
     // Set a click handler on the expandButton reference (or article element), calling the expandArticle method.
-    this.expandButton.addEventListener('click', () => {
-      expandArticle();
+    this.expandButton.addEventListener('click', (e) => {
+      e.expandArticle();
     })
   }
 
@@ -25,3 +24,5 @@ let articles = document.querySelectorAll(".article");
 
 // Use .map() to iterate over the articles array and create a new instance of Article by passing in each article element as a parameter to the constructor.
 articles = Array.from(articles).map(article => new Article(article));
+
+articles
