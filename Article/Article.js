@@ -74,12 +74,12 @@ function showArticleCreation() {
 
   // Show
   if (cArtTog === 0) {
-    TweenMax.to(articleCreation, 0.6, {opacity: 1, ease: Power2.easeIn});
+    TweenMax.to(articleCreation, 0.6, {height: 300 +'px', opacity: 1, ease: Power2.easeIn});
     cArtTog ++;
   }
   // Hide
   else if (cArtTog === 1) {
-    TweenMax.to(articleCreation, 0.6, {opacity: 0, ease: Power2.easeIn});
+    TweenMax.to(articleCreation, 0.6, {height: 0 + 'px', opacity: 0, ease: Power2.easeIn});
     cArtTog--;
   }
 }
