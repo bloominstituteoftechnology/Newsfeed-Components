@@ -30,6 +30,20 @@
   position: fixed;
   top: 0;
   z-index: 2;
+  animation-name: pulse;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+}
+@keyframes pulse {
+  0% {
+    background-color: #388E3C;
+  }
+  50% {
+    background-color: lightgreen;
+  }
+  100% {
+    background-color: #388E3C;
+  }
 }
 .header h1 {
   margin: 0;
