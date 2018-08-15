@@ -10,3 +10,13 @@ const menu = document.querySelector('.menu');
 const menuButton = document.querySelector('.menu-button');
 // Using your menuButton reference, add a click handler that calls toggleMenu
 menuButton.addEventListener('click', toggleMenu);
+
+const action = new TimelineMax({paused: true})
+
+action.to('.menu', 1, {x:-87.5, y: -182, scale:.5});
+
+const play = document.querySelector("#play");
+
+play.onclick = function() {
+  action.play();
+}
