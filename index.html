@@ -4,8 +4,10 @@
   <head>
     <title>Lambda School Newsfeed</title>
     <link rel="stylesheet" type="text/css" media="screen" href="./CSS/index.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
     <script src="./Menu/Menu.js" async></script>
     <script src="./Article/Article.js" async></script>
+
   </head>
   <body>
     <div class="header">
@@ -24,6 +26,7 @@
     </div>
     <div class="articles">
       <div class="article">
+        <span class='closeButton'>Already Read</span>
         <h2>Lambda School Students: "We're the best!"</h2>
         <p class="date">Nov 5th, 2017</p>
 
@@ -60,7 +63,7 @@
         wand, spectacles House Cup Bertie Bott’s Every Flavor Beans Impedimenta. Stunning spells tap-dancing spider Slytherin’s Heir
         mewing kittens Remus Lupin. Palominos scarlet train black robes, Metamorphimagus Niffler dead easy second bedroom. Padma
         and Parvati Sorting Hat Minister of Magic blue turban remember my last.</p>
-        <span class='expandButton'></span>
+        <span class='expandButton'></span><span class='closeButton'>Already Read</span>
       </div>
       <div class="article">
         <h2>React vs Angular vs Vue</h2>
@@ -86,7 +89,7 @@
         adipiscing elit. Nidorina Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nidoqueen Lorem ipsum dolor sit amet,
         consectetur adipiscing elit. Nidoran Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nidorino Lorem ipsum dolor
         sit amet, consectetur adipiscing elit. Nidoking Lorem ipsum</p>
-        <span class='expandButton'></span>
+        <span class='expandButton'></span><span class='closeButton'>Already Read</span>
       </div>
       <div class="article">
         <h2>Professional Software Development in 2018</h2>
@@ -109,8 +112,47 @@
           hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
           hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
           hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? </p>
-        <span class='expandButton'></span>
+        <span class='expandButton'></span><span class='closeButton'>Already Read</span>
       </div>
+      <div class="article">
+          <h2>Bamboo is Good!</h2>
+          <p class="date">Nov 7th, 1995</p>
+          <p>You see that bamboo behind me though, you see that bamboo? Ain’t nothin’ like bamboo. Bless up. They never said winning was easy. Some people can’t handle success, I can. Life is what you make it, so let’s make it. The key to more success is to have a lot of pillows. Egg whites, turkey sausage, wheat toast, water. Of course they don’t want us to eat our breakfast, so we are going to enjoy our breakfast. Let me be clear, you have to make it through the jungle to make it to paradise, that’s the key, Lion! Surround yourself with angels, positive energy, beautiful people, beautiful souls, clean heart, angel.
+          </p>
+          
+          <p>Egg whites, turkey sausage, wheat toast, water. Of course they don’t want us to eat our breakfast, so we are going to enjoy our breakfast. Surround yourself with angels. Major key, don’t fall for the trap, stay focused. It’s the ones closest to you that want to see you fail. You smart, you loyal, you a genius. Fan luv. Stay focused. You do know, you do know that they don’t want you to have lunch. I’m keeping it real with you, so what you going do is have lunch.
+          </p>
+          
+          <p>
+              Special cloth alert. We the best. Let me be clear, you have to make it through the jungle to make it to paradise, that’s the key, Lion! Always remember in the jungle there’s a lot of they in there, after you overcome they, you will make it to paradise. Surround yourself with angels, positive energy, beautiful people, beautiful souls, clean heart, angel. To succeed you must believe. When you believe, you will succeed. You do know, you do know that they don’t want you to have lunch. I’m keeping it real with you, so what you going do is have lunch. Major key, don’t fall for the trap, stay focused. It’s the ones closest to you that want to see you fail.
+            </p>
+  
+          <p>
+              The key to more success is to get a massage once a week, very important, major key, cloth talk. Let me be clear, you have to make it through the jungle to make it to paradise, that’s the key, Lion! Eliptical talk. Hammock talk come soon. You do know, you do know that they don’t want you to have lunch. I’m keeping it real with you, so what you going do is have lunch. Let’s see what Chef Dee got that they don’t want us to eat. The first of the month is coming, we have to get money, we have no choice. It cost money to eat and they don’t want you to eat.
+          </p>
+          <span class='expandButton'></span><span class='closeButton'>Already Read</span>
+        </div>
+        <div class="article">
+            <h2>BATMAN IPSUM IS AMAZING IPSUM</h2>
+            <p class="date">BATMAN ERA</p>
+            <p>
+                You wanna know how I got these scars? My father was... a drinker, and a fiend. And one night, he goes off crazier than usual. Mommy gets the kitchen knife to defend herself. He doesn't like that, not one bit. So, me watching he takes the knife to her, laughing while he does it. He turns to me and he says: "Why so serious?". He comes at me with the knife "Why so serious?". He sticks the blade in my mouth. "Let's put a smile on that face." and... Why so serious?
+            </p>
+            
+            <p>
+                Every year, I took a holiday. I went to Florence, this cafe on the banks of the Arno. Every fine evening, I would sit there and order a Fernet Branca. I had this fantasy, that I would look across the tables and I would see you there with a wife maybe a couple of kids. You wouldn't say anything to me, nor me to you. But we would both know that you've made it, that you were happy. I never wanted you to come back to Gotham. I always knew there was nothing here for you except pain and tragedy and I wanted something more for you than that. I still do.
+            </p>
+            
+            <p>
+                No, no, no. A vigilante is just a man lost in scramble for his own gratification. He can be destroyed or locked up. But if you make yourself more than just a man, if you devote yourself to an idel and if they can't stop you then you become something else entirely. Legend, Mr Wayne.
+              </p>
+    
+            <p>
+              You wanna know how I got them? So I had a wife. She was beautiful, like you, who tells me I worry too much, who tells me I ought to smile more, who gambles and gets in deep with the sharks. Hey. One day they carve her face. And we have no money for surgeries. She can't take it. I just wanna see her smile again. I just want her to know that I don't care about the scars. So, I do this to myself. And you know what? She can't stand the sight of me. She leaves. Now I see the funny side. Now I'm always smiling.
+              </p>
+            <span class='expandButton'></span><span class='closeButton'>Already Read</span>
+          </div>
+      
     </div>
   </body>
 </html>
