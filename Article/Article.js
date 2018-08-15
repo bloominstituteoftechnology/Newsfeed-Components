@@ -10,6 +10,10 @@ class Article {
     this.expandButton.innerText = 'Click to Open';
     // Set a click handler on the expandButton reference (or article element), calling the expandArticle method.
     this.expandButton.addEventListener('click', this.expandArticle);
+
+    // Add a button that removes article when marked as read
+    this.readButton = this.element.querySelector('.read');
+    this.readButton.addEventListener('click', this.markAsRead);
   }
   expandArticle() {
     // Using our reference to the article element, add or remove a class to expand or hide the article.
@@ -19,8 +23,15 @@ class Article {
     } else {
       event.currentTarget.innerText = 'Click to Open';
     }
-    
     event.preventDefault();
+  }
+
+  markAsRead(){
+    event.currentTarget.parentNode.classList.add('article-remove');
+    let closer = event.currentTarget.parentNode;
+    setTimeout(function(){
+      closer.style.display = 'none';
+    }, 1000);
   }
 }
 

@@ -80,6 +80,8 @@
   overflow: hidden;
   box-shadow: 2px 2px 2px lightgrey;
   transition: max-height 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+  opacity: 1;
 }
 .article h2 {
   font-size: 28px;
@@ -110,6 +112,20 @@
 .article-open {
   max-height: 400px;
   transition: max-height 1s ease-in-out;
+}
+.read {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 10px;
+  margin-right: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 2px;
+}
+.article-remove {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
 html,
 body {
