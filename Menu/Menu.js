@@ -13,3 +13,9 @@ menuButton.addEventListener('click', function(event){
   event.preventDefault();
 });
 
+let page = document.querySelector('.articles');
+page.addEventListener('click', function(event){
+  if(menu.classList.contains('menu--open')){
+    toggleMenu();
+  }
+});
