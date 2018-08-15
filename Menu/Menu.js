@@ -3,10 +3,10 @@ let menuOpen = false;
 const toggleMenu = () => {
   // If the menu is open, slide it closed, if its closed, slide it open
   if (menuOpen) {
-    TweenMax.to(menu, 1.5, {x:0});
+    TweenMax.to(menu, 1, {x:0});
     menuOpen = false;
   } else {
-    TweenMax.to(menu, 1.5, {x:350});
+    TweenMax.to(menu, 1, {x:350});
     menuOpen = true;
   }
 }
