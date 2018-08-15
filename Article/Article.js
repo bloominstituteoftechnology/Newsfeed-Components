@@ -8,14 +8,20 @@ class Article {
     this.element = element;
     // create a reference to the ".expandButton" class. 
     this.expandButton = this.element.querySelector('.expandButton');
+    this.readButton = this.element.querySelector('.readButton');
     // Using your expandButton reference, update the text on your expandButton to say "expand"
     
     if (this.expandButton) {
       this.expandButton.innerText = 'Click to Expand';
     }
+
+    if (this.readButton) {
+      this.readButton.innerText = 'Click To Mark As Read';
+    }
     
     // Set a click handler on the expandButton reference (or article element), calling the expandArticle method.
     this.expandButton.addEventListener('click', this.expandArticle.bind(this));
+    this.readButton.addEventListener('click', this.removeArticle.bind(this));
     
   }
 
@@ -35,6 +41,10 @@ class Article {
       articleTog--;
     }
 
+  }
+
+  removeArticle() {
+    this.element.parentNode.removeChild(this.element);
   }
 }
 
