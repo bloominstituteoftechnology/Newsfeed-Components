@@ -99,13 +99,28 @@
   transform: translate(-50%);
   background-color: white;
 }
-.article-open {
-  height: 400px;
-}
 html,
 body {
   margin: 0;
   padding: 0;
   font-family: 'Roboto';
   background-color: #fffef7;
+}
+html .articles .article .close-btn,
+body .articles .article .close-btn {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  border: 1px solid white;
+  background-color: black;
+  color: white;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 15px;
+}
+html .articles .article .close-btn:hover,
+body .articles .article .close-btn:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
 }
