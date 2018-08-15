@@ -23,7 +23,6 @@ class Article {
     } else {
       event.currentTarget.innerText = 'Click to Open';
     }
-    event.preventDefault();
   }
 
   markAsRead(){

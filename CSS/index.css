@@ -79,8 +79,7 @@
   max-height: 50px;
   overflow: hidden;
   box-shadow: 2px 2px 2px lightgrey;
-  transition: max-height 1s ease-in-out;
-  transition: opacity 1s ease-in-out;
+  transition: max-height 1s ease-in-out, opacity 1s ease-in-out;
   opacity: 1;
 }
 .article h2 {
@@ -111,7 +110,7 @@
 }
 .article-open {
   max-height: 400px;
-  transition: max-height 1s ease-in-out;
+  transition: max-height 1s ease-in-out, opacity 1s ease-in-out;
 }
 .read {
   position: absolute;
