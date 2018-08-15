@@ -44,7 +44,7 @@
   display: none;
   position: fixed;
   top: 75px;
-  left: -350px;
+  left: 0;
   width: 350px;
   height: 100vh;
   /* This give the height 100% of the screen or, '100% of View Height' */
@@ -54,14 +54,12 @@
   border-bottom: none;
   z-index: 2;
   /* This set the layer level ofthe element, it has precendence over initial level of 1*/
-  animation: pulse 1s;
 }
 .menu ul li {
   list-style-type: none;
   font-size: 32px;
   padding: 30px 0;
   text-align: center;
-  animation: pulse 1s;
 }
 .menu-open {
   display: block;
@@ -76,21 +74,6 @@
   100% {
     left: 0px;
     top: 75px;
-  }
-}
-.menu-close {
-  animation-name: menu-slideout;
-  animation-duration: 1s;
-}
-@keyframes menu-slideout {
-  0% {
-    left: 0px;
-    top: 75px;
-  }
-  100% {
-    left: -350px;
-    top: 75px;
-    display: none;
   }
 }
 .articles {
