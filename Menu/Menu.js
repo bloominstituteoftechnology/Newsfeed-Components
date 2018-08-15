@@ -14,3 +14,6 @@ const menuButton = document.querySelector('.menu-button');
 menuButton.addEventListener('click', () => {
   toggleMenu();
 })
+
+TweenMax.from(".menu", 2, {x:-600, opacity:0})
+TweenMax.staggerFrom(".menu li", 1, {x:-600, opacity: 0}, 0.2)
