@@ -48,15 +48,15 @@ body {
   cursor: pointer;
 }
 .menu {
-  display: none;
+  display: block;
   position: fixed;
   top: 75px;
-  left: 0;
+  left: -350px;
   width: 350px;
   height: 100vh;
   /* This give the height 100% of the screen or, '100% of View Height' */
-  background-color: #81C784;
-  border: 1px solid #004D40;
+  background-color: #81c784;
+  border: 1px solid #004d40;
   border-left: none;
   border-bottom: none;
   z-index: 2;
@@ -69,7 +69,7 @@ body {
   text-align: center;
 }
 .menu--open {
-  display: block;
+  left: 0;
 }
 .articles {
   margin-top: 95px;
