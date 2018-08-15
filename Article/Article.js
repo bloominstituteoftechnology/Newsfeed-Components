@@ -2,7 +2,7 @@
 
 class Article {
   constructor(element) {
-    // assign this.element to the passed in article element
+    // assign this.element to the passed in article elementkkkkkkkkkkkkkkkkkkkk
     this.element;
     // create a reference to the ".expandButton" class. 
     this.expandButton;
