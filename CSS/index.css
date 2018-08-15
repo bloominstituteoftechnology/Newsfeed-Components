@@ -63,19 +63,18 @@
 }
 .menu-open {
   display: block;
+  /*
   animation-name: menu-slidein;
   animation-duration: 1s;
+  */
 }
+/*
 @keyframes menu-slidein {
-  0% {
-    left: -350px;
-    top: 75px;
-  }
-  100% {
-    left: 0px;
-    top: 75px;
-  }
+  0%   {left: -350px; top: 75px;}
+  100% { left: 0px; top: 75px;}
 }
+
+*/
 .articles {
   margin-top: 95px;
 }
@@ -117,6 +116,7 @@
 }
 .article-open {
   height: 400px;
+  transition: all 1.3s;
 }
 html,
 body {

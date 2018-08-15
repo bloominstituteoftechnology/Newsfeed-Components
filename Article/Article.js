@@ -15,6 +15,14 @@ class Article {
   expandArticle() {
     // Using our reference to the article element, add or remove a class to expand or hide the article.
     this.element.classList.toggle("article-open");
+    if (menuOpen === false) {
+      this.element.classList.toggle("article-open");
+      TweenMax.fromTo(this.element, 0.3, {height:50}, {height:500});
+      menuOpen = true;
+    } else if(menuOpen === true) {
+      TweenMax.fromTo(this.element, 0.3, {height:500}, {height:50});
+      menuOpen = false;
+    }
   }
 }
 
