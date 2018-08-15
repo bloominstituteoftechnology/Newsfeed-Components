@@ -1,10 +1,11 @@
 
 let menuTog = 0;
 
-const toggleMenu = () => {
+const toggleMenu = (e) => {
   // Toggle the "menu--open" class on your menu refence.
-  // menu.classList.toggle('menu--open');
-  console.log(menuTog);
+  // menu.classList.toggle('menu--open'); // Disabled for stretch goal
+
+  e.stopPropagation();
 
   if (menuTog === 0) {
     enter();
@@ -23,6 +24,18 @@ const menu = document.querySelector('.menu');
 const menuButton = document.querySelector('.menu-button');
 // Using your menuButton reference, add a click handler that calls toggleMenu
 menuButton.addEventListener('click', toggleMenu);
+
+const body = document.querySelector('body');
+
+body.addEventListener('click', exitMenu); 
+
+function exitMenu() {
+  if (menuTog === 1) {
+    out();
+    menuTog--;
+  }
+  
+}
 
 let tl = new TimelineLite({paused:true});
 tl.to(menu, 0.6, {left: 0 + 'px', opacity: 1, ease: Power2.easeIn});
