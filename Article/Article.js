@@ -8,7 +8,7 @@ class Article {
     this.expandButton = document.querySelectorAll('.expandButton');
     // Using your expandButton reference, update the text on your expandButton to say "expand"
     this.expandButton.forEach((element, i) => {
-      this.expandButton[i].innerHTML = 'expand';     
+      this.expandButton[i].innerHTML = 'expand';      
     });
     // Set a click handler on the expandButton reference (or article element), calling the expandArticle method.
     this.element.addEventListener('click', this.expandArticle);
