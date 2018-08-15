@@ -6,15 +6,23 @@ class Article {
     this.article = article;
     this.expandButton = Array.from(this.article.childNodes).filter(child => child.className === "expandButton")[0];
     this.expandButton.innerText = "Expand";
-    this.expandButton.addEventListener('click', this.expandArticle.bind(this));
+    this.expandButton.addEventListener('click', this.expandArticle.bind(this), false );
+    this.article.addEventListener('click', this.closeArticle.bind(this), false);
     // _/ create a reference to the ".expandButton" class.
     // _/ Using your expandButton reference, update the text on your expandButton to say "expand"
     // Set a click handler on the expandButton reference (or article element), calling the expandArticle method.
     
   }
 
+  closeArticle() {
+      console.log(event.target);
+      event.target.parentNode.classList.toggle('article-open');
+  }
+
   expandArticle() {
     // Using our reference to the article element, add or remove a class to expand or hide the article.
+      event.stopPropagation();
+
       console.log(event.target);
       event.target.parentNode.classList.toggle('article-open');
   }
