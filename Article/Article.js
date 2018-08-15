@@ -10,12 +10,12 @@ class Article {
     // Using your expandButton reference, update the text on your expandButton to say "expand"
     this.expandButton.innerHTML = 'expand';
     // Set a click handler on the expandButton reference (or article element), calling the expandArticle method.
-    this.expandButton.addEventListener('click', this.expandArticle);
+    this.expandButton.parentNode.addEventListener('click', this.expandArticle);
   }
 
   expandArticle() {
     // Using our reference to the article element, add or remove a class to expand or hide the article.
-    event.currentTarget.parentNode.classList.toggle('article-open');
+    event.currentTarget.classList.toggle('article-open');
   }
 }
 
