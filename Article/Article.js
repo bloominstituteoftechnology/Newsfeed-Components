@@ -54,11 +54,20 @@ let articles = document.querySelectorAll('.article');
 // Use .map() to iterate over the articles array and create a new instance of Article by passing in each article element as a parameter to the constructor.
 articles = Array.from(articles).map( article => new Article(article));
 
-const submitBtn = document.querySelector('.submit');
-// const articleText = document.querySelector('.article-text').value;
-// const articleTitle = document.querySelector('.article-title').value;
+const createArticleBtn = document.querySelector('.add-new-article');
+const articleCreation = document.querySelector('.article-creation');
+createArticleBtn.addEventListener('click', showArticleCreation);
 
+// Create article
+const submitBtn = document.querySelector('.submit');
 submitBtn.addEventListener('click', postArticle);
+
+const closeBtn = document.querySelector('.close-btn');
+closeBtn.addEventListener('click', showArticleCreation);
+
+function showArticleCreation() {
+  articleCreation.classList.toggle('hide');
+}
 
 class NewArticle {
   constructor(params) {
@@ -105,7 +114,7 @@ class NewArticle {
 function postArticle() {
   const articleText = document.getElementById('article-text').value;
   const articleTitle = document.getElementById('article-title').value;
-  
+
   // Months
   const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
   "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
@@ -174,5 +183,6 @@ function postArticle() {
 
   // Append main element to articles
   document.querySelector('.articles').appendChild(div);
+  articleCreation.classList.toggle('hide');
 
 }

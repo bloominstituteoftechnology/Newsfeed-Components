@@ -68,6 +68,9 @@
 .articles {
   margin-top: 95px;
 }
+.articles .add-new-article {
+  margin-left: 45%;
+}
 .article {
   margin: 20px 10%;
   padding: 0 20px 25px;
@@ -120,31 +123,39 @@
 .article-open {
   height: 400px;
 }
+.hide {
+  display: none;
+}
 .article-creation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -10%;
+  margin-left: -25%;
   width: 50%;
   height: 300px;
-  margin: 50px 0 0 25%;
   padding: 0 20px 25px;
   border: 1px solid lightgrey;
   border-radius: 10px;
   background-color: white;
   box-shadow: 2px 2px 2px lightgrey;
-  z-index: 2;
+  z-index: 3;
 }
 .article-creation .input-area .subject {
   width: 100%;
   display: flex;
-  padding: 2%;
 }
 .article-creation .input-area .subject input {
-  margin-top: 10px;
-  margin-left: 2%;
-  width: 80%;
+  margin: 10px 0 0 2%;
+  width: 100%;
   height: 30px;
 }
 .article-creation .input-area .body-area textarea {
   width: 100%;
   height: 140px;
+}
+.article-creation .input-area .submit {
+  margin-top: 20px;
 }
 html,
 body {
