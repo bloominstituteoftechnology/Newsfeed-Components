@@ -43,17 +43,3 @@ let articles = document.querySelectorAll('.article');
 
 // Use .map() to iterate over the articles array and create a new instance of Article by passing in each article element as a parameter to the constructor.
 articles = Array.from(articles).map( article => new Article(article));
-
-// articles.forEach(elem => {
-//   let tl = new TimelineLite({paused:true});
-//   tl.to(elem, 0.6, {height: 400 + 'px', ease: Power2.easeIn});
-//   elem.animation = tl;
-// });
-
-// function enter() {
-//   this.animation.play();
-// }
-
-// function out() {
-//   this.animation.reverse();
-// }
