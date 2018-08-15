@@ -3,9 +3,9 @@
 class Article {
   constructor(element) {
     // assign this.element to the passed in article element
-    this.element;
+    this.article = this.element;
     // create a reference to the ".expandButton" class. 
-    this.expandButton;
+    this.expandButton = this.item.querySelector('.expandButton');
     // Using your expandButton reference, update the text on your expandButton to say "expand"
     
     // Set a click handler on the expandButton reference (or article element), calling the expandArticle method.
