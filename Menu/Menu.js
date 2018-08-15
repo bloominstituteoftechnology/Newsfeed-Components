@@ -11,9 +11,11 @@ $(".menu-button").click(function(event){
 });
 // This jQuery just allows you to click anywhere on
 // the articles to close the menu.
-$('.articles').click(function(){
+$('body').click(function(){
   $(".menu").animate({width:'hide'},350);
 });
+
+// These are no longer needed.
 // Start Here: Create a reference to the ".menu" class
 // const menu = document.querySelector('.menu');
 // create a reference to the ".menu-button" class
