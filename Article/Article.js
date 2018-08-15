@@ -55,6 +55,8 @@ let articles = document.querySelectorAll('.article');
 // Use .map() to iterate over the articles array and create a new instance of Article by passing in each article element as a parameter to the constructor.
 articles = Array.from(articles).map( article => new Article(article));
 
+
+// NEW ARTICLE AND ARTICLE CREATION
 const createArticleBtn = document.querySelector('.add-new-article');
 const articleCreation = document.querySelector('.article-creation');
 createArticleBtn.addEventListener('click', showArticleCreation);
@@ -63,22 +65,26 @@ createArticleBtn.addEventListener('click', showArticleCreation);
 const submitBtn = document.querySelector('.submit');
 submitBtn.addEventListener('click', postArticle);
 
+// Closes the article creation form
 const closeBtn = document.querySelector('.close-btn');
 closeBtn.addEventListener('click', showArticleCreation);
 
+// Shows and hides the articel creation form
 function showArticleCreation() {
-  // articleCreation.classList.toggle('hide');
 
+  // Show
   if (cArtTog === 0) {
     TweenMax.to(articleCreation, 0.6, {opacity: 1, ease: Power2.easeIn});
     cArtTog ++;
   }
+  // Hide
   else if (cArtTog === 1) {
     TweenMax.to(articleCreation, 0.6, {opacity: 0, ease: Power2.easeIn});
     cArtTog--;
   }
 }
 
+// New Article class
 class NewArticle {
   constructor(params) {
     this.element = params;
@@ -95,11 +101,8 @@ class NewArticle {
   
   }
 
+  // Expand/Contract the article
   expandArticle() {
-    // Using our reference to the article element, add or remove a class to expand or hide the article.
-
-    // this.element.classList.toggle('article-open');
-
     // Animation to expand
     if (articleTog === 0) {
       TweenMax.to(this.element, 0.2, {height: 400 + 'px', ease: Power2.easeIn});
@@ -115,6 +118,7 @@ class NewArticle {
 
   }
 
+  // Remove the article
   removeArticle() {
     this.element.parentNode.removeChild(this.element);
   }
@@ -122,14 +126,14 @@ class NewArticle {
 
 // Post the new article
 function postArticle() {
+  // Get article values from input/textarea forms
   const articleText = document.getElementById('article-text').value;
   const articleTitle = document.getElementById('article-title').value;
 
   // Months
-  const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
-  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
-];
-// get the dates
+  const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+  // get the dates
   let today = new Date();
   let dd = today.getDate();
   let yyyy = today.getFullYear();
