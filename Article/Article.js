@@ -1,6 +1,7 @@
 // Start at `let articles`
 
 let articleTog = 0;
+let cArtTog = 0;
 
 class Article {
   constructor(element) {
@@ -66,7 +67,16 @@ const closeBtn = document.querySelector('.close-btn');
 closeBtn.addEventListener('click', showArticleCreation);
 
 function showArticleCreation() {
-  articleCreation.classList.toggle('hide');
+  // articleCreation.classList.toggle('hide');
+
+  if (cArtTog === 0) {
+    TweenMax.to(articleCreation, 0.6, {opacity: 1, ease: Power2.easeIn});
+    cArtTog ++;
+  }
+  else if (cArtTog === 1) {
+    TweenMax.to(articleCreation, 0.6, {opacity: 0, ease: Power2.easeIn});
+    cArtTog--;
+  }
 }
 
 class NewArticle {
@@ -92,13 +102,13 @@ class NewArticle {
 
     // Animation to expand
     if (articleTog === 0) {
-      TweenMax.to(this.element, 0.6, {height: 400 + 'px', ease: Power2.easeIn});
+      TweenMax.to(this.element, 0.2, {height: 400 + 'px', ease: Power2.easeIn});
       this.expandButton.innerText = 'Click to Close';
       articleTog ++;
     }
     // Animation to close
     else if (articleTog === 1) {
-      TweenMax.to(this.element, 0.6, {height: 50 + 'px', ease: Power2.easeIn});
+      TweenMax.to(this.element, 0.2, {height: 50 + 'px', ease: Power2.easeIn});
       this.expandButton.innerText = 'Click to Expand';
       articleTog--;
     }
@@ -183,6 +193,6 @@ function postArticle() {
 
   // Append main element to articles
   document.querySelector('.articles').appendChild(div);
-  articleCreation.classList.toggle('hide');
+  showArticleCreation();
 
 }

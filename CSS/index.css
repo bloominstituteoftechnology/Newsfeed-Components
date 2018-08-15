@@ -123,15 +123,13 @@
 .article-open {
   height: 400px;
 }
-.hide {
-  display: none;
-}
 .article-creation {
   position: absolute;
   top: 50%;
   left: 50%;
   margin-top: -10%;
   margin-left: -25%;
+  opacity: 0;
   width: 50%;
   height: 300px;
   padding: 0 20px 25px;
