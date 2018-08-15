@@ -1,116 +1,190 @@
 <!-- Do not add anything to the HTML until Part 3 of the project -->
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Lambda School Newsfeed</title>
-    <link rel="stylesheet" type="text/css" media="screen" href="./CSS/index.css" />
-    <script src="./Menu/Menu.js" async></script>
-    <script src="./Article/Article.js" async></script>
-  </head>
-  <body>
-    <div class="header">
-      <img class="menu-button" src="./assets/menu.png"/>
-      <h1>Lambda School Newsfeed</h1>
+
+<head>
+  <title>Lambda School Newsfeed</title>
+  <link rel="stylesheet" type="text/css" media="screen" href="./CSS/index.css" />
+  <script src="./Menu/Menu.js" async></script>
+  <script src="./Article/Article.js" async></script>
+</head>
+
+<body>
+  <div class="header">
+    <img class="menu-button" src="./assets/menu.png" />
+    <h1>Lambda School Newsfeed</h1>
+  </div>
+  <div class="menu">
+    <ul>
+      <li>Students</li>
+      <li>Faculty</li>
+      <li>What's New</li>
+      <li>Tech Trends</li>
+      <li>Music</li>
+      <li>Log Out</li>
+    </ul>
+  </div>
+  <div class="articles">
+    <div class="article">
+      <h2>Lambda School Students: "We're the best!"</h2>
+      <p class="date">Nov 5th, 2017</p>
+
+      <p>Lucas ipsum dolor sit amet ben twi'lek padmé darth darth darth moff hutt organa twi'lek. Ben amidala secura skywalker
+        lando moff wicket tatooine luke. Solo wampa wampa calrissian yoda moff. Darth grievous darth gonk darth hutt. Darth
+        baba skywalker watto fett jango maul han. Mon ewok sidious sidious lando kenobi grievous gamorrean solo. Yoda wedge
+        utapau darth calamari. Hutt calamari darth jabba. Darth dooku amidala organa moff. Boba darth binks solo hutt skywalker
+        dantooine skywalker. Qui-gonn jar twi'lek jinn leia jango skywalker mon. </p>
+
+      <p>Grievous fett calamari anakin skywalker hutt. Alderaan darth kenobi darth r2-d2 windu mothma. Sidious darth calamari
+        moff. Wampa mothma sith wedge solo mara. Darth gonk maul sith moff chewbacca palpatine mace amidala. C-3po solo skywalker
+        anakin yoda leia. Maul wampa bespin watto jade ewok darth jabba. Lando dantooine moff k-3po dantooine luke. Fisto
+        mandalore darth wedge c-3p0 ahsoka. Secura moff palpatine fett. Anakin sith darth darth. Moff solo leia ben ponda
+        jade. Binks jango aayla skywalker skywalker cade. Mustafar darth ventress anakin watto. Yavin jawa sebulba owen jinn
+        tatooine sith organa.</p>
+
+      <p>Dagobah hutt jawa leia calamari ventress skywalker yoda. Binks wicket hutt coruscant sidious naboo ackbar tatooine.
+        Hutt lars padmé darth. Maul solo darth darth jabba qui-gon chewbacca darth maul. Moff baba wicket han. C-3po antilles
+        moff qui-gon ahsoka aayla dooku amidala. Palpatine droid amidala droid k-3po twi'lek padmé wookiee. Leia moff calamari
+        mon obi-wan. Solo grievous lando coruscant. Jinn darth palpatine obi-wan mon.</p>
+      <span class='expandButton'></span>
     </div>
-    <div class="menu">
-      <ul>
-        <li>Students</li>
-        <li>Faculty</li>
-        <li>What's New</li>
-        <li>Tech Trends</li>
-        <li>Music</li>
-        <li>Log Out</li>
-      </ul>
+    <div class="article">
+      <h2>Javascript and You, ES6</h2>
+      <p class="date">Nov 7th, 2017</p>
+      <p>Alohamora wand elf parchment, Wingardium Leviosa hippogriff, house dementors betrayal. Holly, Snape centaur portkey
+        ghost Hermione spell bezoar Scabbers. Peruvian-Night-Powder werewolf, Dobby pear-tickle half-moon-glasses, Knight-Bus.
+        Padfoot snargaluff seeker: Hagrid broomstick mischief managed. Snitch Fluffy rock-cake, 9 ¾ dress robes I must not
+        tell lies. Mudbloods yew pumpkin juice phials Ravenclaw’s Diadem 10 galleons Thieves Downfall. Ministry-of-Magic
+        mimubulus mimbletonia Pigwidgeon knut phoenix feather other minister Azkaban. Hedwig Daily Prophet treacle tart full-moon
+        Ollivanders You-Know-Who cursed. Fawkes maze raw-steak Voldemort Goblin Wars snitch Forbidden forest grindylows wool
+        socks.
+      </p>
+
+      <p>Boggarts lavender robes, Hermione Granger Fantastic Beasts and Where to Find Them. Bee in your bonnet Hand of Glory
+        elder wand, spectacles House Cup Bertie Bott’s Every Flavor Beans Impedimenta. Stunning spells tap-dancing spider
+        Slytherin’s Heir mewing kittens Remus Lupin. Palominos scarlet train black robes, Metamorphimagus Niffler dead easy
+        second bedroom. Padma and Parvati Sorting Hat Minister of Magic blue turban remember my last.</p>
+      <span class='expandButton'></span>
     </div>
-    <div class="articles">
-      <div class="article">
-        <h2>Lambda School Students: "We're the best!"</h2>
-        <p class="date">Nov 5th, 2017</p>
+    <div class="article">
+      <h2>React vs Angular vs Vue</h2>
+      <p class="date">Nov 7th, 2017</p>
 
-        <p>Lucas ipsum dolor sit amet ben twi'lek padmé darth darth darth moff hutt organa twi'lek. Ben amidala secura skywalker lando
-        moff wicket tatooine luke. Solo wampa wampa calrissian yoda moff. Darth grievous darth gonk darth hutt. Darth baba skywalker
-        watto fett jango maul han. Mon ewok sidious sidious lando kenobi grievous gamorrean solo. Yoda wedge utapau darth calamari.
-        Hutt calamari darth jabba. Darth dooku amidala organa moff. Boba darth binks solo hutt skywalker dantooine skywalker. Qui-gonn
-        jar twi'lek jinn leia jango skywalker mon. </p>
+      <p>Bulbasaur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ivysaur Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit. Venusaur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Charmander Lorem ipsum dolor sit
+        amet, consectetur adipiscing elit. Charmeleon Lorem ipsum dolor sit amet, consectetur adipiscing elit. Charizard
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Squirtle Lorem ipsum dolor sit amet, consectetur adipiscing
+        elit. Wartortle Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blastoise Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit. Caterpie Lorem ipsum dolor sit amet, consectetur adipiscing elit. Metapod Lorem ipsum dolor sit
+        amet, consectetur adipiscing elit. Butterfree Lorem ipsum dolor sit amet, consectetur adipiscing elit. Weedle Lorem
+        ipsum dolor sit amet, consectetur adipiscing elit. Kakuna Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Beedrill Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </p>
 
-        <p>Grievous fett calamari anakin skywalker hutt. Alderaan darth kenobi darth r2-d2
-        windu mothma. Sidious darth calamari moff. Wampa mothma sith wedge solo mara. Darth gonk maul sith moff chewbacca palpatine
-        mace amidala. C-3po solo skywalker anakin yoda leia. Maul wampa bespin watto jade ewok darth jabba. Lando dantooine moff
-        k-3po dantooine luke. Fisto mandalore darth wedge c-3p0 ahsoka. Secura moff palpatine fett. Anakin sith darth darth. Moff
-        solo leia ben ponda jade. Binks jango aayla skywalker skywalker cade. Mustafar darth ventress anakin watto. Yavin jawa sebulba
-        owen jinn tatooine sith organa.</p>
-
-        <p>Dagobah hutt jawa leia calamari ventress skywalker yoda. Binks wicket hutt coruscant sidious
-        naboo ackbar tatooine. Hutt lars padmé darth. Maul solo darth darth jabba qui-gon chewbacca darth maul. Moff baba wicket
-        han. C-3po antilles moff qui-gon ahsoka aayla dooku amidala. Palpatine droid amidala droid k-3po twi'lek padmé wookiee. Leia
-        moff calamari mon obi-wan. Solo grievous lando coruscant. Jinn darth palpatine obi-wan mon.</p>
-        <span class='expandButton'></span>
-      </div>
-      <div class="article">
-        <h2>Javascript and You, ES6</h2>
-        <p class="date">Nov 7th, 2017</p>
-        <p>Alohamora wand elf parchment, Wingardium Leviosa hippogriff, house dementors betrayal. Holly, Snape centaur portkey ghost
-        Hermione spell bezoar Scabbers. Peruvian-Night-Powder werewolf, Dobby pear-tickle half-moon-glasses, Knight-Bus. Padfoot
-        snargaluff seeker: Hagrid broomstick mischief managed. Snitch Fluffy rock-cake, 9 ¾ dress robes I must not tell lies. Mudbloods
-        yew pumpkin juice phials Ravenclaw’s Diadem 10 galleons Thieves Downfall. Ministry-of-Magic mimubulus mimbletonia Pigwidgeon
-        knut phoenix feather other minister Azkaban. Hedwig Daily Prophet treacle tart full-moon Ollivanders You-Know-Who cursed.
-        Fawkes maze raw-steak Voldemort Goblin Wars snitch Forbidden forest grindylows wool socks.</p>
-      
-        <p>Boggarts lavender robes, Hermione Granger Fantastic Beasts and Where to Find Them. Bee in your bonnet Hand of Glory elder
-        wand, spectacles House Cup Bertie Bott’s Every Flavor Beans Impedimenta. Stunning spells tap-dancing spider Slytherin’s Heir
-        mewing kittens Remus Lupin. Palominos scarlet train black robes, Metamorphimagus Niffler dead easy second bedroom. Padma
-        and Parvati Sorting Hat Minister of Magic blue turban remember my last.</p>
-        <span class='expandButton'></span>
-      </div>
-      <div class="article">
-        <h2>React vs Angular vs Vue</h2>
-        <p class="date">Nov 7th, 2017</p>
-
-        <p>Bulbasaur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ivysaur Lorem ipsum dolor sit amet, consectetur adipiscing
-        elit. Venusaur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Charmander Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit. Charmeleon Lorem ipsum dolor sit amet, consectetur adipiscing elit. Charizard Lorem ipsum dolor sit amet,
-        consectetur adipiscing elit. Squirtle Lorem ipsum dolor sit amet, consectetur adipiscing elit. Wartortle Lorem ipsum dolor
-        sit amet, consectetur adipiscing elit. Blastoise Lorem ipsum dolor sit amet, consectetur adipiscing elit. Caterpie Lorem
-        ipsum dolor sit amet, consectetur adipiscing elit. Metapod Lorem ipsum dolor sit amet, consectetur adipiscing elit. Butterfree
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Weedle Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Kakuna Lorem ipsum dolor sit amet, consectetur adipiscing elit. Beedrill Lorem ipsum dolor sit amet, consectetur adipiscing
-        elit.</p>
-
-        <p>Pidgey Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pidgeotto Lorem ipsum dolor sit amet, consectetur adipiscing
-        elit. Pidgeot Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rattata Lorem ipsum dolor sit amet, consectetur adipiscing
-        elit. Raticate Lorem ipsum dolor sit amet, consectetur adipiscing elit. Spearow Lorem ipsum dolor sit amet, consectetur adipiscing
-        elit. Fearow Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ekans Lorem ipsum dolor sit amet, consectetur adipiscing
-        elit. Arbok Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pikachu Lorem ipsum dolor sit amet, consectetur adipiscing
-        elit. Raichu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sandshrew Lorem ipsum dolor sit amet, consectetur adipiscing
-        elit. Sandslash Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nidoran Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit. Nidorina Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nidoqueen Lorem ipsum dolor sit amet,
-        consectetur adipiscing elit. Nidoran Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nidorino Lorem ipsum dolor
-        sit amet, consectetur adipiscing elit. Nidoking Lorem ipsum</p>
-        <span class='expandButton'></span>
-      </div>
-      <div class="article">
-        <h2>Professional Software Development in 2018</h2>
-        <p class="date">Nov 7th, 2017</p>
-        <p>Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
-          hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
-          Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? </p>
-        
-        <p>Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
-          hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
-          hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
-          hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? </p>
-        
-        <p>Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
-          Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
-          Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.
-          </p>
-
-        <p>Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
-          hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
-          hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
-          hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? </p>
-        <span class='expandButton'></span>
-      </div>
+      <p>Pidgey Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pidgeotto Lorem ipsum dolor sit amet, consectetur adipiscing
+        elit. Pidgeot Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rattata Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit. Raticate Lorem ipsum dolor sit amet, consectetur adipiscing elit. Spearow Lorem ipsum dolor sit
+        amet, consectetur adipiscing elit. Fearow Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ekans Lorem ipsum
+        dolor sit amet, consectetur adipiscing elit. Arbok Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pikachu
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Raichu Lorem ipsum dolor sit amet, consectetur adipiscing
+        elit. Sandshrew Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sandslash Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit. Nidoran Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nidorina Lorem ipsum dolor sit
+        amet, consectetur adipiscing elit. Nidoqueen Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nidoran Lorem
+        ipsum dolor sit amet, consectetur adipiscing elit. Nidorino Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Nidoking Lorem ipsum</p>
+      <span class='expandButton'></span>
     </div>
-  </body>
+    <div class="article">
+      <h2>Professional Software Development in 2018</h2>
+      <p class="date">Nov 7th, 2017</p>
+      <p>Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor,
+        hodor hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor
+        hodor, hodor. Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor?
+      </p>
+
+      <p>Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor,
+        hodor; hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor.
+        Hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor
+        hodor hodor?! Hodor hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? </p>
+
+      <p>Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor?
+        Hodor! Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor.
+        Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor,
+        hodor hodor. Hodor.
+      </p>
+
+      <p>Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor,
+        hodor; hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor.
+        Hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor
+        hodor hodor?! Hodor hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? </p>
+      <span class='expandButton'></span>
+    </div>
+    <div class="article">
+      <h2>Hell or High Water: The Doom of the West Coast</h2>
+      <p class="date">Nov 7th, 2017</p>
+      <p>Kitsch wayfarers twee yr, shaman polaroid seitan tote bag tbh. Fashion axe subway tile biodiesel, hexagon ennui enamel
+        pin bespoke occupy you probably haven't heard of them cronut cliche pour-over af deep v iceland. Plaid thundercats
+        listicle, fanny pack pug gochujang locavore skateboard. DIY prism XOXO heirloom unicorn cold-pressed portland waistcoat.
+        Small batch meh flannel ramps biodiesel wayfarers viral semiotics kitsch cray jean shorts. Green juice trust fund
+        seitan actually, lyft narwhal echo park. </p>
+
+      <p>Pitchfork wayfarers everyday carry, humblebrag mustache coloring book truffaut cliche flexitarian pork belly photo
+        booth neutra drinking vinegar hammock. You probably haven't heard of them austin hammock VHS. Squid austin banh mi
+        flannel, meggings subway tile raw denim kombucha cold-pressed cronut venmo messenger bag slow-carb. Freegan plaid
+        VHS marfa, pok pok ennui bitters everyday carry PBR&B food truck vice. Hot chicken put a bird on it kogi hell of
+        raw denim authentic knausgaard raclette subway tile YOLO swag tilde scenester kombucha small batch. Shabby chic DIY
+        snackwave woke letterpress air plant photo booth. Post-ironic DIY forage, pork belly PBR&B cred kinfolk echo park
+        taxidermy food truck.</p>
+
+      <p>Schlitz bitters listicle drinking vinegar tilde farm-to-table live-edge health goth. Schlitz everyday carry lo-fi food
+        truck helvetica. Typewriter bushwick cray four loko artisan DIY. YOLO fashion axe banh mi brunch, tattooed keffiyeh
+        artisan distillery etsy hashtag chicharrones PBR&B succulents chartreuse. Irony +1 gentrify tofu hell of pok pok
+        banh mi vexillologist church-key. Post-ironic glossier echo park yr.
+      </p>
+
+      <p>Raclette man bun la croix, helvetica yr mlkshk umami health goth fashion axe sartorial fanny pack. Tumeric readymade
+        3 wolf moon whatever kinfolk hashtag. Knausgaard PBR&B live-edge direct trade fashion axe, poutine taiyaki crucifix
+        hexagon jean shorts. Banjo pinterest godard, pabst keffiyeh butcher everyday carry beard stumptown. Fam mlkshk shoreditch
+        vape retro brooklyn. </p>
+      <span class='expandButton'></span>
+    </div>
+    <div class="article">
+      <h2>Homeless Harbingers: The Semiotic Truthiness of Schizoid Vagrants</h2>
+      <p class="date">Nov 7th, 2017</p>
+      <p>Whiskey sour pall mall bengal balblair cuba libre, glen spey, gummy and coke. Tom and jerry, laphroaig bearded lady
+        chopin pimm's cup. Piscola lagavulin pall mall skyy jack and coke. Martell clynelish lynchburg lemonade, kir royale
+        cointreau skyy grant's gin and tonic jack daniel's. Bull shot grog vodka sundowner vodka sunrise vesper martini ectoplasm;
+        knockeen hills irish poteen. Jagertee jose cuervo polmos krakow amaretto sour negroni joker laphroaig old bushmill's,
+        grog. Glogg bloody mary or bloodball lejon gibson creamsicle manhattan hanky-panky bruichladdich kamikaze.
+      </p>
+
+      <p>20th century lochnagar prince shnell slammer royale sazerac patron pisco sour joker irish coffee. Glen moray dickel,
+        planter's punch chi-chi salty dog sake bomb sea breeze. Salty dog cardhu, springbank chivas regal chimayó cocktail
+        house of lords. Seagrams dark and stormy: ketel one nog-a-sake caribou lou. Moonwalk balmenach police gazette, caipiroska
+        cape cod bruichladdich dark and stormy. Sidecar myers royal bermuda cocktail savoy affair: black russian.</p>
+
+      <p>The last word glen grant, irish flag aberlour; belvedere, cape cod bloody mary or bloodball seven and seven. Salty
+        dog black & white glengoyne kamikaze northern comfort lochnagar french 75 gin and tonic murphy's grog. Jack daniel's
+        springbank lynchburg lemonade polmos krakow jack daniel's painkiller glenmorangie kensington court special harper's
+        aviation, nikolaschka; strega, clynelish, monte alban. The blenheim: johnny walker black bladnoch chocolate soldier
+        spritzer? Captain morgan; brandy sour old etonian mannochmore cosmopolitan macduff dalwhinnie lord calvert glenmorangie
+        screwdriver pegu tinto de verano.
+      </p>
+
+      <p>Courvoisier, cosmopolitan general sherman smirnoff jim beam gin and tonic, strathmill, kir saketini whiskey sour murphy's
+        screwdriver haig & haig "pinch. Hayride craigellachie tormore tonic and tequila mudslide speyside sazerac brackla.
+        Spritzer fettercairn fleischmann's kilchoman pink gin ballantine nog-a-sake crown royal, flirtini, spanish coffee
+        jameson chi-chi gin sour batida. Snowball chartreuse, northern comfort jack and coke kamikaze sea breeze glen keith
+        daiquiri fleischmann's harrogate nights sazerac four score chocolate soldier. Tonic and tequila, bourbon lancer brandy
+        manhattan coronet vso vodka gimlet. Black cossack gordon's dewar's scotch whisky glen spey aultmore lynchburg lemonade
+        colombia jose cuervo mickey slim. Grant's hi-fi sambuca brave bull tequila slammer aberlour white lady or delilah!
+        Wolfram pepe lopez brandy sour; kalimotxo painkiller: tom and jerry agent orange paradise mimosa bruichladdich glenfiddich
+        rose kennedy cocktail.
+
+      </p>
+      <span class='expandButton'></span>
+    </div>
+  </div>
+</body>
+
 </html>
