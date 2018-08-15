@@ -30,7 +30,30 @@ let articles = document.querySelectorAll('.article');
 // Use .map() to iterate over the articles array and create a new instance of Article by passing in each article element as a parameter to the constructor.
 articles = Array.from(articles).map(article => new Article(article));
 
-// let buttons = document.querySelectorAll('.button');
+TweenMax.from(".header", 3, {x:-200, rotation: 180, scale:0.1, ease:Bounce.easeOut});
 
-// buttons = Array.from(buttons).map( button => new Button(button));
+
+TweenMax.staggerFrom(".article", 3, {
+  right: -200, 
+  borderColor: "red",
+  padding: 100,
+  rotation: 360,
+  delay: 3,
+}, .4)
+
+
+TweenMax.to(".header, .article", 3, {opacity: 0, delay: 8});
+
+TweenMax.from(".header", 3, {opacity: 1, delay: 11});
+
+TweenMax.staggerFrom(".article", 6, {opacity: 1, delay: 11, rotation: -360 }, .4);
+
+TweenMax.from(".article", .5, {delay: 18.5, onComplete:complete })
+
+function complete(){
+  alert("that was fun");
+  document.querySelector('.header').style.backgroundColor = 'red';
+}
+
+
 
