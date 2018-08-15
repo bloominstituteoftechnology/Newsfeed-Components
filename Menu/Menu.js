@@ -1,7 +1,14 @@
+let menuOpen = false;
 
 const toggleMenu = () => {
-  // Toggle the "menu--open" class on your menu refence.
-  menu.classList.toggle("menu--open");
+  // If the menu is open, slide it closed, if its closed, slide it open
+  if (menuOpen) {
+    TweenMax.to(menu, 1.5, {x:0});
+    menuOpen = false;
+  } else {
+    TweenMax.to(menu, 1.5, {x:350});
+    menuOpen = true;
+  }
 }
 
 // Start Here: Create a reference to the ".menu" class
@@ -12,3 +19,16 @@ const menuButton = document.querySelector(".menu-button");
 
 // Using your menuButton reference, add a click handler that calls toggleMenu
 menuButton.addEventListener("click", () => toggleMenu());
+
+const articlesClass = document.querySelector(".articles");
+const headerH1 = document.querySelector(".header h1");
+
+articlesClass.addEventListener("click", () => {
+  menuOpen = true;
+  return toggleMenu();
+});
+
+headerH1.addEventListener("click", () => {
+  menuOpen = true;
+  return toggleMenu();
+});
