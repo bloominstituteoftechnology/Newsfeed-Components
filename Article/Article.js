@@ -14,7 +14,17 @@ class Article {
 
   expandArticle() {
     // Using our reference to the article element, add or remove a class to expand or hide the article.
-    event.currentTarget.classList.toggle("article-open");
+    if(event.currentTarget.className.includes("article-open")) {
+      console.log(event.currentTarget.className);
+      event.currentTarget.classList.remove("article-open");
+      TweenLite.to(event.currentTarget, 2.5, { ease: Bounce.easeOut, height: 50});
+    } else {
+      event.currentTarget.classList.add("article-open");
+      TweenLite.set(".article", {clearProps:"all"})
+      TweenLite.from(event.currentTarget, 2, { ease: SlowMo.ease.config(0.7, 0.7, false), height: 50});
+    }
+      
+      //TweenLite.from(".article-open p", 2, {ease: Power1.easeOut, y: -500 });
   }
 }
 
