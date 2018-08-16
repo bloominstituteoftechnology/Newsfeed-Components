@@ -1,6 +1,10 @@
-const toggleMenu = (e) => {
+const toggleMenu = () => {
   // Toggle the "menu--open" class on your menu refence.
     console.log('toggle menu');
+    TweenMax.from(".menu", .3, {opacity: 0, height: 0});
+    TweenMax.to(".menu", .3, {opacity: 1, height: '100%'});
+    TweenMax.from(".menu ul li", .6, {opacity: 0, fontSize: 0});
+    TweenMax.to(".menu ul li", .6 , {opacity: 1, fontSize: 24});
     menu.classList.toggle('menu--open');
     // e.target.parentNode.classList.toggle('menu--open');
 };

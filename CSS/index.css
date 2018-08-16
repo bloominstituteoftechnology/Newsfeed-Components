@@ -52,6 +52,7 @@
   border: 1px solid #004D40;
   border-left: none;
   border-bottom: none;
+  transition: 300ms ease-in-out;
   z-index: 2;
   /* This set the layer level of the element, it has precendence over initial level of 1*/
 }
