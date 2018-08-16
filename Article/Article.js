@@ -1,19 +1,23 @@
 // Start at `let articles`
 
 class Article {
-	constructor(element) {
+	constructor(article) {
 		// assign this.element to the passed in article element
-		this.element = article;
+		this.item = article;
 		// create a reference to the ".expandButton" class.
-		this.expandButton = this.item.querySelector('.article');
+		this.expandButton = this.item.querySelector('.expandButton');
 		// Using your expandButton reference, update the text on your expandButton to say "expand"
 
+		this.expandButton.textContent = 'Expand';
+
 		// Set a click handler on the expandButton reference (or article element), calling the expandArticle method.
+		this.expandButton.addEventListener('click', this.expandArticle);
 	}
 
 	expandArticle() {
 		// Using our reference to the article element, add or remove a class to expand or hide the article.
-		articles.classList.toggle('article-open');
+		event.currentTarget.parentNode.classList.toggle('article-open');
+		// this.expandButton.classList.add('article-open');
 	}
 }
 
