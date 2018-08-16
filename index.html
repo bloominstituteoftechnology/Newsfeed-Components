@@ -1,116 +1,231 @@
 <!-- Do not add anything to the HTML until Part 3 of the project -->
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Lambda School Newsfeed</title>
-    <link rel="stylesheet" type="text/css" media="screen" href="./CSS/index.css" />
-    <script src="./Menu/Menu.js" async></script>
-    <script src="./Article/Article.js" async></script>
-  </head>
-  <body>
-    <div class="header">
-      <img class="menu-button" src="./assets/menu.png"/>
-      <h1>Lambda School Newsfeed</h1>
+
+<head>
+  <title>Lambda School Newsfeed</title>
+  <link rel="stylesheet" type="text/css" media="screen" href="./CSS/index.css" />
+  <script src="./Menu/Menu.js" async></script>
+  <script src="./Article/Article.js" async></script>
+</head>
+
+<body>
+  <div class="header">
+    <img class="menu-button" src="./assets/menu.png" />
+    <h1>Lambda School Newsfeed</h1>
+  </div>
+  <div class="menu">
+    <ul>
+      <li>Students</li>
+      <li>Faculty</li>
+      <li>What's New</li>
+      <li>Tech Trends</li>
+      <li>Music</li>
+      <li>Log Out</li>
+    </ul>
+  </div>
+  <div class="articles">
+    <div class="article">
+      <h2>Lambda School Students: "We're the best!"</h2>
+      <p class="date">Nov 5th, 2017</p>
+
+      <p>Lucas ipsum dolor sit amet ben twi'lek padmé darth darth darth moff hutt organa twi'lek. Ben amidala secura skywalker
+        lando moff wicket tatooine luke. Solo wampa wampa calrissian yoda moff. Darth grievous darth gonk darth hutt. Darth
+        baba skywalker watto fett jango maul han. Mon ewok sidious sidious lando kenobi grievous gamorrean solo. Yoda wedge
+        utapau darth calamari. Hutt calamari darth jabba. Darth dooku amidala organa moff. Boba darth binks solo hutt skywalker
+        dantooine skywalker. Qui-gonn jar twi'lek jinn leia jango skywalker mon. </p>
+
+      <p>Grievous fett calamari anakin skywalker hutt. Alderaan darth kenobi darth r2-d2 windu mothma. Sidious darth calamari
+        moff. Wampa mothma sith wedge solo mara. Darth gonk maul sith moff chewbacca palpatine mace amidala. C-3po solo skywalker
+        anakin yoda leia. Maul wampa bespin watto jade ewok darth jabba. Lando dantooine moff k-3po dantooine luke. Fisto
+        mandalore darth wedge c-3p0 ahsoka. Secura moff palpatine fett. Anakin sith darth darth. Moff solo leia ben ponda
+        jade. Binks jango aayla skywalker skywalker cade. Mustafar darth ventress anakin watto. Yavin jawa sebulba owen jinn
+        tatooine sith organa.</p>
+
+      <p>Dagobah hutt jawa leia calamari ventress skywalker yoda. Binks wicket hutt coruscant sidious naboo ackbar tatooine.
+        Hutt lars padmé darth. Maul solo darth darth jabba qui-gon chewbacca darth maul. Moff baba wicket han. C-3po antilles
+        moff qui-gon ahsoka aayla dooku amidala. Palpatine droid amidala droid k-3po twi'lek padmé wookiee. Leia moff calamari
+        mon obi-wan. Solo grievous lando coruscant. Jinn darth palpatine obi-wan mon.</p>
+      <span class='expandButton'></span>
     </div>
-    <div class="menu">
-      <ul>
-        <li>Students</li>
-        <li>Faculty</li>
-        <li>What's New</li>
-        <li>Tech Trends</li>
-        <li>Music</li>
-        <li>Log Out</li>
-      </ul>
+    <div class="article">
+      <h2>Javascript and You, ES6</h2>
+      <p class="date">Nov 7th, 2017</p>
+      <p>Alohamora wand elf parchment, Wingardium Leviosa hippogriff, house dementors betrayal. Holly, Snape centaur portkey
+        ghost Hermione spell bezoar Scabbers. Peruvian-Night-Powder werewolf, Dobby pear-tickle half-moon-glasses, Knight-Bus.
+        Padfoot snargaluff seeker: Hagrid broomstick mischief managed. Snitch Fluffy rock-cake, 9 ¾ dress robes I must not
+        tell lies. Mudbloods yew pumpkin juice phials Ravenclaw’s Diadem 10 galleons Thieves Downfall. Ministry-of-Magic
+        mimubulus mimbletonia Pigwidgeon knut phoenix feather other minister Azkaban. Hedwig Daily Prophet treacle tart full-moon
+        Ollivanders You-Know-Who cursed. Fawkes maze raw-steak Voldemort Goblin Wars snitch Forbidden forest grindylows wool
+        socks.
+      </p>
+
+      <p>Boggarts lavender robes, Hermione Granger Fantastic Beasts and Where to Find Them. Bee in your bonnet Hand of Glory
+        elder wand, spectacles House Cup Bertie Bott’s Every Flavor Beans Impedimenta. Stunning spells tap-dancing spider
+        Slytherin’s Heir mewing kittens Remus Lupin. Palominos scarlet train black robes, Metamorphimagus Niffler dead easy
+        second bedroom. Padma and Parvati Sorting Hat Minister of Magic blue turban remember my last.</p>
+      <span class='expandButton'></span>
     </div>
-    <div class="articles">
-      <div class="article">
-        <h2>Lambda School Students: "We're the best!"</h2>
-        <p class="date">Nov 5th, 2017</p>
+    <div class="article">
+      <h2>React vs Angular vs Vue</h2>
+      <p class="date">Nov 7th, 2017</p>
 
-        <p>Lucas ipsum dolor sit amet ben twi'lek padmé darth darth darth moff hutt organa twi'lek. Ben amidala secura skywalker lando
-        moff wicket tatooine luke. Solo wampa wampa calrissian yoda moff. Darth grievous darth gonk darth hutt. Darth baba skywalker
-        watto fett jango maul han. Mon ewok sidious sidious lando kenobi grievous gamorrean solo. Yoda wedge utapau darth calamari.
-        Hutt calamari darth jabba. Darth dooku amidala organa moff. Boba darth binks solo hutt skywalker dantooine skywalker. Qui-gonn
-        jar twi'lek jinn leia jango skywalker mon. </p>
+      <p>Bulbasaur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ivysaur Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit. Venusaur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Charmander Lorem ipsum dolor sit
+        amet, consectetur adipiscing elit. Charmeleon Lorem ipsum dolor sit amet, consectetur adipiscing elit. Charizard
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Squirtle Lorem ipsum dolor sit amet, consectetur adipiscing
+        elit. Wartortle Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blastoise Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit. Caterpie Lorem ipsum dolor sit amet, consectetur adipiscing elit. Metapod Lorem ipsum dolor sit
+        amet, consectetur adipiscing elit. Butterfree Lorem ipsum dolor sit amet, consectetur adipiscing elit. Weedle Lorem
+        ipsum dolor sit amet, consectetur adipiscing elit. Kakuna Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Beedrill Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </p>
 
-        <p>Grievous fett calamari anakin skywalker hutt. Alderaan darth kenobi darth r2-d2
-        windu mothma. Sidious darth calamari moff. Wampa mothma sith wedge solo mara. Darth gonk maul sith moff chewbacca palpatine
-        mace amidala. C-3po solo skywalker anakin yoda leia. Maul wampa bespin watto jade ewok darth jabba. Lando dantooine moff
-        k-3po dantooine luke. Fisto mandalore darth wedge c-3p0 ahsoka. Secura moff palpatine fett. Anakin sith darth darth. Moff
-        solo leia ben ponda jade. Binks jango aayla skywalker skywalker cade. Mustafar darth ventress anakin watto. Yavin jawa sebulba
-        owen jinn tatooine sith organa.</p>
-
-        <p>Dagobah hutt jawa leia calamari ventress skywalker yoda. Binks wicket hutt coruscant sidious
-        naboo ackbar tatooine. Hutt lars padmé darth. Maul solo darth darth jabba qui-gon chewbacca darth maul. Moff baba wicket
-        han. C-3po antilles moff qui-gon ahsoka aayla dooku amidala. Palpatine droid amidala droid k-3po twi'lek padmé wookiee. Leia
-        moff calamari mon obi-wan. Solo grievous lando coruscant. Jinn darth palpatine obi-wan mon.</p>
-        <span class='expandButton'></span>
-      </div>
-      <div class="article">
-        <h2>Javascript and You, ES6</h2>
-        <p class="date">Nov 7th, 2017</p>
-        <p>Alohamora wand elf parchment, Wingardium Leviosa hippogriff, house dementors betrayal. Holly, Snape centaur portkey ghost
-        Hermione spell bezoar Scabbers. Peruvian-Night-Powder werewolf, Dobby pear-tickle half-moon-glasses, Knight-Bus. Padfoot
-        snargaluff seeker: Hagrid broomstick mischief managed. Snitch Fluffy rock-cake, 9 ¾ dress robes I must not tell lies. Mudbloods
-        yew pumpkin juice phials Ravenclaw’s Diadem 10 galleons Thieves Downfall. Ministry-of-Magic mimubulus mimbletonia Pigwidgeon
-        knut phoenix feather other minister Azkaban. Hedwig Daily Prophet treacle tart full-moon Ollivanders You-Know-Who cursed.
-        Fawkes maze raw-steak Voldemort Goblin Wars snitch Forbidden forest grindylows wool socks.</p>
-      
-        <p>Boggarts lavender robes, Hermione Granger Fantastic Beasts and Where to Find Them. Bee in your bonnet Hand of Glory elder
-        wand, spectacles House Cup Bertie Bott’s Every Flavor Beans Impedimenta. Stunning spells tap-dancing spider Slytherin’s Heir
-        mewing kittens Remus Lupin. Palominos scarlet train black robes, Metamorphimagus Niffler dead easy second bedroom. Padma
-        and Parvati Sorting Hat Minister of Magic blue turban remember my last.</p>
-        <span class='expandButton'></span>
-      </div>
-      <div class="article">
-        <h2>React vs Angular vs Vue</h2>
-        <p class="date">Nov 7th, 2017</p>
-
-        <p>Bulbasaur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ivysaur Lorem ipsum dolor sit amet, consectetur adipiscing
-        elit. Venusaur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Charmander Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit. Charmeleon Lorem ipsum dolor sit amet, consectetur adipiscing elit. Charizard Lorem ipsum dolor sit amet,
-        consectetur adipiscing elit. Squirtle Lorem ipsum dolor sit amet, consectetur adipiscing elit. Wartortle Lorem ipsum dolor
-        sit amet, consectetur adipiscing elit. Blastoise Lorem ipsum dolor sit amet, consectetur adipiscing elit. Caterpie Lorem
-        ipsum dolor sit amet, consectetur adipiscing elit. Metapod Lorem ipsum dolor sit amet, consectetur adipiscing elit. Butterfree
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Weedle Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Kakuna Lorem ipsum dolor sit amet, consectetur adipiscing elit. Beedrill Lorem ipsum dolor sit amet, consectetur adipiscing
-        elit.</p>
-
-        <p>Pidgey Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pidgeotto Lorem ipsum dolor sit amet, consectetur adipiscing
-        elit. Pidgeot Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rattata Lorem ipsum dolor sit amet, consectetur adipiscing
-        elit. Raticate Lorem ipsum dolor sit amet, consectetur adipiscing elit. Spearow Lorem ipsum dolor sit amet, consectetur adipiscing
-        elit. Fearow Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ekans Lorem ipsum dolor sit amet, consectetur adipiscing
-        elit. Arbok Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pikachu Lorem ipsum dolor sit amet, consectetur adipiscing
-        elit. Raichu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sandshrew Lorem ipsum dolor sit amet, consectetur adipiscing
-        elit. Sandslash Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nidoran Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit. Nidorina Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nidoqueen Lorem ipsum dolor sit amet,
-        consectetur adipiscing elit. Nidoran Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nidorino Lorem ipsum dolor
-        sit amet, consectetur adipiscing elit. Nidoking Lorem ipsum</p>
-        <span class='expandButton'></span>
-      </div>
-      <div class="article">
-        <h2>Professional Software Development in 2018</h2>
-        <p class="date">Nov 7th, 2017</p>
-        <p>Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
-          hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
-          Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? </p>
-        
-        <p>Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
-          hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
-          hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
-          hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? </p>
-        
-        <p>Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
-          Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
-          Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.
-          </p>
-
-        <p>Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
-          hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
-          hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
-          hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? </p>
-        <span class='expandButton'></span>
-      </div>
+      <p>Pidgey Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pidgeotto Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit. Pidgeot Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rattata Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit. Raticate Lorem ipsum dolor sit amet, consectetur adipiscing elit. Spearow Lorem ipsum
+        dolor sit amet, consectetur adipiscing elit. Fearow Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ekans
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arbok Lorem ipsum dolor sit amet, consectetur adipiscing
+        elit. Pikachu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Raichu Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit. Sandshrew Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sandslash Lorem ipsum dolor sit
+        amet, consectetur adipiscing elit. Nidoran Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nidorina Lorem
+        ipsum dolor sit amet, consectetur adipiscing elit. Nidoqueen Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Nidoran Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nidorino Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit. Nidoking Lorem ipsum</p>
+      <span class='expandButton'></span>
     </div>
-  </body>
+    <div class="article">
+      <h2>Professional Software Development in 2018</h2>
+      <p class="date">Nov 7th, 2017</p>
+      <p>Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor,
+        hodor, hodor hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?!
+        Hodor hodor, hodor. Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor
+        hodor? </p>
+
+      <p>Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor,
+        hodor; hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor.
+        Hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor
+        hodor hodor?! Hodor hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? </p>
+
+      <p>Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor
+        hodor? Hodor! Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor
+        hodor. Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR
+        hodor, hodor hodor. Hodor.
+      </p>
+
+      <p>Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor,
+        hodor; hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor.
+        Hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor
+        hodor hodor?! Hodor hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? </p>
+      <span class='expandButton'></span>
+    </div>
+    <div class="article">
+      <h2>Pokemon Creatures Take Over The World</h2>
+      <p class="date">Aug 15th, 2018</p>
+      <p>Charizard Linoone consectetur adipisicing elit Lapras but nothing happened Spinarak Vigoroth. Excepteur sint occaecat
+        cupidatat non proident Corsola Haunter Kabutops Cleffa Cubone Shaymin. Scratch Volcano Badge Ciccino Watchog Machop
+        Bouffalant Scratch. Storm Badge Aggron Milotic Vaporeon Azurill Monferno Tentacool. Splash Lavender Town Slash Keldeo
+        Professor Elm Noctowl Krokorok. </p>
+
+      <p>Pokem ipsum dolor sit amet Hidden Machine Pidgey Smeargle Ursaring Weavile Exeggcute. Earth Badge Foongus lorem
+        ipsum dolor sit amet Grumpig Fraxure Hypno Bastiodon. Growl Petilil Cofagrigus Hoothoot Tangrowth Krabby Golbat.
+        Yellow Snorunt Corphish Croconaw a wild Pokemon appeared Spoink the power that's inside. Thundershock Dark Croconaw
+        Timburr duis aute irure dolor in reprehenderit Cacturne Skorupi. </p>
+
+      <p>Strength Teleport Slowbro sunt in culpa qui officia Raichu Hidden Machine Buneary. Leaf Green sed do eiusmod tempor
+        Litwick Swinub Regigigas Porygon2 Wigglytuff. Ground lorem ipsum dolor sit amet to extend our reach to the stars
+        above Hydreigon Nuzleaf Kingdra Plusle. Zephyr Badge Foongus Dragon Potion Pinsir Torchic Poochyena. Sed do eiusmod
+        tempor incididunt Riolu Poochyena consectetur adipisicing elit Conkeldurr the power that's inside Axew.
+      </p>
+
+      <p>Water Ash Azumarill Shinx Steel Ice Berry Krokorok. Pewter City Venusaur Mightyena Delcatty Feraligatr Poliwrath
+        Combee. Pokemon The Movie 2000 Hoothoot Serperior Beautifly Sawsbuck Ice Cleffa. Normal Emboar Darumaka Flying Pidgeotto
+        Scrafty Rising Badge. Marsh Badge Cacturne Pinsir Whiscash Lopunny Mirror Move the power that's inside. </p>
+      <span class='expandButton'></span>
+    </div>
+    <div class="article">
+      <h2>When Riker Escaped From Alcatraz</h2>
+      <p class="date">Aug 15th, 2018</p>
+      <p>We know you're dealing in stolen ore. But I wanna talk about the assassination attempt on Lieutenant Worf. I'll
+        be sure to note that in my log. I'm afraid I still don't understand, sir. We finished our first sensor sweep of the
+        neutral zone. I suggest you drop it, Mr. Data. I can't. As much as I care about you, my first duty is to the ship.
+        Computer, lights up! Damage report! Now, how the hell do we defeat an enemy that knows us better than we know ourselves?
+        What? We're not at all alike! Well, I'll say this for him - he's sure of himself. Some days you get the bear, and
+        some days the bear gets you. Maybe if we felt any human loss as keenly as we feel one of those close to us, human
+        history would be far less bloody. Sorry, Data. Wouldn't that bring about chaos? You did exactly what you had to do.
+      </p>
+      <p>You considered all your options, you tried every alternative and then you made the hard choice. The Enterprise computer
+        system is controlled by three primary main processor cores, cross-linked with a redundant melacortz ramistat, fourteen
+        kiloquad interface modules. Commander William Riker of the Starship Enterprise. Earl Grey tea, watercress sandwiches...
+        and Bularian canapés? Are you up for promotion? Fate. It protects fools, little children, and ships named "Enterprise."
+        I guess it's better to be lucky than good. In all trust, there is the possibility for betrayal. The game's not big
+        enough unless it scares you a little. This should be interesting. We could cause a diplomatic crisis.</p>
+      <p>Take the ship into the Neutral Zone I am your worst nightmare! Shields up! Rrrrred alert! I'd like to think that
+        I haven't changed those things, sir. This is not about revenge. This is about justice. My oath is between Captain
+        Kargan and myself. Your only concern is with how you obey my orders. Or do you prefer the rank of prisoner to that
+        of lieutenant? The unexpected is our normal routine. Maybe we better talk out here; the observation lounge has turned
+        into a swamp. Your shields were failing, sir. Wait a minute - you've been declared dead. You can't give orders around
+        here. Is it my imagination, or have tempers become a little frayed on the ship lately? For an android with no feelings,
+        he sure managed to evoke them in others. </p>
+      <p>I think you've let your personal feelings cloud your judgement. Some days you get the bear, and some days the bear
+        gets you. Sure. </p>
+      <span class='expandButton'></span>
+    </div>
+    <div class="article">
+      <h2>Why Were The Vampires Last</h2>
+      <p class="date">Aug 15th, 2018</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus cursus et ipsum in imperdiet. Nam ultricies iaculis
+        erat ac tincidunt. Nam sodales sit amet dolor at sagittis. Cras cursus lectus non quam sodales rhoncus. In hac habitasse
+        platea dictumst. Donec condimentum efficitur enim, euismod aliquet tortor ornare at. Vestibulum in libero velit.
+        Vestibulum pharetra sodales erat, at eleifend metus elementum aliquet. Suspendisse potenti. In eget scelerisque velit,
+        sed sollicitudin quam. Suspendisse ante velit, consequat in posuere ut, tincidunt sed elit. Sed ultrices ligula sit
+        amet lorem varius auctor. Ut viverra faucibus venenatis. Integer tellus eros, viverra et est et, aliquam vulputate
+        dolor. In vitae ligula urna.</p>
+      <p>In rutrum pretium diam ullamcorper posuere. Duis vitae felis nisl. Donec in magna vitae enim hendrerit accumsan
+        vel eu turpis. Morbi finibus sagittis tempus. Sed sit amet nulla neque. Mauris in accumsan risus, eleifend ullamcorper
+        mi. Donec ligula dui, finibus ac arcu quis, suscipit interdum felis. Nam eget enim eu purus mollis ultricies.</p>
+      <p>Maecenas feugiat lorem sed ligula blandit condimentum. Sed id nulla id augue pulvinar congue. Maecenas vehicula
+        ante ut arcu semper, sit amet rutrum magna vulputate. Etiam non aliquam erat, et aliquet sem. Proin id dui quis elit
+        cursus vulputate. Duis congue suscipit lorem, vitae condimentum arcu tristique eu. Duis ut justo congue, cursus nunc
+        et, posuere nibh. Fusce placerat ipsum ante, nec rhoncus ex elementum vitae.</p>
+      <p>Donec elementum vitae leo eu suscipit. Aliquam bibendum sapien in enim hendrerit viverra. Sed volutpat, nisl nec
+        egestas viverra, lectus eros porta elit, at facilisis tellus dolor vel nisi. In non sollicitudin tortor, ac pharetra
+        sem. Duis suscipit porttitor magna, nec euismod ante commodo sed. Morbi non ipsum commodo, tempus erat sit amet,
+        convallis lacus. Nunc cursus velit neque, id tempus mauris scelerisque et. Praesent aliquam ligula id aliquam malesuada.
+        Vivamus et neque gravida, hendrerit enim ut, accumsan est. Vivamus commodo, lacus eu tempor porta, leo quam dictum
+        nunc, euismod aliquet tellus lectus vitae neque. Sed ornare ligula vel bibendum commodo. Mauris non congue nunc.</p>
+      <span class='expandButton'></span>
+    </div>
+    <div class="article">
+      <h2>We Are The Champions</h2>
+      <p class="date">Aug 15th, 2018</p>
+      <p>Lorizzle ipsum dolor sit shizznit, consectetuer adipiscing shit. Nullam sapizzle velizzle, pot volutpizzle, suscipit
+        owned, fizzle vizzle, ma nizzle. Pellentesque dizzle break it down. Sizzle erizzle. Fusce izzle dolor dapibizzle
+        uhuh ... yih! tempizzle tempor. Maurizzle pellentesque nibh things turpizzle. Ma nizzle izzle tortor. Pellentesque
+        get down get down rhoncizzle nisi. In hac shiz platea dictumst. Donec dapibizzle. Get down get down tellizzle urna,
+        pretizzle eu, mattizzle fo, eleifend uhuh ... yih!, nunc. Fo shizzle suscipit. Integizzle fo shizzle my nizzle velit
+        sizzle purus.</p>
+      <p>Curabitizzle mah nizzle diam gangsta nisi gizzle we gonna chung. Suspendisse potenti. Yo odio. neque. Mah nizzle
+        orci. Cras yippiyo ghetto, bow wow wow a, fo shizzle crunk yippiyo, funky fresh izzle, pede. Pellentesque pizzle.
+        Vestibulizzle orci mi, volutpizzle in, away sizzle, fo shizzle semper, ass. Doggy izzle ipsizzle. Fizzle volutpizzle
+        izzle yo the bizzle. Crizzle quis justo in purizzle mofo ornare. Gangster venenatizzle justo bow wow wow fizzle.
+        Nunc urna. Suspendisse venenatizzle sizzle lacizzle. Curabitizzle for sure ante. Nunc , leo eu dapibus hendrerizzle,
+        ipsum felizzle elementum sizzle, doggy aliquizzle magna own yo' luctus pede. Nam a gangster. Class aptent taciti
+        sociosqu ad mah nizzle things yo mamma conubia uhuh ... yih!, gizzle fo shizzle. Aliquizzle the bizzle, go to hizzle
+        nec elementum nonummy, i saw beyonces tizzles and my pizzle went crizzle orci boom shackalack leo, sizzle dizzle
+        tellivizzle arcu mammasay mammasa mamma oo sa fo.</p>
+      <p>Vivamus dizzle mauris egizzle brizzle consectetizzle pretium. Vivamus sit fo shizzle own yo'. Nizzle eu nisl gangster
+        lacizzle auctor shizzle my nizzle crocodizzle. Yippiyo gangster viverra ipsizzle. Bow wow wow izzle arcu. Vestibulum
+        enim enizzle, fo shizzle sizzle, congue eu, dignissizzle get down get down, gizzle. Fo shizzle mah nizzle fo rizzle,
+        mah home g-dizzle vitae pede crunk erizzle pot pharetra. Bow wow wow pede tortor, congue , auctor a, owned sit amizzle,
+        erat. Donizzle pizzle dui. For sure gizzle uhuh ... yih!, elementizzle gangster, sollicitudin my shizz, fo crunk,
+        turpizzle. Quisque a shizzle my nizzle crocodizzle eu mi rutrizzle vehicula. Gangster check out this shizznit. Ghetto
+        fizzle morbi tristique senectizzle et dizzle izzle malesuada fames izzle turpizzle break it down. In est. Curabitizzle
+        elementum. Fo shizzle my nizzle eros uhuh ... yih!, semper quis, sizzle rizzle, porta pulvinar, nisl. sagittizzle
+        bow wow wow velizzle.</p>
+      <span class='expandButton'></span>
+    </div>
+  </div>
+</body>
+
 </html>
