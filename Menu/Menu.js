@@ -7,7 +7,6 @@ const toggleMenu = () => {
 
 // Start Here: Create a reference to the ".menu" class
 const menu = document.querySelector('.menu');
-menu.classList.add('menu-open');
 
 // create a reference to the ".menu-button" class
 const menuButton = document.querySelector('.menu-button');
