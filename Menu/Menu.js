@@ -1,16 +1,12 @@
+TweenLite.to(document.querySelector('.menu'), 0, {autoAlpha: 0, display: 'none'});
+
+
 let open = false;
 const toggleMenu = () => {
-    // Toggle the "menu--open" class on your menu refence.
-    if (!open) {
-        menu.classList.toggle('menu--open');
-        TweenLite.to(menu, 0.5, {autoAlpha: 1, display: 'block'});
-        open = !open;
-    } else {
-        TweenLite.to(menu, 0.5, {autoAlpha: 0, display: 'none'});
-        menu.classList.toggle('menu--open');
-        open = !open;
-    }
-
+    // Toggle the "menu--open" class on your menu reference.
+    // menu.classList.toggle('menu--open');
+    TweenLite.to(menu, 0.5, {autoAlpha: !open ? 1 : 0, display: !open ? 'block' : 'none'});
+    open = !open;
 };
 
 // Start Here: Create a reference to the ".menu" class
