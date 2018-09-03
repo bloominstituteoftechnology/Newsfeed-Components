@@ -1,7 +1,16 @@
-
+let open = false;
 const toggleMenu = () => {
-  // Toggle the "menu--open" class on your menu refence.
-  menu.classList.toggle('menu--open');
+    // Toggle the "menu--open" class on your menu refence.
+    if (!open) {
+        menu.classList.toggle('menu--open');
+        TweenLite.to(menu, 0.5, {autoAlpha: 1, display: 'block'});
+        open = !open;
+    } else {
+        TweenLite.to(menu, 0.5, {autoAlpha: 0, display: 'none'});
+        menu.classList.toggle('menu--open');
+        open = !open;
+    }
+
 };
 
 // Start Here: Create a reference to the ".menu" class

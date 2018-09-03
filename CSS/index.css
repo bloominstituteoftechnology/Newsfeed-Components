@@ -41,7 +41,7 @@
   cursor: pointer;
 }
 .menu {
-  display: none;
+  visibility: hidden;
   position: fixed;
   top: 75px;
   left: 0;
@@ -77,6 +77,7 @@
   height: 50px;
   overflow: hidden;
   box-shadow: 2px 2px 2px lightgrey;
+  transition: all 1s;
 }
 .article h2 {
   font-size: 28px;
