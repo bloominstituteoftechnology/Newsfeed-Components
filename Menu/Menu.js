@@ -1,17 +1,10 @@
 
 let toggleMenu = () => {
   // Toggle the "menu--open" class on your menu refence.
-<<<<<<< HEAD
-  menu.classList.toggle('menu--open');
-
-||||||| merged common ancestors
-  menu.classList.toggle('menu--open');
-=======
   //menu.classList.toggle('menu--open');
 
   //toggle the menu using greensock .reversed property
   t.reversed(!t.reversed());
->>>>>>> animations
 }
 
 // Start Here: Create a reference to the ".menu" class
