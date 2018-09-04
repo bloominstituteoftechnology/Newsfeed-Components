@@ -17,7 +17,15 @@ function makeArticles() {
     expandArticle() {
       // Using our reference to the article element, add or remove a class to expand or hide the article
       event.currentTarget.parentNode.classList.toggle("article-open");
-    }
+      //******** Added this code because it should be here :) *******/
+      if (event.currentTarget.innerHTML === "expand") {
+        event.currentTarget.innerHTML = "close";
+      } else {
+       if (event.currentTarget.innerHTML === "close") {
+         event.currentTarget.innerHTML = "expand";
+      }
+    };
+  }
   };
 
   // START HERE: Select all classes named ".article" and assign that value to the articles variable
