@@ -8,14 +8,19 @@ class Article {
     this.expandButton = element.lastElementChild ;
 
     // Using your expandButton reference, update the text on your expandButton to say "expand"
-    this.expandButton.innerText = 'expand';
+    this.expandButton.innerText = 'Click to Expand';
+
     // Set a click handler on the expandButton reference (or article element), calling the expandArticle method.
-    this.expandButton.addEventListener('click', () => {this.expandArticle(element)});
+    this.expandButton.addEventListener('click', () => {
+      this.expandButton.innerText === 'Click to Expand' ? this.expandButton.innerText = 'Click to Close' : this.expandButton.innerText = 'Click to Expand';
+      
+      this.expandArticle(element);
+    });
   }
 
   expandArticle(element) {
     // Using our reference to the article element, add or remove a class to expand or hide the article.
-    
+
     return element.classList.contains('article-open') ? element.classList.remove('article-open') : element.classList.add('article-open');
   }
 }
