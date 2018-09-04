@@ -1,6 +1,7 @@
 
-const toggleMenu = () => {
+const toggleMenu = (menu) => {
   // Toggle the "menu--open" class on your menu refence. 
+  menu.classList.toggle('menu--open');
 }
 
 // Start Here: Create a reference to the ".menu" class
