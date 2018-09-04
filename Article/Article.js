@@ -13,7 +13,7 @@ class Article {
     // Set a click handler on the expandButton reference (or article element), calling the expandArticle method.
     this.expandButton.addEventListener('click', () => {
       this.expandButton.innerText === 'Click to Expand' ? this.expandButton.innerText = 'Click to Close' : this.expandButton.innerText = 'Click to Expand';
-      
+
       this.expandArticle(element);
     });
   }
@@ -31,6 +31,32 @@ let articles = document.querySelectorAll('.article');
 // Use .map() to iterate over the articles array and create a new instance of Article by passing in each article element as a parameter to the constructor.
 articles = Array.from(articles).map((article) => {
 
+  // append an element to delete the article once read
+  let a = document.createElement('a');
+  let aTxt = document.createTextNode('X');
+  a.appendChild(aTxt);
+  a.setAttribute('class', 'close');
+  article.prepend(a);
+
+
+
   return new Article(article);
 
+});
+
+
+// add delete function and hover effects to the X buttons
+
+let buttons = document.querySelectorAll('.close');
+
+buttons = Array.from(buttons).map((close) => {
+  close.addEventListener('mouseenter', () => {
+    close.style.color = 'red';
+  });
+  close.addEventListener('mouseleave', () => {
+    close.style.color = 'black';
+  });
+  close.addEventListener('click', () => {
+    close.parentElement.style.display = 'none';
+  });
 });
