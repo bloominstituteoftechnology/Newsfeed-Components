@@ -43,6 +43,7 @@
 .menu {
   display: none;
   position: fixed;
+  /* this is the line of code that makes the menu overlap with the body instead of pushing the body below it */
   top: 75px;
   left: 0;
   width: 350px;
