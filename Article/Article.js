@@ -4,7 +4,6 @@ class Article {
   constructor(element) {
     // assign this.element to the passed in article element
     this.element = element;
-    console.log(this.element);
     // create a reference to the ".expandButton" class. 
     this.expandButton = this.element.querySelector(".expandButton");
     // Using your expandButton reference, update the text on your expandButton to say "expand"
@@ -14,8 +13,11 @@ class Article {
   }
 
   expandArticle() {
-    if (this.innerText === "expand") {this.innerText = "collapse";}
-    else {this.innerText = "expand";}
+    if (this.innerText === "expand") {
+      this.innerText = "collapse";
+    } else {
+      this.innerText = "expand";
+    }
     // Using our reference to the article element, add or remove a class to expand or hide the article.
     this.parentNode.classList.toggle("article-open");
   }
