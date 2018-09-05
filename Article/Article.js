@@ -32,6 +32,12 @@ expandButton = Array.from(expandButton).map((element,index) => element.innerHTML
 
 //// Close Button
 let closeBox = document.querySelectorAll('.closeBox');
-closeBox = Array.from(closeBox).map((element,index)=>element.style.color = "red");
 
+const closeBoxHandler = function(event) {
+  this.parentNode.style.display = 'none';
+}
 
+console.log(closeBox);
+
+closeBox.forEach((e) => e.addEventListener('click', closeBoxHandler));
+closeBox.forEach((e) => e.style.color = "red");
