@@ -85,6 +85,7 @@ const creElement = (el, cla, obj) => {
   return this.obj[this.el] = this.cla;
 }
 
+
 creElement('div', 'article', articleArr);
 creElement('a', 'close', articleArr);
 creElement('h2', '', articleArr);
