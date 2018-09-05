@@ -119,10 +119,16 @@
   background-color: white;
   text-align: center;
 }
+.article .expandButton-open {
+  background-color: greenyellow;
+}
 .article-open {
   height: 500px;
   transform: translateY(0);
   background-color: greenyellow;
+}
+.article-open .expandButton {
+  background: greenyellow;
 }
 html,
 body {
