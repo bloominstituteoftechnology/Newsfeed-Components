@@ -15,8 +15,8 @@ In this project we are going to be building a news feed reader. The goal is to h
 ### Setup
 
 [x] Fork and clone 
-[ ] Run `less-watch-compiler less css index.less` from the top level of the Newsfeed-Components folder. 
-[ ] Open index.html in your browser
+[x] Run `less-watch-compiler less css index.less` from the top level of the Newsfeed-Components folder. 
+[x] Open index.html in your browser
 
 ### Part 1: The Menu
 
