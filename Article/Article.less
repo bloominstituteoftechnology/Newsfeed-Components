@@ -11,7 +11,7 @@
   height: 50px;
   overflow: hidden;
   box-shadow: 2px 2px 2px lightgrey;
-  transition: height 1.5s ease;
+  transition: height 1s ease;
 
   h2 {
     font-size: 28px;
@@ -30,6 +30,11 @@
     right: 10px;
   }
 
+  p {
+    text-align: justify;
+    padding: 10px;
+  }
+
   .expandButton {
     position: absolute;
     bottom: 0;
@@ -39,12 +44,13 @@
     cursor: pointer;
     transform: translate(-50%);
     background-color: white;
+    padding-top: 10px;
   }
 }
 
 .article-open {
   height: 400px;
-  animation: slideDown 1.5s ease;
+  animation: slideDown 1s ease;
 }
 
 @keyframes slideDown {
