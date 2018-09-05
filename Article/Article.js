@@ -5,7 +5,7 @@ class Article {
     // assign this.element to the passed in article element
     this.element = element;
     // create a reference to the ".expandButton" class.
-    this.expandButton = this.element.querySelector('.expandButton');
+    this.expandButton = element.querySelector('.expandButton');
 
     // Using your expandButton reference, update the text on your expandButton to say "expand"
     this.expandButton.innerText = 'Click to Expand';
@@ -14,8 +14,24 @@ class Article {
     this.expandButton.addEventListener('click', () => {
       this.expandButton.innerText === 'Click to Expand' ? this.expandButton.innerText = 'Click to Close' : this.expandButton.innerText = 'Click to Expand';
 
+
       this.expandArticle(element);
-    });
+      });
+
+      // add close buttons and event listeners
+      this.close = element.querySelector('.close');
+      this.close.addEventListener('mouseenter', () => {
+        this.close.style.color = 'red';
+      });
+      this.close.addEventListener('mouseleave', () => {
+        this.close.style.color = 'black';
+      });
+      this.close.addEventListener('click', () => {
+        this.closeArticle();
+      });
+  }
+  closeArticle() {
+    this.close.parentElement.style.display = 'none';
   }
 
   expandArticle(element) {
@@ -44,31 +60,15 @@ articles = Array.from(articles).map((article) => {
 
 });
 
-
-// add delete function and hover effects to the X buttons
-
-let buttons = document.querySelectorAll('.close');
-
-buttons = Array.from(buttons).map((close) => {
-  close.addEventListener('mouseenter', () => {
-    close.style.color = 'red';
-  });
-  close.addEventListener('mouseleave', () => {
-    close.style.color = 'black';
-  });
-  close.addEventListener('click', () => {
-    close.parentElement.style.display = 'none';
-  });
-});
-
-
 // create a function that makes a tag class name
 let articleArr = {};
 let contentArr = [
   '',
+  'X',
   'Mastering the Back End',
   'Sept 8th, 2018',
-  'Click to Expand'
+  'Click to Expand',
+  'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
 ];
 
 const creElement = (el, cla, obj) => {
@@ -86,10 +86,12 @@ const creElement = (el, cla, obj) => {
 }
 
 creElement('div', 'article', articleArr);
+creElement('a', 'close', articleArr);
 creElement('h2', '', articleArr);
 creElement('p', 'date', articleArr);
 creElement('span', 'expandButton', articleArr);
-
+// BUG: Cannot find out why I cannot output more than one p tag.
+creElement('article', '', articleArr);
 // create a function that accepts an object and creates an article with it
 const createArticle = (obj, contentArr) => {
 
@@ -102,6 +104,7 @@ const createArticle = (obj, contentArr) => {
   container.setAttribute('class', valueArr[0]);
   articles.appendChild(container);
 
+  // add the rest of the array as children
   keyArr.forEach( (singleKey) => {
     let element = document.createElement(singleKey);
       if (keyArr.indexOf(singleKey) > 0) {
@@ -110,8 +113,7 @@ const createArticle = (obj, contentArr) => {
       container.appendChild(element);
     }
     });
-  // add the rest of the array as children
-// BUG: Think I need to return the Article class here to add methods becuase the expand button is not working.
+  return new Article(container);
 }
 
 createArticle(articleArr, contentArr);
