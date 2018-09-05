@@ -3,7 +3,7 @@
 class Article {
   constructor(element) { //DOM way 
     // assign this.element to the passed in article element
-    this.element = article;
+    this.element = element;
     this.expand = this.element.querySelector('.expand');
     // this.expand.style.color = '';
     // create a reference to the ".expandButton" class. 
@@ -11,7 +11,7 @@ class Article {
     // Using your expandButton reference, update the text on your expandButton to say "expand"
     this.expandButton.innerHTML = 'expand';
     // Set a click handler on the expandButton reference (or article element), calling the expandArticle method.
-    this.expandButton.addEventListener('click', () => {
+    this.element.addEventListener('click', () => {
       this.expandArticle();
   });
 }
