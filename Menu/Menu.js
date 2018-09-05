@@ -1,13 +1,21 @@
 
 function reader() {
-
+let menuOpen = true;
 
 
 
 function toggleMenu() {
 
   // Toggle the "menu--open" class on your menu refence. 
+  if (menuOpen === true) {
+   // menu.classList.toggle("menu--close");
   menu.classList.toggle("menu--open");  
+  menuOpen = false;
+  } else {
+   // menu.classList.toggle("menu--open");
+   menu.classList.toggle("menu--open"); 
+   menuOpen = true;  
+  }
  }
 
 // Start Here: Create a reference to the ".menu" class

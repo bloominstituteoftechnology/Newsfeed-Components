@@ -42,7 +42,12 @@
 }
 
 .article-open {
-  height: 400px;
+  animation: moveIt 1s 1 forwards;
+}
+
+@keyframes moveIt {
+  0% {height: 50px;}
+ 100% {height: 400px;}
 }
 
 
