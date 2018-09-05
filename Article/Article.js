@@ -22,6 +22,36 @@ class Article {
 // START HERE: Select all classes named ".article" and assign that value to the articles variable
 let articles = document.querySelectorAll('.article');
 
+const addArticle = function (title, date, content) {
+    const newArticle = document.createElement('div');
+    const titleH2 = document.createElement('h2');
+    const dateP = document.createElement('p');
+    const paragraph = document.createElement('p');
+    const expandSpan = document.createElement('span');
+    const deleteSpan = document.createElement('span');
+
+    dateP.classList.add('date')
+    expandSpan.classList.add('expandButton')
+    newArticle.classList.add('article');
+
+    articles[0].parentElement.prepend(newArticle);
+
+    newArticle.prepend(deleteSpan);
+    newArticle.prepend(expandSpan);
+    newArticle.prepend(paragraph);
+    newArticle.prepend(dateP);
+    newArticle.prepend(titleH2);
+
+    titleH2.innerText = title;
+    dateP.innerText = date;
+    paragraph.innerText = content;
+    deleteSpan.innerText = 'Read';
+
+    return new Article(newArticle);
+}
+addArticle('my article: "created"', 'Sep 5, 2018', 'very small article.');
+
+
 // Use .map() to iterate over the articles array and create a new instance of Article by passing in each article element as a parameter to the constructor.
 articles = Array.from(articles).map(article => new Article(article));
 
