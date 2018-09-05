@@ -15,7 +15,7 @@ class Article {
   expandArticle() {
     // Using our reference to the article element, add or remove a class to expand or hide the article.
     event.currentTarget.classList.toggle('article-open');
-   TweenLite.to(event.currentTarget, 1, {opacity: 50, y: 15});
+  //  TweenLite.to(event.currentTarget, 1, {opacity: 50, y: 15});
   }
 }
 

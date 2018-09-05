@@ -86,6 +86,8 @@
   position: relative;
   height: 50px;
   overflow: hidden;
+  transform: translateY(-5%);
+  transition: transform 0.8s ease;
   box-shadow: 2px 2px 2px lightgrey;
 }
 .article h2 {
@@ -110,6 +112,7 @@
   color: #303030;
   cursor: pointer;
   transform: translate(-50%);
+  transition: all 500ms ease;
   border: 1px lighten black;
   padding: 2px;
   border-radius: 2px;
@@ -119,8 +122,8 @@
   text-align: center;
 }
 .article-open {
-  height: 400px;
-  transform: translate(0);
+  height: 500px;
+  transform: translateY(0);
 }
 html,
 body {
