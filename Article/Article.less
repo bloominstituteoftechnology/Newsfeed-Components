@@ -37,12 +37,23 @@
     color: grey;
     cursor: pointer;
     transform: translate(-50%);
-    background-color: white;
   }
 }
 
 .article-open {
   height: 400px;
+  background-image: linear-gradient(orange, white);
+  animation-name: expand;
+  animation-duration: 2s;
+
+}
+
+@keyframes expand {
+ from {height: 50px;}
+ to {height: 400px;}
+
+ from {background-color: white;}
+ to {background-image: linear-gradient(orange, white);}
 }
 
 
