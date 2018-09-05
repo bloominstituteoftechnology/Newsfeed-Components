@@ -18,3 +18,12 @@ menuButton.addEventListener('click', function(event) {
 });
 
 //makes menu close upon click outside of open menu
+const bodyClick = document.querySelector('body');
+
+bodyClick.addEventListener('click', function(event) {
+  if (event.target.closest('.menu-button')) {
+    return;
+  } else {
+  menu.classList.remove('menu--open');
+  }
+});
