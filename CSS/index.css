@@ -25,19 +25,21 @@
   cursor: pointer;
 }
 .menu {
-  display: none;
+  display: block;
   position: fixed;
   top: 75px;
   left: 0;
-  width: 350px;
+  width: 0px;
   height: 100vh;
   /* This give the height 100% of the screen or, '100% of View Height' */
   background-color: #81C784;
   border: 1px solid #004D40;
+  overflow-x: hidden;
   border-left: none;
   border-bottom: none;
   z-index: 2;
   /* This set the layer level of the element, it has precendence over initial level of 1*/
+  transition: 0.5s ease-in;
 }
 .menu ul li {
   list-style-type: none;
@@ -46,7 +48,7 @@
   text-align: center;
 }
 .menu--open {
-  display: block;
+  width: 350px;
 }
 .header {
   width: 100%;
@@ -74,7 +76,8 @@
   border-radius: 10px;
   background-color: white;
   position: relative;
-  height: 50px;
+  max-height: 50px;
+  transition: max-height 0.5s ease-in;
   overflow: hidden;
   box-shadow: 2px 2px 2px lightgrey;
 }
@@ -102,8 +105,16 @@
   transform: translate(-50%);
   background-color: white;
 }
+.article .closeButton {
+  text-align: center;
+  color: red;
+  padding: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 20px;
+}
 .article-open {
-  height: 400px;
+  max-height: 400px;
 }
 html,
 body {
