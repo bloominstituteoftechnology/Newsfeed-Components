@@ -19,6 +19,10 @@ class Article {
 
     event.currentTarget.classList.toggle('article-open');
 
+    // TweenLite.to(element, 2, {rotation:30, scaleX:0.8});
+
+
+
     let h2Italics = Array.from(document.getElementsByTagName('h2'))
     
     h2Italics.map(element => {
