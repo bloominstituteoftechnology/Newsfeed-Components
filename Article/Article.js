@@ -7,8 +7,8 @@ class Article {
     // create a reference to the ".expandButton" class. 
     this.expandButton = expandButton;
     // Using your expandButton reference, update the text on your expandButton to say "expand"
-    // this.expandButton.innerHTML = "expand";
-    // console.log(expandButton);
+        // this.expandButton.innerHTML = "expand";
+        // console.log(expandButton);
     // Set a click handler on the expandButton reference (or article element), calling the expandArticle method.
     element.addEventListener('click', this.expandArticle);
   }
