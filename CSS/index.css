@@ -105,6 +105,11 @@
 .article-open {
   height: 400px;
 }
+.exit-button {
+  top: -40px;
+  color: darkgoldenrod;
+  background-color: black;
+}
 html,
 body {
   margin: 0;
