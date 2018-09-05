@@ -21,7 +21,7 @@ menuButton.addEventListener('click', function(event) {
 const bodyClick = document.querySelector('body');
 
 bodyClick.addEventListener('click', function(event) {
-  if (event.target.closest('.menu-button')) {
+  if (event.target.closest('.menu-button') || event.target.closest('.menu')) {
     return;
   } else {
   menu.classList.remove('menu--open');
