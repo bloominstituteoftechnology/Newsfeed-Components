@@ -44,7 +44,7 @@
   position: fixed;
   top: 75px;
   left: 0;
-  width: 350px;
+  width: 250px;
   height: 100vh;
   /* This give the height 100% of the screen or, '100% of View Height' */
   background-color: #81C784;
@@ -53,14 +53,23 @@
   border-bottom: none;
   transform: translateX(-100%);
   transition: transform 0.6s ease;
+  display: flex;
+  align-content: center;
   z-index: 2;
   /* This set the layer level of the element, it has precendence over initial level of 1*/
 }
 .menu ul li {
   list-style-type: none;
   font-size: 32px;
-  padding: 30px 0;
+  padding: 20px 0;
   text-align: center;
+}
+.menu ul hr {
+  border: 0;
+  height: 0;
+  width: 100%;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 .menu.menu--open {
   transform: translateX(0);
@@ -104,8 +113,9 @@
   border: 1px lighten black;
   padding: 2px;
   border-radius: 2px;
-  box-shadow: 0 0 0.1px 0 #303030;
-  background-color: #ebebeb;
+  border: 1px solid #afafaf;
+  border-top: 1px solid green;
+  background-color: white;
   text-align: center;
 }
 .article-open {
