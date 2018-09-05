@@ -29,3 +29,9 @@ articles = Array.from(articles).map((element,index) => new Article(element));
 
 expandButton = Array.from(expandButton).map((element,index) => element.innerHTML = "expand");
 
+
+//// Close Button
+let closeBox = document.querySelectorAll('.closeBox');
+closeBox = Array.from(closeBox).map((element,index)=>element.style.color = "red");
+
+
