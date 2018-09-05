@@ -106,15 +106,15 @@
   position: absolute;
   bottom: 0;
   left: 50%;
-  font-size: 12px;
+  font-size: 20px;
   color: #303030;
   cursor: pointer;
   transform: translate(-50%);
   transition: all 500ms ease;
-  border: 1px lighten black;
-  padding: 2px;
-  border-radius: 2px;
-  border: 1px solid #afafaf;
+  padding: 5px;
+  border-radius: 3px;
+  border-left: 1px solid #afafaf;
+  border-right: 1px solid #afafaf;
   border-top: 1px solid green;
   background-color: white;
   text-align: center;
@@ -122,6 +122,7 @@
 .article-open {
   height: 500px;
   transform: translateY(0);
+  background-color: greenyellow;
 }
 html,
 body {

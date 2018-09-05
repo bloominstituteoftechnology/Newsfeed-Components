@@ -12,7 +12,7 @@
     height: 50px;
     overflow: hidden;
     transform: translateY(-5%);
-  transition: transform 0.8s ease;
+    transition: transform 0.8s ease;
     box-shadow: 2px 2px 2px lightgrey;
     h2 {
         font-size: 28px;
@@ -32,15 +32,15 @@
         position: absolute;
         bottom: 0;
         left: 50%;
-        font-size: 12px;
+        font-size: 20px;
         color: #303030;
         cursor: pointer;
         transform: translate(-50%);
-        transition:all 500ms ease;
-        border: 1px lighten black;
-        padding: 2px;
-        border-radius: 2px;
-        border: 1px solid rgb(175, 175, 175);
+        transition: all 500ms ease;
+        padding: 5px;
+        border-radius: 3px;
+        border-left: 1px solid rgb(175, 175, 175);
+        border-right: 1px solid rgb(175, 175, 175);
         border-top: 1px solid green;
         background-color: white;
         text-align: center;
@@ -49,5 +49,6 @@
 
 .article-open {
     height: 500px;
-    transform:translateY(0);
+    transform: translateY(0);
+    background-color: greenyellow;
 }
