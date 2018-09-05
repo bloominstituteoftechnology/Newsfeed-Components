@@ -17,7 +17,7 @@ menuButton.addEventListener('click', function(event) {
   return toggleMenu();
 });
 
-//makes menu close upon click outside of open menu
+//BONUS - makes menu close upon click outside of open menu
 const bodyClick = document.querySelector('body');
 
 bodyClick.addEventListener('click', function(event) {
