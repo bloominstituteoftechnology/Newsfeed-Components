@@ -81,6 +81,9 @@
     left: -400px;
   }
 }
+.js-is-hidden {
+  display: none;
+}
 .articles {
   margin-top: 95px;
 }

@@ -2,17 +2,6 @@
 function reader() {
   let menuOpen = true;
 
-  function toggleMenu() {
-    // Toggle the "menu--open" class on your menu refence. 
-    if (menuOpen === true) {
-      menu.classList.toggle("menu--open");
-      menuOpen = false;
-    } else {
-      menu.classList.toggle("menu--open");
-      menuOpen = true;
-    }
-  }
-
   // Start Here: Create a reference to the ".menu" class
   let menu = document.querySelector(".menu");
 
@@ -36,6 +25,15 @@ function reader() {
     console.log("click");
   }
 
+  function toggleMenu() {
+    if (menuOpen === true) {
+      menu.classList.add("menu--open");
+      menuOpen = false;
+    } else {
+      menu.classList.remove("menu--open");
+      menuOpen = true;
+    }
+  }
 };
 
 reader();
