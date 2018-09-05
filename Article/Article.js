@@ -5,13 +5,13 @@ class Article {
     // assign this.element to the passed in article element
     this.e = article;
     // create a reference to the ".expandButton" class. 
-    this.e.expandButton = document.querySelectorAll(".expandButton");
-    // Using your expandButton reference, update the text on your expandButton to say "expand"
+    this.e.expandButton = this.e.querySelector(".expandButton");
 
-    //***text not updating? */
+    // Using your expandButton reference, update the text on your expandButton to say "expand"
     this.e.expandButton.innerHTML = "expand";
+
     // Set a click handler on the expandButton reference (or article element), calling the expandArticle method.
-    this.e.addEventListener("click", this.expandArticle.bind(this));
+    this.e.expandButton.addEventListener("click", this.expandArticle.bind(this));
   }
 
   expandArticle() {
