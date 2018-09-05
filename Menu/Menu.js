@@ -1,10 +1,21 @@
+// const toggleMenu = () => {
+  
+//   // Toggle the "menu--open" class on your menu reference. 
+// }
 
-const toggleMenu = () => {
-  // Toggle the "menu--open" class on your menu refence. 
+const toggleMenu = (event) => {
+  menu.classList.toggle('menu--open');
 }
 
 // Start Here: Create a reference to the ".menu" class
-const menu;
+
+let menu = document.querySelector('.menu');
+
+
 // create a reference to the ".menu-button" class
-const menuButton;
+
+let menuButton = document.querySelector('.menu-button');
+
 // Using your menuButton reference, add a click handler that calls toggleMenu
+
+menuButton.addEventListener('click', toggleMenu)
