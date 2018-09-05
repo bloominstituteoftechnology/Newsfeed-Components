@@ -17,7 +17,9 @@ class Article {
     event.currentTarget.parentNode.classList.toggle('article-open');
     if (event.currentTarget.parentNode.classList.contains('article-open')) {
       event.currentTarget.innerHTML = 'close';
-    };
+    } else {
+      event.currentTarget.innerHTML = 'expand';
+    }
   }
 }
 
