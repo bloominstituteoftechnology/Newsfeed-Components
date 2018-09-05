@@ -20,7 +20,16 @@ class Article {
     // Using our reference to the article element, add or remove a class to expand or hide the article.
     // this.classList.toggle('article-open');
     this.element.classList.toggle('article-open');
-    
+    if (this.expandButton.innerHTML === 'expand') {
+      this.expandButton.style.color= 'red';
+      this.expandButton.style.textShadow = '1px 1px black';
+      this.expandButton.style.fontSize = '18px';
+      this.expandButton.innerHTML = 'close';
+
+    }
+    else {
+      this.expandButton.innerHTML = 'expand'; this.expandButton.style.color = ''; this.expandButton.style.textShadow = '';
+      this.expandButton.style.fontSize = ''; }
     // event.target.parentNode.classList.toggle('article-open');
   }
 }
