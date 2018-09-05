@@ -16,3 +16,5 @@ const menuButton = document.querySelector('.menu-button');
 menuButton.addEventListener('click', function(event) {
   return toggleMenu();
 });
+
+//makes menu close upon click outside of open menu
