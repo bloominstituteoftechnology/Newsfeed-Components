@@ -14,6 +14,7 @@ class Article {
 
   expandArticle(event) {
     // Using our reference to the article element, add or remove a class to expand or hide the article.
+    event.target.parentNode.classList.toggle("article-open");
   }
 }
 
