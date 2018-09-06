@@ -1,7 +1,25 @@
 
 function reader() {
   let menuOpen = true;
+  let menuNbr = 0;
+  let arr = ["Students", "Faculty", "What's New", "Tech Trends", "Music", "Log Out"]
 
+  /*******ADDED A NEW CLASS TO MAKE ALL THE MENU *******/
+  /*************   ITEMS ACTUAL LINKS  *****************/
+  /****    AND I DIDN'T MODIFY THE ORIGINAL HTML   *****/
+  class MenuItem {
+    constructor(li) {
+      this.element = li;
+      let anchor = document.createElement('a');
+      anchor.className = "link";
+      anchor.innerHTML = arr[menuNbr];
+      anchor.addEventListener("click", btnClick);
+      anchor.href = "#";
+      this.element.innerHTML = "";
+      this.element.appendChild(anchor);
+       menuNbr += 1;
+    }
+  }
   // Start Here: Create a reference to the ".menu" class
   let menu = document.querySelector(".menu");
 
@@ -10,16 +28,6 @@ function reader() {
 
   // Using your menuButton reference, add a click handler that calls toggleMenu
   menuButton.addEventListener("click", toggleMenu);
-
-  let anchor = document.createElement('a');
-  anchor.className = "link";
-  anchor.innerHTML = "Students";
-
-  anchor.addEventListener("click", btnClick);
-
-  let li = document.querySelector("li");
-  li.innerHTML = "";
-  li.appendChild(anchor);
 
   function btnClick() {
     console.log("click");
@@ -34,6 +42,10 @@ function reader() {
       menuOpen = true;
     }
   }
+
+  let lis = document.querySelectorAll("li");
+ 
+  lis = Array.from(lis).map(li => new MenuItem(li));
 };
 
 reader();
