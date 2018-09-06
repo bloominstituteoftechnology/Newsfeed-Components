@@ -14,10 +14,7 @@ class Article {
 
   expandArticle(e) {
     // Using our reference to the article element, add or remove a class to expand or hide the article.
-    e.target.parentNode.classList.add('article-open');
-  }
-  closeArticle(e) {
-    e.target.parentNode.classList.add('close');
+    e.target.parentNode.classList.toggle('article-open');
   }
 }
 
@@ -28,4 +25,3 @@ let articles = document.querySelectorAll('.article') ;
 articles = Array.from(articles).map((article) => {
   return new Article(article)
 });
-
