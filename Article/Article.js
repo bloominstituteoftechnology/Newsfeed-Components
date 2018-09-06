@@ -1,11 +1,11 @@
 // Start at `let articles`
 
 class Article {
-  constructor(element, index) {
+  constructor(element) {
     // assign this.element to the passed in article element
     this.element = element;
     // create a reference to the ".expandButton" class.
-    this.expandButton = document.querySelectorAll(".expandButton")[index];
+    this.expandButton = this.element.querySelector(".expandButton");
     // Using your expandButton reference, update the text on your expandButton to say "expand"
     this.expandButton.innerHTML = "expand";
     // Set a click handler on the expandButton reference (or article element), calling the expandArticle method.
@@ -22,4 +22,4 @@ class Article {
 let articles = document.querySelectorAll(".article");
 
 // Use .map() to iterate over the articles array and create a new instance of Article by passing in each article element as a parameter to the constructor.
-articles = Array.from(articles).map((elem, i) => new Article(elem, i));
+articles = Array.from(articles).map(elem => new Article(elem));
