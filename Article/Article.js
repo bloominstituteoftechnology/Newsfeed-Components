@@ -14,13 +14,8 @@ class Article {
 
   expandArticle(e) {
     // Using our reference to the article element, add or remove a class to expand or hide the article.
-    if (e.currentTarget.parentNode.classList.contains("article-open")) {
-      e.currentTarget.parentNode.classList.remove("article-open");
-      e.currentTarget.parentNode.classList.add("close");
-    } else {
-      e.currentTarget.parentNode.classList.remove("close");
-      e.currentTarget.parentNode.classList.add("article-open");
-    }
+    e.currentTarget.innerText === "expand" ? e.currentTarget.innerText = "close" : e.currentTarget.innerText = "expand";
+    e.currentTarget.parentNode.classList.toggle("article-open");
   }
 }
 
