@@ -22,6 +22,9 @@ const toggleMenu = function (event){
     //   menu.classList.toggle('menu--open')
     // });
 
+// INJECT BUTTONS INTO BODY
+
+
 /*
 EXPERIMENTAL
 menuButton.addEventListener('click',function(){
@@ -29,4 +32,13 @@ menuButton.addEventListener('click',function(){
   alert('menuButton WORKS'); // confirm menuButton click works
 //  this.toggleMenu(event);
 })
+*/
+
+/* 
+STRETCH:  modify menu list style to smaller font-size and thinner padding
+override settings to use:
+  .menu ul li
+    font-size: 32px;
+    padding: 10px 0;
+    text-align: left;
 */
