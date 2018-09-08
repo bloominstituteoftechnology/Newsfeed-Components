@@ -8,7 +8,7 @@ function makeArticles() {
       this.expand = this.element.querySelector(".expandButton")
       // create a reference to the ".expandButton" class. 
     
-      let expandButton = document.querySelector(".expandButton");
+     // let expandButton = document.querySelector(".expandButton");
 
      this.expand.innerHTML = "Click to Expand";
      this.expand.addEventListener("click", this.expandArticle);
