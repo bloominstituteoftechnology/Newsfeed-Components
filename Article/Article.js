@@ -29,11 +29,11 @@ class Article {
         // create a reference to the ".expandButton" class
         const expandButton = document.querySelector('.expandButton');
 
-        // Toggle the "menu--open" class on your menu reference. 
-          CSS: .menu--open {display: block;}
+        // Toggle the "expandButton" class on your menu reference. 
+          CSS: .expandButton {display: block;}
 
-        const toggleMenu = function (event){
-          menu.classList.toggle('menu--open')
+        const toggleExpand = function (event){
+          ??.toggle('expandButton')
         }
 
         // Using your expandButton reference, add a click handler that calls toggleMenu
@@ -41,10 +41,14 @@ class Article {
         // Approach 1
             expandButton.addEventListener('click',toggleMenu);
         */
-       
+
     // create a reference to the ".expandButton" class
     const expandButton = document.querySelector('.expandButton');
-
+    
+    // add label to <span class="expandButton"
+    const expand = document.querySelectorAll('span');
+    console.log(expandShow)
+    expandButton.innerHTML = 'expand/collapse';
   }
 }
 

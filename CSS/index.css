@@ -85,6 +85,7 @@
 }
 
 .expandButton {
+  display: block;
   border: none;
 	font-family: inherit;
 	font-size: inherit;
@@ -92,7 +93,7 @@
 	background: none;
 	cursor: pointer;
 	padding: 5px 10px;
-	display: inline-block;
+	/* display: inline-block; */
 	margin: 5px 10px;
 	text-transform: uppercase;
 	letter-spacing: 1px;
@@ -102,7 +103,10 @@
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s; */
 	transition: all 0.3s;
+}
 
+.expandShow {
+  display: block;
 }
 
 html,
