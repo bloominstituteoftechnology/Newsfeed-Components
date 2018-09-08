@@ -14,6 +14,36 @@ class Article {
 
   expandArticle() {
     // Using our reference to the article element, add or remove a class to expand or hide the article.
+    // HINT: expandArticle is like .toggle menu--open
+
+    /* SYNTAX
+      // element.addEventListener('click', callback);
+
+        const eventHandler = (event) => {
+        //Handle event
+          event.stopPropagration()
+          event.preventDefault() // if needed
+      };
+
+      EXPAND BUTTON LOGIC
+        // create a reference to the ".expandButton" class
+        const expandButton = document.querySelector('.expandButton');
+
+        // Toggle the "menu--open" class on your menu reference. 
+          CSS: .menu--open {display: block;}
+
+        const toggleMenu = function (event){
+          menu.classList.toggle('menu--open')
+        }
+
+        // Using your expandButton reference, add a click handler that calls toggleMenu
+        // REFACTORS (both work) 
+        // Approach 1
+            expandButton.addEventListener('click',toggleMenu);
+        */
+       
+    // create a reference to the ".expandButton" class
+    const expandButton = document.querySelector('.expandButton');
 
   }
 }

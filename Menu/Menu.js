@@ -22,7 +22,7 @@ const toggleMenu = function (event){
     //   menu.classList.toggle('menu--open')
     // });
 
-// INJECT BUTTONS INTO BODY
+// ADD BUTTONS TO MENU
 
 
 /*
