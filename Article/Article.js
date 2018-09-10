@@ -11,18 +11,22 @@ function makeArticles() {
      // let expandButton = document.querySelector(".expandButton");
 
      this.expand.innerHTML = "Click to Expand";
-     this.expand.addEventListener("click", this.expandArticle);
+     this.expand.addEventListener("click", () => {this.expandArticle(event)});
 
     }
     expandArticle() {
       // Using our reference to the article element, add or remove a class to expand or hide the article
-     event.currentTarget.parentNode.classList.toggle("article-open");
+    // event.currentTarget.parentNode.classList.toggle("article-open");
       //******** Added this code because it should be here :) *******/
       if (event.currentTarget.innerHTML === "Click to Expand") {
+        event.currentTarget.parentNode.classList.remove("article-close");
+        event.currentTarget.parentNode.classList.add("article-open");
         event.currentTarget.innerHTML = "Click to Close";
       } else {
        if (event.currentTarget.innerHTML === "Click to Close") {
-         event.currentTarget.innerHTML = "Click to Expand";
+        event.currentTarget.parentNode.classList.remove("article-open");
+        event.currentTarget.parentNode.classList.add("article-close");
+        event.currentTarget.innerHTML = "Click to Expand";
       }
     };
   }

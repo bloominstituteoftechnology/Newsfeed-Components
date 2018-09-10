@@ -35,10 +35,13 @@ function reader() {
 
   function toggleMenu() {
     if (menuOpen === true) {
+      menu.classList.remove("menu--close");
       menu.classList.add("menu--open");
       menuOpen = false;
     } else {
+     console.log("should be closing the menu now")
       menu.classList.remove("menu--open");
+      menu.classList.add("menu--close");
       menuOpen = true;
     }
   }

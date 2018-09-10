@@ -73,12 +73,16 @@
     left: 0px;
   }
 }
-@keyframes loseIt {
+.menu--close {
+  display: block;
+  animation: loseIt2 1s 1 forwards;
+}
+@keyframes loseIt2 {
   0% {
     left: 0px;
   }
   100% {
-    left: -400px;
+    left: -350px;
   }
 }
 .js-is-hidden {
@@ -124,6 +128,17 @@
 }
 .article-open {
   animation: moveIt 1s 1 forwards;
+}
+.article-close {
+  animation: loseIt 1s 1 forwards;
+}
+@keyframes loseIt {
+  0% {
+    height: 400px;
+  }
+  100% {
+    height: 50px;
+  }
 }
 @keyframes moveIt {
   0% {
