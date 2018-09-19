@@ -2,6 +2,10 @@
 const toggleMenu = () => {
   // Toggle the "menu--open" class on your menu refence.
   menu.classList.toggle('menu--open');
+  tl.staggerFrom('li', 1, {cycle: {
+    x: [-50],
+    scale: [.5, 2],
+  }, autoAlpha: 0, ease:Power1.easeOut}, 0.1);
 }
 
 // Start Here: Create a reference to the ".menu" class
@@ -12,8 +16,3 @@ const menuButton = document.querySelector('.menu-button');
 
 tl = new TimelineLite();
 menuButton.addEventListener('click', toggleMenu);
-menuButton.addEventListener('click', () => {tl.staggerFrom('li', 1, {cycle: {
-  x: [-50],
-}, autoAlpha: 0, ease:Power1.easeOut}, 0.1);
-});
-
