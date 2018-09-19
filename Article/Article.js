@@ -10,13 +10,22 @@ class Article {
     this.expandButton = domElement.querySelector(".expandButton");
     // Using your expandButton reference, update the text on your expandButton to say "expand"
     this.expandButton.innerText = "expand";
+    
+    // grab delete button
+    this.deleteButton = domElement.querySelector(".deleteButton");
+    this.deleteButton.innerText = "Delete";
     // Set a click handler on the expandButton reference, calling the expandArticle method.
     this.expandButton.addEventListener("click", this.expandArticle.bind(this));
+    this.deleteButton.addEventListener("click", this.deleteArticle.bind(this));
   }
 
   expandArticle() {
     // Using our reference to the domElement, toggle a class to expand or hide the article.
     this.domElement.classList.toggle("article-open");
+  }
+
+  deleteArticle() {
+    this.domElement.classList.add("delete-article");
   }
 }
 
@@ -28,19 +37,30 @@ class Article {
 const articlesDiv = document.querySelector(".articles");
 
 const articleConstructor = () => {
-  let articleHeading = prompt("Article title: ");
-  let articleContent = prompt("Article content: ");
-
-  let element = document.createElement("div");
-  element.classList.add("article");
-  element.innerHTML = `<h2>${articleHeading}</h2>
+  let articleNumber = prompt("How many articles would you like to create?");
+  let articleHeadings = prompt("Article title(s), seperated by commas ', ': ");
+  articleHeadings = articleHeadings.split(',');
+  let articleContentAmount = prompt("How much random content would you like in your article? (hint: bigger number == more content)");
+  let articleContent = '';
+  for(let i = 0; i < articleContentAmount * 50; i++) {
+    articleContent += ' random ';
+  }
+  for (let i = 0; i < articleNumber; i++) {
+    let element = document.createElement("div");
+    element.classList.add("article");
+    let articleHeading = articleHeadings[i];
+    element.innerHTML = `<h2>${articleHeading}</h2>
   <p class="date">${new Date()}</p> 
   <p>${articleContent}</p>
+  <span></span>
   <span></span>`;
-  let span = element.querySelector("span");
-  span.classList.add("expandButton");
+    let span = element.querySelector("span");
+    span.classList.add("expandButton");
+    let deleteButton = element.querySelectorAll("span")[1];
+    deleteButton.classList.add("deleteButton");
 
-  articlesDiv.appendChild(element);
+    articlesDiv.appendChild(element);
+  }
 };
 
 const submit = document.querySelector(".submit");
@@ -61,3 +81,5 @@ const mapComponents = () => {
     return new Article(domElement);
   });
 };
+
+mapComponents();
