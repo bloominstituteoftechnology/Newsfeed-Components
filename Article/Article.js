@@ -1,3 +1,37 @@
+const articleConstructor = (props) => {
+  let container = document.createElement('div')
+  container.classList.toggle('article', true)
+
+  let close = document.createElement('p')
+  close.innerText = 'close'
+  close.classList.toggle('close', true)
+  container.appendChild(close)
+
+  let title = document.createElement('h2')
+  title.innerText = props.title
+  container.appendChild(title)
+
+  let date = document.createElement('p')
+  date.innerText = new Date()
+  container.appendChild(date)
+
+  let article = document.createElement('p')
+  article.innerText = props.article
+  container.appendChild(article)
+
+  let expand = document.createElement('span')
+  expand.classList.toggle('expandButton', true)
+  container.appendChild(expand)
+
+  document.querySelector('.articles').appendChild(container)
+}
+
+articleConstructor({
+  title: 'hi',
+  article: ';lakfh;alkjf;lekh'
+})
+
+
 class Article {
   constructor(domElement) {
     this.expanded = false
@@ -13,13 +47,13 @@ class Article {
   }
 
   expandArticle() {
-    TweenMax.to('.article', 0.7, { height: '400px' })
+    TweenMax.to(this.domElement, 0.7, { height: '400px' })
     this.expanded = true
     this.expandButton.innerText = 'Click to close'
   }
 
   hideArticle() {
-    TweenMax.to('.article', 0.7, { height: '40px' })
+    TweenMax.to(this.domElement, 0.7, { height: '40px' })
     this.expanded = false
     this.expandButton.innerText = 'Click to expand'
   }
