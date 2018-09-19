@@ -1,5 +1,14 @@
 // Because classes are not hoisted you will need to start your code at the bottom of the page.  Look for the comment "START HERE"
 
+document.querySelector('#submit').addEventListener('mouseout', function() {
+  let articles = document.querySelectorAll('.article');
+
+  // Use .map() to iterate over the articles array and create a new instance of Article by passing in each article element as a parameter to the constructor.
+  articles = Array.from(articles).map(article => {
+    return new Article(article);
+  });
+})
+
 // event listener and anonymous function to create new articles
 document.querySelector('#submit').addEventListener('click', function(event){
   event.preventDefault();
@@ -62,7 +71,7 @@ class Article {
 
 // START HERE: Select all classes named ".article" and assign that value to the articles variable
 
-window.addEventListener('mouseover', function() {
+window.addEventListener('load', function() {
   let articles = document.querySelectorAll('.article');
 
   // Use .map() to iterate over the articles array and create a new instance of Article by passing in each article element as a parameter to the constructor.
