@@ -53,7 +53,6 @@ class ListItem {
   }
   large() {
     TweenMax.to(this.li, 0, { opacity: 1, scale: 1.2, ease: Bounce.easeInOut })
-    console.log('I hovered');
   }
   small() {
     TweenMax.to(this.li, 0, { opacity: 1, scale: 1, ease: Bounce.easeInOut })
@@ -61,11 +60,7 @@ class ListItem {
 }
 
 let menuLists = document.querySelectorAll('.menu ul li');
-console.log(menuLists);
 
-menuLists = Array.from(menuLists).map(list => {
-  return new ListItem(list);
+menuLists = Array.from(menuLists).map(li => {
+  return new ListItem(li);
 });
-
-console.log(menuLists);
-console.log(ListItem);
