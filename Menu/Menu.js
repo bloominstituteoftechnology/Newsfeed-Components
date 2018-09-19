@@ -17,7 +17,19 @@ const closeMenu = () => {
   menuOpen = false
 }
 
-menuButton.addEventListener(
-  'click',
-  () => (menuOpen === true ? closeMenu() : openMenu())
-)
+menuButton.addEventListener('click', event => {
+  event.stopPropagation()
+  menuOpen === true ? closeMenu() : openMenu()
+})
+
+menu.addEventListener('click', event => {
+  event.stopPropagation()
+})
+
+document.querySelector('body').addEventListener('click', () => {
+  if (true) {
+    closeMenu()
+    menuOpen = false
+  }
+})
+
