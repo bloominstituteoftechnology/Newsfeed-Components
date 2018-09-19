@@ -101,6 +101,10 @@
   transform: translate(-50%);
   background-color: white;
 }
+.form {
+  display: flex;
+  justify-content: center;
+}
 html,
 body {
   margin: 0;

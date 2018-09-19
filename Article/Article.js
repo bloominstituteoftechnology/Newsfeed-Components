@@ -13,6 +13,7 @@ const articleConstructor = (props) => {
 
   let date = document.createElement('p')
   date.innerText = new Date()
+  date.classList.toggle('date', true)
   container.appendChild(date)
 
   let article = document.createElement('p')
@@ -31,6 +32,17 @@ articleConstructor({
   article: ';lakfh;alkjf;lekh'
 })
 
+const form = document.querySelector('.form')
+form.querySelector('button').addEventListener('click', event => {
+  event.preventDefault()
+  console.log(form.querySelector('input').value)
+  console.log(form.querySelector('textarea').value)
+  articleConstructor({
+    title: form.querySelector('input').value,
+    article: form.querySelector('textarea').value
+  })
+
+})
 
 class Article {
   constructor(domElement) {
