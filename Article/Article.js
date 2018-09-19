@@ -10,9 +10,15 @@ class Article {
     // Using your expandButton reference, update the text on your expandButton to say "expand"
     this.expandButton.innerText = 'expand'
     
+    this.closeButton = document.createElement('h4');
+    this.closeButton.innerText = '✖️';
+    this.domElement.prepend(this.closeButton);
+    this.closeButton.style.position = 'absolute';
+    this.closeButton.style.right = '20px';
+    this.closeButton.style.cursor= 'pointer';
     // Set a click handler on the expandButton reference, calling the expandArticle method.
     this.expandButton.addEventListener('click', () => this.expandArticle())
-
+    this.closeButton.addEventListener('click', () => this.closeArticle())
   }
 
   expandArticle() {
@@ -27,6 +33,9 @@ class Article {
     else {
       this.expandButton.innerText = 'expand'
     }
+  }
+  closeArticle() {
+    this.domElement.style.display = 'none';
   }
   
 }
