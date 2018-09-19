@@ -45,6 +45,7 @@
   position: fixed;
   top: 75px;
   left: 0;
+  text-align: center;
   width: 350px;
   height: 100vh;
   /* This give the height 100% of the screen or, '100% of View Height' */
@@ -63,6 +64,54 @@
 }
 .menu--open {
   display: block;
+  width: 300px;
+}
+.articles {
+  margin-top: 95px;
+}
+.article {
+  margin: 20px 10%;
+  padding: 0 20px 25px;
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  background-color: white;
+  position: relative;
+  height: 90px;
+  overflow: hidden;
+  box-shadow: 2px 2px 2px lightgrey;
+}
+.article h2 {
+  font-size: 28px;
+  padding-top: 0px;
+  margin: 15px 0 0;
+}
+.article .date {
+  margin: 0;
+  font-size: 14px;
+}
+.article p {
+  padding-top: 15px;
+}
+.article .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.article .expandButton {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  padding: 5px 10px;
+  margin: 10px 0px;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+  transform: translate(-50%);
+  background-color: rgba(0, 0, 0, 0.692);
+  border: 1px solid black;
+}
+.article-open {
+  height: 500px;
 }
 html,
 body {
