@@ -9,8 +9,10 @@ class Article {
     this.expandButton = domElement.querySelector('.expandButton')
     // Using your expandButton reference, update the text on your expandButton to say "expand"
     this.expandButton.innerText = 'expand'
+    
     // Set a click handler on the expandButton reference, calling the expandArticle method.
     this.expandButton.addEventListener('click', () => this.expandArticle())
+
   }
 
   expandArticle() {
@@ -19,7 +21,14 @@ class Article {
     if (this.domElement.classList.contains('has-img')){
       articleIMG.classList.toggle('img-display-none');
     }
+    if (this.expandButton.innerText === 'expand'){
+      this.expandButton.innerText = 'collapse';
+    }
+    else {
+      this.expandButton.innerText = 'expand'
+    }
   }
+  
 }
 
 // START HERE: Select all classes named ".article" and assign that value to the articles variable
