@@ -70,7 +70,7 @@
   transition: 0.6s;
 }
 .articles {
-  margin-top: 95px;
+  margin-top: 20px;
   height: 100%;
 }
 .article {
@@ -124,4 +124,36 @@ body {
   padding: 0;
   font-family: 'Roboto';
   background-color: #fffef7;
+}
+#write {
+  margin: 95px auto 0px;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+}
+#write label {
+  font-size: 1.2rem;
+}
+#write input,
+#write select,
+#write textarea {
+  width: 98%;
+  padding: 12px;
+  border: 1px solid black;
+  border-radius: 4px;
+  margin: 6px 0 20px;
+  resize: vertical;
+  font-family: inherit;
+  font-weight: 400;
+}
+#write input[type=submit] {
+  background: black;
+  color: white;
+  border: 1px solid black;
+  width: 20%;
+}
+#write input[type=submit]:hover {
+  background: white;
+  color: black;
 }

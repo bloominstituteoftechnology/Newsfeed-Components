@@ -13,3 +13,37 @@ html, body {
   font-family: 'Roboto';
   background-color: #fffef7;
 }
+
+#write {
+  margin: 95px auto 0px;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+
+  label {
+    font-size: 1.2rem;
+  }
+
+  input, select, textarea {
+    width: 98%;
+    padding: 12px;   
+    border: 1px solid black;
+    border-radius: 4px; 
+    margin: 6px 0 20px;
+    resize: vertical;
+    font-family: inherit;
+    font-weight: 400; 
+  }
+  
+  input[type=submit] {
+    background: black;
+    color: white;
+    border: 1px solid black;
+    width: 20%;
+    &:hover {
+      background: white;
+      color: black;
+    }
+  }
+}

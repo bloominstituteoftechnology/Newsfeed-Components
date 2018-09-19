@@ -1,4 +1,32 @@
-// Because classes are not hoised you will need to start your code at the bottom of the page.  Look for the comment "START HERE"
+// Because classes are not hoisted you will need to start your code at the bottom of the page.  Look for the comment "START HERE"
+
+// event listener and anonymous function to create new articles
+document.querySelector('#submit').addEventListener('click', function(event){
+  event.preventDefault();
+  let div = document.createElement("div");
+  div.classList.add('article')
+
+  // the article title
+  let header = `${document.getElementsByName("title")[0].value}`
+
+  // the date
+  let d = new Date();
+  let date = `${d.toLocaleString('en-US', {month: "short"})} ${d.getDate()}th, ${d.getFullYear()}`;
+
+  // the article text
+  let para = `${document.getElementsByName("body")[0].value}`
+
+  // the full post
+  div.innerHTML = `<span class='close'></span>
+  <h2>${header}</h2>
+  <p class='date'>${date}</p>
+  <p>${para}</p>
+  <span class='expandButton'></span>`;
+
+  var section = document.querySelector(".articles");
+  section.appendChild(div);
+})
+
 
 class Article {
   constructor(element) {
@@ -33,9 +61,13 @@ class Article {
 }
 
 // START HERE: Select all classes named ".article" and assign that value to the articles variable
+
+window.addEventListener('mouseover', function() {
 let articles = document.querySelectorAll('.article');
 
 // Use .map() to iterate over the articles array and create a new instance of Article by passing in each article element as a parameter to the constructor.
 articles = Array.from(articles).map(article => {
   return new Article(article);
 });
+
+})
