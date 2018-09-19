@@ -15,6 +15,9 @@ class Article {
   expandArticle(event) {
     // Using our reference to the domElement, toggle a class to expand or hide the article.
     event.target.parentNode.classList.toggle('article-open');
+    TweenMax.from(".article p",1,{
+                         ease:Power4.easeOut,
+                         y:800})
   }
 }
 
