@@ -44,12 +44,14 @@ let articlesContainer = document.querySelector('.articles');
 let div = document.createElement('div');
 let h2 = document.createElement('h2');
 let pDate = document.createElement('p');
+let p = document.createElement('p');
 let span = document.createElement('span');
 let button = document.createElement('button');
 
-let createArticle = () => {
-  h2.innerText = 'testing';
+let createArticle = (h2Text) => {
+  h2.innerText = h2Text;
   pDate.innerText = 'Nov 7th, 2017';
+  p.innerText = 'Paragraph';
   button.innerText = 'Close';
   span.innerText = 'expand';
   div.classList.add('article');
@@ -59,11 +61,12 @@ let createArticle = () => {
   articlesContainer.appendChild(div);
   div.appendChild(h2);
   div.appendChild(pDate);
+  div.appendChild(p);
   div.appendChild(span);
   div.appendChild(button);
 }
 
-createArticle();
+createArticle('testing');
 
 let newArticles = document.querySelectorAll('.newArticle');
 
