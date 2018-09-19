@@ -5,8 +5,10 @@
 <head>
   <title>Lambda School Newsfeed</title>
   <link rel="stylesheet" type="text/css" media="screen" href="./CSS/index.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
   <script src="./Menu/Menu.js" async></script>
   <script src="./Article/Article.js" async></script>
+  
 </head>
 
 <body>
@@ -26,7 +28,7 @@
   </div>
   <div class="articles">
     <div class="article">
-      <h2>Lambda School Students: "We're the best!"</h2>
+      <h2 id="first">Lambda School Students: "We're the best!"</h2>
       <p class="date">Nov 5th, 2017</p>
 
       <p>Lucas ipsum dolor sit amet ben twi'lek padmé darth darth darth moff hutt organa twi'lek. Ben amidala secura
@@ -59,7 +61,7 @@
       <span class='expandButton'></span>
     </div>
     <div class="article">
-      <h2>Javascript and You, ES6</h2>
+      <h2 id="second">Javascript and You, ES6</h2>
       <p class="date">Nov 7th, 2017</p>
       <p>Alohamora wand elf parchment, Wingardium Leviosa hippogriff, house dementors betrayal. Holly, Snape centaur
         portkey ghost
@@ -83,7 +85,7 @@
       <span class='expandButton'></span>
     </div>
     <div class="article">
-      <h2>React vs Angular vs Vue</h2>
+      <h2 id="third">React vs Angular vs Vue</h2>
       <p class="date">Nov 7th, 2017</p>
 
       <p>Bulbasaur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ivysaur Lorem ipsum dolor sit amet,
@@ -126,7 +128,7 @@
       <span class='expandButton'></span>
     </div>
     <div class="article">
-      <h2>Professional Software Development in 2018</h2>
+      <h2 id="fourth">Professional Software Development in 2018</h2>
       <p class="date">Nov 7th, 2017</p>
       <p>Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor
         hodor, hodor, hodor
@@ -160,7 +162,7 @@
       <span class='expandButton'></span>
     </div>
     <div class="article">
-      <h2>Lorem ipsum dolor, sit amet consectetur adipisicing..</h2>
+      <h2 id="fifth">Lorem ipsum dolor, sit amet consectetur adipisicing..</h2>
       <p class="date">Nov 7th, 2017</p>
       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum soluta vero eum facilis cum mollitia tempora
         nulla aliquid praesentium nostrum! Architecto recusandae, enim inventore tempora accusantium officiis id
@@ -178,7 +180,7 @@
       <span class='expandButton'></span>
     </div>
     <div class="article">
-      <h2>Lorem ipsum dolor sit amet consectetur..</h2>
+      <h2 id="sixth">Lorem ipsum dolor sit amet consectetur..</h2>
       <p class="date">Nov 7th, 2017</p>
       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum soluta vero eum facilis cum mollitia tempora
         nulla aliquid praesentium nostrum! Architecto recusandae, enim inventore tempora accusantium officiis id
@@ -196,7 +198,7 @@
       <span class='expandButton'></span>
     </div>
     <div class="article">
-      <h2>Lorem ipsum dolor sit.</h2>
+      <h2 id="seventh">Lorem ipsum dolor sit.</h2>
       <p class="date">Nov 7th, 2017</p>
       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum soluta vero eum facilis cum mollitia tempora
         nulla aliquid praesentium nostrum! Architecto recusandae, enim inventore tempora accusantium officiis id
@@ -214,6 +216,8 @@
       <span class='expandButton'></span>
     </div>
   </div>
+
 </body>
 
 </html>
+

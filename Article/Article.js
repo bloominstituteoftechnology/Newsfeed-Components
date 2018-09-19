@@ -1,5 +1,6 @@
 // Because classes are not hoised you will need to start your code at the bottom of the page.  Look for the comment "START HERE"
 
+
 class Article {
   constructor(domElement) {
     // assign this.domElement to the passed in domElement
@@ -23,4 +24,14 @@ let articles = document.querySelectorAll('.article');
 
 // Use .map() to iterate over the articles array and create a new instance of Article by passing in each article as a parameter to the constructor.
 articles = Array.from(articles).map(cb => new Article(cb));
+
+// animations
+
+ tl = new TimelineLite();
+
+tl
+  .staggerFrom('div', 1, {cycle: {
+    y: [-50],
+  }, autoAlpha: 0, ease:Power1.easeOut}, 0.1);
+  
 
