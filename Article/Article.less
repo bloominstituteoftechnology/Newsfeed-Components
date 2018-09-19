@@ -11,6 +11,7 @@
   height: 50px;
   overflow: hidden;
   box-shadow: 2px 2px 2px lightgrey;
+  transition: all .2s;
 
   .img-container {
     width: 100%;
@@ -22,7 +23,8 @@
     }
 
     .img-display-none {
-      display: none;
+      visibility:hidden;
+      transition: visibility .2s;
     }
   }
   h2 {
@@ -56,4 +58,5 @@
 
 .article-open {
   height: 400px;
+  transition: all .2s;
 }

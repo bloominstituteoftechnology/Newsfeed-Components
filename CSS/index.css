@@ -41,10 +41,10 @@
   cursor: pointer;
 }
 .menu {
-  display: none;
   position: fixed;
   top: 75px;
-  left: 0;
+  transition: all 0.2s;
+  left: -350px;
   width: 350px;
   height: 100vh;
   /* This give the height 100% of the screen or, '100% of View Height' */
@@ -62,7 +62,8 @@
   text-align: center;
 }
 .menu--open {
-  display: block;
+  transform: translateX(350px);
+  transition: all 0.2s;
 }
 .articles {
   margin-top: 95px;
@@ -77,6 +78,7 @@
   height: 50px;
   overflow: hidden;
   box-shadow: 2px 2px 2px lightgrey;
+  transition: all 0.2s;
 }
 .article .img-container {
   width: 100%;
@@ -87,7 +89,8 @@
   width: auto;
 }
 .article .img-container .img-display-none {
-  display: none;
+  visibility: hidden;
+  transition: visibility 0.2s;
 }
 .article h2 {
   font-size: 28px;
@@ -115,6 +118,7 @@
 }
 .article-open {
   height: 400px;
+  transition: all 0.2s;
 }
 html,
 body {
