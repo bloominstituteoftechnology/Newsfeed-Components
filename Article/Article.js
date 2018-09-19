@@ -44,6 +44,42 @@ class Article {
   }
 }
 
+
+
+function buildArticle(h2Text, pArray){
+  let divElement = document.createElement("div");
+  divElement.className = 'article';
+ 
+  let h2Element = document.createElement("h2");
+   h2Element.innerText = h2Text;
+  divElement.append(h2Element);
+ 
+  let pElement = document.createElement("p");
+  pElement.className = 'date';
+  pElement.innerText = "Sept 19, 2018";
+  divElement.append(pElement);
+
+ 
+  for (let i=0; i < pArray.length; i++){
+    pElement = document.createElement("p");
+    pElement.innerText = pArray[i];
+    divElement.append(pElement);
+  }
+
+  let spanElement = document.createElement("span");
+  spanElement.className = 'expandButton';
+  spanElement.innerText = "Click to Expand";
+  divElement.append(spanElement);
+
+ 
+  console.log(divElement);
+return divElement;
+}
+
+let createArticle = buildArticle("This is New", ["1st phara", "2nd Para"]);
+let articlesDiv = document.querySelector(".articles");
+articlesDiv.append(createArticle);
+
 // START HERE: Select all classes named ".article" and assign that value to the articles variable
 let articles = document.querySelectorAll(".article");
 
