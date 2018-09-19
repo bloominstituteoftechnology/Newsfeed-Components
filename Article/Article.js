@@ -38,3 +38,34 @@ articles = Array.from(articles).map(domElement => {
   new Article(domElement);
 });
 
+let articlesContainer = document.querySelector('.articles');
+let div = document.createElement('div');
+let h2 = document.createElement('h2');
+let pDate = document.createElement('p');
+let span = document.createElement('span');
+let button = document.createElement('button');
+
+let createArticle = () => {
+  h2.innerText = 'testing';
+  pDate.innerText = 'Nov 7th, 2017';
+  button.innerText = 'Close';
+  span.innerText = 'expand';
+  div.classList.add('article');
+  div.classList.add('newArticle');
+  span.classList.add('expandButton');
+  button.classList.add('btn');
+  articlesContainer.appendChild(div);
+  div.appendChild(h2);
+  div.appendChild(pDate);
+  div.appendChild(span);
+  div.appendChild(button);
+}
+
+createArticle();
+
+let newArticles = document.querySelectorAll('.newArticle');
+
+newArticles = Array.from(newArticles).map(domElement => {
+  new Article(domElement);
+});
+
