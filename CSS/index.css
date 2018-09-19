@@ -112,3 +112,27 @@ body {
   font-family: 'Roboto';
   background-color: #fffef7;
 }
+.slideIn {
+  animation-duration: 3s;
+  animation-name: slidein;
+}
+@keyframes slidein {
+  from {
+    margin-left: -100%;
+  }
+  to {
+    margin-left: 0%;
+  }
+}
+.slideOut {
+  animation-duration: 3s;
+  animation-name: slideOut;
+}
+@keyframes slideOut {
+  from {
+    margin-left: 0%;
+  }
+  to {
+    margin-left: -100%;
+  }
+}
