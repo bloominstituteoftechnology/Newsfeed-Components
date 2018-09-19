@@ -48,10 +48,10 @@ let p = document.createElement('p');
 let span = document.createElement('span');
 let button = document.createElement('button');
 
-let createArticle = (h2Text) => {
+let createArticle = (h2Text, date, paragraph) => {
   h2.innerText = h2Text;
-  pDate.innerText = 'Nov 7th, 2017';
-  p.innerText = 'Paragraph';
+  pDate.innerText = date;
+  p.innerText = paragraph;
   button.innerText = 'Close';
   span.innerText = 'expand';
   div.classList.add('article');
@@ -66,7 +66,10 @@ let createArticle = (h2Text) => {
   div.appendChild(button);
 }
 
-createArticle('testing');
+createArticle('testing1', 'Sep 19th, 2018', 'Paragraph1.');
+createArticle('testing2', 'Sep 19th, 2018', 'Paragraph2.');
+createArticle('testing3', 'Sep 19th, 2018', 'Paragraph3.');
+
 
 let newArticles = document.querySelectorAll('.newArticle');
 
