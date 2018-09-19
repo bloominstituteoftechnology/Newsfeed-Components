@@ -30,5 +30,5 @@ articles = Array.from(articles).map(domElement =>{
 
 // TweenMax.to(".tweet", 2, {rotation:1440, scale:1.0});
 
-TweenMax.from(".tweet", 1, {opacity: 0, scale:.2, y:-200});
+TweenMax.from(".tweet", 1, {opacity: 0, scale:.2, y:-200}); 
 TweenMax.to(".tweet", 2.5, { ease: Bounce.easeOut, y:3});

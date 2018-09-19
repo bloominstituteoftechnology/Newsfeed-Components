@@ -61,6 +61,9 @@
   padding: 30px 0;
   text-align: center;
 }
+.menu ul li:hover {
+  color: white;
+}
 .menu--open {
   display: block;
 }
