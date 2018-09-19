@@ -72,6 +72,8 @@ let createArticle = (h2Text, date, paragraph) => {
 createArticle('testing1', 'Sep 19th, 2018', 'Paragraph1.');
 createArticle('testing2', 'Sep 19th, 2018', 'Paragraph2.');
 
+// Not sure how to approach this to make it take input from a form to create new custom articles
+
 
 let newArticles = document.querySelectorAll('.newArticle');
 
