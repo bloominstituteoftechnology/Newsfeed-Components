@@ -78,6 +78,17 @@
   overflow: hidden;
   box-shadow: 2px 2px 2px lightgrey;
 }
+.article .img-container {
+  width: 100%;
+}
+.article .img-container img {
+  margin-left: 140px;
+  height: 400px;
+  width: auto;
+}
+.article .img-container .img-display-none {
+  display: none;
+}
 .article h2 {
   font-size: 28px;
   padding: 0;
