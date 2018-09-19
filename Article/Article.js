@@ -27,3 +27,6 @@ articles = Array.from(articles).map(domElement =>{
   return new Article(domElement);
 });
 
+
+TweenMax.to(".tweet", 3, {rotation:1080, scale:0.60});
+
