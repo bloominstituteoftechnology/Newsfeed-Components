@@ -73,12 +73,13 @@ function buildArticle(h2Text, pArray){
 
  
   console.log(divElement);
-return divElement;
+  let articlesDiv = document.querySelector(".articles");
+articlesDiv.append(divElement);
+
 }
 
-let createArticle = buildArticle("This is New", ["1st phara", "2nd Para"]);
-let articlesDiv = document.querySelector(".articles");
-articlesDiv.append(createArticle);
+ buildArticle("This is New", ["1st phara", "2nd Para"]);
+
 
 // START HERE: Select all classes named ".article" and assign that value to the articles variable
 let articles = document.querySelectorAll(".article");
