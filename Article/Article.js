@@ -10,7 +10,7 @@ class Article {
     this.expandButton.innerText = 'expand';
     // Set a click handler on the expandButton reference, calling the expandArticle method.
     this.expandButton.addEventListener('click', this.expandArticle.bind(this));
-    // close button
+    
     this.closeButton = domElement.querySelector('.close');
     this.closeButton.innerText = 'close';
     this.closeButton.addEventListener('click', this.closeArticle.bind(this))
@@ -30,3 +30,10 @@ let articles = document.querySelectorAll('.article');
 // Use .map() to iterate over the articles array and create a new instance of Article by passing in each article as a parameter to the constructor.
 articles = Array.from(articles).map(article => new Article(article));
 
+const title = document.querySelector('#title');
+const date = document.querySelector('#date');
+const content = document.querySelector('#content');
+
+function articleCreator() {
+  
+}
