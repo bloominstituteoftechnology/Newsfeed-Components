@@ -12,7 +12,7 @@ class Article {
     this.expandButton.addEventListener('click', this.expandArticle.bind(this));
     
     this.closeButton = domElement.querySelector('.close');
-    this.closeButton.innerText = 'close';
+    this.closeButton.innerText = 'X';
     this.closeButton.addEventListener('click', this.closeArticle.bind(this))
   }
   expandArticle() {
