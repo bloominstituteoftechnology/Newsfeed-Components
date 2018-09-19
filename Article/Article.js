@@ -1,4 +1,4 @@
-// Start at `let articles`
+// Because classes are not hoised you will need to start your code at the bottom of the page.  Look for the comment "START HERE"
 
 class Article {
   constructor(element) {
@@ -19,7 +19,6 @@ class Article {
   };
   expandArticle() {
     // Using our reference to the article element, add or remove a class to expand or hide the article.
-    // HAVING SOME TROUBLE HERE
     this.element.classList.toggle('article-open');
   };
   closeArticle() {
