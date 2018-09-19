@@ -105,6 +105,21 @@
 .article-open {
   height: 400px;
 }
+#publish {
+  width: 80%;
+  margin: 2rem auto;
+}
+#publish fieldset {
+  padding: 1rem 2rem;
+}
+#publish label {
+  display: block;
+  font-weight: bold;
+}
+#publish input,
+#publish textarea {
+  width: 100%;
+}
 html,
 body {
   margin: 0;
