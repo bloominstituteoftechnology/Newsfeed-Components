@@ -40,15 +40,16 @@ articles = Array.from(articles).map(domElement => {
 
 
 // STRETCH
-let articlesContainer = document.querySelector('.articles');
-let div = document.createElement('div');
-let h2 = document.createElement('h2');
-let pDate = document.createElement('p');
-let p = document.createElement('p');
-let span = document.createElement('span');
-let button = document.createElement('button');
+
 
 let createArticle = (h2Text, date, paragraph) => {
+  let articlesContainer = document.querySelector('.articles');
+  let div = document.createElement('div');
+  let h2 = document.createElement('h2');
+  let pDate = document.createElement('p');
+  let p = document.createElement('p');
+  let span = document.createElement('span');
+  let button = document.createElement('button');
   h2.innerText = h2Text;
   pDate.innerText = date;
   p.innerText = paragraph;
@@ -66,9 +67,10 @@ let createArticle = (h2Text, date, paragraph) => {
   div.appendChild(button);
 }
 
+// fixed it
+
 createArticle('testing1', 'Sep 19th, 2018', 'Paragraph1.');
 createArticle('testing2', 'Sep 19th, 2018', 'Paragraph2.');
-createArticle('testing3', 'Sep 19th, 2018', 'Paragraph3.');
 
 
 let newArticles = document.querySelectorAll('.newArticle');
