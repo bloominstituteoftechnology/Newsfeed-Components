@@ -1,49 +1,3 @@
-const articleConstructor = (props) => {
-  let container = document.createElement('div')
-  container.classList.toggle('article', true)
-
-  let close = document.createElement('p')
-  close.innerText = 'close'
-  close.classList.toggle('close', true)
-  container.appendChild(close)
-
-  let title = document.createElement('h2')
-  title.innerText = props.title
-  container.appendChild(title)
-
-  let date = document.createElement('p')
-  date.innerText = new Date()
-  date.classList.toggle('date', true)
-  container.appendChild(date)
-
-  let article = document.createElement('p')
-  article.innerText = props.article
-  container.appendChild(article)
-
-  let expand = document.createElement('span')
-  expand.classList.toggle('expandButton', true)
-  container.appendChild(expand)
-
-  document.querySelector('.articles').appendChild(container)
-}
-
-articleConstructor({
-  title: 'hi',
-  article: ';lakfh;alkjf;lekh'
-})
-
-const form = document.querySelector('.form')
-form.querySelector('button').addEventListener('click', event => {
-  event.preventDefault()
-  console.log(form.querySelector('input').value)
-  console.log(form.querySelector('textarea').value)
-  articleConstructor({
-    title: form.querySelector('input').value,
-    article: form.querySelector('textarea').value
-  })
-
-})
-
 class Article {
   constructor(domElement) {
     this.expanded = false
@@ -77,3 +31,47 @@ class Article {
 
 let articles = document.querySelectorAll('.article')
 articles = Array.from(articles).map(article => new Article(article))
+
+const articleConstructor = (props) => {
+  let container = document.createElement('div')
+  container.classList.toggle('article', true)
+
+  let close = document.createElement('p')
+  close.innerText = 'close'
+  close.classList.toggle('close', true)
+  container.appendChild(close)
+
+  let title = document.createElement('h2')
+  title.innerText = props.title
+  container.appendChild(title)
+
+  let date = document.createElement('p')
+  date.innerText = new Date()
+  date.classList.toggle('date', true)
+  container.appendChild(date)
+
+  let article = document.createElement('p')
+  article.innerText = props.article
+  container.appendChild(article)
+
+  let expand = document.createElement('span')
+  expand.classList.toggle('expandButton', true)
+  container.appendChild(expand)
+
+  // this works for some reason
+  new Article(container)
+
+  document.querySelector('.articles').appendChild(container)
+}
+
+
+const form = document.querySelector('.form')
+form.querySelector('button').addEventListener('click', event => {
+  event.preventDefault()
+  articleConstructor({
+    title: form.querySelector('input').value,
+    article: form.querySelector('textarea').value
+  })
+  form.querySelector('input').value = ''
+  form.querySelector('textarea').value = ''
+})
