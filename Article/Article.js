@@ -10,6 +10,22 @@ class Article {
     this.expandButton.forEach(button => (button.innerText = 'Click to expand'));
     // Set a click handler on the expandButton reference (or article element), calling the expandArticle method.
     this.article.addEventListener('click', e => this.expandArticle(e));
+    // Close Article
+    this.article.addEventListener('click', e => this.closeArticle(e));
+  }
+
+  closeArticle(e) {
+    if (e.target.classList.contains('close')) {
+      TweenMax.to(this.article, 1, {
+        x: 2000,
+        ease: Bounce.easeOut
+      });
+      TweenMax.to(this.article, 0.5, {
+        height: 0,
+        delay: 1
+      });
+      setTimeout(() => (this.article.style.display = 'none'), 2000);
+    }
   }
 
   expandArticle(e) {

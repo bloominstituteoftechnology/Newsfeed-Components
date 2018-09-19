@@ -91,6 +91,7 @@
   position: absolute;
   top: 10px;
   right: 10px;
+  cursor: pointer;
 }
 .article .expandButton {
   position: absolute;
