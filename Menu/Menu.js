@@ -11,3 +11,9 @@ const menu = document.querySelector('.menu');
 const menuButton = document.querySelector('.menu-button');
 // Using your menuButton reference, add a click handler that calls toggleMenu
 menuButton.addEventListener('click', toggleMenu);
+
+window.addEventListener('mouseup', e => {
+  if (e.target != menu && e.target != menuButton && e.target.parentNode.parentNode != menu) {
+    menu.classList.remove('menu--open');
+  }
+})
