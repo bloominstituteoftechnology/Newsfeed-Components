@@ -2,8 +2,16 @@
 
 class Article {
   constructor(domElement) {
+    var btn = document.createElement("button");
+    var t = document.createTextNode("Read");
+    btn.appendChild(t);
+    this.domElement=domElement;
+    this.domElement.appendChild(btn);
     // assign this.domElement to the passed in domElement
     this.domElement=domElement;
+    btn.addEventListener('click',(event)=>{
+      this.domElement.classList.toggle('change');
+    })
     // create a reference to the ".expandButton" class. 
     this.expandButton=domElement.querySelector('.expandButton');
     // Using your expandButton reference, update the text on your expandButton to say "expand"
@@ -11,10 +19,12 @@ class Article {
     // Set a click handler on the expandButton reference, calling the expandArticle method.
     this.expandButton.addEventListener('click',(event)=>{
       this.expandArticle(event);
+      this.domElement.style.color='blue';
       if(this.expandButton.innerText=="Expand"){
         this.expandButton.innerText='Minimize';
       }else if(this.expandButton.innerText=="Minimize"){
         this.expandButton.innerText='Expand';
+        this.domElement.style.color='black';
       }
     });
   }
@@ -33,3 +43,4 @@ articles= document.querySelectorAll('.article');
 articles = Array.from(articles).map( domElement => {
   return new Article(domElement);
 });
+
