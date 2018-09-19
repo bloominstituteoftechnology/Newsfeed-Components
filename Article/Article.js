@@ -1,29 +1,35 @@
-// Because classes are not hoised you will need to start your code at the bottom of the page.  Look for the comment "START HERE"
+// // Because classes are not hoised you will need to start your code at the bottom of the page.  Look for the comment "START HERE"
 
-class Article {
-  constructor(domElement) {
+
+ class Article {
+   constructor(domElement) {
     // assign this.domElement to the passed in domElement
     this.domElement = domElement;
+    //console.log("this.domElement ***   " +this.domElement);
     // create a reference to the ".expandButton" class. 
-    this.expandButton = document.querySelector('.expandButton').addEventListenet('click', ()=> expandArticle('event'));
-    //.addEventListenet('mouseover', (event) => {event.currentTarget.innerText = "expand"});
+    this.expandButton = this.domElement.querySelector('.expandButton');
+//    console.log("this.expandButton ---  : "+this.expandButton)
+
     // Using your expandButton reference, update the text on your expandButton to say "expand"
-    
-    // Set a click handler on the expandButton reference, calling the expandArticle method.
-    
-  }
+    this.expandButton.innerText = "expand";
 
-  expandArticle() {
-    // Using our reference to the domElement, toggle a class to expand or hide the article.
-    this.domElement.classList.toggle(article-open);
-  }
-}
+     // Set a click handler on the expandButton reference, calling the expandArticle method.
+     this.expandButton.addEventListener('click', () => {
+       this.expandArticle(event);
+     });
+   }
 
-// START HERE: Select all classes named ".article" and assign that value to the articles variable
-let articles = document.querySelectorAll('.articles');
+   expandArticle() { 
+     // Using our reference to the domElement, toggle a class to expand or hide the article.
+     this.domElement.classList.toggle('article-open');
+   }
+ }
 
-// Use .map() to iterate over the articles array and create a new instance of Article by passing in each article as a parameter to the constructor.
-articles = Array.from(articles).map(domElement => {
-      return new Article(domElement);
-});
+// // START HERE: Select all classes named ".article" and assign that value to the articles variable
+ let articles = document.querySelectorAll('.article');
 
+
+ // Use .map() to iterate over the articles array and create a new instance of Article by passing in each article as a parameter to the constructor.
+ articles = Array.from(articles).map(domElement => {
+    return new Article(domElement);
+ });
