@@ -35,6 +35,9 @@
   margin: 0;
   font-size: 48px;
 }
+.lambdaTitle {
+  position: fixed;
+}
 .menu-button {
   position: absolute;
   left: 20px;
