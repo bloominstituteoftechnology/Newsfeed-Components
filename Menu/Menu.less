@@ -5,7 +5,7 @@
 }
 
 .menu {
-  display: none;
+  display: block;
   position: fixed;
   top: 75px;
   left: 0;
@@ -15,7 +15,13 @@
   border: 1px solid #004D40;
   border-left: none;
   border-bottom: none;
+  transform: translateX(-100%);
+  transition: all 500ms ease-in-out;
   z-index: 2; /* This set the layer level of the element, it has precendence over initial level of 1*/
+}
+
+.menu--open {
+  transform: translateX(0);
 }
 
 .menu ul li{
@@ -25,6 +31,6 @@
   text-align: center;
 }
 
-.menu--open {
-  display: block;
-}
+
+
+
