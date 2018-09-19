@@ -105,6 +105,54 @@
 .article-open {
   height: 400px;
 }
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25%;
+}
+.reg-form {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  width: 80%;
+}
+.reg-form h1 {
+  display: none;
+}
+.reg-form form {
+  width: 717px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.reg-form form div {
+  align-self: flex-start;
+}
+.btn-form {
+  width: 200px;
+  height: 50px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  border: solid 8px rgba(158, 20, 20, 0.959);
+  cursor: pointer;
+}
+.btn-form h1 {
+  color: white;
+}
+.btn-form .article-form {
+  display: none;
+}
+.publish-btn {
+  cursor: pointer;
+  width: 100px;
+  height: 25px;
+  background-color: white;
+}
 html,
 body {
   margin: 0;
