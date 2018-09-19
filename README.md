@@ -4,7 +4,7 @@ In this project we are going to be building a news feed reader. The goal is to h
 
 ### Need to know:
 * CSS (LESS):
-  * @import
+  * @import(X)
 * JavaScript:
   * ES6 classes and the constructor function.
 * DOM
