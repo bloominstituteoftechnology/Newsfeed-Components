@@ -75,35 +75,53 @@
   cursor: pointer;
 }
 .menu {
-  display: block;
+  display: flex;
+  justify-content: center;
   position: fixed;
   top: 75px;
-  left: -350px;
-  width: 350px;
+  left: -20vw;
+  width: 20vw;
   height: 100vh;
   /* This give the height 100% of the screen or, '100% of View Height' */
-  background-color: #81C784;
-  border: 1px solid #004D40;
   border-left: none;
   border-bottom: none;
   -moz-transition: all 300ms;
   -webkit-transition: all 300ms;
   transition: all 300ms;
+  animation: colorRotation 20s ease infinite;
+  color: white;
+}
+.menu ul {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 10vh;
+  padding: 0;
+  margin: 0;
+}
+.menu ul .last {
+  align-self: flex-end;
 }
 .menu ul li {
   list-style-type: none;
   font-size: 32px;
   padding: 30px 0;
   text-align: center;
+  width: 100%;
+}
+.menu ul li:hover {
+  color: black;
 }
 .menu--open {
   display: block;
 }
 .articles {
   margin-top: 95px;
+  width: 100vw;
   -moz-transition: all 300ms;
   -webkit-transition: all 300ms;
   transition: all 300ms;
+  left: 0;
 }
 .article {
   margin: 20px 10%;
@@ -114,6 +132,7 @@
   position: relative;
   height: 50px;
   overflow: hidden;
+  left: 0;
   box-shadow: 2px 2px 2px lightgrey;
   -moz-transition: all 300ms;
   -webkit-transition: all 300ms;
@@ -144,7 +163,7 @@
   background-color: white;
 }
 .article-open {
-  height: 400px;
+  height: 350px;
 }
 html,
 body {
@@ -157,8 +176,6 @@ body.menu-active .menu {
   left: 0px;
 }
 body.menu-active .articles {
-  left: 350px;
-}
-body.menu-active .article {
-  left: 350px;
+  margin-left: 20vw;
+  width: 80vw;
 }

@@ -5,20 +5,36 @@
 }
 
 .menu {
-  display: block;
+  display: flex;
+  justify-content: center;
   position: fixed;
   top: 75px;
-  left: -350px;
-  width: 350px;
+  left: -20vw;
+  width: 20vw;
   height: 100vh; /* This give the height 100% of the screen or, '100% of View Height' */
-  background-color: #81C784;
-  border: 1px solid #004D40;
+  //background-color: #81C784;
+  //border: 1px solid #004D40;
   border-left: none;
   border-bottom: none;
   //z-index: 2; /* This set the layer level of the element, it has precendence over initial level of 1*/
   -moz-transition: all 300ms;
 	-webkit-transition: all 300ms;
-	transition: all 300ms;
+  transition: all 300ms;
+  animation: colorRotation 20s ease infinite;
+  color: white;
+}
+
+.menu ul{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 10vh;
+  padding: 0;
+  margin: 0;
+
+  .last {
+    align-self: flex-end;
+  }
 }
 
 .menu ul li{
@@ -26,6 +42,11 @@
   font-size: 32px;
   padding: 30px 0;
   text-align: center;
+  width: 100%;
+
+  &:hover {
+    color: black;
+  }
 }
 
 .menu--open {
