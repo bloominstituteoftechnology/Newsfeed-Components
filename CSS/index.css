@@ -71,6 +71,7 @@
 }
 .articles {
   margin-top: 95px;
+  height: 100%;
 }
 .article {
   margin: 20px 10%;

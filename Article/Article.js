@@ -20,11 +20,15 @@ class Article {
   expandArticle() {
     // Using our reference to the article element, add or remove a class to expand or hide the article.
     this.element.classList.toggle('article-open');
-    this.expandButton.innerText = 'Click to Close';
+    if (this.element.classList.contains('article-open') === true){
+      this.expandButton.innerText = 'Click to Close';
+    }
+    else {
+      this.expandButton.innerText = 'Click to Expand';
+    }
   };
   closeArticle() {
     this.element.style.display = 'none';
-    this.expandButton.innerText = 'Click to Expand';
   }
 }
 
