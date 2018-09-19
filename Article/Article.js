@@ -10,18 +10,25 @@ class Article {
      this.expandButton.innerText = 'Click to Expand';
     // Set a click handler on the expandButton reference, calling the expandArticle method.
      this.expandButton.addEventListener('click', () => this.expandArticle(event));
+     this.readButton = domElement.querySelector('.read-button');
+     this.readButton.addEventListener('click', () =>
+     this.closeArticle(event));
   }
 
   expandArticle() {
     // Using our reference to the domElement, toggle a class to expand or hide the article.
-    console.log('clicked!')
     event.stopPropagation();
     this.domElement.classList.toggle('article-open');
     if (this.expandButton.innerHTML == 'Click to Expand'){
       this.expandButton.innerHTML = 'Click to Close';
     } else {
-      this.expandButton.innerHTML = 'Click to Expand'; 
+      this.expandButton.innerHTML = 'Click to Expand';
     }
+  }
+
+  closeArticle(){
+    event.stopPropagation();
+    this.domElement.classList.add('done');
   }
 }
 
@@ -54,8 +61,14 @@ function articleHtml(article){
   let newArticleText = document.createElement('p');
   newArticleText.innerText = article.text;
 
-  let newButton = document.createElement('span');
-  newButton.classList.add('expandButton');
+  let newExpandButton = document.createElement('span');
+  newExpandButton.classList.add('expandButton');
+
+  let newReadButton = document.createElement('div');
+  newReadButton.classList.add('read-button');
+  let newReadButtonText = document.createElement('p');
+  newReadButtonText.innerHTML = 'Done Reading';
+
 
   let articleContainer = document.querySelector('.articles');
 
@@ -64,7 +77,9 @@ function articleHtml(article){
   addArticles.appendChild(newArticleHeader);
   addArticles.appendChild(newArticleDate);
   addArticles.appendChild(newArticleText);
-  addArticles.appendChild(newButton);
+  addArticles.appendChild(newExpandButton);
+  addArticles.appendChild(newReadButton);
+  newReadButton.appendChild(newReadButtonText);
   articleContainer.appendChild(addArticles);
 }
 
