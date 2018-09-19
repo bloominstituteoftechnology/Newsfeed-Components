@@ -1,10 +1,20 @@
+class Button {
+	constructor() {
+		/*-- DOM selectors -----------------------------*/
+		this.menu = document.querySelector('.menu');
+		this.menuButton = document.querySelector('.menu-button');
+		/*-- event listeners ---------------------------*/
+		this.menuButton.addEventListener('click', this.onClick.bind(this));
+	}
 
-const toggleMenu = () => {
-  // Toggle the "menu--open" class on your menu refence. 
+	/*-- class functions ---------------------------*/
+	toggleMenu() {
+		this.menu.classList.toggle('menu--open');
+	}
+
+	onClick() {
+		this.toggleMenu();
+	}
 }
 
-// Start Here: Create a reference to the ".menu" class
-const menu;
-// create a reference to the ".menu-button" class
-const menuButton;
-// Using your menuButton reference, add a click handler that calls toggleMenu
+const button = new Button();
