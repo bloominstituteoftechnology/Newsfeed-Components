@@ -4,13 +4,14 @@
   <head>
     <title>Lambda School Newsfeed</title>
     <link rel="stylesheet" type="text/css" media="screen" href="./CSS/index.css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <script src="./Menu/Menu.js" async></script>
     <script src="./Article/Article.js" async></script>
   </head>
   <body>
     <div class="header">
       <img class="menu-button" src="./assets/menu.png"/>
-      <h1>Lambda School Newsfeed</h1>
+      <img class="lambda" src="img/ltimes.png" alt="LambdaTimes Logo"> 
     </div>
     <div class="menu">
       <ul>
@@ -22,6 +23,8 @@
         <li>Log Out</li>
       </ul>
     </div>
+    
+    <!-- article-->
     <div class="articles">
     <div class="article">
       <h2>McFly</h2>
@@ -170,5 +173,11 @@
         <span class='expandButton'></span>
       </div>
     </div>
+
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenLite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/plugins/CSSPlugin.min.js"></script>
+    <script src="./js/app.js"></script>
+
   </body>
 </html>
