@@ -38,6 +38,8 @@ articles = Array.from(articles).map(domElement => {
   new Article(domElement);
 });
 
+
+// STRETCH
 let articlesContainer = document.querySelector('.articles');
 let div = document.createElement('div');
 let h2 = document.createElement('h2');
