@@ -3,8 +3,12 @@ const menu = document.querySelector('.menu');
 
 const toggleMenu = () => {
   // Toggle the "menu--open" class on your menu refence.
-  console.log('in toggleMenu');
   menu.classList.toggle('menu--open');
+  if (menu.classList.contains('menu--open')) {
+    TweenMax.to('.menu', 3, {x: 300});
+  } else {
+    TweenMax.to('.menu', 3, {x: -400});
+  }
 }
 
 
