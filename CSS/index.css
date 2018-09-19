@@ -27,6 +27,8 @@
   /* display: none; */
   position: fixed;
   top: 75px;
+  /* changed initial left value to have menu start off-screen
+  and transition in with GSAP */
   left: -350px;
   width: 350px;
   height: 100vh;
@@ -87,7 +89,7 @@
   background-color: white;
 }
 .article-open {
-  height: 400px;
+  /*height: 400px;*/
 }
 html,
 body {
