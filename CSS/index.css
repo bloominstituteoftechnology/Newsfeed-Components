@@ -95,8 +95,8 @@
   right: 10px;
 }
 .article .read-button {
-  width: 150px;
-  background: teal;
+  width: 75px;
+  background: gray;
   border-radius: 5px;
   border: 1px solid black;
   text-align: center;

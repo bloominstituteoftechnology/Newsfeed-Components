@@ -66,8 +66,7 @@ function articleHtml(article){
 
   let newReadButton = document.createElement('div');
   newReadButton.classList.add('read-button');
-  let newReadButtonText = document.createElement('p');
-  newReadButtonText.innerHTML = 'Done Reading';
+  newReadButton.innerText = 'Done';
 
 
   let articleContainer = document.querySelector('.articles');
@@ -79,7 +78,6 @@ function articleHtml(article){
   addArticles.appendChild(newArticleText);
   addArticles.appendChild(newExpandButton);
   addArticles.appendChild(newReadButton);
-  newReadButton.appendChild(newReadButtonText);
   articleContainer.appendChild(addArticles);
 }
 
