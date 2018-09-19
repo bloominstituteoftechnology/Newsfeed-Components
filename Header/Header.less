@@ -9,9 +9,43 @@
   position: fixed;
   top: 0;
   z-index: 2;
+  animation: colorRotation 20s ease infinite;
 
   h1 {
     margin: 0;
     font-size: 48px;
+  }
+}
+
+@keyframes colorRotation {
+  0%, 100% {
+    background-color: #388E3C;
+  }
+  10% {
+    background-color: #388e7c;
+  }
+  20%{
+    background-color: #38798e;
+  }
+  30%{
+    background-color: #38608e;
+  }
+  40%{
+    background-color: #42388e;
+  }
+  50%{
+    background-color: #89388e;
+  }
+  60%{
+    background-color: #8e384e;
+  }
+  70%{
+    background-color: #8e3c38;
+  }
+  80%{
+    background-color: #8e8338;
+  }
+  90%{
+    background-color: #718e38;
   }
 }

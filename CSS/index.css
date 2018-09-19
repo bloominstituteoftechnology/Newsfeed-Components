@@ -30,10 +30,44 @@
   position: fixed;
   top: 0;
   z-index: 2;
+  animation: colorRotation 20s ease infinite;
 }
 .header h1 {
   margin: 0;
   font-size: 48px;
+}
+@keyframes colorRotation {
+  0%,
+  100% {
+    background-color: #388E3C;
+  }
+  10% {
+    background-color: #388e7c;
+  }
+  20% {
+    background-color: #38798e;
+  }
+  30% {
+    background-color: #38608e;
+  }
+  40% {
+    background-color: #42388e;
+  }
+  50% {
+    background-color: #89388e;
+  }
+  60% {
+    background-color: #8e384e;
+  }
+  70% {
+    background-color: #8e3c38;
+  }
+  80% {
+    background-color: #8e8338;
+  }
+  90% {
+    background-color: #718e38;
+  }
 }
 .menu-button {
   position: absolute;
@@ -41,10 +75,10 @@
   cursor: pointer;
 }
 .menu {
-  display: none;
+  display: block;
   position: fixed;
   top: 75px;
-  left: 0;
+  left: -350px;
   width: 350px;
   height: 100vh;
   /* This give the height 100% of the screen or, '100% of View Height' */
@@ -52,8 +86,9 @@
   border: 1px solid #004D40;
   border-left: none;
   border-bottom: none;
-  z-index: 2;
-  /* This set the layer level of the element, it has precendence over initial level of 1*/
+  -moz-transition: all 300ms;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
 }
 .menu ul li {
   list-style-type: none;
@@ -66,6 +101,9 @@
 }
 .articles {
   margin-top: 95px;
+  -moz-transition: all 300ms;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
 }
 .article {
   margin: 20px 10%;
@@ -77,6 +115,9 @@
   height: 50px;
   overflow: hidden;
   box-shadow: 2px 2px 2px lightgrey;
+  -moz-transition: all 300ms;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
 }
 .article h2 {
   font-size: 28px;
@@ -111,4 +152,13 @@ body {
   padding: 0;
   font-family: 'Roboto';
   background-color: #fffef7;
+}
+body.menu-active .menu {
+  left: 0px;
+}
+body.menu-active .articles {
+  left: 350px;
+}
+body.menu-active .article {
+  left: 350px;
 }
