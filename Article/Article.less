@@ -11,6 +11,7 @@
   height: 50px;
   overflow: hidden;
   box-shadow: 2px 2px 2px lightgrey;
+  transition: 1s;
 
   h2 {
     font-size: 28px;
@@ -43,6 +44,15 @@
 
 .article-open {
   height: 400px;
+  animation-name: expand;
+  animation-duration: 1s;
+  transition: 1s;
+}
+
+
+@keyframes expand {
+  from {height: 50px;}
+  to {height: 400px;}
 }
 
 

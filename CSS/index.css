@@ -45,7 +45,7 @@
   position: fixed;
   top: 75px;
   left: 0;
-  width: 350px;
+  width: 0;
   height: 100vh;
   /* This give the height 100% of the screen or, '100% of View Height' */
   background-color: #A0001E;
@@ -62,7 +62,18 @@
   text-align: center;
 }
 .menu--open {
+  animation-name: open;
+  animation-duration: 1s;
+  width: 350px;
   display: block;
+}
+@keyframes open {
+  from {
+    width: 0;
+  }
+  to {
+    width: 350px;
+  }
 }
 .articles {
   margin-top: 95px;
@@ -77,6 +88,7 @@
   height: 50px;
   overflow: hidden;
   box-shadow: 2px 2px 2px lightgrey;
+  transition: 1s;
 }
 .article h2 {
   font-size: 28px;
@@ -104,6 +116,17 @@
 }
 .article-open {
   height: 400px;
+  animation-name: expand;
+  animation-duration: 1s;
+  transition: 1s;
+}
+@keyframes expand {
+  from {
+    height: 50px;
+  }
+  to {
+    height: 400px;
+  }
 }
 html,
 body {
