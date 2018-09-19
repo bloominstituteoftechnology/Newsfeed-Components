@@ -5,11 +5,12 @@ class Article {
     // assign this.domElement to the passed in domElement
     this.domElement = domElement;
     // create a reference to the ".expandButton" class. 
-    this.expandButton = this.domElement.querySelector(".expandButtton");
+    this.expandButton = this.domElement.querySelector(".expandButton");
     // Using your expandButton reference, update the text on your expandButton to say "expand"
     this.expandButton.innerText = "expand";
 
     // Set a click handler on the expandButton reference, calling the expandArticle method.
+    this.domElement.addEventListener("click", this.expandArticle.bind(this));
 
   }
 
