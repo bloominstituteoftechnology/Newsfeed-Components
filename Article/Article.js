@@ -28,3 +28,14 @@ articles = Array.from(articles).map(articleItem => {
 });
 
 // console.log(articles);
+
+const allArticle = document.querySelectorAll(".article");
+// scroll reveal animations
+window.sr = ScrollReveal({ mobile: false });
+
+sr.reveal(allArticle, {
+  origin: "left",
+  delay: 0,
+  interval: 150,
+  distance: "300px"
+});

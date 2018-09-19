@@ -55,14 +55,24 @@
   z-index: 2;
   /* This set the layer level of the element, it has precendence over initial level of 1*/
 }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .menu ul li {
   list-style-type: none;
   font-size: 32px;
   padding: 30px 0;
   text-align: center;
+  cursor: pointer;
 }
 .menu--open {
   display: block;
+  animation: 200ms fadeIn ease-in;
 }
 .articles {
   margin-top: 95px;
@@ -104,6 +114,7 @@
 }
 .article-open {
   height: 400px;
+  transition: 500ms;
 }
 html,
 body {
@@ -111,4 +122,7 @@ body {
   padding: 0;
   font-family: "Roboto";
   background-color: #fffef7;
+}
+body {
+  animation: 1s fadeIn;
 }
