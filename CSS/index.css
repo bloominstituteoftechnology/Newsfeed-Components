@@ -91,8 +91,10 @@
   position: absolute;
   top: 10px;
   right: 10px;
+  cursor: pointer;
 }
 .article .expandButton {
+  width: 50%;
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -113,7 +115,7 @@ body {
   background-color: #fffef7;
 }
 .slideIn {
-  animation-duration: 3s;
+  animation-duration: 1s;
   animation-name: slidein;
 }
 @keyframes slidein {
@@ -125,7 +127,7 @@ body {
   }
 }
 .slideOut {
-  animation-duration: 3s;
+  animation-duration: 1s;
   animation-name: slideOut;
 }
 @keyframes slideOut {
