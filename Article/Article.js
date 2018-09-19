@@ -6,8 +6,10 @@ class Article {
     this.expandButton.innerText = 'Click to expand'
     this.expandButton.addEventListener(
       'click',
-      () => (this.expanded ? this.closeArticle() : this.expandArticle())
+      () => (this.expanded ? this.hideArticle() : this.expandArticle())
     )
+    this.closeButton = this.domElement.querySelector('.close')
+    this.closeButton.addEventListener('click', () => this.closeArticle())
   }
 
   expandArticle() {
@@ -16,10 +18,14 @@ class Article {
     this.expandButton.innerText = 'Click to close'
   }
 
-  closeArticle() {
+  hideArticle() {
     TweenMax.to('.article', 0.7, { height: '40px' })
     this.expanded = false
     this.expandButton.innerText = 'Click to expand'
+  }
+
+  closeArticle() {
+    this.domElement.style.display = 'none'
   }
 }
 
