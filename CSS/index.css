@@ -61,7 +61,7 @@
   padding: 30px 0;
   text-align: center;
 }
-.menu--open {
+.menu-open {
   display: block;
 }
 .articles {
@@ -104,6 +104,9 @@
 }
 .article-open {
   height: 400px;
+  transition: 1000ms;
+}
+.article-close {
   transition: 1000ms;
 }
 html,
