@@ -3,24 +3,34 @@
 class Article {
   constructor(domElement) {
     // assign this.domElement to the passed in domElement
-    this.domElement;
+    this.domElement = domElement;
     // create a reference to the ".expandButton" class. 
-    this.expandButton;
+    this.expandButton = this.domElement.querySelector('.expandButton');
     // Using your expandButton reference, update the text on your expandButton to say "expand"
-    
+    articleExpand (event) {
+      event.stopPropagation();
+      if(this.expandButton) {
+        this.expandButton.innerText = 'EXPAND';
+      }
+
+    };
     // Set a click handler on the expandButton reference, calling the expandArticle method.
-    
+    this.domElement.addEventListener('click', (event) => {
+      this.expandButton(event);
+    });
   }
 
   expandArticle() {
     // Using our reference to the domElement, toggle a class to expand or hide the article.
-
+    
   }
 }
 
 // START HERE: Select all classes named ".article" and assign that value to the articles variable
-let articles;
+let articles = document.querySelectorAll('.articles');
 
 // Use .map() to iterate over the articles array and create a new instance of Article by passing in each article as a parameter to the constructor.
-articles = Array.from(articles);
+articles = Array.from(articles).map( domElement => {
+ return new Article(domElement)
+});
 
