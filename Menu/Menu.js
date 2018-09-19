@@ -1,5 +1,5 @@
 const toggleMenu = () => {
-  menu.classList.toggle('menu')
+  menu.classList.toggle('menu--open')
 }
 
 const menu = document.querySelector('.menu')
