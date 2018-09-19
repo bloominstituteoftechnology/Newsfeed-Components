@@ -16,6 +16,13 @@
   border-left: none;
   border-bottom: none;
   z-index: 2; /* This set the layer level of the element, it has precendence over initial level of 1*/
+  transition: 0.3s ease;
+  transform: scale(.01);
+
+  &.menu--open{
+    transform: scale(1);
+  }
+
 }
 
 .menu ul li{

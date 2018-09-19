@@ -16,6 +16,12 @@ class Article {
     // Using our reference to the domElement, toggle a class to expand or hide the article.
     event.stopPropagation();
     event.currentTarget.parentNode.classList.toggle('article-open');
+    if (this.expandButton.innerText === 'Expand') {
+      this.expandButton.innerText = 'Close';
+    } else {
+      this.expandButton.innerText = 'Expand';
+    };
+
   }
 }
 
