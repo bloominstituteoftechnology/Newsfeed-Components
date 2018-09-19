@@ -5,24 +5,19 @@
 }
 
 .menu {
-  display: none;
-  position: fixed;
+  position: absolute;
   top: 75px;
   left: 0;
   width: 350px;
   height: 100vh; /* This give the height 100% of the screen or, '100% of View Height' */
-  background-color: #81C784;
+  background-color: #acd213;
   border: 1px solid #004D40;
   border-left: none;
   border-bottom: none;
   z-index: 2; /* This set the layer level of the element, it has precendence over initial level of 1*/
-  transition: 0.3s ease;
-  transform: scale(.01);
-
-  &.menu--open{
-    transform: scale(1);
-  }
-
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  transition: transform .5s ease-in-out;
 }
 
 .menu ul li{
@@ -33,5 +28,6 @@
 }
 
 .menu--open {
-  display: block;
+  transform: none;
 }
+
