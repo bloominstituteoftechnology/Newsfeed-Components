@@ -41,9 +41,9 @@
   cursor: pointer;
 }
 .menu {
-  display: none;
   position: fixed;
   top: 75px;
+  opacity: 0;
   left: 0;
   width: 350px;
   height: 100vh;
