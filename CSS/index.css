@@ -81,10 +81,10 @@
   transition: all 0.2s;
 }
 .article .img-container {
-  width: 100%;
+  width: 745px;
+  margin: 0 auto;
 }
 .article .img-container img {
-  margin-left: 140px;
   height: 400px;
   width: auto;
 }
