@@ -87,6 +87,9 @@
   margin: 0;
   font-size: 14px;
 }
+.article iframe {
+  margin: 0 auto;
+}
 .article .close {
   position: absolute;
   top: 10px;
