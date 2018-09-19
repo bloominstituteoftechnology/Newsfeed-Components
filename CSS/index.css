@@ -54,6 +54,7 @@
   border-bottom: none;
   z-index: 2;
   /* This set the layer level of the element, it has precendence over initial level of 1*/
+  opacity: 0;
 }
 .menu ul li {
   list-style-type: none;
@@ -74,7 +75,7 @@
   border-radius: 10px;
   background-color: white;
   position: relative;
-  height: 50px;
+  height: 40px;
   overflow: hidden;
   box-shadow: 2px 2px 2px lightgrey;
 }
@@ -103,7 +104,7 @@
   background-color: white;
 }
 .article-open {
-  height: 400px;
+  height: 300px;
 }
 html,
 body {
