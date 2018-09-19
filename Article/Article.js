@@ -16,7 +16,7 @@ class Article {
     });
     // I set a click handler to close button reference
     this.closeButton.addEventListener('click', () => {
-      this.closeButton();
+      this.close();
     });
   }
   
@@ -24,7 +24,8 @@ class Article {
     // Using our reference to the domElement, toggle a class to expand or hide the article.
     this.domElement.classList.toggle('article-open');
   }
-  closeButton() {
+
+  close() {
     this.domElement.style.display = 'none';
   }
 }
