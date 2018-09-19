@@ -16,6 +16,7 @@
   border: 1px solid #004D40;
   border-left: none;
   border-bottom: none;
+  transition: 1s;
   z-index: 2; /* This set the layer level of the element, it has precendence over initial level of 1*/
 }
 
@@ -27,13 +28,16 @@
 }
 
 .menu--open {
+  width: 350px;
   animation-name: open;
   animation-duration: 1s;
-  width: 350px;
   display: block;
+  transition: 1s;
 }
 
 @keyframes open {
   from {width: 0;}
   to {width: 350px;}
+  from {display: none;}
+  to {display: block;}
 }
