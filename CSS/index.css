@@ -41,11 +41,11 @@
   cursor: pointer;
 }
 .menu {
-  display: none;
+  overflow: hidden;
   position: fixed;
   top: 75px;
   left: 0;
-  width: 350px;
+  width: 0px;
   height: 100vh;
   /* This give the height 100% of the screen or, '100% of View Height' */
   background-color: #81C784;
@@ -54,6 +54,7 @@
   border-bottom: none;
   z-index: 2;
   /* This set the layer level of the element, it has precendence over initial level of 1*/
+  transition: all 0.5s ease-in-out;
 }
 .menu ul li {
   list-style-type: none;
@@ -62,7 +63,7 @@
   text-align: center;
 }
 .menu--open {
-  display: block;
+  width: 350px;
 }
 .articles {
   margin-top: 95px;
@@ -77,6 +78,7 @@
   height: 50px;
   overflow: hidden;
   box-shadow: 2px 2px 2px lightgrey;
+  transition: all 1s ease-in-out;
 }
 .article h2 {
   font-size: 28px;
