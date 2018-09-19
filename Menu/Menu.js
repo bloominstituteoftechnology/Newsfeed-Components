@@ -1,17 +1,35 @@
 
 const toggleMenu = () => {
-  // Toggle the "menu--open" class on your menu refence. 
+  menu.classList.toggle('menu--open')
+ //Toggle the "menu--open" class on your menu reference. 
 }
 
 // Start Here: Create a reference to the ".menu" class
-const menu;
+const menu = document.querySelector('.menu');
+
+
 // create a reference to the ".menu-button" class
-const menuButton;
+const menuButton = document.querySelector('.menu-button');
+
+
 // Using your menuButton reference, add a click handler that calls toggleMenu
+
+menuButton.addEventListener ('click',() => {
+  toggleMenu();
+});
+
+
+
+
+
+
+
+
+/// ---------------- NOTES FROM LECTURE --------------------------
 
 //STEP 1- create class holding the logic of the 
 //desired element behavior, in this case listening
-
+/*
 class Button {
   constructor(domElement) {
     this.domElement = domElement;
@@ -34,3 +52,4 @@ buttons = Array.from(buttons).map(domElement => {
 });
 // in this case, we're creating an array of the original buttons and then converting 
 //each array item to the new smart button as described in Button class
+*/
