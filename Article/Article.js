@@ -1,5 +1,3 @@
-// Start at `let articles`
-
 class Article {
   constructor(element) {
     // assign this.element to the passed in article element
@@ -19,10 +17,7 @@ class Article {
 }
 
 // START HERE: Select all classes named ".article" and assign that value to the articles variable
-let articles = document.querySelectorAll('articles');
+let articles;
 
 // Use .map() to iterate over the articles array and create a new instance of Article by passing in each article element as a parameter to the constructor.
-articles = Array.from(articles).map(article => new Article(article));
-this.expandButton = Array.from(this.article.childNodes).filter(child => child.className === "expandButton")[0];
-this.expandButton.innerText = "Expand";
-this.expandButton.addEventListener('click', this.expandArticle.bind(this));
+//articles = Array.from(articles).map();
