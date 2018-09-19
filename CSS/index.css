@@ -44,7 +44,7 @@
   position: fixed;
   top: 75px;
   transition: all 0.2s;
-  left: -350px;
+  left: -351px;
   width: 350px;
   height: 100vh;
   /* This give the height 100% of the screen or, '100% of View Height' */
@@ -62,7 +62,7 @@
   text-align: center;
 }
 .menu--open {
-  transform: translateX(350px);
+  transform: translateX(351px);
   transition: all 0.2s;
 }
 .articles {
