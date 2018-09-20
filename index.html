@@ -87,22 +87,22 @@
       <span class='expandButton'></span>
     </div>
   </div>
-  <div class="form-container">
-    <h2>Write an article!</h2>
-    <form id="write-article">
-      <div>
-        <label for="header">Title:</label><br />
-        <input type="text" id="header" name="header">
-      </div>
-      <div>
-        <label for="text">Article Text:</label><br />
-        <textarea id="text" name="text">THIS FINALLY WORKS!</textarea>
-      </div>
-      <div class="button">
-        <button type="submit">Send your article</button>
-      </div>
-    </form>
-  </div>
+    <div class="form-container">
+      <h2>Add your own article!</h2>
+      <form id="write-article">
+        <div class="form-title">
+          <textarea id="header" name="header" placeholder="Your article title"></textarea>
+          <label for="header">Your article title: </label>
+        </div>
+        <div class="form-text">
+          <textarea id="text" name="text" placeholder="Your article text"></textarea>
+          <label for="text">Your article text:</label>
+        </div>
+        <div class="button">
+          <button type="submit">Submit Article</button>
+        </div>
+      </form>
+    </div>
 </body>
 
 </html>

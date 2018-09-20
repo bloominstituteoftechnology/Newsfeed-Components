@@ -72,7 +72,7 @@ form.querySelector('.button').addEventListener('click', event => {
   convertArticle({
     header: form.querySelector('#header').value,
     date: new Date().toDateString(),
-    text: form.querySelector('#text').value.toString(),
+    text: form.querySelector('#text').value,
   })
   form.querySelector('#header').value = '';
   form.querySelector('#text').value= '';
