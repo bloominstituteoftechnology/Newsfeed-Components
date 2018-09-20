@@ -22,6 +22,11 @@ class Article {
     // Using our reference to the domElement, toggle a class to expand or hide the article.
     event.stopPropagation();
     this.domElement.classList.toggle('article-open');
+    if (this.domElement.classList.contains('article-open')) {
+      this.expandButton.innerText = 'close';
+    } else {
+      this.expandButton.innerText = 'expand';
+    }
   }
 
   closeArticle() {
@@ -40,3 +45,11 @@ let articles = document.querySelectorAll('.article');
 articles = Array.from(articles).map(domElement => {
   return new Article(domElement);
 });
+
+// Constructor
+let formContainer = document.createElement('div');
+let articleContainer = document.querySelector('.articles');
+formContainer.className = 'form-group';
+console.log(formContainer);
+document.body.appendChild(formContainer);
+document.body.insertBefore(formContainer, articleContainer);
