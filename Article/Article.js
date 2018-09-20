@@ -69,6 +69,11 @@ function convertArticle(article){
 let form = document.querySelector('#write-article');
 form.querySelector('.button').addEventListener('click', event => {
   event.preventDefault();
+  if (form.querySelector('#header').value == '' || form.querySelector('#text').value == '') {
+    alert('Neither field can be empty!')
+    return false;
+
+  }
   convertArticle({
     header: form.querySelector('#header').value,
     date: new Date().toDateString(),

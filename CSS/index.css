@@ -176,6 +176,9 @@
   padding: 10px;
   font-size: 15px;
 }
+.form-container textarea:focus {
+  outline: 2px solid #388E3C;
+}
 .form-container textarea:placeholder-shown + label {
   opacity: 0;
   transform: translateY(1rem);
