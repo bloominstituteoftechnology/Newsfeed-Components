@@ -11,8 +11,8 @@ class Article {
     // Set a click handler on the expandButton reference, calling the expandArticle method.
      this.expandButton.addEventListener('click', () => this.expandArticle(event));
      this.readButton = domElement.querySelector('.read-button');
-     this.readButton.addEventListener('click', () =>
-     this.closeArticle(event));
+     this.readButton.addEventListener('click', () => this.removeArticle(event));
+
   }
 
   expandArticle() {
@@ -25,32 +25,15 @@ class Article {
       this.expandButton.innerHTML = 'Click to Expand';
     }
   }
-
-  closeArticle(){
+  removeArticle(){
     event.stopPropagation();
     this.domElement.classList.add('done');
   }
 }
 
+//stretch
 
-let articlesToBeAdded = [{
-  header: 'Article One',
-  date: Date(),
-  text: 'Today conceptually blew my mind, tho.'
-},
-{
-  header: 'Article Two',
-  date: Date(),
-  text: 'Adding new articles is haaaaaaaaaard.'
-}];
-
-function convertArticles(){
-  articlesToBeAdded.forEach((article) =>{
-    return articleHtml(article);
-  })
-}
-
-function articleHtml(article){
+function convertArticle(article){
   let newArticleHeader = document.createElement('h2');
   newArticleHeader.innerText = article.header;
 
@@ -61,35 +44,42 @@ function articleHtml(article){
   let newArticleText = document.createElement('p');
   newArticleText.innerText = article.text;
 
-  let newExpandButton = document.createElement('span');
-  newExpandButton.classList.add('expandButton');
+  let newButton = document.createElement('span');
+  newButton.classList.add('expandButton');
 
-  let newReadButton = document.createElement('div');
-  newReadButton.classList.add('read-button');
-  newReadButton.innerText = 'Done';
-
+  let newTrash = document.createElement('div');
+  newTrash.classList.add('read-button');
+  newTrash.innerHTML='<img src="assets/trash.png" alt="trash can"/>';
 
   let articleContainer = document.querySelector('.articles');
 
   let addArticles = document.createElement('div');
   addArticles.classList.add('article')
+  addArticles.appendChild(newTrash);
   addArticles.appendChild(newArticleHeader);
   addArticles.appendChild(newArticleDate);
   addArticles.appendChild(newArticleText);
-  addArticles.appendChild(newExpandButton);
-  addArticles.appendChild(newReadButton);
+  addArticles.appendChild(newButton);
   articleContainer.appendChild(addArticles);
+  return new Article(addArticles);
 }
 
-articlesToBeAdded.push({
-  header: 'Article Three',
-  date: Date(),
-  text: 'Whoaaaa there, buddy does this actually work???'
+let form = document.querySelector('#write-article');
+form.querySelector('.button').addEventListener('click', event => {
+  event.preventDefault();
+  convertArticle({
+    header: form.querySelector('#header').value,
+    date: new Date(),
+    text: form.querySelector('textarea').value.toString(),
+  })
+  form.querySelector('#header').value = '';
+  form.querySelector('textarea').value= '';
 })
-convertArticles();
+
 
 // START HERE: Select all classes named ".article" and assign that value to the articles variable
 let articles = document.querySelectorAll('.article');
+console.log(articles.length);
 
 // Use .map() to iterate over the articles array and create a new instance of Article by passing in each article as a parameter to the constructor.
 articles = Array.from(articles).map(domElement => {
