@@ -105,6 +105,9 @@
 .article-open {
   height: 400px;
 }
+.finger {
+  cursor: pointer;
+}
 html,
 body {
   margin: 0;

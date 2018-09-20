@@ -20,10 +20,21 @@ class Article {
 
 // START HERE: Select all classes named ".article" and assign that value to the articles variable
 let articles = document.querySelectorAll('.article');
+articles = Array.from(articles).map(element=>{return new Article(element);})
 
-// Use .map() to iterate over the articles array and create a new instance of Article by passing in each article as a parameter to the constructor.
-articles = Array.from(articles);
+class NavLink{
+  constructor(domElement){
+    this.domElement = domElement;
+    this.domElement.classList.add('finger');
+    this.domElement.addEventListener('click',this.nav.bind(this));
+  }
+  nav(event){
+    event.stopPropagation();
+    let navTo = this.domElement.dataset;
+    window.location.href = navTo.nav
+  }
+}
 
-articles = articles.map(element=>{
-    return new Article(element);
-})
+
+let listItems = document.querySelectorAll('li');
+listItems = Array.from(listItems).map(element =>{return new NavLink(element)});
