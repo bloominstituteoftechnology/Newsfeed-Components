@@ -21,6 +21,9 @@ class Article {
   }
 }
 
+//Even though the DOM element is written first, they need to be under 
+//the class due to hoisting
+
 // START HERE: Select all classes named ".article" and assign that value to the articles variable
 let articles = document.querySelectorAll('.article');
 

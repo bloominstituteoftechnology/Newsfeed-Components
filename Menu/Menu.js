@@ -14,4 +14,6 @@ menuButton.addEventListener('click', () => {
   return toggleMenu(menu);
 });
 
+//menuButton.addEventListener('click', toggleMenu)
+
 
