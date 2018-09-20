@@ -107,10 +107,91 @@
 .article-open {
   height: 450px;
 }
+.close-btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: rgba(0, 0, 0, 0.6);
+}
+.close-btn:hover {
+  cursor: pointer;
+}
+.hide-article {
+  display: none;
+}
 html,
 body {
   margin: 0;
   padding: 0;
   font-family: 'Roboto';
   background-color: #fffef7;
+}
+.new-article {
+  height: 25px;
+  transition: height 500ms ease-in-out;
+  margin: 20px 10%;
+  padding: 0 20px;
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  background-color: white;
+  position: relative;
+  height: 50px;
+  overflow: hidden;
+  box-shadow: 2px 2px 2px lightgrey;
+}
+.new-article form {
+  height: 300px;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+.new-article form h3 {
+  margin: 0;
+  margin-top: 10px;
+}
+.new-article form .title {
+  width: 50%;
+  height: 30px;
+  font-size: 18px;
+  outline: none;
+}
+.new-article form .paragraph {
+  width: 100%;
+  height: 150px;
+  font-size: 16px;
+  resize: none;
+  outline: none;
+}
+.new-article form button {
+  width: 300px;
+  border: solid 1px black;
+  padding: 10px;
+  margin-top: 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: all 50ms ease-in-out;
+  outline: none;
+}
+.new-article form button:hover {
+  cursor: pointer;
+}
+.new-article form button:active {
+  transform: scale(0.95);
+}
+.new-article .add-btn {
+  width: 96%;
+  text-align: center;
+  background: white;
+  font-size: 25px;
+  position: absolute;
+  bottom: 0;
+  padding-bottom: 10px;
+}
+.new-article .add-btn:hover {
+  cursor: pointer;
+}
+.show-form {
+  height: 350px;
 }

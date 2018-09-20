@@ -4,6 +4,7 @@
   <head>
     <title>Lambda School Newsfeed</title>
     <link rel="stylesheet" type="text/css" media="screen" href="./CSS/index.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <script src="./Menu/Menu.js" async></script>
     <script src="./Article/Article.js" async></script>
   </head>
@@ -26,6 +27,7 @@
       <div class="article">
         <h2>Lambda School Students: "We're the best!"</h2>
         <p class="date">Nov 5th, 2017</p>
+        <i class="fas fa-times close-btn"></i>
 
         <p>Lucas ipsum dolor sit amet ben twi'lek padmé darth darth darth moff hutt organa twi'lek. Ben amidala secura skywalker lando
         moff wicket tatooine luke. Solo wampa wampa calrissian yoda moff. Darth grievous darth gonk darth hutt. Darth baba skywalker
@@ -49,6 +51,8 @@
       <div class="article">
         <h2>Javascript and You, ES6</h2>
         <p class="date">Nov 7th, 2017</p>
+        <i class="fas fa-times close-btn"></i>
+        
         <p>Alohamora wand elf parchment, Wingardium Leviosa hippogriff, house dementors betrayal. Holly, Snape centaur portkey ghost
         Hermione spell bezoar Scabbers. Peruvian-Night-Powder werewolf, Dobby pear-tickle half-moon-glasses, Knight-Bus. Padfoot
         snargaluff seeker: Hagrid broomstick mischief managed. Snitch Fluffy rock-cake, 9 ¾ dress robes I must not tell lies. Mudbloods
@@ -65,6 +69,7 @@
       <div class="article">
         <h2>React vs Angular vs Vue</h2>
         <p class="date">Nov 7th, 2017</p>
+        <i class="fas fa-times close-btn"></i>
 
         <p>Bulbasaur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ivysaur Lorem ipsum dolor sit amet, consectetur adipiscing
         elit. Venusaur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Charmander Lorem ipsum dolor sit amet, consectetur
@@ -91,6 +96,7 @@
       <div class="article">
         <h2>Professional Software Development in 2018</h2>
         <p class="date">Nov 7th, 2017</p>
+        <i class="fas fa-times close-btn"></i>
         <p>Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
           hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
           Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? </p>
@@ -114,6 +120,7 @@
       <div class="article">
         <h2>Lambda Lecture Review</h2>
         <p class="date">September 19th, 2018</p>
+        <i class="fas fa-times close-btn"></i>
         <p>🔥 🔥 🔥! 🔥 🔥 - 🔥, 🔥. 🔥 🔥... 🔥 🔥 🔥; 🔥 🔥. 🔥 🔥 🔥, 🔥, 🔥
           🔥. 🔥, 🔥. 🔥. 🔥, 🔥 - 🔥... 🔥 🔥 🔥; 🔥 🔥 🔥, 🔥 🔥?! 🔥 🔥, 🔥.
           🔥 🔥 🔥 🔥 🔥! 🔥 🔥 - 🔥 🔥, 🔥 🔥 🔥 🔥 🔥; 🔥 🔥? </p>
@@ -137,6 +144,7 @@
       <div class="article">
         <h2>Why Fun Bus is the Future</h2>
         <p class="date">Jan 12th, 2019</p>
+        <i class="fas fa-times close-btn"></i>
         <p>🚌 🚌 🚌! 🚌 🚌 - 🚌, 🚌. 🚌 🚌... 🚌 🚌 🚌; 🚌 🚌. 🚌 🚌 🚌, 🚌, 🚌
           🚌. 🚌, 🚌. 🚌. 🚌, 🚌 - 🚌... 🚌 🚌 🚌; 🚌 🚌 🚌, 🚌 🚌?! 🚌 🚌, 🚌.
           🚌 🚌 🚌 🚌 🚌! 🚌 🚌 - 🚌 🚌, 🚌 🚌 🚌 🚌 🚌; 🚌 🚌? </p>
@@ -157,6 +165,16 @@
           🚌 - 🚌 🚌 🚌. 🚌. 🚌 🚌... 🚌 🚌 🚌 🚌 🚌? </p>
         <span class='expandButton'></span>
       </div>
+    </div>
+    <div class="new-article">
+      <form action="">
+        <h3>Title</h3>
+        <input type="text" class="title">
+        <h3>Article</h3>
+        <textarea type="text-area" class="paragraph"></textarea>
+        <button>Submit</button>
+      </form>
+      <i class="fas fa-plus add-btn"></i>
     </div>
   </body>
 </html>
