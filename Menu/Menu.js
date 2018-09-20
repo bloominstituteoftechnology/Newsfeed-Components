@@ -2,10 +2,19 @@
 const toggleMenu = () => {
   // Toggle the "menu--open" class on your menu refence.
   menu.classList.toggle('menu--open');
-  tl.staggerFrom('li', 1, {cycle: {
-    x: [-50],
-    scale: [.5, 2],
-  }, autoAlpha: 0, ease:Power1.easeOut}, 0.1);
+  tl
+    .staggerFrom('div.menu--open', .5, {
+      cycle: {
+        y: [100],
+      }, autoAlpha: 0, ease: Power1.easeOut
+    }, 0.2)
+    .staggerFrom('div.menu--open li', 2, {
+      cycle: {
+        x:[100,-100], 
+        rotation:[60,120,180],
+      }, autoAlpha: 0, ease: Power1.easeOut
+    }, 0.2);
+
 }
 
 // Start Here: Create a reference to the ".menu" class
