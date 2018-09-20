@@ -104,6 +104,16 @@
 .disappear {
   display: none;
 }
+
+.menu .cage {
+  width: 100%;
+  opacity: 0.8;
+}
+
+.article .cage {
+  padding: 0 10%;
+  width: 80%;
+}
 html,
 body {
   margin: 0;
