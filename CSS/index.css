@@ -104,6 +104,10 @@
 }
 .article-open {
   height: 400px;
+  transition: 1000ms;
+}
+.article-close {
+  transition: 1000ms;
 }
 html,
 body {
