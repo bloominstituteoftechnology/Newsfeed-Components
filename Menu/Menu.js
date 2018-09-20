@@ -12,7 +12,8 @@ menuButton.addEventListener('click', toggleMenu);
 
 // allows menu to close when clicking anywhere outside of menu
 window.addEventListener('mouseup', e => {
-  if (e.target != menu && e.target != menuButton && e.target.parentNode.parentNode != menu) {
-    menu.classList.remove('menu--open');
-  }
+  if (e.target === menu) return
+  if (e.target === menuButton) return
+  if (e.target.parentNode.parentNode === menu) return 
+  menu.classList.remove('menu--open');
 })

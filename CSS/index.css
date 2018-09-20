@@ -67,7 +67,7 @@
   transition: 1s;
 }
 .articles {
-  margin-top: 95px;
+  margin-top: 30px;
 }
 .article {
   margin: 20px 10%;
@@ -79,7 +79,7 @@
   height: 50px;
   overflow: hidden;
   box-shadow: 2px 2px 2px lightgrey;
-  transition: height 1s linear;
+  transition: height 1s;
 }
 .article h2 {
   font-size: 28px;
@@ -111,16 +111,29 @@
 }
 .article-open {
   height: 400px;
-  transition: height 1s linear;
+  transition: height 1s;
+}
+.form {
+  margin: 95px 10% 0;
+  border: 1px solid lightgrey;
+  background-color: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px lightgrey;
 }
 form {
-  text-align: center;
-  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
 }
-form #title,
-form #date,
-form #content {
-  width: 200px;
+form #submit {
+  width: 20%;
+  align-self: center;
+  padding: 5px 30px;
+  background: black;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 10px;
 }
 html,
 body {
