@@ -13,7 +13,7 @@ const toggleMenu = () => {
         x:[100,-100], 
         rotation:[60,120,180],
       }, autoAlpha: 0, ease: Power1.easeOut
-    }, 0.2);
+    }, -0.2);
 
 }
 

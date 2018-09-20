@@ -20,11 +20,11 @@ class Article {
     this.domElement.classList.toggle('article-open');
     this.open = true
     this.expandButton.innerText = 'close'
-    tl.staggerFrom(this.paragraphText, .75, {
+    tl.staggerFrom(this.paragraphText, 1, {
       cycle: {
         x: [-50, 50],
       }, autoAlpha: 0, ease: Power1.easeOut
-    }, 0.1);
+    }, -0.1);
   }
   closeArticle() {
     this.domElement.classList.toggle('article-open');
@@ -44,23 +44,21 @@ articles = Array.from(articles).map(cb => new Article(cb));
 tl = new TimelineLite();
 
 tl
-  .staggerFrom('div', 1.5, {
-  cycle: {
-
-    y: [100, -100],
-    x: [-100, 100],
-  }, autoAlpha: 0, ease: Power1.easeOut
-}, 0.1)
-.staggerFrom('h2', .75, {
-  cycle: {
-    x: [50],
-  }, autoAlpha: 0, ease: Power1.easeOut
-}, 0.1)
+  .staggerFrom('div', 1, {
+    cycle: {
+      y: [-50],
+    }, autoAlpha: 0, ease: Power1.easeOut
+  }, -0.2)
+  .staggerFrom('h2', .75, {
+    cycle: {
+      x: [50],
+    }, autoAlpha: 0, ease: Power1.easeOut
+  }, 0.1)
   .staggerFrom('p.date', .75, {
     cycle: {
       x: [-50],
     }, autoAlpha: 0, ease: Power1.easeOut
-  }, 0.1)
+  }, -0.1)
   .staggerFrom('span', .75, {
     cycle: {
       y: [50],
