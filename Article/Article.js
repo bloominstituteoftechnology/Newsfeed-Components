@@ -10,7 +10,7 @@ class Article {
     this.expandButton = domElement.querySelector(".expandButton");
     // Using your expandButton reference, update the text on your expandButton to say "expand"
     this.expandButton.innerText = "expand";
-    
+
     // grab delete button
     this.deleteButton = domElement.querySelector(".deleteButton");
     this.deleteButton.innerText = "Delete";
@@ -21,11 +21,18 @@ class Article {
 
   expandArticle() {
     // Using our reference to the domElement, toggle a class to expand or hide the article.
-    this.domElement.classList.toggle("article-open");
+    if (this.domElement.classList.contains("article-open")) {
+      console.log("removing");
+      this.domElement.classList.remove("article-open");
+    } else {
+      this.domElement.classList.add("article-open");
+      console.log("adding");
+    }
   }
 
   deleteArticle() {
     this.domElement.classList.add("delete-article");
+    console.log("deleted");
   }
 }
 
@@ -39,15 +46,18 @@ const articlesDiv = document.querySelector(".articles");
 const articleConstructor = () => {
   let articleNumber = prompt("How many articles would you like to create?");
   let articleHeadings = prompt("Article title(s), seperated by commas ', ': ");
-  articleHeadings = articleHeadings.split(',');
-  let articleContentAmount = prompt("How much random content would you like in your article? (hint: bigger number == more content)");
-  let articleContent = '';
-  for(let i = 0; i < articleContentAmount * 50; i++) {
-    articleContent += ' random ';
+  articleHeadings = articleHeadings.split(",");
+  let articleContentAmount = prompt(
+    "How much random content would you like in your article? (hint: bigger number == more content)"
+  );
+  let articleContent = "";
+  for (let i = 0; i < articleContentAmount * 50; i++) {
+    articleContent += " random ";
   }
   for (let i = 0; i < articleNumber; i++) {
     let element = document.createElement("div");
     element.classList.add("article");
+    element.classList.add("moreArticles");
     let articleHeading = articleHeadings[i];
     element.innerHTML = `<h2>${articleHeading}</h2>
   <p class="date">${new Date()}</p> 
@@ -66,20 +76,22 @@ const articleConstructor = () => {
 const submit = document.querySelector(".submit");
 submit.addEventListener("click", function() {
   articleConstructor();
-  mapComponents();
+  let articles = document.querySelectorAll(".moreArticles");
+  articles = Array.from(articles);
+  mapComponents(articles);
 });
 // create articles using articleConstructor here
 
 // START HERE: Select all classes named ".article" and assign that value to the articles variable
 
 // Use .map() to iterate over the articles array and create a new instance of Article by passing in each article as a parameter to the constructor.
-const mapComponents = () => {
-  let articles = document.querySelectorAll(".article");
-  articles = Array.from(articles);
+let articles = document.querySelectorAll(".article");
+articles = Array.from(articles);
 
+const mapComponents = (articles) => {
   articles = articles.map(domElement => {
     return new Article(domElement);
   });
 };
 
-mapComponents();
+mapComponents(articles);
