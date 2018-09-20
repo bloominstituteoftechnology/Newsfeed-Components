@@ -8,8 +8,19 @@ class Article {
     this.expandButton = this.domElement.querySelector(".expandButton");
     // Using your expandButton reference, update the text on your expandButton to say "expand"
     this.expandButton.innerText = "Click to Expand";
+
+    //stretch: creating a 'read' button that makes the article disappear
+    this.readBtn = this.domElement.querySelector(".readBtn");
+    this.readBtn.innerText = "Hide";
+    this.readBtn.addEventListener("click", this.disappear.bind(this));
+
     // Set a click handler on the expandButton reference, calling the expandArticle method.
     this.expandButton.addEventListener("click", this.expandArticle.bind(this));
+  }
+
+  //made disappear event that makes the article disappear if it's readBtn is clicked
+  disappear(event) {
+    this.domElement.classList.toggle("disappear");
   }
 
   expandArticle(event) {

@@ -89,7 +89,20 @@
   background-color: white;
 }
 .article-open {
-  /*height: 400px;*/
+  /*height: 400px;
+  commented out so it doesn't mess with the states after each toggle in Article.js*/
+}
+
+.article .readBtn {
+  border: 1px solid grey;
+  border-radius: 3px;
+  color: grey;
+  width: 5%;
+  cursor: pointer;
+}
+
+.disappear {
+  display: none;
 }
 html,
 body {
