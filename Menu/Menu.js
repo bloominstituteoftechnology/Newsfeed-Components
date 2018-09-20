@@ -1,11 +1,7 @@
 
-const toggleMenu = (event) => {
+const toggleMenu = () => {
   // Toggle the "menu--open" class on your menu refence.
-  if (event.style.display === "none") {
-    event.style.display = "block";
-  } else {
-    event.style.display = "none"
-  }
+  menu.classList.toggle('menu--open'); //event == menu
 }
 
 // Start Here: Create a reference to the ".menu" class
