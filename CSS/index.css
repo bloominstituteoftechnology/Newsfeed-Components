@@ -119,13 +119,6 @@
 .hide-article {
   display: none;
 }
-html,
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Roboto';
-  background-color: #fffef7;
-}
 .new-article {
   height: 25px;
   transition: height 500ms ease-in-out;
@@ -194,4 +187,11 @@ body {
 }
 .show-form {
   height: 350px;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto';
+  background-color: #fffef7;
 }
