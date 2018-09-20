@@ -31,7 +31,7 @@ class Article {
     event.stopPropagation();
     this.domElement.classList.add("done");
   }
-}; //end Article class 
+}; //end Article class
 
 //stretch - function to convert data to articles
 function convertArticle(article) {
