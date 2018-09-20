@@ -12,6 +12,15 @@ const toggleMenu = () => {
       paddingLeft: 350
     });
 
+    TweenMax.to('.new-article-form', 1, {
+      display: 'none',
+      delay: 0.5
+    });
+
+    TweenMax.to('.new-article-form', 1, {
+      opacity: 0
+    });
+
     TweenMax.to('.menu ul li', 1, {
       opacity: 1
     });
@@ -36,6 +45,12 @@ const toggleMenu = () => {
     TweenMax.to('.articles', 1, {
       paddingLeft: 0,
       delay: 0.3
+    });
+
+    TweenMax.to('.new-article-form', 1, {
+      opacity: 1,
+      display: 'block',
+      delay: 1
     });
 
     TweenMax.to('.menu ul li', 0.3, {
