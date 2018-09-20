@@ -47,10 +47,41 @@ class Article {
   }
 }
 
-// START HERE: Select all classes named ".article" and assign that value to the articles variable
-let articles = document.querySelectorAll('.article');
+// Form selectors
+const articleTitle = document.querySelector('#articleTitle');
+const articleContent = document.querySelector('#articleContent');
+const submitArticle = document.querySelector('.form-btn');
 
-// Use .map() to iterate over the articles array and create a new instance of Article by passing in each article element as a parameter to the constructor.
-articles = Array.from(articles).map(article => {
-  return new Article(article);
+submitArticle.addEventListener('click', () => {
+  // create new article
+  let article = document.createElement('div');
+  // add className
+  article.className = 'article';
+  // add HTML
+  article.innerHTML = `
+  <h2>${articleTitle.value}</h2>
+  <p class="date">Sept 20, 2018</p>
+  <div class="close">Close</div>
+  <p>${articleContent.value}</p>
+  <span class='expandButton'></span>
+  `;
+  // selected articles container
+  let container = document.querySelector('.articles');
+  // add article to top
+  container.prepend(article);
+  // add it to map and make a new instance of Article
+  updateArticleList();
 });
+
+// init constructor articles
+updateArticleList();
+
+function updateArticleList() {
+  // START HERE: Select all classes named ".article" and assign that value to the articles variable
+  let articles = document.querySelectorAll('.article');
+
+  // Use .map() to iterate over the articles array and create a new instance of Article by passing in each article element as a parameter to the constructor.
+  articles = Array.from(articles).map(article => {
+    return new Article(article);
+  });
+}
