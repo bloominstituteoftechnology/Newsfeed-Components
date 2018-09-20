@@ -43,8 +43,21 @@
 
 .article-open {
   height: 400px;
+  animation-name: expandSlow;
+  animation-duration: 8s;
+  animation-delay: 0s;
+  animation-iteration-count: initial;
 }
 
+@keyframes expandSlow {
+  0% {
+    height: 100px;
+  }
+
+  100% {
+    height: 400px;
+  }
+}
 
 
 
