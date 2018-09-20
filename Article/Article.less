@@ -11,6 +11,10 @@
   height: 50px;
   overflow: hidden;
   box-shadow: 2px 2px 2px lightgrey;
+  &:hover {
+    border: 1px solid silver;
+    box-shadow: 2px 2px 2px silver;
+  }
 
   h2 {
     font-size: 28px;
@@ -33,7 +37,8 @@
     position: absolute;
     bottom: 0;
     left: 50%;
-    font-size: 12px;
+    font-size: 1.4rem;
+    opacity: 0.3;
     color: grey;
     cursor: pointer;
     transform: translate(-50%);
@@ -44,14 +49,17 @@
     position: absolute;
     top: 5px;
     right: 10px;
+    opacity: 0.3;
     cursor: pointer;
     font-size: 1.4rem;
-
+    color: #388E3C;
     &:hover {
       color: red;
+      opacity: 1;
     }
   }
 }
+
 
 
 
