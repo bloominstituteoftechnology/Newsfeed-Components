@@ -31,8 +31,7 @@ class Article {
   }
 }
 
-//stretch
-
+//stretch - function to convert data to articles
 function convertArticle(article){
   let newArticleHeader = document.createElement('h2');
   newArticleHeader.innerText = article.header;
@@ -64,13 +63,14 @@ function convertArticle(article){
   return new Article(addArticles);
 }
 
+//form input of articles
 let form = document.querySelector('#write-article');
 form.querySelector('.button').addEventListener('click', event => {
   event.preventDefault();
   convertArticle({
     header: form.querySelector('#header').value,
     date: new Date(),
-    text: form.querySelector('textarea').value.toString(),
+    text: form.querySelector('#text').value.toString(),
   })
   form.querySelector('#header').value = '';
   form.querySelector('textarea').value= '';
