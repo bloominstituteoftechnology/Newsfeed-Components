@@ -11,5 +11,48 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: 'Roboto';
-  background-color: #fffef7;
+  width: 100wh;
+	height: 90vh;
+	color: rgb(0, 0, 0);
+	background: linear-gradient(-45deg, rgb(0, 0, 0), rgb(172, 169, 170), rgb(116, 3, 3), rgb(255, 255, 255));
+	background-size: 400% 400%;
+	-webkit-animation: Gradient 15s ease infinite;
+	-moz-animation: Gradient 15s ease infinite;
+	animation: Gradient 15s ease infinite;
+}
+
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
 }

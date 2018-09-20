@@ -22,7 +22,7 @@
 .header {
   width: 100%;
   height: 75px;
-  background-color: #388E3C;
+  background-color: #6d6d6d;
   color: white;
   display: flex;
   justify-content: center;
@@ -48,8 +48,8 @@
   width: 350px;
   height: 100vh;
   /* This give the height 100% of the screen or, '100% of View Height' */
-  background-color: #81C784;
-  border: 1px solid #004D40;
+  background-color: #b8b8b8;
+  border: 1px solid #000000;
   border-left: none;
   border-bottom: none;
   z-index: 2;
@@ -75,17 +75,19 @@
   background-color: white;
   position: relative;
   height: 50px;
-  overflow: hidden;
-  box-shadow: 2px 2px 2px lightgrey;
+  overflow: auto;
 }
 .article h2 {
   font-size: 28px;
-  padding: 0;
-  margin: 15px 0 0;
+  padding: 0 0 150px 0;
+  margin: 35px 0 0;
 }
 .article .date {
   margin: 0;
   font-size: 14px;
+}
+.article p {
+  padding-bottom: 20px;
 }
 .article .close {
   position: absolute;
@@ -110,5 +112,45 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Roboto';
-  background-color: #fffef7;
+  width: 100wh;
+  height: 90vh;
+  color: #000000;
+  background: linear-gradient(-45deg, #000000, #aca9aa, #740303, #ffffff);
+  background-size: 400% 400%;
+  -webkit-animation: Gradient 15s ease infinite;
+  -moz-animation: Gradient 15s ease infinite;
+  animation: Gradient 15s ease infinite;
+}
+@-webkit-keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-moz-keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
