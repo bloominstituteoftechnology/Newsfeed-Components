@@ -94,7 +94,7 @@
   top: 10px;
   right: 10px;
 }
-.article .read-button {
+.article .trash {
   position: absolute;
   padding: 3px;
   width: 20px;
@@ -103,12 +103,12 @@
   margin-top: 1%;
   cursor: pointer;
 }
-.article .read-button img {
+.article .trash img {
   position: absolute;
   width: 20px;
   height: auto;
 }
-.article .read-button img:hover {
+.article .trash img:hover {
   transform: scale(1.25);
 }
 .article .expandButton {

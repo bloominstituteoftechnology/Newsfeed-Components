@@ -7,16 +7,17 @@ class Article {
     // create a reference to the ".expandButton" class.
     this.expandButton = domElement.querySelector('.expandButton');
     // Using your expandButton reference, update the text on your expandButton to say "expand"
-     this.expandButton.innerText = 'Click to Expand';
+     this.expandButton.innerHTML = 'Click to Expand';
     // Set a click handler on the expandButton reference, calling the expandArticle method.
      this.expandButton.addEventListener('click', () => this.expandArticle(event));
-     this.readButton = domElement.querySelector('.read-button');
-     this.readButton.addEventListener('click', () => this.removeArticle(event));
+    // Setting a click handler on the trash reference, calling the removeArticle method.
+     this.trash = domElement.querySelector('.trash');
+     this.trash.addEventListener('click', () => this.removeArticle(event));
 
   }
 
   expandArticle() {
-    // Using our reference to the domElement, toggle a class to expand or hide the article.
+    // Using our reference to the domElement, toggle a class to expand or hide the article (and change the text depending on state).
     event.stopPropagation();
     this.domElement.classList.toggle('article-open');
     if (this.expandButton.innerHTML == 'Click to Expand'){
@@ -25,6 +26,7 @@ class Article {
       this.expandButton.innerHTML = 'Click to Expand';
     }
   }
+  //hides an article when clicking on the trash button.
   removeArticle(){
     event.stopPropagation();
     this.domElement.classList.add('done');
@@ -43,11 +45,11 @@ function convertArticle(article){
   let newArticleText = document.createElement('p');
   newArticleText.innerText = article.text;
 
-  let newButton = document.createElement('span');
-  newButton.classList.add('expandButton');
+  let newExpandButton = document.createElement('span');
+  newExpandButton.classList.add('expandButton');
 
   let newTrash = document.createElement('div');
-  newTrash.classList.add('read-button');
+  newTrash.classList.add('trash');
   newTrash.innerHTML='<img src="assets/trash.png" alt="trash can"/>';
 
   let articleContainer = document.querySelector('.articles');
@@ -58,7 +60,7 @@ function convertArticle(article){
   addArticles.appendChild(newArticleHeader);
   addArticles.appendChild(newArticleDate);
   addArticles.appendChild(newArticleText);
-  addArticles.appendChild(newButton);
+  addArticles.appendChild(newExpandButton);
   articleContainer.appendChild(addArticles);
   return new Article(addArticles);
 }
@@ -69,17 +71,16 @@ form.querySelector('.button').addEventListener('click', event => {
   event.preventDefault();
   convertArticle({
     header: form.querySelector('#header').value,
-    date: new Date(),
+    date: new Date().toDateString(),
     text: form.querySelector('#text').value.toString(),
   })
   form.querySelector('#header').value = '';
-  form.querySelector('textarea').value= '';
+  form.querySelector('#text').value= '';
 })
 
 
 // START HERE: Select all classes named ".article" and assign that value to the articles variable
 let articles = document.querySelectorAll('.article');
-console.log(articles.length);
 
 // Use .map() to iterate over the articles array and create a new instance of Article by passing in each article as a parameter to the constructor.
 articles = Array.from(articles).map(domElement => {
