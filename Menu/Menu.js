@@ -11,8 +11,7 @@ const toggleMenu = () => {
     .staggerFrom('div.menu--open li', 2, {
       cycle: {
         x:[100,-100], 
-        rotation:[60,120,180],
-      }, autoAlpha: 0, ease: Power1.easeOut
+      }, autoAlpha: 0, ease: Back.easeInOut
     }, -0.2);
 
 }

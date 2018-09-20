@@ -23,7 +23,7 @@ class Article {
     tl.staggerFrom(this.paragraphText, 1, {
       cycle: {
         x: [-50, 50],
-      }, autoAlpha: 0, ease: Power1.easeOut
+      }, autoAlpha: 0, ease: Back.easeOut
     }, -0.1);
   }
   closeArticle() {
@@ -44,30 +44,30 @@ articles = Array.from(articles).map(cb => new Article(cb));
 tl = new TimelineLite();
 
 tl
-  .staggerFrom('div', 1, {
+  .staggerFrom('div', 2, {
     cycle: {
       y: [-50],
-    }, autoAlpha: 0, ease: Power1.easeOut
+    }, autoAlpha: 0, ease: Back.easeOut
   }, -0.2)
   .staggerFrom('h2', .75, {
     cycle: {
       x: [50],
-    }, autoAlpha: 0, ease: Power1.easeOut
+    }, autoAlpha: 0, ease: Back.easeInOut
   }, 0.1)
   .staggerFrom('p.date', .75, {
     cycle: {
       x: [-50],
-    }, autoAlpha: 0, ease: Power1.easeOut
+    }, autoAlpha: 0, ease: Back.easeInOut
   }, -0.1)
   .staggerFrom('span', .75, {
     cycle: {
       y: [50],
-    }, autoAlpha: 0, ease: Power1.easeOut
+    }, autoAlpha: 0, ease: Back.easeInOut
   }, 0.1)
   .staggerFrom('img', .75, {
     cycle: {
       x: [-50],
-    }, autoAlpha: 0, ease: Power1.easeOut
+    }, autoAlpha: 0, ease: Back.easeInOut
   }, 0.1);
 
 
