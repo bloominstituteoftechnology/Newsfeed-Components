@@ -35,7 +35,7 @@ window.sr = ScrollReveal({ mobile: false });
 
 sr.reveal(allArticle, {
   origin: "left",
-  delay: 0,
+  delay: 500,
   interval: 150,
   distance: "300px"
 });
