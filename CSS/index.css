@@ -19,22 +19,6 @@
 }
 /* Below this line is where you will start your work */
 /* It is important to note, you will not be writing any CSS in this file*/
-.header {
-  width: 100%;
-  height: 75px;
-  background-color: #388E3C;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  z-index: 2;
-}
-.header h1 {
-  margin: 0;
-  font-size: 48px;
-}
 .menu-button {
   position: absolute;
   left: 20px;
@@ -104,6 +88,22 @@
 }
 .article-open {
   height: 400px;
+}
+.header {
+  width: 100%;
+  height: 75px;
+  background-color: #388E3C;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+}
+.header h1 {
+  margin: 0;
+  font-size: 48px;
 }
 html,
 body {
