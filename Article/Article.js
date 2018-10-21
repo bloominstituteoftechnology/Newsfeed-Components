@@ -8,16 +8,17 @@ class Article {
 
     for (let i = 0; i < this.expandButton.length; i++) {
       this.expandButton[i].textContent = 'expand';
-      this.expandButton[i].addEventListener('click', this.expandArticle);
+      this.expandButton[i].addEventListener('click', () => {this.expandArticle(event)});
     }
   }
-  expandArticle() {
-    this.parentElement.classList.toggle('article-open');
-    if (this.textContent === 'expand') {
-      this.textContent = 'close';
-    } else {this.textContent = 'expand';}
-  }
+  expandArticle(event) {
+    this.domElement.classList.toggle('article-open');
+    if (event.target.textContent === 'expand') {
+      event.target.textContent = 'close';
+    } else {event.target.textContent = 'expand';}
+    }
 }
+
 let articles = document.querySelectorAll('.article');
 
 articles = Array.from(articles).map(item => new Article(item));
