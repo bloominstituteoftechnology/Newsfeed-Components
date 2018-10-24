@@ -1,5 +1,6 @@
 const toggleMenu = () => {
   menu.classList.toggle('slide');
+  stopPropagation();
 }
 const menu = document.querySelector(".menu");
 const menuButton = document.querySelector(".menu-button");

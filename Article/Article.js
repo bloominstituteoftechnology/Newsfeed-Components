@@ -1,5 +1,3 @@
-// Because classes are not hoised you will need to start your code at the bottom of the page.  Look for the comment "START HERE"
-
 class Article {
   constructor(domElement) {
     this.domElement = domElement;
@@ -18,3 +16,14 @@ class Article {
 }
 let articles = document.querySelectorAll('.article');
 articles = Array.from(articles).map(item => new Article(item));
+
+window.addEventListener('click', () => {
+  if ((event.target.classList.contains('expandButton') || event.target.classList.contains('article')) == false) {
+    for (let i = 0; i<articles.length; i++) {
+      if (articles[i].domElement.classList.contains('article-open')) {
+        articles[i].domElement.classList.toggle('article-open');
+        articles[i].expandButton.forEach((button) => button.textContent = 'expand');
+      }
+    }  
+  }
+})
