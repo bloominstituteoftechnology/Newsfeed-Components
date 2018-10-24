@@ -3,7 +3,7 @@
 class Article {
     constructor(domElement) {
         // assign this.domElement to the passed in domElement
-        this.domElement;
+        this.domElement = domElement;
         // create a reference to the ".expandButton" class. 
         this.expandButton;
         // Using your expandButton reference, update the text on your expandButton to say "expand"
@@ -23,4 +23,6 @@ let articles = document.querySelectorAll('.article');
 
 
 // Use .map() to iterate over the articles array and create a new instance of Article by passing in each article as a parameter to the constructor.
-articles = Array.from(articles);
+articles = Array.from(articles).map(article => {
+    return article = new Article(article);
+});
