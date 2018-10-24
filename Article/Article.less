@@ -12,6 +12,10 @@
   overflow: hidden;
   box-shadow: 2px 2px 2px lightgrey;
 
+  // animation-name: expand;
+  // animation-duration: 2s;
+  // animation-fill-mode: backwards;
+
   h2 {
     font-size: 28px;
     padding: 0;
@@ -42,7 +46,35 @@
 }
 
 .article-open {
-  height: 400px;
+  //height: 400px;
+  animation-name: expand;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  //animation-direction: ;
+}
+
+.article-close {
+  animation-name: close;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes expand {
+  from {
+    height: 50;
+  }
+  to {
+    height: 400px;
+  }
+}
+
+@keyframes close {
+  from {
+    height: 400px;
+  }
+  to {
+    height: 50px;
+  }
 }
 
 

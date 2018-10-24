@@ -116,7 +116,30 @@
   background-color: white;
 }
 .article-open {
-  height: 400px;
+  animation-name: expand;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+.article-close {
+  animation-name: close;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+@keyframes expand {
+  from {
+    height: 50;
+  }
+  to {
+    height: 400px;
+  }
+}
+@keyframes close {
+  from {
+    height: 400px;
+  }
+  to {
+    height: 50px;
+  }
 }
 html,
 body {
