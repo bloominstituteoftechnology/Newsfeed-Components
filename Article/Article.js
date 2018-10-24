@@ -19,6 +19,7 @@ class Article {
   }
 }
 
+
 // START HERE: Select all classes named ".article" and assign that value to the articles variable
 let articles = document.querySelectorAll('.article');
 
@@ -27,4 +28,5 @@ articles = Array.from(articles).map((article) => {
   return new Article (article);
 });
 console.log(articles);
+
 
