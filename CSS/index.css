@@ -41,12 +41,14 @@
   cursor: pointer;
 }
 .menu {
-  display: none;
+  /* display: none; */
   position: fixed;
   top: 75px;
   left: 0;
   width: 350px;
   height: 100vh;
+  transform: translate3d(-350px, 0, 0);
+  transition: transform 1s cubic-bezier(0, .52, 0, 1);
   /* This give the height 100% of the screen or, '100% of View Height' */
   background-color: #81C784;
   border: 1px solid #004D40;
@@ -54,6 +56,10 @@
   border-bottom: none;
   z-index: 2;
   /* This set the layer level of the element, it has precendence over initial level of 1*/
+}
+
+.slide {
+  transform: translate3d(0vw, 0, 0);
 }
 .menu ul li {
   list-style-type: none;
