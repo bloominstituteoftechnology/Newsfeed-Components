@@ -3,12 +3,10 @@
 class Article {
   constructor(domElement) {
     this.domElement = domElement;
-
     this.expandButton = domElement.getElementsByClassName("expandButton");
-
     for (let i = 0; i < this.expandButton.length; i++) {
       this.expandButton[i].textContent = 'expand';
-      this.expandButton[i].addEventListener('click', () => {this.expandArticle(event)});
+      this.expandButton[i].addEventListener('click', () => this.expandArticle(event));
     }
   }
   expandArticle(event) {
@@ -20,5 +18,4 @@ class Article {
 }
 
 let articles = document.querySelectorAll('.article');
-
 articles = Array.from(articles).map(item => new Article(item));
