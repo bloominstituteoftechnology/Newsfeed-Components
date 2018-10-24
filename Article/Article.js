@@ -4,7 +4,6 @@ class Article {
   constructor(domElement) {
     // assign this.domElement to the passed in domElement
     this.domElement = domElement;
-    this.pTag = domElement.querySelector('p');
     
     // create a reference to the ".expandButton" class. 
     this.expandButton = this.domElement.querySelector('.expandButton');
@@ -16,12 +15,24 @@ class Article {
     this.expandButton.addEventListener('click', () => {
       this.expandArticle(event);
     })
+
+    this.closeButton = this.domElement.querySelector('.closeButton');
+    this.closeButton.textContent = `Dismiss Article`;
+    this.closeButton.addEventListener('click', () => {
+      this.closeArticle(event);
+      alert(`Article has been dismissed!`);
+    })
   }
 
   expandArticle(event) {
     // Using our reference to the domElement, toggle a class to expand or hide the article.
     this.domElement.classList.toggle('article-open');
     this.expandButton.textContent = `Collapse`;
+  }
+
+  closeArticle(event) {
+    this.domElement.classList.toggle('article-open');
+    this.domElement.classList.toggle('article-close');
   }
 }
 
