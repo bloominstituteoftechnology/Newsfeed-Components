@@ -1,4 +1,4 @@
-// Because classes are not hoised you will need to start your code at the bottom of the page.  Look for the comment "START HERE"
+// Because classes are not hoisted you will need to start your code at the bottom of the page.  Look for the comment "START HERE"
 
 class Article {
   constructor(domElement) {
@@ -8,12 +8,7 @@ class Article {
     this.expandButton = this.domElement.querySelector('.expandButton');
     // Using your expandButton reference, update the text on your expandButton to say "expand"
         this.expandButton.textContent = 'expand';
-    // for (let i = 0; i < expandButton.length; i++) {
-    //   expandButton[i].addEventListener('click', function(){
-        
-    //    return this.expandButton.texContent = "expand";
-    //   });
-    // }
+    
     // Set a click handler on the expandButton reference, calling the expandArticle method.
     this.expandButton.addEventListener('click', ()=> this.expandArticle(event));
     
@@ -33,4 +28,4 @@ articles = Array.from(articles).map(article => {
   return new Article(article);
 });
 
-TweenMax.to(".logo", 6, {x:275, rotation:360, scale:0.4});
+TweenMax.to(".logo", 6, {x:285, rotation:360, scale:0.4});
