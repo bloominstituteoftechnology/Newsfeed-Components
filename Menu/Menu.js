@@ -23,6 +23,8 @@ menuButton.addEventListener('click',()=>{
   toggleMenu();
 })
 
+
+//close menu on clicking elsewhere
 document.addEventListener('click',(event)=>{
   if(event.target != menu && event.target != menuButton && menu.classList.contains('menu--open')){
     TweenMax.to(menu,1,{left:-350,onComplete: ()=> {
