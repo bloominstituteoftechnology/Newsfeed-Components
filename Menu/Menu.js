@@ -22,3 +22,12 @@ const menuButton = document.querySelector('.menu-button');
 menuButton.addEventListener('click',()=>{
   toggleMenu();
 })
+
+document.addEventListener('click',(event)=>{
+  if(event.target != menu && event.target != menuButton && menu.classList.contains('menu--open')){
+    TweenMax.to(menu,1,{left:-350,onComplete: ()=> {
+      menu.classList.toggle('menu--open');
+      menu.style.left = 0;
+    }})
+  }
+})
