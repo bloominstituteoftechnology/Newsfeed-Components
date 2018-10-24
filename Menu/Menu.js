@@ -48,3 +48,37 @@ menuLinks.forEach(link => {
   link.addEventListener('mouseleave', () => TweenMax.to(link, 1, {css:{backgroundColor: '#81C784'}}));
 
 });
+
+// Make new article button clickable
+
+let currentPage = 'articleList';
+
+document.querySelector('#articleAdd').addEventListener('click', function() {
+
+  if (currentPage != 'articleAdd') {
+
+    TweenMax.to('.articles', 1, {css:{scale: 0}});
+    setTimeout(() => document.querySelector('.articles').classList.toggle('display-page'), 1000);
+    setTimeout(() => document.querySelector('.addArticle').classList.toggle('display-page'), 2000);
+    setTimeout(() => TweenMax.to('.addArticle', 1, {css:{scale: 1}}), 2000);
+
+    currentPage = 'articleAdd';
+
+  }
+
+});
+
+document.querySelector('#articleList').addEventListener('click', function() {
+
+  if (currentPage != 'articleList') {
+
+    TweenMax.to('.addArticle', 1, {css:{scale: 0}});
+    setTimeout(() => document.querySelector('.addArticle').classList.toggle('display-page'), 1000);
+    setTimeout(() => document.querySelector('.articles').classList.toggle('display-page'), 2000);
+    setTimeout(() => TweenMax.to('.articles', 1, {css:{scale: 1}}), 2000);
+
+    currentPage = 'articleList';
+
+  }
+
+});

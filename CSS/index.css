@@ -63,12 +63,14 @@
   font-size: 32px;
   padding: 30px 0;
   text-align: center;
+  cursor: pointer;
 }
 .menu--open {
   display: block;
 }
 .articles {
   margin-top: 95px;
+  display: none;
 }
 .article {
   margin: 20px 10%;
@@ -115,4 +117,41 @@ body {
   padding: 0;
   font-family: 'Roboto';
   background-color: #fffef7;
+}
+.addArticle {
+  display: none;
+  transform: scale(0);
+  margin-top: 95px;
+}
+.display-page {
+  display: block;
+}
+.article-form {
+  background-color: rgba(209, 209, 209, 0.58);
+  padding: 15px 0;
+  margin: auto;
+  width: 40%;
+}
+.article-form span {
+  margin-top: 10px;
+  padding-left: 40px;
+  display: inline-block;
+  width: 40%;
+  font-size: 1.6rem;
+}
+.article-form input {
+  min-height: 25px;
+  display: inline-block;
+  width: 50%;
+}
+.article-form textarea {
+  min-height: 25px;
+  display: inline-block;
+  width: 50%;
+}
+.article-form #submit {
+  display: inline-block;
+  width: auto;
+  margin-top: 10px;
+  margin-left: 40%;
 }

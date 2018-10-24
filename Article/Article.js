@@ -95,4 +95,30 @@ function buildArticle(title, date, content) {
 
 // Add a new article without touching html
 
-document.querySelector('.articles').appendChild(buildArticle('Dynamically Created Articles Are Now A Thing!', 'Today', 'This is unbelievable. I was made in JavaScript!').domElement);
+let articleContainer = document.querySelector('.articles');
+
+articleContainer.appendChild(buildArticle('Dynamically Created Articles Are Now A Thing!', 'Today', 'This is unbelievable. I was made in JavaScript!').domElement);
+
+// Dynamic article creation
+
+document.querySelector('#submit').addEventListener('click', function(event) {
+
+  event.preventDefault();
+
+  let title = document.getElementById('title').value;
+  let date = document.getElementById('date').value;
+  let content = document.getElementById('content').value;
+
+  articleContainer.appendChild(buildArticle(title, date, content).domElement);
+
+  event.target.parentNode.reset();
+
+  let successMessage = document.createElement('p');
+  successMessage.textContent = "Article added!";
+  successMessage.style.textAlign = "center";
+
+  event.target.parentNode.appendChild(successMessage);
+
+  setTimeout(() => event.target.parentNode.removeChild(successMessage), 2000);
+
+});

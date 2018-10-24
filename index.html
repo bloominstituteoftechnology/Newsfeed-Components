@@ -18,7 +18,8 @@
     </div>
     <div class="menu">
       <ul>
-        <li>Students</li>
+        <li id="articleAdd">Add Article</li>
+        <li id="articleList">Articles</li>
         <li>Faculty</li>
         <li>What's New</li>
         <li>Tech Trends</li>
@@ -26,7 +27,7 @@
         <li>Log Out</li>
       </ul>
     </div>
-    <div class="articles">
+    <div class="articles display-page">
       <div class="article">
         <h2>Lambda School Students: "We're the best!"</h2>
         <p class="date">Nov 5th, 2017</p>
@@ -161,6 +162,24 @@
         <span class='expandButton'></span>
         <span class = "close">Read</p>
       </div>
+    </div>
+    <div class="addArticle">
+
+      <section class="article-form">
+
+      <form>
+        <div> <span>Title</span>
+          <input type="text" id="title" required> </div>
+        <div> <span>Date</span>
+          <input type="text" id="date" required> </div>
+        <div> <span>Content</span>
+          <textarea rows="5" id="content" required></textarea>
+        </div>
+        <input type="submit" id="submit" value="submit">
+      </form>
+
+    </section>
+
     </div>
   </body>
 </html>
