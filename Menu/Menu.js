@@ -2,6 +2,9 @@
 const toggleMenu = () => {
   // Toggle the "menu--open" class on your menu refence.
   menu.classList.toggle('menu--open'); 
+  // $(".menu--open").animate({
+  //   opacity: 100;
+  // }, 400, function() {});
 }
 
 // Start Here: Create a reference to the ".menu" class
