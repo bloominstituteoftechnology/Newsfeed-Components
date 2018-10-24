@@ -10,7 +10,10 @@ class Article {
     this.expandButton.textContent = "Click to Expand";
     // Set a click handler on the expandButton reference, calling the expandArticle method.
 
+    this.deleteButton = domElement.querySelector('.close');
+
     this.expandButton.addEventListener('click', this.toggleArticle.bind(this));
+    this.deleteButton.addEventListener('click', this.deleteArticle.bind(this));
     this.articleState = false;
 
   }
@@ -35,6 +38,14 @@ class Article {
     this.articleState = !this.articleState;
 
   }
+
+  deleteArticle() {
+
+    TweenMax.to(this.domElement, 1, {css:{scale: 0}});
+    setTimeout(() => this.domElement.parentNode.removeChild(this.domElement), 1000);
+
+  }
+
 }
 
 // START HERE: Select all classes named ".article" and assign that value to the articles variable
