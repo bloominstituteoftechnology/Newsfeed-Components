@@ -6,7 +6,7 @@
   padding: 0 20px 25px;
   border: 1px solid lightgrey;
   border-radius: 10px;
-  background-color: white;
+  background-color: #C2B97F;
   position: relative;
   height: 50px;
   overflow: hidden;
@@ -16,6 +16,7 @@
     font-size: 28px;
     padding: 0;
     margin: 15px 0 0;
+    color: #88665D
   }
 
   .date {
@@ -37,9 +38,31 @@
     color: grey;
     cursor: pointer;
     transform: translate(-50%);
-    background-color: white;
+    background-color: #C2B97F;
   }
 }
 .article--open {
-  height: 600px;
+  animation-name: expand;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
 }
+
+.article--close {
+  animation-name: close;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes expand{
+  to {
+    height: 600px;
+    
+  }
+}
+
+@keyframes close{
+  to {
+    height: 50px;
+  }
+}
+
