@@ -82,6 +82,7 @@
 }
 .article {
   margin: 20px 10%;
+  width: 1536px;
   padding: 0 20px 25px;
   border: 1px solid lightgrey;
   border-radius: 10px;
@@ -140,6 +141,9 @@
   to {
     height: 50px;
   }
+}
+.close {
+  cursor: pointer;
 }
 html,
 body {
