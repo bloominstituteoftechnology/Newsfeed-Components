@@ -4,10 +4,9 @@ const toggleMenu = () => {
 }
 
 // Start Here: Create a reference to the ".menu" class
-const menu;
+const menu = document.querySelector('.menu');
 document.querySelector('.menu');
 console.log(menu);
-const menuButton;
 
 const menuButton = document.querySelector('.menu-button');
 console.log(menuButton);
