@@ -6,10 +6,10 @@ class Article {
     this.expandButton = domElement.getElementsByClassName("expandButton");
     for (let i = 0; i < this.expandButton.length; i++) {
       this.expandButton[i].textContent = 'expand';
-      this.expandButton[i].addEventListener('click', () => this.expandArticle(event));
+      this.expandButton[i].addEventListener('click', () => this.expandArticle());
     }
   }
-  expandArticle(event) {
+  expandArticle() {
     this.domElement.classList.toggle('article-open');
     if (event.target.textContent === 'expand') {
       event.target.textContent = 'close';
