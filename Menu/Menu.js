@@ -1,7 +1,8 @@
 
-const toggleMenu = () => {
+const toggleMenu = (event) => {
   // Toggle the "menu--open" class on your menu refence. 
-  menu.classList.toggle('menu--open')
+  event.stopPropagation();
+  menu.classList.toggle('menu--open');
 }
 
 // Start Here: Create a reference to the ".menu" class
@@ -14,3 +15,13 @@ console.log(menuButton);
 
 // Using your menuButton reference, add a click handler that calls toggleMenu
 menuButton.addEventListener('click', toggleMenu);
+
+document.body.addEventListener('click', (event) => {
+  menu.classList.remove('menu--open');
+})
+
+menu.addEventListener('click', function (event) {
+  event.stopPropagation();
+});
+
+
