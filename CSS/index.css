@@ -52,7 +52,7 @@
   border: 1px solid #004D40;
   border-left: none;
   border-bottom: none;
-  z-index: 2;
+  z-index: 2000;
   /* This set the layer level of the element, it has precendence over initial level of 1*/
 }
 .menu ul li {
@@ -60,6 +60,13 @@
   font-size: 32px;
   padding: 30px 0;
   text-align: center;
+}
+.menu ul li:hover {
+  color: white;
+  cursor: pointer;
+  background-color: #a0d3a2;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
 }
 .menu--open {
   display: block;
@@ -78,6 +85,10 @@
   overflow: hidden;
   box-shadow: 2px 2px 2px lightgrey;
 }
+.article:hover {
+  border-color: #81C784;
+  box-shadow: 2px 2px 2px #81C784;
+}
 .article h2 {
   font-size: 28px;
   padding: 0;
@@ -89,21 +100,31 @@
 }
 .article .close {
   position: absolute;
-  top: 10px;
+  top: 5px;
   right: 10px;
+  color: gray;
+  font-size: 2rem;
 }
-.article .expandButton {
+.article .close:hover {
+  color: #81C784;
+  cursor: pointer;
+}
+.article .remove {
+  background-color: red;
+  opacity: 0.2;
+}
+.expandButton {
   position: absolute;
   bottom: 0;
   left: 50%;
-  font-size: 12px;
+  font-size: 1rem;
   color: grey;
   cursor: pointer;
   transform: translate(-50%);
   background-color: white;
 }
 .article-open {
-  height: 400px;
+  height: 100%;
 }
 html,
 body {

@@ -12,6 +12,11 @@
   overflow: hidden;
   box-shadow: 2px 2px 2px lightgrey;
 
+  &:hover {
+    border-color: #81C784;
+    box-shadow: 2px 2px 2px #81C784;
+  }
+
   h2 {
     font-size: 28px;
     padding: 0;
@@ -25,24 +30,37 @@
 
   .close {
     position: absolute;
-    top: 10px;
+    top: 5px;
     right: 10px;
+    color: gray;
+    font-size: 2rem;
+  
+    &:hover {
+      color: #81C784;
+      cursor: pointer;
+    }
   }
 
+  .remove {
+    background-color: red;
+    opacity:0.2;
+  }
+    
+  }
   .expandButton {
     position: absolute;
     bottom: 0;
     left: 50%;
-    font-size: 12px;
+    font-size: 1rem;
     color: grey;
     cursor: pointer;
     transform: translate(-50%);
     background-color: white;
   }
-}
+
 
 .article-open {
-  height: 400px;
+  height: 100%;
 }
 
 
