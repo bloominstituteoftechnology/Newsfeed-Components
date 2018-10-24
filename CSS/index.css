@@ -34,7 +34,20 @@
 .header h1 {
   margin: 0;
   font-size: 48px;
+  animation: pulse 5s infinite;
 }
+@keyframes pulse {
+  0% {
+    color: white;
+  }
+  50%{
+    color: magenta;
+  }
+  100% {
+    color: white;
+  }
+}
+
 .articles {
   margin-top: 95px;
 }
@@ -48,6 +61,17 @@
   height: 50px;
   overflow: hidden;
   box-shadow: 2px 2px 2px lightgrey;
+  animation:
+    pulse 3s ease infinite alternate,
+    nudge 5s linear infinite alternate;
+    @keyframes pulse {
+      0%, 100% {
+        background-color: white;
+      }
+      50% {
+        background-color: magenta;
+      }
+    }
 }
 .article h2 {
   font-size: 28px;
