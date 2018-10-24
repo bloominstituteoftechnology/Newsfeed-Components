@@ -1,7 +1,17 @@
 
 const toggleMenu = () => {
   // Toggle the "menu--open" class on your menu refence. 
-  menu.classList.toggle('menu--open');
+  // menu.classList.toggle('menu--open');
+  if(!menu.classList.contains('menu--open')){
+    menu.classList.toggle('menu--open');
+    TweenMax.from(menu,1,{left:-350});
+  }
+  else{
+    TweenMax.to(menu,1,{left:-350,onComplete: ()=> {
+      menu.classList.toggle('menu--open');
+      menu.style.left = 0;
+    }})
+  }
 }
 
 // Start Here: Create a reference to the ".menu" class
