@@ -31,7 +31,9 @@ class Article {
   }
 
   closeArticle(e) {
-    this.domElement.classList.add('article-close');
+    TweenLite.to(this.domElement, .8, {x:'100%', ease:Power1.easeOut});
+    TweenLite.to(this.domElement, .01, {display:'none', delay: .8})
+    //this.domElement.classList.add('article-close');
   }
 
   hoverEffect(e) {
