@@ -30,10 +30,33 @@
   position: fixed;
   top: 0;
   z-index: 2;
+  animation: pulse 10s ease 10s alternate, 
+    nudge 10s linear  alternate;
 }
 .header h1 {
   margin: 0;
   font-size: 48px;
+}
+@keyframes pulse {
+  0%,
+  100% {
+    background-color: red;
+  }
+  50% {
+    background-color: orange;
+  }
+}
+@keyframes nudge {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(150px, 0);
+  }
+  80% {
+    transform: translate(-150px, 0);
+  }
 }
 .menu-button {
   position: absolute;
@@ -64,6 +87,29 @@
 .menu--open {
   display: block;
 }
+@keyframes shoot-up {
+  0% {
+    opacity: 0;
+    transform: translateY(1000px);
+  }
+  80% {
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes pulse {
+  0% {
+    background-color: black;
+    color: white;
+  }
+  100% {
+    background-color: white;
+    color: black;
+  }
+}
 .articles {
   margin-top: 95px;
 }
@@ -77,6 +123,10 @@
   height: 50px;
   overflow: hidden;
   box-shadow: 2px 2px 2px lightgrey;
+  animation-name: shoot-up;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation: pulse 5s infinite;
 }
 .article h2 {
   font-size: 28px;

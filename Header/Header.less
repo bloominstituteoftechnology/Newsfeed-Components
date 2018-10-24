@@ -9,9 +9,35 @@
   position: fixed;
   top: 0;
   z-index: 2;
+  animation: 
+    pulse 10s ease 10s alternate, 
+    nudge 10s linear  alternate;
 
   h1 {
     margin: 0;
     font-size: 48px;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    background-color: red;
+  }
+  50% {
+    background-color: orange;
+  }
+}
+
+@keyframes nudge {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  
+  50% {
+    transform: translate(150px, 0);
+  }
+  
+  80% {
+    transform: translate(-150px, 0);
   }
 }

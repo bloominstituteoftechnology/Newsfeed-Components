@@ -1,5 +1,35 @@
+
+@keyframes shoot-up {
+  
+    0%{
+        opacity: 0;
+        transform: translateY(1000px);
+    }
+
+    80%{
+        transform: translateY(-100px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes pulse {
+  0% {
+    background-color: black;
+    color: white;
+  }
+  100% {
+    background-color: white;
+    color:black;
+  }
+}
+
 .articles {
   margin-top: 95px;
+
 }
 .article {
   margin: 20px 10%;
@@ -11,11 +41,15 @@
   height: 50px;
   overflow: hidden;
   box-shadow: 2px 2px 2px lightgrey;
-
+  animation-name: shoot-up;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation: pulse 10s infinite;
   h2 {
     font-size: 28px;
     padding: 0;
     margin: 15px 0 0;
+
   }
 
   .date {
@@ -44,7 +78,3 @@
 .article-open {
   height: 400px;
 }
-
-
-
-
