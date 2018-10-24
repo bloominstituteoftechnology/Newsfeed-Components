@@ -67,6 +67,7 @@
 .menu ul li:hover {
   animation-name: expose;
   animation-duration: 1s;
+  animation-fill-mode: forwards;
 }
 @keyframes expose {
   100% {
