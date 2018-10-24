@@ -10,4 +10,13 @@ const menu = document.querySelector(".menu");
 const menuButton = document.querySelector(".menu-button");
 // Using your menuButton reference, add a click handler that calls toggleMenu
 
-menuButton.addEventListener("click", toggleMenu);
+// menuButton.addEventListener('click', toggleMenu)
+const header = document.querySelector('.header');
+
+menuButton.addEventListener("click", (event) => {
+  menu.classList.toggle("menu--open");
+  TweenMax.to('.menu', 2, {
+    left: 0,
+    ease:Power2.easeInOut
+  });
+});

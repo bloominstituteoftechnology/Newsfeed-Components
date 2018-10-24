@@ -35,13 +35,6 @@
   margin: 0;
   font-size: 48px;
 }
-html,
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Roboto';
-  background-color: #fffef7;
-}
 .menu-button {
   position: absolute;
   left: 20px;
@@ -51,7 +44,7 @@ body {
   display: none;
   position: fixed;
   top: 75px;
-  left: 0;
+  left: -350px;
   width: 350px;
   height: 100vh;
   /* This give the height 100% of the screen or, '100% of View Height' */
@@ -70,6 +63,9 @@ body {
 }
 .menu--open {
   display: block;
+}
+.menu--close {
+  display: none;
 }
 .articles {
   margin-top: 95px;
@@ -111,4 +107,11 @@ body {
 }
 .article-open {
   height: 100%;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto';
+  background-color: #fffef7;
 }
