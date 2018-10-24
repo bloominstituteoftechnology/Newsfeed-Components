@@ -105,6 +105,9 @@
 .article-open {
   height: 400px;
 }
+.article-exit {
+  display: none;
+}
 html,
 body {
   margin: 0;
