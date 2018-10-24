@@ -37,3 +37,14 @@ const menu = document.querySelector('.menu');
 const menuButton = document.querySelector('.menu-button');
 // Using your menuButton reference, add a click handler that calls toggleMenu
 menuButton.addEventListener('click', toggleMenu);
+
+// Custom hover animation
+
+const menuLinks = document.querySelectorAll('.menu ul li');
+
+menuLinks.forEach(link => {
+
+  link.addEventListener('mouseenter', () => TweenMax.to(link, 1, {css:{backgroundColor: '#388E3C'}}));
+  link.addEventListener('mouseleave', () => TweenMax.to(link, 1, {css:{backgroundColor: '#81C784'}}));
+
+});
