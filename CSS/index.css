@@ -35,6 +35,9 @@
   margin: 0;
   font-size: 48px;
 }
+.header .logo {
+  margin-top: -0.005%;
+}
 .menu-button {
   position: absolute;
   left: 20px;
