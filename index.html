@@ -7,6 +7,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
     <script src="./Menu/Menu.js" async></script>
     <script src="./Article/Article.js" async></script>
+    <script src="./Form/Form.js" async></script>
   </head>
   <body>
     <div class="header">
@@ -126,6 +127,27 @@
           hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? </p>
         <span class='expandButton'></span>
       </div>
+    </div>
+    <div class="form-container">
+      <!-- The signup form: -->
+      <div class="article-form" id="articleForm">
+        <form class="form">
+          <!-- Title input -->
+        <label for="title">Title:</label>
+        <input class="form__input" id='titleInput' type="text" name="title" placeholder="Title here">
+
+        <!-- Body input -->
+        <label for="body">Body:</label>
+        <textarea class="form__input" id='bodyInput' col=200 rows=30 placeholder="Write your article here..."></textarea>
+
+        <!-- Submit button -->
+        <input class="form__input form__button" id="submitBtn" type="submit" value="Submit">
+        </form>
+      </div>
+      <!-- end of sign form -->
+    </div>
+    <div class="add-article" id="buttonAdd">
+      +
     </div>
   </body>
 </html>

@@ -56,10 +56,20 @@
   /* This set the layer level of the element, it has precendence over initial level of 1*/
 }
 .menu ul li {
+  width: 100%;
   list-style-type: none;
   font-size: 32px;
   padding: 30px 0;
   text-align: center;
+}
+.menu ul {
+  padding: 0px;
+  margin: 0px;
+}
+.menu ul li:hover {
+  color: white;
+  background-color: #388E3C;
+  transition: all 0.8s;
 }
 .articles {
   margin-top: 95px;
@@ -116,6 +126,57 @@
 .hover-button {
   border-color: black;
   color: black;
+}
+.add-article {
+  position: fixed;
+  bottom: 40px;
+  right: 60px;
+  font-size: 2rem;
+  border-radius: 100%;
+  padding: 0.5rem;
+  background-color: lightgray;
+  opacity: 0.6;
+}
+.add-article a {
+  text-decoration: none;
+  color: black;
+}
+.add-article:hover {
+  opacity: 1;
+  transition: all 0.8s;
+  border: 1px solid black;
+}
+.form-container {
+  display: none;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.form-container .form {
+  margin: 0px auto;
+  /*centered */
+  max-width: 600px;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  font-size: 1.5rem;
+}
+.form-container label {
+  padding: 10px auto;
+}
+.form-container .form__input {
+  margin: 3px 0px 12px 0px;
+  padding: 5px;
+  border-radius: 5px;
+}
+.form-container .form__message {
+  height: 100px;
+}
+.form-container .form__button {
+  width: 100%;
+}
+.hidden {
+  display: none;
 }
 html,
 body {

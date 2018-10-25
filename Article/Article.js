@@ -47,3 +47,53 @@ let articles = document.querySelectorAll('.article');
 // Use .map() to iterate over the articles array and create a new instance of Article by passing in each article as a parameter to the constructor.
 articles = Array.from(articles);
 articles.map(a => new Article(a));
+
+///
+class ArticleGenerator {
+  constructor(input) {
+    this.domElement = document.createElement('div');
+    this.domElement.setAttribute('class', 'article');
+
+    this.closeButton = document.createElement('div');
+    this.closeButton.setAttribute('class', 'close-button');
+    this.closeButton.textContent = 'X';
+
+    const h2 = document.createElement('h2');
+    h2.textContent = input.h2;
+
+    const dateP = document.createElement('p');
+    dateP.setAttribute('class', 'date');
+    dateP.textContent = input.date;
+
+    const content = input.content.map(p => {
+      const par = document.createElement('p');
+      par.textContent = p;
+      return par;
+    });
+
+    this.expandButton = document.createElement('span');
+    this.expandButton.setAttribute('class', 'expandButton');
+    this.expandButton.textContent = 'Click to Expand';
+
+    this.domElement.append(this.closeButton);
+    this.domElement.append(h2);
+    this.domElement.append(dateP);
+    content.forEach(e => {
+      this.domElement.append(e)});
+    this.domElement.append(this.expandButton);
+  }
+}
+
+// let ar = new ArticleGenerator({
+//   'h2': 'New Thing',
+//   'date': '22-3-2222',
+//   'content': ['new', 'new', 'new']
+// });
+
+// //console.log(ar.domElement);
+
+// new Article(ar.domElement);
+
+// const page = document.querySelector('.articles');
+// console.log(page);
+// page.append(ar.domElement);
