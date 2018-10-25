@@ -1,4 +1,3 @@
-
 const toggleMenu = () => {
   // Toggle the "menu--open" class on your menu refence. 
   menu.classList.toggle("menu--open");
@@ -11,19 +10,9 @@ const menuButton = document.querySelector(".menu-button");
 menuButton.addEventListener("click", toggleMenu);
 
 window.addEventListener("click", (e) => {
-  if(menu.classList.contains("menu--open") && !(e.target.classList.contains("menu-button"))){
-    if(!(e.target.classList.contains("menu--open")) && !(e.target.parentElement.parentElement.classList.contains("menu--open"))){
-
-      console.log(e);
+  if (menu.classList.contains("menu--open") && !(e.target.classList.contains("menu-button"))) {
+    if (!(e.target.classList.contains("menu--open")) && !(e.target.parentElement.parentElement.classList.contains("menu--open"))) {
       menu.classList.toggle("menu--open");
     }
-
   }
- 
-    // e.target.menu.classList.toggle("menu--open");
-    // console.log(e.target.parentElement.parentElement);
-    
-    // console.log(e.target.classList.contains("menu") || e.target.parentElement.parentElement.classList.contains("menu"));
-    
-  })
-  // console.log(menu.classList.contains("menu--open"));
+})
