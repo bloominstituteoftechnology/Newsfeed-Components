@@ -8,9 +8,9 @@
   const page = document.querySelector('.articles');
 
   addButton.addEventListener('click', e => {
-    articles.forEach(e => e.style.display = 'none') 
-    form.style.display = 'block';
-    addButton.style.display = 'none';
+    TweenLite.to([articles, addButton], .8, {opacity:0, display:'none', ease:Power1.easeOut});
+    TweenLite.to(form, .8, {display:'block', ease:Power1.easeOut, delay:.8})
+    TweenLite.to(form, .8, {opacity:1, ease:Power1.easeOut, delay:.8})
   });
 
   submitButton.addEventListener('click', (e) => {
@@ -31,12 +31,16 @@
       })
 
       new Article(newArticle.domElement);
+      newArticle.domElement.style.display = 'none';
+      newArticle.domElement.style.opacity = 0;
       page.prepend(newArticle.domElement);
       articles = document.querySelectorAll('.article');
     }
 
-    articles.forEach(e => e.style.display = null);
     form.style.display = null;
+
+    articles.forEach(e => e.style.display = null);
     addButton.style.display = null;
+    TweenLite.to([articles, addButton], .8, {opacity:1, ease:Power1.easeOut, delay:.81})
   })
 })();
