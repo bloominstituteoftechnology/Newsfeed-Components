@@ -24,7 +24,8 @@ class Article {
     this.expandButton.textContent = this.expandButton.textContent === 'Click to Expand' ? 'Click to Close' : 'Click to Expand';
 
     if (this.domElement.classList.contains('article-open')) {
-      articles.forEach(e => {
+      const currentArticles = document.querySelectorAll('.article');
+      currentArticles.forEach(e => {
         if(e.style.height == '400px') {
           e.classList.toggle('article-open');
           e.querySelector('.expandButton').textContent = 'Click to Expand';
