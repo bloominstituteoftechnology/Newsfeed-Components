@@ -16,6 +16,8 @@ class Article {
 
   expandArticle() {
     this.domElement.classList.toggle('article-open');
+    this.expandButton.textContent = "Close This Window"
+
     console.log("the method is the problem")
   }
 }
