@@ -4,6 +4,7 @@ class Article {
   constructor(domElement) {
     // assign this.domElement to the passed in domElement
     this.domElement = domElement;
+    this.domElement.style.height = '50px';
     // create a reference to the ".expandButton" class. 
     this.expandButton = domElement.querySelector('.expandButton');
     // Using your expandButton reference, update the text on your expandButton to say "expand"
@@ -13,11 +14,21 @@ class Article {
   }
 
   expandArticle() {
+    const removeArticle = () => {
+      this.domElement.classList.remove('article-open');
+      this.expandButton.textContent = 'Click to Expand';
+    };
     // Using our reference to the domElement, toggle a class to expand or hide the article.
-    this.domElement.classList.toggle('article-open');
-    this.expandButton.textContent = this.domElement.classList.contains('article-open')
-      ? 'Click to Minimize'
-      : 'Click to Expand';
+    if (this.domElement.classList.contains('article-open')) {
+      TweenMax.to(this.domElement, 1, { height: 50, onComplete: removeArticle, ease: Power2.easeIn  });
+    } else {
+      this.domElement.classList.add('article-open');
+      TweenMax.to(this.domElement, 1.5, {
+        height: 400, 
+        onComplete: () => this.expandButton.textContent = 'Click to Minimize', 
+        ease: Power2.easeOut
+      });
+    }
   }
 }
 
