@@ -173,6 +173,7 @@ const getArrOf = (tag, n = 1, texts = [], styles = {}) => {
   form.addEventListener('submit', e => {
     e.preventDefault();
     makeArticle(heading.value, paragraph.value.split('\n'));
+    form.reset();
   });
 
   document.querySelector('body').appendChild(form);
