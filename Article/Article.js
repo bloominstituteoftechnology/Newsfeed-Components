@@ -12,13 +12,23 @@ class Article {
     
     // Set a click handler on the expandButton reference, calling the expandArticle method.
     this.expandButton.addEventListener('click', () => this.expandArticle(event));
+
   }
 
   expandArticle(event) {
     // Using our reference to the domElement, toggle a class to expand or hide the article.
-    this.domElement.classList.toggle('article-open');
+    // this.domElement.classList.toggle('article-open');
+    TweenLite.to(this.domElement, 4, {className: "+=article-open", ease:Power1.easeOut});
+
+    if (this.domElement.classList.contains('article-open')) {
+      TweenLite.to(this.domElement, 4, {className: "-=article-open", ease:Power1.easeOut});
+    };
   }
+
+
 }
+
+
 
 // START HERE: Select all classes named ".article" and assign that value to the articles variable
 let articles = document.querySelectorAll('.article');
