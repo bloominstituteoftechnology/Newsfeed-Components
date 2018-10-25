@@ -6,7 +6,8 @@ class Article {
     this.article = article;
     // create a reference to the ".expandButton" class. 
     this.expandButton = this.article.querySelector('.expandButton');
-    console.log(this.expandButton);
+    //this.expandArticlePoop = this.article.querySelector('.article');
+    console.log(this.expandArticlePoop);
     // Using your expandButton reference, update the text on your expandButton to say "expand"
    
     this.expandButton.textContent = "Thank you very much Daniel for helping me";
@@ -15,7 +16,10 @@ class Article {
     // this.expandButton.addEventListener('click', this.expandArticle.bind(this)); //pretty sure this works, this is ES5
     // lets try something way more modern, ES6 arrow syntax
     this.expandButton.addEventListener('click', () => this.expandArticle());
-
+      
+    //this.expandArticlePoop.addEventListener('mouseenter', () => this.expandArticle());
+    //his.expandArticlePoop.addEventListener('mouseleave', () => this.expandArticle());
+    //this.closeArticle.addEventListener('mouseleave', () => this.closeArticleMega());
   }
 
   expandArticle() {
@@ -24,11 +28,25 @@ class Article {
 
   }
 }
+//   closeArticleMega() {
+//     this.article.classList.toggle('article-open');
+//   }
+// }
 
 // START HERE: Select all classes named ".article" and assign that value to the articles variable
 let articles = document.querySelectorAll(".article");
 
-
+// // try something insane
+// window.addEventListener('click', () => {
+//   if ((event.target.classList.contains('expandButton') || event.target.classList.contains('article')) == false) {
+//     for (let i = 0; i<articles.length; i++) {
+//       if (articles[i].article.classList.contains('article-open')) {
+//         articles[i].article.classList.toggle('article-open');
+//         articles[i].expandButton.forEach((button) => button.textContent = 'expand');
+//       }
+//     }  
+//   }
+// })
 
 // Use .map() to iterate over the articles array and create a new instance of Article by passing in each article as a parameter to the constructor.
 articles = Array.from(articles).map(article => {
