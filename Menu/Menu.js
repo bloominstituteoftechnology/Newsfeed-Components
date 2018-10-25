@@ -1,8 +1,6 @@
 const toggleMenu = () => {
     // Toggle the "menu--open" class on your menu refence.
     menu.classList.toggle('menu--open');
-    // $(".slide-menu").trigger("open");
-    // $(".slide-menu").trigger("close");
     TweenMax.fromTo(".menu", 0.5, {
         x: -350
     }, {
