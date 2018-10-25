@@ -102,13 +102,24 @@ const getArrOf = (tag, n = 1, texts = [], styles = {}) => {
   return nodes;
 };
 
+// Form for building articles
 {
   const form = document.createElement('form');
-  form.style.margin = '0 auto';
-  form.style.textAlign = 'center';
-  form.style.width = '500px';
+  Object.assign(form.style, {
+    margin: '0 auto',
+    textAlign: 'center',
+    width: '500px',
+    position: 'relative',
+    border: '1px solid lightgray',
+    borderRadius: '5px',
+    paddingBottom: '20px',
+    background: 'white'
+  });
 
-  const [ headingDiv, paragraphDiv ] = getArrOf('div', 2, []);
+  const title = document.createElement('h3');
+  title.appendChild(document.createTextNode('Make your own article!'));
+
+  const [ headingDiv, paragraphDiv ] = getArrOf('div', 2);
 
   const [ headingLabel, paragraphLabel ] = getArrOf(
     'label',
@@ -116,17 +127,39 @@ const getArrOf = (tag, n = 1, texts = [], styles = {}) => {
     [ 'Heading', 'Paragraphs' ],
     { fontSize: '20px' }
   );
-  headingLabel.style.marginRight = '45px';
-  paragraphLabel.style.marginRight = '20px';
+  headingLabel.style.marginRight = '47px';
+  Object.assign(paragraphLabel.style, {
+    marginRight: '20px',
+    verticalAlign: 'middle',
+    height: '50px',
+    marginBottom: '50px',
+    display: 'inline-block'
+  });
 
   const heading = document.createElement('input');
   Object.assign(heading.style, {
-    width: '180px'
+    width: '220px',
+    background: 'whitesmoke',
+    border: '1px solid black'
   });
   const paragraph = document.createElement('textarea');
+  Object.assign(paragraph.style, {
+    width: '220px',
+    height: '100px',
+    background: 'whitesmoke',
+    border: '1px solid black'
+  });
 
   const submitBtn = document.createElement('button');
+  Object.assign(submitBtn.style, {
+    position: 'absolute',
+    bottom: '30px',
+    left: '55%',
+    cursor: 'pointer'
+  });
   submitBtn.appendChild(document.createTextNode('Submit'));
+
+  form.appendChild(title);
 
   headingDiv.appendChild(headingLabel);
   headingDiv.appendChild(heading);
