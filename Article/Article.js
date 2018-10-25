@@ -1,5 +1,6 @@
-// Because classes are not hoisted you will need to start your code at the bottom of the page.  Look for the comment "START HERE"
+import moment from 'moment';
 
+// Because classes are not hoisted you will need to start your code at the bottom of the page.  Look for the comment "START HERE"
 class Article {
   constructor(domElement) {
     // assign this.domElement to the passed in domElement
@@ -20,7 +21,11 @@ class Article {
     };
     // Using our reference to the domElement, toggle a class to expand or hide the article.
     if (this.domElement.classList.contains('article-open')) {
-      TweenMax.to(this.domElement, 1, { height: 50, onComplete: removeArticle, ease: Power2.easeIn  });
+      TweenMax.to(this.domElement, 1, {
+        height: 50,
+        onComplete: removeArticle,
+        ease: Power2.easeIn
+      });
     } else {
       this.domElement.classList.add('article-open');
       TweenMax.to(this.domElement, 1.5, {
@@ -51,3 +56,30 @@ articles.forEach(article => {
 
 // Use .map() to iterate over the articles array and create a new instance of Article by passing in each article as a parameter to the constructor.
 articles = Array.from(articles).map(article => new Article(article));
+
+// Article builder stretch
+const makeArticle = (heading, paragraphs) => {
+  const article = document.createElement('div');
+  article.classList.add('article');
+
+  const h2 = document.createElement('h2');
+  h2.appendChild(document.createTextNode(heading));
+  article.appendChild(h2);
+
+  const date = document.createElement('p');
+  date.classList.add('date');
+  date.appendChild(document.createTextNode(moment().format('MMM Do[,] YYYY')));
+  article.appendChild(date);
+
+  for (const pText of paragraphs) {
+    const p = document.createElement('p');
+    p.appendChild(document.createTextNode(pText));
+    article.appendChild(p);
+  }
+
+  const expandBtn = document.createElement('span');
+  expandBtn.classList.add('expandButton');
+  article.appendChild(expandBtn);
+
+  document.querySelector('.articles').appendChild(article);
+};
