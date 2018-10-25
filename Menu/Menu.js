@@ -20,10 +20,18 @@ const closeMenu = e => {
 const toggleMenu = e => {
   e.stopPropagation();
   // Toggle the "menu--open" class on your menu refence.
-  menu.classList.add('menu--open');
-  TweenMax.fromTo(menu, 1, { x: -350 }, { x: -25, ease: Sine.easeIn });
-  // Make the menu close if elsewhere is clicked
-  document.querySelector('body').addEventListener('click', closeMenu);
+  if (menu.classList.contains('menu--open')) {
+    TweenMax.to(menu, 1.25, {
+      x: -350,
+      onComplete: () => menu.classList.remove('menu--open'),
+      ease: Power2.easeIn
+    });
+  } else {
+    menu.classList.add('menu--open');
+    TweenMax.fromTo(menu, 1, { x: -350 }, { x: -25, ease: Sine.easeIn });
+    // Make the menu close if elsewhere is clicked
+    document.querySelector('body').addEventListener('click', closeMenu);
+  }
 }
 
 // Start Here: Create a reference to the ".menu" class
