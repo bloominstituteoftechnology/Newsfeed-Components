@@ -17,13 +17,14 @@ class Article {
 
   expandArticle(event) {
     // Using our reference to the domElement, toggle a class to expand or hide the article.
-    this.domElement.classList.toggle('article--open', true);
-    this.expandButton.textContent = 'Click to Close'
+    this.domElement.classList.toggle('article--open');
+    if (this.domElement.classList.contains('article--open')) {
+      this.expandButton.textContent = 'Click to Close';
+    } else {
+      this.expandButton.textContent = 'Click to Expand';
+    }
   }
 }
-
-
-
 
 // START HERE: Select all classes named ".article" and assign that value to the articles variable
 let articles = document.querySelectorAll('.article');
