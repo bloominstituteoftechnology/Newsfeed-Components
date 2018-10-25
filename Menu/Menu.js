@@ -7,7 +7,7 @@ const isDescendant = (parent, child) => {
   return false;
 };
 
-const closeMenu = (e) => {
+const closeMenu = e => {
   if (e.target !== menu && !isDescendant(menu, e.target)) {
     TweenMax.to(menu, 1.25, {
       x: -350,
@@ -17,8 +17,8 @@ const closeMenu = (e) => {
   }
 };
 
-const toggleMenu = event => {
-  event.stopPropagation();
+const toggleMenu = e => {
+  e.stopPropagation();
   // Toggle the "menu--open" class on your menu refence.
   menu.classList.add('menu--open');
   TweenMax.fromTo(menu, 1, { x: -350 }, { x: -25, ease: Sine.easeIn });
