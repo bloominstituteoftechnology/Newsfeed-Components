@@ -5,6 +5,8 @@ const toggleMenu = (event) => {
   menu.classList.toggle('menu--open');
 }
 
+
+
 // Start Here: Create a reference to the ".menu" class
 const menu = document.querySelector('.menu');
 console.log(menu);

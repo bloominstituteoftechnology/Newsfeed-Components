@@ -153,3 +153,7 @@ body {
   font-family: 'Roboto';
   background-color: #fffef7;
 }
+body {
+  width: 100vw;
+  height: 100vh;
+}
