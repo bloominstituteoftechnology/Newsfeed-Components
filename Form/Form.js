@@ -27,7 +27,7 @@
       let newArticle = new ArticleGenerator({
         'h2': titleValue,
         'date': date,
-        'content': [contentValue]
+        'content': contentValue.split('\n')
       })
 
       new Article(newArticle.domElement);
