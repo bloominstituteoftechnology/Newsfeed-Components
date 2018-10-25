@@ -25,10 +25,10 @@ menuButton.addEventListener('click', function(event) {
   // TweenMax.from('.articles', 1, {opacity:0, scale: 0});
 });
  
-
-// timeLine.from('.header', .5, {scale:0});
-// timeLine.from('.articles', 1, {opacity:0, scale: 0});
-// timeLine.from('.menu-button', 1, {opacity:0, scale: 3});
+const timeLine = new TimelineMax();
+timeLine.from('.header', .5, {scale:0});
+timeLine.from('.articles', 1, {opacity:0, scale: 0});
+timeLine.from('.menu-button', 1, {opacity:0, scale: 3});
 
 
 
