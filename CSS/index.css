@@ -22,7 +22,7 @@
 .header {
   width: 100%;
   height: 75px;
-  background-color: #388E3C;
+  background-color: #a0001e;
   color: white;
   display: flex;
   justify-content: center;
@@ -55,7 +55,7 @@ body {
   width: 350px;
   height: 100vh;
   /* This give the height 100% of the screen or, '100% of View Height' */
-  background-color: #81C784;
+  background-color: #a0001e;
   border: 1px solid #004D40;
   border-left: none;
   border-bottom: none;

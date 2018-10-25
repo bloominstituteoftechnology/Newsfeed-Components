@@ -1,7 +1,7 @@
 const toggleMenu = () => {
   // Toggle the "menu--open" class on your menu refence. 
   menu.classList.toggle('menu--open');
-  TweenMax.to('.menu', 2, {left:50, opacity: .8, ease:Power4.easeOut});
+  TweenMax.to('.menu', 2, {left:40, opacity: .9, ease:Power4.easeOut});
 }
 
 
