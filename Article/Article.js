@@ -1,4 +1,4 @@
-import moment from 'moment';
+const moment = require('moment');
 
 // Because classes are not hoisted you will need to start your code at the bottom of the page.  Look for the comment "START HERE"
 class Article {
@@ -37,9 +37,7 @@ class Article {
   }
 }
 
-// START HERE: Select all classes named ".article" and assign that value to the articles variable
-let articles = document.querySelectorAll('.article');
-articles.forEach(article => {
+const appendCloseBtn = (article) => {
   const closeBtn = document.createElement('span');
   closeBtn.appendChild(document.createTextNode('Click to Close'));
   Object.assign(closeBtn.style, {
@@ -52,14 +50,18 @@ articles.forEach(article => {
   });
   closeBtn.addEventListener('click', () => article.style.display = 'none');
   article.appendChild(closeBtn);
-});
+};
+
+// START HERE: Select all classes named ".article" and assign that value to the articles variable
+let articles = document.querySelectorAll('.article');
+articles.forEach(appendCloseBtn);
 
 // Use .map() to iterate over the articles array and create a new instance of Article by passing in each article as a parameter to the constructor.
 articles = Array.from(articles).map(article => new Article(article));
 
 // Article builder stretch
 const makeArticle = (heading, paragraphs) => {
-  const article = document.createElement('div');
+  let article = document.createElement('div');
   article.classList.add('article');
 
   const h2 = document.createElement('h2');
@@ -80,6 +82,65 @@ const makeArticle = (heading, paragraphs) => {
   const expandBtn = document.createElement('span');
   expandBtn.classList.add('expandButton');
   article.appendChild(expandBtn);
-
+  appendCloseBtn(article);
+  
   document.querySelector('.articles').appendChild(article);
+  article = new Article(article);
 };
+
+const getArrOf = (tag, n = 1, texts = [], styles = {}) => {
+  const nodes = [];
+  for (let i = 0; i < n; i++) {
+    const node = document.createElement(tag);
+    Object.assign(node.style, styles);
+    if (texts[i]) {
+      node.appendChild(document.createTextNode(texts[i]))
+    }
+    nodes.push(node);
+  }
+  return nodes;
+};
+
+{
+  const form = document.createElement('form');
+  form.style.margin = '0 auto';
+  form.style.textAlign = 'center';
+  form.style.width = '500px';
+
+  const [ headingDiv, paragraphDiv ] = getArrOf('div', 2, []);
+
+  const [ headingLabel, paragraphLabel ] = getArrOf(
+    'label',
+    2,
+    [ 'Heading', 'Paragraphs' ],
+    { fontSize: '20px' }
+  );
+  headingLabel.style.marginRight = '45px';
+  paragraphLabel.style.marginRight = '20px';
+
+  const heading = document.createElement('input');
+  Object.assign(heading.style, {
+    width: '180px'
+  });
+  const paragraph = document.createElement('textarea');
+
+  const submitBtn = document.createElement('button');
+  submitBtn.appendChild(document.createTextNode('Submit'));
+
+  headingDiv.appendChild(headingLabel);
+  headingDiv.appendChild(heading);
+  form.appendChild(headingDiv);
+
+  paragraphDiv.appendChild(paragraphLabel);
+  paragraphDiv.appendChild(paragraph);
+  form.appendChild(paragraphDiv);
+
+  form.appendChild(submitBtn);
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    makeArticle(heading.value, paragraph.value.split('\n'));
+  });
+
+  document.querySelector('body').appendChild(form);
+}
