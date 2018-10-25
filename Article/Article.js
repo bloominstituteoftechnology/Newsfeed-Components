@@ -24,6 +24,13 @@ class Article {
     this.expandButton.textContent = this.expandButton.textContent === 'Click to Expand' ? 'Click to Close' : 'Click to Expand';
 
     if (this.domElement.classList.contains('article-open')) {
+      articles.forEach(e => {
+        if(e.style.height == '400px') {
+          e.classList.toggle('article-open');
+          e.querySelector('.expandButton').textContent = 'Click to Expand';
+          TweenLite.to(e, .8, {height:'50px', ease:Power1.easeOut});
+        }
+      })
       TweenLite.to(this.domElement, .8, {height:'400px', ease:Power1.easeOut});
     } else {
       TweenLite.to(this.domElement, .8, {height:'50px', ease:Power1.easeOut});
