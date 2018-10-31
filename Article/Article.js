@@ -20,6 +20,7 @@ class Article {
   expandArticle() {
     // Using our reference to the domElement, toggle a class to expand or hide the article.
     this.domElement.classList.toggle('article-open');
+    // TweenMax.from('article-open', 2);
     this.expandButton.textContent = ('Click to Close');
     }
 
