@@ -37,6 +37,4 @@ articles = Array.from(articles).map( article => {
 
 
 const struggleBus = document.querySelector(".header .struggle")
-TweenMax.to(struggle, 6, {left:500});
-
-// (".info-block", 2, {clip:"rect(0px 500px 400px 0px)", backgroundColor:"red"});
+TweenMax.to(".struggle", 2, {x:800}, {opacity:0.5});
