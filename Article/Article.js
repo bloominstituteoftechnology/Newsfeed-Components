@@ -38,4 +38,4 @@ articles = Array.from(articles).map(article => {
   return new Article(article);
 });
 
-TweenMax.to(".logo", 6, {x:285, rotation:360, scale:0.4});
+TweenMax.to(".logo", 3, {x:285, rotation:360, scale:0.4});

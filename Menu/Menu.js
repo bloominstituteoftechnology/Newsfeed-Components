@@ -1,13 +1,14 @@
 // have menu slide in from left at start using green sock
 // 
-// Tween.from('.menu', 3, {x:-200, opacity: 0});
+ TweenMax.from('.menu', 3, {x: -200,  opacity: 0});
 
 
 const toggleMenu = () => {
   // Toggle the "menu--open" class on your menu reference.
   
-  menu.classList.toggle('menu--open');
-
+   menu.classList.toggle('menu--open');
+  
+  
   
   // console.log('toggle menu, am I working?');
 };
