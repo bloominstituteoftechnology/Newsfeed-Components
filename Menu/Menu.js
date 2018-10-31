@@ -17,5 +17,6 @@ const menuButton = document.querySelector(".header .menu-button");
 // document.querySelector(".header .menu-button").addEventListener("click", function( event ) {
  
 // }, false);
+//See below for functional code
 
 menuButton.addEventListener('click', toggleMenu);  
