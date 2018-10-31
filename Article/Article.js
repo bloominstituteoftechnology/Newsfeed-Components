@@ -37,4 +37,7 @@ articles = Array.from(articles).map( article => {
 
 
 const struggleBus = document.querySelector(".header .struggle")
-TweenMax.to(".struggle", 2, {x:800}, {opacity:0.5});
+TweenMax.to(".struggle", 2, {x:800}, {opacity:0.5}, );
+
+TweenLite.to(".struggle", 2.5, { ease: RoughEase.ease.config({ template:  Power0.easeNone, strength: 1, points: 20, taper: "none", randomize: true, clamp: false}), x: "400%" });
+
