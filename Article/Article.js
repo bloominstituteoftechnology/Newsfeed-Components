@@ -14,13 +14,18 @@ class Article {
 
   expandArticle() {
     // Using our reference to the domElement, toggle a class to expand or hide the article.
+    
 
   }
 }
 
 // START HERE: Select all classes named ".article" and assign that value to the articles variable
-let articles;
+
+
+let articles = document.querySelectorAll('.article');
 
 // Use .map() to iterate over the articles array and create a new instance of Article by passing in each article as a parameter to the constructor.
+
+
 articles = Array.from(articles);
 
