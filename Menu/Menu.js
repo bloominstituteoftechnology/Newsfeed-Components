@@ -19,7 +19,9 @@ list.forEach(item => item.addEventListener('click', () => TweenMax.to(list, 5, {
 
 const body = document.querySelector('body');
 
-document.body.style.backgroundImage = "url('/assets/green-background.jpg')";
+body.addEventListener('click', () => {
+  document.body.style.backgroundImage = "url('/assets/green-background.jpg')";
+})
 
 const heading = document.querySelector('.header h1');
 
