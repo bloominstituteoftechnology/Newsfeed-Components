@@ -41,7 +41,6 @@
   cursor: pointer;
 }
 .menu {
-  display: block;
   position: fixed;
   top: 75px;
   left: -350px;
