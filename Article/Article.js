@@ -30,6 +30,15 @@ class Article {
 - With your selection in place, now chain .forEach() on to the articles variable to iterate over the articles NodeList and create a new instance of Article by passing in each article as a parameter to the constructor.
 
 */
+
+
+
+
+
+
+
+
+/******************** Article Logic ******************/
 let header = 'Some Kind Of Header 2';
 let date = 'Nov 6th, 2018';
 const contentArr = [
@@ -74,16 +83,39 @@ function articleConstructor(header, date, contentArr) {
   //create button, add to container
   let btn = document.createElement('span');
   btn.classList.add('expandButton');
-
   articleContainer.appendChild(btn);
 
   document.querySelector('.articles').appendChild(articleContainer);
 }
 
-
 //Construct articles
 articleConstructor(header, date, contentArr);
 articleConstructor(header2, date2, contentArr2);
+
+
+/******************** Form Logic ******************/
+//Get input from form
+function getInput() {
+  //get input data
+  const header = document.forms["articleForm"]["title"].value;
+  const date = document.forms["articleForm"]["date"].value;
+  const content = document.querySelectorAll('.contentInput');
+  const contentArr = [];
+
+
+  //array of content strings
+  for(let i = 0; i < content.length; i++) {
+    contentArr.push(content[i].value);
+  }
+
+  articleConstructor(header, date, contentArr);
+  const article = document.querySelector('.article:last-child');
+  const publishedArticle = new Article(article);
+}
+
+//Add click event listener to submit button
+const submitBtn = document.querySelector('#submitBtn');
+submitBtn.addEventListener('click', getInput);
 
 //Assign article class
 let articles = document.querySelectorAll('.article').forEach(article => new Article(article));

@@ -4,10 +4,10 @@ const toggleMenu = () => {
   menu.classList.toggle('menu--open');
   console.log(menu.classList.contains('menu--open'))
   if(menu.classList.contains('menu--open')) {
-    TweenMax.fromTo((menu), .5, {x:-350}, {x:0});
+    TweenMax.fromTo((menu), .5, {x:0}, {x:-350});
         event.stopPropagation();
   } else {
-    TweenMax.fromTo((menu), .5, {x:0}, {x:-350});
+    TweenMax.fromTo((menu), .5, {x:-350}, {x:0});
         event.stopPropagation();
   }
 }
