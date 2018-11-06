@@ -6,10 +6,13 @@ class Article {
     this.domElement = domElement;
     // create a reference to the ".expandButton" class.
     this.expandButton = this.domElement.querySelector(".expandButton");
+    this.read = this.domElement.querySelector(".read");
     // Using your expandButton reference, update the text on your expandButton to say "expand"
     this.expandButton.textContent = "Click to Expand";
+    this.read.textContent = "Mark as read";
     // Set a click handler on the expandButton reference, calling the expandArticle method.
     this.expandButton.addEventListener("click", _ => this.expandArticle());
+    this.read.addEventListener("click", _ => this.close());
   }
 
   expandArticle() {
@@ -24,6 +27,17 @@ class Article {
       TweenMax.to(this.domElement, 0.35, { height: 50 });
       this.expandButton.textContent = "Click to Expand";
     }
+  }
+
+  close() {
+    TweenMax.to(this.domElement, 0.35, {
+      opacity: 0,
+      marginTop: 0,
+      marginBottom: 0,
+      scale: 0,
+      height: 0,
+      padding: 0
+    });
   }
 }
 
