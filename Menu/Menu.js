@@ -26,5 +26,4 @@ window.addEventListener('click', function(event) {
   } else {
     return
   }
-
 })
