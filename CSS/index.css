@@ -41,7 +41,7 @@
   cursor: pointer;
 }
 .menu {
-  display: none;
+  display: block;
   position: fixed;
   top: 75px;
   left: 0;
