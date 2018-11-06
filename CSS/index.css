@@ -119,12 +119,18 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding-bottom: 15px;
+  box-shadow: 0px 0px 13px 8px rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
 }
 .formContainer .formContainer__articleForm label {
   padding: 15px;
 }
 .formContainer .formContainer__articleForm input {
   margin: 10px;
+  width: 50%;
+  height: 20px;
 }
 .contentInput {
   margin: 10px 0;
