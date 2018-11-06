@@ -10,6 +10,10 @@ class Article {
     this.expandButton.textContent = 'Click to Expand';
     // Set a click handler on the expandButton reference, calling the expandArticle method.
     this.expandButton.addEventListener('click', () => this.expandArticle());
+
+    this.dispose = this.domElement.querySelector('.article .dispose');
+    this.dispose.textContent = 'Remove article from feed';
+    this.dispose.addEventListener('click', () => this.eliminate());
   }
 
   expandArticle() {
@@ -23,6 +27,11 @@ class Article {
       this.expandButton.textContent = 'Click to Expand';
 
     }
+
+  }
+
+  eliminate() {
+    TweenMax.to((this.domElement), .7, {css:{x: 400, opacity: "0", display: "none"}})
 
   }
 }
