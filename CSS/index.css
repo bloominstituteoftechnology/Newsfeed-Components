@@ -105,6 +105,32 @@
 .article-open {
   height: 400px;
 }
+.formContainer {
+  height: 700px;
+  width: 35%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.formContainer .formContainer__articleForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.formContainer .formContainer__articleForm label {
+  padding: 15px;
+}
+.formContainer .formContainer__articleForm input {
+  margin: 10px;
+}
+.contentInput {
+  margin: 10px 0;
+  width: 60%;
+  height: 75px;
+}
 html,
 body {
   margin: 0;
