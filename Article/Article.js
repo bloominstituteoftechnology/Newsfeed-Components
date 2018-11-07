@@ -20,9 +20,12 @@ class Article {
 }
 
 // START HERE: Select all classes named ".article" and assign that value to the articles variable
-let articles = document.getElementsByClassName('article');
-console.log(articles)
+let articles = document.querySelectorAll('.article');
+
 
 // Use .map() to iterate over the articles array and create a new instance of Article by passing in each article as a parameter to the constructor.
 articles = Array.from(articles);
 
+articles.map(function(){
+  return articles
+})
