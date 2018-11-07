@@ -1,4 +1,22 @@
 /* This line is importing the font 'Roboto'. DO NOT change line 2*/
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Roboto Italic'), local('Roboto-Italic'), url(https://fonts.gstatic.com/s/roboto/v18/KFOkCnqEu92Fr1Mu51xIIzc.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxP.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmWUlfBBc9.ttf) format('truetype');
+}
 /* Below this line is where you will start your work */
 /* It is important to note, you will not be writing any CSS in this file*/
 .header {
@@ -91,6 +109,23 @@
   cursor: pointer;
   transform: translate(-50%);
   background-color: white;
+}
+.form {
+  display: none;
+  width: 25%;
+  margin: 80px auto -50px;
+}
+.form form .form-input:not([type='submit']) {
+  width: 100%;
+  margin: 10px 0;
+  box-shadow: inset 2px 2px 2px lightgrey;
+  border-radius: 5px;
+}
+.form form textarea.form-input {
+  height: 100px;
+}
+.show {
+  display: block;
 }
 .article-open {
   height: 400px;

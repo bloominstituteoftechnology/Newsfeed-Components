@@ -11,7 +11,7 @@
     <div class="header">
       <img class="menu-button" src="./assets/menu.png"/>
       <h1>Lambda School Newsfeed</h1>
-      <div class="add-article">Add Article</div>
+      <div class="add-article">Create New Article</div>
     </div>
     <div class="menu">
       <ul>
@@ -22,6 +22,14 @@
         <li>Music</li>
         <li>Log Out</li>
       </ul>
+    </div>
+    <div class="form">
+      <form>
+        <input type="text" class="form-input" id="new-title" placeholder="Title"><br>
+        <input type="text" class="form-input" id="new-date" placeholder="mm/dd/year"><br>
+        <textarea class="form-input" id="new-content"></textarea><br>
+        <input type="submit" class="form-input" id="submit-button" value="Add Article" onclick="createArticle()">
+      </form>
     </div>
     <div class="articles">
       <div class="article">

@@ -41,8 +41,9 @@ class Article {
 let container = document.querySelector('.articles');
 let articles = document.querySelectorAll('.article');
 let addArticle = document.querySelector('.add-article');
+let form = document.querySelector('.form');
 
-addArticle.addEventListener('click', createArticle);
+addArticle.addEventListener('click', () => form.classList.toggle('show'));
 
 console.log(articles)
 articles.forEach(function(article) {
@@ -53,15 +54,31 @@ function createArticle() {
   let article = document.createElement('div');
   article.classList.add('article');
 
-  // [Title, Date, Content, Expand, Close]
-  let content = [document.createElement('h2'), document.createElement('p'), document.createElement('p'), document.createElement('span'), document.createElement('span')];
-  content[1].classList.add('date');
-  content[3].classList.add('expandButton');
-  content[4].classList.add('close');
-
   container.appendChild(article);
-  for(let i = 0; i < content.length; i++) {
-    article.appendChild(content[i]);
+
+  
+  let content = {
+    'title': document.createElement('h2'),
+    'date': document.createElement('p'),
+    'content': document.createElement('p'),
+    'expand': document.createElement('span'),
+    'close': document.createElement('span')
   }
+
+  let keys = Object.keys(content);
+
+  content['date'].classList.add('date');
+  content['expand'].classList.add('expandButton');
+  content['close'].classList.add('close');
+
+  for(let i = 0; i < 3; i++) {
+    content[keys[i]].textContent = document.querySelector(`#new-${keys[i]}`).value;
+  }
+
+  for(let i = 0; i < keys.length; i++) {
+    article.appendChild(content[keys[i]]);
+  }
+
+  form.classList.toggle('show');
   return new Article(article);
 }

@@ -43,6 +43,29 @@
   }
 }
 
+.form {
+  display: none;
+  width: 25%;
+  margin: 80px auto -50px;
+
+  form {
+    .form-input:not([type='submit']) {
+      width: 100%;
+      margin: 10px 0;
+      box-shadow: inset 2px 2px 2px lightgrey;
+      border-radius: 5px;
+    }
+    
+    textarea.form-input {
+      height: 100px; 
+    }
+  }
+}
+
+.show {
+  display: block;
+}
+
 .article-open {
   height: 400px;
 }
