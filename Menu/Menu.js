@@ -22,5 +22,16 @@ const menuButton = document.querySelector('.menu-button');
 // Using your menuButton reference, add a click handler that calls toggleMenu
 menuButton.addEventListener('click', toggleMenu);
 
+// Get reference to the body
+const body = document.querySelector('html');
+
+// Add click handler on body to close menu if open
+body.addEventListener('click', function(event) {
+  if(event.target === menuButton || event.target.parentNode.parentNode === menu) return;  // if click on menu links or menu button, do nothing
+  if(flag) return; // menu is closed
+  TweenMax.to(menu, 1, {x:-300, opacity:0});
+  flag = true;
+})
+
 //Flag to know if the menu needs to open or close
 let flag = true;
