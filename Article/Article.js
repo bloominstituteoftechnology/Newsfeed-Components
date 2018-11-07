@@ -24,4 +24,4 @@ class Article {
 let articles = document.querySelectorAll(".article");
 
 // Use .map() to iterate over the articles array and create a new instance of Article by passing in each article as a parameter to the constructor.
-articles = Array.from(articles).map(function(article) {return new Article(article);});
+articles = Array.from(articles).map(function(article) {return new Article(article)});
