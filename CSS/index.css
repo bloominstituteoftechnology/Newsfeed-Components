@@ -104,6 +104,13 @@
 }
 .article-open {
   height: 400px;
+  background: green;
+  color: white;
+}
+.article-open span {
+  margin: 10px;
+  padding: 5px 3%;
+  border-radius: 10px;
 }
 html,
 body {
