@@ -11,11 +11,13 @@
   height: 50px;
   overflow: hidden;
   box-shadow: 2px 2px 2px lightgrey;
+  
 
   h2 {
     font-size: 28px;
     padding: 0;
     margin: 15px 0 0;
+    animation: pulse 5s infinite;
   }
 
   .date {
@@ -38,8 +40,13 @@
     cursor: pointer;
     transform: translate(-50%);
     background-color: white;
-  }
-}
+    
+      animation: exp 5s infinite;
+    
+    
+      }
+    }
+
 
 .article-open {
   height: 400px;
@@ -47,4 +54,20 @@
 
 
 
+@keyframes pulse {
+  0% {
+    background-color: lightgrey;
+  }
+  100% {
+    background-color: lightblue;
+  }
+}
+  @keyframes exp {
+    0% {
+      background-color: lightgreen;
+    }
+    100% {
+      background-color: lightblue;
+    }
+  }
 
