@@ -9,7 +9,7 @@ class Article {
     // Using your expandButton reference, update the text on your expandButton to say "expand"
     this.expandButton.textContent = 'expand';
     // Set a click handler on the expandButton reference, calling the expandArticle method.
-    this.expandButton.addEventListener('click', this.expandArticle);
+    this.expandButton.addEventListener('click', this.expandArticle.bind(this));
   }
 
   expandArticle() {
@@ -23,5 +23,7 @@ let articles = document.querySelectorAll('.article');
 
 // Use .map() to iterate over the articles array and create a new instance of Article by passing in each article as a parameter 
 // to the constructor.
-articles = Array.from(articles).map(new Article(articles));
+articles.map(function(article){
+  return new Article(article);
+});
 
