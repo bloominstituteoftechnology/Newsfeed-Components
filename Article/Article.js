@@ -1,4 +1,4 @@
-// Because classes are not hoised you will need to start your code at the bottom of the page.  Look for the comment "START HERE"
+// Because classes are not hoisted you will need to start your code at the bottom of the page.  Look for the comment "START HERE"
 
 class Article {
   constructor(domElement) {
@@ -28,4 +28,3 @@ class Article {
 
 let articles = document.querySelectorAll(`.article`);
 articles.forEach(function(e){e = new Article(e);});
-articles.forEach(function(e){console.log(e);});
