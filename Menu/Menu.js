@@ -1,4 +1,4 @@
-const toggleMenu = () => {
+const toggleMenu = (event) => {
   event.stopPropagation();
 
   menu.classList.toggle('menu--open');
