@@ -1,14 +1,7 @@
 
 const toggleMenu = () => {
   // Toggle the "menu--open" class on your menu refence.
-    console.log("Toggle menu called")
-   // menu.toggle(".menu--open");
-
-    if (menu.style.display === "none") {
-        menu.style.display = "block";
-    } else {
-        menu.style.display = "none";
-    }
+    document.querySelector(".menu").toggle(".menu--open");
 }
 
 // Start Here: Create a reference to the ".menu" class
@@ -22,3 +15,11 @@ const menuButton=document.querySelector(".menu-button");
 // Using your menuButton reference, add a click handler that calls toggleMenu
 menuButton.addEventListener("click",toggleMenu);
 
+
+
+//////const footerElement = document.querySelector('footer');
+// // mouseenter event
+//   footerElement.addEventListener('mouseover', (event) => {
+//     event.target.classList.toggle('background-color');
+//     console.log(footerElement)
+//   })
