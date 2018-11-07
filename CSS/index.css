@@ -107,6 +107,17 @@
   transform: translate(-50%);
   background-color: white;
 }
+.article .closeButton {
+  position: absolute;
+  bottom: 0;
+  left: 75%;
+  font-size: 12px;
+  color: gray;
+  cursor: pointer;
+  transform: translate(-50%);
+  background-color: white;
+  border: none;
+}
 .article-open {
   height: auto;
 }

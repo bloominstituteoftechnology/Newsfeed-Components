@@ -3,6 +3,10 @@
 class Article {
   constructor(domElement) {
     let counter = 1;
+    const closeButton = document.createElement('button');
+    closeButton.textContent = 'Mark As Read';
+    closeButton.classList.add('closeButton');
+    domElement.appendChild(closeButton);
     // assign this.domElement to the passed in domElement
     this.domElement = domElement;
     // create a reference to the ".expandButton" class.
@@ -14,11 +18,18 @@ class Article {
       counter++;
       if (counter % 2 == 0) {
         TweenLite.fromTo(this.domElement, 0.5, {height: 50}, {height: 400});
+        this.domElement.style.overflow = 'auto';
         this.expandButton.textContent = 'close';
       } else {
         TweenLite.fromTo(this.domElement, 0.5, {height: 400}, {height: 50});
         this.expandButton.textContent = 'expand';
+        this.domElement.style.overflow = 'hidden';
       }
+    });
+
+    this.closeButton = this.domElement.querySelector('.closeButton');
+    this.closeButton.addEventListener('click', () => {
+      this.domElement.style.display = 'none';
     });
   }
 
