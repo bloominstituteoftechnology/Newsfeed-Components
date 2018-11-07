@@ -21,12 +21,6 @@ class Article {
   }
 
   expandArticle() {
-    // for(i=0;i<textContent.length;i++){
-    //   console.log(textContent[i])
-      
-    // }
-    // this.articleDOM.classList.toggle('.article-open')
-    // console.log(this.textContent)
     this.domElement.classList.toggle('article-open') 
   }
 
