@@ -27,8 +27,11 @@ class Article {
 */
 
 let articles = document.querySelectorAll('.article');
-articles = Array.from(articles);
+// articles = Array.from(articles);
 
-const newArticles = articles.map(el=>{
-  return new Article(el);
+// const newArticles = articles.map(el=>{
+//   return new Article(el);
+// });
+articles.forEach(article=>{
+  return new Article(article);
 });
