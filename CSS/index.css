@@ -41,15 +41,16 @@
   cursor: pointer;
 }
 .menu {
-  display: none;
+  overflow: hidden;
+  display: block;
   position: fixed;
   top: 75px;
   left: 0;
-  width: 350px;
+  width: 0px;
   height: 100vh;
   /* This give the height 100% of the screen or, '100% of View Height' */
-  background-color: #81C784;
-  border: 1px solid #004D40;
+  background-color: #81c784;
+  border: 1px solid #004d40;
   border-left: none;
   border-bottom: none;
   z-index: 2;
@@ -60,6 +61,10 @@
   font-size: 32px;
   padding: 30px 0;
   text-align: center;
+}
+.menu ul li a {
+  text-decoration: none;
+  color: black;
 }
 .menu--open {
   display: block;
@@ -103,7 +108,7 @@
   background-color: white;
 }
 .article-open {
-  height: 400px;
+  height: auto;
 }
 html,
 body {
