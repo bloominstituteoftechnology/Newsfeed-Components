@@ -11,6 +11,7 @@
   height: 50px;
   overflow: hidden;
   box-shadow: 2px 2px 2px lightgrey;
+  transition: height 0.2s linear;
 
   h2 {
     font-size: 28px;
@@ -27,6 +28,7 @@
     position: absolute;
     top: 10px;
     right: 10px;
+    cursor: pointer;
   }
 
   .expandButton {
@@ -43,6 +45,10 @@
 
 .article-open {
   height: 400px;
+}
+
+.article-deleted {
+  display: none;
 }
 
 

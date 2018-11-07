@@ -10,6 +10,13 @@ class Article {
     this.expandButton.textContent = 'expand';
     // Set a click handler on the expandButton reference, calling the expandArticle method.
     this.expandButton.addEventListener('click', () => this.expandArticle());
+
+    this.closeButton = this.domElement.querySelector('.close');
+    this.closeButton.textContent = 'close';
+
+    this.closeButton.addEventListener('click', () => {
+      this.domElement.classList.toggle('article-deleted');
+    })
   }
 
   expandArticle() {
