@@ -26,3 +26,4 @@ class Menu {
 }
 
 new Menu(menu, menuButton);
+
