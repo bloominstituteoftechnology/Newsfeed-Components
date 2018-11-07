@@ -10,13 +10,17 @@ class Article {
     // using .textContent prop to add string of text.
     this.expandButton.textContent = "expand";
     // Set a click handler on the expandButton reference, calling the expandArticle method.
-    this.expandButton.addEventListener('click', function() {
+    this.expandButton.addEventListener('click', () =>{
+      this.expandArticle()
+    });
 
-    })
   }
+
 
   expandArticle() {
     // Using our reference to the domElement, toggle a class to expand or hide the article.
+    // element.classList.toggle('className')
+    this.domElement.classList.toggle('article-open');
 
   }
 }
@@ -26,5 +30,5 @@ let articles = document.querySelectorAll('.article');
 
 // Use .map() to iterate over the articles array and create a new instance of Article by passing in each article as a parameter to the constructor.
 articles = Array.from(articles).map(domElement => {
-  return new Article(articles);
+  return new Article(domElement);
 });
