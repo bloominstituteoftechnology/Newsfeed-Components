@@ -65,7 +65,7 @@
   display: block;
 }
 .articles {
-  margin-top: 95px;
+  margin-top: 20px;
 }
 .article {
   margin: 20px 10%;
@@ -111,4 +111,12 @@ body {
   padding: 0;
   font-family: 'Roboto';
   background-color: #fffef7;
+}
+
+.submit {
+  display: flex;
+  align-items: flex-start;
+  margin: 0 10%;
+  margin-top: 75px;
+  padding: 10px 0;
 }

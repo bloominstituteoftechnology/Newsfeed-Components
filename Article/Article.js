@@ -27,3 +27,41 @@ class Article {
 */
 
 let articles = document.querySelectorAll('.article').forEach(x => new Article(x));
+
+class NewArticle {
+  constructor(content){
+    this.article = document.createElement('div');
+    this.article.classList.add('article');
+    this.header = document.createElement('h2');
+    this.header.textContent = content.header;
+    this.date = document.createElement('p');
+    this.date.classList.add('date');
+    this.date.textContent = content.date;
+    this.main = document.createElement('p');
+    this.main.textContent = content.main;
+    this.expandButton = document.createElement('span');
+    this.expandButton.classList.add('expandButton');
+    this.expandButton.textContent = 'expand';
+    this.expandButton.addEventListener('click', this.expandArticle.bind(this));
+    this.article.appendChild(this.header);
+    this.article.appendChild(this.date);
+    this.article.appendChild(this.main);
+    this.article.appendChild(this.expandButton);
+    document.querySelector('.articles').appendChild(this.article); // I think it makes more sense to prepend, but the trend seems to be having the most recent at the bottom.
+  }
+  expandArticle(){
+    this.article.classList.toggle('article-open');
+  }
+}
+
+document.querySelector('.addArticle').addEventListener('click', () => {
+  const title = document.querySelector('.title');
+  const main = document.querySelector('.main');
+  if (!title.value || !main.value) {
+    alert('Please fill out all fields!');
+    return;
+  }
+  new NewArticle({header: title.value, date: Date().substring(4, 15), main: main.value});
+  title.value = '';
+  main.value = '';
+});
