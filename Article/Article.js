@@ -26,8 +26,13 @@ articles = Array.from(articles).map(function(article) {
   return new Article(article);
 });
 
+const mainMenu = document.querySelector('.menu');
+
 const articleContainer = document.querySelector('.articles');
 articleContainer.addEventListener('click', function() {
-  TweenMax.set('.menu', {x: -350});
-})
+  //TweenMax.set('.menu', {x: -350});
+  if (mainMenu.style.transform === "matrix(1, 0, 0, 1, 1, 0)") {
+    TweenMax.fromTo('.menu', 2, {x:1}, {x:-350});
+  }
+});
 
