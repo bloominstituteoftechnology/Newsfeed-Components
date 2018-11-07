@@ -38,8 +38,30 @@ class Article {
 
 */
 
+let container = document.querySelector('.articles');
 let articles = document.querySelectorAll('.article');
+let addArticle = document.querySelector('.add-article');
+
+addArticle.addEventListener('click', createArticle);
+
 console.log(articles)
 articles.forEach(function(article) {
   return new Article(article);
 })
+
+function createArticle() {
+  let article = document.createElement('div');
+  article.classList.add('article');
+
+  // [Title, Date, Content, Expand, Close]
+  let content = [document.createElement('h2'), document.createElement('p'), document.createElement('p'), document.createElement('span'), document.createElement('span')];
+  content[1].classList.add('date');
+  content[3].classList.add('expandButton');
+  content[4].classList.add('close');
+
+  container.appendChild(article);
+  for(let i = 0; i < content.length; i++) {
+    article.appendChild(content[i]);
+  }
+  return new Article(article);
+}
