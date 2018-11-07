@@ -26,3 +26,8 @@ articles = Array.from(articles).map(function(article) {
   return new Article(article);
 });
 
+const articleContainer = document.querySelector('.articles');
+articleContainer.addEventListener('click', function() {
+  TweenMax.set('.menu', {x: -350});
+})
+
