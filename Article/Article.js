@@ -42,10 +42,11 @@ let container = document.querySelector('.articles');
 let articles = document.querySelectorAll('.article');
 let addArticle = document.querySelector('.add-article');
 let form = document.querySelector('.form');
+let submit = document.querySelector('#submit-button');
 
 addArticle.addEventListener('click', () => form.classList.toggle('show'));
 
-console.log(articles)
+
 articles.forEach(function(article) {
   return new Article(article);
 })
@@ -54,7 +55,7 @@ function createArticle() {
   let article = document.createElement('div');
   article.classList.add('article');
 
-  container.appendChild(article);
+  container.appendChild(article); 
 
   
   let content = {
@@ -82,3 +83,5 @@ function createArticle() {
   form.classList.toggle('show');
   return new Article(article);
 }
+
+submit.addEventListener('click', createArticle);
