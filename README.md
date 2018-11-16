@@ -11,6 +11,8 @@ In this project we are going to be building a news feed reader. The goal is to h
   * Element selection
   * Basic DOM manipulation
   * Events and event listeners
+
+  
 		
 ### Setup
   * Run `less-watch-compiler less css index.less` from the top level of the Newsfeed-Components folder. 
