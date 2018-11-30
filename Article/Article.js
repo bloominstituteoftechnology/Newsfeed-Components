@@ -15,7 +15,6 @@ class Article {
   expandArticle() {
     // Using our reference to the article element, add or remove a class to expand or hide the article.
     if(event.currentTarget.className.includes("article-open")) {
-      console.log(event.currentTarget.className);
       event.currentTarget.classList.remove("article-open");
       TweenLite.to(event.currentTarget, 2.5, { ease: Bounce.easeOut, height: 50});
     } else {
