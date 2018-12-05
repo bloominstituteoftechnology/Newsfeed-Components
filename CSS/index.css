@@ -105,6 +105,22 @@
 .article-open {
   height: 400px;
 }
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+.buttons button {
+  padding: 5px 15px;
+  font-weight: bold;
+  color: white;
+  background-color: blue;
+  border-radius: 12px;
+  margin: 0 25px;
+}
+.buttons button:hover {
+  color: blue;
+  background-color: white;
+}
 html,
 body {
   margin: 0;

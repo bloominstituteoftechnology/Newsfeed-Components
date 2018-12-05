@@ -6,6 +6,21 @@
     <link rel="stylesheet" type="text/css" media="screen" href="./CSS/index.css" />
     <script src="./Menu/Menu.js" async></script>
     <script src="./Article/Article.js" async></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function() {
+      $('.button1').click(function() {
+        $('.fade').fadeOut();
+      });
+    });
+    </script>
+    <script>
+      $(document).ready(function() {
+        $('.button2').click(function() {
+          $('.fade').fadeIn();
+        });
+      });
+      </script>
   </head>
   <body>
     <div class="header">
@@ -111,7 +126,7 @@
           hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? </p>
         <span class='expandButton'></span>
       </div>
-      <div class="article">
+      <div class="article fade"'>
         <h2>Professional Software Development in 2018</h2>
         <p class="date">Nov 7th, 2017</p>
         <p>Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
@@ -134,7 +149,7 @@
           hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? </p>
         <span class='expandButton'></span>
       </div>
-      <div class="article">
+      <div class="article fade">
         <h2>Professional Software Development in 2018</h2>
         <p class="date">Nov 7th, 2017</p>
         <p>Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
@@ -157,6 +172,14 @@
           hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? </p>
         <span class='expandButton'></span>
       </div>
+      <div class='buttons'>
+        
+        <button class='button1'>Fade Out</button>
+
+        <button class='button2'>Fade In</button>
+      
+      </div>
+      
     </div>
   </body>
 </html>
