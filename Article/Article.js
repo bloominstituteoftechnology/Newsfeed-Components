@@ -6,21 +6,21 @@ class Article {
     this.expandButton = this.article.querySelector('.expandButton');
     this.content = this.article.querySelector('.news-content');
 
+
     this.expandButton.textContent = 'expand';
 
     this.expandButton.addEventListener('click', () => this.expandArticle());
   }
 
   expandArticle() {
-    // Using our reference to the domElement, toggle a class to expand or hide the article.
     // this.content.classList.toggle('news-content');
-    this.expandButton.textContent = 'close';
     $(this.content).slideToggle("slow");
+    this.content.classList.toggle('button-switch');
 
-    if ((this.expandButton.textContent = 'expand') === 'expand') {
-      console.log('yes');
+    if (this.content.classList.contains('button-switch')) {
+      this.expandButton.textContent = 'close';
     } else {
-      console.log('no');
+      this.expandButton.textContent = 'expand';
     }
   }
 }
