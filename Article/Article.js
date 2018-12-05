@@ -30,4 +30,3 @@ articles.forEach( article => {
   return new Article(article);
 })
 
-console.log(articles);

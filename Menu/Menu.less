@@ -4,11 +4,18 @@
   cursor: pointer;
 }
 
+.menu-container {
+  overflow: hidden;
+}
+
 .menu {
-  display: none;
-  position: fixed;
+  display: block;
+  position: absolute;
   top: 75px;
-  left: 0;
+  left: -350px;
+  // left: -350px;
+  // overflow-x: hidden;
+  // object-position: -350px 0;
   width: 350px;
   height: 100vh; /* This give the height 100% of the screen or, '100% of View Height' */
   background-color: #81C784;
@@ -26,5 +33,5 @@
 }
 
 .menu--open {
-  display: block;
+  left:0;
 }
