@@ -123,6 +123,7 @@ class PostArticle {
     articlesContainer.appendChild(articleContainer);
     
     //Reset articles array to include newly posted article.
+    articleObjects = [];
     articles = document.querySelectorAll('.articles .article');
     articles.forEach(a => {
       return new Article(a);
