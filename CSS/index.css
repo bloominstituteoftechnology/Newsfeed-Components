@@ -74,7 +74,6 @@
   border-radius: 10px;
   background-color: white;
   position: relative;
-  height: 80px;
   overflow: hidden;
   box-shadow: 2px 2px 2px lightgrey;
 }
@@ -102,8 +101,8 @@
   transform: translate(-50%);
   background-color: white;
 }
-.article-open {
-  height: 400px;
+.news-content {
+  display: none;
 }
 * {
   box-sizing: border-box;
