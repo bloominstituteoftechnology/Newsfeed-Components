@@ -3,18 +3,28 @@ const toggleMenu = () => {
   // Toggle the "menu--open" class on your menu refence.
   // console.log("here");
   if(menu.classList.contains("menu--open")) {
-    TweenMax.fromTo(menu, 3, {
-      x:350
+    console.log("start wait")
+    let slideTimeout = setTimeout(function() {
+      slideTimeout = null;
+      menu.classList.toggle("menu--open");
+      console.log("wait done")
+     // wait for animation to stop to toggle off display: block
+     }, 300);
+    TweenMax.fromTo(menu, .3, {
+      x:0,
+      opacity:1
     },{
-      x:0
+      x:-350,
+      opacity:0
     });
-    menu.classList.toggle("menu--open");
   } else {
     menu.classList.toggle("menu--open");
-    TweenMax.fromTo(menu, 3, {
-      x:0
+    TweenMax.fromTo(menu, .3, {
+      x:-350,
+      opacity:0
     },{
-      x:350
+      x:0,
+      opacity:1
     });
   }
   
