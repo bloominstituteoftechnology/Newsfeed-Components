@@ -12,6 +12,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
     <script src="./Menu/Menu.js" async></script>
     <script src="./Article/Article.js" async></script>
+    <script src="./Form/Form.js" async></script>
   </head>
   <body>
     <div class="header">
@@ -29,7 +30,31 @@
       </ul>
     </div>
     <div class="articles">
+      <section class="add-articles">
+        <h2>Add Articles</h2>
+        <div class="input-group">
+          <label for="title">Title</label>
+          <input
+            type="text"
+            name="title"
+            id="title"
+            placeholder="Enter Article Title"
+          />
+        </div>
+        <div class="input-group">
+          <label for="date">Date</label>
+          <input type="date" name="date" id="date" />
+        </div>
+        <div class="input-group">
+          <label for="article">Article Text</label>
+          <textarea name="article" id="article" cols="30" rows="10"></textarea>
+        </div>
+        <div class="input-group">
+          <button id="submitBtn" type="submit">Submit</button>
+        </div>
+      </section>
       <div class="article">
+        <button class="close">X</button>
         <h2>Lambda School Students: "We're the best!"</h2>
         <p class="date">Nov 5th, 2017</p>
 
@@ -68,6 +93,7 @@
         <span class="expandButton"></span>
       </div>
       <div class="article">
+        <button class="close">X</button>
         <h2>Javascript and You, ES6</h2>
         <p class="date">Nov 7th, 2017</p>
         <p>
@@ -96,6 +122,7 @@
         <span class="expandButton"></span>
       </div>
       <div class="article">
+        <button class="close">X</button>
         <h2>React vs Angular vs Vue</h2>
         <p class="date">Nov 7th, 2017</p>
 
@@ -140,6 +167,7 @@
         <span class="expandButton"></span>
       </div>
       <div class="article">
+        <button class="close">X</button>
         <h2>Professional Software Development in 2018</h2>
         <p class="date">Nov 7th, 2017</p>
         <p>
@@ -182,6 +210,7 @@
         <span class="expandButton"></span>
       </div>
       <div class="article">
+        <button class="close">X</button>
         <h2>React and Stuff and You, ES6</h2>
         <p class="date">Nov 7th, 2017</p>
         <p>
@@ -210,6 +239,7 @@
         <span class="expandButton"></span>
       </div>
       <div class="article">
+        <button class="close">X</button>
         <h2>This is my article</h2>
         <p class="date">Nov 7th, 2017</p>
         <p>

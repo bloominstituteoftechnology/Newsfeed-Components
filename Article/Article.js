@@ -10,11 +10,22 @@ class Article {
     this.expandButton.textContent = "expand";
     this.expandButton.addEventListener("click", () => this.expandArticle());
     // Set a click handler on the expandButton reference, calling the expandArticle method.
+    this.close = this.domElement.querySelector(".close");
+    this.close.addEventListener("click", () => this.handleClose());
+  }
+
+  handleClose() {
+    this.domElement.style.display = "none";
   }
 
   expandArticle() {
     // Using our reference to the domElement, toggle a class to expand or hide the article.
-    this.domElement.classList.toggle("article-open");
+    // Using our reference to the domElement, toggle a class to expand or hide the article.
+    if (this.domElement.classList.toggle("article-open")) {
+      this.expandButton.textContent = "close";
+    } else {
+      this.expandButton.textContent = "expand";
+    }
     TweenLite.set(".article p", { height: "auto" });
     TweenLite.from(".article p", 1, { height: 0 });
   }
@@ -36,7 +47,7 @@ const article = document.querySelectorAll(".article");
 
 article.forEach(article => {
   TweenMax.to(article, 2.5, {
-    ease: SlowMo.ease.config(5, 5, false),
+    ease: SlowMo.ease.config(0.7, 0.7, false),
     x: 20
   });
 });
