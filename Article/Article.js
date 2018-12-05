@@ -2,19 +2,18 @@
 
 class Article {
   constructor(domElement) {
-    // assign this.domElement to the passed in domElement
-    this.domElement;
-    // create a reference to the ".expandButton" class. 
-    this.expandButton;
+    this.domElement = domElement;
+    this.Button = this.domElement.querySelector('.expandButton'); // <------------- Fix this reference to the expandButton class
+  
     // Using your expandButton reference, update the text on your expandButton to say "expand"
-    
+    this.Button.textContent = "expand";
     // Set a click handler on the expandButton reference, calling the expandArticle method.
-    
+    this.Button.addEventListener('click', (e) => this.expandArticle(e));
   }
 
-  expandArticle() {
+  expandArticle(e) {
+    this.domElement.classList.toggle('article-open');
     // Using our reference to the domElement, toggle a class to expand or hide the article.
-
   }
 }
 
@@ -26,4 +25,8 @@ class Article {
 
 */
 
-let articles;
+let articles = document.querySelectorAll('.article')
+
+articles.forEach( item => {
+  return new Article(item)
+});
