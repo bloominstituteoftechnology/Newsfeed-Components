@@ -17,6 +17,7 @@
 
 
 // this is to slide the menu using jQuery
+//click on the btn to slide from left and click anywhere on the menu to slide and close the list from right to left.
 let  duration = 'slow';
 
 $('.menu-button').click(function () {
