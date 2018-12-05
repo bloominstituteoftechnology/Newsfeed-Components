@@ -64,6 +64,12 @@
 .menu--open {
   display: block;
 }
+.new-article:hover {
+  cursor: pointer;
+}
+.view-articles:hover {
+  cursor: pointer;
+}
 .articles {
   margin-top: 95px;
 }

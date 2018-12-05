@@ -60,15 +60,25 @@ class Article {
   //This method moves the article up to take place of another that was hidden
   resetPosition(distance) {
     if(this.domElement.offsetTop > distance) {
-      let originalOffsetY = articleObjects[0].domElement.offsetTop;
-      let originalOffsetYTwo = articleObjects[1].domElement.offsetTop;
-      let travelDistance = originalOffsetYTwo - originalOffsetY;
-      TweenMax.to(this.domElement, .30, {y: -travelDistance});
+      TweenMax.to(this.domElement, .30, {y: -97}); //-97 is the distance between the top of two articles next to eachother
       //setTimeout to allow for smooth transition
       setTimeout(() => {
         TweenMax.to(this.domElement, 0, {y: 0});
       }, 300);
     }
+  }
+}
+
+class PostArticle {
+  constructor(title, body) {
+    this.title = title;
+    this.body = body;
+    this.create();
+  }
+
+  create() {
+    console.log(this.title);
+    console.log(this.body);
   }
 }
 

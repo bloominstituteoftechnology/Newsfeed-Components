@@ -46,3 +46,20 @@ body.addEventListener('click', (e) => {
 menu.addEventListener('click', (e) => {
   e.stopPropagation();
 });
+
+const articlePage = document.querySelector('.articles');
+const postPage = document.querySelector('.post');
+const viewArticlesBtn = document.querySelector('.view-articles');
+const newArticleBtn = document.querySelector('.new-article');
+
+viewArticlesBtn.addEventListener('click', (e) => {
+  articlePage.style.display = 'block';
+  postPage.style.display = 'none';
+  closeMenu();
+});
+
+newArticleBtn.addEventListener('click', (e) => {
+  postPage.style.display = 'block';
+  articlePage.style.display = 'none';
+  closeMenu();
+});
