@@ -52,7 +52,7 @@ Note: Just a reminder the stretch goals are just extra practice using the tools 
 
 * Close Button
 
-  Add a close (or 'read') button to each Article component. When clicked the article will disappear.
+  -Add a close (or 'read') button to each Article component. When clicked the article will disappear.
 
 * Component Constructor
   

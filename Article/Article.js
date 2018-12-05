@@ -11,6 +11,10 @@ class Article {
     
     // Set a click handler on the expandButton reference, calling the expandArticle method.
     this.expandButton.addEventListener("click", () => this.expandArticle());
+    // Add a close button, set click handler calling closeArticle method
+    this.closeButton = this.domElement.querySelector(".closeButton");
+    this.closeButton.textContent = "Click to Close";
+    this.closeButton.addEventListener("click", () => this.closeArticle());
     
   }
 
@@ -20,6 +24,7 @@ class Article {
       // collapse article
       TweenMax.to(this.domElement, .3, {
         height: 50,
+        ease: Cubic.easeOut
       });
       setTimeout(() => {
         // console.log("done waiting to collapse")
@@ -38,7 +43,8 @@ class Article {
       this.domElement.style.removeProperty("height"); 
       this.domElement.classList.add("article-open");
       TweenMax.from(this.domElement, .3, {
-        height: 50
+        height: 50,
+        ease: Elastic.easeOut
       })
       setTimeout(() => {
         // console.log("done waiting to expand")
@@ -47,6 +53,18 @@ class Article {
       }, 300)
     }
 
+  }
+
+  closeArticle() {
+    console.log(this.domElement);
+    TweenMax.to(this.domElement, .3, {
+      height: 0,
+      padding: 0,
+      opacity: 0
+    })
+    setTimeout(() => {
+      this.domElement.classList.add("article-close");
+    }, 300);
   }
 }
 
