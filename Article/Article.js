@@ -1,12 +1,13 @@
 // Because classes are not hoised you will need to start your code at the bottom of the page.  Look for the comment "START HERE"
 
 class Article {
-  constructor(domElement) {
+  constructor(article) {
     // assign this.domElement to the passed in domElement
-    this.domElement = domElement;
-    this.content = this.domElement.querySelector('.article p');
+    this.article = article;
+    this.heading = this.article.querySelector('.article .date');
+    this.content = this.article.querySelector('.article p');
     // create a reference to the ".expandButton" class. 
-    this.expandButton = this.domElement.querySelector('.expandButton');
+    this.expandButton = this.article.querySelector('.expandButton');
     // Using your expandButton reference, update the text on your expandButton to say "expand"
     this.expandButton.textContent = 'expand';
     
@@ -16,8 +17,9 @@ class Article {
   }
 
   expandArticle() {
+    console.log('click worked');
     // Using our reference to the domElement, toggle a class to expand or hide the article.
-    this.content.classList.toggle('.article-open');
+    this.heading.classList.toggle('.article-open');
 
   }
 }
