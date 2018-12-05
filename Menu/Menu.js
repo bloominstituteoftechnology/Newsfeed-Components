@@ -1,10 +1,10 @@
 
 const toggleMenu = (e) => {
   // Toggle the "menu--open" class on your menu refence. 
-  if (menuButton.src = "../assets/menu.png"){
-    menuButton.src = "../assets/ex.png";
+  if (menuButton.src = "./assets/menu.png"){
+    menuButton.src = "./assets/ex.png";
   } else {
-    menuButton.src = "../assets/menu.png";
+    this.src = "./assets/menu.png";
   }
   menu.classList.toggle("menu--open");
 }
