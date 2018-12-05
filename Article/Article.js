@@ -11,18 +11,24 @@ class Article {
   }
 
   expandArticle() {
+
     this.domElement.classList.toggle("article-open");
+
     if (this.domElement.classList.contains("article-open")) {
       TweenMax.to(this.domElement, 0.3, {
         height: 400,
         ease: Circ.easeInOut
       });
+
       this.expandButton.textContent = "Click to Close";
+
     } else {
+
       TweenMax.to(this.domElement, 0.3, {
         height: 50,
         ease: Circ.easeInOut
       });
+
       this.expandButton.textContent = "Click to Expand";
     }
     
