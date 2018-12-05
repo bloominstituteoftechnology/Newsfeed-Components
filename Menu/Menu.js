@@ -26,7 +26,7 @@ $('.menu-button').click(function () {
         $('.menu').show('slide', {direction: 'left'}, duration);});
 });
 
-$('.menu').click(function () {
+$('body').click(function () {
   $('.menu').hide('slide', {direction: 'left'});
   $(".menu-button").show("slide",{direction:"left"},duration);
 });
