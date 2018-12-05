@@ -3,11 +3,11 @@ let isMenuOpen = false;
 const toggleMenu = e => {
   e.stopImmediatePropagation();
   if (isMenuOpen) {
+    TweenMax.to(menu, 1, { x: -350, ease: Power2.easeIn })
     isMenuOpen = false;
-    TweenMax.to(menu, 1, { x:-350, ease:Power2.easeIn })
   } else {
+    TweenMax.to(menu, 1, { x: 350, ease: Power2.easeOut })
     isMenuOpen = true;
-    TweenMax.to(menu, 1, { x:350, ease:Power2.easeOut })
   }
 }
 
@@ -27,7 +27,7 @@ menuButton.addEventListener("click", e => toggleMenu(e));
 window.addEventListener("click", () => {
   if (isMenuOpen) {
     isMenuOpen = false;
-    TweenMax.to(menu, 1, { x:-350, ease:Power2.easeIn })
+    TweenMax.to(menu, 1, { x: -350 })
   }
 })
 

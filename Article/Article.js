@@ -4,6 +4,7 @@ class Article {
   constructor(domElement) {
     // assign this.domElement to the passed in domElement
     this.domElement = domElement;
+    this.isOpened = false;
 
     // create a reference to the ".expandButton" class. 
     this.expandButton = this.domElement.querySelector(".expandButton");
@@ -16,8 +17,14 @@ class Article {
   }
 
   expandArticle() {
-    // Using our reference to the domElement, toggle a class to expand or hide the article.
-    this.domElement.classList.toggle("article-open");
+    console.log(this.isOpened);
+    if (this.isOpened) {
+      TweenMax.to(this.domElement, 1, { height: 50 })
+      this.isOpened = false;
+    } else {
+      TweenMax.to(this.domElement, 1, { height: 400 })
+      this.isOpened = true;
+    }
   }
 }
 
