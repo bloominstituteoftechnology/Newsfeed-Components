@@ -104,6 +104,14 @@
   transform: translate(-50%);
   background-color: white;
 }
+.article .readButton {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  font-size: 12px;
+  color: grey;
+  cursor: pointer;
+}
 .article-open {
   height: 400px;
 }
