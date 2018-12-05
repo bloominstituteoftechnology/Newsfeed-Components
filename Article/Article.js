@@ -19,7 +19,7 @@ class Article {
   expandArticle() {
     console.log('click worked');
     // Using our reference to the domElement, toggle a class to expand or hide the article.
-    this.heading.classList.toggle('.article-open');
+    this.article.classList.toggle('article-open');
 
   }
 }
