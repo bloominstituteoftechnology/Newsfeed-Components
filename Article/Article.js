@@ -1,6 +1,7 @@
 // Because classes are not hoisted you will need to start your code at the bottom of the page.  Look for the comment "START HERE"
 //Store all articles in array when they are instantiated
 let articleObjects = [];
+
 class Article {
   constructor(domElement) {
     articleObjects.push(this);
@@ -19,13 +20,13 @@ class Article {
   expandArticle() {
     // Using our reference to the domElement, toggle a class to expand or hide the article.
     if(!this.domElement.classList.contains('article-open')) {
-      TweenMax.to(this.domElement, .20, {height: '400px'});
+      TweenMax.to(this.domElement, .30, {height: '400px'});
       this.expandButton.textContent = 'Click to Close';
       setTimeout(() => {
         this.domElement.classList.toggle('article-open');
       }, 200)
     } else {
-      TweenMax.to(this.domElement, .20, {height: '50px'});
+      TweenMax.to(this.domElement, .30, {height: '50px'});
       this.expandButton.textContent = 'Click to Expand';
       setTimeout(() => {
         this.domElement.classList.toggle('article-open');
@@ -33,13 +34,41 @@ class Article {
     }
   }
 
+  closeArticle() {
+    if(this.domElement.classList.contains('article-open')) {
+      TweenMax.to(this.domElement, .30, {height: '50px'});
+      this.expandButton.textContent = 'Click to Expand';
+      setTimeout(() => {
+        this.domElement.classList.toggle('article-open');
+      }, 200);
+    }
+  }
+
   hide() {
-    TweenMax.to(this.domElement, .5, {opacity: 0});
+    //Close all articles and reset their positions for smooth animation
+    articleObjects.forEach(a => {
+      a.closeArticle();
+      a.resetPosition(this.domElement.offsetTop);
+    });
+    TweenMax.to(this.domElement, .30, {opacity: 0});
     //setTimeout to allow animation to finish before removing element from display.
     setTimeout(() => {
       this.domElement.style.display = 'none';
-    }, 500);
-    
+    }, 300);
+  }
+
+  //This method moves the article up to take place of another that was hidden
+  resetPosition(distance) {
+    if(this.domElement.offsetTop > distance) {
+      let originalOffsetY = articleObjects[0].domElement.offsetTop;
+      let originalOffsetYTwo = articleObjects[1].domElement.offsetTop;
+      let travelDistance = originalOffsetYTwo - originalOffsetY;
+      TweenMax.to(this.domElement, .30, {y: -travelDistance});
+      //setTimeout to allow for smooth transition
+      setTimeout(() => {
+        TweenMax.to(this.domElement, 0, {y: 0});
+      }, 300);
+    }
   }
 }
 
