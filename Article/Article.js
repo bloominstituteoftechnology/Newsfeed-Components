@@ -4,8 +4,6 @@ class Article {
   constructor(article) {
     // assign this.domElement to the passed in domElement
     this.article = article;
-    console.log(article);
-    this.content = this.article.querySelector('.article p')
     // create a reference to the ".expandButton" class. 
     this.expandButton = this.article.querySelector('.expandButton');
     // Using your expandButton reference, update the text on your expandButton to say "expand"
@@ -16,8 +14,7 @@ class Article {
 
   expandArticle() {
     // Using our reference to the domElement, toggle a class to expand or hide the article.
-    this.content.classList.toggle('expandButton');
-
+    this.article.classList.toggle('article-open');
   }
 }
 
@@ -42,7 +39,7 @@ articles.forEach(article => {
 // class takes in parameter of static html panels, allows `this` keyword
 class Panel {
   constructor(panel){
-    this.panel = panel; // `this` binds panel to block
+    this.panel = panel; // `this` binds panel x to block
     console.log(this.panel); // returns full panel as DOM element
     this.heading = this.panel.querySelector('panel-content h3');
     this.content = this.panel.querySelector('panel-content p');
