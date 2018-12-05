@@ -15,9 +15,14 @@ class Article {
   }
   expandArticle() {
     // Using our reference to the domElement, toggle a class to expand or hide the article.
-    
     // this.article.classList.toggle("article-open");
-    TweenMax.to(this.article, 2, {className: "+=article-open" });
+    if(this.article.classList.contains("article-open")){
+      console.log(this.article)
+      TweenMax.to(this.article, 2, {className: "-=article-open" })
+    } else{
+      console.log(this.article)
+    TweenMax.to(this.article, 2, {className: "+=article-open" })
+    }
   }
 
 }
