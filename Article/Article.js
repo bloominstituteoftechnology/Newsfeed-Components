@@ -9,15 +9,33 @@ class Article {
     // Using your expandButton reference, update the text on your expandButton to say "expand"
     this.expandButton.textContent = "expand";
     // Set a click handler on the expandButton reference, calling the expandArticle method.
-    this.expandButton.addEventListener('click', ()=>this.expandArticle());
+    this.expandButton.addEventListener('click', ()=>{
+      // articles.forEach( article => {
+       this.domElement.classList.toggle('article-close');
+      this.expandArticle();
+    });
   }
 
   expandArticle() {
     // Using our reference to the domElement, toggle a class to expand or hide the article.
-    this.domElement.classList.toggle('article-open');
-  }
-}
 
+    
+    
+    this.domElement.classList.toggle('article-open');
+    TweenMax.to(".article" ,1,{
+      backgroundColor: "#00274C",
+      color: "#FFCB05",
+      padding: 20,
+      borderColor:"White",
+      borderRadius:22
+    });
+    TweenMax.staggerFrom(".article" ,2,{
+    opacity:0,
+    y:200,
+    delay:.2
+  },.25);
+}
+}
 /* START HERE: 
 
 - Select all classes named ".article" and assign that value to the articles variable.  
