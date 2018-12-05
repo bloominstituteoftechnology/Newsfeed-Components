@@ -63,6 +63,7 @@
 }
 .menu--open {
   display: block;
+  
 }
 .articles {
   margin-top: 95px;
@@ -77,6 +78,18 @@
   height: 50px;
   overflow: hidden;
   box-shadow: 2px 2px 2px lightgrey;
+}
+.article-open{
+  animation: pulse 20s infinite;
+  transform: scale(2, 3);
+}
+@keyframes pulse {
+  0% {
+    background-color: turquoise;
+  }
+  100% {
+    background-color: #FF4136;
+  }
 }
 .article h2 {
   font-size: 28px;
