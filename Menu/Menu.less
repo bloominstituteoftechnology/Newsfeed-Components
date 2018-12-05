@@ -5,14 +5,15 @@
 }
 
 .menu {
-  display: none;
+  display: block;
   position: fixed;
   top: 75px;
-  left: 0;
+  left: -350px;
   width: 350px;
+  overflow: hidden;
   height: 100vh; /* This give the height 100% of the screen or, '100% of View Height' */
-  background-color: #81C784;
-  border: 1px solid #004D40;
+  background-color: rgb(248, 248, 248);
+  border: 1px solid rgb(77, 0, 0);
   border-left: none;
   border-bottom: none;
   z-index: 2; /* This set the layer level of the element, it has precendence over initial level of 1*/
@@ -26,5 +27,5 @@
 }
 
 .menu--open {
-  display: block;
+  animation: slideInLeftMenu 0.5s linear 0s 1 forwards;
 }

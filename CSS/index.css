@@ -1,5 +1,11 @@
 /* This line is importing the font 'Roboto'. DO NOT change line 2*/
 @font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v14/S6uyw4BMUTPHjx4wWw.ttf) format('truetype');
+}
+@font-face {
   font-family: 'Roboto';
   font-style: italic;
   font-weight: 400;
@@ -17,12 +23,18 @@
   font-weight: 700;
   src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmWUlfBBc9.ttf) format('truetype');
 }
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/6xK3dSBYKcSV-LCoeQqfX1RYOo3qOK7g.ttf) format('truetype');
+}
 /* Below this line is where you will start your work */
 /* It is important to note, you will not be writing any CSS in this file*/
 .header {
   width: 100%;
   height: 75px;
-  background-color: #388E3C;
+  background-color: #ac0f09;
   color: white;
   display: flex;
   justify-content: center;
@@ -41,15 +53,16 @@
   cursor: pointer;
 }
 .menu {
-  display: none;
+  display: block;
   position: fixed;
   top: 75px;
-  left: 0;
+  left: -350px;
   width: 350px;
+  overflow: hidden;
   height: 100vh;
   /* This give the height 100% of the screen or, '100% of View Height' */
-  background-color: #81C784;
-  border: 1px solid #004D40;
+  background-color: #f8f8f8;
+  border: 1px solid #4d0000;
   border-left: none;
   border-bottom: none;
   z-index: 2;
@@ -62,7 +75,7 @@
   text-align: center;
 }
 .menu--open {
-  display: block;
+  animation: slideInLeftMenu 0.5s linear 0s 1 forwards;
 }
 .articles {
   margin-top: 95px;
@@ -109,6 +122,6 @@ html,
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Roboto';
+  font-family: 'Source Sans Pro', 'Roboto';
   background-color: #fffef7;
 }
