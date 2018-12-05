@@ -48,8 +48,8 @@
   width: 350px;
   height: 100vh;
   /* This give the height 100% of the screen or, '100% of View Height' */
-  background-color: #81C784;
-  border: 1px solid #004D40;
+  background-color: #81c784;
+  border: 1px solid #004d40;
   border-left: none;
   border-bottom: none;
   z-index: 2;
@@ -61,8 +61,35 @@
   padding: 30px 0;
   text-align: center;
 }
+@keyframes menu-slide-in {
+  from {
+    opacity: 0;
+    width: 0;
+  }
+  to {
+    opacity: 1;
+    width: 350px;
+  }
+}
+@keyframes links-appear {
+  0% {
+    opacity: 0;
+  }
+  95% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .menu--open {
   display: block;
+  animation-name: menu-slide-in;
+  animation-duration: 1s;
+}
+.menu__list--show {
+  animation-name: links-appear;
+  animation-duration: 1s;
 }
 .articles {
   margin-top: 95px;
