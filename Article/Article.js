@@ -19,6 +19,10 @@ class Article {
 
   expandArticle() {
     // Using our reference to the domElement, toggle a class to expand or hide the article.
+    articleObjects.forEach(a => {
+      a.closeArticle();
+    });
+    
     if(!this.domElement.classList.contains('article-open')) {
       TweenMax.to(this.domElement, .30, {height: '400px'});
       this.expandButton.textContent = 'Click to Close';
