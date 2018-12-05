@@ -11,36 +11,74 @@
   height: 50px;
   overflow: hidden;
   box-shadow: 2px 2px 2px lightgrey;
+}
 
-  h2 {
-    font-size: 28px;
-    padding: 0;
-    margin: 15px 0 0;
-  }
+h2 {
+  font-size: 28px;
+  padding: 0;
+  margin: 15px 0 0;
+}
 
-  .date {
-    margin: 0;
-    font-size: 14px;
-  }
+.date {
+  margin: 0;
+  font-size: 14px;
+}
 
-  .close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-  }
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
 
-  .expandButton {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    font-size: 12px;
-    color: grey;
-    cursor: pointer;
-    transform: translate(-50%);
-    background-color: white;
-  }
+.expandButton {
+  position: absolute;
+  top: 5px;
+  right: 0;
+  font-size: 12px;
+  color: grey;
+  cursor: pointer;
+  transform: translate(-50%);
+  background-color: white;
 }
 
 .article-open {
   height: 400px;
+  overflow: auto;
+}
+
+.composer {
+  margin: 20px 10%;
+  padding: 0 20px 25px;
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  background-color: #333;
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+  box-shadow: 2px 2px 2px lightgrey;
+}
+
+#newStory {
+  margin: 10px auto;
+  display: flex;
+  justify-content: space-between;
+  font-size: 24px;
+  color: #aaa;
+  input {
+    font-size: 24px;
+  }
+}
+
+input[type="submit"] {
+  color: #000;
+  border: 1px solid red;
+  background-color: #aaa;
+  border-radius: 5px;
+  font-size: 24px;
+}
+
+textarea {
+  width: 100%;
+  height: 90%;
+  font-size: 18px;
 }

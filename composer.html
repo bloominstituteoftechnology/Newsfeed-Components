@@ -1,0 +1,36 @@
+<!-- Do not add anything to the HTML until Part 3 of the project -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lambda School News-Writer</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="./CSS/index.css"
+    />
+    <script src="composer.js" async></script>
+  </head>
+
+  <body>
+    <div class="header"><h1>Lambda School News-Writer</h1></div>
+
+    <div class="articles">
+      <div class="composer">
+        <form id="newStory">
+          <input type="text" name="comp-title" value="Article Title" /><br />
+          <input
+            class="sub-button"
+            onclick="submitStory()"
+            value="Submit"
+            type="button"
+          />
+        </form>
+        <textarea
+          name="article-body"
+          form="newStory"
+        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, possimus!</textarea>
+      </div>
+    </div>
+  </body>
+</html>
