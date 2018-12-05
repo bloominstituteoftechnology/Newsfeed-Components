@@ -9,12 +9,12 @@ class Article {
     // Using your expandButton reference, update the text on your expandButton to say "expand"
     
     // Set a click handler on the expandButton reference, calling the expandArticle method.
-    
+    this.expandButton.addEventListener('click', (e) => this.expandArticle(e));
   }
 
   expandArticle() {
     // Using our reference to the domElement, toggle a class to expand or hide the article.
-
+    // this.?.classList.toggle('article');
   }
 }
 
@@ -26,4 +26,8 @@ class Article {
 
 */
 
-let articles;
+let articles = document.querySelectorAll('.article');
+
+articles.forEach(article => {
+  return new Article(article);
+});
