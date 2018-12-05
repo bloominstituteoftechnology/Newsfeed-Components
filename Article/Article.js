@@ -29,7 +29,7 @@ class Article {
   }
 
   deleteArticle() {
-    TweenMax.to(this.domElement, 2, { opacity: 0, display: "none" });
+    TweenMax.to(this.domElement, 0.5, { opacity: 0, display: "none" });
   }
 }
 
