@@ -13,9 +13,13 @@ class Article {
 
   expandArticle() {
     // Using our reference to the domElement, toggle a class to expand or hide the article.
-    this.content.classList.toggle('news-content');
+    // this.content.classList.toggle('news-content');
+    $(this.content).slideToggle("slow");
   }
 }
+
+
+
 
 let articles = document.querySelectorAll('.article');
 
