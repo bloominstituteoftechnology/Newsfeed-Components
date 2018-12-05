@@ -1,15 +1,19 @@
 
 const toggleMenu = (e) => {
-  e.stopPropagation();
   menu.classList.toggle("menu--open");
+  e.stopPropagation();
+
+  console.log("toggled");
   if (menu.classList.contains("menu--open")) {
+    
+
     TweenMax.to(menu, 0.5, {
       left: 0,
       ease: Back.easeOut
-    })
-   }else {
-    TweenMax.to(menu, 1, {
-      left: -350,
+    });
+   } else {
+    TweenMax.to(menu, 0.5, {
+      left: -351,
       ease: Back.easeOut
     })
   }
@@ -27,6 +31,11 @@ menuButton.addEventListener('click', toggleMenu);
 html.addEventListener("click", () => {
   console.log("clicked!");
   if (menu.classList.contains("menu--open")) {
-    // html.style.background = "red";
+    TweenMax.to(menu, 0.5, {
+      left: -351,
+      ease: Back.easeOut
+    })
+    menu.classList.toggle("menu--open");
+
   }
 });
