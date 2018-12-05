@@ -182,5 +182,7 @@ body {
   padding: 0;
   font-family: 'Roboto';
   background-color: #fffef7;
+}
+html {
   overflow-y: scroll;
 }
