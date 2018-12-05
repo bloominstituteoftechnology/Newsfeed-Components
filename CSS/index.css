@@ -105,6 +105,16 @@
 .article-open {
   height: 400px;
 }
+.article-open .closeButton {
+  position: absolute;
+  bottom: 0;
+  right: 25%;
+  font-size: 12px;
+  color: red;
+  cursor: pointer;
+  transform: translate(-50%);
+  background-color: white;
+}
 html,
 body {
   margin: 0;
