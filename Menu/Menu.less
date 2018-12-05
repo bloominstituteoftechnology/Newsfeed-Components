@@ -16,6 +16,8 @@
   border-left: none;
   border-bottom: none;
   z-index: 2; /* This set the layer level of the element, it has precendence over initial level of 1*/
+  // transform: scaleX(-100)
+
 }
 
 .menu ul li{
@@ -27,4 +29,14 @@
 
 .menu--open {
   display: block;
+}
+
+.article--sml {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  .article {
+    width: 50%;
+  }
 }
