@@ -8,7 +8,7 @@
   border-radius: 10px;
   background-color: white;
   position: relative;
-  height: 50px;
+  animation: artiReset 0.5s linear 0s 1 forwards;
   overflow: hidden;
   box-shadow: 2px 2px 2px lightgrey;
 
@@ -42,9 +42,24 @@
 }
 
 .article-open {
-  height: 400px;
+  animation: artiSpand 0.5s linear 0s 1 forwards;
 }
 
+@keyframes artiSpand {
+  0% {height: 50px;}
+  12.5% {height: 100px;}
+  25% {height: 150px;}
+  37.5% {height: 200px;}
+  50% {height: 250px;}
+  62.5% {height: 300px;}
+  75% {height: 350px;}
+  87.5% {height: 400px;}
+  100% {height: 450px;}
+}
 
+@keyframes artiReset {
+  from {min-height: 450px;}
+  to {height: 50px;}
+}
 
 
