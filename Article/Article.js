@@ -48,3 +48,8 @@ let articles = document.querySelectorAll(".article");
 articles.forEach(article => {
   return new Article(article);  
 });
+
+// For adding new articles
+// -----------------------
+
+let articleList = document.querySelector(".articles");

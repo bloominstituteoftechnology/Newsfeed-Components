@@ -65,15 +65,15 @@
   margin-top: 95px;
 }
 .article {
-  margin: 20px 10%;
+  position: relative;
+  overflow: hidden;
+  height: 50px;
+  background-color: white;
+  box-shadow: 2px 2px 2px lightgrey;
   padding: 0 20px 25px;
   border: 1px solid lightgrey;
   border-radius: 10px;
-  background-color: white;
-  position: relative;
-  height: 50px;
-  overflow: hidden;
-  box-shadow: 2px 2px 2px lightgrey;
+  margin: 20px 10%;
 }
 .article .closeButton {
   position: absolute;
@@ -90,13 +90,8 @@
   margin: 15px 0 0;
 }
 .article .date {
-  margin: 0;
   font-size: 14px;
-}
-.article .close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
+  margin: 0;
 }
 .article .expandButton {
   position: absolute;
@@ -107,6 +102,56 @@
   cursor: pointer;
   transform: translate(-50%);
   background-color: white;
+}
+form {
+  max-width: 90%;
+  background-color: white;
+  box-shadow: 2px 2px 2px lightgrey;
+  padding: 25px 50px 25px;
+  margin: auto;
+}
+form label {
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+}
+form input[type="text"] {
+  width: 25%;
+  padding: 10px 20px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  margin: 10px 0 20px;
+}
+form textarea {
+  display: block;
+  font-family: Roboto;
+  width: 90%;
+  height: 100px;
+  padding: 10px 20px;
+  margin: 10px 0 20px;
+}
+form input[type="submit"] {
+  background-color: cadetblue;
+  display: inline-block;
+  color: snow;
+  font-family: "Roboto";
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 10px 25px;
+  border: 1px solid grey;
+  border-radius: 3px;
+  box-shadow: inset 0px -3px 7px 0px grey;
+  margin-left: 1%;
+}
+form input[type="submit"]:hover {
+  background-color: grey;
+  transition-delay: 500ms;
+  transition-property: all;
+}
+form input[type="submit"]:active {
+  position: relative;
+  top: 1px;
 }
 html,
 body {
