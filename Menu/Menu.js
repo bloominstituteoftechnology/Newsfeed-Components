@@ -1,4 +1,4 @@
-
+TweenMax.to(document.querySelector('.menu-button'), 1, { rotation:360, scale:1} );
 
 
 const toggleMenu = () => {
