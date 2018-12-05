@@ -4,18 +4,18 @@ const toggleMenu = () => {
   // Toggle the "menu--open" class on your menu refence. 
   if(!menuActive){
     menu.classList.toggle('menu--open');
-    TweenMax.to(".menu", 1, {
+    TweenMax.to(".menu", .5, {
       left:0,
     })
     menuActive = true;
   } else if(menuActive){
-    TweenMax.to(".menu", .5, {
+    TweenMax.to(".menu", .2, {
       left:-350,
     })
     menuActive = false;
     setTimeout(()=>{
       menu.classList.toggle('menu--open');
-    }, 500)
+    }, 200)
   }
 }
 
