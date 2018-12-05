@@ -7,9 +7,9 @@ class Article {
     // create a reference to the ".expandButton" class. 
     this.expandButton;
     // Using your expandButton reference, update the text on your expandButton to say "expand"
-    
+
     // Set a click handler on the expandButton reference, calling the expandArticle method.
-    
+
   }
 
   expandArticle() {
@@ -27,3 +27,38 @@ class Article {
 */
 
 let articles;
+
+
+
+/*
+// class takes in parameter of static html panels, allows `this` keyword
+class Panel {
+  constructor(panel){
+    this.panel = panel; // `this` binds panel to block
+    console.log(this.panel); // returns full panel as DOM element
+    this.heading = this.panel.querySelector('panel-content h3');
+    this.content = this.panel.querySelector('panel-content p');
+    console.log(this.heading); // returns each H3 from panels
+
+    // non-arrow function binding for method access
+    this.heading.addEventListener('click', this.togglePanel.bind(this)); // use this keyword to access object methods
+
+    // arrow function binding for method access
+    this.heading.addEventListener('click', () => this.togglePanel()); // arrow function implicitly binds `this` to method!!!
+
+  }
+  // methods
+  togglePanel(){
+    this.content.classList.toggle('toggle-on'); // can't access object scope without binding (see above)
+  }
+}
+
+// select all panels
+const panels = document.querySelectorAll('.panel');
+
+// loop through panels and return live DOM component based off of static html
+panels.forEach( panel => {
+  return new Panel(panel);
+});
+
+*/
