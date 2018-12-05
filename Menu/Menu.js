@@ -49,17 +49,47 @@ menu.addEventListener('click', (e) => {
 
 const articlePage = document.querySelector('.articles');
 const postPage = document.querySelector('.post');
+
 const viewArticlesBtn = document.querySelector('.view-articles');
 const newArticleBtn = document.querySelector('.new-article');
 
 viewArticlesBtn.addEventListener('click', (e) => {
-  articlePage.style.display = 'block';
-  postPage.style.display = 'none';
+  // articlePage.style.display = 'block';
+  // postPage.style.display = 'none';
+  pageTransition(articlePage);
   closeMenu();
 });
 
 newArticleBtn.addEventListener('click', (e) => {
-  postPage.style.display = 'block';
-  articlePage.style.display = 'none';
+  // postPage.style.display = 'block';
+  // articlePage.style.display = 'none';
+  pageTransition(postPage);
   closeMenu();
 });
+
+//Default page. We keep track of current page for animation effect.
+let currentPage = articlePage;
+
+function pageTransition(next) {
+  let startPage = currentPage;
+  currentPage = next;
+
+  //Hide overflow during animation so screen doesn't jerk horizontally
+  body.style.overflowY = 'hidden';
+  //start animation of startPage leaving
+  TweenMax.to(startPage, 0.2, {opacity: '0', y: -250});
+  setTimeout(() => {
+    startPage.style.display = 'none';
+    TweenMax.to(startPage, 0.2, {opacity: '1', y: 0});
+
+    //start animation of next page entering
+    next.style.display = 'block';
+    TweenMax.to(next, 0, {opacity: '0', y: 250});
+    TweenMax.to(next, 0.2, {opacity: '1', y: 0});
+  }, 200);
+  setTimeout(() => {
+    body.style.overflowY = 'auto';
+  }, 400)
+
+  
+}
