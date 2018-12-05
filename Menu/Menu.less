@@ -8,7 +8,7 @@
   display: none;
   position: fixed;
   top: 75px;
-  left: 0;
+  left: -351px;
   width: 350px;
   height: 100vh; /* This give the height 100% of the screen or, '100% of View Height' */
   background-color: #81C784;
@@ -27,4 +27,16 @@
 
 .menu--open {
   display: block;
+  animation: menuOpen .3s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+
+@keyframes menuOpen {
+  0% {
+    left: -351px;
+  }
+  100% {
+    left: 0;
+  }
 }
