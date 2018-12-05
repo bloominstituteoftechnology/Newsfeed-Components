@@ -1,7 +1,15 @@
 
-const toggleMenu = () => {
+let isMenuOpen = false;
+
+const openMenu = () => {
   // Toggle the "menu--open" class on your menu refence. 
-  menu.classList.toggle('menu--open');
+  TweenMax.to('.menu', 1.5, {left:0});
+  isMenuOpen = true;
+}
+
+const closeMenu = () => {
+  TweenMax.to('.menu', 1.5, {left:-350});
+  isMenuOpen = false;
 }
 
 // Start Here: Create a reference to the ".menu" class
@@ -10,5 +18,9 @@ const menu = document.querySelector('.menu');
 const menuButton = document.querySelector('.menu-button')
 // Using your menuButton reference, add a click handler that calls toggleMenu
 menuButton.addEventListener('click', function() {
-  toggleMenu();
-})
+  if (!isMenuOpen) {
+    openMenu();
+  } else {
+    closeMenu();
+  }
+});
