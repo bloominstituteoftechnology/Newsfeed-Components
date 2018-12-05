@@ -4,6 +4,7 @@
   <head>
     <title>Lambda School Newsfeed</title>
     <link rel="stylesheet" type="text/css" media="screen" href="./CSS/index.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <script src="./Menu/Menu.js" async></script>
     <script src="./Article/Article.js" async></script>
   </head>
@@ -24,7 +25,11 @@
     </div>
     <div class="articles">
       <div class="article">
-        <h2>Lambda School Students: "We're the best!"</h2>
+        <div class="rightside">
+            <h2>Lambda School Students: "We're the best!"</h2>
+            <i class="fa fa-window-close" aria-hidden="true"></i>
+        </div>
+        
         <p class="date">Nov 5th, 2017</p>
 
         <p>Lucas ipsum dolor sit amet ben twi'lek padmé darth darth darth moff hutt organa twi'lek. Ben amidala secura skywalker lando
@@ -45,9 +50,14 @@
         han. C-3po antilles moff qui-gon ahsoka aayla dooku amidala. Palpatine droid amidala droid k-3po twi'lek padmé wookiee. Leia
         moff calamari mon obi-wan. Solo grievous lando coruscant. Jinn darth palpatine obi-wan mon.</p>
         <span class='expandButton'></span>
+        
       </div>
       <div class="article">
-        <h2>Javascript and You, ES6</h2>
+          <div class="rightside">
+              <h2>Javascript and You, ES6</h2>
+              <i class="fa fa-window-close" aria-hidden="true"></i>
+          </div>
+        
         <p class="date">Nov 7th, 2017</p>
         <p>Alohamora wand elf parchment, Wingardium Leviosa hippogriff, house dementors betrayal. Holly, Snape centaur portkey ghost
         Hermione spell bezoar Scabbers. Peruvian-Night-Powder werewolf, Dobby pear-tickle half-moon-glasses, Knight-Bus. Padfoot
@@ -63,7 +73,10 @@
         <span class='expandButton'></span>
       </div>
       <div class="article">
-        <h2>React vs Angular vs Vue</h2>
+          <div class="rightside">
+              <h2>React vs Angular vs Vue</h2>
+              <i class="fa fa-window-close" aria-hidden="true"></i>
+          </div>
         <p class="date">Nov 7th, 2017</p>
 
         <p>Bulbasaur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ivysaur Lorem ipsum dolor sit amet, consectetur adipiscing
@@ -89,7 +102,11 @@
         <span class='expandButton'></span>
       </div>
       <div class="article">
-        <h2>Professional Software Development in 2018</h2>
+          <div class="rightside">
+              <h2>Professional Software Development in 2018</h2>
+              <i class="fa fa-window-close" aria-hidden="true"></i>
+          </div>
+        
         <p class="date">Nov 7th, 2017</p>
         <p>Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
           hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
@@ -112,7 +129,11 @@
         <span class='expandButton'></span>
       </div>
       <div class="article">
-        <h2>Absolutely Nuts for Kotlin</h2>
+          <div class="rightside">
+              <h2>Absolutely Nuts for Kotlin</h2>
+              <i class="fa fa-window-close" aria-hidden="true"></i>
+          </div>
+        
         <p class="date">Dec 7th, 2018</p>
         <p>Nuts for Kotlin like squirrels to almonds.</p>
         
@@ -133,7 +154,11 @@
         <span class='expandButton'></span>
       </div>
       <div class="article">
-        <h2>Have You Ever Seen A Beast This Beautiful?</h2>
+          <div class="rightside">
+              <h2>Have You Ever Seen A Beast This Beautiful?</h2>
+              <i class="fa fa-window-close" aria-hidden="true"></i>
+          </div>
+        
         <p class="date">Dec 7th, 2018</p>
         <p>Under the hood, Rust is insane.</p>
         
@@ -154,5 +179,18 @@
         <span class='expandButton'></span>
       </div>
     </div>
+    <div class="buttonhold">
+    <button>Create Article</button>
+  </div>
+  <div class="gray">
+    <div class="editor">
+      Write an awesome article, dude.
+      <form>
+        <input type="text" name="ArticleTitle">
+        <textarea rows="15" cols="40"></textarea>
+      </form>
+      <button>Submit Article</button>
+    </div>
+  </div>
   </body>
 </html>

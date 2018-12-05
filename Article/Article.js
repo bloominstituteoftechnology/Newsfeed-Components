@@ -9,6 +9,10 @@ class Article {
     this.expandButton.textContent = "Click to Expand";
     // Set a click handler on the expandButton reference, calling the expandArticle method.
     this.expandButton.addEventListener("click", this.expandArticle.bind(this));
+
+    this.closeButton = this.domElement.querySelector("i");
+
+    this.closeButton.addEventListener("click", this.closeArticle.bind(this));
   }
 
   expandArticle() {
@@ -21,8 +25,15 @@ class Article {
       this.expandButton.textContent = "Click to Expand"
     }
   }
+
+  closeArticle() {
+    this.domElement.style.display = "none";
+  }
 }
 
+function showEditor() {
+  document.querySelector(".gray").style.display = "block";
+}
 /* START HERE: 
 
 - Select all classes named ".article" and assign that value to the articles variable.  
@@ -31,7 +42,19 @@ class Article {
 
 */
 
+function publish() {
+  
+}
+
 let articles = document.querySelectorAll(".article");
 articles.forEach((item) => {
   return new Article(item);
 });
+
+let createArticle = document.querySelector("button");
+
+createArticle.addEventListener("click", showEditor);
+
+let submitArticle = document.querySelectorAll("button")[1];
+
+createArticle.addEventListener("click", publish);
