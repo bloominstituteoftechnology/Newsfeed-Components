@@ -4,12 +4,21 @@ class MenuItem {
     this.menuClick = document.querySelector('.menu-button');
     this.menuContent = document.querySelector('.menu');
     this.menuClick.addEventListener('click', () => this.toggleMenu());
-
   }
   // Methods
   toggleMenu(){
-    console.log("The click worked!");
     this.menuContent.classList.toggle('menu--open');
+    if (this.menuContent.classList.contains('menu--open')) {
+      TweenMax.to(menu, 2.5, {
+        left: 0,
+        ease: Power4.easeOut,
+      });
+    } else {
+      TweenMax.to(menu, 3, {
+        left: -350,
+        ease: Power4.easeOut
+      })
+    }
   }
 }
 // Start Here: Create a reference to the ".menu" class
