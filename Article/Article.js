@@ -1,13 +1,17 @@
+
 class Article {
   constructor(domElement) {
     this.domElement = domElement;
-    this.expandButton = document.querySelector('.expandButton');
+    this.expandButton = this.domElement.querySelector('.expandButton');
     this.expandButton.textContent = "Expand";
     this.expandButton.addEventListener('click', () => this.expandArticle());
   }
   // Methods
   expandArticle() {
     this.domElement.classList.toggle('article-open');
+    if (this.expandButton.textContent === "Expand") {
+      this.expandButton.textContent = "Close"
+    }
   }
 }
 
@@ -21,6 +25,6 @@ by passing in each article as a parameter to the constructor.
 */
 
 const articles = document.querySelectorAll('.article');
-articles.forEach(domElement => {
-  return new Article(domElement);
+articles.forEach(article => {
+  return new Article(article);
 });
