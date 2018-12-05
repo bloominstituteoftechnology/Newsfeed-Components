@@ -50,15 +50,15 @@ body {
 
 @keyframes pulse {
   0% {
-    background-color: #fdf9f3;
+    background-color: #fffef7;
   }
 
   50% {
-    background-color: #faebd7;
+    background-color: white;
   }
 
   100% {
-    background-color: #fdf9f3;
+    background-color: #fffef7;
   }
 }
 
