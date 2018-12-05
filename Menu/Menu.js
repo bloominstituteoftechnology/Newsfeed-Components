@@ -1,7 +1,14 @@
+let toggle = false;
 
 const toggleMenu = () => {
-  // Toggle the "menu--open" class on your menu refence. 
-  menu.classList.toggle("menu--open");
+  console.log("Was " + toggle);
+  if (toggle) {
+    toggle = false;
+    TweenMax.to(menu, 1, { x:-350, ease:Power2.easeIn })
+  } else {
+    toggle = true;
+    TweenMax.to(menu, 1, { x:350, ease:Power2.easeOut })
+  }
 }
 
 // Start Here: Create a reference to the ".menu" class

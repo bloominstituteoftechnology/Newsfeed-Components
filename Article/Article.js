@@ -3,7 +3,6 @@
 class Article {
   constructor(domElement) {
     // assign this.domElement to the passed in domElement
-    console.log("article found");
     this.domElement = domElement;
 
     // create a reference to the ".expandButton" class. 
