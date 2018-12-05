@@ -121,6 +121,61 @@
 .article-open {
   height: 400px;
 }
+.post {
+  display: none;
+  margin: 20px 10%;
+  margin-top: 95px;
+  padding: 0 20px 25px;
+}
+.post form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.post form label {
+  width: 50%;
+  margin: 12px auto;
+  font-size: 1.6rem;
+}
+.post form input {
+  width: 50%;
+  margin: 12px auto;
+  padding: 12px;
+  font-size: 1.6rem;
+  border-radius: 6px;
+  border: 1px solid black;
+  transition: all 0.25s;
+}
+.post form input:focus {
+  outline: none;
+  background-color: #e7e7e7;
+}
+.post form textarea {
+  width: 50%;
+  margin: 12px auto;
+  padding: 12px;
+  font-size: 1.4rem;
+  border-radius: 6px;
+  border: 1px solid black;
+  transition: all 0.25s;
+}
+.post form textarea:focus {
+  outline: none;
+  background-color: #e7e7e7;
+}
+.post form .postArticleBtn {
+  width: 50%;
+  margin: 12px auto;
+  padding: 12px;
+  font-size: 1.4rem;
+  border-radius: 6px;
+  border: 1px solid black;
+  transition: background-color 0.25s;
+}
+.post form .postArticleBtn:hover {
+  background-color: white;
+  cursor: pointer;
+}
 html,
 body {
   margin: 0;

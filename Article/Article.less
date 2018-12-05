@@ -56,6 +56,68 @@
   height: 400px;
 }
 
+.post {
+  display: none;
+  margin: 20px 10%;
+  margin-top: 95px;
+  padding: 0 20px 25px;
+
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    label {
+      width: 50%;
+      margin: 12px auto;
+      font-size: 1.6rem;
+    }
+    
+    input {
+      width: 50%;
+      margin: 12px auto;
+      padding: 12px;
+      font-size: 1.6rem;
+      border-radius: 6px;
+      border: 1px solid black;
+      transition: all .25s;
+       &:focus {
+         outline: none;
+         background-color: rgb(231, 231, 231);
+       }
+    }
+
+    textarea {
+      width: 50%;
+      margin: 12px auto;
+      padding: 12px;
+      font-size: 1.4rem;
+      border-radius: 6px;
+      border: 1px solid black;
+      transition: all .25s;
+       &:focus {
+         outline: none;
+         background-color: rgb(231, 231, 231);
+       }
+    }
+
+    .postArticleBtn {
+      width: 50%;
+      margin: 12px auto;
+      padding: 12px;
+      font-size: 1.4rem;
+      border-radius: 6px;
+      border: 1px solid black;
+      transition: background-color .25s;
+
+      &:hover {
+        background-color: white;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
 
 
 

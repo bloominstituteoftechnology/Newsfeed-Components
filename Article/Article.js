@@ -1,7 +1,7 @@
 // Because classes are not hoisted you will need to start your code at the bottom of the page.  Look for the comment "START HERE"
 //Store all articles in array when they are instantiated
 let articleObjects = [];
-
+let articlesContainer = document.querySelector('.articles');
 class Article {
   constructor(domElement) {
     articleObjects.push(this);
@@ -68,7 +68,7 @@ class Article {
     }
   }
 }
-
+//Article Creation
 class PostArticle {
   constructor(title, body) {
     this.title = title;
@@ -77,10 +77,55 @@ class PostArticle {
   }
 
   create() {
-    console.log(this.title);
-    console.log(this.body);
+    //reset inputs
+    artTitle.value = '';
+    artBody.value = '';
+    //Create dom elements for the article.
+    let articleContainer = document.createElement('div');
+    articleContainer.classList.add('article');
+
+    let postTitle = document.createElement('h2');
+    postTitle.textContent = this.title;
+    articleContainer.appendChild(postTitle);
+
+    let postDate = document.createElement('p');
+    postDate.classList.add('date');
+    postDate.textContent = 'Nov 7th, 2017';
+    articleContainer.appendChild(postDate);
+
+    // let postBody = document.createElement('h2');
+    // postBody.textContent = this.body;
+    // articleContainer.appendChild(postBody);
+    let postBody = this.body.split('\n');
+    let postParas = postBody.filter(p => {
+      return p !== '';
+    });
+
+    postParas.forEach(p => {
+      let para = document.createElement('p');
+      para.textContent = p;
+      articleContainer.appendChild(para);
+    });
+
+    let expandBtn = document.createElement('span');
+    expandBtn.classList.add('expandButton');
+    articleContainer.appendChild(expandBtn);
+
+    let hideBtn = document.createElement('span');
+    hideBtn.classList.add('hideButton');
+    hideBtn.textContent = 'Hide';
+    articleContainer.appendChild(hideBtn);
+    
+    articlesContainer.appendChild(articleContainer);
+    
+    //Reset articles array to include newly posted article.
+    articles = document.querySelectorAll('.articles .article');
+    articles.forEach(a => {
+      return new Article(a);
+    });
   }
 }
+////////////////////
 
 /* START HERE: 
 
@@ -93,4 +138,14 @@ class PostArticle {
 let articles = document.querySelectorAll('.articles .article');
 articles.forEach(a => {
   return new Article(a);
+});
+
+//Article Creation
+let postArticleBtn = document.querySelector('.postArticleBtn');
+let artTitle = document.querySelector('.articleTitle');
+let artBody = document.querySelector('.articleBody');
+
+postArticleBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  return new PostArticle(artTitle.value, artBody.value);
 });
