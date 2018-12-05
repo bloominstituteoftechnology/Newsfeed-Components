@@ -1,4 +1,3 @@
-
 const toggleMenu = () => {
   // Toggle the "menu--open" class on your menu refence. 
   menu.classList.toggle("menu--open");
@@ -17,7 +16,7 @@ const menuButton = document.querySelector(".menu-button");
 // Using your menuButton reference, add a click handler that calls toggleMenu
 menuButton.addEventListener("click", toggleMenu);
 
-const articles = document.querySelector(".articles");
+const articlesset = document.querySelector(".articles");
 
 // if an area in the articles is clicked while the menu is open, close the menu
-articles.addEventListener("click", offMenu);
+articlesset.addEventListener("click", offMenu);
