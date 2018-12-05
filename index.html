@@ -116,38 +116,14 @@
                 hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? </p>
                 <span class='expandButton'></span>
             </div>
-            <div class="article">
-                <img class="closeButton" src="assets/closebutton.png">
-                <h2>New Test Article</h2>
-                <p class="date">Dec 5th, 2018</p>
-                <p>Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
-                hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
-                Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? </p>
-
-                <p>Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
-                hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
-                hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
-                hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? </p>
-
-                <p>Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
-                Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
-                Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.
-                </p>
-
-                <p>Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
-                hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
-                hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
-                hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? </p>
-                <span class='expandButton'></span>
-            </div>
         </div>
-        <form>
+        <div class="newArticleForm">
             <h2>You can write your own articles to post here too!</h2>
             <label for="title" class="newTitleLabel">Title :</label>
-            <input type="text" placeholder="Enter the title of your article" required>
+            <input class="formArticleTitle" type="text" placeholder="Enter the title of your article" required>
             <label for="articleText" class="newTextLabel">Your article :</label>
-            <textarea required placeholder="Start writing your article here...."></textarea>
-            <input type="submit" value="Post Article">
-        </form>
+            <textarea required class="formArticleText" placeholder="Start writing your article here...."></textarea>
+            <button class="submitArticleBtn">Post Article</button>
+        </div>
     </body>
 </html>

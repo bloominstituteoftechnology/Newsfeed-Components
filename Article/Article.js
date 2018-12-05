@@ -52,4 +52,79 @@ articles.forEach(article => {
 // For adding new articles
 // -----------------------
 
-let articleList = document.querySelector(".articles");
+function addArticle(e) {
+  // Get content of form for new article content
+  let formArticleTitle = document.querySelector(".formArticleTitle");
+  let formArticleText = document.querySelector(".formArticleText"); 
+
+  // Check if form fields were filled up
+  if (formArticleTitle.value && formArticleText.value) {
+    // Create div element that will contain the new article
+    let newArticleElement = document.createElement("div");
+    newArticleElement.classList.add("article");
+
+    // Clone the close button onto the new article's div element
+    newArticleElement.appendChild(closeButton.cloneNode());
+
+    // Create the title heading element for the new article
+    let newArticleTitle = document.createElement("h2");
+    newArticleTitle.textContent = formArticleTitle.value;
+    newArticleElement.appendChild(newArticleTitle);
+
+    // Adding the date when the new article was posted
+    let currentDate = new Date();
+    let newArticleDate = document.createElement("p");
+    newArticleDate.classList.add("date");
+    newArticleDate.textContent = formatDate(currentDate);
+    newArticleElement.appendChild(newArticleDate);
+
+    // Adding paragraph elements for the new article's text (2 consecutive line breaks -> new paragraph)
+    formArticleText.value.split("\n\n").forEach(formArticleParagraph => {
+      let newArticleParagraph = document.createElement("p");
+      newArticleParagraph.style.whiteSpace = "pre-line";
+      newArticleParagraph.textContent = formArticleParagraph;
+      newArticleElement.appendChild(newArticleParagraph);      
+    });
+
+    // Clone the expand button onto the new article's div element
+    newArticleElement.appendChild(expandButton.cloneNode());
+
+    // Add the new article element + its children to the page and clear form fields
+    articleArea.appendChild(newArticleElement);
+    formArticleTitle.value = formArticleText.value = "";
+
+    // Return a new instantiation of the Article class  (bind class members and methods to the new article element)
+    return new Article(newArticleElement);
+  } else if (!formArticleTitle.value) { // If missing title
+    alert("Please give your new article a title first.")
+  } else if (!formArticleText.value) { // If missing article text
+    alert("Please add some text to your article first.");
+  }
+}
+
+// Return a formatted date string from a Date object
+function formatDate(date) {
+  const monthAbbrevs = [
+    "Jan", "Feb", "Mar", "Apr", 
+    "May", "Jun", "Jul", "Aug", 
+    "Sep", "Oct", "Nov", "Dec",
+  ];
+
+  const ordinalSuffixes = [
+    "st", "nd", "rd"
+  ];
+
+  let month = date.getMonth();
+  let day = date.getDate();
+  let year = date.getFullYear();
+
+  return `${monthAbbrevs[month]} ${day}${day > 2 ? "th" : ordinalSuffixes[day]}, ${year}`;
+}
+
+const articleArea = document.querySelector(".articles");
+
+const closeButton = document.querySelector(".closeButton");
+const expandButton = document.querySelector(".expandButton");
+
+const submitArticleBtn = document.querySelector(".submitArticleBtn");
+submitArticleBtn.addEventListener("click", e => addArticle(e));

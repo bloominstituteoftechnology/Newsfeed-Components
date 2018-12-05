@@ -103,26 +103,26 @@
   transform: translate(-50%);
   background-color: white;
 }
-form {
+.newArticleForm {
   max-width: 90%;
   background-color: white;
   box-shadow: 2px 2px 2px lightgrey;
   padding: 25px 50px 25px;
   margin: auto;
 }
-form label {
+.newArticleForm label {
   display: block;
   font-size: 18px;
   font-weight: bold;
 }
-form input[type="text"] {
+.newArticleForm input[type="text"] {
   width: 25%;
   padding: 10px 20px;
   border: 1px solid grey;
   border-radius: 5px;
   margin: 10px 0 20px;
 }
-form textarea {
+.newArticleForm textarea {
   display: block;
   font-family: Roboto;
   width: 90%;
@@ -130,7 +130,7 @@ form textarea {
   padding: 10px 20px;
   margin: 10px 0 20px;
 }
-form input[type="submit"] {
+.newArticleForm button {
   background-color: cadetblue;
   display: inline-block;
   color: snow;
@@ -144,12 +144,12 @@ form input[type="submit"] {
   box-shadow: inset 0px -3px 7px 0px grey;
   margin-left: 1%;
 }
-form input[type="submit"]:hover {
+.newArticleForm button:hover {
   background-color: grey;
-  transition-delay: 500ms;
+  transition-duration: 500ms;
   transition-property: all;
 }
-form input[type="submit"]:active {
+.newArticleForm button:active {
   position: relative;
   top: 1px;
 }
