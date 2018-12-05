@@ -15,6 +15,8 @@ class Article {
   expandArticle() {
     // Using our reference to the domElement, toggle a class to expand or hide the article.
     this.domElement.classList.toggle("article-open");
+    TweenLite.set(".article p", { height: "auto" });
+    TweenLite.from(".article p", 1, { height: 0 });
   }
 }
 
@@ -28,4 +30,13 @@ class Article {
 
 let articles = document.querySelectorAll(".article").forEach(article => {
   return new Article(article);
+});
+
+const article = document.querySelectorAll(".article");
+
+article.forEach(article => {
+  TweenMax.to(article, 2.5, {
+    ease: SlowMo.ease.config(5, 5, false),
+    x: 20
+  });
 });
