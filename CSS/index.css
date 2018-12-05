@@ -82,6 +82,18 @@
   padding: 0;
   margin: 15px 0 0;
 }
+.article button {
+  padding: 10px 10px;
+  color: red;
+  font-weight: bold;
+  border-radius: 15px;
+  background: white;
+  border: 3px solid black;
+}
+.article button:hover {
+  color: black;
+  background: red;
+}
 .article .date {
   margin: 0;
   font-size: 14px;
@@ -100,6 +112,11 @@
   cursor: pointer;
   transform: translate(-50%);
   background-color: white;
+}
+.article .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
 }
 .article-open {
   height: 400px;

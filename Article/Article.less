@@ -18,6 +18,20 @@
     margin: 15px 0 0;
   }
 
+  button {
+    padding: 10px 10px;
+    color: red;
+    font-weight: bold;
+    border-radius: 15px;
+    background: white;
+    border: 3px solid black;
+
+    &:hover {
+      color: black;
+      background: red;
+    }
+  }
+
   .date {
     margin: 0;
     font-size: 14px;
@@ -38,6 +52,12 @@
     cursor: pointer;
     transform: translate(-50%);
     background-color: white;
+  }
+
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
   }
 }
 
