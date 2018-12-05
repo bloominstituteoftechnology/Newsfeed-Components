@@ -57,11 +57,10 @@
 .menu {
   display: none;
   position: fixed;
-  top: 75px;
+  top: 56px;
   left: 0;
   width: 350px;
-  height: 100vh;
-  /* This give the height 100% of the screen or, '100% of View Height' */
+  height: 800px;
   background-color: #81C784;
   border: 1px solid #004D40;
   border-left: none;
@@ -117,7 +116,7 @@
   background-color: white;
 }
 .article-open {
-  height: 400px;
+  height: auto;
 }
 html,
 body {
