@@ -13,3 +13,10 @@ const menuButton = document.querySelector('.menu-button');
 menuButton.addEventListener('click', (e) => {
   toggleMenu();
 });
+
+
+TweenMax.to(".menu", 2, {
+  width: 350,
+});
+
+TweenLite.to(graph, 2.5, { ease: Power2.easeOut, y: -500 });
