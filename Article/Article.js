@@ -30,5 +30,6 @@ class Article {
 
 let articles = document.querySelectorAll('.article');
 articles.forEach(domElement => {
+  console.log(domElement);
   return new Article(domElement);
 });
