@@ -11,3 +11,17 @@ const menuButton = document.querySelector('.menu-button');
 menuButton.addEventListener('click', ()=>{
   toggleMenu();
 });
+const menuItem = document.querySelectorAll('.menu li');
+console.log(menuItem);
+
+menuItem.forEach((item) => {
+  item.addEventListener('mouseover', ()=>{
+    TweenMax.to(item, 1, {scale:1.2})
+    item.style.textDecoration="underline";})
+})
+menuItem.forEach((item) => {
+  item.addEventListener('mouseout', ()=>{
+    TweenMax.to(item, 2, {scale:1})
+    item.style.textDecoration="none";
+  })
+})
