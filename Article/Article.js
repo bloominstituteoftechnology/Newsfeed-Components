@@ -6,12 +6,24 @@ class Article {
     this.domElement = domElement;
     // create a reference to the ".expandButton" class. 
     this.expandButton = this.domElement.querySelector('.expandButton');
+   //this.closerButton = this.domElement.querySelector('.closeButton');
     // Using your expandButton reference, update the text on your expandButton to say "expand"
     this.expandButton.textContent = 'expand';
+   // this.closerButton.textContent = 'close';
     // Set a click handler on the expandButton reference, calling the expandArticle method.
-    this.expandButton.addEventListener('click', () => {
+    this.expandButton.addEventListener('click', () =>{
+      TweenMax.to('.article', 2, {x:60, ease:Bounce.easeOut,color:'red',
+      backgroundColor: 'blue'})
       this.expandArticle();
-    })
+
+    });
+  
+    // this.closerButton.addEventListener('click', () => {
+    //   this.expandArticle();
+    // });
+    
+    
+
   }
 
   expandArticle() {
