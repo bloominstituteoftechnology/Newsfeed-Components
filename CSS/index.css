@@ -63,7 +63,7 @@
 }
 .menu--open {
   display: block;
-  
+
 }
 .articles {
   margin-top: 95px;
@@ -81,7 +81,6 @@
 }
 .article-open{
   animation: pulse 20s infinite;
-  transform: scale(2, 3);
 }
 @keyframes pulse {
   0% {
