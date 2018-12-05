@@ -79,6 +79,14 @@
   box-shadow: 2px 2px 2px lightgrey;
   transition: height 0.5s ease;
 }
+.article .article-close {
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  color: #ef5350;
+  font-size: 34px;
+  cursor: pointer;
+}
 .article h2 {
   font-size: 28px;
   padding: 0;
