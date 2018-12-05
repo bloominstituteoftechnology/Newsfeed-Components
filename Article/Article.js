@@ -4,7 +4,7 @@ class Article {
   constructor(domElement) {
     this.domElement = domElement;
     this.expandButton = this.domElement.querySelector(".expandButton");
-    this.expandButton.textContent = "expand";
+    this.expandButton.textContent = "Click to Expand";
     this.expandButton.addEventListener("click", () => this.expandArticle());
 
     
@@ -12,7 +12,11 @@ class Article {
 
   expandArticle() {
     this.domElement.classList.toggle("article-open");
-    
+    TweenMax.to(this.domElement, 0.5, {
+      height: 400,
+      ease: Circ.easeInOut
+    })
+    this.expandButton.textContent = "Click to Close";
   }
 }
 

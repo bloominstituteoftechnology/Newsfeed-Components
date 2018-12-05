@@ -105,8 +105,7 @@
   background-color: white;
 }
 .article-open {
-  height: 400px;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 html,
 body {
