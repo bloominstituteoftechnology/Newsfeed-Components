@@ -74,8 +74,6 @@ function pageTransition(next) {
   let startPage = currentPage;
   currentPage = next;
 
-  //Hide overflow during animation so screen doesn't jerk horizontally
-  body.style.overflowY = 'hidden';
   //start animation of startPage leaving
   TweenMax.to(startPage, 0.2, {opacity: '0', y: -250});
   setTimeout(() => {
@@ -87,9 +85,4 @@ function pageTransition(next) {
     TweenMax.to(next, 0, {opacity: '0', y: 250});
     TweenMax.to(next, 0.2, {opacity: '1', y: 0});
   }, 200);
-  setTimeout(() => {
-    body.style.overflowY = 'auto';
-  }, 400)
-
-  
 }
