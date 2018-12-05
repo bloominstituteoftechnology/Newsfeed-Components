@@ -12,12 +12,15 @@ class Article {
     this.expandButton.textContent = "Click to Expand";
 
     // Set a click handler on the expandButton reference, calling the expandArticle method.
-    this.expandButton.addEventListener("click", () => {
+    this.expandButton.addEventListener("click", (e) => {
+      e.stopPropagation();
+      
       if(this.expandButton.textContent === "Click to Expand") {
         this.expandButton.textContent = "Click to Collapse";
       } else {
         this.expandButton.textContent = "Click to Expand";
       }
+    
       return this.expandArticle();
     });
   }
