@@ -75,6 +75,15 @@
   overflow: hidden;
   box-shadow: 2px 2px 2px lightgrey;
 }
+.article .closeButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 10px;
+  height: auto;
+  cursor: pointer;
+  margin: 10px;
+}
 .article h2 {
   font-size: 28px;
   padding: 0;

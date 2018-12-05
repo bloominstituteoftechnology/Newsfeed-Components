@@ -3,13 +3,13 @@ let isMenuOpen = false;
 const toggleMenu = e => {
   e.stopImmediatePropagation();
   if (isMenuOpen) {
-    TweenMax.to(menu, 1, { x: -350, ease: Power2.easeIn })
+    TweenMax.to(menu, 1, { x: -350, ease: Power2.easeIn });
     isMenuOpen = false;
   } else {
-    TweenMax.to(menu, 1, { x: 350, ease: Power2.easeOut })
+    TweenMax.to(menu, 1, { x: 350, ease: Power2.easeOut });
     isMenuOpen = true;
   }
-}
+};
 
 // Start Here: Create a reference to the ".menu" class
 const menu = document.querySelector(".menu");
@@ -27,9 +27,9 @@ menuButton.addEventListener("click", e => toggleMenu(e));
 window.addEventListener("click", () => {
   if (isMenuOpen) {
     isMenuOpen = false;
-    TweenMax.to(menu, 1, { x: -350 })
+    TweenMax.to(menu, 1, { x: -350 });
   }
-})
+});
 
 // Related to code above - do not close the menu if clicking inside of it
 menu.addEventListener("click", e => e.stopImmediatePropagation());

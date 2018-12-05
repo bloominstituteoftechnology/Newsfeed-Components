@@ -14,17 +14,25 @@ class Article {
     
     // Set a click handler on the expandButton reference, calling the expandArticle method.
     this.expandButton.addEventListener("click", e => this.expandArticle(e));
+    
+    this.closeButton = this.domElement.querySelector(".closeButton");
+    this.closeButton.addEventListener("click", e => this.closeArticle(e))
   }
 
-  expandArticle() {
-    console.log(this.isOpened);
+  expandArticle(e) {
+    e.stopImmediatePropagation();
     if (this.isOpened) {
-      TweenMax.to(this.domElement, 1, { height: 50 })
+      TweenMax.to(this.domElement, 1, { height: 50 });
       this.isOpened = false;
     } else {
-      TweenMax.to(this.domElement, 1, { height: 400 })
+      TweenMax.to(this.domElement, 1, { height: 400 });
       this.isOpened = true;
     }
+  }
+
+  closeArticle(e) {
+    e.stopImmediatePropagation();
+    this.domElement.remove();
   }
 }
 
