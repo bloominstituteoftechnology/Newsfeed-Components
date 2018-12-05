@@ -4,8 +4,6 @@ class Article {
   constructor(domElement) {
     // assign this.domElement to the passed in domElement
     this.domElement = domElement;
-
-    console.log(this.content)
     // create a reference to the ".expandButton" class. 
     this.expandButton = this.domElement.querySelector(".expandButton");
     // Using your expandButton reference, update the text on your expandButton to say "expand"
@@ -20,7 +18,6 @@ class Article {
 
   expandArticle() {
     // Using our reference to the domElement, toggle a class to expand or hide the article.
-    console.log("click worked")
     this.domElement.classList.toggle("article-open")
   }
 }
