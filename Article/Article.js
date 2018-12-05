@@ -5,9 +5,9 @@ class Article {
 		// assign this.domElement to the passed in domElement
 		this.domElement = domElement;
 		// create a reference to the ".expandButton" class.
-		this.expandButton = document.querySelectorAll('.expandButton');
+		this.expandButton = document.querySelectorAll('.expandButton').textContent = 'expand';
 		// Using your expandButton reference, update the text on your expandButton to say "expand"
-
+		console.log(this.expandButton);
 		// Set a click handler on the expandButton reference, calling the expandArticle method.
 	}
 
