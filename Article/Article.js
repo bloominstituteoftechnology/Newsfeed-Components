@@ -10,7 +10,11 @@ class Article {
     // for deleting articles
     this.delete = this.domElement.querySelector(".x");
     this.delete.addEventListener("click", (e) => {
-      this.domElement.style.display = "none";
+      
+      TweenMax.to(this.domElement, 0.2, {
+        opacity: 0
+      });
+      setTimeout(() => {this.domElement.style.display = "none"}, 250);
     });
   }
 
