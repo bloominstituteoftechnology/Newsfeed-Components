@@ -121,9 +121,21 @@
   border: 1px solid lightgrey;
   border-radius: 10px;
   background-color: white;
+  position: relative;
+  overflow: hidden;
   box-shadow: 2px 2px 2px lightgrey;
+  transition: height 1s ease-in-out;
   display: flex;
   justify-content: center;
+}
+.article-input h2 {
+  font-size: 28px;
+  padding: 0;
+  margin: 15px 0 0;
+}
+.article-input .date {
+  margin: 0;
+  font-size: 14px;
 }
 html,
 body {

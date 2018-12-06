@@ -55,15 +55,40 @@
   height: 400px;
 }
 
+// .article-input {
+//   margin: 20px 10%;
+//   padding: 0 20px 25px;
+//   border: 1px solid lightgrey;
+//   border-radius: 10px;
+//   background-color: white;
+//   box-shadow: 2px 2px 2px lightgrey;
+  
+// }
+
 .article-input {
   margin: 20px 10%;
   padding: 0 20px 25px;
   border: 1px solid lightgrey;
   border-radius: 10px;
   background-color: white;
+  position: relative;
+  // height: 50px;
+  overflow: hidden;
   box-shadow: 2px 2px 2px lightgrey;
+  transition: height 1s ease-in-out;
   display: flex;
   justify-content: center;
+
+  h2 {
+    font-size: 28px;
+    padding: 0;
+    margin: 15px 0 0;
+  }
+
+  .date {
+    margin: 0;
+    font-size: 14px;
+  }
 }
 
 
