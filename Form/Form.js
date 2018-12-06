@@ -6,28 +6,28 @@ class NewArticle {
     this.text = document.querySelector("#article");
     this.submitBtn = document.querySelector("#submitBtn");
     this.articlesSection = document.querySelector(".articles");
-    this.Article = {
-      title: "",
-      date: "",
-      text: ""
-    };
-    this.title.addEventListener("change", e => {
-      this.Article.title = e.target.value;
-    });
+    // this.Article = {
+    //   title: "",
+    //   date: "",
+    //   text: ""
+    // };
+    // this.title.addEventListener("change", e => {
+    //   this.Article.title = e.target.value;
+    // });
 
-    this.date.addEventListener("change", e => {
-      this.Article.date = e.target.value;
-    });
+    // this.date.addEventListener("change", e => {
+    //   this.Article.date = e.target.value;
+    // });
 
-    this.text.addEventListener("change", e => {
-      this.Article.text = e.target.value;
-    });
+    // this.text.addEventListener("change", e => {
+    //   this.Article.text = e.target.value;
+    // });
     this.submitBtn.addEventListener("click", () => {
-      this.appendArticle(this.Article, this.articlesSection);
+      this.appendArticle(this.articlesSection);
     });
   }
 
-  appendArticle(article, articleSection) {
+  appendArticle(articleSection) {
     let newElement = articleSection.querySelector(".article").cloneNode(true);
 
     let newH2 = document.querySelector("#title").value;
@@ -79,7 +79,10 @@ class NewArticle {
   }
 }
 
-const inputs = document.querySelectorAll("input, textarea");
-inputs.forEach(input => {
-  return new NewArticle(input);
-});
+// const inputs = document.querySelectorAll("input, textarea");
+// inputs.forEach(input => {
+//   return new NewArticle(input);
+// });
+
+const input = document.querySelector("input");
+input = new NewArticle(input);
