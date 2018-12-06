@@ -11,10 +11,10 @@ class Article {
     this.delete = this.domElement.querySelector(".x");
     this.delete.addEventListener("click", (e) => {
       
-      TweenMax.to(this.domElement, 0.2, {
+      TweenMax.to(this.domElement, 0.3, {
         opacity: 0
       });
-      setTimeout(() => this.domElement.style.display = "none", 250);
+      setTimeout(() => this.domElement.style.display = "none", 400);
     });
   }
 
