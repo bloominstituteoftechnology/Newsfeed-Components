@@ -35,12 +35,9 @@
   margin: 0;
   font-size: 48px;
 }
-.container {
-  display: inline-block;
-  cursor: pointer;
-}
-.move-left {
-  marginLeft: 250px;
+.move-right {
+  margin-left: 250px;
+  transition: 0.6s;
 }
 .menu-button {
   position: absolute;
@@ -77,6 +74,9 @@
   transition: 0.5s;
   padding-top: 60px;
 }
+.menu ul {
+  padding-left: 0px;
+}
 .menu ul li {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
@@ -84,8 +84,10 @@
   color: #818181;
   display: block;
   transition: 0.3s;
+  cursor: pointer;
 }
-.menu ul li.menu ul li:hover {
+.menu ul li:hover {
+  background-color: #555;
   color: #f1f1f1;
 }
 .menu--open {
@@ -116,9 +118,7 @@
   font-size: 14px;
 }
 .article .close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
+  transition: 0.5s;
 }
 .article .expandButton {
   position: absolute;
@@ -129,9 +129,12 @@
   cursor: pointer;
   transform: translate(-50%);
   background-color: white;
+  height: 50px;
+  transition: 0.5s;
 }
 .article-open {
   height: 400px;
+  transition: 0.5s;
 }
 html,
 body {

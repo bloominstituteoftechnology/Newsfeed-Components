@@ -1,10 +1,6 @@
-.container {
-  display: inline-block;
-  cursor: pointer;
-}
-
-.move-left {
-  marginLeft: 250px;
+.move-right {
+  margin-left: 250px;
+  transition: 0.6s;
 }
 
 .menu-button {
@@ -28,21 +24,7 @@
     transform: rotate(45deg) translate(-8px, -8px);
 }
 
-
-
-
 .menu {
-  // display: none;
-  // position: fixed;
-  // top: 75px;
-  // left: 0;
-  // width: 350px;
-  // height: 100vh; /* This give the height 100% of the screen or, '100% of View Height' */
-  // background-color: #81C784;
-  // border: 1px solid #004D40;
-  // border-left: none;
-  // border-bottom: none;
-  // z-index: 2; /* This set the layer level of the element, it has precendence over initial level of 1*/
   height: 100%;
     width: 0;
     position: fixed;
@@ -53,30 +35,23 @@
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
-  // .closebtn {
-  //   position: absolute;
-  //   top: 0;
-  //   right: 25px;
-  //   font-size: 36px;
-  //   margin-left: 50px;
-  // }
 }
 
-.menu ul li{
-  // list-style-type: none;
-  // font-size: 32px;
-  // padding: 30px 0;
-  // text-align: center;
-
-  padding: 8px 8px 8px 32px;
+.menu ul {
+padding-left: 0px;
+  li {
+    padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
     color: #818181;
     display: block;
     transition: 0.3s;
-    &&:hover {
+    cursor: pointer;
+    &:hover {
+      background-color: #555;
       color: #f1f1f1;
     }
+  }
 }
 .menu--open {
   display: block;
