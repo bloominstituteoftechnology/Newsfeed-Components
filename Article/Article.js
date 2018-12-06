@@ -10,6 +10,10 @@ class Article {
     this.expandButton.forEach((item) => item.textContent = 'Click to Expand');
     // Set a click handler on the expandButton reference, calling the expandArticle method.
     this.expandButton.forEach((item) => item.addEventListener('click', () => this.expandArticle()));
+
+    this.readButton = domElement.querySelectorAll('.readButton');
+    this.readButton.forEach((item) => item.textContent = 'Click to Remove');
+    this.readButton.forEach((item) => item.addEventListener('click', () => this.removeArticle()));
   }
 
   expandArticle() {
@@ -22,6 +26,10 @@ class Article {
       TweenMax.to(this.domElement, 1, {height: 50});
       this.expandButton[0].textContent = 'Click to Expand';
     };
+  }
+
+  removeArticle() {
+    this.domElement.classList.toggle('article-close');
   }
 }
 
