@@ -25,7 +25,7 @@
   background-color: #388E3C;
   color: white;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   position: fixed;
   top: 0;
@@ -34,6 +34,11 @@
 .header h1 {
   margin: 0;
   font-size: 48px;
+}
+.header a {
+  text-decoration: none;
+  color: white;
+  font-size: 50px;
 }
 .menu-button {
   position: absolute;
@@ -121,6 +126,75 @@
 .articles--sml .article {
   width: 50%;
   transition: all 1s ease;
+}
+.bg-modal {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  transition: all 1s ease;
+  display: none;
+}
+.bg-modal .modal-content {
+  width: 60%;
+  height: 300px;
+  background-color: white;
+  border-radius: 5px;
+  position: relative;
+}
+.bg-modal .modal-content form {
+  width: 100%;
+}
+.bg-modal .modal-content form label {
+  font-size: 20px;
+}
+.bg-modal .modal-content form input,
+.bg-modal .modal-content form textarea {
+  width: 60%;
+  font-size: 12px;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.bg-modal .modal-content ul {
+  list-style-type: none;
+}
+.bg-modal .modal-content ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.bg-modal .modal-content ul li .btn {
+  border-radius: 10px;
+  width: 100px;
+  height: 36px;
+  background-color: #22283A;
+  color: #F6F7F8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin-bottom: 36px;
+  cursor: pointer;
+}
+.bg-modal .modal-content ul li .btn:hover {
+  background-color: #F6F7F8;
+  color: #22283A;
+}
+.bg-modal .modal-content .close {
+  position: absolute;
+  top: 0;
+  right: 14px;
+  font-size: 42px;
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+.bg-modal--open {
+  transition: all 1s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 html,
 body {
