@@ -104,6 +104,11 @@
 .article-open {
   height: 400px;
 }
+.remove {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
 html,
 body {
   margin: 0;
