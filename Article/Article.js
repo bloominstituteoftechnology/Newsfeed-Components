@@ -14,7 +14,7 @@ class Article {
       TweenMax.to(this.domElement, 0.2, {
         opacity: 0
       });
-      setTimeout(() => {this.domElement.style.display = "none"}, 250);
+      setTimeout(() => this.domElement.style.display = "none", 250);
     });
   }
 
