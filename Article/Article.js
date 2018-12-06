@@ -25,7 +25,6 @@ class Article {
   }
 }
 
-
 let articles = document.querySelectorAll('.article');
 
 articles.forEach(article => {

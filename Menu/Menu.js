@@ -3,14 +3,18 @@ const menu = document.querySelector('.menu');
 const menuButton = document.querySelector('.menu-button');
 const articleContainer = document.querySelector('.articles')
 
+let menuOpen = false;
 // Callback Functions
 const toggleMenu = () => {
-  menu.classList.toggle('menu--open');
   $(menu).slideToggle("slide");
+  menuOpen = true;
 }
 
 const toggleMenuClosed = () => {
-  menu.style.display = "none";
+  if (menuOpen) {
+    $(menu).slideToggle("slide");
+    menuOpen = false;
+  }
 }
 
 // Event Listeners
