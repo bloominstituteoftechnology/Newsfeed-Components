@@ -112,14 +112,14 @@
 .buttons button {
   padding: 5px 15px;
   font-weight: bold;
-  color: white;
-  background-color: blue;
+  color: red;
+  background-color: green;
   border-radius: 12px;
   margin: 0 25px;
 }
 .buttons button:hover {
-  color: blue;
-  background-color: white;
+  color: green;
+  background-color: red;
 }
 html,
 body {
