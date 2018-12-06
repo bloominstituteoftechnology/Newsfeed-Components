@@ -19,7 +19,12 @@ class Article {
     } else {
       this.expandButton.textContent = "Click to Expand";
     }
-    TweenMax.to(this.domElement, 1, {y:400});
+    if(this.domElement.classList.contains("article-open")){
+      TweenMax.to(this.domElement, 1, {height:400});
+    } else {
+      TweenMax.to(this.domElement, 1, {height:50});
+    }
+    
   }
 }
 

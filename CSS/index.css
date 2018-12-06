@@ -101,9 +101,6 @@
   transform: translate(-50%);
   background-color: white;
 }
-.article-open {
-  height: 400px;
-}
 html,
 body {
   margin: 0;
