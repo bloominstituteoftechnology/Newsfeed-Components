@@ -42,7 +42,14 @@ class Article {
 
   closeArticle(e) {
     e.stopImmediatePropagation();
-    this.domElement.remove();
+
+    // Fade-out animation before disappearing
+    TweenMax.to(this.domElement, 0.5, { 
+      opacity: 0, 
+      onComplete: () => {
+        this.domElement.remove();
+      }
+    });
   }
 }
 
@@ -89,9 +96,8 @@ function addArticle(e) {
     newArticleElement.appendChild(newArticleDate);
 
     // Adding paragraph elements for the new article's text (to follow the structure of the original document: 2 consecutive line breaks -> new paragraph)
-    formArticleText.value.split("\n\n").forEach(formArticleParagraph => {
+    formArticleText.value.split(/\n\n|\n/).forEach(formArticleParagraph => {
       let newArticleParagraph = document.createElement("p");
-      newArticleParagraph.style.whiteSpace = "pre-line"; // Show line breaks
       newArticleParagraph.textContent = formArticleParagraph;
       newArticleElement.appendChild(newArticleParagraph);      
     });
@@ -101,6 +107,11 @@ function addArticle(e) {
 
     // Add the new article element + its children to the page
     articleArea.appendChild(newArticleElement);
+
+    // Fade-in animation for new article element
+    TweenMax.from(newArticleElement, 0.5, { 
+      opacity: 0,
+    }); 
 
     // Clear all fields in form for creating new article
     formArticleTitle.value = formArticleText.value = "";

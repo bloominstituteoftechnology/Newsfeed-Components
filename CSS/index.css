@@ -72,6 +72,7 @@
   -moz-box-shadow: 2px 2px 2px lightgrey;
   -o-box-shadow: 2px 2px 2px lightgrey;
   -ms-box-shadow: 2px 2px 2px lightgrey;
+  box-shadow: 2px 2px 2px lightgrey;
   padding: 0 20px 25px;
   border: 1px solid lightgrey;
   -webkit-border-radius: 10px;
@@ -114,6 +115,7 @@
   -moz-box-shadow: 2px 2px 2px lightgrey;
   -o-box-shadow: 2px 2px 2px lightgrey;
   -ms-box-shadow: 2px 2px 2px lightgrey;
+  box-shadow: 2px 2px 2px lightgrey;
   padding: 25px 50px 25px;
   margin: auto;
 }
@@ -155,6 +157,7 @@
   -moz-box-shadow: inset 0px -3px 7px 0px grey;
   -o-box-shadow: inset 0px -3px 7px 0px grey;
   -ms-box-shadow: inset 0px -3px 7px 0px grey;
+  box-shadow: inset 0px -3px 7px 0px grey;
   padding: 10px 25px;
   border: 1px solid grey;
   -webkit-border-radius: 3px;
