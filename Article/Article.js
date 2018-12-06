@@ -21,6 +21,7 @@ class Article {
 		if (!this.domElement.classList.contains('article-open')) {
 			this.domElement.classList.toggle('article-open');
 			this.expandButton.textContent = 'Click to Close';
+			this.domElement.style.transitionDuration = '.8s';
 		} else {
 			this.domElement.classList.toggle('article-open');
 			this.expandButton.textContent = 'expand';
