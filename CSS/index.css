@@ -22,7 +22,7 @@
 .header {
   width: 100%;
   height: 75px;
-  background-color: #388E3C;
+  background-color: #8b9dc3;
   color: white;
   display: flex;
   justify-content: center;
@@ -45,7 +45,6 @@
   border-radius: 10px;
   background-color: white;
   position: relative;
-  height: 50px;
   overflow: hidden;
   box-shadow: 2px 2px 2px lightgrey;
 }
@@ -54,9 +53,16 @@
   padding: 0;
   margin: 15px 0 0;
 }
+.article .showhide {
+  display: block;
+}
 .article .date {
   margin: 0;
   font-size: 14px;
+  display: block;
+}
+.article p {
+  display: none;
 }
 .article .close {
   position: absolute;
@@ -66,16 +72,28 @@
 .article .expandButton {
   position: absolute;
   bottom: 0;
-  left: 50%;
-  font-size: 12px;
-  color: grey;
+  left: 30%;
+  border-radius: 4px;
+  padding: 2px 5px;
+  font-size: 20px;
+  color: white;
+  background-color: #3b5998;
   cursor: pointer;
   transform: translate(-50%);
-  background-color: white;
-  display: block;
+  margin-bottom: 5px;
 }
-.article-open {
-  height: 400px;
+.article .closeButton {
+  position: absolute;
+  bottom: 0;
+  left: 70%;
+  border-radius: 4px;
+  padding: 2px 5px;
+  font-size: 20px;
+  color: white;
+  background-color: #3b5998;
+  cursor: pointer;
+  transform: translate(-50%);
+  margin-bottom: 5px;
 }
 .menu-button {
   position: absolute;
@@ -90,7 +108,7 @@
   width: 350px;
   height: 100vh;
   /* This give the height 100% of the screen or, '100% of View Height' */
-  background-color: #81C784;
+  background-color: #dfe3ee;
   border: 1px solid #004D40;
   border-left: none;
   border-bottom: none;
