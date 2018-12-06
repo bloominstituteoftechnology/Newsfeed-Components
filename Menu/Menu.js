@@ -4,7 +4,7 @@ TweenMax.to(document.querySelector('.menu-button'), 1, { rotation:360, scale:1} 
 const toggleMenu = () => {
   // Toggle the "menu--open" class on your menu refence. 
 
-  menuButton.classList.toggle('menu-open');
+  menuButton.classList.toggle('menu--open');
 }
 
 
