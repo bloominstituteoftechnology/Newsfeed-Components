@@ -12,10 +12,10 @@ class Article {
 		this.expandButton.textContent = 'expand';
 		// console.log(this.expandButton);
 		// Set a click handler on the expandButton reference, calling the expandArticle method.
-		this.expandButton.addEventListener('click', (e) => this.expandArticle(e));
+		this.expandButton.addEventListener('click', () => this.expandArticle());
 	}
 
-	expandArticle(e) {
+	expandArticle() {
 		// Using our reference to the domElement, toggle a class to expand or hide the article.
 		console.log('clicked');
 		if (!this.domElement.classList.contains('article-open')) {
@@ -23,7 +23,7 @@ class Article {
 			this.expandButton.textContent = 'Click to Close';
 		} else {
 			this.domElement.classList.toggle('article-open');
-			this.expandButton.textContent = 'Click to Expand';
+			this.expandButton.textContent = 'expand';
 		}
 	}
 }
