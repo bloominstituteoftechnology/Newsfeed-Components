@@ -5,7 +5,7 @@
 }
 
 .menu {
-  display: none;
+  opacity: 0;
   position: fixed;
   top: 75px;
   left: 0;
@@ -16,7 +16,9 @@
   border-left: none;
   border-bottom: none;
   z-index: 2; /* This set the layer level of the element, it has precendence over initial level of 1*/
-  // transform: scaleX(-100)
+  transition: all .2s;
+  transform: scaleX(0);
+  transform-origin: left;
 
 }
 
@@ -28,15 +30,8 @@
 }
 
 .menu--open {
-  display: block;
+  // display: block;
+  opacity: 1;
+  transform: scaleX(1)
 }
 
-.article--sml {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-
-  .article {
-    width: 50%;
-  }
-}
