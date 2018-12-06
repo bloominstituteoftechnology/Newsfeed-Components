@@ -17,7 +17,6 @@ class Article {
     this.domElement.classList.toggle('article-open');
     if (this.domElement.classList.contains('article-open')) {
       TweenMax.to(this.domElement, 1, {height: 400});
-      console.log(this.expandButton);
       this.expandButton[0].textContent = 'Click to Close';
     } else {
       TweenMax.to(this.domElement, 1, {height: 50});
