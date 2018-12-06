@@ -14,11 +14,13 @@ class Article {
   expandArticle() {
     // Using our reference to the domElement, toggle a class to expand or hide the article.
     this.domElement.classList.toggle("article-open");
+    //checks if the expand button is equal to click to expand if it is changes text to click to close
     if(this.expandButton.textContent === "Click to Expand"){
       this.expandButton.textContent = "Click to Close";
     } else {
       this.expandButton.textContent = "Click to Expand";
     }
+    //checks if the domElement contains the class article-open if it does/doesn't it will play the appropriate animation
     if(this.domElement.classList.contains("article-open")){
       TweenMax.to(this.domElement, 1, {height:400});
     } else {
