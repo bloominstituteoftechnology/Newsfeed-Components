@@ -12,13 +12,8 @@ class Article {
     this.expandButton.textContent = 'Click To Expand';
     
     // Set a click handler on the expandButton reference, calling the expandArticle method.
-
-
     this.expandButton.addEventListener('click', () => this.expandArticle());
     this.removeButton.addEventListener('click', () => this.removeArticle()); 
-
-    
-    
   }
 
   removeArticle() {
@@ -27,11 +22,9 @@ class Article {
 
   expandArticle() {
     // Using our reference to the domElement, toggle a class to expand or hide the article.
-    // this.domElement.classList.toggle('article-open');
     TweenMax.to(this.domElement, 0.5, {height:400});
     this.expandButton.textContent = 'Click To Close';
     this.expandButton.addEventListener('click', () => this.closeArticle());
-
   }
 
   closeArticle() {
@@ -51,4 +44,28 @@ class Article {
 
 let articles = document.querySelectorAll('.article');
 articles.forEach( article => new Article(article) );
+
+
+
+/// add new article from inputs 
+const articleContainer = document.querySelector('.articles');
+const article = document.querySelector('.article');
+
+
+function createDOMElement() {
+  let newElement = article.cloneNode(true);
+  let newH2 = document.querySelector('#title-input').value;
+  let newContent = document.querySelector('#content-input').value;
+  newElement.querySelector('h2').textContent = newH2;
+  newElement.querySelector('.content').textContent = newContent;
+  newElement.querySelector('.date').textContent = new Date();
+  newElement = new Article(newElement);
+  articleContainer.appendChild(newElement.domElement);
+  document.querySelector('#title-input').value = '';
+  document.querySelector('#content-input').value = '';
+}
+
+
+
+
 

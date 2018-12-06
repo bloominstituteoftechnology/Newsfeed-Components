@@ -64,7 +64,7 @@
   display: block;
 }
 .articles {
-  margin-top: 95px;
+  margin-top: 50px;
 }
 .article {
   margin: 20px 10%;
@@ -120,6 +120,33 @@
 }
 .article-open {
   height: 400px;
+}
+.input {
+  margin-top: 100px;
+  margin-left: 10%;
+}
+.input .input-content {
+  width: 75%;
+  height: 100px;
+}
+input[type=text] {
+  margin-bottom: 20px;
+  width: 88%;
+}
+input[type=date] {
+  margin-bottom: 20px;
+}
+textarea {
+  width: 87.7%;
+  margin: 0 auto;
+}
+.submit-btn {
+  margin: 20px auto;
+  text-align: center;
+  background: lightgreen;
+  padding: 20px 38%;
+  font-size: 1.5rem;
+  border-radius: 15px;
 }
 html,
 body {
