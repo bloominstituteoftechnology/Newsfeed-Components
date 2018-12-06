@@ -54,6 +54,14 @@
   padding: 0;
   margin: 15px 0 0;
 }
+.article .deleteX {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 2rem;
+  font-weight: 800;
+  cursor: pointer;
+}
 .article .date {
   margin: 0;
   font-size: 14px;
