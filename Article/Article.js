@@ -27,13 +27,13 @@ class Article {
       TweenMax.to(this.domElement, .30, {height: '400px'});
       this.expandButton.textContent = 'Click to Close';
       setTimeout(() => {
-        this.domElement.classList.toggle('article-open');
+        this.domElement.classList.add('article-open');
       }, 200)
     } else {
       TweenMax.to(this.domElement, .30, {height: '50px'});
       this.expandButton.textContent = 'Click to Expand';
       setTimeout(() => {
-        this.domElement.classList.toggle('article-open');
+        this.domElement.classList.remove('article-open'); //Would use toggle, but we are doing animations conditionally anyway.
       }, 200)
     }
   }
@@ -43,7 +43,7 @@ class Article {
       TweenMax.to(this.domElement, .30, {height: '50px'});
       this.expandButton.textContent = 'Click to Expand';
       setTimeout(() => {
-        this.domElement.classList.toggle('article-open');
+        this.domElement.classList.remove('article-open');
       }, 200);
     }
   }
@@ -123,7 +123,7 @@ class PostArticle {
     articlesContainer.appendChild(articleContainer);
     
     //Reset articles array to include newly posted article.
-    articleObjects = [];
+    articleObjects.length = 0;
     articles = document.querySelectorAll('.articles .article');
     articles.forEach(a => {
       return new Article(a);
