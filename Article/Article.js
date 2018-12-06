@@ -42,8 +42,8 @@ function showEditor() {
 
 */
 
-function publish() {
-  
+function hideEditor() {
+  document.querySelector(".gray").style.display = "none";
 }
 
 let articles = document.querySelectorAll(".article");
@@ -57,4 +57,45 @@ createArticle.addEventListener("click", showEditor);
 
 let submitArticle = document.querySelectorAll("button")[1];
 
-createArticle.addEventListener("click", publish);
+submitArticle.addEventListener('click', e => {
+  publish(document.querySelector("input").value, document.querySelector("textarea").value);
+  newArticles = document.querySelectorAll('.new').forEach(article => new Article(article));
+  document.querySelector(".gray").style.display = 'none';
+});
+
+function publish(title, body){
+  const content = document.createElement('div');
+  content.classList.add('article');
+  content.classList.add('new');
+
+  const rightsi = document.createElement('div');
+  rightsi.classList.add('rightside');
+
+  const ttitle = document.createElement('h2');
+  ttitle.textContent = title;
+  rightsi.append(ttitle);
+
+  const close = document.createElement('i');
+  close.classList.add('fa');
+  close.classList.add('fa-window-close');
+  rightsi.append(close);
+  content.append(rightsi)
+
+  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  const d = new Date();
+  const dateFormat = `${months[d.getMonth()]} ${d.getDay()}rd, ${d.getFullYear()}`;
+  const dt = document.createElement('p');
+  dt.classList.add('date');
+  dt.textContent = dateFormat;
+  content.append(dt);
+
+  const textbody = document.createElement('p');
+  textbody.textContent = body;
+  content.append(textbody);
+
+  const expander = document.createElement('span');
+  expander.classList.add('expandButton');
+  content.append(expander);
+
+  document.querySelector('.articles').append(content);
+}
