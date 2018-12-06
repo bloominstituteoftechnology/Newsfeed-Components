@@ -39,6 +39,12 @@
   position: absolute;
   left: 20px;
   cursor: pointer;
+  border: 2px solid #388E3C;
+  transition: background-color 1s ease;
+}
+.menu-button:hover {
+  transition: border 1s ease;
+  border: 2px solid black;
 }
 .menu {
   display: none;
