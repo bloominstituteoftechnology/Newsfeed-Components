@@ -12,10 +12,6 @@ const menuButton = document.querySelector('.menu-button');
 // Using your menuButton reference, add a click handler that calls toggleMenu
 menuButton.addEventListener('click', function() {
   toggleMenu();
-  TweenMax.to(".menu-button", 0.5, {rotation: 180});
-  //tweenReset();
+  TweenMax.set(".menu-button", {rotation: 180});
+  TweenMax.from(".menu-button", 0.5, {rotation: 0});
 });
-
-function tweenReset () {
-  TweenMax.from(".menu-button", 0.5, {rotation: 180});
-}
