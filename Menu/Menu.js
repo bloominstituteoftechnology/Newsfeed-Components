@@ -9,15 +9,16 @@ class MenuItem {
   toggleMenu(){
     this.menuContent.classList.toggle('menu--open');
     if (this.menuContent.classList.contains('menu--open')) {
-      TweenMax.to(menu, 2.5, {
+      TweenMax.to(menu, 1, {
         left: 0,
-        ease: Power4.easeOut,
+        ease: Power0.easeOut,
       });
-    } else {
+    } 
+    else {
       TweenMax.to(menu, 3, {
-        left: -350,
-        ease: Power4.easeOut
-      })
+        left: -150,
+        ease: Power0.easeOut,
+      });
     }
   }
 }

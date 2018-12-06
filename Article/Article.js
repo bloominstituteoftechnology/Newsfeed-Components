@@ -3,14 +3,17 @@ class Article {
   constructor(domElement) {
     this.domElement = domElement;
     this.expandButton = this.domElement.querySelector('.expandButton');
-    this.expandButton.textContent = "Expand";
+    this.expandButton.textContent = 'Expand';
     this.expandButton.addEventListener('click', () => this.expandArticle());
   }
   // Methods
   expandArticle() {
     this.domElement.classList.toggle('article-open');
-    if (this.expandButton.textContent === "Expand") {
-      this.expandButton.textContent = "Close"
+    if (this.expandButton.textContent === 'Expand') {
+      this.expandButton.textContent = 'Close';
+    }
+    else if (this.expandButton.textContent === 'Close') {
+      this.expandButton.textContent = 'Expand';
     }
   }
 }
