@@ -33,20 +33,3 @@ let articles = document.querySelectorAll('.article');
 articles.forEach( article => {
   return new Article(article);
 });
-
-
-
-// const toggleMenu = (e) => {
-//   // Toggle the "menu--open" class on your menu refence. 
-//   e.stopPropagation()
-//   if(menu.classList.contains('menu--open')){
-//     setTimeout(function(){
-//       menu.classList.toggle('menu--open');
-//     }, 150);
-//     TweenMax.fromTo(menu, .3, {x:0}, {x:-350});
-//   } else {
-//     menu.classList.toggle('menu--open');
-//     TweenMax.fromTo(menu, .3, {x:-350}, {x:0});
-//   }
-     
-// }
