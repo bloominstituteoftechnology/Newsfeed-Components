@@ -1,14 +1,13 @@
-let isMenuOpen = false;
-
 const toggleMenu = e => {
   e.stopImmediatePropagation();
-  if (isMenuOpen) {
+
+  if (menu.classList.contains("menu--is-open")) {
     TweenMax.to(menu, 1, { x: -350, ease: Power2.easeIn });
-    isMenuOpen = false;
   } else {
     TweenMax.to(menu, 1, { x: 350, ease: Power2.easeOut });
-    isMenuOpen = true;
   }
+
+  menu.classList.toggle("menu--is-open");
 };
 
 // Start Here: Create a reference to the ".menu" class
@@ -24,10 +23,10 @@ const menuButton = document.querySelector(".menu-button");
 menuButton.addEventListener("click", e => toggleMenu(e));
 
 // Close menu if clicking outside of it
-window.addEventListener("click", () => {
-  if (isMenuOpen) {
-    isMenuOpen = false;
-    TweenMax.to(menu, 1, { x: -350 });
+window.addEventListener("click", e => {
+  if (menu.classList.contains("menu--is-open")) {
+    TweenMax.to(menu, 1, { x: -350, ease: Power2.easeIn });
+    menu.classList.toggle("menu--is-open");
   }
 });
 

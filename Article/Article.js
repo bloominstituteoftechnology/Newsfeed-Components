@@ -4,13 +4,12 @@ class Article {
   constructor(domElement) {
     // assign this.domElement to the passed in domElement
     this.domElement = domElement;
-    this.isOpened = false;
 
     // create a reference to the ".expandButton" class. 
     this.expandButton = this.domElement.querySelector(".expandButton");
     
     // Using your expandButton reference, update the text on your expandButton to say "expand"
-    this.expandButton.textContent = "expand";
+    this.expandButton.textContent = "Click to Expand";
     
     // Set a click handler on the expandButton reference, calling the expandArticle method.
     this.expandButton.addEventListener("click", e => this.expandArticle(e));
@@ -21,13 +20,17 @@ class Article {
 
   expandArticle(e) {
     e.stopImmediatePropagation();
-    if (this.isOpened) {
-      TweenMax.to(this.domElement, 1, { height: 50 });
-      this.isOpened = false;
+
+    if (this.domElement.classList.contains("article--is-open")) {
+      TweenMax.to(this.domElement, 1.5, { height: 50 });
+      this.expandButton.textContent = "Click to Expand";
     } else {
-      TweenMax.to(this.domElement, 1, { height: 400 });
-      this.isOpened = true;
+      TweenMax.set(this.domElement, { height: "auto" });
+      TweenMax.from(this.domElement, 1.5, { height: 50 });
+      this.expandButton.textContent = "Click to Hide";
     }
+
+    this.domElement.classList.toggle("article--is-open");
   }
 
   closeArticle(e) {
