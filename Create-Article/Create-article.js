@@ -18,7 +18,6 @@ const createBody = document.querySelector('.carticle-body');
 
 addArticleBtn.addEventListener('click', _ => {
   createArticle(createTitle.value, createBody.value);
-  newArticles = document.querySelectorAll('.new').forEach(article => new Article(article));
   editor.style.display = 'none';
 });
 
@@ -52,6 +51,8 @@ function createArticle(title, body){
   const artExpandBtn = document.createElement('span');
   artExpandBtn.classList.add('expandButton');
   artCont.append(artExpandBtn);
+
+  const newArticle = new Article(artCont);
 
   document.querySelector('.articles').append(artCont);
 }
