@@ -4,14 +4,12 @@ const toggleMenu = () => {
   menu.classList.toggle("menu--open");
   if (menu.classList.contains("menu--open")) {
     TweenMax.to(menu, 2, {
-    left: -355,
-    ease: Back.easeOut
+    left: -20,
     });
     console.log("this ran")
   } else {
     TweenMax.to(menu, 2, {
-      left: -25,
-      ease: Back.easeOut
+      left: -350,  
       });
       console.log("this too")
   }
