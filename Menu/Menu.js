@@ -13,4 +13,7 @@ const toggleMenu = () => {
 
 // Event Listeners
 menuButton.addEventListener('click', toggleMenu);
-articleContainer.addEventListener('click', toggleMenu);
+
+// if (!(menu.classList.toggle('menu--open'))) {
+//   articleContainer.addEventListener('click', toggleMenu);
+// }
