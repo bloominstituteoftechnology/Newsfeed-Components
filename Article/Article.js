@@ -24,7 +24,7 @@ class Article {
 
     if (this.domElement.classList.contains("article--is-open")) {
       TweenMax.to(this.domElement, 1.5, { 
-        height: 50 
+        height: 75 
       });
       this.expandButton.textContent = "Click to Expand";
     } else {
@@ -32,7 +32,7 @@ class Article {
         height: "auto" 
       });
       TweenMax.from(this.domElement, 1.5, { 
-        height: 50 
+        height: 75 
       });
       this.expandButton.textContent = "Click to Hide";
     }

@@ -4,7 +4,7 @@
 .article {
   position: relative;
   overflow: hidden;
-  height: 50px;
+  height: 75px;
   background-color: @article-background-color;
   font-size: 1.6rem;
   #prefixed > .box-shadow(2px, 2px, 2px, @article-box-shadow-color);
@@ -35,12 +35,18 @@
   }
 
   .expandButton {
+    display: block;
     position: absolute;
+    left: 0;
     bottom: 0;
-    left: 50%;
+    width: 100%;
+    height: 15px;
+    background-color: @article-expand-button-background-color;
     font-size: 1.2rem;
     color: @article-expand-button-font-color;
+    text-align: center;
     cursor: pointer;
+    margin-top: 10px;
   }
 }
 
