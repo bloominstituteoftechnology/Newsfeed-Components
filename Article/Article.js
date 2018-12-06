@@ -39,4 +39,17 @@ articles.forEach(article => {
 });
 
 // EXTRAS:
+const articleHeaders = document.querySelector('.article h2');
+articleHeaders.addEventListener('mouseover', (e) => {
+  e.target.style.color = 'white';
+  // e.target.style.fontSize = '20px';
+  e.target.style.background = 'black';
+  
+  setTimeout(function() {
+      e.target.style.color = '';
+      e.target.style.fontSize = '';
+      e.target.style.background = '';
+    }, 400);
+  }, false);
 
+  TweenLite.to('.header', 2.5, { ease: Back.easeInOut.config(1.7), y: 15 });
