@@ -5,15 +5,15 @@ class Article {
     // assign this.domElement to the passed in domElement
     this.domElement = domElement;
     // create a reference to the ".expandButton" class. 
-    this.expandButton = domElement.querySelectorAll('.expandButton');
+    this.expandButton = domElement.querySelector('.expandButton');
     // Using your expandButton reference, update the text on your expandButton to say "expand"
-    this.expandButton.forEach((item) => item.textContent = 'Click to Expand');
+    this.expandButton.textContent = 'Click to Expand';
     // Set a click handler on the expandButton reference, calling the expandArticle method.
-    this.expandButton.forEach((item) => item.addEventListener('click', () => this.expandArticle()));
+    this.expandButton.addEventListener('click', () => this.expandArticle());
 
-    this.readButton = domElement.querySelectorAll('.readButton');
-    this.readButton.forEach((item) => item.textContent = 'Click to Remove');
-    this.readButton.forEach((item) => item.addEventListener('click', () => this.removeArticle()));
+    this.readButton = domElement.querySelector('.readButton');
+    this.readButton.textContent = 'Click to Remove';
+    this.readButton.addEventListener('click', () => this.removeArticle());
   }
 
   expandArticle() {
@@ -21,10 +21,10 @@ class Article {
     this.domElement.classList.toggle('article-open');
     if (this.domElement.classList.contains('article-open')) {
       TweenMax.to(this.domElement, 1, {height: 400});
-      this.expandButton[0].textContent = 'Click to Close';
+      this.expandButton.textContent = 'Click to Close';
     } else {
       TweenMax.to(this.domElement, 1, {height: 50});
-      this.expandButton[0].textContent = 'Click to Expand';
+      this.expandButton.textContent = 'Click to Expand';
     };
   }
 
