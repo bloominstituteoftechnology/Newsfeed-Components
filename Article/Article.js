@@ -11,7 +11,6 @@ class Article {
     // Set a click handler on the expandButton reference, calling the expandArticle method.
     this.expandButton.addEventListener('click', (e) => this.expandArticle(e));
     this.expandButton.addEventListener('mouseover', () => this.expandAnimation());
-
     this.expandButton.addEventListener('mouseleave', () => this.expandAnimationGone());
   }
   expandArticle() {
@@ -19,7 +18,6 @@ class Article {
     this.domElement.classList.toggle('article-open')
   }
   expandAnimation() {
-
     TweenMax.to(this.expandButton, .2, {css:{scaleX:0.8, scaleY:0.8, opacity:0.7}});  
     }
 

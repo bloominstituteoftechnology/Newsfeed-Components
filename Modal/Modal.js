@@ -13,6 +13,9 @@ class CreatArticle {
     }
     
   }
+
+let date = document.getElementById('date');
+date.textContent = Date()
 const modal = document.querySelector('.bg-modal');
 const addBtn = document.querySelector('.addBtn')
 addBtn.addEventListener('click', displayModal)
