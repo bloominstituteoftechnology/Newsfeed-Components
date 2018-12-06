@@ -1,5 +1,6 @@
-// Because classes are not hoised you will need to start your code at the bottom of the page.  Look for the comment "START HERE"
+let allPanels = []; //this array will be used for opening and closing articles
 
+// Because classes are not hoised you will need to start your code at the bottom of the page.  Look for the comment "START HERE"
 class Article {
   constructor(domElement) {
     // assign this.domElement to the passed in domElement
@@ -13,7 +14,7 @@ class Article {
 
     // Set a click handler on the expandButton reference, calling the expandArticle method.
     this.expandButton.addEventListener("click", (e) => {
-      e.stopPropagation();
+      e.stopPropagation(); //stops window click event from triggering
       
       if(this.expandButton.textContent === "Click to Expand") {
         this.expandButton.textContent = "Click to Collapse";
@@ -23,11 +24,25 @@ class Article {
     
       return this.expandArticle();
     });
+
+    allPanels.push(this); //fill in the array with each Article object created
   }
 
   expandArticle() {
     // Using our reference to the domElement, toggle a class to expand or hide the article.
-    this.domElement.classList.toggle("article-open");
+    if(this.domElement.classList.contains("article-open")) { //if article is open
+      this.domElement.classList.toggle("article-open"); //close the article
+    } else { //if article is not open
+      allPanels.forEach(article => { //close all articles
+        article.closeArticles();
+      });
+
+      this.domElement.classList.toggle("article-open"); //open this article
+    }
+  }//expand
+
+  closeArticles() {
+    this.domElement.classList.remove("article-open");
   }
 }
 
