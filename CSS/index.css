@@ -67,9 +67,6 @@
 .menu ul li:hover {
   background-color: #318335;
 }
-.menu--open {
-  display: block;
-}
 .articles {
   margin-top: 95px;
 }
