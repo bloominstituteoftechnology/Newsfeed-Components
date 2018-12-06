@@ -48,16 +48,18 @@ menu.addEventListener("click", e => e.stopImmediatePropagation());
 menuOptions = document.querySelectorAll(".menu > ul > li");
 menuOptions.forEach(option => {
   option.addEventListener("mouseover", e => {
-    TweenMax.to(option, 0, { 
-      fontWeight: "bold", 
-      textDecoration: "underline", 
-      cursor: "pointer" 
-    });
+    option.style.fontWeight = "bold";
+    option.style.textDecoration = "underline";
+    option.style.cursor = "pointer";
   });
   option.addEventListener("mouseout", e => {
-    TweenMax.to(option, 0, { 
-      fontWeight: "normal", 
-      textDecoration: "none" 
-    });
+    option.style.fontWeight = "normal";
+    option.style.textDecoration = "none";
   });
+  option.addEventListener("mousedown", e => {
+    option.style.fontWeight = "normal";
+  })
+  option.addEventListener("mouseup", e => {
+    option.style.fontWeight = "bold";
+  })
 });
