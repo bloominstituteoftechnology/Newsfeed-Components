@@ -9,7 +9,7 @@ class Article {
     this.expandButton = this.domElement.querySelector('.expandButton');
     // Using your expandButton reference, update the text on your 
     //expandButton to say "expand"
-    this.expandButton.textContent = 'Expand';
+    this.expandButton.textContent = 'Click to Expand';
     
     // Set a click handler on the expandButton reference, calling the 
     //expandArticle method.
@@ -18,11 +18,10 @@ class Article {
   }
 
   expandArticle() {
-    if (this.expandButton.textContent =="Expand") {
-      this.expandButton.textContent = "Close";
-
+    if (this.expandButton.textContent =="Click to Expand") {
+      this.expandButton.textContent = "Click to Close";
     } else {
-      this.expandButton.textContent = "Expand";
+      this.expandButton.textContent = "Click to Expand";
     }
     this.domElement.classList.toggle('article-open');
   }
@@ -40,9 +39,12 @@ in each article as a parameter to the constructor.
 
 let articles = document.querySelectorAll('.article').forEach(article => {
   new Article(article)
-});
+}); 
 
-/*articles.forEach((domElement) => {
+/*
+articles.forEach((domElement) => {
   let article = new Article(domElement);
   console.log(domElement);
-});*/
+
+});
+*/
