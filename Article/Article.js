@@ -26,7 +26,7 @@ class Article {
     this.domElement.classList.toggle('article-open');
     this.expandButton.textContent = '';
     this.closeButton = this.domElement.querySelector('.closeButton');
-    this.closeButton.textContent = 'Close';
+    this.closeButton.textContent = 'Read';
     this.closeButton.addEventListener('click', () => this.closeArticle());
     
   }
@@ -34,7 +34,7 @@ class Article {
   closeArticle() {
     console.log('Article read and/or closed.');
     this.domElement.classList.remove('article-open');
-    this.expandButton.textContent = 'Expand';
+    this.domElement.classList.toggle('article-closed');
   }
 
 }

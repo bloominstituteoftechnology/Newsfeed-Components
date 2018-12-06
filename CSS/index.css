@@ -115,6 +115,9 @@
   transform: translate(-50%);
   background-color: white;
 }
+.article-closed {
+  display: none;
+}
 html,
 body {
   margin: 0;
