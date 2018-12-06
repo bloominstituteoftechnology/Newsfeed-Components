@@ -14,6 +14,7 @@ class Article {
     // Set a click handler on the expandButton reference, calling the expandArticle method.
     this.expandButton.addEventListener("click", e => this.expandArticle(e));
     
+    // create a reference to the ".closeButton" class and add click handler
     this.closeButton = this.domElement.querySelector(".closeButton");
     this.closeButton.addEventListener("click", e => this.closeArticle(e))
   }
@@ -87,10 +88,10 @@ function addArticle(e) {
     newArticleDate.textContent = formatDate(currentDate);
     newArticleElement.appendChild(newArticleDate);
 
-    // Adding paragraph elements for the new article's text (2 consecutive line breaks -> new paragraph)
+    // Adding paragraph elements for the new article's text (to follow the structure of the original document: 2 consecutive line breaks -> new paragraph)
     formArticleText.value.split("\n\n").forEach(formArticleParagraph => {
       let newArticleParagraph = document.createElement("p");
-      newArticleParagraph.style.whiteSpace = "pre-line";
+      newArticleParagraph.style.whiteSpace = "pre-line"; // Show line breaks
       newArticleParagraph.textContent = formArticleParagraph;
       newArticleElement.appendChild(newArticleParagraph);      
     });
@@ -98,8 +99,10 @@ function addArticle(e) {
     // Clone the expand button onto the new article's div element
     newArticleElement.appendChild(expandButton.cloneNode());
 
-    // Add the new article element + its children to the page and clear form fields
+    // Add the new article element + its children to the page
     articleArea.appendChild(newArticleElement);
+
+    // Clear all fields in form for creating new article
     formArticleTitle.value = formArticleText.value = "";
 
     // Return a new instantiation of the Article class  (bind class members and methods to the new article element)

@@ -17,8 +17,6 @@
   font-weight: 700;
   src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmWUlfBBc9.ttf) format('truetype');
 }
-/* Below this line is where you will start your work */
-/* It is important to note, you will not be writing any CSS in this file*/
 .header {
   width: 100%;
   height: 75px;
@@ -45,6 +43,8 @@
   position: fixed;
   top: 75px;
   left: -350px;
+  z-index: 2;
+  /* This set the layer level of the element, it has precendence over initial level of 1*/
   width: 350px;
   height: 100vh;
   /* This give the height 100% of the screen or, '100% of View Height' */
@@ -52,12 +52,10 @@
   border: 1px solid #004D40;
   border-left: none;
   border-bottom: none;
-  z-index: 2;
-  /* This set the layer level of the element, it has precendence over initial level of 1*/
 }
 .menu ul li {
   list-style-type: none;
-  font-size: 32px;
+  font-size: 3.2rem;
   padding: 30px 0;
   text-align: center;
 }
@@ -69,9 +67,17 @@
   overflow: hidden;
   height: 50px;
   background-color: white;
-  box-shadow: 2px 2px 2px lightgrey;
+  font-size: 1.6rem;
+  -webkit-box-shadow: 2px 2px 2px lightgrey;
+  -moz-box-shadow: 2px 2px 2px lightgrey;
+  -o-box-shadow: 2px 2px 2px lightgrey;
+  -ms-box-shadow: 2px 2px 2px lightgrey;
   padding: 0 20px 25px;
   border: 1px solid lightgrey;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -o-border-radius: 10px;
+  -ms-border-radius: 10px;
   border-radius: 10px;
   margin: 20px 10%;
 }
@@ -85,68 +91,95 @@
   margin: 10px;
 }
 .article h2 {
-  font-size: 28px;
-  padding: 0;
+  font-size: 2.8rem;
+  padding-bottom: 5px;
   margin: 15px 0 0;
 }
 .article .date {
-  font-size: 14px;
+  font-size: 1.4rem;
   margin: 0;
 }
 .article .expandButton {
   position: absolute;
   bottom: 0;
   left: 50%;
-  font-size: 12px;
+  font-size: 1.2rem;
   color: grey;
   cursor: pointer;
-  transform: translate(-50%);
-  background-color: white;
 }
 .newArticleForm {
   max-width: 90%;
   background-color: white;
-  box-shadow: 2px 2px 2px lightgrey;
+  -webkit-box-shadow: 2px 2px 2px lightgrey;
+  -moz-box-shadow: 2px 2px 2px lightgrey;
+  -o-box-shadow: 2px 2px 2px lightgrey;
+  -ms-box-shadow: 2px 2px 2px lightgrey;
   padding: 25px 50px 25px;
   margin: auto;
 }
+.newArticleForm h2 {
+  font-size: 2.4rem;
+}
 .newArticleForm label {
   display: block;
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 1.8rem;
 }
 .newArticleForm input[type="text"] {
   width: 25%;
   padding: 10px 20px;
-  border: 1px solid grey;
+  border: 1px solid lightgrey;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
   border-radius: 5px;
   margin: 10px 0 20px;
 }
 .newArticleForm textarea {
   display: block;
-  font-family: Roboto;
+  font-family: "Roboto";
   width: 90%;
   height: 100px;
   padding: 10px 20px;
   margin: 10px 0 20px;
 }
 .newArticleForm button {
-  background-color: cadetblue;
   display: inline-block;
+  background-color: cadetblue;
   color: snow;
   font-family: "Roboto";
-  font-size: 15px;
+  font-size: 1.5rem;
   font-weight: bold;
   cursor: pointer;
+  -webkit-box-shadow: inset 0px -3px 7px 0px grey;
+  -moz-box-shadow: inset 0px -3px 7px 0px grey;
+  -o-box-shadow: inset 0px -3px 7px 0px grey;
+  -ms-box-shadow: inset 0px -3px 7px 0px grey;
   padding: 10px 25px;
   border: 1px solid grey;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
   border-radius: 3px;
-  box-shadow: inset 0px -3px 7px 0px grey;
   margin-left: 1%;
 }
 .newArticleForm button:hover {
   background-color: grey;
+  -webkit-transition-duration: 500ms;
+  -moz-transition-duration: 500ms;
+  -o-transition-duration: 500ms;
+  -ms-transition-duration: 500ms;
   transition-duration: 500ms;
+  -webkit-transition-delay: 0;
+  -moz-transition-delay: 0;
+  -o-transition-delay: 0;
+  -ms-transition-delay: 0;
+  transition-delay: 0;
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  -ms-transition-property: all;
   transition-property: all;
 }
 .newArticleForm button:active {
@@ -155,8 +188,10 @@
 }
 html,
 body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Roboto';
   background-color: #fffef7;
+  font-family: "Roboto";
+  font-size: 62.5%;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }

@@ -5,11 +5,12 @@
   position: relative;
   overflow: hidden;
   height: 50px;
-  background-color: white;
-  box-shadow: 2px 2px 2px lightgrey;
+  background-color: @article-background-color;
+  font-size: 1.6rem;
+  #prefixed > .box-shadow(2px, 2px, 2px, @article-box-shadow-color);
   padding: 0 20px 25px;
-  border: 1px solid lightgrey;
-  border-radius: 10px;
+  border: 1px solid @article-border-color;
+  #prefixed > .border-radius(10px);
   margin: 20px 10%;
 
   .closeButton {
@@ -23,13 +24,13 @@
   }
 
   h2 {
-    font-size: 28px;
-    padding: 0;
+    font-size: 2.8rem;
+    padding-bottom: 5px;
     margin: 15px 0 0;
   }
 
   .date {
-    font-size: 14px;
+    font-size: 1.4rem;
     margin: 0;
   }
 
@@ -37,38 +38,39 @@
     position: absolute;
     bottom: 0;
     left: 50%;
-    font-size: 12px;
-    color: grey;
+    font-size: 1.2rem;
+    color: @article-expand-button-font-color;
     cursor: pointer;
-    transform: translate(-50%);
-    background-color: white;
   }
 }
 
 .newArticleForm {
   max-width: 90%;
-  background-color: white;
-  box-shadow: 2px 2px 2px lightgrey;
+  background-color: @article-background-color;
+  #prefixed > .box-shadow(2px, 2px, 2px, @article-box-shadow-color);
   padding: 25px 50px 25px;
   margin: auto;
 
+  h2 {
+    font-size: 2.4rem;
+  }
+
   label {
     display: block;
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 1.8rem;
   }
 
   input[type="text"] {
     width: 25%;
     padding: 10px 20px;
-    border: 1px solid grey;
-    border-radius: 5px;
+    border: 1px solid @article-border-color;
+    #prefixed > .border-radius(5px);
     margin: 10px 0 20px;
   }
 
   textarea {
     display: block;
-    font-family: Roboto;
+    font-family: @article-form-text-font;
     width: 90%;
     height: 100px;
     padding: 10px 20px;
@@ -76,23 +78,22 @@
   }
 
   button {
-    background-color: cadetblue;
     display: inline-block;
-    color: snow;
-    font-family: "Roboto";
-    font-size: 15px;
+    background-color: @post-article-button-background-color;
+    color: @post-article-button-font-color;
+    font-family: @post-article-button-font;
+    font-size: 1.5rem;
     font-weight: bold;
     cursor: pointer;
+    #prefixed > .box-shadow(inset, 0px, -3px, 7px, 0px, @post-article-button-box-shadow-color);
     padding: 10px 25px;
-    border: 1px solid grey;
-    border-radius: 3px;
-    box-shadow: inset 0px -3px 7px 0px grey;
+    border: 1px solid @post-article-button-border-color;
+    #prefixed > .border-radius(3px);
     margin-left: 1%;
 
     &:hover {
         background-color: grey;
-        transition-duration: 500ms;
-        transition-property: all;
+        #prefixed > .transition-control(500ms);
     }
 
     &:active {

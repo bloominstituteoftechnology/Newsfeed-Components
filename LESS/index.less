@@ -1,15 +1,18 @@
 /* This line is importing the font 'Roboto'. DO NOT change line 2*/
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
 
-/* Below this line is where you will start your work */
-/* It is important to note, you will not be writing any CSS in this file*/
+@import 'variables.less';
+@import 'mixins.less';
+
 @import '../Header/Header.less';
 @import '../Menu/Menu.less';
 @import '../Article/Article.less';
 
 html, body {
-  margin: 0;
+  background-color: @main-background-color;
+  font-family: @main-font;
+  font-size: 62.5%;
+  box-sizing: border-box;
   padding: 0;
-  font-family: 'Roboto';
-  background-color: #fffef7;
+  margin: 0;
 }

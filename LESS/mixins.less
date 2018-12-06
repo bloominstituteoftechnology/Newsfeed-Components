@@ -1,0 +1,35 @@
+// Vendor prefixes namespace
+#prefixed {
+    .transition-control(@duration, @delay: 0) {
+        -webkit-transition-duration: @duration;
+        -moz-transition-duration: @duration;
+        -o-transition-duration: @duration;
+        -ms-transition-duration: @duration;
+        transition-duration: @duration;
+        -webkit-transition-delay: @delay;
+        -moz-transition-delay: @delay;
+        -o-transition-delay: @delay;
+        -ms-transition-delay: @delay;
+        transition-delay: @delay;
+        -webkit-transition-property: all;
+        -moz-transition-property: all;
+        -o-transition-property: all;
+        -ms-transition-property: all;
+        transition-property: all;
+    }
+
+    .border-radius(@radius) {
+        -webkit-border-radius: @radius;
+        -moz-border-radius: @radius;
+        -o-border-radius: @radius;
+        -ms-border-radius: @radius;
+        border-radius: @radius;
+    }
+
+    .box-shadow(...) {
+        -webkit-box-shadow: @arguments;
+        -moz-box-shadow: @arguments;
+        -o-box-shadow: @arguments;
+        -ms-box-shadow: @arguments;
+    }
+}
