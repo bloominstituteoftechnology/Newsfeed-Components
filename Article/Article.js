@@ -24,6 +24,7 @@ class Article {
   }
 
   expandArticle() {
+    this.closeAllArticles();
     TweenMax.to(this.domElement, 0.5, {height:400});
     this.expandButton.textContent = 'Click To Close';
     this.expandButton.addEventListener('click', () => this.closeArticle(), {once:true});
@@ -33,6 +34,13 @@ class Article {
     TweenMax.to(this.domElement, 0.5, {height:50});
     this.expandButton.textContent = 'Click To Expand';
     this.expandButton.addEventListener('click', () => this.expandArticle(), {once:true});
+  }
+
+  closeAllArticles() {
+    articleObjectArray.forEach(item => {
+      TweenMax.to(item.domElement, 0.5, {height:50});
+      item.expandButton.textContent = 'Click To Expand';
+    });
   }
 }
 
@@ -47,7 +55,7 @@ let articleObjectArray = [];
 */
 
 let articles = document.querySelectorAll('.article');
-articles.forEach( article => new Article(article) );
+articles.forEach( article =>  new Article(article) );
 
 
 
