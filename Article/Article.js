@@ -19,7 +19,7 @@ class Article {
     // Using our reference to the domElement, toggle a class to expand or hide the article.
     this.domElement.classList.toggle('article-open');
     TweenMax.to(".expandButton", 2, {boxShadow:"0px 0px 20px green", color:"black"});
-    TweenLite.to('.articles p', 2, { color:"red"});
+    TweenLite.to('.articles p', 2, { color:"red", });
   }
 }
 
