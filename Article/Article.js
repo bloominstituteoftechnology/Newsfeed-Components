@@ -1,20 +1,22 @@
 // Because classes are not hoised you will need to start your code at the bottom of the page.  Look for the comment "START HERE"
 
 class Article {
-  constructor(domElement) {
+  constructor(article) {
     // assign this.domElement to the passed in domElement
-    this.domElement;
-    // create a reference to the ".expandButton" class. 
-    this.expandButton;
+    this.article = article;
+    // create a reference to the ".expandButton" class.g
+    this.heading = this.article.querySelector(".article h2");
+    this.content = this.article.querySelector(".article p");
+    this.expand = this.article.querySelector(".expandButton ");
+    console.log(this.heading);
+    this.expand.textContent = "expand";
     // Using your expandButton reference, update the text on your expandButton to say "expand"
-    
+    this.expand.addEventListener("click", e => this.expandArticle(e));
     // Set a click handler on the expandButton reference, calling the expandArticle method.
-    
   }
 
   expandArticle() {
-    // Using our reference to the domElement, toggle a class to expand or hide the article.
-
+    this.article.classList.toggle("article-open"); // Using our reference to the domElement, toggle a class to expand or hide the article.
   }
 }
 
@@ -26,4 +28,28 @@ class Article {
 
 */
 
-let articles;
+const article = document.querySelectorAll(".article ");
+console.log(article);
+article.forEach(article => {
+  return new Article(article);
+});
+
+console.log(articles);
+window.onload = function() {
+  if (window.jQuery) {
+    // jQuery is loaded
+    alert("Yeah!");
+  } else {
+    // jQuery is not loaded
+    alert("Doesn't Work");
+  }
+};
+
+window.onload = function() {
+  if (window.jQuery) {
+    // jQuery is loaded
+    alert("Yeah!");
+  } else {
+    location.reload();
+  }
+};
