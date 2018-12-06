@@ -9,7 +9,7 @@ class Article {
     this.expandButton = this.domElement.querySelector(".expandButton");
     console.log(this.expandButton);
     // Using your expandButton reference, update the text on your expandButton to say "expand"
-
+    this.expandButton.textContent = "expand";
     // Set a click handler on the expandButton reference, calling the expandArticle method.
   }
 
