@@ -3,11 +3,15 @@
 class Article {
   constructor(domElement) {
     this.domElement = domElement;
+    
     this.expandButton = this.domElement.querySelector(".expandButton");
     this.expandButton.textContent = "Click to Expand";
     this.expandButton.addEventListener("click", () => this.expandArticle());
-
-    
+    // for deleting articles
+    this.delete = this.domElement.querySelector(".x");
+    this.delete.addEventListener("click", (e) => {
+      this.domElement.style.display = "none";
+    });
   }
 
   expandArticle() {
