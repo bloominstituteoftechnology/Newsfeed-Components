@@ -2,9 +2,15 @@ const toggleMenu = e => {
   e.stopImmediatePropagation();
 
   if (menu.classList.contains("menu--is-open")) {
-    TweenMax.to(menu, 1, { x: -350, ease: Power2.easeIn });
+    TweenMax.to(menu, 1, { 
+      x: -350, 
+      ease: Power2.easeIn 
+    });
   } else {
-    TweenMax.to(menu, 1, { x: 350, ease: Power2.easeOut });
+    TweenMax.to(menu, 1, { 
+      x: 350, 
+      ease: Power2.easeOut 
+    });
   }
 
   menu.classList.toggle("menu--is-open");
@@ -25,10 +31,33 @@ menuButton.addEventListener("click", e => toggleMenu(e));
 // Close menu if clicking outside of it
 window.addEventListener("click", e => {
   if (menu.classList.contains("menu--is-open")) {
-    TweenMax.to(menu, 1, { x: -350, ease: Power2.easeIn });
+    TweenMax.to(menu, 1, { 
+      x: -350, 
+      ease: Power2.easeIn 
+    });
     menu.classList.toggle("menu--is-open");
   }
 });
 
 // Related to code above - do not close the menu if clicking inside of it
 menu.addEventListener("click", e => e.stopImmediatePropagation());
+
+// Menu options hover animation
+// ----------------------------
+
+menuOptions = document.querySelectorAll(".menu > ul > li");
+menuOptions.forEach(option => {
+  option.addEventListener("mouseover", e => {
+    TweenMax.to(option, 0, { 
+      fontWeight: "bold", 
+      textDecoration: "underline", 
+      cursor: "pointer" 
+    });
+  });
+  option.addEventListener("mouseout", e => {
+    TweenMax.to(option, 0, { 
+      fontWeight: "normal", 
+      textDecoration: "none" 
+    });
+  });
+});

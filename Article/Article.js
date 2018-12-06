@@ -22,11 +22,17 @@ class Article {
     e.stopImmediatePropagation();
 
     if (this.domElement.classList.contains("article--is-open")) {
-      TweenMax.to(this.domElement, 1.5, { height: 50 });
+      TweenMax.to(this.domElement, 1.5, { 
+        height: 50 
+      });
       this.expandButton.textContent = "Click to Expand";
     } else {
-      TweenMax.set(this.domElement, { height: "auto" });
-      TweenMax.from(this.domElement, 1.5, { height: 50 });
+      TweenMax.set(this.domElement, { 
+        height: "auto" 
+      });
+      TweenMax.from(this.domElement, 1.5, { 
+        height: 50 
+      });
       this.expandButton.textContent = "Click to Hide";
     }
 
