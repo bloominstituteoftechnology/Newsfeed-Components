@@ -106,6 +106,9 @@
 .article-open {
   height: 400px;
 }
+.article-delete {
+  display: none;
+}
 html,
 body {
   margin: 0;
