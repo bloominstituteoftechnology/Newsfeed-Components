@@ -15,7 +15,7 @@ class Article {
     
     // Set a click handler on the expandButton reference, calling the expandArticle method.
 
-    this.expandButton.addEventListener('click', () => this.expandArticle());
+    this.expandButton.addEventListener('click', () => this.expandArticle(), {once:true});
     this.removeButton.addEventListener('click', () => this.removeArticle()); 
   }
 
@@ -24,16 +24,15 @@ class Article {
   }
 
   expandArticle() {
-    articleObjectArray.forEach(item => item.closeArticle());
     TweenMax.to(this.domElement, 0.5, {height:400});
     this.expandButton.textContent = 'Click To Close';
-    this.expandButton.addEventListener('click', () => this.closeArticle());
+    this.expandButton.addEventListener('click', () => this.closeArticle(), {once:true});
   }
 
   closeArticle() {
     TweenMax.to(this.domElement, 0.5, {height:50});
     this.expandButton.textContent = 'Click To Expand';
-    this.expandButton.addEventListener('click', () => this.expandArticle());
+    this.expandButton.addEventListener('click', () => this.expandArticle(), {once:true});
   }
 }
 
