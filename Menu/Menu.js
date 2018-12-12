@@ -12,4 +12,4 @@ const menu = documentSelector(".menu");
 const menuButton = documentSelector(".menu-button");
 // Using your menuButton reference, add a click handler that calls toggleMenu
 
-menuButton.addEventListener("click", ( menuButton.classList.toggle("toggle-on"));)
+menuButton.addEventListener("click", ( menuButton.classList.toggle("toggle-on")));
