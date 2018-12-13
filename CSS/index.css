@@ -60,7 +60,7 @@ body {
   border-left: none;
   border-bottom: none;
   z-index: 2;
-  /* This set the layer level of the element, it has precendence over initial level of 1*/
+  /* This set the layer level of the element, it has precedence over initial level of 1*/
 }
 .menu ul li {
   list-style-type: none;

@@ -26,4 +26,4 @@ class Article {
 
 */
 
-let articles = document.querySelectorAll('.article').forEach( articles => { new (Article))};
+let articles = document.querySelectorAll('.article').forEach( life => { new (Article)})
