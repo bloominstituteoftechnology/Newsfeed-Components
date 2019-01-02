@@ -1,4 +1,4 @@
-// Because classes are not hoised you will need to start your code at
+// Because classes are not hoisted you will need to start your code at
 // the bottom of the page.  Look for the comment "START HERE"
 
 class Article {
