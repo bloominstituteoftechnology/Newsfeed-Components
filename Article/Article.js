@@ -9,7 +9,7 @@ class ArticleElement {
   }
 
   expandArticle() {
-    this.expandButton.classList.toggle('close');
+    //this.expandButton.classList.toggle('close');
     this.article.classList.toggle('article-open');
     this.expandButton.innerText === 'expand' ? this.expandButton.innerText = 'collapse' : this.expandButton.innerText = 'expand';
   }
@@ -17,3 +17,4 @@ class ArticleElement {
 
 const articles = document.querySelectorAll('.article');
 articles.forEach( article => new ArticleElement(article));
+
