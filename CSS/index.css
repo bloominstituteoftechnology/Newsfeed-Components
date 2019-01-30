@@ -35,6 +35,7 @@
   margin: 0;
   font-size: 48px;
 }
+@import '../Menu/Menu.less';
 html,
 body {
   margin: 0;
