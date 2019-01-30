@@ -1,5 +1,5 @@
 
-const toggleMenu = (event) => {
+const toggleMenu = () => {
   // Toggle the "menu--open" class on your menu refence. 
   console.log("toggleMenu was called");
   menu.classList.toggle("menu--open");
