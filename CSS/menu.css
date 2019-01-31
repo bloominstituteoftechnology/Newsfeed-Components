@@ -1,0 +1,40 @@
+.menu {
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.144);
+  z-index: 3;
+  height: 100%;
+  width: 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow-x: hidden;
+  transition: 2s;
+}
+
+.menu .overlay-content {
+  position: relative;
+  top: 10%;
+  width: 100%;
+  text-align: center;
+}
+
+.menu ul li {
+  list-style-type: none;
+  font-size: 3rem;
+  padding: 2rem 0;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.menu ul li:hover,
+.menu ul li:focus {
+  color: #e90000;
+  transition: 0.5s;
+}
+
+.menu--open {
+  width: 100%;
+}

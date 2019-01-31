@@ -1,140 +1,139 @@
 /* This line is importing the font 'Roboto'. DO NOT change line 2*/
 
-@font-face {
-    font-family: 'Roboto';
-    font-style: italic;
-    font-weight: 400;
-    src: local('Roboto Italic'), local('Roboto-Italic'), url(https://fonts.gstatic.com/s/roboto/v18/KFOkCnqEu92Fr1Mu51xIIzc.ttf) format('truetype');
+body {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: white;
 }
-
-@font-face {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxP.ttf) format('truetype');
+header {
+  width: 100%;
+  height: 8rem;
+  background: white;
+  color: rgb(80, 0, 0);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  font-family: "Rock Salt", cursive;
+  font-weight: normal;
 }
-
-@font-face {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 700;
-    src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmWUlfBBc9.ttf) format('truetype');
+button:focus {
+  outline: 0;
 }
-
-
-/* Below this line is where you will start your work */
-
-
-/* It is important to note, you will not be writing any CSS in this file*/
-
-.header {
-    width: 100%;
-    height: 75px;
-    background-color: #388E3C;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    z-index: 2;
-}
-
-.header h1 {
-    margin: 0;
-    font-size: 48px;
-}
-
-.menu-button {
-    position: absolute;
-    left: 20px;
-    cursor: pointer;
-}
-
-.menu {
-    display: none;
-    position: fixed;
-    top: 75px;
-    left: 0;
-    width: 350px;
-    height: 100vh;
-    /* This give the height 100% of the screen or, '100% of View Height' */
-    background-color: #81C784;
-    border: 1px solid #004D40;
-    border-left: none;
-    border-bottom: none;
-    z-index: 2;
-    /* This set the layer level of the element, it has precendence over initial level of 1*/
-}
-
-.menu ul li {
-    list-style-type: none;
-    font-size: 32px;
-    padding: 30px 0;
-    text-align: center;
-}
-
-.menu--open {
-    display: block;
+header h1 {
+  font-size: 48px;
 }
 
 .articles {
-    margin-top: 95px;
+  margin-top: 95px;
 }
 
 .article {
-    margin: 20px 10%;
-    padding: 0 20px 25px;
-    border: 1px solid lightgrey;
-    border-radius: 10px;
-    background-color: white;
-    position: relative;
-    height: 50px;
-    overflow: hidden;
-    box-shadow: 2px 2px 2px lightgrey;
+  list-style-type: none;
+}
+.article button {
+  color: rgb(97, 0, 0);
+  background: transparent;
+  border: none;
+  width: 100%;
+  list-style-type: none;
+  font-family: "Special Elite", cursive;
+
+  text-align: left;
+  padding: 1rem;
+  text-decoration: none;
+  transition: background-color 0.5s ease-in-out;
+
+  position: relative;
+}
+
+.article button:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(145, 0, 0);
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s;
+}
+.article button:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+.article button h2::after {
+  content: "+";
+  display: inline-block;
+  font-size: 2rem;
+  margin-right: 1rem;
+  line-height: 0.5em;
+  float: right;
+  transition-duration: 1s;
+}
+.article button.open h2::after {
+  display: inline-block;
+  transition-duration: 1s;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.article button:hover {
+  background: #dddddd;
+}
+
+.panel {
+  height: 0;
+  max-height: 20rem;
+  overflow: hidden;
+}
+
+.panel p {
+  font-size: 1.5rem;
+  margin: 1rem;
+  font-family: "Scope One", serif;
+}
+.active {
+  display: block;
+  height: 20rem;
+  overflow-y: scroll;
+  transition: height 1.5s ease-out;
+}
+.active::-webkit-scrollbar {
+  width: 20px;
+}
+.active::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+.active::-webkit-scrollbar-thumb {
+  background: rgb(70, 70, 70);
+  border-radius: 10px;
+}
+.active::-webkit-scrollbar-thumb:hover {
+  background: #272727;
+}
+
+.close {
+  height: 0;
+  overflow: hidden;
+  transition: height 1.5s ease-in;
 }
 
 .article h2 {
-    font-size: 28px;
-    padding: 0;
-    margin: 15px 0 0;
-}
-
-.article .date {
-    margin: 0;
-    font-size: 14px;
-}
-
-.article .close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-}
-
-.article .expandButton {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    font-size: 12px;
-    color: grey;
-    cursor: pointer;
-    transform: translate(-50%);
-    background-color: white;
-}
-
-.article-open {
-    height: 400px;
+  font-size: 2rem;
+  padding: 0;
+  margin: 15px 0 0;
 }
 
 .scroll {
-    max-height: 400px;
-    overflow-y: scroll;
-}
-
-html,
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto';
-    background-color: #fffef7;
+  max-height: 400px;
+  overflow-y: scroll;
 }

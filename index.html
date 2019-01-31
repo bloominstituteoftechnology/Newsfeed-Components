@@ -1,136 +1,272 @@
 <!-- Do not add anything to the HTML until Part 3 of the project -->
 <!DOCTYPE html>
 <html>
-
-<head>
-
+  <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TimelineMax.min.js"></script>
+
     <title>Lambda School Newsfeed</title>
-    <link rel="stylesheet" type="text/css" media="screen" href="./CSS/index.css" />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="./CSS/reset.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="./CSS/menu.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="./CSS/hamburger.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="./CSS/index.css"
+    />
     <script src="./Menu/Menu.js" async></script>
     <script src="./Article/Article.js" async></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Rock+Salt|Scope+One|Special+Elite"
+      rel="stylesheet"
+    />
+  </head>
 
-</head>
-
-<body>
-    <div class="header">
-        <img class="menu-button" src="./assets/menu.png" />
-        <h1>Lambda School Newsfeed</h1>
+  <body>
+    <div class="menu overlay">
+      <ul class="overlay-content">
+        <li>Students</li>
+        <li>Faculty</li>
+        <li>What's New</li>
+        <li>Tech Trends</li>
+        <li>Music</li>
+        <li>Log Out</li>
+      </ul>
     </div>
-    <div class="menu">
-        <ul>
-            <li>Students</li>
-            <li>Faculty</li>
-            <li>What's New</li>
-            <li>Tech Trends</li>
-            <li>Music</li>
-            <li>Log Out</li>
-        </ul>
-    </div>
-    <div class="articles">
-        <div class="article">
-            <h2>UX Design</h2>
-            <p class="date">Nov 5th, 2017</p>
+    <header>
+      <h1>Lambda School Newsfeed</h1>
+      <button class="hamburger hamburger--emphatic" type="button">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
+    </header>
 
-            <p>Interface design trends are dynamic and interesting. UI-design of mobile applications depends largely on users. Therefore, the emphasis is not only on aesthetics, but also on functionality. Trends in UX for the upcoming future. Based on Mary
-                Meeker’s Internet Trends report, here are the trends in user experience that needs to be considered for the rest of 2018.</p>
+    <ul class="articles">
+      <li class="article">
+        <button class="shut"><h2>UX Design</h2></button>
 
-            <ul>
-                <li>
-
-                    The use of Digital Media is growing. There has been a growth of 4% in the digital media usage, reaching 5.9 hours per day. Mobile usage reached 3.3 hours, while the desktop usage decreased to 2.1 hours per day.
-                </li>
-                <li>
-                    The Search Functionality. When it comes to product discovery, Amazon seems to be the first option, but search engines come second at a percentage of 36%. Amazon may be the primary choice, but you cannot ignore how your SEO strategy is critical in affecting
-                    your customers.
-                </li>
-                <li>
-                    Messaging, voice search and video are expanding. According to Mary Meeker’s Report, messaging tends to increase. Messaging platforms are becoming more and more used on a daily basis and brands are exploring the best ways to include them in their digital
-                    strategies.
-
-                </li>
-                <li>
-                    Social media and product promotion. It seems that the main social media platforms play a key role in the stage of awareness and brands consideration. Companies can now use them to create tangible leads.
-
-                </li>
-                <li>
-                    Internet advertising is increasing. There has been a growth of 21% in the Internet advertising spent in the US with a growing allocation of the budget going to mobile ads.
-
-                </li>
-                <li>
-                    Digital Fingerprint and Search Functionality. One of the biggest modifications when it comes to the search process is related to the increase of personalization. The more data search engines access, the higher the chances of successful personalization.
-                </li>
-            </ul>
-
-            <span class='expandButton'></span>
+        <div class="panel close">
+          <p>
+            Interface design trends are dynamic and interesting. UI-design of
+            mobile applications depends largely on users. Therefore, the
+            emphasis is not only on aesthetics, but also on functionality.
+            Trends in UX for the upcoming future. Based on Mary Meeker’s
+            Internet Trends report, here are the trends in user experience that
+            needs to be considered for the rest of 2018. Lorem ipsum, dolor sit
+            amet consectetur adipisicing elit. Impedit, libero a accusantium
+            explicabo vero laudantium repellat consequuntur qui beatae alias
+            molestiae molestias nobis eius similique culpa ea, sapiente optio
+            eum! Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Maxime similique cupiditate labore, veritatis tempora dolor laborum
+            iste animi est assumenda mollitia dolorem dicta? Dolore
+            necessitatibus et ipsa error mollitia delectus. Lorem ipsum dolor
+            sit amet consectetur adipisicing elit. At eos aspernatur, deleniti
+            beatae quasi perspiciatis itaque aliquid, velit magnam, temporibus
+            ducimus soluta ad vel. Itaque veniam magnam aut tempore dolorem
+            quidem soluta, deserunt saepe minima expedita ad corrupti,
+          </p>
+          <p>
+            blanditiis nam, perspiciatis rerum ex voluptate veritatis! Ab earum
+            eos nesciunt officiis odit minus aperiam et facere animi? Corporis,
+            error non distinctio natus eveniet exercitationem nostrum
+            repudiandae voluptatibus cum minima placeat sunt deleniti impedit
+            velit animi, dolorum officiis ratione et. Officia unde vitae
+            accusantium, voluptas dolorum nesciunt distinctio ab iure sapiente
+            culpa ipsa non veritatis eum? Facere non dolor facilis quia
+            similique error rerum eaque ipsa doloremque necessitatibus, omnis
+            minima dolores vel corporis eum cumque! Facilis enim officiis
+            cupiditate rem nesciunt architecto deleniti ab blanditiis ut quae
+            impedit tenetur aspernatur, accusamus quis vel eius deserunt
+            doloremque consectetur rerum magnam? Qui distinctio sunt esse odio
+            aspernatur doloribus molestias voluptate amet sed beatae assumenda
+            nobis harum similique officiis sapiente iste veritatis, maxime ut
+            magni minus? Quaerat dolore quisquam reprehenderit, ipsum aperiam
+            error consectetur aliquid placeat corporis reiciendis dolorem odio,
+            illo similique id magnam vitae! Nesciunt quo suscipit excepturi fuga
+            possimus eos quod voluptatibus perspiciatis accusantium voluptatum.
+            Dolorum fugit et facilis, saepe delectus sequi consequatur.
+          </p>
         </div>
-        <div class="article">
-            <h2>Lambda School Students: "We're the best!"</h2>
-            <p class="date">Nov 5th, 2017</p>
+      </li>
+      <li class="article">
+        <button class="shut">
+          <h2>Lambda School Students: "We're the best!"</h2>
+        </button>
 
-            <p>Lucas ipsum dolor sit amet ben twi'lek padmé darth darth darth moff hutt organa twi'lek. Ben amidala secura skywalker lando moff wicket tatooine luke. Solo wampa wampa calrissian yoda moff. Darth grievous darth gonk darth hutt. Darth baba
-                skywalker watto fett jango maul han. Mon ewok sidious sidious lando kenobi grievous gamorrean solo. Yoda wedge utapau darth calamari. Hutt calamari darth jabba. Darth dooku amidala organa moff. Boba darth binks solo hutt skywalker dantooine
-                skywalker. Qui-gonn jar twi'lek jinn leia jango skywalker mon. </p>
+        <div class="panel close close">
+          <p>
+            Lucas ipsum dolor sit amet ben twi'lek padmé darth darth darth moff
+            hutt organa twi'lek. Ben amidala secura skywalker lando moff wicket
+            tatooine luke. Solo wampa wampa calrissian yoda moff. Darth grievous
+            darth gonk darth hutt. Darth baba skywalker watto fett jango maul
+            han. Mon ewok sidious sidious lando kenobi grievous gamorrean solo.
+            Yoda wedge utapau darth calamari. Hutt calamari darth jabba. Darth
+            dooku amidala organa moff. Boba darth binks solo hutt skywalker
+            dantooine skywalker. Qui-gonn jar twi'lek jinn leia jango skywalker
+            mon.
+          </p>
 
-            <p>Grievous fett calamari anakin skywalker hutt. Alderaan darth kenobi darth r2-d2 windu mothma. Sidious darth calamari moff. Wampa mothma sith wedge solo mara. Darth gonk maul sith moff chewbacca palpatine mace amidala. C-3po solo skywalker
-                anakin yoda leia. Maul wampa bespin watto jade ewok darth jabba. Lando dantooine moff k-3po dantooine luke. Fisto mandalore darth wedge c-3p0 ahsoka. Secura moff palpatine fett. Anakin sith darth darth. Moff solo leia ben ponda jade. Binks
-                jango aayla skywalker skywalker cade. Mustafar darth ventress anakin watto. Yavin jawa sebulba owen jinn tatooine sith organa.</p>
+          <p>
+            Grievous fett calamari anakin skywalker hutt. Alderaan darth kenobi
+            darth r2-d2 windu mothma. Sidious darth calamari moff. Wampa mothma
+            sith wedge solo mara. Darth gonk maul sith moff chewbacca palpatine
+            mace amidala. C-3po solo skywalker anakin yoda leia. Maul wampa
+            bespin watto jade ewok darth jabba. Lando dantooine moff k-3po
+            dantooine luke. Fisto mandalore darth wedge c-3p0 ahsoka. Secura
+            moff palpatine fett. Anakin sith darth darth. Moff solo leia ben
+            ponda jade. Binks jango aayla skywalker skywalker cade. Mustafar
+            darth ventress anakin watto. Yavin jawa sebulba owen jinn tatooine
+            sith organa.
+          </p>
 
-            <p>Dagobah hutt jawa leia calamari ventress skywalker yoda. Binks wicket hutt coruscant sidious naboo ackbar tatooine. Hutt lars padmé darth. Maul solo darth darth jabba qui-gon chewbacca darth maul. Moff baba wicket han. C-3po antilles moff
-                qui-gon ahsoka aayla dooku amidala. Palpatine droid amidala droid k-3po twi'lek padmé wookiee. Leia moff calamari mon obi-wan. Solo grievous lando coruscant. Jinn darth palpatine obi-wan mon.</p>
-            <span class='expandButton'></span>
+          <p>
+            Dagobah hutt jawa leia calamari ventress skywalker yoda. Binks
+            wicket hutt coruscant sidious naboo ackbar tatooine. Hutt lars padmé
+            darth. Maul solo darth darth jabba qui-gon chewbacca darth maul.
+            Moff baba wicket han. C-3po antilles moff qui-gon ahsoka aayla dooku
+            amidala. Palpatine droid amidala droid k-3po twi'lek padmé wookiee.
+            Leia moff calamari mon obi-wan. Solo grievous lando coruscant. Jinn
+            darth palpatine obi-wan mon.
+          </p>
         </div>
-        <div class="article">
-            <h2>Javascript and You, ES6</h2>
-            <p class="date">Nov 7th, 2017</p>
-            <p>Alohamora wand elf parchment, Wingardium Leviosa hippogriff, house dementors betrayal. Holly, Snape centaur portkey ghost Hermione spell bezoar Scabbers. Peruvian-Night-Powder werewolf, Dobby pear-tickle half-moon-glasses, Knight-Bus. Padfoot
-                snargaluff seeker: Hagrid broomstick mischief managed. Snitch Fluffy rock-cake, 9 ¾ dress robes I must not tell lies. Mudbloods yew pumpkin juice phials Ravenclaw’s Diadem 10 galleons Thieves Downfall. Ministry-of-Magic mimubulus mimbletonia
-                Pigwidgeon knut phoenix feather other minister Azkaban. Hedwig Daily Prophet treacle tart full-moon Ollivanders You-Know-Who cursed. Fawkes maze raw-steak Voldemort Goblin Wars snitch Forbidden forest grindylows wool socks.</p>
+      </li>
+      <li class="article">
+        <button class="shut"><h2>Javascript and You, ES6</h2></button>
+        <div class="panel close">
+          <p>
+            Alohamora wand elf parchment, Wingardium Leviosa hippogriff, house
+            dementors betrayal. Holly, Snape centaur portkey ghost Hermione
+            spell bezoar Scabbers. Peruvian-Night-Powder werewolf, Dobby
+            pear-tickle half-moon-glasses, Knight-Bus. Padfoot snargaluff
+            seeker: Hagrid broomstick mischief managed. Snitch Fluffy rock-cake,
+            9 ¾ dress robes I must not tell lies. Mudbloods yew pumpkin juice
+            phials Ravenclaw’s Diadem 10 galleons Thieves Downfall.
+            Ministry-of-Magic mimubulus mimbletonia Pigwidgeon knut phoenix
+            feather other minister Azkaban. Hedwig Daily Prophet treacle tart
+            full-moon Ollivanders You-Know-Who cursed. Fawkes maze raw-steak
+            Voldemort Goblin Wars snitch Forbidden forest grindylows wool socks.
+          </p>
 
-            <p>Boggarts lavender robes, Hermione Granger Fantastic Beasts and Where to Find Them. Bee in your bonnet Hand of Glory elder wand, spectacles House Cup Bertie Bott’s Every Flavor Beans Impedimenta. Stunning spells tap-dancing spider Slytherin’s
-                Heir mewing kittens Remus Lupin. Palominos scarlet train black robes, Metamorphimagus Niffler dead easy second bedroom. Padma and Parvati Sorting Hat Minister of Magic blue turban remember my last.</p>
-            <span class='expandButton'></span>
+          <p>
+            Boggarts lavender robes, Hermione Granger Fantastic Beasts and Where
+            to Find Them. Bee in your bonnet Hand of Glory elder wand,
+            spectacles House Cup Bertie Bott’s Every Flavor Beans Impedimenta.
+            Stunning spells tap-dancing spider Slytherin’s Heir mewing kittens
+            Remus Lupin. Palominos scarlet train black robes, Metamorphimagus
+            Niffler dead easy second bedroom. Padma and Parvati Sorting Hat
+            Minister of Magic blue turban remember my last.
+          </p>
         </div>
-        <div class="article">
-            <h2>React vs Angular vs Vue</h2>
-            <p class="date">Nov 7th, 2017</p>
+      </li>
+      <li class="article">
+        <button class="shut"><h2>React vs Angular vs Vue</h2></button>
 
-            <p>Bulbasaur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ivysaur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venusaur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Charmander Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit. Charmeleon Lorem ipsum dolor sit amet, consectetur adipiscing elit. Charizard Lorem ipsum dolor sit amet, consectetur adipiscing elit. Squirtle Lorem ipsum dolor sit amet, consectetur adipiscing elit. Wartortle Lorem ipsum
-                dolor sit amet, consectetur adipiscing elit. Blastoise Lorem ipsum dolor sit amet, consectetur adipiscing elit. Caterpie Lorem ipsum dolor sit amet, consectetur adipiscing elit. Metapod Lorem ipsum dolor sit amet, consectetur adipiscing
-                elit. Butterfree Lorem ipsum dolor sit amet, consectetur adipiscing elit. Weedle Lorem ipsum dolor sit amet, consectetur adipiscing elit. Kakuna Lorem ipsum dolor sit amet, consectetur adipiscing elit. Beedrill Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit.
-            </p>
+        <div class="panel close">
+          <p>
+            Bulbasaur Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Ivysaur Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Venusaur Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Charmander Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Charmeleon Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Charizard Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Squirtle Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Wartortle Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Blastoise Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Caterpie Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Metapod Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Butterfree Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Weedle Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Kakuna Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Beedrill Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
 
-            <p>Pidgey Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pidgeotto Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pidgeot Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rattata Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit. Raticate Lorem ipsum dolor sit amet, consectetur adipiscing elit. Spearow Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fearow Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ekans Lorem ipsum dolor
-                sit amet, consectetur adipiscing elit. Arbok Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pikachu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Raichu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sandshrew
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sandslash Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nidoran Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nidorina Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit. Nidoqueen Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nidoran Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nidorino Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nidoking Lorem ipsum</p>
-            <span class='expandButton'></span>
+          <p>
+            Pidgey Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Pidgeotto Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Pidgeot Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Rattata Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Raticate Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Spearow Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Fearow Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Ekans Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arbok
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pikachu
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Raichu
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sandshrew
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sandslash
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nidoran
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nidorina
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nidoqueen
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nidoran
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nidorino
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nidoking
+            Lorem ipsum
+          </p>
         </div>
-        <div class="article">
-            <h2>Professional Software Development in 2018</h2>
-            <p class="date">Nov 7th, 2017</p>
-            <p>Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor,
-                hodor. Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? </p>
+      </li>
+      <li class="article">
+        <button class="shut">
+          <h2>Professional Software Development in 2018</h2>
+        </button>
 
-            <p>Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor; hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
-                hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? </p>
+        <div class="panel close">
+          <p>
+            Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor
+            hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor hodor.
+            Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor;
+            hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor. Hodor hodor
+            hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor
+            hodor hodor; hodor hodor?
+          </p>
 
-            <p>Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor! Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor,
-                hodor. Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.
-            </p>
+          <p>
+            Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor
+            hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor; hodor hodor
+            hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor
+            hodor! Hodor, hodor. Hodor. Hodor, HODOR hodor, hodor hodor, hodor,
+            hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor
+            hodor hodor hodor?! Hodor hodor - hodor hodor hodor. Hodor. Hodor
+            hodor... Hodor hodor hodor hodor hodor?
+          </p>
 
-            <p>Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor; hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
-                hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? </p>
-            <span class='expandButton'></span>
+          <p>
+            Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor
+            hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor! Hodor
+            hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor,
+            hodor hodor, hodor, hodor hodor. Hodor, hodor. Hodor. Hodor, hodor,
+            hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor
+            hodor HODOR hodor, hodor hodor. Hodor.
+          </p>
+
+          <p>
+            Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor
+            hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor; hodor hodor
+            hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor
+            hodor! Hodor, hodor. Hodor. Hodor, HODOR hodor, hodor hodor, hodor,
+            hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor
+            hodor hodor hodor?! Hodor hodor - hodor hodor hodor. Hodor. Hodor
+            hodor... Hodor hodor hodor hodor hodor?
+          </p>
         </div>
-    </div>
-
-
-
-</body>
-
+      </li>
+    </ul>
+  </body>
 </html>

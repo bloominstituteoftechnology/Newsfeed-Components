@@ -1,30 +1,8 @@
-const toggleMenu = () => {
-    menu.classList.toggle('menu--open');
-    // Toggle the "menu--open" class on your menu refence. 
-}
-
-
-
-// Start Here: Create a reference to the ".menu" class
 let menu = document.querySelector(".menu");
-// create a reference to the ".menu-button" class
-const menuButton = document.querySelector(".menu-button");
-console.log(menuButton);
-// Using your menuButton reference, add a click handler that calls toggleMenu
-menuButton.addEventListener('click', function() {
-    toggleMenu();
-    animation();
+
+const menuButton = document.querySelector(".hamburger");
+
+menuButton.addEventListener("click", function() {
+  menuButton.classList.toggle("is-active");
+  menu.classList.toggle("menu--open");
 });
-
-let animation = function() {
-
-
-    TweenLite.to(menu, .1, {
-        ease: Power3.easeInOut,
-        left: "10px",
-    })
-
-
-
-
-}
