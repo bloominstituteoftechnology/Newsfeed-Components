@@ -4,7 +4,7 @@
   z-index: 1000;
   cursor: pointer;
   transition-property: opacity, filter;
-  transition-duration: 0.15s;
+  transition-duration: 0.4s;
   transition-timing-function: linear;
   font: inherit;
   color: inherit;
@@ -18,7 +18,7 @@
 .hamburger.is-active .hamburger-inner,
 .hamburger.is-active .hamburger-inner::before,
 .hamburger.is-active .hamburger-inner::after {
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
 }
 
 .hamburger-box {
@@ -38,7 +38,7 @@
 .hamburger-inner::after {
   width: 40px;
   height: 4px;
-  background-color: #000;
+  background-color: rgb(61, 0, 0);
   border-radius: 4px;
   position: absolute;
   transition-property: transform;
