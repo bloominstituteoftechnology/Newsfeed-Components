@@ -1,42 +1,29 @@
 // Because classes are not hoised you will need to start your code at the bottom of the page.  Look for the comment "START HERE"
 
 class Article {
-  constructor(domElement) {
-    this.domElement = domElement;
-    this.expandButton = domElement.querySelector('.expandButton');
+  constructor(article) {
+    this.article = article;
+    this.expandButton = article.querySelector('.expandButton');
     this.expandButton.innerText = 'expand';
-    this.expandButton.addEventListener('click', item => this.expandArticle(item));
-    // this.closeButton = domElement.querySelector('.article-close');
-    // this.closeButton.addEventListener('click', item => this.closeButton())
+    this.article.addEventListener('click', () => this.expandArticle());
   }
   expandArticle() {
-      this.domElement.classList.toggle("article-open");
-      TweenMax.fromTo(this.domElement, 3, 
-        {height: 50},
-        {height: 400}
-        );
-        this.expandButton.innerText = 'click to close';
+      this.article.classList.toggle("article-open");
+      console.log(this.article)
+      TweenMax.to(this.article, 1, {height: this.article.classList.contains('article-open') ? '100vh' : '8vh'});
+        
+      this.article.classList.contains('article-open') ? this.expandButton.innerText = '' : this.expandButton.innerText = 'expand' 
+      
       }
-      closeButton() {
-        this.domElement.classList.toggle("article-close")
-         TweenMax.fromTo(this.domElement, 3, 
-           {height: 400},
-           {height: 50}
-            )
-        }
-      }
+    }
+ 
     
   
-    
-  
-  
-
-
 // START HERE: Select all classes named ".article" and assign that value to the articles variable
 let articles = document.querySelectorAll('.article')
 // console.log(articles);
 // Use .map() to iterate over the articles array and create a new instance of Article by passing in each article as a parameter to the constructor.
-articles = Array.from(articles).map(domElement => {
-  return new Article(domElement);
+articles = Array.from(articles).map(article => {
+  return new Article(article);
 });
 
