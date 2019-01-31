@@ -9,7 +9,57 @@
   position: fixed;
   top: 0;
   z-index: 2;
-
+  .hamburgerBox{ 
+    height: 30px;
+    width: 30px;
+    position: absolute;
+   
+    left: 45px;
+    top: 15px;
+    cursor: pointer;
+    .hamburgerIcon {
+      position: relative;
+      top: 15px;
+      left: 15px;
+      color: white;
+      z-index: 3;
+      height: 5px;
+      width: 30px;
+      border-radius: 5px;
+      background-color: #FFFFFF;
+      transform: translate(-50%, -50%) rotate(0deg);
+      transition: all ease 0.5s;
+      &::before,&::after {
+        content:"";
+        position: absolute;
+        height: inherit;
+        border-radius: inherit;
+        background-color: #FFFFFF;
+        width: 30px;
+       }
+       &::before {
+        top:-8px;
+        left: 0;
+        transform-origin: center center;
+       }
+       &::after{
+        bottom:-8px;
+        right: 0;
+        transform-origin: center center;
+      }
+    }
+    .burgerClicked {
+      transform: translate(-50%, -50%) rotate(135deg);
+      &::before {
+        top: 0;
+        transform: rotate(90deg);
+      }
+      &::after {
+        bottom: 0;
+        transform: rotate(90deg);
+      }
+     }
+ }
   h1 {
     margin: 0;
     font-size: 48px;

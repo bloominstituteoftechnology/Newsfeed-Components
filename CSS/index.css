@@ -31,6 +31,57 @@
   top: 0;
   z-index: 2;
 }
+.header .hamburgerBox {
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  left: 45px;
+  top: 15px;
+  cursor: pointer;
+}
+.header .hamburgerBox .hamburgerIcon {
+  position: relative;
+  top: 15px;
+  left: 15px;
+  color: white;
+  z-index: 3;
+  height: 5px;
+  width: 30px;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  transform: translate(-50%, -50%) rotate(0deg);
+  transition: all ease 0.5s;
+}
+.header .hamburgerBox .hamburgerIcon::before,
+.header .hamburgerBox .hamburgerIcon::after {
+  content: "";
+  position: absolute;
+  height: inherit;
+  border-radius: inherit;
+  background-color: #FFFFFF;
+  width: 30px;
+}
+.header .hamburgerBox .hamburgerIcon::before {
+  top: -8px;
+  left: 0;
+  transform-origin: center center;
+}
+.header .hamburgerBox .hamburgerIcon::after {
+  bottom: -8px;
+  right: 0;
+  transform-origin: center center;
+}
+.header .hamburgerBox .burgerClicked {
+  transform: translate(-50%, -50%) rotate(135deg);
+}
+.header .hamburgerBox .burgerClicked::before {
+  top: 0;
+  transform: rotate(90deg);
+}
+.header .hamburgerBox .burgerClicked::after {
+  bottom: 0;
+  transform: rotate(90deg);
+}
 .header h1 {
   margin: 0;
   font-size: 48px;
