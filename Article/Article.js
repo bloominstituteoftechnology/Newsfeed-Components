@@ -1,24 +1,28 @@
 // Because classes are not hoised you will need to start your code at the bottom of the page.  Look for the comment "START HERE"
 
 class Article {
-  constructor(article) {
+  constructor(domElement) {
     // assign this.domElement to the passed in domElement
-    // this.article = article;
-    this.articleopen = article.querySelector('.article-open');
+    this.domElement = domElement;
+    
     // create a reference to the ".expandButton" class. 
-    this.expandButton = article.querySelector('.expandButton');
-    this.expandButtonOpen = article.querySelector('.article-open');
+    this.expandButton = domElement.querySelector('.expandButton');
+    
     // this.expandButtonClose = article.querySelector('.expandButton');
+    this.expandButton = domElement.querySelector('.article-open');
+    this.ptag =domElement.querySelector('p')
     // Using your expandButton reference, update the text on your expandButton to say "expand"
+    
     this.expandButton.textContent = "expand";
+    
     // Set a click handler on the expandButton reference, calling the expandArticle method.
     this.expandButton.addEventListener('click', () => this.expandArticle());
   }
 
   expandArticle() {
     // Using our reference to the domElement, toggle a class to expand or hide the article.
-    console.log(this.expandBtnOpen);
-    this.expandButton.classList.toggle('.expandButton');
+    
+    this.domElement.classList.toggle('article-open');
     // this.expandButtonOpen.classList.toggle('article-open');
     // this.expandButtonClose.classList.toggle('expandButton');
    
@@ -33,5 +37,4 @@ class Article {
 
 */
 
-let articles = document.querySelectorAll('.article');
-articles.forEach( article => new Article(article));
+let articles = document.querySelectorAll('.article').forEach( article => new Article(article));
