@@ -1,13 +1,13 @@
 // Because classes are not hoised you will need to start your code at the bottom of the page.  Look for the comment "START HERE"
 
 class Article {
-  constructor(domElement) {
+  constructor(articleElement) {
     // assign this.domElement to the passed in domElement
-    this.domElement;
+    this.articleElement = document.querySelectorAll('.article');
     // create a reference to the ".expandButton" class. 
-    this.expandButton;
+    this.expandButton = document.querySelectorAll('.expandButton');
     // Using your expandButton reference, update the text on your expandButton to say "expand"
-    
+    console.log(articleElement);
     // Set a click handler on the expandButton reference, calling the expandArticle method.
     
   }
@@ -26,4 +26,4 @@ class Article {
 
 */
 
-let articles;
+const articles = document.querySelectorAll('.article');
