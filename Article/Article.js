@@ -33,3 +33,5 @@ articles.forEach(article => new Article(article));
 
 let p = document.querySelectorAll('p');
 p[1].textContent = 'teeeeeeeeeeeeessssssssssssssstttttttttttttttttttttiiiiiiiiiiiiiiinnnnnnnnnnggggggggggggg';
+
+TweenMax.to(".header", 2, {backgroundColor: 'red'});
