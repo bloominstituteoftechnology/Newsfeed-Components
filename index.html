@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Lambda School Newsfeed</title>
+    <title>Bitcoin: A Peer-to-Peer Electronic Cash System</title>
     <link rel="stylesheet" type="text/css" media="screen" href="./CSS/index.css" />
     <script src="./Menu/Menu.js" async></script>
     <script src="./Article/Article.js" async></script>
@@ -10,107 +10,166 @@
   <body>
     <div class="header">
       <img class="menu-button" src="./assets/menu.png"/>
-      <h1>Lambda School Newsfeed</h1>
+      <h1>Bitcoin: A Peer-to-Peer Electronic Cash System</h1>
     </div>
     <div class="menu">
       <ul>
-        <li>Students</li>
-        <li>Faculty</li>
+        <li>Satoshi</li>
+        <li>Miners</li>
         <li>What's New</li>
         <li>Tech Trends</li>
-        <li>Music</li>
+        <li>Abstract</li>
         <li>Log Out</li>
       </ul>
     </div>
     <div class="articles">
       <div class="article">
-        <h2>Lambda School Students: "We're the best!"</h2>
-        <p class="date">Nov 5th, 2017</p>
+        <h2>1. Introduction</h2>
+        <p class="date">Aug 18th, 2008</p>
 
-        <p>Lucas ipsum dolor sit amet ben twi'lek padmé darth darth darth moff hutt organa twi'lek. Ben amidala secura skywalker lando
-        moff wicket tatooine luke. Solo wampa wampa calrissian yoda moff. Darth grievous darth gonk darth hutt. Darth baba skywalker
-        watto fett jango maul han. Mon ewok sidious sidious lando kenobi grievous gamorrean solo. Yoda wedge utapau darth calamari.
-        Hutt calamari darth jabba. Darth dooku amidala organa moff. Boba darth binks solo hutt skywalker dantooine skywalker. Qui-gonn
-        jar twi'lek jinn leia jango skywalker mon. </p>
+        <p>Commerce on the Internet has come to rely almost exclusively on financial institutions serving as
+          trusted third parties to process electronic payments. While the system works well enough for
+          most transactions, it still suffers from the inherent weaknesses of the trust based model.
+          Completely non-reversible transactions are not really possible, since financial institutions cannot
+          avoid mediating disputes. The cost of mediation increases transaction costs, limiting the
+          minimum practical transaction size and cutting off the possibility for small casual transactions,
+          and there is a broader cost in the loss of ability to make non-reversible payments for nonreversible services. With the possibility of reversal, the need for trust spreads. Merchants must
+          be wary of their customers, hassling them for more information than they would otherwise need.
+          A certain percentage of fraud is accepted as unavoidable. These costs and payment uncertainties
+          can be avoided in person by using physical currency, but no mechanism exists to make payments
+          over a communications channel without a trusted party. </p>
 
-        <p>Grievous fett calamari anakin skywalker hutt. Alderaan darth kenobi darth r2-d2
-        windu mothma. Sidious darth calamari moff. Wampa mothma sith wedge solo mara. Darth gonk maul sith moff chewbacca palpatine
-        mace amidala. C-3po solo skywalker anakin yoda leia. Maul wampa bespin watto jade ewok darth jabba. Lando dantooine moff
-        k-3po dantooine luke. Fisto mandalore darth wedge c-3p0 ahsoka. Secura moff palpatine fett. Anakin sith darth darth. Moff
-        solo leia ben ponda jade. Binks jango aayla skywalker skywalker cade. Mustafar darth ventress anakin watto. Yavin jawa sebulba
-        owen jinn tatooine sith organa.</p>
+        <p>What is needed is an electronic payment system based on cryptographic proof instead of trust,
+          allowing any two willing parties to transact directly with each other without the need for a trusted
+          third party. Transactions that are computationally impractical to reverse would protect sellers
+          from fraud, and routine escrow mechanisms could easily be implemented to protect buyers. In
+          this paper, we propose a solution to the double-spending problem using a peer-to-peer distributed
+          timestamp server to generate computational proof of the chronological order of transactions. The
+          system is secure as long as honest nodes collectively control more CPU power than any
+          cooperating group of attacker nodes.</p>
 
-        <p>Dagobah hutt jawa leia calamari ventress skywalker yoda. Binks wicket hutt coruscant sidious
-        naboo ackbar tatooine. Hutt lars padmé darth. Maul solo darth darth jabba qui-gon chewbacca darth maul. Moff baba wicket
-        han. C-3po antilles moff qui-gon ahsoka aayla dooku amidala. Palpatine droid amidala droid k-3po twi'lek padmé wookiee. Leia
-        moff calamari mon obi-wan. Solo grievous lando coruscant. Jinn darth palpatine obi-wan mon.</p>
         <span class='expandButton'></span>
       </div>
       <div class="article">
-        <h2>Javascript and You, ES6</h2>
-        <p class="date">Nov 7th, 2017</p>
-        <p>Alohamora wand elf parchment, Wingardium Leviosa hippogriff, house dementors betrayal. Holly, Snape centaur portkey ghost
-        Hermione spell bezoar Scabbers. Peruvian-Night-Powder werewolf, Dobby pear-tickle half-moon-glasses, Knight-Bus. Padfoot
-        snargaluff seeker: Hagrid broomstick mischief managed. Snitch Fluffy rock-cake, 9 ¾ dress robes I must not tell lies. Mudbloods
-        yew pumpkin juice phials Ravenclaw’s Diadem 10 galleons Thieves Downfall. Ministry-of-Magic mimubulus mimbletonia Pigwidgeon
-        knut phoenix feather other minister Azkaban. Hedwig Daily Prophet treacle tart full-moon Ollivanders You-Know-Who cursed.
-        Fawkes maze raw-steak Voldemort Goblin Wars snitch Forbidden forest grindylows wool socks.</p>
+        <h2>2. Transactions</h2>
+        <p class="date">Aug 18th, 2008</p>
+        <p>We define an electronic coin as a chain of digital signatures. Each owner transfers the coin to the
+          next by digitally signing a hash of the previous transaction and the public key of the next owner
+          and adding these to the end of the coin. A payee can verify the signatures to verify the chain of
+          ownership.</p>
+          
+        <p>The problem of course is the payee can't verify that one of the owners did not double-spend
+            the coin. A common solution is to introduce a trusted central authority, or mint, that checks every
+            transaction for double spending. After each transaction, the coin must be returned to the mint to
+            issue a new coin, and only coins issued directly from the mint are trusted not to be double-spent.
+            The problem with this solution is that the fate of the entire money system depends on the
+            company running the mint, with every transaction having to go through them, just like a bank.</p>
       
-        <p>Boggarts lavender robes, Hermione Granger Fantastic Beasts and Where to Find Them. Bee in your bonnet Hand of Glory elder
-        wand, spectacles House Cup Bertie Bott’s Every Flavor Beans Impedimenta. Stunning spells tap-dancing spider Slytherin’s Heir
-        mewing kittens Remus Lupin. Palominos scarlet train black robes, Metamorphimagus Niffler dead easy second bedroom. Padma
-        and Parvati Sorting Hat Minister of Magic blue turban remember my last.</p>
+        <p>We need a way for the payee to know that the previous owners did not sign any earlier
+          transactions. For our purposes, the earliest transaction is the one that counts, so we don't care
+          about later attempts to double-spend. The only way to confirm the absence of a transaction is to
+          be aware of all transactions. In the mint based model, the mint was aware of all transactions and
+          decided which arrived first. To accomplish this without a trusted party, transactions must be
+          publicly announced [1], and we need a system for participants to agree on a single history of the
+          order in which they were received. The payee needs proof that at the time of each transaction, the
+          majority of nodes agreed it was the first received. </p>
         <span class='expandButton'></span>
       </div>
       <div class="article">
-        <h2>React vs Angular vs Vue</h2>
-        <p class="date">Nov 7th, 2017</p>
+        <h2>3. Timestamp Server</h2>
+        <p class="date">Aug 18th, 2008</p>
 
-        <p>Bulbasaur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ivysaur Lorem ipsum dolor sit amet, consectetur adipiscing
-        elit. Venusaur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Charmander Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit. Charmeleon Lorem ipsum dolor sit amet, consectetur adipiscing elit. Charizard Lorem ipsum dolor sit amet,
-        consectetur adipiscing elit. Squirtle Lorem ipsum dolor sit amet, consectetur adipiscing elit. Wartortle Lorem ipsum dolor
-        sit amet, consectetur adipiscing elit. Blastoise Lorem ipsum dolor sit amet, consectetur adipiscing elit. Caterpie Lorem
-        ipsum dolor sit amet, consectetur adipiscing elit. Metapod Lorem ipsum dolor sit amet, consectetur adipiscing elit. Butterfree
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Weedle Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Kakuna Lorem ipsum dolor sit amet, consectetur adipiscing elit. Beedrill Lorem ipsum dolor sit amet, consectetur adipiscing
-        elit.</p>
+        <p>The solution we propose begins with a timestamp server. A timestamp server works by taking a
+          hash of a block of items to be timestamped and widely publishing the hash, such as in a
+          newspaper or Usenet post [2-5]. The timestamp proves that the data must have existed at the
+          time, obviously, in order to get into the hash. Each timestamp includes the previous timestamp in
+          its hash, forming a chain, with each additional timestamp reinforcing the ones before it.</p>
 
-        <p>Pidgey Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pidgeotto Lorem ipsum dolor sit amet, consectetur adipiscing
-        elit. Pidgeot Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rattata Lorem ipsum dolor sit amet, consectetur adipiscing
-        elit. Raticate Lorem ipsum dolor sit amet, consectetur adipiscing elit. Spearow Lorem ipsum dolor sit amet, consectetur adipiscing
-        elit. Fearow Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ekans Lorem ipsum dolor sit amet, consectetur adipiscing
-        elit. Arbok Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pikachu Lorem ipsum dolor sit amet, consectetur adipiscing
-        elit. Raichu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sandshrew Lorem ipsum dolor sit amet, consectetur adipiscing
-        elit. Sandslash Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nidoran Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit. Nidorina Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nidoqueen Lorem ipsum dolor sit amet,
-        consectetur adipiscing elit. Nidoran Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nidorino Lorem ipsum dolor
-        sit amet, consectetur adipiscing elit. Nidoking Lorem ipsum</p>
         <span class='expandButton'></span>
       </div>
       <div class="article">
-        <h2>Professional Software Development in 2018</h2>
-        <p class="date">Nov 7th, 2017</p>
-        <p>Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
-          hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
-          Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? </p>
+        <h2>4. Proof-of-Work</h2>
+        <p class="date">Aug 18th, 2008</p>
+        <p>To implement a distributed timestamp server on a peer-to-peer basis, we will need to use a proofof-work system similar to Adam Back's Hashcash [6], rather than newspaper or Usenet posts.
+          The proof-of-work involves scanning for a value that when hashed, such as with SHA-256, the
+          hash begins with a number of zero bits. The average work required is exponential in the number
+          of zero bits required and can be verified by executing a single hash. </p>
         
-        <p>Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
-          hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
-          hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
-          hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? </p>
+        <p>For our timestamp network, we implement the proof-of-work by incrementing a nonce in the
+          block until a value is found that gives the block's hash the required zero bits. Once the CPU
+          effort has been expended to make it satisfy the proof-of-work, the block cannot be changed
+          without redoing the work. As later blocks are chained after it, the work to change the block
+          would include redoing all the blocks after it.</p>
         
-        <p>Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
-          Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
-          Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.
+        <p>The proof-of-work also solves the problem of determining representation in majority decision
+          making. If the majority were based on one-IP-address-one-vote, it could be subverted by anyone
+          able to allocate many IPs. Proof-of-work is essentially one-CPU-one-vote. The majority
+          decision is represented by the longest chain, which has the greatest proof-of-work effort invested
+          in it. If a majority of CPU power is controlled by honest nodes, the honest chain will grow the
+          fastest and outpace any competing chains. To modify a past block, an attacker would have to
+          redo the proof-of-work of the block and all blocks after it and then catch up with and surpass the
+          work of the honest nodes. We will show later that the probability of a slower attacker catching up
+          diminishes exponentially as subsequent blocks are added.
           </p>
 
-        <p>Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
-          hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
-          hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
-          hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? </p>
+        <p>To compensate for increasing hardware speed and varying interest in running nodes over time,
+          the proof-of-work difficulty is determined by a moving average targeting an average number of
+          blocks per hour. If they're generated too fast, the difficulty increases. </p>
+        
+        
         <span class='expandButton'></span>
       </div>
+      <div class="article">
+        <h2>5. Network</h2>
+        <p class="date">Aug 18th, 2008</p>
+
+        <p>The steps to run the network are as follows:
+          <ol>
+            <li>New transactions are broadcast to all nodes.</li>
+            <li>Each node collects new transactions into a block.</li>
+            <li>Each node works on finding a difficult proof-of-work for its block.</li>
+            <li>When a node finds a proof-of-work, it broadcasts the block to all nodes.</li>
+            <li>Nodes accept the block only if all transactions in it are valid and not already spent.</li>
+            <li>Nodes express their acceptance of the block by working on creating the next block in the chain, using the hash of the accepted block as the previous hash.</li>
+          </ol>
+          
+          Nodes always consider the longest chain to be the correct one and will keep working on
+          extending it. If two nodes broadcast different versions of the next block simultaneously, some
+          nodes may receive one or the other first. In that case, they work on the first one they received,
+          but save the other branch in case it becomes longer. The tie will be broken when the next proofof-work is found and one branch becomes longer; the nodes that were working on the other
+          branch will then switch to the longer one. </p>
+
+        <p>New transaction broadcasts do not necessarily need to reach all nodes. As long as they reach
+            many nodes, they will get into a block before long. Block broadcasts are also tolerant of dropped
+            messages. If a node does not receive a block, it will request it when it receives the next block and
+            realizes it missed one.</p>
+
+        <span class='expandButton'></span>
+      </div>
+      <div class="article">
+          <h2>6. Incentive</h2>
+          <p class="date">Aug 18th, 2008</p>
+  
+          <p>By convention, the first transaction in a block is a special transaction that starts a new coin owned
+              by the creator of the block. This adds an incentive for nodes to support the network, and provides
+              a way to initially distribute coins into circulation, since there is no central authority to issue them.
+              The steady addition of a constant of amount of new coins is analogous to gold miners expending
+              resources to add gold to circulation. In our case, it is CPU time and electricity that is expended.</p>
+  
+          <p>The incentive can also be funded with transaction fees. If the output value of a transaction is
+              less than its input value, the difference is a transaction fee that is added to the incentive value of
+              the block containing the transaction. Once a predetermined number of coins have entered
+              circulation, the incentive can transition entirely to transaction fees and be completely inflation
+              free.</p>
+          
+          <p>The incentive may help encourage nodes to stay honest. If a greedy attacker is able to
+              assemble more CPU power than all the honest nodes, he would have to choose between using it
+              to defraud people by stealing back his payments, or using it to generate new coins. He ought to
+              find it more profitable to play by the rules, such rules that favour him with more new coins than
+              everyone else combined, than to undermine the system and the validity of his own wealth.</p>
+  
+          <span class='expandButton'></span>
+        </div>
     </div>
   </body>
 </html>
