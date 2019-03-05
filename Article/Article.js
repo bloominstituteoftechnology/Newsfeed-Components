@@ -24,3 +24,8 @@ let articles = document.querySelectorAll('.article');
 // Use .map() to iterate over the articles array and create a new instance of Article by passing in each article element as a parameter to the constructor.
 articles = Array.from(articles).map(element => new Article (element));
 
+let body = document.getElementsByClassName('.articles');
+window.addEventListener('mouseover', () => {
+  document.querySelector('HTML', 'body').style = 
+  'background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 50%, #ffffff 100%)';
+});
