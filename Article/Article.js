@@ -51,3 +51,46 @@ let articles = document.querySelectorAll(".article");
 articles.forEach(article => {
   new Article(article);
 })
+
+
+
+//Stretch 
+
+let articleDiv = document.querySelector(".articles");
+
+function addArticle(artTitle, artDate, artContent) {
+
+  let art = document.createElement("div");
+  art.className = "article";
+
+  let title = document.createElement("h2");
+  title.textContent = artTitle;
+
+  let date = document.createElement("p");
+  date.className = "date";
+  date.textContent = artDate;
+
+  let content = document.createElement("p");
+  content.textContent = artContent;
+
+  let btn1 = document.createElement("span");
+  btn1.className = "expandButton";
+
+  let btn2 = document.createElement("span");
+  btn2.className = "closeButton";
+
+  art.append(title);
+  art.append(date);
+  art.append(content);
+  art.append(btn1);
+  art.append(btn2);
+
+  articleDiv.append(art);
+
+  new Article(art);
+
+  console.log("Working!");
+}
+
+addArticle("Hola", "Apr 10th 2019", "Bla bla bla");
+addArticle("Hola", "Apr 10th 2019", "Bla bla bla");
