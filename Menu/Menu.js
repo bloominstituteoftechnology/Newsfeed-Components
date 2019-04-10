@@ -32,10 +32,6 @@ const menu = document.querySelector('.menu');
 // create a reference to the ".menu-button" class
 const menuButton = document.querySelector('.menu-button');
 // Using your menuButton reference, add a click handler that calls toggleMenu
-menuButton.addEventListener('click', function(e){
-  toggleMenu(e);
-});
+menuButton.addEventListener('click', toggleMenu);
 
-window.addEventListener('click', function(){
-  closeMenu();
-});
+window.addEventListener('click', closeMenu);

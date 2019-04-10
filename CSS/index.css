@@ -3,19 +3,19 @@
   font-family: 'Roboto';
   font-style: italic;
   font-weight: 400;
-  src: local('Roboto Italic'), local('Roboto-Italic'), url(https://fonts.gstatic.com/s/roboto/v18/KFOkCnqEu92Fr1Mu51xIIzc.ttf) format('truetype');
+  src: local('Roboto Italic'), local('Roboto-Italic'), url(https://fonts.gstatic.com/s/roboto/v19/KFOkCnqEu92Fr1Mu51xIIzc.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
-  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxP.ttf) format('truetype');
+  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v19/KFOmCnqEu92Fr1Mu4mxP.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 700;
-  src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmWUlfBBc9.ttf) format('truetype');
+  src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v19/KFOlCnqEu92Fr1MmWUlfBBc9.ttf) format('truetype');
 }
 /* Below this line is where you will start your work */
 /* It is important to note, you will not be writing any CSS in this file*/
@@ -45,7 +45,7 @@
   border-radius: 10px;
   background-color: white;
   position: relative;
-  height: 50px;
+  height: 55px;
   overflow: hidden;
   box-shadow: 2px 2px 2px lightgrey;
 }
@@ -74,7 +74,7 @@
   background-color: white;
 }
 .article-open {
-  height: 400px;
+  height: auto;
 }
 .menu-button {
   position: absolute;
@@ -85,7 +85,7 @@
   display: none;
   position: fixed;
   top: 75px;
-  left: 0;
+  left: -350;
   width: 350px;
   height: 100vh;
   /* This give the height 100% of the screen or, '100% of View Height' */
@@ -104,6 +104,7 @@
 }
 .menu--open {
   display: block;
+  left: 0;
 }
 html,
 body {
