@@ -54,6 +54,7 @@
   border-bottom: none;
   z-index: 2;
   /* This set the layer level of the element, it has precendence over initial level of 1*/
+  transition: left 0.8s ease;
 }
 .menu ul li {
   list-style-type: none;
@@ -66,6 +67,7 @@
 }
 .articles {
   margin-top: 95px;
+  text-align: left;
 }
 .article {
   margin: 20px 10%;
@@ -77,6 +79,15 @@
   height: 50px;
   overflow: hidden;
   box-shadow: 2px 2px 2px lightgrey;
+  transition: height 0.5s ease;
+}
+.article .article-close {
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  color: #ef5350;
+  font-size: 34px;
+  cursor: pointer;
 }
 .article h2 {
   font-size: 28px;
@@ -105,7 +116,7 @@
 .article-open {
   height: 400px;
 }
-.new-article {
+.create-article {
   display: inline-block;
   background-color: #2196F3;
   color: white;
@@ -115,10 +126,10 @@
   transition: background-color 0.2s ease;
   cursor: pointer;
 }
-.new-article:hover {
+.create-article:hover {
   background-color: #42A5F5;
 }
-.newarticle-cont {
+.carticle-cont {
   position: fixed;
   display: none;
   justify-content: center;
@@ -131,7 +142,7 @@
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.678);
 }
-.newarticle-cont .newarticle-close {
+.carticle-cont .carticle-close {
   position: absolute;
   top: 22px;
   right: 30px;
@@ -139,7 +150,7 @@
   font-size: 44px;
   cursor: pointer;
 }
-.newarticle-cont .form-cont {
+.carticle-cont .form-cont {
   display: inline-flex;
   flex-direction: column;
   align-items: center;
@@ -148,27 +159,27 @@
   border-radius: 4px;
   padding: 10px 20px 10px 20px;
 }
-.newarticle-cont .form-cont .disp-left {
+.carticle-cont .form-cont .disp-left {
   text-align: left;
   width: 100%;
 }
-.newarticle-cont .form-cont h2 {
+.carticle-cont .form-cont h2 {
   margin-top: 0px;
   margin-bottom: 10px;
 }
-.newarticle-cont .form-cont p {
+.carticle-cont .form-cont p {
   margin: 0px;
   text-align: left;
 }
-.newarticle-cont .form-cont input {
+.carticle-cont .form-cont input {
   box-sizing: border-box;
   margin-bottom: 10px;
   width: 100%;
 }
-.newarticle-cont .form-cont textarea {
+.carticle-cont .form-cont textarea {
   margin-bottom: 10px;
 }
-.newarticle-cont .form-cont .newarticle-create {
+.carticle-cont .form-cont .carticle-create {
   background-color: #4CAF50;
   color: white;
   width: 100%;
@@ -181,4 +192,5 @@ body {
   padding: 0;
   font-family: 'Roboto';
   background-color: #fffef7;
+  text-align: center;
 }
