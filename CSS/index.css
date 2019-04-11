@@ -112,3 +112,43 @@ body {
   font-family: 'Roboto';
   background-color: #fffef7;
 }
+
+.test {
+  -webkit-animation: pulse 5s infinite;
+  -moz-animation:    pulse 5s infinite;
+  -o-animation:      pulse 5s infinite;
+  animation:         pulse 5s infinite;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    background-color: rgb(12, 111, 209);
+  }
+  100% {
+    background-color: #FF4136;
+  }
+}
+@-moz-keyframes pulse {
+  0% {
+    background-color: rgb(16, 100, 184);
+  }
+  100% {
+    background-color: #FF4136;
+  }
+}
+@-o-keyframes pulse {
+  0% {
+    background-color: rgb(3, 87, 170);
+  }
+  100% {
+    background-color: #FF4136;
+  }
+}
+@keyframes pulse {
+  0% {
+    background-color: rgb(28, 99, 170);
+  }
+  100% {
+    background-color: #FF4136;
+  }
+}

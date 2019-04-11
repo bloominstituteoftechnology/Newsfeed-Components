@@ -19,6 +19,8 @@ class Article {
   expandArticle() {
     // Using our reference to the domElement, toggle a class to expand or hide the article.
    this.domElement.classList.toggle('article-open');
+   this.domElement.classList.toggle('test');
+
   }
 }
 
@@ -41,6 +43,7 @@ const seconaryContent = document.querySelector(".articles");
 
 const articleDiv = document.createElement('div')
 articleDiv.classList.add('article')
+articleDiv.classList.add('test')
 
 const header2 = document.createElement('h2')
 header2.textContent = 'I just create a header'
