@@ -6,8 +6,6 @@ const toggleMenu = () => {
 
 // Start Here: Create a reference to the ".menu" class
 const menu;
-this.menuBtn = menu.querySelector('.menu');
-console.log(menu);
 
 // create a reference to the ".menu-button" class
 const menuButton;
