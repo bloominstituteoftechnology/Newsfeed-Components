@@ -2,16 +2,16 @@ const Menu = (function(menu) {
   // create a reference to the ".menu-button" class
   const menuButton = document.querySelector('.menu-button');
 
-  function registerEventHandlers() {
+  const registerEventHandlers = function() {
     // Using your menuButton reference, add a click handler that calls toggleMenu
     menuButton.addEventListener('click', event => toggleMenu());
   }
 
-  function toggleMenu() {
+  const toggleMenu = function() {
     return menu.classList.toggle('menu--open');
   }
 
-  function init() {
+  const init = function() {
     registerEventHandlers();
   }
   return {
