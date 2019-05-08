@@ -116,6 +116,16 @@ body {
 .article-open {
   height: 400px;
 }
-.expandButton :hover {
-  background-color: aqua;
+
+.expandButton {
+  animation: pulse 5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    background-color: rgb(248, 57, 9);
+  }
+  100% {
+    background-color: rgb(127, 205, 250);
+  }
 }
