@@ -1,28 +1,34 @@
 /* This line is importing the font 'Roboto'. DO NOT change line 2*/
 @font-face {
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-style: italic;
   font-weight: 400;
-  src: local('Roboto Italic'), local('Roboto-Italic'), url(https://fonts.gstatic.com/s/roboto/v19/KFOkCnqEu92Fr1Mu51xIIzc.ttf) format('truetype');
+  src: local("Roboto Italic"), local("Roboto-Italic"),
+    url(https://fonts.gstatic.com/s/roboto/v19/KFOkCnqEu92Fr1Mu51xIIzc.ttf)
+      format("truetype");
 }
 @font-face {
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
-  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v19/KFOmCnqEu92Fr1Mu4mxP.ttf) format('truetype');
+  src: local("Roboto"), local("Roboto-Regular"),
+    url(https://fonts.gstatic.com/s/roboto/v19/KFOmCnqEu92Fr1Mu4mxP.ttf)
+      format("truetype");
 }
 @font-face {
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 700;
-  src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v19/KFOlCnqEu92Fr1MmWUlfBBc9.ttf) format('truetype');
+  src: local("Roboto Bold"), local("Roboto-Bold"),
+    url(https://fonts.gstatic.com/s/roboto/v19/KFOlCnqEu92Fr1MmWUlfBBc9.ttf)
+      format("truetype");
 }
 /* Below this line is where you will start your work */
 /* It is important to note, you will not be writing any CSS in this file*/
 .header {
   width: 100%;
   height: 75px;
-  background-color: #388E3C;
+  background-color: #388e3c;
   color: white;
   display: flex;
   justify-content: center;
@@ -48,8 +54,8 @@
   width: 350px;
   height: 100vh;
   /* This give the height 100% of the screen or, '100% of View Height' */
-  background-color: #81C784;
-  border: 1px solid #004D40;
+  background-color: #81c784;
+  border: 1px solid #004d40;
   border-left: none;
   border-bottom: none;
   z-index: 2;
