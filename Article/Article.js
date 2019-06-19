@@ -12,7 +12,9 @@ class Article {
     this.expandButton.addEventListener('click', (event) => this.expandArticle(event));
   }
 
-  expandArticle() {
+  expandArticle(event) {
+    console.log(event.target);
+    this.domElement.classList.toggle('article-open');
     // Using our reference to the domElement, toggle a class to expand or hide the article.
 
   }
