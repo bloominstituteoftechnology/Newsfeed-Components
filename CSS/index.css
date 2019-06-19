@@ -41,12 +41,13 @@
   cursor: pointer;
 }
 .menu {
-  display: none;
   position: fixed;
   top: 75px;
   left: 0;
-  width: 350px;
-  height: 100vh;
+  width: 0;
+  transition: 0.5s;
+  overflow-x: hidden;
+  height: 100%;
   /* This give the height 100% of the screen or, '100% of View Height' */
   background-color: #81C784;
   border: 1px solid #004D40;
@@ -60,9 +61,12 @@
   font-size: 32px;
   padding: 30px 0;
   text-align: center;
+  transition: 3s;
 }
 .menu--open {
   display: block;
+  transition: 0.5s;
+  width: 350px;
 }
 .articles {
   margin-top: 95px;
