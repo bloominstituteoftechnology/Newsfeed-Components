@@ -1,7 +1,10 @@
 
 const toggleMenu = () => {
   // Toggle the "menu--open" class on your menu refence. 
+  menu.classList.toggle("menu--open");
 }
+
+console.log(toggleMenu);
 
 // Start Here: Create a reference to the ".menu" class
 const menu = document.querySelectorAll(".menu");
