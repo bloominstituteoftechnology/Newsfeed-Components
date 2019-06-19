@@ -15,10 +15,10 @@ class Article {
     
   }
 
-  expandArticle() {
+  expandArticle(); {
     // Using our reference to the domElement, toggle a class to expand or hide the article.
-
-  }
+    this.domElement.classList.toggle('article-open');
+  } 
 
 
 /* START HERE: 
@@ -29,4 +29,6 @@ class Article {
 
 */
 
-let articles;
+let articles = document.querySelectorAll('.article');
+
+articles = Array.from(articles).map(article => new Article(article));
