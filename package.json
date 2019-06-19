@@ -1,0 +1,24 @@
+{
+  "name": "newsfeed-components",
+  "version": "1.0.0",
+  "description": "In this project we are going to be building a news feed reader. The goal is to have a collapsing menu, and expandable news articles. The HTML and CSS is already done for you, you simply need to connect the pieces. After the CSS is connected it is time to move on to building out our components using JavaScript. We will be adding common functionality and styling to build reusable components.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patrickb42/Newsfeed-Components.git"
+  },
+  "author": "patrickb42",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/patrickb42/Newsfeed-Components/issues"
+  },
+  "homepage": "https://github.com/patrickb42/Newsfeed-Components#readme",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.3"
+  }
+}
