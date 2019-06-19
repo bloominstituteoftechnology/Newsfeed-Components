@@ -24,8 +24,26 @@
   font-size: 32px;
   padding: 30px 0;
   text-align: center;
+  transform: translateX(30%)
 }
 
 .menu--open {
   display: block;
+}
+.header { 
+  animation: pulse 10s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    background-color: #001F3F;
+  }
+  100% {
+    background-color: #FF4136;
+  }
+}
+
+html,
+body {
+  height: 100%;
 }
