@@ -89,7 +89,7 @@ const data = [
 ];
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
-  
+
   <div class="article">
     <h2>{title of the article}</h2>
     <p class="date">{date of the article}</p>
@@ -109,6 +109,51 @@ const data = [
 
   Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
 
-  Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new artible
+  Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article
 
 */
+
+const articles = document.querySelector('.articles')
+
+// articles.classList.add('article');
+data.forEach(event => {
+  articles.appendChild(createArticle(event.title, event.date, event.firstParagraph, event.secondParagraph, event.thirdParagraph))
+})
+
+function createArticle(title, date, firstParagraph, secondParagraph, thirdParagraph) {
+  //New elements
+  const article = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+  const articleDate = document.createElement('p');
+  const articleP1 = document.createElement('p');
+  const articleP2 = document.createElement('p')
+  const articleP3 = document.createElement('p')
+  const articleButton = document.createElement('span');
+  
+
+//Structure
+  article.appendChild(articleTitle)
+  article.appendChild(articleDate)
+  article.appendChild(articleP1)
+  article.appendChild(articleP2)
+  article.appendChild(articleP3)
+  article.appendChild(articleButton)
+
+//Button Event
+
+
+//Class names
+  article.classList.add('article')
+  articleDate.classList.add('date')
+  articleButton.classList.add('expandButton')
+
+  //text content
+  articleTitle.textContent = title;
+  articleDate.textContent = date; 
+  articleP1.textContent = firstParagraph;
+  articleP2.textContent = secondParagraph;
+  articleP3.textContent = thirdParagraph;
+  articleButton.textContent = 'Show'
+  
+  return article
+}
