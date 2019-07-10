@@ -1,35 +1,57 @@
-// Because classes are not hoisted you will need to start your code at the bottom of the page.  Look for the comment "START HERE"
+const articlesC = document.querySelector('.articles');
+console.log(articlesC);
 
-class Article {
-  constructor(domElement) {
-    // assign this.domElement to the passed in domElement
-    this.domElement = domElement;
-    // create a reference to the ".expandButton" class. 
-    this.expandButton = this.domElement.querySelector('.expandButton');
-    // Using your expandButton reference, update the text on your expandButton to say "expand"
-    this.expandButton.textContent = 'expand';
-   
-    // Set a click handler on the expandButton reference, calling the expandArticle method.
-    expandButton.addEventListener('click', () =>{
-      this.expandArticle();
-    });
+function createNewArticle(title, date, content) {
+  console.log(title, date, content);
+  const articleC = document.createElement('div');
+  const titleC = document.createElement('h2');
+  const dateC = document.createElement('p');
+  const contentC = document.createElement('p');
+  const buttonC = document.createElement('span')
+  articlesC.appendChild(articleC);
+  articleC.appendChild(titleC);
+  articleC.appendChild(dateC);
+  articleC.appendChild(contentC);
+  articleC.appendChild(buttonC);
+  articlesC.classList.add('articles');
+  articleC.classList.add('article');
+  dateC.classList.add('date');
+  buttonC.classList.add('expandButton');
+
+  buttonC.textContent = 'Expand'
+  titleC.textContent = title
+  contentC.textContent = content
+  dateC.textContent = date
+
+  buttonC.addEventListener('click', event => {
+    articleC.classList.toggle('article-open');
+  })
+  return articleC
 }
-  expandArticle() {
-    // Using our reference to the domElement, toggle a class to expand or hide the article.
-    domElement.classList.toggle('article-open');
+
+const articleData = [
+  {
+    title: "Lambda School Students: 'We're the best!'",
+    date: "Nov 5th, 2017" ,
+    content: "Lucas unde omnis iste natus error sit voluptatem accusantium hutt organa chabaka. Ben amidala secura skywalker lando moff wicket tatooine luke. Solo wampa wampa calrissian yoda moff. Darth grievous darth gonk darth hutt. Darth baba skywalker watto fett jango maul han. Mon ewok sidious sidious lando kenobi grievous gamorrean solo. Yoda wedge utapau darth calamari. Hutt calamari darth jabba. Darth dooku amidala organa moff. vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+  },
+  {
+    title: "Javascript and You, ES6",
+    date: "Nov 7th, 2017",
+    content: "Content"
+  },
+  {
+    title: "React vs Angular vs Vue",
+    date: "Nov 7th, 2017",
+    content: "Content"
+  },
+  {
+    title: "Professional Software Development in 2018",
+    date: "Nov 7th, 2017",
+    content: "Content"
   }
-}
+]
 
-/* START HERE: 
-
-- Select all classes named ".article" and assign that value to the articles variable.  
-
-- With your selection in place, now chain .forEach() on to the articles variable to iterate over the articles NodeList and create a new instance of Article by passing in each article as a parameter to the Article class.
-
-*/
-
-let articles = document.querySelectorAll('.article');
-
-articles.forEach(article => {
-  return new Article(article);
-});
+articleData.forEach(data => {
+  articlesC.appendChild(createNewArticle(data.title, data.date, data.content))
+})
