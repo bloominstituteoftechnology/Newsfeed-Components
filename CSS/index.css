@@ -68,51 +68,27 @@
   transition: 0.5s;
   width: 350px;
 }
-.articles {
-  margin-top: 95px;
+.accordion {
+  margin-top: 80px;
 }
-.article {
-  margin: 20px 10%;
-  padding: 0 20px 25px;
-  border: 1px solid lightgrey;
-  border-radius: 10px;
-  background-color: white;
-  position: relative;
-  height: 50px;
-  overflow: hidden;
-  box-shadow: 2px 2px 2px lightgrey;
+.accordion .panel {
+  padding: 30px;
+  border: 1px solid gray;
 }
-.article h2 {
-  font-size: 28px;
-  padding: 0;
-  margin: 15px 0 0;
+.accordion .panel .panel-bar {
+  display: flex;
+  justify-content: space-between;
 }
-.article .date {
-  margin: 0;
-  font-size: 14px;
-}
-.article .close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-}
-.article .expandButton {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  font-size: 12px;
-  color: grey;
+.accordion .panel .panel-bar .panel-buttons button {
   cursor: pointer;
-  transform: translate(-50%);
-  background-color: white;
 }
-.article-open {
-  height: 400px;
+.accordion .panel .panel-bar .panel-buttons .hide-btn {
+  display: none;
 }
-html,
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Roboto';
-  background-color: #fffef7;
+.accordion .panel .panel-content {
+  display: none;
+  margin-top: 15px;
+}
+.accordion .panel .toggle-on {
+  display: block;
 }
