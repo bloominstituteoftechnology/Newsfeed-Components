@@ -70,6 +70,8 @@
 }
 .accordion {
   margin-top: 80px;
+  margin-left: 40px;
+  margin-right: 40px;
 }
 .accordion .panel {
   padding: 30px;
@@ -91,4 +93,11 @@
 }
 .accordion .panel .toggle-on {
   display: block;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto';
+  background-color: #fffef7;
 }
