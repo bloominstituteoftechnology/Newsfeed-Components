@@ -2,6 +2,7 @@ const articlesC = document.querySelector('.articles');
 console.log(articlesC);
 
 function createNewArticle(title, date, content) {
+  console.log(title, date, content);
   const articleC = document.createElement('div');
   const titleC = document.createElement('h2');
   const dateC = document.createElement('p');
@@ -20,17 +21,21 @@ function createNewArticle(title, date, content) {
   buttonC.classList.add('expandButton');
 
   buttonC.textContent = 'Expand'
+  titleC.textContent = title
+  contentC.textContent = content
+  dateC.textContent = date
 
   buttonC.addEventListener('click', event => {
-    buttonC.classList.toggle('article-open');
+    articleC.classList.toggle('article-open');
   })
+  return articleC
 }
 
 const articleData = [
   {
     title: "Lambda School Students: 'We're the best!'",
     date: "Nov 5th, 2017" ,
-    content: "Content"
+    content: "Lucas ipsum dolor sit amet ben twi'lek padmé darth darth darth moff hutt organa twi'lek. Ben amidala secura skywalker lando moff wicket tatooine luke. Solo wampa wampa calrissian yoda moff. Darth grievous darth gonk darth hutt. Darth baba skywalker watto fett jango maul han. Mon ewok sidious sidious lando kenobi grievous gamorrean solo. Yoda wedge utapau darth calamari. Hutt calamari darth jabba. Darth dooku amidala organa moff. Boba darth binks solo hutt skywalker dantooine skywalker. Qui-gonn jar twi'lek jinn leia jango skywalker mon."
   },
   {
     title: "Javascript and You, ES6",
@@ -49,4 +54,6 @@ const articleData = [
   }
 ]
 
-articlesC.appendChild(createNewArticle('title', 'date', 'content'))
+articleData.forEach(data => {
+  articlesC.appendChild(createNewArticle(data.title, data.date, data.content))
+})
