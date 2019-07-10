@@ -8,7 +8,7 @@ class Article {
     // Set a click handler on the expandButton reference, calling the expandArticle method.
     this.domElement = domElement;
     this.expandButton = this.domElement.querySelector('.expandButton');
-    this.expandButton.innerHTML = "Expand";
+    this.expandButton.innerHTML = "Read More";
     this.expandButton.addEventListener('click', () => this.expandArticle());
   }
 
