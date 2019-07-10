@@ -112,3 +112,49 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new artible
 
 */
+
+const articles = document.querySelector('.articles');
+
+data.map((data) => {
+  articles.appendChild(article(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
+});
+
+function createPanel (title, date, p1, p2, p3) {
+  //defining new elements:
+  const article = document.createElement('div');
+  const titleArticle = document.createElement('h2');
+  const dateArticle = document.createElement('p');
+  const firstParagraph = document.createElement('p');
+  const secondParagraph = document.createElement('p');
+  const thirdParagraph = document.createElement('p');
+  const button = document.createElement('span');
+
+  //set structure of elements:
+  //articles.appendChild(article);
+  article.appendChild(titleArticle);
+  article.appendChild(dateArticle);
+  article.appendChild(firstParagraph);
+  article.appendChild(secondParagraph);
+  article.appendChild(thirdParagraph);
+  article.appendChild(button);
+
+  //set class names:
+  article.classList.add('article');
+  dateArticle.classList.add('date');
+  button.classList.add('expandButton');
+
+  //set text content:
+  titleArticle.textContent = title;
+  dateArticle.textContent = date;
+  firstParagraph.textContent = p1;
+  secondParagraph.textContent = p2;
+  thirdParagraph.textContent = p3;
+  button.textContent = 'Expand';
+
+  //button event:
+  button.addEventListener('click', () => {
+    article.classList.toggle('article-open');
+  });
+
+  return article;
+}
