@@ -129,7 +129,7 @@ data.forEach(article => {
    article.appendChild(articleTitle);
   article.appendChild(dateText);
   article.appendChild(paragraph1, paragraph2, paragraph3);
-  article.appendChild(expandButton);
+  article.appendChild(expandButton);                                                                                                                                                                                                                         
 //class names
    article.classList.add('article');
   dateText.classList.add('date');
@@ -141,7 +141,7 @@ data.forEach(article => {
   paragraph2.textContent = p2;
   paragraph3.textContent = p3;
    expandButton.textContent = "Expand";
-   
+
    expandButton.addEventListener('click', event => {
     article.classList.toggle('article-open');
   });
