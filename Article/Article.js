@@ -110,6 +110,42 @@ const data = [
   Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
 
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new artible
-
 */
+let articleAccordion = document.querySelector('.articles');
+data.forEach(article => {
+  articleAccordion.appendChild(createArticle(article.title, article.date, article.firstParagraph, article.secondParagraph, article.thirdParagraph));
+});
+
+ function createArticle(title, date, p1, p2, p3) {
+  // Create elements
+  const article = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+  const dateText = document.createElement('p');
+  const paragraph1 = document.createElement('p');
+  const paragraph2 = document.createElement('p');
+  const paragraph3 = document.createElement('p');
+  const expandButton = document.createElement('span');
+//structure
+   article.appendChild(articleTitle);
+  article.appendChild(dateText);
+  article.appendChild(paragraph1, paragraph2, paragraph3);
+  article.appendChild(expandButton);
+//class names
+   article.classList.add('article');
+  dateText.classList.add('date');
+  expandButton.classList.add('expandButton');
+//text content            
+   articleTitle.textContent = title;
+  dateText.textContent = date;
+  paragraph1.textContent = p1;
+  paragraph2.textContent = p2;
+  paragraph3.textContent = p3;
+   expandButton.textContent = "Expand";
+   
+   expandButton.addEventListener('click', event => {
+    article.classList.toggle('article-open');
+  });
+
+   return article;
+}
 
