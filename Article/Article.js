@@ -6,8 +6,10 @@ class Article {
     this.domElement = domElement; //referencing article
     
     // create a reference to the ".expandButton" class. 
+    //won't show up with querySelectorAll b/c it returns a nodelist
     this.expandButton = this.domElement.querySelector('.expandButton')
-    this.expandButton.innerText = 'expand';
+    this.expandButton.innerHTML = 'expand';
+    //or textContent
     // Using your expandButton reference, update the text on your expandButton to say "expand"
     
     //ES 6

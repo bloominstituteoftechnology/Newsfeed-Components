@@ -11,12 +11,31 @@ const toggleMenu = () => {
   menu.classList.toggle('menu--open')
 }
 
+
+//debugger
 // Start Here: Create a reference to the ".menu" class
 const menu = document.querySelector('.menu');
+console.log( ".menu", menu)
 // create a reference to the ".menu-button" class
 const menuButton = document.querySelector('.menu-button');
+console.log('.menu')
 // Using your menuButton reference, add a click handler that calls toggleMenu
 //reference menuButton variable above which references btn from html 
-menuButton.addEventListener('click', () => {
-  toggleMenu(); //call tagglemenu function
-})
+
+//calling it like toggleMenu() causes it to fire before clicking
+// menuButton.addEventListener('click', () => {
+//   toggleMenu(); //call tagglemenu function
+//   console.log('click')
+// })
+
+
+
+menuButton.addEventListener('click', toggleMenu) 
+//call tagglemenu function
+  console.log('click', menuButton)
+
+
+
+
+
+
