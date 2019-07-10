@@ -34,3 +34,6 @@ articles.forEach((domElement)=>{
 })
 
 console.log(articles);
+
+
+
