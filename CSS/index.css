@@ -76,6 +76,22 @@
 .accordion .panel {
   padding: 30px;
   border: 1px solid gray;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  box-shadow: 3px 3px 2px -1px rgba(0, 0, 0, 0.68);
+  background: #81C784;
+  color: white;
+}
+.accordion .panel button {
+  background-color: #4CAF50;
+  /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
 .accordion .panel .panel-bar {
   display: flex;
