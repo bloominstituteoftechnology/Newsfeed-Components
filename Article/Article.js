@@ -85,6 +85,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Completely lost and hopeless',
+    date: 'Jan 21st, 2019',
+    firstParagraph: `Pick a man, any man. That man there. See him. That man hatless. You know his opinion of the world. You can read it in his face, in his stance. Yet his complaint that a man’s life is no bargain masks the actual case with him. Which is that men will not do as he wishes them to. Have never done, will never do. That’s the way of things with him and his life is so balked about by difficult and become so altered of its intended architecture that he is little more than a walking hovel hardly fit to house the human spirit at all.`,
+
+    secondParagraph: `Men are born for games. Nothing else. Every child knows that play is nobler than work. He knows too that the worth or merit of a game is not inherent in the game itself but rather in the value of that which is put at hazard.`,
+
+    thirdParagraph: `For whoever makes makes a shelter of reeds and hides has joined his spirit to the common destiny of creatures and he will subside back into the primal mud with scarcely a cry. But who builds in stone seeks to alter the structure of the universe and so it was with these masons however primitive their works may seem to us.`
   }
 ];
 
@@ -112,3 +121,62 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new artible
 
 */
+
+const articlers = document.querySelector('.articles')
+
+data.forEach(item => {
+  console.log('creating article', item.title);
+  articlers.appendChild(createArticle(item.title, item.date, item.firstParagraph, item.secondParagraph, item.thirdParagraph));
+})
+
+function createArticle(title, date, para1, para2, para3){
+  
+  // Defining elements
+  
+  const articler = document.createElement('div');
+  const titler = document.createElement('h2');
+  const dater = document.createElement('p');
+  const para1r = document.createElement('p');
+  const para2r = document.createElement('p');
+  const para3r = document.createElement('p');
+  const expandButtonr = document.createElement('span');
+
+  
+  // Structure
+
+  articler.appendChild(titler);
+  articler.appendChild(dater);
+  articler.appendChild(para1r);
+  articler.appendChild(para2r);
+  articler.appendChild(para3r);
+  articler.appendChild(expandButtonr);
+
+
+  // Set classes
+
+  articler.classList.add('article');
+  dater.classList.add('date');
+  expandButtonr.classList.add('expandButton');
+
+
+  // Set text
+
+  titler.textContent = title;
+  dater.textContent = date;
+  para1r.textContent = para1;
+  para2r.textContent = para2;
+  para3r.textContent = para3;
+  expandButtonr.textContent = 'expand';
+
+  
+  // Event listener on the 'expand' button
+
+  expandButtonr.addEventListener('click', event => {
+    articler.classList.toggle('article-open');
+  })
+
+
+
+  return articler
+
+}
