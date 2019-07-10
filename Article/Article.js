@@ -116,22 +116,25 @@ const data = [
 
 function createArticle(articleObj) {
   const article = document.createElement('div');
-  article.classList.add('article')
-  const titleArticle = document.createElement('h2');
-  titleArticle.textContent = articleObj.title
+  const titleArticle = document.createElement('h2'); 
   const dateArticle = document.createElement('p');
-  dateArticle.classList.add('date')
-  dateArticle.textContent = articleObj.date
   const articleContent = document.createElement('div');
   const firstParagraph = document.createElement('p')
-  firstParagraph.textContent = articleObj.firstParagraph
   const secondParagraph = document.createElement('p')
-  secondParagraph.textContent = articleObj.secondParagraph
   const thirdParagraph = document.createElement('p')
-  thirdParagraph.textContent = articleObj.thirdParagraph
   const button = document.createElement('span')
+ 
+  article.classList.add('article')
+  titleArticle.textContent = articleObj.title
+  dateArticle.classList.add('date')
+  dateArticle.textContent = articleObj.date
+  firstParagraph.textContent = articleObj.firstParagraph
+  secondParagraph.textContent = articleObj.secondParagraph
+  thirdParagraph.textContent = articleObj.thirdParagraph
   button.classList.add('expandButton')
   button.textContent = 'expand'
+
+
 
   articleContent.appendChild(firstParagraph)
   articleContent.appendChild(secondParagraph)
