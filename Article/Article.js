@@ -114,14 +114,41 @@ const data = [
 */
 
 
-function createPanelComponent() {
+function createArticle(articleObj) {
   const article = document.createElement('div');
+  article.classList.add('article')
   const titleArticle = document.createElement('h2');
+  titleArticle.textContent = articleObj.title
   const dateArticle = document.createElement('p');
-  const paragraphOne = document.createElement('p');
-  const paragraphTwo = document.createElement('p');
-  const paragraphThree = document.createElement('p');
-  const expandButton = document.createElement('span')
+  dateArticle.classList.add('date')
+  dateArticle.textContent = articleObj.date
+  const articleContent = document.createElement('div');
+  const firstParagraph = document.createElement('p')
+  firstParagraph.textContent = articleObj.firstParagraph
+  const secondParagraph = document.createElement('p')
+  secondParagraph.textContent = articleObj.secondParagraph
+  const thirdParagraph = document.createElement('p')
+  thirdParagraph.textContent = articleObj.thirdParagraph
+  const button = document.createElement('span')
+  button.classList.add('expandButton')
+  button.textContent = 'expand'
 
-  article.appendChild('')
+  articleContent.appendChild(firstParagraph)
+  articleContent.appendChild(secondParagraph)
+  articleContent.appendChild(thirdParagraph)
+  article.appendChild(titleArticle)
+  article.appendChild(dateArticle)
+  article.appendChild(articleContent)
+  article.appendChild(button)
+
+button.addEventListener('click',() => 
+{
+  article.classList.toggle('article-open')
+
+})
+
+return article
+
 }
+
+data.forEach(articleObj => document.querySelector('.articles').appendChild(createArticle(articleObj)))
