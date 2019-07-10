@@ -3,28 +3,25 @@
   left: 20px;
   cursor: pointer;
 }
-
 .menu {
   display: none;
   position: fixed;
   top: 75px;
   left: 0;
   width: 11rem;
-  height: auto; /* This give the height 100% of the screen or, '100% of View Height' */
+  height: auto;
+  /* This give the height 100% of the screen or, '100% of View Height' */
   background-color: #81C784;
   border: 1px solid #004D40;
   border-left: none;
-  // border-bottom: none;
-  z-index: 2; /* This set the layer level of the element, it has precendence over initial level of 1*/
+  z-index: 2;
+  /* This set the layer level of the element, it has precendence over initial level of 1*/
 }
-
 .menu-link {
   list-style-type: none;
   font-size: 1.8rem;
   padding: .5rem;
-  // text-align: center;
 }
-
 .menu--open {
   display: block;
 }
