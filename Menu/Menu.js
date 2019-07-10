@@ -36,7 +36,9 @@ let menuItems = [
 
 function menu (menuItemsArray) {
 const menuDiv = document.createElement('div')
+menuDiv.classList.add('menu')
 const ulList = document.createElement('ul')
+menuDiv.appendChild(ulList)
 menuItemsArray.forEach(item => {
   let listItem = document.createElement('li')
   listItem.textContent = item
@@ -44,5 +46,13 @@ menuItemsArray.forEach(item => {
 })
 
 const menuButton = document.querySelector('.menu-button')
+menuButton.addEventListener('click', () =>  menuDiv.classList.toggle('menu--open'))
+
+return menuDiv
 
 }
+
+const menuComponent = menu(menuItems)
+
+const header = document.querySelector('.header')
+header.parentNode.insertBefore(menuComponent, header.nextSibling)
