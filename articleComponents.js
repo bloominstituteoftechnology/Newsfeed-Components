@@ -1,5 +1,4 @@
 const articlesC = document.querySelector('.articles');
-console.log(articlesC);
 
 function createNewArticle(title, date, p1, p2, p3) {
   // console.log(title, date, content);
