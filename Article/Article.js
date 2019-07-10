@@ -98,8 +98,21 @@ const data = [
 
     <span class='expandButton'></span>
   </div>
+*/
+  function createArticle () {
+const article=document.createElement ('div');
+const title=document.createElement ('h2');
+const date=document.createElement ('p');
+const para1=document.createElement ('p');
+const para2=document.createElement ('p');
+const para3=document.createElement ('p')
 
-  Hint: You will need to use createElement more than once here!
+  }
+
+  
+
+
+  /*Hint: You will need to use createElement more than once here!
 
   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each peice of the data object above.
 
