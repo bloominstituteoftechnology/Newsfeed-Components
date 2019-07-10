@@ -116,7 +116,7 @@ const data = [
 const articles = document.querySelector('.articles');
 
 data.map((data) => {
-  articles.appendChild(article(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
+  articles.appendChild(createPanel(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
 });
 
 function createPanel (title, date, p1, p2, p3) {
@@ -130,7 +130,6 @@ function createPanel (title, date, p1, p2, p3) {
   const button = document.createElement('span');
 
   //set structure of elements:
-  //articles.appendChild(article);
   article.appendChild(titleArticle);
   article.appendChild(dateArticle);
   article.appendChild(firstParagraph);
