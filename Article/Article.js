@@ -122,8 +122,21 @@ function creator (title, date, firstParagraph, secondParagraph, thirdParagraph) 
   const thirdParagraph = document.createElement('p');
   const buttonExpand = document.createElement('span');
 
-  title.classList.add('title');
+  //adding class names[...]
+  // title.classList.add('title'); Learned that h2 doesn't have a class from line 94!
   date.classList.add('date');
+  //note, the 3 separate <p> don't have classes either
   buttonExpand.classList.add('expandButton');
+
+  //adding text content [...]
+  //doesn't seem that any content needs to be added from lines 93-100 but will try adding for h2 and date
+  title.textContent = 'Hello World';
+  date.textContent = 'July 10th, 2019';
+  //Is this right Ryan?
+  title.textContent = title;
+  date.textContent = date;
+  firstParagraph.textContent = firstParagraph;
+  secondParagraph.textContent = secondParagraph;
+  thirdParagraph.textContent = thirdParagraph;
 
 }
