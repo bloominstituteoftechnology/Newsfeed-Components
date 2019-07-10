@@ -33,3 +33,14 @@ let menuItems = [
   Step 6: add the menu component to the DOM.
   
 */
+const header = document.querySelector('.header');
+
+function menuDropdown(items) {
+  const button = document.querySelector('.menu-button');
+  const menu = document.createElement('div');
+  menu.classList.add('menu');
+
+  const ul = document.createElement('ul');
+  menu.appendChild(ul);
+
+}
