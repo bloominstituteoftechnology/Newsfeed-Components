@@ -44,7 +44,7 @@ expandButton.textContent = "expand"
 
 expandButton.addEventListener('click', ()=>{
     // console.log('expand clicked', event.target)
-    articleContent.classList.toggle("article-open")
+    articleContent.parentNode.classList.toggle("article-open")
 })
 
 return articleComponent
