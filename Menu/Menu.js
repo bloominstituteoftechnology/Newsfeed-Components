@@ -38,6 +38,11 @@ let menuItems = [
 //component [...]
 const menuButton = document.querySelector('.menu-button');
 
+//adding the menu component to the DOM
+menuItems.forEach(add => {
+  menuButton.appendChild(menuCreator(add.arr));
+})
+
 function menuCreator(arr) {
   const menuContainer = document.createElement('div')
   const menuC = document.createElement('div')
@@ -56,13 +61,15 @@ function menuCreator(arr) {
   menuItems.forEach(list => {
     const createItems = document.createElement('li')
     ulC.appendChild(createItems);
-    /*not sure when I should add the class '.menu ul li' to the html*/
-    createItems.classList.add('menu ul li')
+    /*not sure when I should add the class '.menu ul li' to the html, I tried 'menuulli' and 'li'*/
+    createItems.classList.add('li')
   })
 
   //adding a click handler to menu button [...]
   menuButton.addEventListener('click', () => {
-    menuContainer.classList.toggle('menu--open')
+    //reference to menu class [maybe?] here
+    menuRef = document.querySelector('.menu')
+    menuRef.classList.toggle('menu--open')
   })
 
 
