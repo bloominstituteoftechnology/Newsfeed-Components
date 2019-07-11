@@ -112,8 +112,12 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new artible
 
 */
-
 const articles = document.querySelector('.articles')
+
+data.forEach(info => {
+  articles.appendChild(creator(info.title, info.date, info.firstParagraph, info.secondParagraph, info.thirdParagraph))
+});
+
 function creator (title, date, firstParagraph, secondParagraph, thirdParagraph) {
   const titleC = document.createElement('h2');
   const dateC = document.createElement('p');
@@ -124,14 +128,14 @@ function creator (title, date, firstParagraph, secondParagraph, thirdParagraph) 
 
   //adding class names[...]
   // title.classList.add('title'); Learned that h2 doesn't have a class from line 94!
-  date.classList.add('date');
+  dateC.classList.add('date');
   //note, the 3 separate <p> don't have classes either
   buttonExpandC.classList.add('expandButton');
 
   //adding text content [...]
   //doesn't seem that any content needs to be added from lines 93-100 but will try adding for h2 and date
-  title.textContent = 'Hello World';
-  date.textContent = 'July 10th, 2019';
+  titleC.textContent = 'Hello World';
+  dateC.textContent = 'July 10th, 2019';
   //Note: have to name the variables, that created elements, as something else but relevant
   titleC.textContent = title;
   dateC.textContent = date;
@@ -141,5 +145,5 @@ function creator (title, date, firstParagraph, secondParagraph, thirdParagraph) 
   //adding button text on my own since not explicitly stated to do so
   buttonExpandC.textContent = 'click here';
 
-
+  return articles;
 }
