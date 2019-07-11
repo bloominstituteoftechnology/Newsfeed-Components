@@ -124,6 +124,12 @@ const data = [
 // <span class='expandButton'></span>
 // </div>
 
+const articles = document.querySelector(".articles");
+data.forEach(data => {
+  console.log("creating article", data.title);
+  articles.appendChild(createArticle(data));
+});
+
 function createArticle(data) {
   //define new elements
   const article = document.createElement("div");
