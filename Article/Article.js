@@ -154,4 +154,12 @@ function createArticle(data) {
   articleContentOne.textContent = data.firstParagraph;
   articleContentTwo.textContent = data.secondParagraph;
   articleContentThree.textContent = data.thirdParagraph;
+
+  //button events
+  articleButton.addEventListener("click", event => {
+    console.log("button clicked", event.target);
+    article.classList.toggle("article--open");
+  });
+
+  return article;
 }
