@@ -141,4 +141,17 @@ function createArticle(data) {
   article.appendChild(articleContentTwo);
   article.appendChild(articleContentThree);
   article.appendChild(articleButton);
+
+  //set class name
+  article.classList.add("article");
+  articleDate.classList.add("date");
+  articleButton.classList.add("expandButton");
+
+  //set text content
+  articleButton.textContent = "expand";
+  articleTitle.textContent = data.title;
+  articleDate.textContent = data.date;
+  articleContentOne.textContent = data.firstParagraph;
+  articleContentTwo.textContent = data.secondParagraph;
+  articleContentThree.textContent = data.thirdParagraph;
 }
