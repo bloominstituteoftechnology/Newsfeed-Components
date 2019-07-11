@@ -119,6 +119,7 @@ data.forEach(info => {
 });
 
 function creator (title, date, firstParagraph, secondParagraph, thirdParagraph) {
+  const container = document.createElement('div')
   const titleC = document.createElement('h2');
   const dateC = document.createElement('p');
   const firstParagraphC = document.createElement('p');
@@ -126,7 +127,18 @@ function creator (title, date, firstParagraph, secondParagraph, thirdParagraph) 
   const thirdParagraphC = document.createElement('p');
   const buttonExpandC = document.createElement('span');
 
+  //appending Cs to container [...]
+  container.appendChild(titleC);
+  container.appendChild(dateC);
+  container.appendChild(firstParagraphC);
+  container.appendChild(secondParagraphC);
+  container.appendChild(thirdParagraphC);
+  container.appendChild(buttonExpandC);
+
   //adding class names[...]
+  //container is adding the variable articles ? 
+  container.classList.add('articles');
+  container.classList.add('article');
   // title.classList.add('title'); Learned that h2 doesn't have a class from line 94!
   dateC.classList.add('date');
   //note, the 3 separate <p> don't have classes either
@@ -145,5 +157,11 @@ function creator (title, date, firstParagraph, secondParagraph, thirdParagraph) 
   //adding button text on my own since not explicitly stated to do so
   buttonExpandC.textContent = 'click here';
 
-  return articles;
+  //adding event listener to the expandButton span
+
+  buttonExpandC.addEventListener("click", () => {
+    container.classList.toggle("article-open");
+  })
+
+  return container;
 }
