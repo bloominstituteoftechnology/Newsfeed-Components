@@ -37,6 +37,8 @@ let menuItems = [
 
 //component [...]
 const menuButton = document.querySelector('.menu-button');
+/*new update on header*/
+const header = document.querySelector('.header')
 
 //adding the menu component to the DOM
 menuItems.forEach(add => {
@@ -51,7 +53,10 @@ function menuCreator(arr) {
 
   //appending menu div & ul [...]
   menuContainer.appendChild(menuC);
+  /*new update on header*/
+  header.appendChild(menuC);
   menuC.appendChild(ulC);
+
 
   //class names [if applicable]
   menuC.classList.add('menu')
