@@ -33,3 +33,40 @@ let menuItems = [
   Step 6: add the menu component to the DOM.
   
 */
+
+
+//component [...]
+const menuButton = document.querySelector('.menu-button');
+
+function menuCreator(arr) {
+  const menuContainer = document.createElement('div')
+  const menuC = document.createElement('div')
+  const ulC = document.createElement('ul')
+  /*Not sure if I need to make 'li' since the forEach will do so (right?) */
+
+  //appending menu div & ul [...]
+  menuContainer.appendChild(menuC);
+  menuC.appendChild(ulC);
+
+  //class names [if applicable]
+  menuC.classList.add('menu')
+  /*not sure how to add the class '.menu ul li' since the forEach creates li (at least that's my understanding)*/
+
+  //forEach that creates an <li> and appends to the <ul>
+  menuItems.forEach(list => {
+    const createItems = document.createElement('li')
+    ulC.appendChild(createItems);
+    /*not sure when I should add the class '.menu ul li' to the html*/
+    createItems.classList.add('menu ul li')
+  })
+
+  //adding a click handler to menu button [...]
+  menuButton.addEventListener('click', () => {
+    menuContainer.classList.toggle('menu--open')
+  })
+
+
+
+
+  return menuContainer;
+}
