@@ -118,6 +118,10 @@ data.forEach(info => {
   articles.appendChild(creator(info.title, info.date, info.firstParagraph, info.secondParagraph, info.thirdParagraph))
 });
 
+//example of adding a new article to the array
+articles.appendChild(creator("It's a beautiful day", 'this Thursday morninging', 'in the neightborhood', 'I am really glad to be here', 'Right?'))
+
+//component function
 function creator (title, date, firstParagraph, secondParagraph, thirdParagraph) {
   const container = document.createElement('div')
   const titleC = document.createElement('h2');
