@@ -125,10 +125,10 @@ const data = [
 const articlers = document.querySelector('.articles')
 
 data.forEach(item => {
-  articlers.appendChild(createArticle(item.title, item.date, item.firstParagraph, item.secondParagraph, item.thirdParagraph));
+  articlers.appendChild(createArticle(item));
 })
 
-function createArticle(title, date, para1, para2, para3){
+function createArticle(obj){
   
   // Defining elements
   
@@ -160,11 +160,11 @@ function createArticle(title, date, para1, para2, para3){
 
   // Set text
 
-  titler.textContent = title;
-  dater.textContent = date;
-  para1r.textContent = para1;
-  para2r.textContent = para2;
-  para3r.textContent = para3;
+  titler.textContent = obj['title'];
+  dater.textContent = obj.date;
+  para1r.textContent = obj.firstParagraph;
+  para2r.textContent = obj.secondParagraph;
+  para3r.textContent = obj.thirdParagraph;
   expandButtonr.textContent = 'expand';
 
   
