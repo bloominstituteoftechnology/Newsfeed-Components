@@ -41,44 +41,41 @@ const menuButton = document.querySelector('.menu-button');
 const header = document.querySelector('.header')
 
 //adding the menu component to the DOM
-menuItems.forEach(add => {
-  menuButton.appendChild(menuCreator(add.arr));
-})
+// menuItems.forEach(add => {
+//   menuButton.appendChild(menuCreator(add.arr));
+// })
+
+
+
 
 function menuCreator(arr) {
+  
   const menuContainer = document.createElement('div')
-  const menuC = document.createElement('div')
   const ulC = document.createElement('ul')
-  /*Not sure if I need to make 'li' since the forEach will do so (right?) */
 
-  //appending menu div & ul [...]
-  menuContainer.appendChild(menuC);
-  /*new update on header*/
-  header.appendChild(menuC);
-  menuC.appendChild(ulC);
+  //making container for the potential <li>s
+  arr.forEach((item)=> {
+    const li = document.createElement('li');
+    //text for newly created <li>
+    li.textContent = item;
+    //appending [...]
+    ulC.appendChild(li);
+    menuContainer.appendChild(ulC);
+  })
 
 
   //class names [if applicable]
-  menuC.classList.add('menu')
+  menuContainer.classList.add('menu')
   /*not sure how to add the class '.menu ul li' since the forEach creates li (at least that's my understanding)*/
 
-  //forEach that creates an <li> and appends to the <ul>
-  menuItems.forEach(list => {
-    const createItems = document.createElement('li')
-    ulC.appendChild(createItems);
-    /*not sure when I should add the class '.menu ul li' to the html, I tried 'menuulli' and 'li'*/
-    createItems.classList.add('li')
-  })
 
   //adding a click handler to menu button [...]
   menuButton.addEventListener('click', () => {
     //reference to menu class [maybe?] here
-    menuRef = document.querySelector('.menu')
-    menuRef.classList.toggle('menu--open')
+    menuContainer.classList.toggle('menu--open')
   })
-
-
-
 
   return menuContainer;
 }
+
+header.appendChild(menuCreator(menuItems));
