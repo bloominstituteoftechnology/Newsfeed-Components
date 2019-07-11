@@ -125,7 +125,6 @@ const data = [
 const articlers = document.querySelector('.articles')
 
 data.forEach(item => {
-  console.log('creating article', item.title);
   articlers.appendChild(createArticle(item.title, item.date, item.firstParagraph, item.secondParagraph, item.thirdParagraph));
 })
 

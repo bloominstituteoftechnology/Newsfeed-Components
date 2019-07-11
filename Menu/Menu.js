@@ -34,6 +34,23 @@ let menuItems = [
   
 */
 
+menuButton = document.querySelector('.menu-button');
+
+//menuButton.appendChild(createMenu(menuItems));
+
+const body = document.querySelector('body');
+
+
+body.appendChild(createMenu(menuItems));
+
+/*
+
+
+
+*/
+
+
+
 
 function createMenu(arry){
   
@@ -46,15 +63,26 @@ function createMenu(arry){
   // Structure (append ul to menu)
 
   menur.appendChild(listr);
+  
+
+
+  // Apply class
+
+  menur.classList.add('menu');
 
   
   // Create list items from array
 
   arry.forEach(item => {
     let listItemr = document.createElement('li');
-    listItemr.textContent = arry.item;
-    listr.appendChild(listItemr)
+    listItemr.textContent = item;
+    listr.appendChild(listItemr);
   })
 
+  menuButton.addEventListener('click', event => {
+    menur.classList.toggle('menu--open');
+  })
+
+  return menur
 
 }
