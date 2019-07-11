@@ -164,7 +164,7 @@ function createArticle(data) {
   //button events
   articleButton.addEventListener("click", event => {
     console.log("button clicked", event.target);
-    article.classList.toggle("article--open");
+    article.classList.toggle("article-open");
   });
 
   return article;
