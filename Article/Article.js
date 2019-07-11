@@ -116,8 +116,8 @@ const data = [
 */
 
 // <div class="article">
-// <h2>{title of the article}</h2>
-// <p class="date">{date of the article}</p>
+//  <h2>{title of the article}</h2>
+//  <p class="date">{date of the article}</p>
 
 // {three separate paragraph elements}
 
@@ -126,11 +126,19 @@ const data = [
 
 function createArticle(data) {
   //define new elements
-  const panel = document.createElement("div");
-  const panelTitle = document.createElement("h2");
-  const panelContent = document.createElement("p");
-  const panelButton = document.createElement("span");
+  const article = document.createElement("div");
+  const articleTitle = document.createElement("h2");
+  const articleDate = document.createElement("p");
+  const articleContentOne = document.createElement("p");
+  const articleContentTwo = document.createElement("p");
+  const articleContentThree = document.createElement("p");
+  const articleButton = document.createElement("span");
 
   //setup Structure of elements
-  panelContent.appendChild(panelContent);
+  article.appendChild(articleTitle);
+  article.appendChild(articleDate);
+  article.appendChild(articleContentOne);
+  article.appendChild(articleContentTwo);
+  article.appendChild(articleContentThree);
+  article.appendChild(articleButton);
 }
