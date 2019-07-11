@@ -115,28 +115,31 @@ const data = [
 
 const articles = document.querySelector('.articles')
 function creator (title, date, firstParagraph, secondParagraph, thirdParagraph) {
-  const title = document.createElement('h2');
-  const date = document.createElement('p');
-  const firstParagraph = document.createElement('p');
-  const secondParagraph = document.createElement('p');
-  const thirdParagraph = document.createElement('p');
-  const buttonExpand = document.createElement('span');
+  const titleC = document.createElement('h2');
+  const dateC = document.createElement('p');
+  const firstParagraphC = document.createElement('p');
+  const secondParagraphC = document.createElement('p');
+  const thirdParagraphC = document.createElement('p');
+  const buttonExpandC = document.createElement('span');
 
   //adding class names[...]
   // title.classList.add('title'); Learned that h2 doesn't have a class from line 94!
   date.classList.add('date');
   //note, the 3 separate <p> don't have classes either
-  buttonExpand.classList.add('expandButton');
+  buttonExpandC.classList.add('expandButton');
 
   //adding text content [...]
   //doesn't seem that any content needs to be added from lines 93-100 but will try adding for h2 and date
   title.textContent = 'Hello World';
   date.textContent = 'July 10th, 2019';
-  //Is this right Ryan?
-  title.textContent = title;
-  date.textContent = date;
-  firstParagraph.textContent = firstParagraph;
-  secondParagraph.textContent = secondParagraph;
-  thirdParagraph.textContent = thirdParagraph;
+  //Note: have to name the variables, that created elements, as something else but relevant
+  titleC.textContent = title;
+  dateC.textContent = date;
+  firstParagraphC.textContent = firstParagraph;
+  secondParagraphC.textContent = secondParagraph;
+  thirdParagraphC.textContent = thirdParagraph;
+  //adding button text on my own since not explicitly stated to do so
+  buttonExpandC.textContent = 'click here';
+
 
 }
