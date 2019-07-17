@@ -88,6 +88,31 @@ const data = [
   }
 ];
 
+
+
+function news(article) {
+  const article = document.createElement('article');
+  const date =  document.createElement('date');
+  const par1 =  document.createElement('par1');
+  const par2 =  document.createElement('par2');
+  const par3 =  document.createElement('par3');
+  const expandButton =  document.createElement('expandButton');
+  expandButton.classList.toggle('article-open');
+
+
+  return article;
+}
+
+const newComponent = data.map( (arrayItem) => {
+  let newArticle = news(arrayItem);
+  return newArticle;
+});
+
+newComponent.forEach( component => {
+  parent.appendChild(component);
+});
+
+
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
   <div class="article">
