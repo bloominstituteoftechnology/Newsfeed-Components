@@ -108,29 +108,58 @@ const data = [
 
   /
  */
-const createNewArticle = (props) => {
-  const articles = document.querySelector('.articles');
+
+class Article {
+  constructor(article, title, date, firstPara, secondPara, thirdPara) {
+    this.articleTitle = article.querySelector('h2');
+    articleTitle.textContent = title;
+    this.articleDate = article.querySelector('.date');
+    articleDate.textContent = date;
+    this.firstPara = article.querySelector('.first-para');
+    firstPara.textContent = firstPara;
+    this.secondPara = article.querySelector('.second-para');
+    secondPara.textContent = secondPara;
+    this.thirdPara = article.querySelector('.third-para');
+    thirdPara.textContent = thirdPara;
+    this.expandButtonSpan = article.querySelector('.expandButton');
+  }
+
+  toggleArticleOpen () {
+    this.expandButtonSpan.addEventListener('click', () => article.classList.toggle('article-open'));
+  }
+
+}
+
+const createNewArticle = () => {
+
   const newArticle = document.createElement('div');
   newArticle.classList.add('article');
+
   const newArticleHeader = document.createElement('h2');
-  newArticleHeader.textContent = props.title;
   newArticle.appendChild(newArticleHeader);
+
   const newArticleDate = document.createElement('p');
   newArticleDate.classList.add('date');
-  newArticleDate.textContent = props.date;
   newArticle.appendChild(newArticleDate);
+
   const newArticleFirstPara = document.createELement('p');
-  newArticleFirstPara.textContent = props.firstParagraph;
+  newArticleFirstPara.classList.add('first-para');
   newArticle.appendChild(newArticleFirstPara);
+
+
   const newArticleSecondPara = document.createELement('p');
-  newArticleSecondPara.textContent = props.secondParagraph;
+  newArticleSecondPara.classList.add('second-para');
   newArticle.appendChild(newArticleSecondPara);
+
   const newArticleThirdPara = document.createELement('p');
-  newArticleThirdPara.textContent = props.thirdParagraph;
+  newArticleThirdPara.classList.add('third-para');
   newArticle.appendChild(newArticleThirdPara);
+
   const newArticleSpan = document.createElement('span');
   newArticleSpan.classList.add('expandButton');
   newArticle.appendChild(newArticleSpan);
+
+  const articles = document.querySelector('.articles');
   articles.appendChild(newArticle);
   return newArticle;
 }
@@ -141,11 +170,8 @@ const createNewArticle = (props) => {
 *  Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
 *
 * */
-createNewArticle(data[0]);
 
-const expandButtonSpan = document.querySelector('.expandButton');
-const articleDiv = document.querySelector('.article');
-expandButtonSpan.addEventListener("click", () => articleDiv.classList.toggle('article-open'));
+
 
 /*
 
