@@ -112,3 +112,83 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new artible
 
 */
+
+const articles = document.querySelector('.articles')
+
+data.map(data => {
+  articles.appendChild(Article(data.title, data.date, data.firstParagraph))
+})
+
+function Article(title, date, pfirst) {
+  const article = document.createElement('div');
+
+  const h2 = document.createElement('h2');
+  const p = document.createElement('p');
+  const pfirst = document.createElement('p');
+  const span = document.createElement('span');
+
+  article.classList.add('article');
+
+  p.classList.add('date');
+  span.classList.add('expandButton');
+
+  article.appendChild(h2);
+  article.appendChild(p);
+  article.appendChild(pfirst);
+  article.appendChild(span);
+
+  h2.textContent = title;
+  p.textContent = date;
+  p1.textContent = firstParagraph;
+  span.textContent = 'expand';
+
+  span.addEventListener('click', () => {
+    article.classList.toggle('article-open')
+    span.textContent = 'close';
+  })
+
+return article
+}
+
+
+
+
+// class ArticlePanel {
+//   constructor(panel, title) {
+//     const panelTitle = panel.querySelector('h2');
+//     panelTitle.textContent = title;
+//   }
+
+// }
+
+// const createNewComponent = () => {
+//   const article = document.querySelector('.articles'); 
+//   const newArticle = document.createElement('div'); 
+//   newArticle.classList.add('article');
+
+//   const title = document.createElement('h2');
+//   newArticle.appendChild(title);
+
+//   const date = document.createElement('p');
+//   date.classList.add('date');
+//   newArticle.appendChild(date);
+
+//   const firstPara = document.createElement('p');
+//   newArticle.appendChild(firstPara);
+
+//   const secondPara = document.createElement('p');
+//   newArticle.appendChild(secondPara);
+
+//   const thirdPara = document.createElement('p');
+//   newArticle.appendChild(thirdPara);
+
+//   const button = document.createElement('span');
+//   newArticle.appendChild(button);
+
+//   article.appendChild(newArticle);
+//   return newArticle;
+// }
+
+// data.map(()=>{
+//   createNewComponent()
+// })
