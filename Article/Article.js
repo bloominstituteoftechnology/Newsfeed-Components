@@ -88,17 +88,79 @@ const data = [
   }
 ];
 
-/* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
-  
-  <div class="article">
-    <h2>{title of the article}</h2>
-    <p class="date">{date of the article}</p>
 
-    {three separate paragraph elements}
+// Step 1: Create a function that creates a component. You will want your component to look like the template below: 
+// function ArticleComponent() {
+//   const article = document.createElement("div");
+//   const title = document.createElement("h2");
+//   const date = document.createElement("p");
+//   const par = document.createElement("p");
+//   const expandButton = document.createElement("span");
+// }
+/*
+<div class="article">
+  <h2>{title of the article}</h2>
+  <p class="date">{date of the article}</p>
+
+  {three separate paragraph elements}
 
     <span class='expandButton'></span>
-  </div>
+</div>
+*/
 
+/*
+const articles = document.querySelector(".articles")
+
+
+
+function createArticle(title, date, firstP, secondP, thirdP) {
+  const article = document.createElement("div");
+  const title = document.createElement("h2");
+  const date = document.createElement("p");
+  const pOne = document.createElement("p");
+  const pTwo = document.createElement("p");
+  const pThree = document.createElement("p");
+  const expandButton = document.createElement("span");
+  const expandButtonOpen = document.createElement("button");
+  const expandButtonClose = document.createElement("button");
+
+  article.appendChild(title)
+  article.appendchild(date)
+  article.appendChild(pOne)
+  article.appendChild(pTwo)
+  article.appendChild(pThree)
+  expandButton.appendChild(expandButtonOpen)
+  expandButton.appendChild(expandButtonClose)
+
+  article.classList.add("article")
+  title.classList.add("title")
+  date.classList.add("date")
+  pOne.classList.add("pOne")
+  pTwo.classList.add("pTwo")
+  pThree.classList.add("pThree")
+  expandButton.classList.add("expandButton")
+  expandButtonOpen.classList.add("expandButtonOpen")
+  expandButtonClose.classList.add("expandButtonClose", "hide-btn")
+
+  expandButtonOpen.textContent = "open"
+  expandButtonClose.textContent = "close"
+
+  expandButton.addEventListener("click", event => {
+    console.log("button clicked", event.target)
+  })
+
+
+
+  articleData.map(data => {
+    const newArticleObject = new completeArticle(
+      createNewArticle(),
+      data.title, data.date, data.pOne, data.pTwo, data.pThree))
+      );
+})
+*/
+
+
+/*
   Hint: You will need to use createElement more than once here!
 
   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each peice of the data object above.
@@ -112,3 +174,29 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new artible
 
 */
+
+function createArticle() {
+  const article = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+  article.appendChild(articleTitle)
+  const articleDate = document.createElement('p');
+  article.appendChild(articleDate);
+  const firstParagraph = document.createElement('p');
+  const secondParagraph = document.createElement('p');
+  const thirdParagraph = document.createElement('p');
+  const openButton = document.createElement('span')
+  article.appendChild(articleDate)
+  // const closeButton = document.createElement('span')
+
+  article.appendChild(title)
+  article.appendchild(date)
+  article.appendChild(pOne)
+  article.appendChild(pTwo)
+  article.appendChild(pThree)
+  expandButton.appendChild(expandButtonOpen)
+  expandButton.appendChild(expandButtonClose)
+  return article;
+}
+
+const articles = document.querySelector('.articles');
+articles.appendChild(createArticle());
