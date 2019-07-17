@@ -151,10 +151,16 @@ function createComponent(arr){
 
   // toggle the content of the articles
   span.addEventListener('click',()=>{
-    article.classList.toggle('article-open')
+    article.classList.toggle('article-open');
+     toggleBtntext()
   })
 
-
+  // change the text of the btn 
+ const toggleBtntext =() =>{
+    article.classList.contains('article-open')? span.textContent = 'Show less' 
+                                              : span.textContent = 'Expand...';
+  }
+  
 
   return article
 

@@ -38,6 +38,9 @@
 .articles {
   margin-top: 95px;
 }
+.adjust-articles {
+  margin-left: 20%;
+}
 .article {
   margin: 20px 10%;
   padding: 0 20px 25px;
