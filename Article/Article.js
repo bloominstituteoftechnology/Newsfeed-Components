@@ -106,70 +106,71 @@ const data = [
  }
 
 
+/*
+*  Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
+*
+* */
   /
  */
 
 class Article {
   constructor(article, title, date, firstPara, secondPara, thirdPara) {
-    this.articleTitle = article.querySelector('h2');
+    this.article = article;
+    let articleTitle = article.querySelector('h2');
     articleTitle.textContent = title;
-    this.articleDate = article.querySelector('.date');
+    let articleDate = article.querySelector('.date');
     articleDate.textContent = date;
-    this.firstPara = article.querySelector('.first-para');
+    let firstPara = article.querySelector('.first-para');
     firstPara.textContent = firstPara;
-    this.secondPara = article.querySelector('.second-para');
+    let secondPara = article.querySelector('.second-para');
     secondPara.textContent = secondPara;
-    this.thirdPara = article.querySelector('.third-para');
+    let thirdPara = article.querySelector('.third-para');
     thirdPara.textContent = thirdPara;
     this.expandButtonSpan = article.querySelector('.expandButton');
   }
 
-  toggleArticleOpen () {
-    this.expandButtonSpan.addEventListener('click', () => article.classList.toggle('article-open'));
+  toggleArticleOpen() {
+    this.expandButtonSpan.addEventListener('click', () => this.article.classList.toggle('article-open'));
   }
 
 }
 
 const createNewArticle = () => {
-
-  const newArticle = document.createElement('div');
+  let newArticle = document.createElement('div');
   newArticle.classList.add('article');
 
-  const newArticleHeader = document.createElement('h2');
+  let newArticleHeader = document.createElement('h2');
   newArticle.appendChild(newArticleHeader);
 
-  const newArticleDate = document.createElement('p');
+  let newArticleDate = document.createElement('p');
   newArticleDate.classList.add('date');
   newArticle.appendChild(newArticleDate);
 
-  const newArticleFirstPara = document.createELement('p');
+  let newArticleFirstPara = document.createELement('p');
   newArticleFirstPara.classList.add('first-para');
   newArticle.appendChild(newArticleFirstPara);
 
 
-  const newArticleSecondPara = document.createELement('p');
+  let newArticleSecondPara = document.createELement('p');
   newArticleSecondPara.classList.add('second-para');
   newArticle.appendChild(newArticleSecondPara);
 
-  const newArticleThirdPara = document.createELement('p');
+  let newArticleThirdPara = document.createELement('p');
   newArticleThirdPara.classList.add('third-para');
   newArticle.appendChild(newArticleThirdPara);
 
-  const newArticleSpan = document.createElement('span');
+  let newArticleSpan = document.createElement('span');
   newArticleSpan.classList.add('expandButton');
   newArticle.appendChild(newArticleSpan);
 
-  const articles = document.querySelector('.articles');
+  let articles = document.querySelector('.articles');
   articles.appendChild(newArticle);
+
   return newArticle;
 }
 
 
 
-/*
-*  Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
-*
-* */
 
 
 
@@ -180,6 +181,19 @@ const createNewArticle = () => {
 
 
   /*Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.*/
+
+data.map((articleData) => {
+  return new Article(
+      createNewArticle(),
+      articleData.title,
+      articleData.date,
+      articleData.firstParagraph,
+      articleData.secondParagraph,
+      articleData.thirdParagraph
+  );
+});
+
+
 
  /* Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new artible*/
 
