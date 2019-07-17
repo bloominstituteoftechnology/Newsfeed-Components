@@ -124,11 +124,18 @@
 //   </div>
 
 function createCompenent() {
-  // set the structure of the elements
+  // define new elements
   const article = document.createElement("div");
   const h2 = document.createElement("h2");
   const p = document.createElement("p");
   const span = document.createElement("span");
+
+  // set the structure of the elements
+  article.appendChild(h2);
+  article.appendChild(p);
+  article.appendChild(span)
+
+  // set class names to the new elements 
 }
 
 const articles = document.querySelectorAll(".articles");
