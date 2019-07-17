@@ -138,9 +138,9 @@ const data = [
     // article.appendChild(span)
 
     // add classes to the elements
-    article.classList.add('article')
-    paragraph.classList.add('date')
-    span.classList.add('expandButton')
+    // article.classList.add('article')
+    // paragraph.classList.add('date')
+    // span.classList.add('expandButton')
 
 
   }
