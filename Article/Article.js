@@ -113,12 +113,23 @@
 //   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new artible
 
 // */
-function createCompenent(){
-  // set the
-  const article = document.createElement('div');
+
+//   <div class="article">
+//     <h2>{title of the article}</h2>
+//     <p class="date">{date of the article}</p>
+
+//     {three separate paragraph elements}
+
+//     <span class='expandButton'></span>
+//   </div>
+
+function createCompenent() {
+  // set the structure of the elements
+  const article = document.createElement("div");
+  const h2 = document.createElement("h2");
+  const p = document.createElement("p");
+  const span = document.createElement("span");
 }
 
-const articles = document.querySelectorAll('.articles')
-console.log(articles)
-
-
+const articles = document.querySelectorAll(".articles");
+console.log(articles);
