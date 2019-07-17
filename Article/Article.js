@@ -89,8 +89,8 @@ const data = [
 ];
 
 class NewArticle {
-  constructor(f, article) {
-    this.currentArticle = f.querySelector('.article');
+  constructor(f, article, i) {
+    this.index = i;
     this.title = f.querySelector('h2');
     this.title.textContent = article.title;
     this.date = f.querySelector('.date');
@@ -102,12 +102,13 @@ class NewArticle {
     this.pThree = f.querySelectorAll('p')[3];
     this.pThree.textContent = article.thirdParagraph;
     this.button = f.querySelector('.expandButton')
+    this.button.textContent = 'Click me'
     this.button.addEventListener('click', () => {
       this.toggleBtn();
     });
   }
   toggleBtn() {
-    this.currentArticle.classList.toggle('article-open');
+    document.querySelectorAll('.article')[this.index].classList.toggle('article-open');
   }
 }
 
@@ -139,8 +140,8 @@ let addArticle = () => {
   return newArticle;
 }
 
-data.map((aData) => {
-  new NewArticle(addArticle(), aData)
+data.map((aData, i) => {
+  new NewArticle(addArticle(), aData, i)
 })
 
 // Step 1: Create a function that creates a component. You will want your component to look like the template below:
