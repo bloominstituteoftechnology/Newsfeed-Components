@@ -110,8 +110,6 @@ const data = [
 *  Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
 *
 * */
-  /
- */
 
 class Article {
   constructor(article, title, date, firstParaText, secondParaText, thirdParaText) {
@@ -146,16 +144,16 @@ const createNewArticle = () => {
   newArticleDate.classList.add('date');
   newArticle.appendChild(newArticleDate);
 
-  let newArticleFirstPara = document.createELement('p');
+  let newArticleFirstPara = document.createElement('p');
   newArticleFirstPara.classList.add('first-para');
   newArticle.appendChild(newArticleFirstPara);
 
 
-  let newArticleSecondPara = document.createELement('p');
+  let newArticleSecondPara = document.createElement('p');
   newArticleSecondPara.classList.add('second-para');
   newArticle.appendChild(newArticleSecondPara);
 
-  let newArticleThirdPara = document.createELement('p');
+  let newArticleThirdPara = document.createElement('p');
   newArticleThirdPara.classList.add('third-para');
   newArticle.appendChild(newArticleThirdPara);
 
@@ -163,9 +161,9 @@ const createNewArticle = () => {
   newArticleSpan.classList.add('expandButton');
   newArticle.appendChild(newArticleSpan);
 
-  let articles = document.querySelector('.articles');
+  let articles;
+  articles = document.querySelector(".articles");
   articles.appendChild(newArticle);
-
   return newArticle;
 }
 
@@ -181,6 +179,9 @@ const createNewArticle = () => {
 
 
   /*Step 4: Map over the data, creating a component for each object and add each component to the DOM as children of the 'articles' div.*/
+
+
+// console.log(articles);
 
 data.map((articleData) => {
   const newArticle = new Article(
