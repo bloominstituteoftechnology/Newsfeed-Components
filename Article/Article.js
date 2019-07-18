@@ -150,7 +150,6 @@ class ArticleList {
       this.articleExpandButton.textContent = "Click to Expand";
       this.articleCloseButton = document.createElement("span");
       this.articleCloseButton.classList.add("close");
-      this.articleCloseButton.textContent = "x";
 
       this.articlesContainer.appendChild(this.article);
       this.article.appendChild(this.articleH2);
