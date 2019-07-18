@@ -114,18 +114,18 @@ const data = [
  */
 
 class Article {
-  constructor(article, title, date, firstPara, secondPara, thirdPara) {
+  constructor(article, title, date, firstParaText, secondParaText, thirdParaText) {
     this.article = article;
-    let articleTitle = article.querySelector('h2');
-    articleTitle.textContent = title;
-    let articleDate = article.querySelector('.date');
-    articleDate.textContent = date;
-    let firstPara = article.querySelector('.first-para');
-    firstPara.textContent = firstPara;
-    let secondPara = article.querySelector('.second-para');
-    secondPara.textContent = secondPara;
-    let thirdPara = article.querySelector('.third-para');
-    thirdPara.textContent = thirdPara;
+    this.articleTitle = article.querySelector('h2');
+    this.articleTitle.textContent = title;
+    this.articleDate = article.querySelector('.date');
+    this.articleDate.textContent = date;
+    this.firstPara = article.querySelector('.first-para');
+    this.firstPara.textContent = firstParaText;
+    this.secondPara = article.querySelector('.second-para');
+    this.secondPara.textContent = secondParaText;
+    this.thirdPara = article.querySelector('.third-para');
+    this.thirdPara.textContent = thirdParaText;
     this.expandButtonSpan = article.querySelector('.expandButton');
   }
 
@@ -180,10 +180,10 @@ const createNewArticle = () => {
   Step 3: return the entire component.*/
 
 
-  /*Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.*/
+  /*Step 4: Map over the data, creating a component for each object and add each component to the DOM as children of the 'articles' div.*/
 
 data.map((articleData) => {
-  return new Article(
+  const newArticle = new Article(
       createNewArticle(),
       articleData.title,
       articleData.date,
