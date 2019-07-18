@@ -1,23 +1,3 @@
-<<<<<<< HEAD
-// Because classes are not hoisted you will need to start your code at the bottom of the page.  Look for the comment "START HERE"
-
-class Article {
-  constructor(domElement) {
-    // assign this.domElement to the passed in domElement
-    this.domElement = domElement;
-    // create a reference to the ".expandButton" class.
-    this.expandButton = domElement.querySelector(".expandButton");
-    // Using your expandButton reference, update the text on your expandButton to say "expand"
-    this.expandButton.textContent = "expand";
-
-    // Set a click handler on the expandButton reference, calling the expandArticle method.
-    this.expandButton.addEventListener("click", this.expandArticle.bind(this));
-  }
-
-  expandArticle() {
-    // Using our reference to the domElement, toggle a class to expand or hide the article.
-    this.domElement.classList.toggle("article-open");
-=======
 /* This is the data we will be using to create our article components */
 /* Look over this data, then proceed to line 91*/
 const data = [
@@ -105,12 +85,27 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
->>>>>>> upstream/master
+  },
+  {
+    title: 'Professional Software Development in 2019',
+    date: 'Jan 1st, 2019',
+    firstParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
+          hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
+          Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `,
+
+    secondParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
+          hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
+          hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
+          hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? `,
+
+    thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
+          Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
+          Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
 ];
 
-/* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
-  
+/* Step 1: Create a function that creates a component. You will want your component to look like the template below:
+
   <div class="article">
     <h2>{title of the article}</h2>
     <p class="date">{date of the article}</p>
@@ -128,16 +123,50 @@ const data = [
 
   Step 3: return the entire component.
 
-<<<<<<< HEAD
-let articles = document.querySelectorAll(".article");
-
-articles.forEach(domElement => {
-  return new Article(domElement);
-});
-=======
   Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
 
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new artible
 
 */
->>>>>>> upstream/master
+
+const articles = document.querySelector('.articles');
+
+data.forEach(info => {
+  articles.appendChild(createData(info.title, info.date, info.firstParagraph, info.secondParagraph, info.thirdParagraph))
+})
+
+function createData(title, date, firstParagraph, secondParagraph, thirdParagraph) {
+  const article = document.createElement("div");
+  const articleTitle = document.createElement("h2");
+  const dates = document.createElement("p");
+  const firstP = document.createElement("p");
+  const secondP = document.createElement("p");
+  const thirdP = document.createElement("p");
+  const expandButton = document.createElement("span");
+
+
+  article.appendChild(articleTitle);
+  article.appendChild(dates);
+  article.appendChild(firstP);
+  article.appendChild(secondP);
+  article.appendChild(thirdP);
+  article.appendChild(expandButton);
+
+  article.classList.add("article");
+  dates.classList.add("date");
+  expandButton.classList.add("expandButton");
+
+  articleTitle.textContent = title;
+  dates.textContent = date;
+  firstP.textContent = firstParagraph;
+  secondP.textContent = secondParagraph;
+  thirdP.textContent = thirdParagraph;
+  expandButton.textContent = "Expand"
+
+  expandButton.addEventListener("click", event => {
+    article.classList.toggle("article-open");
+  })
+
+  return article;
+}
+
