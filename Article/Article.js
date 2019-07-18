@@ -101,9 +101,9 @@ const data = [
 
   Hint: You will need to use createElement more than once here!
 
-  Your function should take either an object as it's one argument, or 5 separate arguments mapping to each peice of the data object abo*
+  Your function should take either an object as it's one argument, or 5 separate arguments mapping to each peice of the data object abo*/
 
- }
+
 
 
 /*
@@ -161,9 +161,8 @@ const createNewArticle = () => {
   newArticleSpan.classList.add('expandButton');
   newArticle.appendChild(newArticleSpan);
 
-  let articles;
-  articles = document.querySelector(".articles");
-  articles.appendChild(newArticle);
+
+  document.querySelector(".articles").appendChild(newArticle);
   return newArticle;
 }
 
@@ -181,7 +180,7 @@ const createNewArticle = () => {
   /*Step 4: Map over the data, creating a component for each object and add each component to the DOM as children of the 'articles' div.*/
 
 
-// console.log(articles);
+
 
 data.map((articleData) => {
   const newArticle = new Article(
