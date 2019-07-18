@@ -42,7 +42,7 @@ class Menu {
     this.menu = document.createElement("div");
     this.menu.classList.add("menu");
     this.ul = document.createElement("ul");
-​
+
     this.header.appendChild(this.menu);
     this.menu.appendChild(this.ul);
     this.list = this.listArray.forEach(listItem => {
@@ -50,13 +50,13 @@ class Menu {
       this.li.textContent = listItem;
       this.ul.appendChild(this.li);
     });
-​
+
     this.menuButton.addEventListener("click", () => this.toggleOpen());
   }
-​
+
   toggleOpen() {
     this.menu.classList.toggle("menu--open");
   }
 }
-​
+
 const myMenu = new Menu(menuItems);

@@ -85,9 +85,22 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
-  }
-];
+  },
+  {
+    title: 'The Air Jordan 4 "Cool Grey" Receives an Official Release Date',
+    date: 'July 16th, 2019',
+    firstParagraph: `Near the end of last year, Jordan Brand unveiled plans for bringing back the classic “Cool Grey” colorway of its Air Jordan 4 
+          silhouette. The Nike division has recently locked down an official release date for the sneaker. `,
 
+    secondParagraph: `It’s been close to 15 years since we’ve seen the shoe’s release, arriving just in time for the 30th-anniversary of the Air 
+          Jordan 4. The sneaker dons subtle grey uppers in premium suede, contrasted against a crisp white midsole and black outsole. All the classic 
+          design elements of the shoe like its tongue tag, netting at the sidewalls, plastic lace cage and heel patch come in a tonal shade, rendering 
+          the popular footwear piece with a mature outlook. Below sits a duo-toned sole, paletted in black and white, while a transparent Air Unit 
+          bubble rounds up the details of the sneaker.`,
+
+    thirdParagraph: `The Nike Air Jordan 4 “Cool Grey” will be available at nike.com on August 1 at 7 a.m. EST for $190 USD.`
+  },
+];
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
   <div class="article">
