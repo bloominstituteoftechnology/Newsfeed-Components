@@ -96,6 +96,10 @@ const data = [
 
     {three separate paragraph elements}
 
+    <p class="firstPara">{first para content}</p>
+    <p class="secondPara">{second para content}</p>
+    <p class="thirdPara">{third para content}</p>
+
     <span class='expandButton'></span>
   </div>
 
@@ -112,3 +116,152 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new artible
 
 */
+
+
+
+// function articleCreation (articleContent){
+//   const articleTitle = document.createElement('h2');
+//   articleTitle.textContent = articleContent
+// }
+
+
+
+
+
+// class ArticlePanel {
+//   constructor(article, title, date, firstParagraph, secondParagraph, thirdParagraph) {
+//     this.isOpen = false;
+//     const articleTitle = article.querySelector('h2');
+//     articleTitle.textContent = title;
+//     const articleDate = article.querySelector('.date')
+//     articleDate.textContent = date;
+//     this.articleButton = article.querySelector('.expandButton');
+//     this.articleContent = article.querySelector('.article');
+//     this.articleContent.textContent = firstParagraph, secondParagraph, thirdParagraph;
+//     this.articleButton.addEventListener('click', () => {
+//       this.toggleArticle();
+//     });
+//   }
+
+//   toggleButton() {
+//     this.isOpen = !this.isOpen;
+//     if (!this.isOpen) {
+//       this.articleButton.textContent = "Open";
+//     } else {
+//       this.articleButton.textContent = "Close";
+//     }
+//   }
+  
+  
+  
+//   toggleArticle() {
+//     this.toggleButton();
+//     this.articleContent.classList.toggle('article-open');
+//   }
+
+// }
+
+// // console.log(document.getElementsByClassName('articles')[0]);
+
+// const createNewArticle = () => {
+  
+//   const articles = document.querySelector('.articles');
+
+//   // console.log(articles)
+
+//   const newArticleSection = document.createElement('div');
+//   newArticleSection.classList.add('article');
+
+//   const newArticle = document.createElement('div');
+//   newArticle.classList.add('article');
+//   newArticleSection.appendChild(newArticle);
+
+//   const h2Article = document.createElement('h2');
+//   newArticle.appendChild(h2Article);
+
+//   const articleButton = document.createElement('expandButton');
+//   articleButton.classList.add('expandButton');
+//   articleButton.textContent = "Open";
+//   newArticle.appendChild(articleButton);
+
+//   const articleContent = document.createElement('div');
+//   articleContent.classList.add('date');
+//   newArticleSection.appendChild(articleContent);
+
+//   articles.appendChild(newArticleSection);
+
+//   console.log(newArticle);
+//   return newArticleSection;
+
+
+// }
+
+
+
+// data.map((article) => {
+//   const newArticleObject = new ArticlePanel(
+//     createNewArticle(),
+//     article.title,
+//     article.date,
+//     article.firstParagraph,
+//   );
+// })
+
+
+
+
+
+
+
+function articleTemplate(articles) {
+  const article = document.createElement('div');
+  
+  const title = document.createElement('h2');
+  article.appendChild(title);
+  title.textContent = articles.title;
+  
+  const date = document.createElement('p');
+  article.appendChild(date);
+  date.textContent = articles.date
+ 
+  const firstPara = document.createElement('p');
+  article.appendChild(firstPara);
+  firstPara.textContent = articles.firstParagraph;
+ 
+  const secondPara = document.createElement('p');
+  article.appendChild(secondPara);
+  secondPara.textContent = articles.secondParagraph;
+ 
+  const thirdPara = document.createElement('p');
+  article.appendChild(thirdPara);
+  thirdPara.textContent = articles.thirdParagraph;
+ 
+  const button = document.createElement('span');
+  article.appendChild(button);
+  button.textContent = "Open/Close";
+
+  article.classList.add('article');
+  button.classList.add('expandButton');
+
+  button.addEventListener('click', () => {
+    article.classList.toggle('article-open');
+  })
+
+
+
+  // articleContent.appendChild(article);
+  return article;
+}
+
+const articleContent = document.querySelector('.articles');
+
+const articleAgain = data.map(data => {
+  articleContent.appendChild(articleTemplate(data));
+})
+
+// data.forEach(info => {
+//   const articleAgain = articleTemplate(info);
+//   articleContent.appendChild(articleAgain);
+// })
+
+
