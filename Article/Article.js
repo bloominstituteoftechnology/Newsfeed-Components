@@ -89,9 +89,64 @@ const data = [
   ];
 
 
-  const head = document.querySelector('.header');
+  const article = document.querySelector('.articles');
 
-  head.textContent = "test";
+  article.appendChild(createArticle('Jashele Tillman', 'July 18, 2019', 'This is a test of adding a new article', 'And it looks like it\'s working!', 'Omg, this is fun, lol'));
+
+data.forEach(x => {
+  article.appendChild(createArticle(x.title, x.date, x.firstParagraph, x.secondParagraph, x.thirdParagraph))
+});
+
+
+
+  function createArticle(title, date, firstParagraph, secondParagraph, thirdParagraph) {
+    // Define new elements:
+
+    const article = document.createElement('div');
+    const artTitle = document.createElement('h2');
+    const artDate = document.createElement('date');
+    const para1 = document.createElement('p');
+    const para2 = document.createElement('p');
+    const para3 = document.createElement('p');
+    const expand = document.createElement('button');
+
+    // Setup structure of elements
+
+    article.appendChild(artTitle);
+    article.appendChild(artDate);
+    article.appendChild(para1);
+    article.appendChild(para2);
+    article.appendChild(para3);
+    article.appendChild(expand);
+
+    // Set class names
+
+    article.classList.add('article');
+    artTitle.classList.add('h2');
+    artDate.classList.add('date');
+    para1.classList.add('article');
+    para2.classList.add('article');
+    para3.classList.add('article');
+    expand.classList.add('expandButton');
+
+    // Set text content
+
+    artTitle.textContent = title;
+    artDate.textContent = date;
+    para1.textContent = firstParagraph;
+    para2.textContent = secondParagraph;
+    para3.textContent = thirdParagraph;
+    expand.textContent = 'Expand';
+
+
+    // Button Events
+
+    expand.addEventListener('click', e => {
+      article.classList.toggle('article-open')
+    })
+
+    return article; 
+  }
 
 
 

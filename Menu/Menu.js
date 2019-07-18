@@ -9,9 +9,55 @@ let menuItems = [
   'Log Out'
 ];
 
-function option() {
-  const item = document.createElement('item');
+//select the mnu
+
+const menuOption = document.querySelector('.menu-button');
+
+
+// for each menu item
+
+menuItems.forEach(x => {
+  menuOption.appendChild(createOption(x.menuItems3))
+});
+
+
+function createOption(menuItems) {
+
+ // Define new elements
+
+ xMenu = document.createElement('div');
+ xList = document.createElement('ul');
+ xButton = document.createElement('button');
+
+
+ // Set up structure of elements
+
+ xMenu.appendChild(xList);
+
+
+ // Set class names
+
+ xMenu.classList.add('menu');
+ xList.classList.add('ul');
+ xButton.classList.add('menu-button');
+
+
+ // Set text content
+
+ xMenu.textContent = menuItems;
+
+
+ // Events
+
+xButton.addEventListener('click', e => {
+  xMenu.classList.toggle('menu--open');
+});
+
+
+return xMenu;
+  
 }
+
 
 
 /* 
