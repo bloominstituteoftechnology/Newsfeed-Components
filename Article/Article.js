@@ -125,6 +125,7 @@ class Article {
         this.expandButtonSpan = article.querySelector('.expandButton');
         this.expandButtonSpan.addEventListener("click", () => {
             this.article.classList.toggle('article-open');
+            this.expandButtonSpan.textContent = "Close Article";
         });
     }
 }
