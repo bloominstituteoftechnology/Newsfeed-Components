@@ -112,3 +112,70 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new artible
 
 */
+
+class ArticleList {
+  constructor(articles) {
+    this.articles = articles;
+    this.articlesContainer = document.querySelector(".articles");
+    this.createArticles();
+
+    this.expandButtons = document.querySelectorAll(".expandButton");
+    this.expandButtons.forEach(button =>
+      button.addEventListener("click", e => this.changeArticleExpandState(e))
+    );
+
+    this.closeButtons = document.querySelectorAll(".close");
+    this.closeButtons.forEach(button =>
+      button.addEventListener("click", e => this.removeArticle(e))
+    );
+  }
+
+  createArticles() {
+    this.articles.map(article => {
+      this.article = document.createElement("div");
+      this.article.classList.add("article");
+      this.articleH2 = document.createElement("h2");
+      this.articleH2.textContent = article.title;
+      this.articleDate = document.createElement("p");
+      this.articleDate.classList.add("date");
+      this.articleDate.textContent = article.date;
+      this.articleFirstPara = document.createElement("p");
+      this.articleFirstPara.textContent = article.firstParagraph;
+      this.articleSecondPara = document.createElement("p");
+      this.articleSecondPara.textContent = article.secondParagraph;
+      this.articleThirdPara = document.createElement("p");
+      this.articleThirdPara.textContent = article.thirdParagraph;
+      this.articleExpandButton = document.createElement("span");
+      this.articleExpandButton.classList.add("expandButton");
+      this.articleExpandButton.textContent = "Click to Expand";
+      this.articleCloseButton = document.createElement("span");
+      this.articleCloseButton.classList.add("close");
+      this.articleCloseButton.textContent = "x";
+
+      this.articlesContainer.appendChild(this.article);
+      this.article.appendChild(this.articleH2);
+      this.article.appendChild(this.articleDate);
+      this.article.appendChild(this.articleFirstPara);
+      this.article.appendChild(this.articleSecondPara);
+      this.article.appendChild(this.articleThirdPara);
+      this.article.appendChild(this.articleExpandButton);
+      this.article.appendChild(this.articleCloseButton);
+    });
+  }
+
+  changeArticleExpandState(e) {
+    e.stopPropagation();
+    e.currentTarget.textContent =
+      e.currentTarget.textContent === "Click to Expand"
+        ? "Click to Close"
+        : "Click to Expand";
+    e.target.parentNode.classList.toggle("article-open");
+  }
+
+  removeArticle(e) {
+    e.stopPropagation();
+    this.articlesContainer.removeChild(e.target.parentNode);
+  }
+}
+
+const myArticles = new ArticleList(data);
