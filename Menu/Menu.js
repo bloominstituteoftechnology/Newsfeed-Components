@@ -9,54 +9,36 @@ let menuItems = [
   'Log Out'
 ];
 
-//select the mnu
-
-const menuOption = document.querySelector('.menu-button');
-
-
-// for each menu item
-
-menuItems.forEach(x => {
-  menuOption.appendChild(createOption(x.menuItems3))
-});
+const header = document.querySelector('.header');
+const menuButton = document.querySelector('.menu-button');
 
 
-function createOption(menuItems) {
 
- // Define new elements
+function createMenu(arr) {
 
- xMenu = document.createElement('div');
- xList = document.createElement('ul');
- xButton = document.createElement('button');
+  // elements
+  const aMenu = document.createElement('div');
+  const list = document.createElement('ul');
+  const item = document.createElement('li');
 
+  // structure
+  header.appendChild(aMenu);
+  list.appendChild(item);
 
- // Set up structure of elements
+  // classes
+  aMenu.classList.add('menu');
 
- xMenu.appendChild(xList);
+  // text content
+  arr.forEach(x => {
+    item.textContent = menuItems;
+  });
 
-
- // Set class names
-
- xMenu.classList.add('menu');
- xList.classList.add('ul');
- xButton.classList.add('menu-button');
-
-
- // Set text content
-
- xMenu.textContent = menuItems;
-
-
- // Events
-
-xButton.addEventListener('click', e => {
-  xMenu.classList.toggle('menu--open');
-});
-
-
-return xMenu;
-  
+  menuButton.addEventListener('click', () => {
+    let menu = document.querySelector('.menu');
+    menu.classList.toggle("menu--open");
+  });
 }
+createMenu(menuItems);
 
 
 
