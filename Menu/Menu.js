@@ -13,7 +13,7 @@ let menuItems = [
 
 const newMenu = (arr) => {
   let menuDiv = document.createElement("div");
-  menuDiv.classList.add(".menu");
+  menuDiv.classList.add("menu");
 
   let unorderedList = document.createElement("ul");
   menuDiv.appendChild(unorderedList);
