@@ -9,9 +9,8 @@ let menuItems = [
   'Log Out'
 ];
 
-const header = document.querySelector('.header');
 const menuButton = document.querySelector('.menu-button');
-
+const header = document.querySelector('.header');
 
 
 function createMenu(arr) {
@@ -19,18 +18,21 @@ function createMenu(arr) {
   // elements
   const aMenu = document.createElement('div');
   const list = document.createElement('ul');
-  const item = document.createElement('li');
+  
 
   // structure
   header.appendChild(aMenu);
-  list.appendChild(item);
+  aMenu.appendChild(list);
+  
 
   // classes
   aMenu.classList.add('menu');
 
   // text content
   arr.forEach(x => {
-    item.textContent = menuItems;
+    const item = document.createElement('li');
+    item.textContent = x;
+    list.appendChild(item);
   });
 
   menuButton.addEventListener('click', () => {
