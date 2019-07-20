@@ -71,6 +71,22 @@ const data = [
         Castform Lotad the power that's inside Burnt Berry Makuhita. Ghost Ariados Corphish Dusclops Golbat Gligar Zweilous.`
   },
   {
+    title: 'Why Learning React Will Be Your Best Decision Yet',
+    date: 'July 19, 2019',
+    firstParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
+          hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
+          Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `,
+
+    secondParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
+          hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
+          hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
+          hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? `,
+
+    thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
+          Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
+          Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
     title: 'Professional Software Development in 2019',
     date: 'Jan 1st, 2019',
     firstParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
@@ -112,3 +128,58 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new artible
 
 */
+
+  function articlePanel(data){
+    //create elements
+    let article = document.createElement('div');
+    let title = document.createElement('h2');
+    let date = document.createElement('p');
+    let firstParagraph = document.createElement('p');
+    let secondParagraph = document.createElement('p');
+    let thirdParagraph = document.createElement('p');
+    let span = document.createElement('span');
+    
+    
+    //set classes
+    article.classList.add('article');
+    date.classList.add('date');
+    span.classList.add('expandButton');
+
+    //set content
+    title.textContent = data.title;
+    date.textContent = data.date;
+    firstParagraph.textContent = data.firstParagraph;
+    secondParagraph.textContent = data.secondParagraph;
+    thirdParagraph.textContent = data.thirdParagraph;
+    span.textContent = "Click Here"
+
+    //set event listener
+    span.addEventListener('click', event => {
+      article.classList.toggle('article-open')
+    })
+    
+    //tie content together
+    article.appendChild(title);
+    article.appendChild(date);
+    article.appendChild(firstParagraph);
+    article.appendChild(secondParagraph);
+    article.appendChild(thirdParagraph);
+    article.appendChild(span);
+    
+
+    //return component
+    return article;
+  }
+
+  let newArticles = data.map((arrayItem) => {
+    let newArticle = articlePanel(arrayItem);
+        
+    return newArticle;
+  })
+
+  let articles = document.querySelector('.articles');
+
+  data.forEach(component => {
+    let newPanel = articlePanel(component);
+    articles.append(newPanel);
+  })
