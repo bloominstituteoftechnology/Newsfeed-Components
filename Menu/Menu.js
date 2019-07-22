@@ -49,8 +49,8 @@ function createMenu(menuLists) {
 
     lists.forEach(menulist => {
         let list = document.createElement("li");
-        menuList.appendChild(x);
-        x.textContent = menulist;
+        menuList.appendChild(list);
+        list.textContent = menulist;
     });
 
     //set class name
