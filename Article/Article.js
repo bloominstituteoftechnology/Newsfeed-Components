@@ -126,6 +126,7 @@ function createArticle(t,d,p1,p2,p3, btn) {
   article.appendChild(paragraph2);
   article.appendChild(paragraph3);
   article.appendChild(buttonExpanded);
+  article.appendChild(buttonCollapsed);
 
 //set class names
 
@@ -135,7 +136,8 @@ date.classList.add('date');
 paragraph1.classList.add('paragraph-1');
 paragraph2.classList.add('paragraph-2');
 paragraph3.classList.add('paragraph-3');
-buttonExpanded.classList.add('expand-buttons');
+buttonExpanded.classList.add('expandButton');
+buttonCollapsed.classList.add('close')
 
 const open = '\u25bc';
 const close = '\u25b2'
@@ -147,17 +149,19 @@ paragraph1.textContent = p1;
 paragraph2.textContent = p2;
 paragraph3.textContent = p3;
 buttonExpanded.textContent = open;
+buttonCollapsed.textContent = close;
+
 
 //return article
 
 return article;
 }
   // Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
-  // article.addEventListener('click', event => {
-  //   console.log('button clicked', event.target);
-  //   buttonOpen.classList.toggle('hide-btn');
-  //   buttonClose.classList.toggle('hide-btn');
-  // })
+  article.addEventListener('click', event => {
+    console.log('button clicked', event.target);
+    buttonExpanded.classList.toggle('article.open');
+    buttonCollapsed.classList.toggle('.close');
+  })
   // Step 3: return the entire component.
 // console.log(createArticle);
   // Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
