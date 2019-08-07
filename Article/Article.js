@@ -101,14 +101,58 @@ const data = [
 
   Hint: You will need to use createElement more than once here!
 
-  Your function should take either an object as it's one argument, or 5 separate arguments mapping to each peice of the data object above.
+  Your function should take either an object as it's one argument, or 5 separate arguments mapping to each peice of the data object above. x--needs paras
 
-  Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
+  Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div. x?
 
-  Step 3: return the entire component.
+  Step 3: return the entire component. x
 
   Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
 
-  Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new artible
+  Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+const articles = document.querySelector('.articles');
+
+data.forEach((i) => {
+  articles.appendChild(createArticle(i.title, i.date, i.firstParagraph, i.secondParagraph, i.thirdParagraph))
+});
+
+function createArticle(title, date, p1, p2, p3){
+  //define new elements
+  const article = document.createElement('div');
+  const title1 = document.createElement('h2');
+  const dateOf = document.createElement('p');
+  const para1 = document.createElement('p');
+  const para2 = document.createElement('p');
+  const para3 = document.createElement('p');
+  const btn = document.createElement('span');
+
+  //setup structure of elements
+  article.appendChild(title1);
+  article.appendChild(dateOf);
+  article.appendChild(para1);
+  article.appendChild(para2);
+  article.appendChild(para3);
+
+  //set class names
+  article.classList.add('article');
+  dateOf.classList.add('date');
+  btn.classList.add('expandButton');
+
+  //set content
+  title1.textContent = title;
+  dateOf.textContent = date;
+  para1.textContent = p1;
+  para2.textContent = p2;
+  para3.textContent = p3;
+  //will add btns later?
+
+  //button events
+  btn.addEventListener('click', (e) => {
+    article.classList.toggle('.article-open');
+  })
+
+
+  return article
+}
