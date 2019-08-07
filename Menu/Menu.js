@@ -32,15 +32,15 @@ window.addEventListener('load', (e) => {
   
   menuButton.append(makeComponent(menuItems))
 
-	function makeComponent(object) {
+	function makeComponent(arr) {
     // new elemets //
-    console.log(object)
 		const menuDiv = document.createElement('div');
 		const ulItem = document.createElement('ul');
 		
 		// structure //
     menuDiv.appendChild(ulItem);
-    object.forEach(element => {
+
+    arr.forEach(element => {
       const liItem = document.createElement('li');
       ulItem.appendChild(liItem);
       liItem.textContent = element;
@@ -49,6 +49,7 @@ window.addEventListener('load', (e) => {
 
     // set content // 
     menuDiv.classList.add('menu');
+    
     
 
     // liItem.textContent = object
