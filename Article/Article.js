@@ -115,8 +115,8 @@ function createArticle(t,d,p1,p2,p3, btn) {
   const paragraph1 = document.createElement('p');
   const paragraph2 = document.createElement('p');
   const paragraph3 = document.createElement('p');
-  const buttonExpanded = document.createElement('span');
-  const buttonCollapsed = document.createElement('span');
+  const buttonExpand = document.createElement('span');
+  const buttonCollapse = document.createElement('span');
 
 
 //set up structure of elements
@@ -125,8 +125,8 @@ function createArticle(t,d,p1,p2,p3, btn) {
   article.appendChild(paragraph1);
   article.appendChild(paragraph2);
   article.appendChild(paragraph3);
-  article.appendChild(buttonExpanded);
-  article.appendChild(buttonCollapsed);
+  article.appendChild(buttonExpand);
+  article.appendChild(buttonCollapse);
 
 //set class names
 
@@ -136,11 +136,10 @@ date.classList.add('date');
 paragraph1.classList.add('paragraph-1');
 paragraph2.classList.add('paragraph-2');
 paragraph3.classList.add('paragraph-3');
-buttonExpanded.classList.add('expandButton');
-buttonCollapsed.classList.add('close')
+buttonExpand.classList.add('expandButton');
 
 const open = '\u25bc';
-const close = '\u25b2'
+const close = '\u25b2';
 
 //set text content
 title.textContent = t;
@@ -148,8 +147,8 @@ date.textContent = d;
 paragraph1.textContent = p1;
 paragraph2.textContent = p2;
 paragraph3.textContent = p3;
-buttonExpanded.textContent = open;
-buttonCollapsed.textContent = close;
+buttonExpand.textContent = open;
+
 
 
 //return article
@@ -157,11 +156,20 @@ buttonCollapsed.textContent = close;
 return article;
 }
   // Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
-  article.addEventListener('click', event => {
-    console.log('button clicked', event.target);
-    buttonExpanded.classList.toggle('article.open');
-    buttonCollapsed.classList.toggle('.close');
-  })
+  // document.querySelectorAll('.article').forEach(article =>{
+  //   buttonExpand.addEventListener('click', event => {
+  //     console.log('button clicked', event.target);
+  //     event.target.classList.toggle('article-open');
+      
+  //   })
+    // document.querySelector.addEventListener('click', event => {
+    //   console.log('button clicked', event.target);
+    //   event.target.classList.toggle('close');
+    // })
+
+  // })
+
+
   // Step 3: return the entire component.
 // console.log(createArticle);
   // Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
@@ -172,7 +180,6 @@ return article;
     articles.appendChild(createArticle(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph));
   });
   // Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new artible
-
 
 
 })
