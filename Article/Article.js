@@ -70,6 +70,7 @@ const data = [
         Leech Life Seismitoad Ariados. Earthquake Pokemon Glitch City Tail Whip Skitty Ekans Dialga. Ut aliquip ex ea commodo consequat James 
         Castform Lotad the power that's inside Burnt Berry Makuhita. Ghost Ariados Corphish Dusclops Golbat Gligar Zweilous.`
   },
+
   {
     title: 'Professional Software Development in 2019',
     date: 'Jan 1st, 2019',
@@ -85,6 +86,27 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'COMPLETED ARTICLE.JS WOOP WOOP',
+    date: 'Aug 7th, 2019',
+    firstParagraph: `Pitchfork master cleanse lomo, intelligentsia kombucha stumptown cronut swag scenester iceland chia taiyaki polaroid. Ramps jean shorts hammock portland lyft. 8-bit lo-fi tofu, succulents raw denim locavore pickled. Cold-pressed ethical meggings marfa activated charcoal forage. Pickled butcher pop-up skateboard enamel pin messenger bag shoreditch mlkshk tumeric you probably haven't heard of them swag pinterest celiac.
+
+    Oh. You need a little dummy text for your mockup? How quaint.
+    
+    I bet you’re still using Bootstrap too… `,
+
+    secondParagraph: `Pitchfork master cleanse lomo, intelligentsia kombucha stumptown cronut swag scenester iceland chia taiyaki polaroid. Ramps jean shorts hammock portland lyft. 8-bit lo-fi tofu, succulents raw denim locavore pickled. Cold-pressed ethical meggings marfa activated charcoal forage. Pickled butcher pop-up skateboard enamel pin messenger bag shoreditch mlkshk tumeric you probably haven't heard of them swag pinterest celiac.
+
+    Oh. You need a little dummy text for your mockup? How quaint.
+    
+    I bet you’re still using Bootstrap too…`,
+
+    thirdParagraph: `Pitchfork master cleanse lomo, intelligentsia kombucha stumptown cronut swag scenester iceland chia taiyaki polaroid. Ramps jean shorts hammock portland lyft. 8-bit lo-fi tofu, succulents raw denim locavore pickled. Cold-pressed ethical meggings marfa activated charcoal forage. Pickled butcher pop-up skateboard enamel pin messenger bag shoreditch mlkshk tumeric you probably haven't heard of them swag pinterest celiac.
+
+    Oh. You need a little dummy text for your mockup? How quaint.
+    
+    I bet you’re still using Bootstrap too…`
   }
 ];
 
@@ -103,13 +125,13 @@ const data = [
 
   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each peice of the data object above. x--needs paras
 
-  Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div. x?
+  Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div. x
 
   Step 3: return the entire component. x
 
-  Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
+  Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div. X
 
-  Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
+  Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article. x
 
 */
 const articles = document.querySelector('.articles');
@@ -134,6 +156,7 @@ function createArticle(title, date, p1, p2, p3){
   article.appendChild(para1);
   article.appendChild(para2);
   article.appendChild(para3);
+  article.appendChild(btn);
 
   //set class names
   article.classList.add('article');
@@ -146,11 +169,12 @@ function createArticle(title, date, p1, p2, p3){
   para1.textContent = p1;
   para2.textContent = p2;
   para3.textContent = p3;
+  btn.textContent = 'EXPAND THIS ARTICLE';
   //will add btns later?
 
   //button events
   btn.addEventListener('click', (e) => {
-    article.classList.toggle('.article-open');
+    article.classList.toggle('article-open');
   })
 
 

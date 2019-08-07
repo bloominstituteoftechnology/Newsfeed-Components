@@ -29,17 +29,17 @@ In this project we are going to be building a news feed reader. The goal is to h
 * [ ] Add your project manager as a reviewer on the pull-request
 * [ ] Your project manager will count the project as complete by merging the branch back into master.
 
-### Preprocessor Setup
+### Preprocessor Setup [x]
   
   * Run `less-watch-compiler less css index.less` from the top level of the Newsfeed-Components folder. 
   * Open index.html in your browser
     [x]
-### Part 1: The Articles Component
+### Part 1: The Articles Component [x]
 * Import `Article.less` from the correct path into index.less (follow the example for `Header.less` if you’re not sure how to write the correct path)
   [x]
 * Follow the instructions found in the Articles.js file to complete the JavaScript functionality and add the components to the DOM.
 
-### Part 2: Add Articles
+### Part 2: Add Articles  [x]
 
 * Now that we have our components built, add a few articles of your own to the data array. Notice how our JavaScript code automatically creates the new articles and adds the styling and functionality we just built to them. This is the power of components. Write the code once and add as many components as you want all while maintaining the functionality we built!
 
