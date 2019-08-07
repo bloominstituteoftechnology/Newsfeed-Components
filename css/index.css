@@ -35,13 +35,6 @@
   margin: 0;
   font-size: 48px;
 }
-html,
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Roboto';
-  background-color: #fffef7;
-}
 .articles {
   margin-top: 95px;
 }
@@ -82,4 +75,11 @@ body {
 }
 .article-open {
   height: 400px;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto';
+  background-color: #fffef7;
 }
