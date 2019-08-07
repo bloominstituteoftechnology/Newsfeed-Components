@@ -112,46 +112,55 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new artible
 */
 
-window.addEventListener('load' event =>){
+
 const articleContainer = document.querySelector('.articles');
 
-articleData.map(data => {
-    articleContainer.appendChild(createCard(data.title, data.date, data.firstParagraph, date.secondParagraph, data.thirdParagraph ));
+articleData.forEach(data => {
+    articleContainer.appendChild(createCard(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph ));
   })
 //Function 
 
 function createNewsFeed(data){
     const article = document.createElement('div');
     const articleTitle = document.createElement('h2');
-    const articleDate = document.createElement('pdate');
-    const articleContent = document.createElement('p');
-    const articleButton = document.createElement('button');
-    const buttonOpen = document.createElement('buttonOpen')
+    const articleDate = document.createElement('p');
+    const firstParagraph = document.createElement('p');
+    const secondParagraph = document.createElement('p');
+    const thirdParagraph = document.createElement('p');
+    // const articleContent = document.createElement('p');
+    // const articleButton = document.createElement('button');
+    const span = document.createElement('span');
+    // const buttonOpen = document.createElement('buttonOpen');
 
 //Structure Elements
 
         article.appendChild(articleTitle);
         artible.appendChild(articleDate);
         article.appendChild(articleContent);
-        article.appendChild(articleButton);
-        articleButton.appendChild(buttonOpen);
+        article.appendChild(firstParagraph);
+        article.appendChild(secondParagraph);
+        article.appendChild(thirdParagraph);
+        article.appendChild(span);
+        // article.appendChild(articleButton);
+        // articleButton.appendChild(buttonOpen);
 
 //Class Names
         artible.classList.add('article');
         articleDate.classList.add('date');
         artibleButton.classList.add('expandButton');
 
+//Set Content
+        articleTitle.textContent = data.title;
+        articleDate.textContent = data.date;
+        firstParagraph.textContent = data.firstParagraph;
+        secondParagraph.textContent = data.secondParagraph;
+        thirdParagraph.textContent = data.thirdParagraph;
+        span.textContent = "Click Here"
 
-        articleTitle.textContent = title;
-        articleDate.textContent = date;
-        articleContent.textContent = firstParagraph;
-        articleContent.textContent = secondParagraph;
-        articleContent.textContent = thirdParagraph;
+        span.addEventListener('click', event => {
+            article.classList.toggle('article-open')
+      })
 
-        articleButton.addEventListener('click', event =>{
-            buttonOpen.classList.toggle('hide-btn')
-        })
 
         return article
-        }
     }
