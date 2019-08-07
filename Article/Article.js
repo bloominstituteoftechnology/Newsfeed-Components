@@ -112,13 +112,21 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new artible
 */
 
+// const articles = document.querySelector(".articles");
+// data.forEach(data => {
+//   console.log("creating article");
+//   articles.appendChild(createArticle(data));
+// });
 
-const articleContainer = document.querySelector('.articles');
+//     const articles = document.querySelector('.articles');
 
-articleData.forEach(data => {
-    articleContainer.appendChild(createCard(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph ));
-  })
+
+//     newArticles.forEach(data => {
+//     console.log("creating article");
+//     articles.appendChild(createArticle(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph ));
+//   });
 //Function 
+
 
 function createNewsFeed(data){
     const article = document.createElement('div');
@@ -127,10 +135,7 @@ function createNewsFeed(data){
     const firstParagraph = document.createElement('p');
     const secondParagraph = document.createElement('p');
     const thirdParagraph = document.createElement('p');
-    // const articleContent = document.createElement('p');
-    // const articleButton = document.createElement('button');
     const span = document.createElement('span');
-    // const buttonOpen = document.createElement('buttonOpen');
 
 //Structure Elements
 
@@ -141,26 +146,34 @@ function createNewsFeed(data){
         article.appendChild(secondParagraph);
         article.appendChild(thirdParagraph);
         article.appendChild(span);
-        // article.appendChild(articleButton);
-        // articleButton.appendChild(buttonOpen);
-
+     
 //Class Names
         artible.classList.add('article');
         articleDate.classList.add('date');
         artibleButton.classList.add('expandButton');
 
 //Set Content
+        pan.textContent = "expand";
         articleTitle.textContent = data.title;
         articleDate.textContent = data.date;
         firstParagraph.textContent = data.firstParagraph;
         secondParagraph.textContent = data.secondParagraph;
         thirdParagraph.textContent = data.thirdParagraph;
-        span.textContent = "Click Here"
+        // span.textContent = "Click Here"
 
         span.addEventListener('click', event => {
             article.classList.toggle('article-open')
       })
 
 
-        return article
+        return article;
     }
+
+    const articles = document.querySelector(".articles");
+
+
+    data.forEach(data => {
+      console.log("creating article");
+      articles.appendChild(createArticle(data));
+    });
+
