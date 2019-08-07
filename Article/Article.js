@@ -113,6 +113,8 @@ const data = [
 
 */
 
+let container = document.querySelector('.articles');
+
 function createArticle(articleObj) {
   // Create elements and assign to vars ===
   const articleVar = document.createElement('div');
@@ -123,14 +125,18 @@ function createArticle(articleObj) {
   const p3 = document.createElement('p');
   const expandButton = document.createElement('span');
 
-
-  //Component structure ===
+  // Component structure ===
   articleVar.appendChild(titleVar);
   articleVar.appendChild(dateVar);
   articleVar.appendChild(p1);
   articleVar.appendChild(p2);
   articleVar.appendChild(p3);
   articleVar.appendChild(expandButton);
+
+ // Component classes===
+  articleVar.classList.add('article');
+  dateVar.classList.add('date');
+  expandButton.classList.add('expandButton');
 
   // Component data ===
   titleVar.textContent = articleObj.title;
@@ -139,7 +145,11 @@ function createArticle(articleObj) {
   p2.textContent = articleObj.secondParagraph;
   p3.textContent = articleObj.thirdParagraph;
 
-
-
-
+  return articleVar;
 }
+
+
+data.forEach(obj => {
+  container.appendChild(createArticle(obj));
+});
+
