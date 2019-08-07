@@ -1,0 +1,22 @@
+.new-frames(@name, @rulesetOne, @rulesetTwo) {
+    @keyframes @name {
+        from {
+            @rulesetOne();
+        }
+
+        to {
+            @rulesetTwo();
+        }
+    }
+    /* Applying keyframes */
+    .apply-frames(@duration:1000ms, @loop:infinite, @function:ease-out, @direction:normal) {
+        animation-name: @name;
+        animation-duration: @duration;
+        animation-timing-function: @function;
+        animation-iteration-count: @loop;
+        animation-direction: @direction;
+    }
+}
+.new-frames(@name, @prop, @valueone, @valuetwo) {
+    .new-frames(@name, {@{prop}: @valueone;}, {@{prop}: @valuetwo});
+}

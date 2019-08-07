@@ -85,11 +85,83 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Blasting Off',
+    date: 'June 7th, 2019',
+    firstParagraph: `Bulbasaur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ivysaur Lorem ipsum dolor sit amet, consectetur adipiscing
+      elit. Venusaur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Charmander Lorem ipsum dolor sit amet, consectetur
+      adipiscing elit. Charmeleon Lorem ipsum dolor sit amet, consectetur adipiscing elit. Charizard Lorem ipsum dolor sit amet,
+      consectetur adipiscing elit. Squirtle Lorem ipsum dolor sit amet, consectetur adipiscing elit. Wartortle Lorem ipsum dolor
+      sit amet, consectetur adipiscing elit. Blastoise Lorem ipsum dolor sit amet, consectetur adipiscing elit. Caterpie Lorem
+      ipsum dolor sit amet, consectetur adipiscing elit. Metapod Lorem ipsum dolor sit amet, consectetur adipiscing elit. Butterfree
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Weedle Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Kakuna Lorem ipsum dolor sit amet, consectetur adipiscing elit. Beedrill Lorem ipsum dolor sit amet, consectetur adipiscing
+      elit.`,
+
+    secondParagraph: `Prepare for trouble!
+    And make it double!
+    To protect the world from devastation!
+    To unite all peoples within our nation!
+    To denounce the evils of truth and love!
+    To extend our reach to the stars above!
+    Jessie!
+    James!
+    Team Rocket blasts off at the speed of light!
+    Surrender now, or prepare to fight!`,
+
+    thirdParagraph: `Pikachu ipsum dolor sit amet gastly nidorino mollit charizard ex gyrados in electrode sed incididunt chansey kabutops weepinbell. Qui minim meowth, aerodactyl non et laboris excepteur ut. Nisi esse gastly, pikachu nidoran clefable elit nisi quis ex ea exercitation. Gyrados hitmonchan veniam ex poliwrath quis consequat chansey magna incididunt nidorina machamp oddish ea. Flareon jynx psyduck veniam ea tentacruel horsea charizard id tempor in consequat irure tangela eu. Charmander rattata porygon arbok, jigglypuff gyrados zapdos. `
   }
 ];
 
-/* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
-  
+function createArticle({ title, date, firstParagraph, secondParagraph, thirdParagraph }) {
+  //Create Nodes
+  const article = document.createElement('div');
+  const heading = document.createElement('h1');
+  const dateLine = document.createElement('p');
+  const paraOne = document.createElement('p');
+  const paraTwo = document.createElement('p');
+  const paraThree = document.createElement('p');
+  const button = document.createElement('span');
+
+  //Structure Nodes
+  article.appendChild(heading);
+  article.appendChild(dateLine);
+  article.appendChild(paraOne);
+  article.appendChild(paraTwo);
+  article.appendChild(paraThree);
+  article.appendChild(button);
+
+  //Add class names
+  article.classList.add('article');
+  dateLine.classList.add('date');
+  button.classList.add('expandButton');
+
+  //Add content 
+
+  heading.appendChild(document.createTextNode(title));
+  dateLine.appendChild(document.createTextNode(date));
+  paraOne.appendChild(document.createTextNode(firstParagraph));
+  paraTwo.appendChild(document.createTextNode(secondParagraph));
+  paraThree.appendChild(document.createTextNode(thirdParagraph));
+  button.appendChild(document.createTextNode('...'));
+
+  button.addEventListener('click', event => {
+    let { target: { parentNode } } = event;
+    parentNode.classList.toggle('article-open');
+  })
+
+  return article;
+
+}
+window.addEventListener('load', event => {
+  const articles = document.getElementsByClassName("articles")[0];
+  data.forEach(article => articles.appendChild(createArticle(article)));
+});
+
+
+/* Step 1: Create a function that creates a component. You will want your component to look like the template below:
+
   <div class="article">
     <h2>{title of the article}</h2>
     <p class="date">{date of the article}</p>
