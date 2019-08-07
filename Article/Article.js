@@ -110,5 +110,48 @@ const data = [
   Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
 
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new artible
-
 */
+
+window.addEventListener('load' event =>){
+const articleContainer = document.querySelector('.articles');
+
+articleData.map(data => {
+    articleContainer.appendChild(createCard(data.title, data.date, data.firstParagraph, date.secondParagraph, data.thirdParagraph ));
+  })
+//Function 
+
+function createNewsFeed(data){
+    const article = document.createElement('div');
+    const articleTitle = document.createElement('h2');
+    const articleDate = document.createElement('pdate');
+    const articleContent = document.createElement('p');
+    const articleButton = document.createElement('button');
+    const buttonOpen = document.createElement('buttonOpen')
+
+//Structure Elements
+
+        article.appendChild(articleTitle);
+        artible.appendChild(articleDate);
+        article.appendChild(articleContent);
+        article.appendChild(articleButton);
+        articleButton.appendChild(buttonOpen);
+
+//Class Names
+        artible.classList.add('article');
+        articleDate.classList.add('date');
+        artibleButton.classList.add('expandButton');
+
+
+        articleTitle.textContent = title;
+        articleDate.textContent = date;
+        articleContent.textContent = firstParagraph;
+        articleContent.textContent = secondParagraph;
+        articleContent.textContent = thirdParagraph;
+
+        articleButton.addEventListener('click', event =>{
+            buttonOpen.classList.toggle('hide-btn')
+        })
+
+        return article
+        }
+    }
