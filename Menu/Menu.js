@@ -39,9 +39,7 @@ function createMenu(array){
   // Creating components ===
 const menuVar = document.createElement('div');
 const ulVar = document.createElement('ul');
-
-// Adding components to header ===
-menuVar.appendChild(ulVar);
+const menuBtn = document.querySelector(".header img")
 
 // Iterating over array and adding <li>'s to <ul> ===
 menuItems.forEach(item => {
@@ -51,9 +49,16 @@ menuItems.forEach(item => {
 });
 
 // Adding menu class ===
+menuVar.classList.add('menu');
+
+// Adding components to menu ===
+menuVar.appendChild(ulVar);
+
+
 
 return menuVar;
-
 }
 
 header.appendChild(createMenu(menuItems));
+console.log(createMenu(menuItems));
+
