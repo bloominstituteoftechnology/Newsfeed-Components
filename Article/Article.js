@@ -113,12 +113,33 @@ const data = [
 
 */
 
-function createArticle(articleObj){
- // Create elements and assign to vars ===
+function createArticle(articleObj) {
+  // Create elements and assign to vars ===
   const articleVar = document.createElement('div');
   const titleVar = document.createElement('title');
   const dateVar = document.createElement('p');
   const p1 = document.createElement('p');
   const p2 = document.createElement('p');
   const p3 = document.createElement('p');
+  const expandButton = document.createElement('span');
+
+
+  //Component structure ===
+  articleVar.appendChild(titleVar);
+  articleVar.appendChild(dateVar);
+  articleVar.appendChild(p1);
+  articleVar.appendChild(p2);
+  articleVar.appendChild(p3);
+  articleVar.appendChild(expandButton);
+
+  // Component data ===
+  titleVar.textContent = articleObj.title;
+  dateVar.textContent = articleObj.date;
+  p1.textContent = articleObj.firstParagraph;
+  p2.textContent = articleObj.secondParagraph;
+  p3.textContent = articleObj.thirdParagraph;
+
+
+
+
 }
