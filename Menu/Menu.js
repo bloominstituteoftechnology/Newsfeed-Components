@@ -35,11 +35,13 @@ let menuItems = [
 */
 
 const header = document.querySelector('.header');
+const menuBtn = document.querySelector(".menu-button");
+
 function createMenu(array){
   // Creating components ===
 const menuVar = document.createElement('div');
 const ulVar = document.createElement('ul');
-const menuBtn = document.querySelector(".header img")
+
 
 // Iterating over array and adding <li>'s to <ul> ===
 menuItems.forEach(item => {
@@ -54,11 +56,16 @@ menuVar.classList.add('menu');
 // Adding components to menu ===
 menuVar.appendChild(ulVar);
 
-
+menuBtn.addEventListener('click', ()=>{
+  menuVar.classList.toggle('menu--open');
+  TweenMax.to(menuVar, 1, { x:-350 ,ease:Power1.easeInOut  });
+  });
+  
 
 return menuVar;
 }
 
+
 header.appendChild(createMenu(menuItems));
-console.log(createMenu(menuItems));
+
 
