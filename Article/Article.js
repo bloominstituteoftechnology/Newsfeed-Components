@@ -137,7 +137,7 @@ article.appendChild(date);
 article.appendChild(firstParagraph);
 article.appendChild(secondParagraph);
 article.appendChild(thirdParagraph);
-expandButton.textContent = 'expand'
+article.appendChild(expandButton);
 
 
 title.classList.add('h2');
