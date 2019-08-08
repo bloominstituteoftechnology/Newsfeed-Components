@@ -118,27 +118,27 @@ function componentCreater(obj){
   article.classList.add('article');
 
 let h2 = document.createElement('h2');
-h2.innerText = obj.title; 
+h2.textContent = obj.title; 
 
 let date = document.createElement('p');
 date.classList.add('date'); 
-date.innerText = obj.date;
+date.textContent = obj.date;
 
 let Par1 = document.createElement('p');
-Par1.innerText = obj.firstParagraph;
+Par1.textContent = obj.firstParagraph;
 
 let Par2 = document.createElement('p');
-Par2.innerText = obj.secondParagraph;
+Par2.textContent = obj.secondParagraph;
 
 let Par3 = document.createElement('p');
-Par3.innerText = obj.thirdParagraph;
+Par3.textContent = obj.thirdParagraph;
 
 let span = document.createElement('span');
 span.classList.add("expandButton");
-span.innerText = 'Toggle';
+span.textContent = 'Toggle';
 span.addEventListener('click', event =>{
   article.classList.toggle('article-open');
-});
+})
 
 
 article.appendChild(h2);
@@ -149,44 +149,6 @@ article.appendChild(Par3);
 article.appendChild(span);
 
 return article;
-
-}
-
-
-let form = document.querySelector('#create-article');
-let formTitle = document.querySelector('.form-title');
-let formDate = document.querySelector('.form-date');
-
-let formp1 = document.querySelector('.form-p1');
-let formp2 = document.querySelector('.form-p2');
-let formp3 = document.querySelector('.form-p3');
-
-function addNewArticle(){
-if(formTitle.value =="" || formDate.value =="" || formp1.value==""){
-  alert('You must fill out at least the first 3 fields');
-} else{
-
-
-
-  let formObj = {
-    title: formTitle.value,
-    date: formDate.value,
-    firstParagraph: formp1.value,
-    secondParagraph: formp2.value,
-    thirdParagraph: formp3.value
-  }
-
-
-let myNewArticle = componentCreator(formObj);
-pageArticleDiv.appendChild(myNewArticle);
-
-form.reset();
-
-
-
-
-}
- 
 
 };
 
