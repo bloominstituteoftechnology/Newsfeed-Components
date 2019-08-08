@@ -1,4 +1,5 @@
 /* This is the data we will be using, study it but don't change anything, yet. */
+window.addEventListener('load', (e) => {
 
 let menuItems = [
   'Students',
@@ -37,14 +38,14 @@ const body = document.querySelector('body');
 
 
 
-body.appendChild(createMeau(menu));
+body.appendChild(createMeau(menuItems));
 
 function createMeau(itemsArray) {
   const menudiv = document.createElement('div');
   const ul = document.createElement('ul');
 
-body.appendChild(menuDiv);
-menu.appendChild(ul)
+body.appendChild(menudiv);
+menudiv.appendChild(ul);
 
 menudiv.classList.add('menu')
 
@@ -63,5 +64,6 @@ menudiv.classList.add('menu')
   })
 
   
-return menuDiv;
+return menudiv;
 }
+})

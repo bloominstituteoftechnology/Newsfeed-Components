@@ -1,7 +1,9 @@
 /* This is the data we will be using to create our article components */
 /* Look over this data, then proceed to line 91*/
+window.addEventListener('load', (e) => {
 const data = [
-  {
+
+{
     title: 'Lambda School Students: "We\'re the best!"',
     date: 'Nov 5th, 2018',
     firstParagraph: `Lucas ipsum dolor sit amet ben twi'lek padmé darth darth darth moff hutt organa twi'lek. Ben amidala secura skywalker lando
@@ -130,6 +132,20 @@ const secondParagraph = document.createElement('p');
 const thirdParagraph = document.createElement('p');
 const expandButton = document.createElement('span');
 
+article.appendChild(title);
+article.appendChild(date);
+article.appendChild(firstParagraph);
+article.appendChild(secondParagraph);
+article.appendChild(thirdParagraph);
+expandButton.textContent = 'expand'
+
+
+title.classList.add('h2');
+date.classList.add('date');
+article.classList.add('article');
+expandButton.classList.add('expandButton');
+
+
 title.textContent = titles;
 date.textContent = dates;
 firstParagraph.textContent = firstP;
@@ -137,21 +153,11 @@ secondParagraph.textContent = secondP;
 thirdParagraph.textContent = thirdP; 
 expandButton.textContent = 'expand'
 
-title.classList.add('h2');
-data.classList.add('data');
-article.classList.add('article');
-expandButton.classList.add('expandButton');
 
-article.appendChild(title);
-article.appendChild(data);
-article.appendChild(firstParagraph);
-article.appendChild(secondParagraph);
-article.appendChild(thirdParagraph);
-expandButton.textContent = 'expand'
-
-expandButton.addEventListner('click', e => {
+expandButton.addEventListener('click', e => {
   article.classList.toggle('article-open');
 })
 
 return article;
 }
+})
