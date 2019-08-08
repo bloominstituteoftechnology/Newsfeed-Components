@@ -113,18 +113,42 @@ const data = [
 
 */
 
-function Componentcreater(obj){
-  let divArticle = document.createElement('div');
-  article.classList.add('divArticle');
+function componentCreater(obj){
+  let article = document.createElement('div');
+  article.classList.add('article');
 
 let h2 = document.createElement('h2');
 h2.textContent = obj.title; 
 
-let DatePar = document.createElement('p');
-date.classList.add('DatePar'); 
-DatePar.textContent = obj.date;
+let date = document.createElement('p');
+date.classList.add('date'); 
+date.textContent = obj.date;
+
+let Par1 = document.createElement('p');
+Par1.textContent = obj.firstParagraph;
+
+let Par2 = document.createElement('p');
+Par2.textContent = obj.secondParagraph;
+
+let Par3 = document.createElement('p');
+Par3.textContent = obj.thirdParagraph;
+
+let span = document.createElement('span');
+span.classList.add("expandButton");
+span.textContent = 'Toggle';
+span.addEventListener('click', event =>{
+  article.classList.toggle('article-open');
+})
 
 
+article.appendChild(h2);
+article.appendChild(date);
+article.appendChild(Par1);
+article.appendChild(Par2);
+article.appendChild(Par3);
+article.appendChild(span);
 
+return article;
 
+};
 
