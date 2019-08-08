@@ -58,3 +58,8 @@ header.appendChild(createMenu(menuItems));
   // Step 6: add the menu component to the DOM.
   
 })
+
+
+var slide = new TimeLineMax({paused:true, reversed:true});
+
+
