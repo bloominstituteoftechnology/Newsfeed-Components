@@ -60,6 +60,10 @@ header.appendChild(createMenu(menuItems));
 })
 
 
-var slide = new TimeLineMax({paused:true, reversed:true});
+var tl = new TimeLineMax({paused: true, reversed:true});
+  slide.to("body", .3, {backgroundColor: "blue"});
 
-
+function menuIn() {
+  tl.reversed() ? tl.play() :
+  tl.reverse();
+      }
