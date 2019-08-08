@@ -89,6 +89,22 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'San Francisco',
+    date: 'March 25, 2019',
+    firstParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
+          hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
+          Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `,
+
+    secondParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
+          hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
+          hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
+          hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? `,
+
+    thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
+          Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
+          Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
 ];
 
@@ -105,71 +121,63 @@ const data = [
 
 //   Hint: You will need to use createElement more than once here!
 
-//   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each peice of the data object above.
-
-  function createArticle(t,d,para1,para2,para3,button) {
-    //define new elements
-    const article = document.createElement('div');
-    const title = document.createElement('h2');
-    const date = document.createElement('p');
-    const p1 = document.createElement('p');
-    const p2 = document.createElement('p');
-    const p3 = document.createElement('p');
-    const buttonExpanded = document.createElement('span');
-    const buttonCollapsed = document.createElement('span');
-
-    //set up structure of elements
-    article.appendChild.add('title');
-    article.appendChild.add('date');
-    article.appendChild.add('p1');
-    article.appendChild.add('p2');
-    article.appendChild.add('p3');
-    article.appendChild(buttonExpanded);
-    article.appendChild(buttonCollapsed);
-
-    //set class names
-    article.classList.add('article');
-    title.classList.add('title');
-    date.classList.add('date')
-    p1.classList.add('para-1');
-    p2.classList.add('para-2');
-    p3.classList.add('para-3');
-    buttonExpanded.classList.add('expandButton');
-    buttonCollapsed.classList.add('close')
-
-    const open = '\u25bc';
-    const close = '\u25b2';
-
-    //set text content
-    title.textContent = t;
-    date.textContent = d;
-    p1.textContent = para1;
-    p2.textContent = para2;
-    p3.textContent = para3;
-    buttonExpanded.textContent = open;
-    buttonCollapsed.textContent = close;
-
-    return article;
-}
-
-  // Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
-
-  article.addEventListener('click', event => {
-    console.log('button clicked', event.target);
-    buttonExpanded.classList.toggle('article.open');
-    buttonCollapsed.classList.toggle('.close');
-  })
-
-  // Step 3: return the entire component.
-
-  // Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
-
-  const articles = document.querySelector('.articles');
-
+const articles = document.querySelector('.articles');
   data.forEach(data => {
     console.log('creating article:', data.title)
     articles.appendChild(createArticle(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph));
   });
+
+//   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each peice of the data object above.
+
+function createArticle(t,d,p1,p2,p3,) {
+  //define new elements
+    const article = document.createElement('div');
+    const title = document.createElement('h2');
+    const date = document.createElement('p');
+    const paragraph1 = document.createElement('p');
+    const paragraph2 = document.createElement('p');
+    const paragraph3 = document.createElement('p');
+    const span1 = document.createElement('span');
+
+    //set up structure of elements
+  article.appendChild(title);
+  article.appendChild(date);
+  article.appendChild(paragraph1);
+  article.appendChild(paragraph2);
+  article.appendChild(paragraph3);
+  article.appendChild(span1);
+
+//set class names
+
+article.classList.add('article');
+date.classList.add('date');
+span1.classList.add('expandButton');
+
+
+
+//set text content
+
+title.textContent = t;
+date.textContent = d;
+paragraph1.textContent = p1;
+paragraph2.textContent = p2;
+paragraph3.textContent = p3;
+span1.textContent = 'Click Here';
+
+  // Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
+  span1.addEventListener('click', () => {
+    console.log('Article Open')
+  article.classList.toggle('article-open');
+  
+  });
+
+  // Step 3: return the entire component.
+//return article
+
+return article; 
+}
+  // Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
+
 
   // Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new artible
 
