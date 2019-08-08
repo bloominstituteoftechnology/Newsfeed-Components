@@ -65,7 +65,7 @@ ul.appendChild(whatsnew);
 ul.appendChild(techtrends);
 ul.appendChild(music);
 ul.appendChild(logout);
-menu.prepend(ul);
+menu.appendChild(ul);
 
 return menu; 
 
@@ -76,13 +76,11 @@ let newMenuComponent = MenuComponent(menuItems);
 let menuButton = document.querySelector('.menu-button');
 
 menuButton.addEventListener('click', event => {
-   newMenuComponent.classList.toogle('menu--open');
+   newMenuComponent.classList.toggle('menu--open');
 });
 
 let headerDiv = document.querySelector(".header");
 headerDiv.prepend(newMenuComponent);
-
-
 
 
 

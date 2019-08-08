@@ -4,8 +4,7 @@
   <head>
     <title>Lambda School Newsfeed</title>
     <link rel="stylesheet" type="text/css" media="screen" href="./CSS/index.css" />
-    <script src="./Menu/Menu.js"></script>
-    <script src="./Article/Article.js"></script>
+
   </head>
   <body>
     <div class="header">
@@ -13,6 +12,18 @@
       <h1>Lambda School Newsfeed</h1>
     </div>
     <div class="articles"></div>
+
+    <form id ="create-article">
+      <input type="text" class="form-title" placeholder="Title" required>
+      <input type="text" class="form-date" placeholder="Date" required>
+      <textarea class="form-p1" id="" cols="30" rows="10" placeholder="Paragraph 1" required></textarea>
+      <textarea class="form-p2" id="" cols="30" rows="10" placeholder="Paragraph 2" required></textarea>
+      <textarea class="form-p3" id="" cols="30" rows="10" placeholder="Paragraph 3" required></textarea>
+      <input type="submit" class="btn-submit">
+    </form>
+
+    <script src="./Menu/Menu.js"></script>
+    <script src="./Article/Article.js"></script>
   
   </body>
 </html>
