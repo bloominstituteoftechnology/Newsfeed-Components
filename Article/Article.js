@@ -135,7 +135,7 @@ Par3.textContent = obj.thirdParagraph;
 
 let span = document.createElement('span');
 span.classList.add("expandButton");
-span.textContent = 'Toggle';
+span.textContent = 'Open Me';
 span.addEventListener('click', event =>{
   article.classList.toggle('article-open');
 })
@@ -147,8 +147,18 @@ article.appendChild(Par1);
 article.appendChild(Par2);
 article.appendChild(Par3);
 article.appendChild(span);
-
+console.log(article);
 return article;
 
 };
+
+
+ 
+  wrapper = document.querySelector(".articles");
+  
+  data.map(data => {
+   return wrapper.appendChild(componentCreater(data))
+  });
+ 
+ 
 
