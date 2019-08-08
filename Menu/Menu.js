@@ -1,4 +1,7 @@
 /* This is the data we will be using, study it but don't change anything, yet. */
+window.addEventListener('load', ()=>{
+
+
 
 let menuItems = [
   'Students',
@@ -34,5 +37,42 @@ let menuItems = [
   
 */
 function createMenu(menuItems){
-  
+  console.log('menu');
+  const menu = document.createElement('div');
+  const menuList = document.createElement('ul');
+  const menuStudents = document.createElement('li');
+  const menuFaculty = document.createElement('li');
+  const menuWhatsNew = document.createElement('li');
+  const menuTechTrends = document.createElement('li');
+  const menuMusic = document.createElement('li');
+  const menuLogOut = document.createElement('li');
+  console.log('function');
+
+//Structure 
+
+menuList.appendChild(menuStudents);
+menuList.appendChild(menuFaculty);
+menuList.appendChild(menuWhatsNew);
+menuList.appendChild(menuTechTrends);
+menuList.appendChild(menuMusic);
+menuList.appendChild(menuLogOut);
+menu.appendChild(menuList);
+console.log('structure');
+// Class Names 
+
+menu.classList.add('menu');
+
+//Set Content 
+menuStudents.textContent = menuItems[0];
+menuFaculty.textContent = menuItems[1];
+menuWhatsNew.textCOntent = menuItems[2];
+menuTechTrends.textCOntent = menuItems[3];
+menuMusic.textCOntent = menuItems[4];
+menuLogOut.textCOntent = menuItems[5];
+
+
+return menu
+
 }
+
+

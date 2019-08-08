@@ -1,6 +1,6 @@
 /* This is the data we will be using to create our article components */
 /* Look over this data, then proceed to line 91*/
-window.addEventListener('load', (e)=> {
+window.addEventListener('load', ()=> {
 const data = [
   {
     title: 'Lambda School Students: "We\'re the best!"',
@@ -147,8 +147,8 @@ function createNewsFeed(data){
         article.appendChild(buttonExpanded);
         article.appendChild(buttonCollapsed);
 
-        const open = '\u25bc';
-        const close = '\u25b2'
+        const open = '\u25b2';
+        const close = '\u25b2';
      
 //Class Names
         article.classList.add('article');
@@ -169,8 +169,14 @@ function createNewsFeed(data){
 
 
        buttonExpanded.addEventListener('click', () => {
+           console.log('article open');
             article.classList.toggle('article-open');
           })
+
+          buttonCollapsed.addEventListener('click', () => {
+            console.log('article Close');
+             article.classList.toggle('article-close');
+           })
 
         return article;
     }
