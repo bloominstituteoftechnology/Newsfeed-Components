@@ -109,6 +109,60 @@ const data = [
 
   Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
 
-  Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new artible
+  Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article
 
 */
+
+let news = document.querySelector('.article');
+
+news.addEventListener('')
+
+function articleDate(){
+  let dates = createElement('date');
+
+  dates.textContent = "Article one";
+
+  dates.classList.add('dates')
+  dates.classList.add('dates1');
+  dates.classList.add('dates2');
+
+  dates.addEventListener('click', (event) => {
+    alert('This article is: ${event.target.textContent}')
+  })
+  return dates
+}
+
+const article1 = articleCreator('Article two');
+
+const article2 = articleCreator('Article three');
+
+
+let header = document.querySelector('.header')
+
+header.appendChild('article1');
+header.appendChild('article2');
+
+
+let articleNewArray = document.querySelector('.articles')
+
+articles.forEach( (item) => {
+  let article = articleCreator(item);  
+  header.appendChild(article);
+
+  return articleNewArray
+});
+
+
+
+articles.map( (item ) => {
+  let articles = articleCreator(item);
+  header.appendChild(article);
+
+  return articleNewArray
+});
+
+
+let btn = document.querySelectorAll('.menu-button');
+button.forEach( () => {
+  alert('The button is clicked')
+});
