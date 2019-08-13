@@ -98,6 +98,12 @@ const data = [
    const button = document.createElement('span')
  }
 
+//class
+article.classList.add('article')
+dateAtricle.classList.add('date')
+button.classList.add('expandButton')
+
+//
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
