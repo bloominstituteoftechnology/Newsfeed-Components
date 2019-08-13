@@ -88,6 +88,9 @@ const data = [
   }
 ];
 
+ 
+
+
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
   <div class="article">
