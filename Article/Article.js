@@ -115,7 +115,7 @@ const data = [
 
 let news = document.querySelector('.article');
 
-news.addEventListener('')
+// news.addEventListener('')
 
 function articleDate(){
   let dates = createElement('date');
@@ -132,15 +132,15 @@ function articleDate(){
   return dates
 }
 
-const article1 = articleCreator('Article two');
+// const article1 = articleCreator('Article two');
 
-const article2 = articleCreator('Article three');
+// const article2 = articleCreator('Article three');
 
 
 let header = document.querySelector('.header')
 
-header.appendChild('article1');
-header.appendChild('article2');
+// header.appendChild('article1');
+// header.appendChild('article2');
 
 
 let articleNewArray = document.querySelector('.articles')
@@ -155,7 +155,7 @@ articles.forEach( (item) => {
 
 
 articles.map( (item ) => {
-  let articles = articleCreator(item);
+  let article = articleCreator(item);
   header.appendChild(article);
 
   return articleNewArray

@@ -33,3 +33,15 @@ let menuItems = [
   Step 6: add the menu component to the DOM.
   
 */
+
+function menuCreator(text){
+  let newMenu = document.createElement('.menu');
+
+  newMenu.textContent = text;
+
+  newMenu.classList.ass('Jobs Available');
+
+  newMenu.addEventListener('click', (event) => {
+    console.log(menuCreator);
+  })
+}
