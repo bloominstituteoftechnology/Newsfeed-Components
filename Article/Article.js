@@ -88,7 +88,15 @@ const data = [
   }
 ];
 
- 
+ function articleAdded(title, date, p1, p2, p3) {
+   const article = document.createElement('div')
+   const titleArticle = document.createElement('h2')
+   const dateAtricle = document.createElement('p');
+   const firstParagraph = document.createElement('p')
+   const secondParagraph = document.createElement('p')
+   const thirdParagraph = document.createElement('p')
+   const button = document.createElement('span')
+ }
 
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
