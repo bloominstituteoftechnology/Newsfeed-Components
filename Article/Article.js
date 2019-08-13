@@ -103,7 +103,13 @@ article.classList.add('article')
 dateAtricle.classList.add('date')
 button.classList.add('expandButton')
 
-//
+//text content
+titleArticle.textContent = title;
+dateAtricle.textContent = date;
+firstParagraph.textContent = p1;
+secondParagraph.textContent = p2;
+thirdParagraph.textContent = p3;
+button.textContent = 'Expand';
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
