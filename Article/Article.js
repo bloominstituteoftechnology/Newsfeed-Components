@@ -208,21 +208,13 @@ function articleCreator(array) {
 // const article2 = articleCreator('Article three');
 
 
-
-
-
 // let articleNewArray = document.querySelector('.articles')
 // data.map( (item ) => {
 //   let article = articleCreator(item);
 //   header.appendChild(article);
 
 //   return articleNewArray
-// });
-
-
-
-
-
+// })
 
 
 // let btn = document.querySelectorAll('.menu-button');
