@@ -90,11 +90,16 @@ const data = [
 
 let container = document.getElementsByClassName('.articles');
 
-function articleCreator(date, title, fP, sP, tP) {
+function dateParagraphCreator(date) {
 
-  const secondHeader = document.createElement('h2');
-  const spanCreator = document.createElement('span');
-  const dataParagraph = document.createElement('p');
+  const dateParagraph = document.createElement('p');
+  dateParagraph.textContent = date;
+
+  return dateParagraph;
+}
+
+function paragraphCreator(fP, sP, tP) {
+  
   var paragraphElementArray = [];
 
   for(let i = 0; i < 3; i++)
@@ -108,29 +113,43 @@ function articleCreator(date, title, fP, sP, tP) {
   paragraphElementArray[1].textContent = sP;
   paragraphElementArray[2].textContent = tP;
 
-  // hmm might need to do a for loop for this one
-
   paragraphElementArray[0].classList.add = ('date');
   paragraphElementArray[1].classList.add = ('date');
   paragraphElementArray[2].classList.add = ('date');
+
+  return paragraphElementArray;
+}
+
+function spanCreator ()
+{
+  const spanMaker = document.createElement('span');
+
+  return spanMaker;
+}
+
+function articleCreator(title) {
+
+  const secondHeader = document.createElement('h2');
+
   spanCreator.classList.add('expandButton');
 
-  //paragraphElementArray[0].textContent = date;
   secondHeader.textContent = title;
 
   spanCreator.addEventListener('click', (event) => {
 
-    spanCreator.classList.add('article-open');
+  spanCreator.classList.add('article-open');
     // toggle implies that they might want to take it off, so I need to figure out how to do that
 
+    return article;
   });
 
 }
 
 let articleComponents = data.map((articles) => {
 
-  console.log(articles.date, articles.title, articles.firstParagraph, articles.secondParagraph, articles.thirdParagraph);
-  return articleCreator(articles.date, articles.title, articles.firstParagraph, articles.secondParagraph, articles.thirdParagraph);
+//  console.log(articles.date, articles.title, articles.firstParagraph, articles.secondParagraph, articles.thirdParagraph);
+  return paragraphCreator(articles.firstParagraph,article.secondParagraph, articles.thirdParagraph);
+  return articleCreator(articles.title);
 
 });
 
