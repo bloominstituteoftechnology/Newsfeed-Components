@@ -113,56 +113,119 @@ const data = [
 
 */
 
-let news = document.querySelector('.article');
+/* <div class="article">
+  <h2>{title of the article}</h2>
+  <p class="date">{date of the article}</p>
+
+  {three separate paragraph elements}
+
+    <span class='expandButton'></span>
+</div> */
+
+const newArticle = document.querySelector('.articles');
+
+function articleCreator(array) {
+  const news = document.createElement('div')
+  news.classList.add('article');
+
+  const title = document.createElement('h2')
+  title.textContent = array.title
+  news.appendChild(title)
+
+  const date = document.createElement('p')
+  date.textContent = array.date
+  date.classList.add('date')
+  news.appendChild(date)
+
+  const p1 = document.createElement('p')
+  p1.textContent = array.firstParagraph
+  news.appendChild(p1)
+
+  const p2 = document.createElement('p')
+  p2.textContent = array.secondParagraph
+  news.appendChild(p2)
+
+  const p3 = document.createElement('p')
+  p3.textContent = array.thirdParagraph
+  news.appendChild(p3)
+  
+  const span = document.createElement('span')
+  span.textContent = 'Read More!'
+  span.classList.add('expandButton')
+  news.appendChild(span)
+
+  span.addEventListener('click', () => {
+    news.classList.toggle('article-open');
+  })
+    return news
+  }
+  
+  data.forEach((item) => {
+    let article = articleCreator(item);
+    newArticle.appendChild(article);
+
+  });
+
+  // function textCreator(text) {
+    
+    // news.classList.add(`h2${title}`);
+
+//   return p
+// }
+
+// function buttonCreator() {
+ 
+
+//   return span
+// }
+
+
+// let header = document.querySelector('.header')
+
+// header.appendChild(articleCreator('title'));
+// header.appendChild(articleCreator('date'));
+
 
 // news.addEventListener('')
 
-function articleDate(){
-  let dates = createElement('date');
+// function articleDate(){
+//   let dates = createElement('date');
 
-  dates.textContent = "Article one";
+//   dates.textContent = "Article one";
 
-  dates.classList.add('dates')
-  dates.classList.add('dates1');
-  dates.classList.add('dates2');
+//   dates.classList.add('dates')
+//   dates.classList.add('dates1');
+//   dates.classList.add('dates2');
 
-  dates.addEventListener('click', (event) => {
-    alert('This article is: ${event.target.textContent}')
-  })
-  return dates
-}
+//   dates.addEventListener('click', (event) => {
+//     alert('This article is: ${event.target.textContent}')
+//   })
+//   return dates
+// }
 
 // const article1 = articleCreator('Article two');
 
 // const article2 = articleCreator('Article three');
 
 
-let header = document.querySelector('.header')
-
-// header.appendChild('article1');
-// header.appendChild('article2');
-
-
-let articleNewArray = document.querySelector('.articles')
-
-articles.forEach( (item) => {
-  let article = articleCreator(item);  
-  header.appendChild(article);
-
-  return articleNewArray
-});
 
 
 
-articles.map( (item ) => {
-  let article = articleCreator(item);
-  header.appendChild(article);
+// let articleNewArray = document.querySelector('.articles')
+// data.map( (item ) => {
+//   let article = articleCreator(item);
+//   header.appendChild(article);
 
-  return articleNewArray
-});
+//   return articleNewArray
+// });
 
 
-let btn = document.querySelectorAll('.menu-button');
-button.forEach( () => {
-  alert('The button is clicked')
-});
+
+
+
+
+
+// let btn = document.querySelectorAll('.menu-button');
+// button.forEach( () => {
+//   alert('The button is clicked')
+// });

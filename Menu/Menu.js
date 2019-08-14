@@ -34,14 +34,17 @@ let menuItems = [
   
 */
 
-function menuCreator(text){
-  let newMenu = document.createElement('.menu');
+function menuCreator(array){
+  let newDiv = document.createElement('div');
 
-  newMenu.textContent = text;
+  newDiv.classList.add('menu');
 
-  newMenu.classList.ass('Jobs Available');
+  // newDiv.classList.add('Jobs Available');
 
-  newMenu.addEventListener('click', (event) => {
+  newDiv.addEventListener('click', (event) => {
     console.log(menuCreator);
   })
 }
+
+// newDiv.appendChild(menuList);
+// menuList.forEach 
