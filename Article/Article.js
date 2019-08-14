@@ -1,7 +1,6 @@
 /* This is the data we will be using to create our article components */
 /* Look over this data, then proceed to line 91*/
-const data = [
-  {
+const data = [{
     title: 'Lambda School Students: "We\'re the best!"',
     date: 'Nov 5th, 2018',
     firstParagraph: `Lucas ipsum dolor sit amet ben twi'lek padmé darth darth darth moff hutt organa twi'lek. Ben amidala secura skywalker lando
@@ -85,6 +84,14 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: "The Iron Throne",
+    date: "May 19th 2019",
+    firstParagraph: `Following the battle, the Unsullied execute captured soldiers upon Daenerys ' orders. Tyrion finds Jaime and Cersei dead in the ruins. Daenerys rallies the Unsullied and Dothraki, declaring she will lead them to liberate the entire world. Tyrion denounces her and resigns as Hand, then is imprisoned for treason to await execution. Arya and Tyrion separately warn Jon that Daenerys is a threat to him and House Stark. Jon confronts Daenerys and, unable to halt her destructive path, kills her. Drogon melts the Iron Throne, then gently carries Daenerys'
+    body away.`,
+    secondParagraph: `Tyrion proposes that all future monarchs be chosen by Westerosi leaders, rather than through familial succession. Bran Stark is proclaimed king, titled Bran the Broken. He grants Sansa the North's secession as an independent kingdom, and appoints Tyrion as his Hand. Jon is sentenced to the Night's Watch to appease the Unsullied, who then set sail for Naath, Missandei's homeland. `,
+    thirdParagraph: `Tyrion reorganizes the Small Council – Brienne, Bronn, Davos, and Sam – to rebuild King's Landing. Podrick is knighted. Sansa is crowned Queen in the North. Arya sets sail to explore west of Westeros. Jon rejoins Tormund and Ghost at Castle Black, leading the Wildlings north of the Wall.`
   }
 ];
 
@@ -112,3 +119,55 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new artible
 
 */
+
+const articles = document.querySelector('.articles');
+// create new article and append it to the parentNode
+data.forEach(item => {
+  articles.appendChild(createArticles(item.title, item.date, item.firstParagraph, item.secondParagraph, item.thirdParagraph));
+})
+
+
+function createArticles(title, date, firstPara, secondPara, thirdPara) {
+  //Main div class article
+  const article = document.createElement('div');
+  article.classList.add('article');
+
+  //Title 
+  const header = document.createElement('h2');
+
+  // P 
+  const paraDate = document.createElement('p');
+  paraDate.classList.add('date');
+
+
+  //P tags
+  const firstParagraph = document.createElement('p');
+  const secondParagraph = document.createElement('p');
+  const thirdParagraph = document.createElement('p');
+  const span = document.createElement('span');
+
+
+  // Append child elements
+  article.appendChild(header);
+  article.appendChild(paraDate);
+  article.appendChild(firstParagraph);
+  article.appendChild(secondParagraph);
+  article.appendChild(thirdParagraph);
+  article.appendChild(span);
+
+  // TextContent for the elements
+  header.textContent = title;
+  paraDate.textContent = date;
+  firstParagraph.textContent = firstPara;
+  secondParagraph.textContent = secondPara;
+  thirdParagraph.textContent = thirdPara;
+  span.textContent = 'Toggle Tab';
+
+  //expand button
+  span.classList.add('expandButton');
+  // EventListener toggle class article-open.
+  span.addEventListener('click', () => article.classList.toggle('article-open'));
+
+  return article;
+
+}
