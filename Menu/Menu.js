@@ -33,11 +33,6 @@ let menuItems = [
   Step 6: add the menu component to the DOM.
   
 */   
-/* <div class="menu">
-  <ul>
-    {each menu item as a list item}
-    </ul>
-</div> */
 
 // Step 1: Write a function that will create a menu component structure as below:
 // <div class="menu">

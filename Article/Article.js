@@ -86,6 +86,12 @@ const data = [
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
+
+  title: 'Sara Pettigrew - Lambda student in webPT8',
+  date: '13 August 2019',
+  firstParagraph: 'Space Space Space Space Space Space Space Space Space Space Space Space Space Space Space Space Space Space Space Space Space Space vSpace Space Space Space Space Space Space Space Space Space Space Space vvSpace Space vSpace Space vvvvvvSpace Space Space vSpace vvvvSpace Space Space Space Space Space Space Space Space Space Space Space Space Space Space Space Space Space Space Space Space Space Space Space Space',
+  secondParagraph: 'Second Space Second SpaceSecond SpaceSecond SpaceSecond SpaceSecond SpaceSecond SpaceSecond SpaceSecond SpaceSecond SpaceSecond SpaceSecond SpaceSecond SpaceSecond SpaceSecond SpaceSecond SpaceSecond SpaceSecond SpaceSecond SpaceSecond SpaceSecond SpaceSecond SpaceSecond SpaceSecond SpaceSecond SpaceSecond SpaceSecond SpaceSecond SpaceSecond SpaceSecond SpaceSecond SpaceSecond SpaceSecond SpaceSecond SpaceSecond SpaceSecond SpaceSecond Space',
+  thirdParagraph: 'The End.'
 ];
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
