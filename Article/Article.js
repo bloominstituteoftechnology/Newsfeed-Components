@@ -88,6 +88,56 @@ const data = [
   }
 ];
 
+const container = document.querySelector('.article');
+
+function articleCreator(date, title, fP, sP, tP) {
+
+  const secondHeader = document.createElement('h2');
+  const spanCreator = document.createElement('span');
+  var paragraphElementArray = [];
+
+  for(let i = 0; i < 3; i++)
+  {
+     const paragraphElement = document.createElement('p');
+     paragraphElementArray[i] = paragraphElement;
+  }
+
+  paragraphElementArray[0].textContent = fP;
+  paragraphElementArray[1].textContent = sP;
+  paragraphElementArray[2].textContent = tP;
+
+  // hmm might need to do a for loop for this one
+
+  paragraphElementArray[0].classList.add = ('date');
+  paragraphElementArray[1].classList.add = ('date');
+  paragraphElementArray[2].classList.add = ('date');
+  spanCreator.classList.add('expandButton');
+
+  //paragraphElementArray[0].textContent = date;
+  secondHeader.textContent = title;
+
+  spanCreator.addEventListener('click', (event) => {
+
+    spanCreator.classList.add('article-open');
+    // toggle implies that they might want to take it off, so I need to figure out how to do that
+
+  });
+
+}
+
+const articleComponents = data.map((articles) => {
+
+  return articleCreator(articles.date, articles.text, articles.firstParagraph, articles.secondParagraph, articles.thirdParagraph);
+
+});
+
+articleComponents.forEach((article) => {
+
+  //console.log(container);
+  container.appendChild(article);
+
+})
+
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
   <div class="article">
