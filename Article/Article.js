@@ -85,8 +85,52 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'BUZZWORDZ',
+    date: 'Jan 1st, 2069',
+    firstParagraph: `SO MANY BUZZ WORDS`,
+
+    secondParagraph: `PATRIARCHY`,
+
+    thirdParagraph: `EMERGENCE THEORY!!!!`
   }
 ];
+
+function Article (entry) {
+  let newDiv = document.createElement('div');
+  let newH2 = document.createElement('h2');
+  let newP = document.createElement('p');
+  let firstParagraph = document.createElement('p');
+  let secondParagraph = document.createElement('p');
+  let thirdParagraph = document.createElement('p');
+  let newSpan = document.createElement('span');
+
+  newSpan.addEventListener('click', (event) => {
+    newDiv.classList.toggle('article-open');
+  })
+
+  newDiv.classList.add('article');
+  newDiv.appendChild(newH2).textContent = entry.title;
+  newDiv.appendChild(newP).textContent = entry.date;
+  newP.classList.add('date');
+  newDiv.appendChild(firstParagraph).textContent = entry.firstParagraph;
+  newDiv.appendChild(secondParagraph).textContent = entry.secondParagraph;
+  newDiv.appendChild(thirdParagraph).textContent = entry.thirdParagraph;
+
+  newSpan.textContent = "Expand";
+  newDiv.appendChild(newSpan).classList.add('expandButton');
+  return newDiv;
+}
+
+const articleContainer = document.querySelector('.articles');
+
+  data.map((entry) => {
+    let article = Article(entry);
+    articleContainer.appendChild(article);
+  });
+
+
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
