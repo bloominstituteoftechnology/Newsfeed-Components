@@ -88,12 +88,13 @@ const data = [
   }
 ];
 
-const container = document.querySelector('.article');
+let container = document.getElementsByClassName('.articles');
 
 function articleCreator(date, title, fP, sP, tP) {
 
   const secondHeader = document.createElement('h2');
   const spanCreator = document.createElement('span');
+  const dataParagraph = document.createElement('p');
   var paragraphElementArray = [];
 
   for(let i = 0; i < 3; i++)
@@ -102,6 +103,7 @@ function articleCreator(date, title, fP, sP, tP) {
      paragraphElementArray[i] = paragraphElement;
   }
 
+  dataParagraph.textContent = date;
   paragraphElementArray[0].textContent = fP;
   paragraphElementArray[1].textContent = sP;
   paragraphElementArray[2].textContent = tP;
@@ -125,16 +127,19 @@ function articleCreator(date, title, fP, sP, tP) {
 
 }
 
-const articleComponents = data.map((articles) => {
+let articleComponents = data.map((articles) => {
 
-  return articleCreator(articles.date, articles.text, articles.firstParagraph, articles.secondParagraph, articles.thirdParagraph);
+  console.log(articles.date, articles.title, articles.firstParagraph, articles.secondParagraph, articles.thirdParagraph);
+  return articleCreator(articles.date, articles.title, articles.firstParagraph, articles.secondParagraph, articles.thirdParagraph);
 
 });
 
-articleComponents.forEach((article) => {
+//console.log(articleComponents);
 
-  //console.log(container);
-  container.appendChild(article);
+articleComponents.forEach((test) => {
+
+  console.log(container);
+  container.appendChild(test);
 
 })
 
