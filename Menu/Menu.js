@@ -60,8 +60,6 @@ function menuCreator(array){
   let listItems = document.createElement('ul')
   newDiv.appendChild(listItems)
 
-  // newDiv.classList.add('Jobs Available');
-
   array.forEach((item) => {
     let items = document.createElement('li')
     items.textContent = item
@@ -79,7 +77,3 @@ function menuCreator(array){
 
 let header = document.querySelector('.header');
 header.appendChild(menuCreator(menuItems));
-
-
-// newDiv.appendChild(menuList);
-// menuList.forEach 
