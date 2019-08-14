@@ -6,6 +6,7 @@ let menuItems = [
   "What's New",
   'Tech Trends',
   'Music',
+  'Job Board',
   'Log Out'
 ];
 
