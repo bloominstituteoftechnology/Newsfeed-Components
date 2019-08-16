@@ -46,36 +46,37 @@ let menuItems = [
 //   Step 2: Iterate over the array creating a list item < li > element for each item in the array.
 //  Add those items to the < ul >
 //   Step 3: Using a DOM selector, select the container with class '.menu-button' currently on the DOM.
-//     Step 4: add a click handler to the menu button, when clicked it should toggle
+//    Step 4: add a click handler to the menu button, when clicked it should toggle
 // the class 'menu--open' on the div container(menu class) you created earlier.
 //   Step 5: return the DOM menu you created with your function.
 // Step 6: Call your function and add it to the menu component to the wrapping container(Hint: header class)
 
 
 function menuCreator(array){
-  let menuBtn = document.querySelector('.menu-button');
-  let newDiv = document.createElement('div');
-
+  const newDiv = document.createElement('div');
   newDiv.classList.add('menu');
-
-  let listItems = document.createElement('ul')
+  
+  const listItems = document.createElement('ul')
   newDiv.appendChild(listItems)
-
+  
   array.forEach((item) => {
-    let items = document.createElement('li')
+    const items = document.createElement('li')
     items.textContent = item
     listItems.appendChild(items)
-
- })
-
-  menuBtn.addEventListener('click', () => {
-    event.preventDefault();
-    newDiv.classList.toggle('menu--open')
-    
-  });
+// Items is becoming the textContent looping over the li, appending to ul which appending to the div.
+  })
 
   return newDiv;
 }
 
-let header = document.querySelector('.header');
-header.appendChild(menuCreator(menuItems));
+const header = document.querySelector('.header');
+const menu = (menuCreator(menuItems))
+header.appendChild(menu);
+// menuCreator() is resolving or becoming to the new div and appending the div to the header.
+
+let menuBtn = document.querySelector('.menu-button');
+menuBtn.addEventListener('click', () => {
+  event.preventDefault();
+  menu.classList.toggle('menu--open')
+
+});
