@@ -100,6 +100,7 @@
 
 function articleCreater(article){
 
+// variables to create our HTML tags
   const articleDiv = document.createElement('div');
   const h2Tag = document.createElement('h2');
   const pTag = document.createElement('p');
@@ -108,42 +109,56 @@ function articleCreater(article){
   const p3Tag = document.createElement('p');
   const spanTag = document.createElement('span');
 
+// adds a class to the corresponding elements.
   articleDiv.classList.add('article');
   pTag.classList.add('date');
   spanTag.classList.add('expandButton');
+
+// adds text content to our elements
   h2Tag.textContent = article.title;
   pTag.textContent = article.date;
-  spanTag.textContent = 'Expand';
+  spanTag.textContent = 'Expand Article';
   p1Tag.textContent = article.firstParagraph;
   p2Tag.textContent = article.secondParagraph;
   p3Tag.textContent = article.thirdParagraph;
+
+//appends our elements the div element 'article'
   articleDiv.appendChild(h2Tag);
   articleDiv.appendChild(pTag);
   articleDiv.appendChild(p1Tag);
   articleDiv.appendChild(p2Tag);
   articleDiv.appendChild(p3Tag);
   articleDiv.appendChild(spanTag);
+
+// adds a span button event listener to toggle the div 'article' class
   spanTag.addEventListener('click', () => {
   articleDiv.classList.toggle('article-open');
   });
 
+// returns the component
   return articleDiv
 }
 
+// A function that maps over 'data'array, itterating the articleCreater function over eahc element.
 function articeOutput(array){
   newArr = array.map(article => {
     return articleCreater(article)
-  })
+    }
+  )
 }
-
+// articleOutput function is invoked wit the 'data' array
 articeOutput(data)
 
+// a variable that adds the 'articles' class so we can append our articles
 const articleDivClass = document.querySelector('.articles');
+
+// a function that will append an array of components to the elements to the div 'articles'.
 function appendComponents(componentArr){
   componentArr.forEach(component => articleDivClass.appendChild(component)
   )
 }
 
+// appendComponents functions is invoked with the 'newArr'
 appendComponents(newArr);
 
 
