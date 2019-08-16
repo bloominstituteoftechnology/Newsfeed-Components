@@ -127,9 +127,8 @@ function articleCreater(article){
   articleDiv.classList.toggle('article-open');
   });
 
-   return articleDiv
- }
-
+  return articleDiv
+}
 
 function articeOutput(array){
   newArr = array.map(article => {
@@ -138,12 +137,11 @@ function articeOutput(array){
 }
 
 articeOutput(data)
-console.log(newArr)
 
 const articleDivClass = document.querySelector('.articles');
 function appendComponents(componentArr){
   componentArr.forEach(component => articleDivClass.appendChild(component)
-)
+  )
 }
 
 appendComponents(newArr);
