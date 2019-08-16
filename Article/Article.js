@@ -89,18 +89,20 @@ const data = [
 ];
 
 let container = document.getElementsByClassName('.articles');
+//console.log(container);
+function componentCreator() {
 
-function dateParagraphCreator(date) {
+  const divCreator = document.createElement('div');
 
   const dateParagraph = document.createElement('p');
+  const spanCreator = document.createElement('span');
+
+  var paragraphElementArray  = [];
+
+  divCreator.classList.add('.articles');
+
   dateParagraph.textContent = date;
 
-  return dateParagraph;
-}
-
-function paragraphCreator(fP, sP, tP) {
-  
-  var paragraphElementArray = [];
 
   for(let i = 0; i < 3; i++)
   {
@@ -108,7 +110,6 @@ function paragraphCreator(fP, sP, tP) {
      paragraphElementArray[i] = paragraphElement;
   }
 
-  dataParagraph.textContent = date;
   paragraphElementArray[0].textContent = fP;
   paragraphElementArray[1].textContent = sP;
   paragraphElementArray[2].textContent = tP;
@@ -117,50 +118,32 @@ function paragraphCreator(fP, sP, tP) {
   paragraphElementArray[1].classList.add = ('date');
   paragraphElementArray[2].classList.add = ('date');
 
-  return paragraphElementArray;
-}
-
-function spanCreator ()
-{
-  const spanMaker = document.createElement('span');
-
-  return spanMaker;
-}
-
-function articleCreator(title) {
-
-  const secondHeader = document.createElement('h2');
+  divCreator.appendChild(paragraphElementArray);
 
   spanCreator.classList.add('expandButton');
-
-  secondHeader.textContent = title;
 
   spanCreator.addEventListener('click', (event) => {
 
   spanCreator.classList.add('article-open');
-    // toggle implies that they might want to take it off, so I need to figure out how to do that
-
-    return article;
   });
 
+  dateParagraph.textContent = date;
+
+  const secondHeader = document.createElement('h2');
+
+  secondHeader.textContent = title;
+
+  divCreator.appendChild(spanCreator);
+
+  /*let articleComponents = data.map((articles) => {
+
+    //  console.log(articles.date, articles.title, articles.firstParagraph, articles.secondParagraph, articles.thirdParagraph);
+      return paragraphCreator(articles.firstParagraph,articles.secondParagraph, articles.thirdParagraph);
+     // return articleCreator(articles.title);
+    
+    }); */
 }
 
-let articleComponents = data.map((articles) => {
-
-//  console.log(articles.date, articles.title, articles.firstParagraph, articles.secondParagraph, articles.thirdParagraph);
-  return paragraphCreator(articles.firstParagraph,article.secondParagraph, articles.thirdParagraph);
-  return articleCreator(articles.title);
-
-});
-
-//console.log(articleComponents);
-
-articleComponents.forEach((test) => {
-
-  console.log(container);
-  container.appendChild(test);
-
-})
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
