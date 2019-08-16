@@ -1,7 +1,6 @@
 /* This is the data we will be using to create our article components */
 /* Look over this data, then proceed to line 91*/
-const data = [
-  {
+const data = [{
     title: 'Lambda School Students: "We\'re the best!"',
     date: 'Nov 5th, 2018',
     firstParagraph: `Lucas ipsum dolor sit amet ben twi'lek padmé darth darth darth moff hutt organa twi'lek. Ben amidala secura skywalker lando
@@ -112,3 +111,51 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new artible
 
 */
+
+const articleMaker = (siteContent) => {
+
+  const div = document.createElement('div');
+  div.classList.add('article')
+
+  const h2 = document.createElement('h2')
+  h2.textContent = siteContent.title;
+
+  const date = document.createElement('p')
+  date.classList.add('date')
+  date.textContent = siteContent.date;
+
+  const span = document.createElement('span')
+  span.classList.add('expandButton')
+  span.textContent = 'Read More'
+  span.addEventListener('click', event => {
+    event.preventDefault();
+    div.classList.toggle('article-open')
+  })
+
+  const para = [];
+  for (let i = 0; i < 3; i++){
+    para.push(document.createElement('p'))
+  }
+  para[0].textContent = siteContent.firstParagraph
+  para[1].textContent = siteContent.secondParagraph
+  para[2].textContent = siteContent.thirdParagraph
+
+  div.appendChild(h2)
+  div.appendChild(date)
+  para.forEach((pTag) => {
+    div.appendChild(pTag)
+  })
+  div.appendChild(span)
+
+  return div
+}
+//console.log(articleMaker())
+const articleDiv = document.querySelector('.articles')
+
+const siteContent = data.map((content) => {
+  return articleDiv.append(articleMaker(content))
+
+})
+
+
+//console.log(siteContent)
