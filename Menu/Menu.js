@@ -68,6 +68,5 @@ function menuComponent(array) {
 
 let menu = menuComponent(menuItems);
 
-console.log(menuComponent(menuItems))
 headerDiv = document.querySelector('.header')
 headerDiv.prepend(menu);
