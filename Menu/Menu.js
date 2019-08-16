@@ -69,6 +69,7 @@ function menuCreator(array){
  })
 
   menuBtn.addEventListener('click', () => {
+    event.preventDefault();
     newDiv.classList.toggle('menu--open')
     
   });

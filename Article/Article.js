@@ -174,12 +174,23 @@ function articleCreator(array) {
   })
     return news
   }
-  
+  // callback the 'items' in the array.
   data.forEach((item) => {
     let article = articleCreator(item);
     newArticle.appendChild(article);
 
   });
+
+  // for(let i = 0; i < data.length; i++){
+  //   let news = articleCreator(news[i]);
+  //   header.appendChild(news);
+  // }
+// let newsArray = data.map((item) => {
+  //   let article = articleCreator(item);
+  //   return article;
+  // })
+  // returns a new array, with the new item, after being mainipulated by the callback.
+
 
   // function textCreator(text) {
     
