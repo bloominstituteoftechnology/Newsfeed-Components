@@ -34,61 +34,73 @@ let menuItems = [
   Step 6: add the menu component to the DOM.
   
 */
-
-//Step1
 const menuMaker = (array) => {
 
-  let div = document.createElement('div');
-  div.classList.add('menu')
+  const div = document.createElement('div');
+  div.classList.add('menu');
 
-  let ul = document.createElement('ul');
+  const ul = document.createElement('ul');
 
-  // let listItems = document.createElement('LI')
-  // listItems.innerHTML = liName
-
-  let listItems = []
+  const listOfli = [];
   let li;
-  for(let i = 0; i < array.length; i++){
+  for (let i = 0; i < array.length; i++){
     li = document.createElement('li');
     li.textContent = array[i];
-    listItems.push(li)
+    listOfli.push(li)
   }
 
+listOfli.forEach((item) => {
+  ul.appendChild(item)
+})
 
-  listItems.forEach((listItems) => {
-    ul.appendChild(listItems)
-  })
 
   div.appendChild(ul)
 
-  // headerMenu.appendChild(menuList)
-  // menuList.appendChild(listItems)
-
   return div
 }
-const menu = menuMaker(menuItems)
 
+let menu = menuMaker(menuItems)
 
-
-let menuButton = document.querySelector('.menu-button')
+const menuButton = document.querySelector('.menu-button')
 menuButton.addEventListener('click', event => {
   event.preventDefault();
-  menu.classList.toggle('menu--open');
-
+  menu.classList.toggle('menu--open')
 })
 
 document.querySelector('.header').append(menu)
 
 
+//Step1
+// const menuMaker = (array) => {
+
+//   let div = document.createElement('div');
+//   div.classList.add('menu')
+
+//   let ul = document.createElement('ul');
+
+//   let listItems = []
+//   let li;
+//   for(let i = 0; i < array.length; i++){
+//     li = document.createElement('li');
+//     li.textContent = array[i];
+//     listItems.push(li)
+//   }
 
 
+//   listItems.forEach((listItems) => {
+//     ul.appendChild(listItems)
+//   })
 
+//   div.appendChild(ul)
 
+//   return div
+// }
+// const menu = menuMaker(menuItems)
 
+// let menuButton = document.querySelector('.menu-button')
+// menuButton.addEventListener('click', event => {
+//   event.preventDefault();
+//   menu.classList.toggle('menu--open');
+// })
 
-
-
-
-
-
-
+// document.querySelector('.header').append(menu)
