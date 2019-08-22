@@ -14,6 +14,9 @@ class Article {
     this.readBtn.innerText = "Hide";
     this.readBtn.addEventListener("click", this.disappear.bind(this));
 
+    //? could also be written via ES6 for implicit this binding:
+    //? this.readBtn.addEventListener("click", () => this.disappear());
+
     // Set a click handler on the expandButton reference, calling the expandArticle method.
     this.expandButton.addEventListener("click", this.expandArticle.bind(this));
   }
@@ -25,7 +28,9 @@ class Article {
 
   expandArticle(event) {
     // Using our reference to the domElement, toggle a class to expand or hide the article.
+    //height 50
     this.domElement.classList.toggle("article-open");
+    //height 400
     if (this.domElement.classList.contains("article-open")) {
       TweenMax.to(this.domElement, 1, { height: "400px" });
       this.expandButton.innerText = "Click to Close";
