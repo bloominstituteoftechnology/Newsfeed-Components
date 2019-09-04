@@ -134,4 +134,10 @@ function componentBuilder() {
   paragraph1.textContent = firstParagraph;
   paragraph2.textContent = secondParagraph;
   paragraph3.textContent = thirdParagraph;
+
+  articles.appendChild('tittles');
+  articles.appendChild('dates');
+  articles.appendChild('paragraph1');
+  articles.appendChild('paragraph2');
+  articles.appendChild('paragraph3');
 }
