@@ -88,8 +88,31 @@ const data = [
   }
 ];
 
+const articles = document.querySelector('.articles')
+
+data.forEach(articleData => {
+  articles.appendChild(createComponent(articleData.title, articleData.date, articleData.firstP, articleData.secondP, articleData.thirdP))
+})
+
 function createComponent(title, date, firstP, secondP, thirdP) {
-  
+  const article = document.createElement('div');
+  const titleArticle = document.createElement('h2');
+  const dateArticle = document.createElement('p')
+  const para1 = document.createElement('p');
+  const para2 = document.createElement('p');
+  const articleButton = document.createElement('span');
+
+  article.appendChild(titleArticle);
+  article.appendChild(dateArticle);
+  article.appendChild(para1);
+  article.appendChild(para2);
+  article.appendChild(articleButton);
+
+articleButton.addEventListener('click', event => {
+  articleButton.classList.toggle("article-open");
+})
+
+return article;
 }
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
