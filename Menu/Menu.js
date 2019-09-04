@@ -42,13 +42,18 @@ function menuBuilder (array){
   menu.appendChild(ul);
 
   //step 2
+  const anItem = document.createElement('li');
+  anItem.textContent = a;
   const listItems = array.map(a => {
-    const anItem = document.createElement('li');
-    anItem.textContent = a;
-
     return anItem;
   })
 
+  listItems.forEach(listItem => {
+    ul.appendChild(listItem);
+  });
+  
+  //step 3
+  const menuButton = document.querySelector('.menu-button')
 }
 const menuBuilder = menuBuilder(menuItems);
 
