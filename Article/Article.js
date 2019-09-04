@@ -112,3 +112,61 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+
+
+function articleFactory ({title, date, p1, p2, p3}){
+
+  //declaration of variables
+  
+  const newArticle = document.createElement('div');
+  const h2 = document.createElement('h2');
+  const pdate = document.createElement('p');
+  const pFirst = document.createElement('p');
+  const pSecond = document.createElement('p');
+  const pThird = document.createElement('p');
+  const span = document.createElement('span');
+
+  //add content to elements 
+
+  h2.textContent = title;
+  pdate.textContent = date;
+  pFirst.textContent = p1;
+  pSecond.textContent = p2;
+  pThird.textContent = p3;
+
+  //setting  up of element attributes 
+
+  newArticle.classList.add('article');
+  pdate.classList.add('date');
+  span.classList.add('expandButton');
+
+  //event listener
+
+  span.addEventListener('toggle', () => {
+    newArticle.classList.toggle('hidden')
+  })
+
+  // fill up article div
+  
+  newArticle.appendChild(h2);
+  newArticle.appendChild(pdate);
+  newArticle.appendChild(pFirst);
+  newArticle.appendChild(pThird);
+  newArticle.appendChild(span);
+
+  return newArticle;
+
+}
+
+//declare variable 
+
+const mappedArticle = data.map(articleFactory);
+
+
+
+//select article div in index.html 
+
+const articleDiv= document.querySelector('.articles');
+
+articleDiv.appendChild(mappedArticle);
