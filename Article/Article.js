@@ -1,3 +1,5 @@
+
+
 /* This is the data we will be using to create our article components */
 /* Look over this data, then proceed to line 91*/
 const data = [
@@ -98,6 +100,47 @@ const data = [
 
     <span class='expandButton'></span>
   </div>
+  */
+ 
+ function articleMaker(settings) {
+
+  const  {title, date, firstParagraph, secondParagraph, thirdParagraph} = settings;
+
+  const divCont = document.querySelector(".articles");
+  
+
+  const h = document.createElement("h2");
+  h.textContent = title;
+
+  const dateCont = document.createElement("p");
+  dateCont.textContent = date;
+
+  const p1 = document.createElement("p");
+  p1.textContent = firstParagraph;
+
+  const p2 = document.createElement("p");
+  p2.textContent = secondParagraph;
+
+  const p3 = document.createElement("p");
+  p3.textContent = thirdParagraph;
+
+  const span = document.createElement("span");
+  span.setAttribute("class",'expandButton');
+
+  divCont.appendChild(h);
+  divCont.appendChild(dateCont);
+  divCont.appendChild(p1);
+  divCont.appendChild(p2);
+  divCont.appendChild(p3);
+  divCont.appendChild(span);
+  
+  console.log(divCont);
+  return divCont;
+  
+}
+ 
+const articles = data.map(articleMaker);
+ /*
 
   Hint: You will need to use createElement more than once here!
 
