@@ -85,11 +85,17 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: "Lambda School instructor Gabriel Cabrejas reports that next week will be brutal",
+    date: "Sept 4th, 2019",
+    firstParagraph: `test`,
+    secondParagraph: `test`,
+    thirdParagraph: `test`
   }
 ];
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
-  
   <div class="article">
     <h2>{title of the article}</h2>
     <p class="date">{date of the article}</p>
@@ -103,6 +109,7 @@ const data = [
 
   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
 
+
   Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
 
   Step 3: return the entire component.
@@ -112,3 +119,42 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+function componentMaker(dataObject) {
+
+  const article = document.createElement('div');
+  const title = document.createElement('h2');
+  const date = document.createElement('p')
+  const paragraph1 = document.createElement('p');
+  const paragraph2 = document.createElement('p');
+  const paragraph3 = document.createElement('p');
+  const button = document.createElement('span');
+
+  const dataArr = [title, date, paragraph1, paragraph2, paragraph3, button];
+
+  date.classList.add("date");
+  article.classList.add("article");
+  button.classList.add("expandButton");
+  button.innerText = ("expand");
+
+  dataArr.forEach((element) => article.append(element));
+
+  button.addEventListener("click", () => article.classList.toggle("article-open"));
+
+  const dataValues = Object.values(dataObject);
+
+  for (let i = 0; i < dataValues.length; i++) {
+    article.children[i].textContent = dataValues[i];
+  }
+
+  document.body.appendChild(article);
+
+  return article;
+}
+
+data.map(article => componentMaker(article));
+
+
+
+
+
