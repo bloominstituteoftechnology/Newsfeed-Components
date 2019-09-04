@@ -88,8 +88,7 @@ const data = [
   }
 ];
 
-/* Step 1: Create a function that creates a component. You will want your component to 
-    look like the template below: 
+/* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
   <div class="article">
     <h2>{title of the article}</h2>
@@ -114,23 +113,21 @@ const data = [
 
 */
 
-
-
 const articles = document.querySelector('.articles');
 
 
 function createArticle(title, date, firstParagraph, secondParagraph, thirdParagraph){
   const articleCard = document.createElement('div');
-  const title = document.createElement('h2');
-  const date = document.createElement('p');
+  const articleTitle = document.createElement('h2');
+  const articleDate = document.createElement('p');
   const para1 = document.createElement('p');
   const para2 = document.createElement('p');
   const para3 = document.createElement('p');
   const button = document.createElement('span');
 
  //Setup structure of elements
-  articleCard.appendChild(title);
-  articleCard.appendChild(date);
+  articleCard.appendChild(articleTitle);
+  articleCard.appendChild(articleDate);
   articleCard.appendChild(para1);
   articleCard.appendChild(para2);
   articleCard.appendChild(para3);
@@ -138,12 +135,12 @@ function createArticle(title, date, firstParagraph, secondParagraph, thirdParagr
 
   // set class names
   articleCard.classList.add('article');
-  date.classList.add('date');
+  articleDate.classList.add('date');
   button.classList.add('expandButton');
 
   //set text content
-  title.textContent = title;
-  date.textContent = date;
+  articleTitle.textContent = title;
+  articleDate.textContent = date;
   para1.textContent = firstParagraph;
   para2.textContent = secondParagraph;
   para3.textContent = thirdParagraph;
@@ -159,7 +156,7 @@ button.addEventListener('click', e => {
 };
 
 data.forEach(data => {
-  articles.appendChild(createArticle(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph));
+  articles.appendChild(createArticle(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
 })
 
 
