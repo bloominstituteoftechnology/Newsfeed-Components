@@ -143,5 +143,6 @@ function componentBuilder({title, date, firstParagraph, secondParagraph, thirdPa
   articles.appendChild('paragraph1');
   articles.appendChild('paragraph2');
   articles.appendChild('paragraph3');
-  
+ 
+  return articles;
 }
