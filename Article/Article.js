@@ -88,6 +88,9 @@ const data = [
   }
 ];
 
+function createComponent(title, date, firstP, secondP, thirdP) {
+  
+}
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
   <div class="article">
