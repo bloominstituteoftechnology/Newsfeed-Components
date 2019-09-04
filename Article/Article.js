@@ -101,12 +101,13 @@ const data = [
     <span class='expandButton'></span>
   </div>
   */
- 
+
  function articleMaker(settings) {
 
   const  {title, date, firstParagraph, secondParagraph, thirdParagraph} = settings;
 
   const divCont = document.querySelector(".articles");
+   divCont.classList.add("article-open");
   
 
   const h = document.createElement("h2");
@@ -126,6 +127,12 @@ const data = [
 
   const span = document.createElement("span");
   span.setAttribute("class",'expandButton');
+  span.textContent = "Expand";
+  span.style.border = " 1px solid green";
+  span.addEventListener('click',(event) => {
+    divCont.classList.toggle("article-open");
+    event.target.style.backgroundColor = "green";
+  });
 
   divCont.appendChild(h);
   divCont.appendChild(dateCont);
@@ -134,7 +141,6 @@ const data = [
   divCont.appendChild(p3);
   divCont.appendChild(span);
   
-  console.log(divCont);
   return divCont;
   
 }
