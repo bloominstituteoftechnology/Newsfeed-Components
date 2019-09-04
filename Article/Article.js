@@ -144,20 +144,30 @@ function createArticle(title, date, firstParagraph, secondParagraph, thirdParagr
   para1.textContent = firstParagraph;
   para2.textContent = secondParagraph;
   para3.textContent = thirdParagraph;
+  button.textContent = 'Read More'
 
 
   //set event listener to buton. This event listener should toggle the class 'article-open' on the 'article' div.
 button.addEventListener('click', e => {
-    button.classList.toggle('article-open');
-    button.classList.toggle('article');
+  articleCard.classList.toggle('article-open');
+  articleCard.classList.toggle('close');
+    // button.classList.toggle('article');
   })
 
   return articleCard;
 };
 
-data.forEach(data => {
-  articles.appendChild(createArticle(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
+
+let newArticleComponents = data.map((arrayItem) => {
+  let newArticle = createArticle(arrayItem.title, arrayItem.date, arrayItem.firstParagraph, arrayItem.secondParagraph, arrayItem.thirdParagraph);
+
+  return newArticle;
 })
 
+newArticleComponents.forEach(component => {
+  articles.appendChild(component);
+})
 
-
+// data.forEach(data => {
+//   articles.appendChild(createArticle(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
+// })
