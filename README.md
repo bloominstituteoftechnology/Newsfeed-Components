@@ -53,7 +53,7 @@ If you complete the main goals of the page let's play around with some cool anim
 
 A few things to check out: 
 * Native CSS Animations. 
-  * CSS has the ability to animate elements using a number of different properties. Check out `transform` and `transition`, and `animate`. A word of warning, these CSS properties will act differently on different browsers, so always read and see if you need a `browser prefix` in order to animate properly. 
+  * CSS has the ability to animate elements using a number of different properties. Check out `transform` and `transition`, and `animation`. A word of warning, these CSS properties will act differently on different browsers, so always read and see if you need a `browser prefix` in order to animate properly. 
   * https://css-tricks.com/almanac/properties/a/animation/
 * jQuery
   * jQuery is an extremely popular JavaScript library, in fact most of the native DOM manipulation we know and love, came from the jQuery library. It is worth getting a little familiar with it. The jQuery library is massive, and part of it is an animation library. jQuery gives us a fantastic method called `.animate()`. There are also simpler methods such as `slideDown` `slideUp`, `slideToggle`, `show`, `hide` and more.
