@@ -59,6 +59,9 @@ function menuBuilder (array){
   menuButton.addEventListener('click', e => {
     menu.classList.toggle('menu--open');
   })
+
+  //step 5
+  return menu;
 }
 const menuBuilder = menuBuilder(menuItems);
 
