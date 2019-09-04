@@ -149,7 +149,6 @@ function componentMaker(dataObject) {
 
   document.body.appendChild(article);
 
-  return article;
 }
 
 data.map(article => componentMaker(article));
