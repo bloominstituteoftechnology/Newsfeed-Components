@@ -120,7 +120,7 @@ function componentBuilder({title, date, firstParagraph, secondParagraph, thirdPa
   const titles = document.createElement('h2');
 
   const dates = document.createElement('p');
-  date.classList.add('date');
+  dates.classList.add('date');
 
   const paragraph1 = document.createElement('p');
   const paragraph2 = document.createElement('p');
@@ -138,11 +138,14 @@ function componentBuilder({title, date, firstParagraph, secondParagraph, thirdPa
   paragraph2.textContent = secondParagraph;
   paragraph3.textContent = thirdParagraph;
 
-  articles.appendChild('titles');
-  articles.appendChild('dates');
-  articles.appendChild('paragraph1');
-  articles.appendChild('paragraph2');
-  articles.appendChild('paragraph3');
+  articles.appendChild(titles);
+  articles.appendChild(dates);
+  articles.appendChild(paragraph1);
+  articles.appendChild(paragraph2);
+  articles.appendChild(paragraph3);
  
   return articles;
 }
+
+const articleMap = data.map(componentBuilder);
+
