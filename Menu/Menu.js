@@ -54,6 +54,11 @@ function menuBuilder (array){
   
   //step 3
   const menuButton = document.querySelector('.menu-button')
+
+  //step 4
+  menuButton.addEventListener('click', e => {
+    menu.classList.toggle('menu--open');
+  })
 }
 const menuBuilder = menuBuilder(menuItems);
 
