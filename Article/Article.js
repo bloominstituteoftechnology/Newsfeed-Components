@@ -112,3 +112,77 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+const articleBtnOpeningText = 'Click to Expand';
+const articleBtnClosingText = 'Click to Close';
+
+function generateArticle({title, date, firstParagraph, secondParagraph, thirdParagraph}) {
+  const article = document.createElement('div');
+  article.classList.add('article');
+
+  const h2 = document.createElement('h2');
+  h2.textContent = title;
+
+  const pDate = document.createElement('p');
+  pDate.classList.add('date');
+  pDate.textContent = date;
+
+  const p1 = document.createElement('p');
+  p1.textContent = firstParagraph;
+  const p2 = document.createElement('p');
+  p2.textContent = secondParagraph;
+  const p3 = document.createElement('p');
+  p3.textContent = thirdParagraph;
+
+  const expandButton = document.createElement('span');
+  expandButton.classList.add('expandButton');
+  expandButton.textContent = articleBtnOpeningText;
+  expandButton.addEventListener('click', function() {
+    this.parentElement.classList.toggle('article-open');
+    if(this.parentElement.className.indexOf('article-open') > -1) {
+      this.textContent = articleBtnClosingText;
+    } else {
+      this.textContent = articleBtnOpeningText;
+    }
+  });
+
+  const closeButton = document.createElement('span');
+  closeButton.classList.add('close');
+  closeButton.textContent = 'Close';
+  closeButton.addEventListener('click', function() {
+    this.parentElement.classList.add('hidden');
+  });
+
+  article.appendChild(h2);
+  article.appendChild(pDate);
+  article.appendChild(p1);
+  article.appendChild(p2);
+  article.appendChild(p3);
+  article.appendChild(expandButton);
+  article.appendChild(closeButton);
+
+  return article;
+}
+
+data.push({
+  title: 'Applied Javascript - Components I',
+  date: 'Sep 4th, 2019',
+  firstParagraph: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque nisi culpa repellat quo consectetur adipisci explicabo harum, nulla fuga quos voluptas expedita iusto neque ipsam maxime totam, reprehenderit architecto iure?`,
+  secondParagraph: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, vitae eius deleniti suscipit sequi libero, at cum laborum praesentium saepe maiores! Odio suscipit atque quidem itaque tempora cumque nulla beatae?`,
+  thirdParagraph: `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum quasi explicabo voluptates perspiciatis voluptatem veritatis, quod at, ipsam optio illum, vel tenetur doloribus ipsa eos velit necessitatibus cupiditate porro. Incidunt.`
+});
+
+data.push({
+  title: 'Applied Javascript - Components II',
+  date: 'Sep 5th, 2019',
+  firstParagraph: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque nisi culpa repellat quo consectetur adipisci explicabo harum, nulla fuga quos voluptas expedita iusto neque ipsam maxime totam, reprehenderit architecto iure?`,
+  secondParagraph: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, vitae eius deleniti suscipit sequi libero, at cum laborum praesentium saepe maiores! Odio suscipit atque quidem itaque tempora cumque nulla beatae?`,
+  thirdParagraph: `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum quasi explicabo voluptates perspiciatis voluptatem veritatis, quod at, ipsam optio illum, vel tenetur doloribus ipsa eos velit necessitatibus cupiditate porro. Incidunt.`
+});
+
+const articlesContainer = document.querySelector('.articles');
+const articles = data.map(article => {
+  const newArticle = generateArticle(article);
+  articlesContainer.appendChild(newArticle);
+  return newArticle;
+});
