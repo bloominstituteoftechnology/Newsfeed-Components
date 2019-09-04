@@ -113,6 +113,7 @@ const data = [
 
 */
 
+//step 1
 function componentBuilder({title, date, firstParagraph, secondParagraph, thirdParagraph}) {
   const articles = document.createElement('div');
   articles.classList.add('article')
@@ -126,11 +127,14 @@ function componentBuilder({title, date, firstParagraph, secondParagraph, thirdPa
   const paragraph2 = document.createElement('p');
   const paragraph3 = document.createElement('p');
 
-  const buttons = document.createElement('button');
+  const buttons = document.createElement('span');
   buttons.classList.add('expandButton');
+  //step2
   buttons.addEventListener('click', e => {
       articles.classList.toggle('article-open');
   })
+
+  buttons.textContent = 'Tap here';
   
   titles.textContent = title;
   dates.textContent = date;
@@ -143,10 +147,26 @@ function componentBuilder({title, date, firstParagraph, secondParagraph, thirdPa
   articles.appendChild(paragraph1);
   articles.appendChild(paragraph2);
   articles.appendChild(paragraph3);
+  articles.appendChild(buttons);
  
+  //step 3
   return articles;
 }
 
+//step 5
+data.push({
+  title: "Webeu3 karim",
+
+  date: "lovely date",
+
+  firstParagraph: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, maxime? Nemo in voluptatem eos iure rerum. Sunt dignissimos porro beatae exercitationem, optio laboriosam illum ipsa nihil tenetur velit recusandae eius.",
+
+  secondParagraph: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit placeat repudiandae repellendus, quae alias facere, in ad itaque tenetur quisquam autem consectetur eos commodi? Impedit consequuntur alias dicta iusto quasi porro eaque. Pariatur architecto ipsum at accusamus optio blanditiis autem aliquam, dolorem quos perferendis, doloribus, culpa nobis tempora sequi ex? Velit, sint necessitatibus! Nemo consectetur in harum quam exercitationem facere quae, deleniti quod natus, minima aspernatur. Numquam adipisci accusantium iste?",
+  
+  thirdParagraph: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis sapiente laborum pariatur voluptatem velit quis sint mollitia aliquid earum? Voluptates, a eius voluptate corporis ipsam non commodi laudantium voluptas officiis hic nemo asperiores, quos expedita, recusandae aliquam optio velit adipisci! Mollitia necessitatibus deleniti officia vitae dolorem enim omnis assumenda expedita ullam vero, exercitationem harum, odit voluptatem ut fugiat beatae, qui delectus praesentium? Ut, illum. Animi molestias corrupti aut omnis. Magni provident magnam aspernatur laudantium porro corrupti eaque minima enim iste?"  
+})
+
+//step4
 const articleMap = data.map(componentBuilder);
 
 const articleContainer = document.querySelector('.articles');
