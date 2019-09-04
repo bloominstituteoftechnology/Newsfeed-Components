@@ -39,4 +39,16 @@ function menuBuilder (array){
   const menu = document.createElement('div');
   menu.classList.add('menu');
   const ul = document.createElement('ul');
+  menu.appendChild(ul);
+
+  //step 2
+  const listItems = array.map(a => {
+    const anItem = document.createElement('li');
+    anItem.textContent = a;
+
+    return anItem;
+  })
+
 }
+const menuBuilder = menuBuilder(menuItems);
+
