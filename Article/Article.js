@@ -126,8 +126,11 @@ function componentBuilder({title, date, firstParagraph, secondParagraph, thirdPa
   const paragraph2 = document.createElement('p');
   const paragraph3 = document.createElement('p');
 
-  const button = document.createElement('button');
-  button.classList.add('expandButton');
+  const buttons = document.createElement('button');
+  buttons.classList.add('expandButton');
+  buttons.addEventListener('click', e => {
+      articles.classList.toggle('article-open');
+  })
   
   titles.textContent = title;
   dates.textContent = date;
