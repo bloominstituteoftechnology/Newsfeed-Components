@@ -85,35 +85,56 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {title: 'Coding is fun and frustrating, says I',
+   date: 'September 4th, 2019',
+   firstParagraph: `This`,
+   secondParagraph: `is`,
+   thirdParagraph: `a paragraph.`
   }
 ];
 
 const articles = document.querySelector('.articles')
 
-data.forEach(articleData => {
-  articles.appendChild(createComponent(articleData.title, articleData.date, articleData.firstP, articleData.secondP, articleData.thirdP))
-})
-
-function createComponent(title, date, firstP, secondP, thirdP) {
+function newComponent(title, date, firstParagraph, secondParagraph, thirdParagraph) {
   const article = document.createElement('div');
   const titleArticle = document.createElement('h2');
   const dateArticle = document.createElement('p')
   const para1 = document.createElement('p');
   const para2 = document.createElement('p');
+  const para3 = document.createElement('p');
   const articleButton = document.createElement('span');
 
+  article.classList.add('article');
+  dateArticle.classList.add('date');
+  articleButton.classList.add('expandButton');
+  
+  titleArticle.textContent = title;
+  dateArticle.textContent = date;
+  para1.textContent = firstParagraph;
+  para2.textContent = secondParagraph;
+  para3.textContent = thirdParagraph;
+  articleButton.textContent = 'I am a Button';
+  
   article.appendChild(titleArticle);
   article.appendChild(dateArticle);
   article.appendChild(para1);
   article.appendChild(para2);
+  article.appendChild(para3);
   article.appendChild(articleButton);
-
+  
 articleButton.addEventListener('click', event => {
-  articleButton.classList.toggle("article-open");
-})
+  console.log('button clicked', event.target);
+  article.classList.toggle('article-open');
+  // article.classList.toggle('close');
+});
 
 return article;
 }
+
+data.forEach(data => {
+  articles.appendChild(newComponent(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph));
+});
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
   <div class="article">
