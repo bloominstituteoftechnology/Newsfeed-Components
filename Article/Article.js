@@ -85,10 +85,27 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Kicking it with Lambda',
+    date: 'Sept 4th, 2019',
+    firstParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
+          hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
+          Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `,
+
+    secondParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
+          hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
+          hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
+          hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? `,
+
+    thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
+          Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
+          Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
 ];
 
-/* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
+/* Step 1: Create a function that creates a component. You will want your 
+  component to look like the template below: 
   
   <div class="article">
     <h2>{title of the article}</h2>
@@ -101,14 +118,91 @@ const data = [
 
   Hint: You will need to use createElement more than once here!
 
-  Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
+  Your function should take either an object as it's one argument, or 5 separate 
+  arguments mapping to each piece of the data object above.
 
-  Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
+  Step 2: Add an event listener to the expandButton span. This event listener should toggle the 
+  class 'article-open' on the 'article' div.
 
   Step 3: return the entire component.
 
-  Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
+  Step 4: Map over the data, creating a component for each oject and add each component to the 
+  DOM as children of the 'articles' div.
 
-  Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
+  Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh 
+  the page to see the new article.
 
 */
+//  const container = document.querySelector('.container');
+
+//  data.forEach(articleData => {
+
+//    container.appendChild(createArticle(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
+//  });
+
+const createArticles = (dataObj) => {
+  // articleDiv is the div that will store all the article information such as date title and content
+  const articleDiv = document.createElement('div');
+  articleDiv.classList.add('article');
+
+  // after creating the article information elements i need to add the correct classes to the right elements
+  // i will also need to append all the elements onto the articleDiv
+
+  // since dataObj will be the current object that i want the current component to use as its data i will need
+  // to grab that object and use its keys to fill out each article elements text content
+
+  const articleTitle = document.createElement('h2'); // create the element
+  articleTitle.textContent = dataObj.title; // fill the element
+  articleDiv.appendChild(articleTitle); // append the element
+
+
+  const articleDate = document.createElement('p');
+  articleDate.classList.add('date'); // some elements need classes added to them for styling
+  articleDate.textContent = dataObj.date;
+  articleDiv.appendChild(articleDate); 
+
+  const paragraph1 = document.createElement('p');
+  paragraph1.textContent = dataObj.firstParagraph;
+  articleDiv.appendChild(paragraph1); 
+
+  const paragraph2 = document.createElement('p');
+  paragraph2.textContent = dataObj.secondParagraph;
+  articleDiv.appendChild(paragraph2); 
+
+  const paragraph3 = document.createElement('p');
+  paragraph3.textContent = dataObj.thirdParagraph;
+  articleDiv.appendChild(paragraph3); 
+
+  const expandButton = document.createElement('span');
+  expandButton.classList.add('expandButton');
+  expandButton.textContent = 'Click to expand'; // since expand button does not have a corresponding data prop i can just fill the text content manually with a string
+  articleDiv.appendChild(expandButton);
+  
+  // the button needs an event listener so that when the article is created it will have the ability to expand its content
+  expandButton.addEventListener('click', () => {
+    articleDiv.classList.toggle('article-open');
+    animateArticle();
+
+    
+  });
+
+  const animateArticle = () => {
+    // articleDiv.classList.contains('article-open') ? TweenMax.from(articleDiv, 0.5, { height: '50' }) : TweenMax.to(articleDiv, 0.5, { height: '50' });
+    if (articleDiv.classList.contains('article-open')) {
+      expandButton.textContent = 'Click to close';
+      TweenMax.set(articleDiv, { height: 'auto' });
+      TweenMax.from(articleDiv, 0.5, { height: '50' });
+    } else {
+      expandButton.textContent = 'Click to expand';
+      TweenMax.to(articleDiv, 0.5, { height: '50' });
+    }
+  };
+  
+  return articleDiv;
+}
+
+data.map(articleObj => {
+  const article = createArticles(articleObj);
+  const articlesContainer = document.querySelector('.articles');
+  articlesContainer.appendChild(article);
+});
