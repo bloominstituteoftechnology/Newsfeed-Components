@@ -65,3 +65,6 @@ function menuBuilder (array){
 }
 const menuBuilder = menuBuilder(menuItems);
 
+//step 6
+document.querySelector('body').appendChild(menuBuilder)
+
