@@ -128,4 +128,5 @@ function componentBuilder() {
 
   const button = document.createElement('button');
   button.classList.add('expandButton');
+  
 }
