@@ -85,6 +85,20 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: "Emily's First Article",
+    date: "Sept 4, 2019",
+    firstParagraph: "Lorem ipsum dolor sit amet, quot graeci ea sea, liber soleat explicari at sea, nam minim dicunt iuvaret cu? Est ea iisque signiferumque. Ei eam eirmod iuvaret. Veniam homero qui et. Prima dictas inciderint no nam, ad vim molestie quaerendum?",
+    secondParagraph: "Sed fugit cotidieque ad? Qui ex ocurreret gloriatur cotidieque. Veri prima vis an! Ut cum quando rationibus, euismod honestatis mea ea. Decore everti inimicus cu pro, error incorrupte dissentias vis cu, at zril repudiare vix. No est facilisi consulatu incorrupte, ea populo viderer nec.",
+    thirdParagraph: "Sit an audiam dolorem accusam, sea cu sint nominati. Aliquip omnesque vis ex, verear discere salutatus eu quo? Cu veniam patrioque efficiendi ius, persius nostrud graecis ei quo? Natum convenire pro cu? Agam facilisis duo et, ei usu cibo rebum efficiantur! No tation dolorem salutatus ius, at est elit dolor fabulas."
+  },
+  {
+    title: "Emily's Second Article",
+    date: "Sept 4, 2019",
+    firstParagraph: "Lorem ipsum dolor sit amet, quot graeci ea sea, liber soleat explicari at sea, nam minim dicunt iuvaret cu? Est ea iisque signiferumque. Ei eam eirmod iuvaret. Veniam homero qui et. Prima dictas inciderint no nam, ad vim molestie quaerendum?",
+    secondParagraph: "Sed fugit cotidieque ad? Qui ex ocurreret gloriatur cotidieque. Veri prima vis an! Ut cum quando rationibus, euismod honestatis mea ea. Decore everti inimicus cu pro, error incorrupte dissentias vis cu, at zril repudiare vix. No est facilisi consulatu incorrupte, ea populo viderer nec.",
+    thirdParagraph: "Sit an audiam dolorem accusam, sea cu sint nominati. Aliquip omnesque vis ex, verear discere salutatus eu quo? Cu veniam patrioque efficiendi ius, persius nostrud graecis ei quo? Natum convenire pro cu? Agam facilisis duo et, ei usu cibo rebum efficiantur! No tation dolorem salutatus ius, at est elit dolor fabulas."
   }
 ];
 
@@ -93,22 +107,61 @@ const data = [
   <div class="article">
     <h2>{title of the article}</h2>
     <p class="date">{date of the article}</p>
-
     {three separate paragraph elements}
-
     <span class='expandButton'></span>
   </div>
 
   Hint: You will need to use createElement more than once here!
-
   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
-
   Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
-
   Step 3: return the entire component.
-
   Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
-
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
-
 */
+//COMPLETED
+
+
+let articles = document.querySelector('.articles');
+
+function createComponent(el) {
+  // define new elements
+  const article = document.createElement('div');
+  const h2 = document.createElement('h2');
+  const date = document.createElement('p');
+  const p1 = document.createElement('p');
+  const p2 = document.createElement('p');
+  const p3 = document.createElement('p');
+  const expand = document.createElement('span');
+
+  // add classes
+  article.classList.add('article');
+  date.classList.add('date');
+  expand.classList.add('expandButton');
+
+  //set content
+  h2.textContent = el.title;
+  date.textContent = el.date;
+  p1.textContent = el.firstParagraph;
+  p2.textContent = el.secondParagraph;
+  p3.textContent = el.thirdParagraph;
+
+  // structure articles
+  article.appendChild(h2);
+  article.appendChild(date);
+  article.appendChild(p1);
+  article.appendChild(p2);
+  article.appendChild(p3);
+
+  // add event listener
+  article.addEventListener('click', (e) => {
+    article.classList.toggle('article-open');
+  });
+
+  // return the article
+  return article;
+}
+
+// loop thru each to create component
+data.forEach(element => {
+  articles.appendChild(createComponent(element));
+});
