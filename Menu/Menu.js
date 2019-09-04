@@ -21,6 +21,8 @@ let menuItems = [
   // </div>
 
   // Pass the function an array as it's only argument.
+  const header = document.querySelector('.header');
+  header.appendChild(createMenu(menuItems))
 
   function createMenu () {
     // define elements
@@ -44,7 +46,7 @@ let menuItems = [
   const menuBtn = document.querySelector('.menu-button');
 
   //Step 4: add a click handler to the menu button, when clicked it should toggle the class 'menu--open' on the menu itself
-  menuBtn.addEventListener('click',()=>{
+  menuBtn.addEventListener('click',(e)=>{
     menu.classList.toggle('menu--open');
   })
 
@@ -53,7 +55,7 @@ let menuItems = [
   return menu;
 }
   //Step 6: add the menu component to the DOM.
-  const header = document.querySelector('.header');
-  header.appendChild(createMenu(menuItems))
+  
+ 
 
 })
