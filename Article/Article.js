@@ -87,7 +87,29 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
-  }
+  },
+{
+  title: " My first two months in Lambda School",
+  date: "Sep 4th, 2019",
+  firstParagraph: `Import Article.less from the correct path into index.less (follow the example for Header.less if you’re not sure how to write the correct path)
+  * Follow the instructions found in the Articles.js file to complete the JavaScript functionality and add the components to the DOM.`,
+  secondParagraph: `Import Article.less from the correct path into index.less (follow the example for Header.less if you’re not sure how to write the correct path)
+  * Follow the instructions found in the Articles.js file to complete the JavaScript functionality and add the components to the DOM.`,
+  thirdParagraph: `Import Article.less from the correct path into index.less (follow the example for Header.less if you’re not sure how to write the correct path)
+  * Follow the instructions found in the Articles.js file to complete the JavaScript functionality and add the components to the DOM.`
+},
+{
+  title: " My first four  months in Lambda School",
+  date: "Nov 4th, 2019",
+  firstParagraph: `Import Article.less from the correct path into index.less (follow the example for Header.less if you’re not sure how to write the correct path)
+  * Follow the instructions found in the Articles.js file to complete the JavaScript functionality and add the components to the DOM.`,
+  secondParagraph: `Import Article.less from the correct path into index.less (follow the example for Header.less if you’re not sure how to write the correct path)
+  * Follow the instructions found in the Articles.js file to complete the JavaScript functionality and add the components to the DOM.`,
+  thirdParagraph: `Import Article.less from the correct path into index.less (follow the example for Header.less if you’re not sure how to write the correct path)
+  * Follow the instructions found in the Articles.js file to complete the JavaScript functionality and add the components to the DOM.`
+}
+
+
 ];
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 

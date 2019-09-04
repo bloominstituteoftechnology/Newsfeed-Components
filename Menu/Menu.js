@@ -17,7 +17,46 @@ let menuItems = [
     <ul>
       {each menu item as a list item}
     </ul>
-  </div>
+  </div> */
+
+function menuMaker (items) {
+
+const divMenu = document.createElement("div");
+divMenu.classList.add("menu","menu--open");
+
+
+let ulMenu = document.createElement("ul");
+
+ items.forEach((element) => {
+    const li = document.createElement("li");
+    li.textContent = element; 
+    ulMenu.appendChild(li);
+  });
+console.log(ulMenu);
+
+
+const menuBtn = document.querySelector(".menu-button");
+menuBtn.addEventListener("click",() => {
+  divMenu.classList.toggle("menu--open");
+})
+
+const menuHeader = document.querySelector(".header")
+
+menuHeader.appendChild(divMenu);
+divMenu.appendChild(ulMenu);
+
+console.log(divMenu);
+console.log(menuBtn);
+return menuBtn;
+
+
+
+}
+
+menuMaker(menuItems);
+
+
+  /*
 
   The function takes an array as its only argument.
 
