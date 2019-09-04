@@ -25,35 +25,35 @@ let menuItems = [
   Step 5: return the menu component.
   Step 6: add the menu component to the DOM.
 */
-const header = document.querySelector('.header');
 
 function createMenu(arr) {
   // define new elements
   const menu = document.createElement('div');
-  const uList = document.createElement('ul');
+  const unorderedList = document.createElement('ul');
 
   // forEach to create element, set textContent, and appendChild for each item in arr
   arr.forEach(element => {
-    let li = document.createElement('li');
+    const li = document.createElement('li');
     li.textContent = element;
-    uList.appendChild(li);
+    unorderedList.appendChild(li);
   });
 
   // add classes
   menu.classList.add('menu');
 
   // structure articles
-  menu.appendChild(uList);
+  menu.appendChild(unorderedList);
 
-  const menuButton = document.querySelector('menu-button');
   // add event listener
+  const menuButton = document.querySelector('.menu-button');
   menuButton.addEventListener('click', (e) => {
     console.log('menu opened');
     menu.classList.toggle("menu--open");
-  })
+  });
 
   // return menu
   return menu;
-}
+};
 
+const header = document.querySelector('.header');
 header.appendChild(createMenu(menuItems));

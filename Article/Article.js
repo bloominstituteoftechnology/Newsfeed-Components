@@ -132,6 +132,7 @@ function createComponent(el) {
   const p2 = document.createElement('p');
   const p3 = document.createElement('p');
   const expand = document.createElement('span');
+  const contract = document.createElement('span')
 
   // add classes
   article.classList.add('article');
@@ -144,6 +145,7 @@ function createComponent(el) {
   p1.textContent = el.firstParagraph;
   p2.textContent = el.secondParagraph;
   p3.textContent = el.thirdParagraph;
+  expand.textContent = "Read More \u25BC";
 
   // structure articles
   article.appendChild(h2);
@@ -151,11 +153,22 @@ function createComponent(el) {
   article.appendChild(p1);
   article.appendChild(p2);
   article.appendChild(p3);
+  article.appendChild(expand);
 
   // add event listener
-  article.addEventListener('click', (e) => {
+  expand.addEventListener('click', (e) => {
     article.classList.toggle('article-open');
+
+    if (expand.textContent === "Read More \u25BC") {
+      expand.textContent = "Go Back \u25b2";
+      TweenMax.to(article, 1, {height: 400})
+    } else {
+      expand.textContent = "Read More \u25BC";
+      TweenMax.to(article, 1, {height: 50})
+    }
   });
+
+  
 
   // return the article
   return article;
