@@ -149,3 +149,7 @@ function componentBuilder({title, date, firstParagraph, secondParagraph, thirdPa
 
 const articleMap = data.map(componentBuilder);
 
+const articleContainer = document.querySelector('.articles');
+articleMap.forEach((element) => {
+  articleContainer.appendChild(element);
+});
