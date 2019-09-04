@@ -114,12 +114,12 @@ const data = [
 */
 
 function componentBuilder() {
-  const article = document.createElement('div');
-  article.classList.add('article')
+  const articles = document.createElement('div');
+  articles.classList.add('article')
 
-  const title = document.createElement('h2');
+  const titles = document.createElement('h2');
 
-  const date = document.createElement('p');
+  const dates = document.createElement('p');
   date.classList.add('date');
 
   const paragraph1 = document.createElement('p');
@@ -129,4 +129,9 @@ function componentBuilder() {
   const button = document.createElement('button');
   button.classList.add('expandButton');
   
+  titles.textContent = title;
+  dates.textContent = date;
+  paragraph1.textContent = firstParagraph;
+  paragraph2.textContent = secondParagraph;
+  paragraph3.textContent = thirdParagraph;
 }
