@@ -42,9 +42,10 @@ function menuBuilder (array){
   menu.appendChild(ul);
 
   //step 2
-  const anItem = document.createElement('li');
-  anItem.textContent = a;
   const listItems = array.map(a => {
+    const anItem = document.createElement('li');
+    anItem.textContent = a;
+
     return anItem;
   })
 
@@ -63,8 +64,7 @@ function menuBuilder (array){
   //step 5
   return menu;
 }
-const menuBuilder = menuBuilder(menuItems);
+const menuBuild = menuBuilder(menuItems);
 
 //step 6
-document.querySelector('body').appendChild(menuBuilder)
-
+document.querySelector('body').appendChild(menuBuild)
