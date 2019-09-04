@@ -113,7 +113,7 @@ const data = [
 
 */
 
-function componentBuilder() {
+function componentBuilder({title, date, firstParagraph, secondParagraph, thirdParagraph}) {
   const articles = document.createElement('div');
   articles.classList.add('article')
 
@@ -135,9 +135,10 @@ function componentBuilder() {
   paragraph2.textContent = secondParagraph;
   paragraph3.textContent = thirdParagraph;
 
-  articles.appendChild('tittles');
+  articles.appendChild('titles');
   articles.appendChild('dates');
   articles.appendChild('paragraph1');
   articles.appendChild('paragraph2');
   articles.appendChild('paragraph3');
+  
 }
