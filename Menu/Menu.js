@@ -34,4 +34,9 @@ let menuItems = [
   
 */
 
-const menuBuilder =  ({})
+//step 1
+function menuBuilder (array){
+  const menu = document.createElement('div');
+  menu.classList.add('menu');
+  const ul = document.createElement('ul');
+}
