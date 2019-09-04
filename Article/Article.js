@@ -105,10 +105,13 @@ const data = [
  function articleMaker(settings) {
 
   const  {title, date, firstParagraph, secondParagraph, thirdParagraph} = settings;
-
-  const divCont = document.querySelector(".articles");
-   divCont.classList.add("article-open");
   
+
+  const divArticle =  document.querySelector(".articles");
+
+  const divCont = document.createElement("div");
+  divCont.setAttribute("class", "article");
+  divCont.classList.add("artcle-open");
 
   const h = document.createElement("h2");
   h.textContent = title;
@@ -125,15 +128,19 @@ const data = [
   const p3 = document.createElement("p");
   p3.textContent = thirdParagraph;
 
+
+
   const span = document.createElement("span");
   span.setAttribute("class",'expandButton');
-  span.textContent = "Expand";
-  span.style.border = " 1px solid green";
-  span.addEventListener('click',(event) => {
+  span.textContent = "show";
+  span.style.border = " 2px solid green";
+  span.style.margin = "3px";
+  span.addEventListener('click',() => {
     divCont.classList.toggle("article-open");
-    event.target.style.backgroundColor = "green";
+   
   });
 
+divArticle.appendChild(divCont);
   divCont.appendChild(h);
   divCont.appendChild(dateCont);
   divCont.appendChild(p1);
@@ -141,7 +148,7 @@ const data = [
   divCont.appendChild(p3);
   divCont.appendChild(span);
   
-  return divCont;
+  return  divArticle;
   
 }
  
