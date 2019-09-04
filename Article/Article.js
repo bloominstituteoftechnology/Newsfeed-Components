@@ -105,8 +105,11 @@ const data = [
 
   const articles = document.querySelector('.articles');
 
+ 
+
   function createArticle(title, date, firstParagraph, secondParagraph, thirdParagraph) {
-    const article = document.createElement('h2');
+    const article = document.createElement('div');
+    const articleTitle = document.createElement('h2');
     const articleDate = document.createElement('h3');
     const articleParagraph1 = document.createElement('p');
     const articleParagraph2 = document.createElement('p');
@@ -116,7 +119,8 @@ const data = [
     const buttonClose = document.createElement('button');
 
     //structure
-    article.appendChild(articleDate)
+    article.appendChild(articleTitle);
+    article.appendChild(articleDate);
     article.appendChild(articleParagraph1);
     article.appendChild(articleParagraph2);
     article.appendChild(articleParagraph3);
@@ -135,13 +139,23 @@ const data = [
     //content 
     article.textContent = title;
     articleDate.textContent = date;
+    articleParagraph1.textContent = firstParagraph;
+    articleParagraph2.textContent = secondParagraph;
+    articleParagraph3.textContent = thirdParagraph;
+    buttonOpen.textContent = '\u25bc';
+    buttonClose.textContent = '\u25b2';
 
-    return articles;
-  }
-    articles.forEach(something => {
-      article.appendChild(articles(something.title, something.date, something.firstParagraph, something.secondParagraph, something.thirdParagraph))
+    articleButton.addEventListener('click', (event) => {
+      buttonOpen.classList.toggle('h')
     })
-  
+
+    return article
+  }
+    
+  data.forEach(d => {
+    articles.appendChild(createArticle(d.title, d.date, d.firstParagraph, d.secondParagraph, d.thirdParagraph))
+  })
+ 
 
   // Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
 
@@ -152,3 +166,4 @@ const data = [
   // Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 
+console.log('hi there');
