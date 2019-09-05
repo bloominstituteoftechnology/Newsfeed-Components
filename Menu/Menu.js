@@ -8,30 +8,31 @@ let menuItems = [
   'Music',
   'Log Out'
 ];
+const header = document.querySelector('.header')
+const menuOpen = document.querySelector('.menu-button')
 
+function menu(array) {
+  const menuCont = document.createElement('div');
+  menuCont.classList.add('menu');
+  const menuOptions = document.createElement('ul');
+  array.forEach(item => {
+    const mOption = document.createElement('li');
+    mOption.textContent = item;
+    menuOptions.appendChild(mOption);
+  });
 
-const header = document.querySelector('.header');
-  const menuBtn = document.querySelector('.menu-button');
-  function menu (menuItems){
-    const menuMenu = document.createElement('div');
-    const menuList = document.createElement('ul');
-    menuItems.forEach(items => {
-      const menuListItems = document.createElement('li');
-      menuList.appendChild(menuListItems);
-      menuListItems.textContent = items;
-    })
-    menuMenu.appendChild(menuList);
-    
-    menuMenu.classList.add('menu');
-  menuBtn.addEventListener('click', e => {
-    menuMenu.classList.toggle('menu--open');
-    console.log('Button Clicked');
-    // console.log works fine
+  menuOpen.addEventListener('click', function (e) {
+    menuCont.classList.toggle('menu--open');
+    console.log('click happened')
   })
-  
-  return menuMenu;
+
+  return menu;
 }
-menuBtn.appendChild(menu(menuItems))
+
+menu.appendChild('.menuCont');
+
+
+
 /* 
 
   Step 1: Write a function that will create a menu component as seen below:
