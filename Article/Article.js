@@ -1,7 +1,6 @@
 /* This is the data we will be using to create our article components */
 /* Look over this data, then proceed to line 91*/
-const data = [
-  {
+const data = [{
     title: 'Lambda School Students: "We\'re the best!"',
     date: 'Nov 5th, 2018',
     firstParagraph: `Lucas ipsum dolor sit amet ben twi'lek padmé darth darth darth moff hutt organa twi'lek. Ben amidala secura skywalker lando
@@ -102,7 +101,69 @@ const data = [
   Hint: You will need to use createElement more than once here!
 
   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
+*/
+const article = document.querySelector('.articles');
 
+// 
+
+function createArticle(title, date, firstParagraph, secondParagraph, thirdParagraph) {
+  //structure of elements
+  const artContainer = document.createElement('div');
+  const artTitle = document.createElement('h2');
+  const artDate = document.createElement('p');
+  const artPara1 = document.createElement('p');
+  const artPara2 = document.createElement('p');
+  const artPara3 = document.createElement('p');
+  const buttonOpen = document.createElement('span');
+
+
+  ////structure of elements
+
+  artContainer.appendChild(artTitle);
+  artContainer.appendChild(artDate);
+  artContainer.appendChild(artPara1);
+  artContainer.appendChild(artPara2);
+  artContainer.appendChild(artPara3);
+  artContainer.appendChild(buttonOpen);
+
+
+  //classLists
+
+  artContainer.classList.add('article');
+  artDate.classList.add('date');
+  buttonOpen.classList.add('expandButton');
+
+  //content
+
+  artTitle.textContent = title;
+  artPara1.textContent = firstParagraph;
+  artPara2.textContent = secondParagraph;
+  artPara3.textContent = thirdParagraph;
+  artDate.textContent = date;
+  buttonOpen.textContent = 'open me';
+
+
+  buttonOpen.addEventListener('click', (e) => {
+    console.log('button clicked', e.target)
+
+    //want to toggle hide button on both buttons
+    artContainer.classList.toggle('article-open');
+
+    // 2. Change visibility of the content w/ 'toggle-on'
+    //
+  })
+
+
+
+  return artContainer;
+
+}
+data.forEach(data => {
+  console.log('creating panel:', data.title)
+  article.appendChild(createArticle(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
+})
+
+/*
   Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
 
   Step 3: return the entire component.
