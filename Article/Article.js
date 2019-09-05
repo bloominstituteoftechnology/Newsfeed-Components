@@ -85,11 +85,26 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Professional Machine Learning Track 2019',
+    date: 'Jan 23rd, 2019',
+    firstParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
+          hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
+          Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `,
+
+    secondParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
+          hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
+          hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
+          hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? `,
+
+    thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
+          Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
+          Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
 ];
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
-  
   <div class="article">
     <h2>{title of the article}</h2>
     <p class="date">{date of the article}</p>
@@ -104,11 +119,58 @@ const data = [
   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
 
   Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
-
   Step 3: return the entire component.
-
   Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
-
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
-
 */
+
+function createArticles(obj) {
+
+  const getArticleCard = document.createElement('div');
+  getArticleCard.classList.add('article')
+
+  const articleHeading = document.createElement('h2');
+  articleHeading.textContent = obj.title;
+
+  const pDate = document.createElement('p');
+  pDate.classList.add('date');
+  pDate.textContent = obj.date;
+
+  const paragraph1 = document.createElement('p');
+  paragraph1.textContent = obj.firstParagraph;
+  
+  const paragraph2 = document.createElement('p');
+  paragraph2.textContent = obj.secondParagraph;
+
+  const paragraph3 = document.createElement('p');
+  paragraph3.textContent = obj.thirdParagraph;
+
+  const toggleButton = document.createElement('span');
+  toggleButton.classList.add('expandButton');
+  toggleButton.textContent = 'Toggle Article';
+
+  toggleButton.addEventListener("click", function(event) {
+    event.preventDefault();
+   getArticleCard.classList.toggle('article-open');
+  });
+
+    getArticleCard.appendChild(articleHeading);
+    getArticleCard.appendChild(pDate);
+    getArticleCard.appendChild(paragraph1);
+    getArticleCard.appendChild(paragraph2);
+    getArticleCard.appendChild(paragraph3);
+    getArticleCard.appendChild(toggleButton);
+
+    const getArticleContainer = document.querySelector('.articles');
+    getArticleContainer.appendChild(getArticleCard);
+
+  return getArticleContainer;
+  debugger
+
+}
+
+data.map((item) => {
+  let componentCreator = createArticles(item);
+  return componentCreator;
+});
+
