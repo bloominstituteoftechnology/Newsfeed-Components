@@ -8,28 +8,37 @@ let menuItems = [
   'Music',
   'Log Out'
 ];
+
 const header = document.querySelector('.header')
 const menuOpen = document.querySelector('.menu-button')
 
-function menu(array) {
-  const menuCont = document.createElement('div');
-  menuCont.classList.add('menu');
-  const menuOptions = document.createElement('ul');
-  array.forEach(item => {
-    const mOption = document.createElement('li');
-    mOption.textContent = item;
-    menuOptions.appendChild(mOption);
-  });
+function menu(arr){
+const menuCont = document.createElement('div');
+const menuOptions = document.createElement('ul');
 
-  menuOpen.addEventListener('click', function (e) {
-    menuCont.classList.toggle('menu--open');
-    console.log('click happened')
-  })
+arr.forEach(item => {
+  const mOption = document.createElement('li');
+  mOption.textContent = item;
+  menuOptions.appendChild(mOption);
+});
 
-  return menu;
+menuCont.classList.add('menu');
+menuCont.appendChild(menuOptions);
+
+return menuCont;
 }
 
-menu.appendChild('.menuCont');
+let bob = menu(menuItems);
+
+menuOpen.addEventListener('click', function (e) {
+  bob.classList.toggle('menu--open');
+  console.log('click happened')
+})
+
+header.appendChild(bob);
+
+
+
 
 
 
