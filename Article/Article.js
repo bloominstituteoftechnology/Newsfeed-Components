@@ -98,7 +98,6 @@ const data = [
 
     <span class='expandButton'></span>
   </div>
-
   Hint: You will need to use createElement more than once here!
 
   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
@@ -112,3 +111,61 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+function createComponents(arrElement)
+{
+  // Create Components
+  const comp = document.createElement('div');
+  const compTitle = document.createElement('h2');
+  const compDate = document.createElement('p');
+  const compPara1 = document.createElement('p');
+  const compPara2 = document.createElement('p');
+  const compPara3 = document.createElement('p');
+  const compButton = document.createElement('span');
+
+  // Add hierarchy
+  comp.appendChild(compTitle);
+  comp.appendChild(compDate);
+  comp.appendChild(compPara1);
+  comp.appendChild(compPara2);
+  comp.appendChild(compPara3);
+  comp.appendChild(compButton);
+
+  // Add data
+  compTitle.textContent = arrElement.title;
+  compDate.textContent = arrElement.date;
+  compPara1.textContent = arrElement.firstParagraph;
+  compPara2.textContent = arrElement.secondParagraph;
+  compPara3.textContent = arrElement.thirdParagraph;
+  compButton.textContent = '\u25bc';
+
+
+  // Add classes
+  comp.classList.add('article');
+  compDate.classList.add('date');
+  compButton.classList.add('expandButton');
+
+  // Stretch goal, create an event listener for GSAP
+  comp.addEventListener('mouseenter', (event) => {
+        TweenMax.to(comp, 1, { backgroundColor: '#dbf0dc'});
+           });
+           
+  comp.addEventListener('mouseleave', (event) => {
+  TweenMax.to(comp, 1, { backgroundColor: 'white'});
+  });
+
+  // Create event listeners
+  compButton.addEventListener('click', (element) => {
+    comp.classList.toggle('article-open');
+  });
+
+  return comp;
+}
+
+const articles = document.querySelector('.articles');
+
+data.forEach(element => {
+  articles.appendChild(createComponents(element));
+});
+
+
