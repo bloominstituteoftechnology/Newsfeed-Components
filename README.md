@@ -1,3 +1,5 @@
+// Denton Warnock
+
 # Newsfeed-Components
 
 In this project we are going to be building a news feed reader. The goal is to have a collapsing menu, and expandable news articles. The CSS and some of the HTML is already done for you, you simply need to connect the pieces. After the CSS is connected it is time to move on to building out our components using JavaScript. We will be adding common functionality and styling to build reusable components.
