@@ -131,10 +131,12 @@ function createArticle (articleInfo) {
   article.appendChild(articleContent3)
   article.appendChild(articleSpan)
 
+
   //adding classes
   article.classList.add('article')
   articleDate.classList.add('date')
   articleSpan.classList.add('expandButton')
+
 
   //setting the content
   articleTitle.textContent = articleInfo.title;
@@ -144,8 +146,8 @@ function createArticle (articleInfo) {
   articleContent3.textContent = articleInfo.thirdParagraph;
 
   //eventListener
-  article.addEventListener('toggle', (event) => {
-    articleSpan.classList.toggle('article-open');
+  article.addEventListener('click', (event) => {
+    article.classList.toggle('article-open');
   })
 
 return article
