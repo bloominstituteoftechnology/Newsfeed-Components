@@ -113,7 +113,49 @@ const data = [
 
 */
 
+const articles = document.querySelector('.articles');
+
 function cardFactory(object) {
 
   const article = document.createElement('div');
+  const title = document.createElement('h2');
+  const date = document.createElement('p');
+  const p1 = document.createElement('p');
+  const p2 = document.createElement('p');
+  const p3 = document.createElement('p');
+  const span = document.createElement('span');
+
+  // create structure
+  article.appendChild(title);
+  article.appendChild(date);
+  article.appendChild(p1);
+  article.appendChild(p2);
+  article.appendChild(p3);
+  article.appendChild(span);
+  
+
+  // set the content
+  title.textContent = object.title;
+  date.textContent = object.date;
+  p1.textContent = object.firstParagraph;
+  p2.textContent = object.secondParagraph;
+  p3.textContent = object.thirdParagraph;
+  span.textContent = 'Click here to read articles'
+
+  // apply styles
+  article.classList.add('article');
+  date.classList.add('date');
+  span.classList.add('expandButton');
+
+
+  // event handlers
+  span.addEventListener('click', (e) => {
+    article.classList.toggle('article-open');
+  })
+
+  return article;
 }
+
+data.forEach(art => {
+  articles.appendChild(cardFactory(art));
+})
