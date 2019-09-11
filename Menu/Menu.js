@@ -11,7 +11,13 @@ let menuItems = [
 
 /* 
   Step 1: Write a function that will create a menu component as seen below: 
-  The function takes an array as its only argument. 
+  The function takes an array as its only argument.
+  
+  <div class="menu">
+    <ul>
+      {each menu item as a list item}
+    </ul>
+  </div> 
   */
  let menuH1 = document.querySelector('.header h1');
  let header = document.querySelector('.header');
