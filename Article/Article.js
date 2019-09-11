@@ -99,6 +99,51 @@ const data = [
     <span class='expandButton'></span>
   </div>
 
+ */
+
+function firstComponent (componentInfo){
+
+  // create all elements
+  const component1 = document.createElement('div');
+  const title = document.createElement('h2');
+  const date = document. createElement('p');
+  const paragraph1 = document.createElement('p');
+  const paragraph2 = document.createElement('p');
+  const paragraph3 = document.createElement('p');
+  const componentButton = document.createElement('span');
+
+  // create structure
+  component1.appendChild(title);
+  component1.appendChild(date);
+  component1.appendChild(paragraph1);
+  component1.appendChild(paragraph2);
+  component1.appendChild(paragraph3);
+  component1.appendChild(componentButton);
+
+  // set the content
+  title.textContent = componentInfo.title;
+  date.textContent=componentInfo.date;
+  paragraph1.textContent=componentInfo.firstParagraph;
+  paragraph2.textContent=componentInfo.secondParagraph;
+  paragraph3.textContent=componentInfo.thirdParagraph;
+
+   // apply styles
+  component1.classList.add('article');
+  date.classList.add('date');
+  componentButton.classList.add('expandButton');
+
+
+  return component1;
+}
+const articlesOnPge = document.querySelector('.articles');
+
+data.forEach(info => {
+  articlesOnPge.appendChild(firstComponent(info));
+})
+
+ /*
+
+
   Hint: You will need to use createElement more than once here!
 
   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
