@@ -93,13 +93,14 @@
   border: 1px solid #004D40;
   border-left: none;
   border-bottom: none;
+  white-space: nowrap;
   z-index: 2;
   /* This set the layer level of the element, it has precendence over initial level of 1*/
 }
 .animation {
-  animation: pulse 0.2s linear;
+  animation: slidein 0.25s linear;
 }
-@keyframes pulse {
+@keyframes slidein {
   0% {
     width: 0px;
   }
