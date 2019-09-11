@@ -55,5 +55,5 @@ function createComponenents(array)
   return panel;
 }
 
-const menu = document.querySelector('.menu-button');
+const menu = document.querySelector('.header');
 menu.appendChild(createComponenents(menuItems));
