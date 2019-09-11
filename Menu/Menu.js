@@ -59,6 +59,7 @@ function menuFactory(items) {
   // create event handlers
   menuBtn.addEventListener('click', (e) => {
     menu.classList.toggle('menu--open');
+    menu.classList.add('animation');
   })    
 
   return menu;
