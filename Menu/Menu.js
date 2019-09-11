@@ -37,33 +37,27 @@ let menuItems = [
 const menuCreator = (menuData) => {
   const menu = document.createElement('div');
   const menuList = document.createElement('ul');
-  const menuListItems = menuData.forEach((element, index) => {
-    element = document.createElement('li');
+  menuData.forEach((element, index) => {
+    menuList.appendChild(document.createElement('li')).textContent = element;
   });
 
   menu.appendChild(menuList);
-  // menu.appendChild(menuListItems);
-  // menuListItems.forEach((element) => {
-  //   menu.appendChild(element);
-  // })
 
-  menuList.appendChild(menuListItems);
-  // menuData.forEach((item, index) => {
-  //   item.textContent = menuData[index];
-  // })
+  menu.classList.add('menu');
+
+  const menuButton = document.querySelector('.menu-button');
+  menuButton.addEventListener('click', (event) => {
+    if (menu.classList.contains('menu--open')) {
+      menu.classList.remove('menu--open');
+    } else {
+      menu.classList.add('menu--open');
+    }
+  });
 
   return menu;
 }
 
-const menuButton = document.querySelector('.menu-button');
-const menu = document.body.appendChild(menuCreator(menuItems));
 
-menuButton.addEventListener('click', (event) => {
-  if (expandArticle.parentElement.classList.contains('article-open')) {
-    expandArticle.parentElement.classList.remove('article-open');
-    expandArticle.textContent = 'Open Article';
-  } else {
-    expandArticle.parentElement.classList.add('article-open');
-    expandArticle.textContent = 'Close Article';
-  }
-});
+const menu = document.body.appendChild(menuCreator(menuItems));
+// const menuList = document.querySelector('.menu');
+
