@@ -134,15 +134,31 @@ function createComponent (componentInfo) {
   article.appendChild(button);
 
   // set the content
-  title.textContent = createComponent.title;
-  date.textContent = createComponent.date;
-  firstP.textContent = createComponent.firstParagraph;
-  secondP.textContent = createComponent.secondParagraph;
-  thirdP.textContent = createComponent.thirdParagraph;
-   
+  title.textContent = componentInfo.title;
+  date.textContent = componentInfo.date;
+  firstP.textContent = componentInfo.firstParagraph;
+  secondP.textContent = componentInfo.secondParagraph;
+  thirdP.textContent = componentInfo.thirdParagraph;
+  button.textContent = "Expand";
+  
+  // apply stlyes
+  article.classList.add('article');
+  date.classList.add('date');
+  button.classList.add('expandButton');
 
+  // Step 2 event listener on button
 
+  button.addEventListener('click', (e) => {
+    article.classList.toggle('article-open');
+  })
 
-
-
+  // Step 3
+  return article;
 }
+
+// Step 4
+const articleDiv = document.querySelector('.articles');
+
+data.forEach(data => {
+  articleDiv.appendChild(createComponent(data));
+})
