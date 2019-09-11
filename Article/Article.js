@@ -101,7 +101,9 @@ const data = [
 
   Hint: You will need to use createElement more than once here!
 
-  Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
+  Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above. 
+
+  
 
   Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
 
@@ -112,3 +114,53 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+// step one create a function that creates a component 
+const createNewArticles = (article) => {
+   // create elements 
+  const articleDiv = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+  const articleDate = document.createElement('p');
+  const firstPara = document.createElement('p');
+  const secondPara = document.createElement('p');
+  const thirdPara = document.createElement('p');
+  const spanButton = document.createElement('span');
+
+  // set content text
+  articleTitle.textContent = article.title;
+  articleDate.textContet = article.date;
+  firstPara.textContet = article.firstParagraph;
+  secondPara.textContent = article.secondParagraph;
+  thirdPara.textContent = article.thirdParagraph;
+  spanButton.textContent = "Expand";
+  // set elements to a structure
+  articleDiv.appendChild(articleTitle);
+  articleDiv.appendChild(articleDate);
+  articleDiv.appendChild(firstPara);
+  articleDiv.appendChild(secondPara);
+  articleDiv.appendChild(thirdPara);
+ 
+
+  //apply styles 
+ articleDiv.classList.add('article');
+ articleTitle.classList.add('h2');
+ articleDate.classList.add('date');
+ spanButton.classList.add('expandButton');
+  
+
+ spandButton.addEventListener('click', () => {
+  articleDiv.classList.toggle("article-open");
+  });
+
+  const elements = [articleTitle, articleDate, firstPara, secondPara, thirdPara, spanButton];
+
+  for (const elements of elements) {
+  articleDiv.appendChild(element);
+}
+
+  return articleDiv;
+}; 
+
+for (const article of data) {
+  document.querySelector(".articles").appendChild(createNewArticles)(article);
+}
