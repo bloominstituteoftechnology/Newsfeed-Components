@@ -3,7 +3,7 @@
 const data = [
   {
     title: 'Lambda School Students: "We\'re the best!"',
-    date: 'Nov 5th, 2018',
+    date: "Nov 5th, 2018",
     firstParagraph: `Lucas ipsum dolor sit amet ben twi'lek padmé darth darth darth moff hutt organa twi'lek. Ben amidala secura skywalker lando
         moff wicket tatooine luke.Solo wampa wampa calrissian yoda moff.Darth grievous darth gonk darth hutt.Darth baba skywalker
         watto fett jango maul han.Mon ewok sidious sidious lando kenobi grievous gamorrean solo.Yoda wedge utapau darth calamari.
@@ -23,8 +23,8 @@ const data = [
         moff calamari mon obi-wan. Solo grievous lando coruscant. Jinn darth palpatine obi-wan mon.`
   },
   {
-    title: 'Javascript and You, ES6',
-    date: 'May 7th, 2019',
+    title: "Javascript and You, ES6",
+    date: "May 7th, 2019",
     firstParagraph: `Alohamora wand elf parchment, Wingardium Leviosa hippogriff, house dementors betrayal. Holly, Snape centaur portkey ghost
         Hermione spell bezoar Scabbers. Peruvian-Night-Powder werewolf, Dobby pear-tickle half-moon-glasses, Knight-Bus. Padfoot
         snargaluff seeker: Hagrid broomstick mischief managed. Snitch Fluffy rock-cake, 9 ¾ dress robes I must not tell lies. Mudbloods
@@ -43,8 +43,8 @@ const data = [
         sing above the ground, Ginny Weasley bright red. Fanged frisbees, phoenix tears good clean match.`
   },
   {
-    title: 'React vs Angular vs Vue',
-    date: 'June 7th, 2019',
+    title: "React vs Angular vs Vue",
+    date: "June 7th, 2019",
     firstParagraph: `Bulbasaur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ivysaur Lorem ipsum dolor sit amet, consectetur adipiscing
         elit. Venusaur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Charmander Lorem ipsum dolor sit amet, consectetur
         adipiscing elit. Charmeleon Lorem ipsum dolor sit amet, consectetur adipiscing elit. Charizard Lorem ipsum dolor sit amet,
@@ -71,8 +71,8 @@ const data = [
         Castform Lotad the power that's inside Burnt Berry Makuhita. Ghost Ariados Corphish Dusclops Golbat Gligar Zweilous.`
   },
   {
-    title: 'Professional Software Development in 2019',
-    date: 'Jan 1st, 2019',
+    title: "Professional Software Development in 2019",
+    date: "Jan 1st, 2019",
     firstParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
           hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
           Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `,
@@ -85,9 +85,67 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: "Bacon Is Always Tasty",
+    date: "Feb 30, 193",
+    firstParagraph: `Jayne Cobb: Ain't logical. Cuttin' on his own face, rapin' and murdering - Hell, I'll kill a man in a fair fight... or if I think he's gonna start a fair fight, or if he bothers me, or if there's a woman, or if I'm gettin' paid - mostly only when I'm gettin' paid. But these Reavers... last ten years they show up like the bogeyman from stories. Eating people alive? Where's that get fun? Mr. Universe: You can't stop the signal, Mal. Everything goes somewhere, and I go everywhere. The Operative: Do you know what your sin is, Doctor? Dr. Mathias: I wonder if... The Operative: It's pride.`,
+
+    secondParagraph: `Commander Acastus Kolya: [over radio] Major Sheppard, how's this for credibility? Weir's dead. Maj. John Sheppard: I am going to kill you. [Sheppard is giving McKay flying lessons, and they get into an argument] Maj. John Sheppard: This is why parents get someone else to teach their kids how to drive. Dr. Rodney McKay: I'm both insulted and touched by that. Maj. John Sheppard: [referring to Wraith bite] So, how am I doing? [not getting a response] Maj. John Sheppard: Anything that's got you speechless has me worried.`,
+
+    thirdParagraph: `Lt. Kara 'Starbuck' Thrace: [Tyrol is working on Starbuck's captured cylon raider] What seems to be the trouble, Chief? Chief Petty Officer Tyrol: Well, your new boyfriend's a bit of a jerk, sir. Lt. Kara 'Starbuck' Thrace: It's a girl. Chief Petty Officer Tyrol: Well, if you don't mind her goo all over your face, you're welcome to her, sir. Admiral Helena Cain: [Cain has been beating, raping and torturing her own copy of Number Six, who now has a gun to her head] Frack you.`
   }
 ];
 
+function componentCreation(importData) {
+  //CREATE ELEMENTS
+  // const container = document.createElement("div");
+  const article = document.createElement("div");
+  const title = document.createElement("h2");
+  const span = document.createElement("span");
+
+  //SET STRUCTURE
+  article.appendChild(title);
+  /*appendChild for p and span are below for hierarchy reasons*/
+
+  //SET CONTENT
+  title.textContent = importData.title;
+
+  const pArr = [];
+  const pArrV = [
+    importData.date,
+    importData.firstParagraph,
+    importData.secondParagraph,
+    importData.thirdParagraph,
+    importData.fourthParagraph,
+    importData.fifthParagraph
+  ];
+  for (let i = 0; i < 4; i++) {
+    pArr[i] = document.createElement("p");
+    pArr[i].textContent = pArrV[i];
+    article.appendChild(pArr[i]);
+  }
+
+  article.appendChild(span);
+  span.textContent = "More";
+
+  //APPLY STYLES
+  article.classList.add("article");
+  pArr[0].classList.add("date");
+  span.classList.add("expandButton");
+
+  //EVENT LISTENERS
+  span.addEventListener("click", e => {
+    article.classList.toggle("article-open");
+  });
+
+  return article;
+}
+
+const articles = document.querySelector(".articles");
+data.forEach(ele => {
+  articles.appendChild(componentCreation(ele));
+});
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
   <div class="article">
