@@ -45,16 +45,16 @@ const menuSetup = menuinfo => {
   menuDiv.appendChild('ul');
 
   // iterate over the array creating li for each
-  const menuAnchors = menuData.map(item => {
+  const menuItems = menuData.map(item => {
     const listitems = document.createElement('li');
     listitems.textContent = item;
     return listitems; 
   })
 
-  //console.log(menuAnchors)
+  console.log(menuAnchors)
 
   // add items to ul 
-  menuAnchors.forEach(menuitems => {
+  menuItems.forEach(menuitems => {
     ulList.appendChild(menuitems);
     console.log(menuitems);
   })
