@@ -99,6 +99,7 @@ const data = [
     <span class='expandButton'></span>
   </div>
 
+
   Hint: You will need to use createElement more than once here!
 
   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
@@ -112,3 +113,47 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+function createComponent(info) {
+  //create Elements
+  const article = document.createElement('div');
+  const title = document.createElement('h2');
+  const date = document.createElement('p');
+  const par1 = document.createElement('p');
+  const par2 = document.createElement('p');
+  const par3 = document.createElement('p');
+  const expand = document.createElement('span');
+
+  //append elements to parent div
+  article.appendChild(title);
+  article.appendChild(date);
+  article.appendChild(par1);
+  article.appendChild(par2);
+  article.appendChild(par3);
+  article.appendChild(expand);
+
+  //add content to Elements
+  title.textContent = info.title;
+  date.textContent = info.date;
+  par1.textContent = info.firstParagraph;
+  par2.textContent = info.secondParagraph;
+  par3.textContent = info.thirdParagraph;
+  expand.textContent = '\u25bc';
+
+  //add classes to Elements
+  article.classList.add('article');
+  date.classList.add('date');
+  expand.classList.add('expandButton');
+  //add event listener to Button
+  expand.addEventListener('click', () => {
+    article.classList.toggle('article-open');
+  });
+
+  return article;
+}
+
+const articles = document.querySelector('.articles');
+
+
+data.forEach((news) => {
+  articles.appendChild(createComponent(news));
+});
