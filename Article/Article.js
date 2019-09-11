@@ -129,4 +129,5 @@ function createArticle(title, date, firstParagraph,secondParagraph,thirdParagrap
     articleCard.classList.toggle('close');
   })
 
+  return articleCard;
 } 
