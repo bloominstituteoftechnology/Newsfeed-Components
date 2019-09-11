@@ -26,8 +26,9 @@ function createMenu(menuData) {
 const menu = document.createElement("div");
 const menuList = document.createElement("ul");
 const menuButton = document.querySelector(".menu-button");
-menuButton.appendChild(menu);
+const header = document.querySelector(".header");
 menu.appendChild(menuList);
+header.appendChild(menu);
 menu.classList.add("menu");
 
 menuItems.forEach(info => {
@@ -37,7 +38,6 @@ menuItems.forEach(info => {
 //Event Listener
 menuButton.addEventListener("click", e => {
   menu.classList.toggle("menu--open");
-  menu.classList.toggle("menu");
 });
 
 /* 
