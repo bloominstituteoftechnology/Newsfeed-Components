@@ -85,6 +85,52 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'How diddly doodily partner',
+    date: 'Jan 1st, 2019',
+    firstParagraph: `I've done everything the Bible says - even the stuff that contradicts the other stuff!
+
+          Call me Delta Airlines, because I can't handle all your extra baggage.
+
+          Thank you for taking me to that Pinkberry place. It’s a lot less racy than its name would lead you to believe.
+
+          Hi diddly ho neighborinos!
+
+          Sometimes God bless her, she underlines passages in my bible because she can't find hers!
+
+          I'm not thinking straight, why did I have that wine cooler last month?
+
+          Sorry is not just the most exciting board game ever devised, it's a word I need to hear from you! `,
+
+    secondParagraph: `He's a hero all right, a hero sandwich full of bologna!
+
+          Homer, God didn't set your house on fire.
+
+          Well I can't say for sure, but as a Christian, I assume the worst.
+
+          Homer Simpson, I show you pity, and how do you repay me? With a kick in the kididdlehopper!
+
+          Can I make my famous mimosa? A little sparkling water in a glass full of regular water?
+
+          I got two teens in a public park going at it like a couple of gibbons in the back seat of Noah's ark!
+
+          Just tell them that God wants them to ignore everything in their bodies that God is making happen.
+
+          If you think I'm cuddly and you want my company, come on Wifey let me know!`,
+
+    thirdParagraph: `You're never bored painting the Lord!
+
+          Watch Fox and be damned for all eternity.
+
+          Bless the grocer for this wonderful meat, the middleman who jacked up the price, and let's not forget the humane but determined boys at the slaughterhouse.
+
+          There are some things we don't want to know. Important things.
+
+          Dear neighbor, you are my brother. I love you, and yet I feel a great sadness in my bosom.
+
+          Spend less time on your back and more time on your knees.
+          Now what can I ding dong diddly do for you?`
   }
 ];
 
@@ -112,3 +158,60 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+  // const articles = ((number) => {
+  //   for (i = 0; i < number; i++) {
+  //     document.createElement('p');
+  //   }
+  // });
+
+const articleCreator = (articleInfo) => {
+  const article = document.createElement('div');
+  const articleHeading = document.createElement('h2');
+  const articleDate = document.createElement('p');
+  const articleOne = document.createElement('p');
+  const articleTwo = document.createElement('p');
+  const articleThree = document.createElement('p');
+  const expandArticle = document.createElement('span');
+
+
+  article.appendChild(articleHeading);
+  article.appendChild(articleDate);
+  // article.appendChild(articles);
+  article.appendChild(articleOne);
+  article.appendChild(articleTwo);
+  article.appendChild(articleThree);
+  article.appendChild(expandArticle);
+
+
+  articleHeading.textContent = articleInfo.title;
+  articleDate.textContent = articleInfo.date;
+  articleOne.textContent = articleInfo.firstParagraph;
+  articleTwo.textContent = articleInfo.secondParagraph;
+  articleThree.textContent = articleInfo.thirdParagraph;
+  expandArticle.textContent = 'Open Article';
+
+  article.classList.add('article');
+  articleDate.classList.add('date');
+  expandArticle.classList.add('expandButton');
+
+  // expandButton = document.querySelector('.expand-button');
+  // articleToggle = document.querySelector('.article');
+  expandArticle.addEventListener('click', (event) => {
+    if (expandArticle.parentElement.classList.contains('article-open')) {
+      expandArticle.parentElement.classList.remove('article-open');
+      expandArticle.textContent = 'Open Article';
+    } else {
+      expandArticle.parentElement.classList.add('article-open');
+      expandArticle.textContent = 'Close Article';
+    }
+  });
+
+  return article;
+}
+
+const article = document.querySelector('.articles');
+
+data.forEach((element) => {
+  article.appendChild(articleCreator(element));
+})
