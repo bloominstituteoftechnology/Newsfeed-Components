@@ -156,7 +156,7 @@ function createArticle (articleInfo) {
   article.classList.add('article')
   articleDate.classList.add('date')
   articleSpan.classList.add('expandButton')
-  article.classList.add('article-open')
+  
 
 
   //setting the content
