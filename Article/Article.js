@@ -156,6 +156,7 @@ function createArticle (articleInfo) {
   article.classList.add('article')
   articleDate.classList.add('date')
   articleSpan.classList.add('expandButton')
+  article.classList.add('article-open')
 
 
   //setting the content
@@ -168,7 +169,6 @@ function createArticle (articleInfo) {
   //eventListener
   article.addEventListener('click', (event) => {
     article.classList.toggle('article-open');
-    article.style.height = 'auto';
   })
 
 return article
@@ -185,4 +185,3 @@ let articleArray = data.map( items => {
 articleArray.forEach(article => {
  container.appendChild(article)
 })
-
