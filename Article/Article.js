@@ -146,7 +146,7 @@ function createComponent(info) {
   par1.textContent = info.firstParagraph;
   par2.textContent = info.secondParagraph;
   par3.textContent = info.thirdParagraph;
-  expand.textContent = '\u25bc';
+  expand.textContent = 'expand';
 
   //add classes to Elements
   article.classList.add('article');
