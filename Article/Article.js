@@ -124,4 +124,9 @@ function createArticle(title, date, firstParagraph,secondParagraph,thirdParagrap
   const paragraph3 = document.createElement('p');
   const button = document.createElement('span');
 
+  button.addEventListener('click', e => {
+    articleCard.classList.toggle('article-open');
+    articleCard.classList.toggle('close');
+  })
+
 } 
