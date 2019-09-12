@@ -49,10 +49,12 @@ function menuComponent() {
      list.textContent = over;
      uList.appendChild(list);
   });
+
+  
   
 
 
-
+const button = document.querySelector('img');
   button.addEventListener('click', (e) => {
     menu.classList.toggle('menu--open');
   })
@@ -62,12 +64,11 @@ function menuComponent() {
   return menu;
 
 }
-const menuComp = document.querySelector('img');
+const menuComp = document.querySelector('.header');
 
 menuComp.appendChild(menuComponent());
 
 
-const button = document.querySelector('img');
 
 
 
