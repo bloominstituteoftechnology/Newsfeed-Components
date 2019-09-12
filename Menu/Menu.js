@@ -43,24 +43,17 @@ function menuComponent() {
 
   menu.classList.add('menu');
   
-
   menuItems.map(over => {
     const list = document.createElement('li')
      list.textContent = over;
      uList.appendChild(list);
   });
 
-  
-  
-
-
 const button = document.querySelector('img');
   button.addEventListener('click', (e) => {
     menu.classList.toggle('menu--open');
   })
   
-
-
   return menu;
 
 }

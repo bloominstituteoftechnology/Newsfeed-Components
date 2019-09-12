@@ -160,10 +160,30 @@ function createComponent (componentInfo) {
 const articleDiv = document.querySelector('.articles');
 
 
+// step 5
 
-data.forEach(data => {
-  articleDiv.appendChild(createComponent(data));
+// let newArticles = data.map(data => {
+//   let artcl = article(data);
+//   return artcl;
+// });
+
+// newArticles.forEach( component => {
+//   articleDiv.appendChild(component);
+// })
+let articlesArray = data.map( item => {
+  let article = createComponent(item);
+  return article;
 })
+
+console.log('These are the articles', articlesArray);
+
+articlesArray.forEach( article => {
+  articleDiv.appendChild(article);
+})
+
+// data.forEach(data => {
+//   articleDiv.appendChild(createComponent(data));
+// })
 
 
 // Step 5
