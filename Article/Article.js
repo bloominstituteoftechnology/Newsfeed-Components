@@ -85,6 +85,27 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title:  'New Article',
+    date: 'Sep 11, 2019',
+    firstParagraph: `I am not putting my father in a home! He just came back into my life, and you want to, grab him and, stuff him under a mattress 
+          like last months Victorias Secret?! That, out there. Thats my grave. On one of our adventures Rick and I basically destroyed the whole world. 
+          So we bailed on that reality and we came to this one. Because in this one the world wasnt destroyed. And in this one, we were dead. So we came here
+          a-a-and we buried ourselves and we took their place. And every morning, Summer, I eat breakfast 2 I love morty and i hope morty loves me. I want to 
+          wrap my arms around him and feel him deep inside me. Existence is pain to a meeseeks Jerry, and we will do anything to alleviate that pain.`,
+
+    secondParagraph: `I am not putting my father in a home! He just came back into my life, and you want to, grab him and, stuff him under a mattress like 
+    last month's Victoria's Secret?! That, out there. That's my grave. On one of our adventures Rick and I basically destroyed the whole world. So we bailed 
+    on that reality and we came to this one. Because in this one the world wasn't destroyed. And in this one, we were dead. So we came here a-a-and we buried 
+    ourselves and we took their place. And every morning, Summer, I eat breakfast 2 I love morty and i hope morty loves me. I want to wrap my arms around him and 
+    feel him deep inside me. Existence is pain to a meeseeks Jerry, and we will do anything to alleviate that pain.`,
+
+    thirdParagraph: `I am not putting my father in a home! He just came back into my life, and you want to, grab him and, stuff him under a mattress like 
+    last month's Victoria's Secret?! That, out there. That's my grave. On one of our adventures Rick and I basically destroyed the whole world. So we bailed 
+    on that reality and we came to this one. Because in this one the world wasn't destroyed. And in this one, we were dead. So we came here a-a-and we buried 
+    ourselves and we took their place. And every morning, Summer, I eat breakfast 2 I love morty and i hope morty loves me. I want to wrap my arms around him and 
+    feel him deep inside me. Existence is pain to a meeseeks Jerry, and we will do anything to alleviate that pain.`
   }
 ];
 
