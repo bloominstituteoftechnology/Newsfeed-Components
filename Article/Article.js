@@ -115,6 +115,8 @@ const data = [
 
 // Create a function that creates a component. You will want your component to look like the template below:
 
+const articles = document.querySelector('.articles');
+
 function createArticle(title, date, firstParagraph,secondParagraph,thirdParagraph) {
   const articleCard = document.createElement('div');
   const articleTitle = document.createElement('h2');
@@ -124,10 +126,39 @@ function createArticle(title, date, firstParagraph,secondParagraph,thirdParagrap
   const paragraph3 = document.createElement('p');
   const button = document.createElement('span');
 
+  articleCard.appendChild(articleTitle);
+  articleCard.appendChild(articleDate);
+  articleCard.appendChild(paragraph1);
+  articleCard.appendChild(paragraph2);
+  articleCard.appendChild(paragraph3);
+  articleCard.appendChild(button);
+
+  articleTitle.textContent = title;
+  articleDate.textContent = date;
+  paragraph1.textContent = firstParagraph;
+  paragraph2.textContent = secondParagraph;
+  paragraph3.textContent = thirdParagraph;
+  button.textContent = 'Read More'
+
+  articleCard.classList.add('article');
+  articleDate.classList.add('date');
+  button.classList.add('expandButton');
+
+
   button.addEventListener('click', e => {
     articleCard.classList.toggle('article-open');
     articleCard.classList.toggle('close');
   })
 
   return articleCard;
-} 
+};
+
+let newArticleComponents = data.map((arrayItem) => {
+  let newArticle = createArticle(arrayItem.title, arrayItem.date, arrayItem.firstParagraph, arrayItem.secondParagraph, arrayItem.thirdParagraph);
+
+  return newArticle;
+})
+
+newArticleComponents.forEach(component => {
+  articles.appendChild(component);
+})
