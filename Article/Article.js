@@ -159,6 +159,11 @@ function createComponent (componentInfo) {
 // Step 4
 const articleDiv = document.querySelector('.articles');
 
+
+
 data.forEach(data => {
   articleDiv.appendChild(createComponent(data));
 })
+
+
+// Step 5
