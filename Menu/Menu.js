@@ -23,14 +23,17 @@ function createMenu(menuData) {
   return menuList;
 }
 
+/*Create Elements*/
 const menu = document.createElement("div");
 const menuList = document.createElement("ul");
 const menuButton = document.querySelector(".menu-button");
 const header = document.querySelector(".header");
-menu.appendChild(menuList);
+/*set structure*/
 header.appendChild(menu);
+/*set content*/
 menu.classList.add("menu");
 
+//--Creates menu items from an Object--
 menuItems.forEach(info => {
   menu.appendChild(createMenu(info));
 });
@@ -39,6 +42,29 @@ menuItems.forEach(info => {
 menuButton.addEventListener("click", e => {
   menu.classList.toggle("menu--open");
 });
+
+/*
+
+More concise code
+const header = document.querySelector('.header h1');
+const menuBtn = document.querySelector('.menu-button');
+function createMenu(object) {
+ const menu = document.createElement("div");
+ const ul = document.createElement("ul");
+ object.forEach((i) => {
+   const li = document.createElement('li');
+   li.textContent = i;
+   ul.appendChild(li);
+ })
+ menu.appendChild(ul);
+ menu.classList.add('menu');
+ menuBtn.addEventListener("click", (event) => {
+   menu.classList.toggle(".menu--open");
+ });
+ return menu;
+}
+header.appendChild(createMenu(menuItems));
+*/
 
 /* 
 

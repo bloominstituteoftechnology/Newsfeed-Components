@@ -99,7 +99,6 @@ const data = [
 
 function componentCreation(importData) {
   //CREATE ELEMENTS
-  // const container = document.createElement("div");
   const article = document.createElement("div");
   const title = document.createElement("h2");
   const span = document.createElement("span");
