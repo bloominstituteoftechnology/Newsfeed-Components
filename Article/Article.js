@@ -1,7 +1,6 @@
 /* This is the data we will be using to create our article components */
 /* Look over this data, then proceed to line 91*/
-const data = [
-  {
+const data = [{
     title: 'Lambda School Students: "We\'re the best!"',
     date: 'Nov 5th, 2018',
     firstParagraph: `Lucas ipsum dolor sit amet ben twi'lek padmé darth darth darth moff hutt organa twi'lek. Ben amidala secura skywalker lando
@@ -114,7 +113,7 @@ const data = [
 */
 // Step one
 
-function createComponent (componentInfo) {
+function createComponent(componentInfo) {
 
   // create all elements
   const article = document.createElement('div');
@@ -140,7 +139,7 @@ function createComponent (componentInfo) {
   secondP.textContent = componentInfo.secondParagraph;
   thirdP.textContent = componentInfo.thirdParagraph;
   button.textContent = "Expand";
-  
+
   // apply stlyes
   article.classList.add('article');
   date.classList.add('date');
@@ -162,28 +161,30 @@ const articleDiv = document.querySelector('.articles');
 
 // step 5
 
-// let newArticles = data.map(data => {
-//   let artcl = article(data);
-//   return artcl;
-// });
 
-// newArticles.forEach( component => {
-//   articleDiv.appendChild(component);
-// })
-let articlesArray = data.map( item => {
+let articlesArray = data.map(item => {
   let article = createComponent(item);
   return article;
 })
 
 console.log('These are the articles', articlesArray);
 
-articlesArray.forEach( article => {
+articlesArray.forEach(article => {
   articleDiv.appendChild(article);
 })
 
-// data.forEach(data => {
-//   articleDiv.appendChild(createComponent(data));
-// })
+let newArticle = {
+  title: 'Lambda School TL: "We\'re the best!"',
+  date: 'Nov 5th, 2018',
+  firstParagraph: `Lucas ipsum dolor sit amet ben twi'lek padmé darth darth darth moff hutt organa twi'lek. Ben amidala secura skywalker landojar twi'lek jinn leia jango skywalker mon.`,
 
+  secondParagraph: `Grievous fett calamari anakin skywalker hutt.Alderaan darth kenobi darth r2- d2
+        windu mothma.Sidious darth calamari moff.Wampa mothma sith wedge solo mara.Darth gonk maul sith moff c
+        owen jinn tatooine sith organa.`,
 
-// Step 5
+  thirdParagraph: `Dagobah hutt jawa leia calamari ventress skywalker yoda. Binks wicket hutt coruscant sidious
+        naboo ackbar tatooine. Hutt lars padmé darth. Maul solo darth darth jabba qui-gon chewbacca darth maul. Moff baba wicket moff calamari mon obi-wan. Solo grievous lando coruscant. Jinn darth palpatine obi-wan mon.`
+}
+const addArticle = document.querySelector('.articles');
+const newArt = createComponent(newArticle);
+addArticle.appendChild(newArt);
