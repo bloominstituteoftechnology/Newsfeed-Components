@@ -49,7 +49,7 @@ function createComponenents(array)
 
   const panelButton = document.querySelector('.menu-button');
   panelButton.addEventListener('click', element => {
-    panel.classList.toggle('menu--open');
+    panel.classList.toggle('.active-tab');
   });
 
   return panel;
