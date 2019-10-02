@@ -122,11 +122,6 @@ const data = [
   
   */
 
-function clg(...x) {
-	for (let exes of x) console.log(exes);
-}
-
-const DCE = x => document.createElement(x);
 
 /* <div class="article">
    <h2>{title of the article}</h2>
@@ -170,10 +165,14 @@ data.forEach(item => {
 			article.classList.add("article-open");
 			article.style.overflow = "auto";
 		} else {
-			article.classList.remove("article-open");
 			article.style.overflow = "hidden";
+			article.classList.remove("article-open");
 		}
 	});
+
+// STRETCH
+// STRETCH
+	article.style.transition = "all .5s";
 
 	article.append(title, date, expando, text1, text2, text3);
 	// clg(article);
