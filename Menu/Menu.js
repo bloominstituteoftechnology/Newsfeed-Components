@@ -8,7 +8,6 @@ let menuItems = [
   'Music',
   'Log Out'
 ];
-
 /* 
 
   Step 1: Write a function that will create a menu component as seen below:
@@ -33,3 +32,30 @@ let menuItems = [
   Step 6: add the menu component to the DOM.
   
 */
+const header = document.querySelector('.header');
+const menuButton = document.querySelector('.menu-button');
+function menuFactory(items) {
+ 
+  const menu = document.createElement('div');
+  const ul = document.createElement('ul');
+  
+ menu.appendChild(ul);
+ 
+  menuItems.forEach((i) => {
+    const li = document.createElement('li');
+    li.textContent = i; 
+    ul.appendChild(li);
+  })
+  
+  menu.classList.add('menu');
+  
+  menuButton.addEventListener('click', () => {
+    menu.classList.toggle('menu--open');
+    TweenMax.to(menu, 1, { x: -200, ease: Power1.easeInOut });
+  })    
+ 
+  return menu;
+}
+header.appendChild(menuFactory(menuItems));
+
+

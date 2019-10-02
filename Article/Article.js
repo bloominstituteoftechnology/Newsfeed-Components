@@ -101,14 +101,59 @@ const data = [
 
   Hint: You will need to use createElement more than once here!
 
-  Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
+  Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.*/
+const article = document.querySelector('.article');
 
-  Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
+articleData.forEach(data => {
+  console.log('creating article:', data.title)
+  article.appendChild(createArticle(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph, data.expandButton))
+});
 
-  Step 3: return the entire component.
+function articleCreator(title, date, firstParagraph, secondParagraph, thirdParagraph, expandButton){
 
-  Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
+  const article = document.createElement('div')
+  const title = document.createElement('h2');
+  const date = document.createElement('p');
+  const firstParagraph = document.createElement('p');
+  const secondParagraph = document.createElement('p');
+  const thirdParagraph = document.createElement('p');
+  const expandButton = document.createElement('span');
 
-  Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
+article.appendChild(title)
+article.appendChild(date)
+article.appendChild(firstParagraph)
+article.appendChild(secondParagraph)
+article.appendChild(thirdParagraph)
+article.appendChild(expandButton)
 
-*/
+article.classList.add('.article')
+title.classList.add('.title')
+date.classList.add('.date')
+firstParagraph.classList.add('.firstParagraph')
+secondParagraph.classList.add('.secondParagraph')
+thirdParagraph.classList.add('.thirdParagraph')
+expandButton.classList.add('expandButton')
+
+title.textContent = content
+date.textContent = date 
+firstParagraph.textContent = firstParagraph 
+secondParagraph.textContent = secondParagraph
+thirdParagraph.textContent = thirdParagraph
+expandButton.textContent = expandButton 
+
+expandButton.addEventListener('click', event => {
+  console.log('button clicked', event, event.target)
+  articleOpen.classList.toggle('hide-btn')
+})
+
+return article
+}
+
+//  /*Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
+//
+
+//   Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
+
+//   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
+
+// */
