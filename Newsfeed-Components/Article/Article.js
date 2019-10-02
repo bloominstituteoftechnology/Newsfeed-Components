@@ -150,6 +150,8 @@ function createArticles(
   paragraphThree.classList.add("date");
   spanElement.classList.add("expandButton");
 
+  titleTwo.style.color = "green";
+
   titleTwo.textContent = title;
   titleDate.textContent = date;
   spanElement.textContent = "Expand";
@@ -175,4 +177,9 @@ data.forEach(e => {
       e.thirdParagraph
     )
   );
+});
+
+TweenMax.to("div", 6, {
+  rotation: 360,
+  ease: Elastic.easeOut.config(1, 6)
 });
