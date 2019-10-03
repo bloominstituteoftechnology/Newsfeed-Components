@@ -1,6 +1,6 @@
 /* This is the data we will be using to create our article components */
 /* Look over this data, then proceed to line 91*/
-const data = [
+const articleData = [
   {
     title: 'Lambda School Students: "We\'re the best!"',
     date: "Nov 5th, 2018",
@@ -113,7 +113,7 @@ const data = [
 
 */
 // Create a function
-function createComponent(data) {
+function createComponent(articleInfo) {
   // properties of title, date, firstParagraph, secondParagraph, thirdParagraph
   const article = document.createElement("div");
   const articleTitle = document.createElement("h2");
@@ -132,11 +132,11 @@ function createComponent(data) {
   article.appendChild(expandButton);
 
   // set content
-  articleTitle.textContent = data.title;
-  articleDate.textContent = data.date;
-  firstParagraph.textContent = data.firstParagraph;
-  secondParagraph.textContent = data.secondParagraph;
-  thirdParagraph.textContent = data.thirdParagraph;
+  articleTitle.textContent = articleInfo.title;
+  articleDate.textContent = articleInfo.date;
+  firstParagraph.textContent = articleInfo.firstParagraph;
+  secondParagraph.textContent = articleInfo.secondParagraph;
+  thirdParagraph.textContent = articleInfo.thirdParagraph;
   // expandButton.textContent = ;
 
   // apply styles
@@ -144,5 +144,17 @@ function createComponent(data) {
   articleDate.classList.add("date");
   expandButton.classList.add("expandButton");
 
-  return data;
+  // create any event handlers
+
+  // Spent about an hour figuring out why articleData.forEach kept throwing a 'parameter is not a node' error
+  // return articleData
+  // Turns out I needed to return the ELEMENT article in the function, not the ARRAY articleData
+  return article;
 }
+console.log(articleData);
+
+const articles = document.querySelector(".articles");
+
+articleData.forEach(data => {
+  articles.appendChild(createComponent(data));
+});
