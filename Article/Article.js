@@ -85,8 +85,68 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Words From Aasa ',
+    date: 'Oct 2nd, 2019',
+    firstParagraph: `Blah blah blah, Blah blah blah , Blah blah blah ,Blah blah blah  ,Blah blah blah  ,Blah blah blah  ,Blah blah blah  ,Blah blah blah  ,Blah blah blah ,Blah blah blah , Blah blah blah  ,Blah blah blah,Blah blah blah, Blah blah blah , Blah blah blah ,Blah blah blah  ,Blah blah blah  ,Blah blah blah  ,Blah blah blah  ,Blah blah blah  ,Blah blah blah ,Blah blah blah , Blah blah blah  ,Blah blah blahBlah blah blah, Blah blah blah , Blah blah blah ,Blah blah blah  ,Blah blah blah  ,Blah blah blah  ,Blah blah blah  ,Blah blah blah  ,Blah blah blah ,Blah blah blah , Blah blah blah  ,Blah blah blahBlah blah blah, Blah blah blah , Blah blah blah ,Blah blah blah  ,Blah blah blah  ,Blah blah blah  ,Blah blah blah  ,Blah blah blah  ,Blah blah blah ,Blah blah blah , Blah blah blah  ,Blah blah blah , `,
+
+    secondParagraph: `Blah blah blah, Blah blah blah , Blah blah blah ,Blah blah blah  ,Blah blah blah  ,Blah blah blah  ,Blah blah blah  ,Blah blah blah  ,Blah blah blah ,Blah blah blah , Blah blah blah  ,Blah blah blah,Blah blah blah, Blah blah blah , Blah blah blah ,Blah blah blah  ,Blah blah blah  ,Blah blah blah  ,Blah blah blah  ,Blah blah blah  ,Blah blah blah ,Blah blah blah , Blah blah blah  ,Blah blah blahBlah blah blah, Blah blah blah , Blah blah blah ,Blah blah blah  ,Blah blah blah  ,Blah blah blah  ,Blah blah blah  ,Blah blah blah  ,Blah blah blah ,Blah blah blah , Blah blah blah  ,Blah blah blahBlah blah blah, Blah blah blah , Blah blah blah ,Blah blah blah  ,Blah blah blah  ,Blah blah blah  ,Blah blah blah  ,Blah blah blah  ,Blah blah blah ,Blah blah blah , Blah blah blah  ,Blah blah blah , `,
+
+    thirdParagraph: `Blah blah blah, Blah blah blah , Blah blah blah ,Blah blah blah  ,Blah blah blah  ,Blah blah blah  ,Blah blah blah  ,Blah blah blah  ,Blah blah blah ,Blah blah blah , Blah blah blah  ,Blah blah blah,Blah blah blah, Blah blah blah , Blah blah blah ,Blah blah blah  ,Blah blah blah  ,Blah blah blah  ,Blah blah blah  ,Blah blah blah  ,Blah blah blah ,Blah blah blah , Blah blah blah  ,Blah blah blahBlah blah blah, Blah blah blah , Blah blah blah ,Blah blah blah  ,Blah blah blah  ,Blah blah blah  ,Blah blah blah  ,Blah blah blah  ,Blah blah blah ,Blah blah blah , Blah blah blah  ,Blah blah blahBlah blah blah, Blah blah blah , Blah blah blah ,Blah blah blah  ,Blah blah blah  ,Blah blah blah  ,Blah blah blah  ,Blah blah blah  ,Blah blah blah ,Blah blah blah , Blah blah blah  ,Blah blah blah , `,
   }
 ];
+
+
+
+
+
+function createArticle (title, date, firstParagraph, secondParagraph, thirdParagraph ){
+
+  const article2 = document.createElement('div');
+  const articleTittle = document.createElement('h2');
+  const articleDate = document.createElement('p');
+  const para1 = document.createElement('p');
+  const para2 = document.createElement('p');
+  const para3 = document.createElement('p');
+  const articleExpandButton = document.createElement('span');
+
+  article2.appendChild(articleTittle);
+  article2.appendChild(articleDate);
+  article2.appendChild(para1);
+  article2.appendChild(para2);
+  article2.appendChild(para3);
+  article2.appendChild(articleExpandButton);
+
+  article2.classList.add('article');
+  articleDate.classList.add('date');
+  articleExpandButton.classList.add('expandButton');
+  
+  articleExpandButton.textContent = 'Hit The D*MN Button!!!';
+
+  articleExpandButton.addEventListener('click', () =>{
+    article2.classList.toggle('article-open')
+  });
+
+  articleTittle.textContent = title;
+  articleDate.textContent = date;
+  para1.textContent = firstParagraph;
+  para2.textContent = secondParagraph;
+  para3.textContent = thirdParagraph;
+  
+  return article2;
+
+}
+const acrticleDrop= document.querySelector('.articles')
+
+
+
+data.forEach(e => {
+  console.log("test" , e.title, e.date);
+  (acrticleDrop.appendChild(createArticle(e.title, e.date, e.firstParagraph, e.secondParagraph, e.thirdParagraph)))
+})
+
+
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
