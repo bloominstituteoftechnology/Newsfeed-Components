@@ -142,7 +142,7 @@ const acrticleDrop= document.querySelector('.articles')
 
 
 data.forEach(e => {
-  console.log("test" , e.title, e.date);
+  // console.log("test" , e.title, e.date);
   (acrticleDrop.appendChild(createArticle(e.title, e.date, e.firstParagraph, e.secondParagraph, e.thirdParagraph)))
 })
 

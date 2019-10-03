@@ -15,11 +15,14 @@ function createMenu (arr){
   const menuList = document.createElement('ul');
 
   menuCard.classList.add('menu');
-    arr=[]
-    arr.forEach(el =>{
+    
+
+    menuItems.forEach(el =>{
+    // console.log(el, 'test')  
     const item = document.createElement('li')
     item.textContent = el;
     menuList.appendChild(item)
+    
   });
 
    menuCard.appendChild(menuList);
@@ -34,12 +37,13 @@ function createMenu (arr){
   
   return menuCard
 }
+/////////////////////////////////////
 
 const menuHeader = document.querySelector('.header');
 
 
 menuItems.forEach(e =>{
-  console.log(e)
+  // console.log(e)
   menuHeader.appendChild(createMenu(e))
 })
 
