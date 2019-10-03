@@ -33,46 +33,30 @@ let menuItems = [
   Step 6: add the menu component to the DOM.
   
 */
+const header = document.querySelector(".header");
 
 function createMenu(array) {
   // list items
-  const menu = document.addElement("div");
-  const menuList = document.addElement("ul");
-  const menuItemOne = document.addElement("li");
-  const menuItemTwo = document.addElement("li");
-  const menuItemThree = document.addElement("li");
-  const menuItemFour = document.addElement("li");
-  const menuItemFive = document.addElement("li");
-  const menuItemSix = document.addElement("li");
-  // const menubtn = document.addElement("button");
+  const menu = document.createElement("div");
+  const menuList = document.createElement("ul");
 
   // create structure
-  menu.appendChild("menuList");
-  menu.appendChild("menuItemOne");
-  menu.appendChild("menuItemTwo");
-  menu.appendChild("menuItemThree");
-  menu.appendChild("menuItemFour");
-  menu.appendChild("menuItemFive");
-  menu.appendChild("menuItemSix");
-  // menu.appendChild("menubtn");
+  menu.appendChild(menuList);
 
   // set content
-  menuList.textContent = "Menu";
-  menuItemOne.textContent = menuItems[0];
-  menuItemTwo.textContent = menuItems[1];
-  menuItemThree.textContent = menuItems[2];
-  menuItemFour.textContent = menuItems[3];
-  menuItemFive.textContent = menuItems[4];
-  menuItemSix.textContent = menuItems[5];
-  // menubtn.textContent = "Click Me!";
+  // this loop passes each array item
+  array.forEach(item => {
+    const menuLi = document.createElement("li");
+    menuLi.textContent = item;
+    menuList.appendChild(menuLi);
+  });
 
   // apply styles
   menu.classList.add("menu");
-  // menubtn.classList.add("menu-item");
 
   // add event handlers
   const menuBtn = document.querySelector(".menu-button");
-  menuBtn.addEventListener("click", e => {
+  menuBtn.addEventListener("click", () => {
     menu.classList.toggle("menu--open");
     console.log("clicked");
   });
@@ -80,7 +64,4 @@ function createMenu(array) {
   return menu;
 }
 
-const showMenu = document.querySelector(".menu");
-menuItems.forEach(data => {
-  showMenu.appendChild(createMenu(data));
-});
+header.appendChild(createMenu(menuItems));

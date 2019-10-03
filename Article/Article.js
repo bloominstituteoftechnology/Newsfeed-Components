@@ -166,11 +166,7 @@ function createComponent(articleInfo) {
     expandButton.textContent = "Close";
     // console.log("working");
   });
-  if (article.classList.contains("article-open")) {
-    expandButton.addEventListener("click", e => {
-      expandButton.textContent = "Expand";
-    });
-  }
+
   // Spent about an hour figuring out why articleData.forEach kept throwing a 'parameter is not a node' error
   // return articleData
   // Turns out I needed to return the parent ELEMENT article in the function, not the ARRAY articleData
