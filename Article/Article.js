@@ -85,6 +85,22 @@ const articleData = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: "Favorite Game of Thrones Character",
+    date: "Oct 3rd, 2019",
+    firstParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
+          hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
+          Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `,
+
+    secondParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
+          hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
+          hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
+          hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? `,
+
+    thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
+          Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
+          Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
 ];
 
@@ -137,7 +153,7 @@ function createComponent(articleInfo) {
   firstParagraph.textContent = articleInfo.firstParagraph;
   secondParagraph.textContent = articleInfo.secondParagraph;
   thirdParagraph.textContent = articleInfo.thirdParagraph;
-  // expandButton.textContent = ;
+  expandButton.textContent = "Expand";
 
   // apply styles
   article.classList.add("article");
@@ -145,10 +161,19 @@ function createComponent(articleInfo) {
   expandButton.classList.add("expandButton");
 
   // create any event handlers
-
+  expandButton.addEventListener("click", e => {
+    article.classList.toggle("article-open");
+    expandButton.textContent = "Close";
+    // console.log("working");
+  });
+  if (article.classList.contains("article-open")) {
+    expandButton.addEventListener("click", e => {
+      expandButton.textContent = "Expand";
+    });
+  }
   // Spent about an hour figuring out why articleData.forEach kept throwing a 'parameter is not a node' error
   // return articleData
-  // Turns out I needed to return the ELEMENT article in the function, not the ARRAY articleData
+  // Turns out I needed to return the parent ELEMENT article in the function, not the ARRAY articleData
   return article;
 }
 console.log(articleData);
