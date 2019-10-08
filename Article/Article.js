@@ -116,6 +116,7 @@ const data = [
 const articles = document.querySelector('.articles');
 
 function componentCreator(title, date, firstParagraph, secondParagraph, thirdParagraph) {
+  // creating new elements
   const article = document.createElement('div');
   const titleContent = document.createElement('h2');
   const titleDate = document.createElement('p');
@@ -124,6 +125,7 @@ function componentCreator(title, date, firstParagraph, secondParagraph, thirdPar
   const paragraphThree = document.createElement('p');
   const expandSpan = document.createElement('span');
 
+  // appending elements to the top article
   article.appendChild(titleContent);
   article.appendChild(titleDate);
   article.appendChild(paragraphOne);
@@ -131,18 +133,22 @@ function componentCreator(title, date, firstParagraph, secondParagraph, thirdPar
   article.appendChild(paragraphThree);
   article.appendChild(expandSpan);
 
+  // adding class lists
   article.classList.add('article');
   paragraphOne.classList.add('date');
   paragraphTwo.classList.add('date');
   paragraphThree.classList.add('date');
   expandSpan.classList.add('expandButton');
 
+  // adding the content to the elements
   titleContent.textContent = title;
   titleDate.textContent = date;
   expandSpan.textContent = 'Expand';
   paragraphOne.textContent = firstParagraph;
   paragraphTwo.textContent = secondParagraph;
   paragraphThree.textContent = thirdParagraph;
+
+  // STYLING
   titleDate.style.fontWeight = 'bold';
   titleDate.style.marginTop = '0';
   titleDate.style.color = 'grey';
@@ -150,8 +156,7 @@ function componentCreator(title, date, firstParagraph, secondParagraph, thirdPar
   paragraphTwo.style.lineHeight = '175%';
   paragraphThree.style.lineHeight = '175%';
 
-
-
+  // Span Button Event Listener
   expandSpan.addEventListener('click', (e) => {
     e.target.parentElement.classList.toggle("article-open");
   });
@@ -160,7 +165,37 @@ function componentCreator(title, date, firstParagraph, secondParagraph, thirdPar
 
 }
 
+// Map through data array and run function
 data.forEach( (e) => {
+  articles.appendChild(
+    componentCreator(
+      e.title, e.date, e.firstParagraph, e.secondParagraph, e.thirdParagraph
+      ));
+});
+
+// adding my own articles
+const carlosData = [
+  {
+    title: 'Carlos Banks is learning Javascript',
+    date: 'Oct 8th, 2019',
+    firstParagraph: `I am learning how to code Javascript at Lambda School.`,
+
+    secondParagraph: `So far, I really like it.`,
+
+    thirdParagraph: `Hopefully it'll allow me to change my career.`
+  },
+  {
+    title: 'Passing your first interview, tips & tricks',
+    date: 'Sometime in the future',
+    firstParagraph: `Want to learn how to land that interview with that tech company?`,
+
+    secondParagraph: `Check this article below that shows all the tips and tricks.`,
+
+    thirdParagraph: `Hey are you still reading this? Go learn!`
+  }
+];
+
+carlosData.forEach( (e) => {
   articles.appendChild(
     componentCreator(
       e.title, e.date, e.firstParagraph, e.secondParagraph, e.thirdParagraph
