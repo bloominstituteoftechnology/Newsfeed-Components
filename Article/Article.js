@@ -112,3 +112,57 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+const articles = document.querySelector('.articles');
+
+function componentCreator(title, date, firstParagraph, secondParagraph, thirdParagraph) {
+  const article = document.createElement('div');
+  const titleContent = document.createElement('h2');
+  const titleDate = document.createElement('p');
+  const paragraphOne = document.createElement('p');
+  const paragraphTwo = document.createElement('p');
+  const paragraphThree = document.createElement('p');
+  const expandSpan = document.createElement('span');
+
+  article.appendChild(titleContent);
+  article.appendChild(titleDate);
+  article.appendChild(paragraphOne);
+  article.appendChild(paragraphTwo);
+  article.appendChild(paragraphThree);
+  article.appendChild(expandSpan);
+
+  article.classList.add('article');
+  paragraphOne.classList.add('date');
+  paragraphTwo.classList.add('date');
+  paragraphThree.classList.add('date');
+  expandSpan.classList.add('expandButton');
+
+  titleContent.textContent = title;
+  titleDate.textContent = date;
+  expandSpan.textContent = 'Expand';
+  paragraphOne.textContent = firstParagraph;
+  paragraphTwo.textContent = secondParagraph;
+  paragraphThree.textContent = thirdParagraph;
+  titleDate.style.fontWeight = 'bold';
+  titleDate.style.marginTop = '0';
+  titleDate.style.color = 'grey';
+  paragraphOne.style.lineHeight = '175%';
+  paragraphTwo.style.lineHeight = '175%';
+  paragraphThree.style.lineHeight = '175%';
+
+
+
+  expandSpan.addEventListener('click', (e) => {
+    e.target.parentElement.classList.toggle("article-open");
+  });
+
+  return article;
+
+}
+
+data.forEach( (e) => {
+  articles.appendChild(
+    componentCreator(
+      e.title, e.date, e.firstParagraph, e.secondParagraph, e.thirdParagraph
+      ));
+});
