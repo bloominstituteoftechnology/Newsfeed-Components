@@ -1,5 +1,6 @@
 /* This is the data we will be using to create our article components */
 /* Look over this data, then proceed to line 91*/
+window.addEventListener('load', (e) =>{ 
 const data = [
   {
     title: 'Lambda School Students: "We\'re the best!"',
@@ -99,45 +100,55 @@ const data = [
     <span class='expandButton'></span>
   </div>
 */
-function articleCreator(title, date){
-  //created elements
-  const articleDiv = document.createElement('div');
-  const articleTitle = document.createElement('h2');
-  const articleDate = document.createElement('p');
-  const articleContent = document.createElement('p');
-  const articleExpandbtn = document.createElement('span');
+  function articleCreator(title, date, p1, p2, p3){
+    //created elements
+    const articleDiv = document.createElement('div');
+    const articleTitle = document.createElement('h2');
+    const articleDate = document.createElement('p');
+    const articleP1 = document.createElement('p');
+    const articleP2 = document.createElement('p');
+    const articleP3 = document.createElement('p');
+    const articleExpandbtn = document.createElement('span');
 
-  //added classes to the elements
-  articleDiv.classList.add('article');
-  articleDate.classList.add('date');
-  articleExpandbtn.classList.add('expandButton');
+    //added classes to the elements
+    articleDiv.classList.add('article');
+    articleDate.classList.add('date');
+    articleExpandbtn.classList.add('expandButton');
 
-  //Content changes
-  articleTitle.textContent = title;
-  articleDate.textContent = date
-  // articleContent.textcontent = 
+    //Content changes
+    articleTitle.textContent = title;
+    articleDate.textContent = date
+    articleP1.textContent = p1;
+    articleP2.textContent = p2;
+    articleP3.textContent = p3;
 
-    //Expend button
-    const expendButton = "Expand" + " " + "\u26db";
-    articleExpandbtn.textContent = expendButton;
+    // articleContent.textcontent = 
 
-    articleExpandbtn.addEventListener('click', event =>{
-      articleContent.parentNode.classList.toggle("article-open")
-    })
+      //Expend button
+      const expendButton = "Expand" + " " + "\u26db";
+      articleExpandbtn.textContent = expendButton;
 
-  //append & prepend of the elements
-  articleDiv.appendChild(articleTitle);
-  articleDiv.appendChild(articleDate);
-  articleDiv.appendChild(articleContent);
-  articleDiv.appendChild(articleExpandbtn);
-  
-  return articleDiv;
-}
+      articleExpandbtn.addEventListener('click', (e) =>{
+        articleDiv.classList.toggle("article-open");
+      });
 
-const articles = document.querySelector('.articles');
+    //append & prepend of the elements
+    articleDiv.appendChild(articleTitle);
+    articleDiv.appendChild(articleDate);
+    articleDiv.appendChild(articleP1);
+    articleDiv.appendChild(articleP2);
+    articleDiv.appendChild(articleP3);
+    articleDiv.appendChild(articleExpandbtn);
+    
+    return articleDiv;
+  }
 
-data.forEach((values) =>{
-  articles.appendChild(articleCreator(values.title, values.date));''
+  const articles = document.querySelector('.articles');
+
+  data.forEach((values) =>{
+    articles.appendChild(articleCreator(values.title, values.date, values.firstParagraph, values.secondParagraph, values.thirdParagraph));''
+  })
+
 })
 
 /*
