@@ -10,7 +10,6 @@ let menuItems = [
 ];
 
 /* 
-
   Step 1: Write a function that will create a menu component as seen below:
 
   <div class="menu">
@@ -18,24 +17,6 @@ let menuItems = [
       {each menu item as a list item}
     </ul>
   </div>
-*/
-//The function takes an array as its only argument.
-  function createNav(){
-    const navLi = document.createElement('li');
-    const navUl = document.createElement('ul');
-
-    navUl.classList.add('.')
-
-
-
-  }
-  
-  const navUl = document.querySelector('')
-  menuItems.forEach((data) => {
-
-    
-  });
-
 // Step 2: Inside this function, iterate over the array creating a list item <li> element for each item in the array. 
 // Add those items to the <ul>
 
@@ -46,4 +27,22 @@ let menuItems = [
 // Step 5: return the menu component.
 
 // Step 6: add the menu component to the DOM.
+*/
 
+function menuCreator([menuItems]){
+  const menuDiv = document.createElement('div');
+  const menuUlItem = document.createElement('ul');
+
+  console.log(menuUlItem);
+
+  menuDiv.appendChild(menuUlItem);
+
+  menuitems.forEach(items => {
+    const menuLiItems = document.createElement('li');
+    menuUlItem.appendChild(menuLiItems);
+    menuLiItems.textContent = items;
+
+    console.log(items);
+    
+  });
+}

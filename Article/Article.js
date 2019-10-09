@@ -99,8 +99,46 @@ const data = [
     <span class='expandButton'></span>
   </div>
 */
+function articleCreator(title, date){
+  //created elements
+  const articleDiv = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+  const articleDate = document.createElement('p');
+  const articleContent = document.createElement('p');
+  const articleExpandbtn = document.createElement('span');
 
-const articleHead = document.querySelector();
+  //added classes to the elements
+  articleDiv.classList.add('article');
+  articleDate.classList.add('date');
+  articleExpandbtn.classList.add('expandButton');
+
+  //Content changes
+  articleTitle.textContent = title;
+  articleDate.textContent = date
+  // articleContent.textcontent = 
+
+    //Expend button
+    const expendButton = "Expand" + " " + "\u26db";
+    articleExpandbtn.textContent = expendButton;
+
+    articleExpandbtn.addEventListener('click', event =>{
+      articleContent.parentNode.classList.toggle("article-open")
+    })
+
+  //append & prepend of the elements
+  articleDiv.appendChild(articleTitle);
+  articleDiv.appendChild(articleDate);
+  articleDiv.appendChild(articleContent);
+  articleDiv.appendChild(articleExpandbtn);
+  
+  return articleDiv;
+}
+
+const articles = document.querySelector('.articles');
+
+data.forEach((values) =>{
+  articles.appendChild(articleCreator(values.title, values.date));''
+})
 
 /*
   Hint: You will need to use createElement more than once here!
