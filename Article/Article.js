@@ -88,21 +88,18 @@ const data = [
   }
 ];
 
-let container = document.getElementsByClassName('.articles');
+let container = document.querySelector('.articles');
 //console.log(container);
-function componentCreator() {
+function componentCreator(date, title, fP, sP, tP) {
 
   const divCreator = document.createElement('div');
 
-  const dateParagraph = document.createElement('p');
+  const dateParagraphCreator = document.createElement('p');
   const spanCreator = document.createElement('span');
 
   var paragraphElementArray  = [];
 
-  divCreator.classList.add('.articles');
-
-  dateParagraph.textContent = date;
-
+  dateParagraphCreator.textContent = date;
 
   for(let i = 0; i < 3; i++)
   {
@@ -114,11 +111,7 @@ function componentCreator() {
   paragraphElementArray[1].textContent = sP;
   paragraphElementArray[2].textContent = tP;
 
-  paragraphElementArray[0].classList.add = ('date');
-  paragraphElementArray[1].classList.add = ('date');
-  paragraphElementArray[2].classList.add = ('date');
-
-  divCreator.appendChild(paragraphElementArray);
+  //divCreator.appendChild(paragraphElementArray);
 
   spanCreator.classList.add('expandButton');
 
@@ -127,23 +120,32 @@ function componentCreator() {
   spanCreator.classList.add('article-open');
   });
 
-  dateParagraph.textContent = date;
+
+  dateParagraphCreator.textContent = date;
 
   const secondHeader = document.createElement('h2');
 
   secondHeader.textContent = title;
 
-  divCreator.appendChild(spanCreator);
-
-  /*let articleComponents = data.map((articles) => {
-
-    //  console.log(articles.date, articles.title, articles.firstParagraph, articles.secondParagraph, articles.thirdParagraph);
-      return paragraphCreator(articles.firstParagraph,articles.secondParagraph, articles.thirdParagraph);
-     // return articleCreator(articles.title);
+  //divCreator.appendChild(spanCreator);
     
-    }); */
+   divCreator.classList.add('.articles');
+
+   container.appendChild(divCreator);
+   container.appendChild(dateParagraphCreator);
+   container.appendChild(spanCreator);
+   //container.appendChild();
+
+   console.log(container);
+
+   return container;
 }
 
+const articleCreator = data.forEach ((element) => {
+
+  componentCreator(element.date, element.title, element.firstParagraph, element.secondParagraph, element.thirdParagraph);
+
+});
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
