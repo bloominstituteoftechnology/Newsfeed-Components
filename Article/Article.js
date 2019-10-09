@@ -2,6 +2,15 @@
 /* Look over this data, then proceed to line 91*/
 const data = [
   {
+    title: 'This is a new blog yoo! ',
+    date: 'Oct 8th, 2019',
+    firstParagraph: `Excuse me! This is lorem ipson for people who like typinh `,
+
+    secondParagraph: `What about this!? This is a second paragraphs! The second one YOO `,
+
+    thirdParagraph: `Third paragraph!??? Can we have some facebook money now?`
+  },
+  {
     title: 'Lambda School Students: "We\'re the best!"',
     date: 'Nov 5th, 2018',
     firstParagraph: `Lucas ipsum dolor sit amet ben twi'lek padmé darth darth darth moff hutt organa twi'lek. Ben amidala secura skywalker lando
@@ -110,7 +119,7 @@ let articleMaker = (data)=>{
   firstParagraph.textContent = data.firstParagraph
   secondParagraph.textContent = data.secondParagraph
   thirdParagraph.textContent = data.thirdParagraph
-  // expandButton.textContent = 'Expand'
+  expandButton.textContent = '\u25bc'
 
   expandButton.addEventListener('click', (e)=>{
     article.classList.toggle('article-open')
