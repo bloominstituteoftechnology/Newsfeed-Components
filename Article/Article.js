@@ -97,19 +97,15 @@ function componentCreator(date, title, fP, sP, tP) {
   const dateParagraphCreator = document.createElement('p');
   const spanCreator = document.createElement('span');
 
-  var paragraphElementArray  = [];
-
   dateParagraphCreator.textContent = date;
 
-  for(let i = 0; i < 3; i++)
-  {
-     const paragraphElement = document.createElement('p');
-     paragraphElementArray[i] = paragraphElement;
-  }
+  const paragraphElement1 = document.createElement('p');
+  const paragraphElement2 = document.createElement('p');
+  const paragraphElement3 = document.createElement('p');
 
-  paragraphElementArray[0].textContent = fP;
-  paragraphElementArray[1].textContent = sP;
-  paragraphElementArray[2].textContent = tP;
+  paragraphElement1.textContent = fP;
+  paragraphElement2.textContent = sP;
+  paragraphElement3.textContent = tP;
 
   //divCreator.appendChild(paragraphElementArray);
 
@@ -134,7 +130,9 @@ function componentCreator(date, title, fP, sP, tP) {
    container.appendChild(divCreator);
    container.appendChild(dateParagraphCreator);
    container.appendChild(spanCreator);
-   //container.appendChild();
+   container.appendChild(paragraphElement1);
+   container.appendChild(paragraphElement2);
+   container.appendChild(paragraphElement3);
 
    console.log(container);
 
