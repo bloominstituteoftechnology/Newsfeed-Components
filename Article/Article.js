@@ -85,8 +85,18 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+
+  {
+    title: 'People Pressing F to Pay Respects More Frequently',
+    date: 'Feb 31st, 2020',
+    firstParagraph: 'After many years of people pressing F to pay respects, the numbers of new people pressing F to pay respects has finally increased. Wow!',
+    secondParagraph: 'The reasons however for the increased F to respect phenomenon are quite sad. Looking into them, the F-worthy situations around the world are increasing.',
+    thirdParagraph: 'If you thought about asking your girlfriend how she feels, now might not be the time. Take your risks however, just know, we might be pressing F for you.',
   }
+  
 ];
+
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
@@ -112,3 +122,79 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+
+
+function articleh2(title){
+  const articleH2 = document.createElement('h2');
+  articleH2.textContent = title;
+  return articleH2;
+}
+
+// console.log(articleH2());
+
+function articleDate(date){
+  const aDate = document.createElement('p');
+  aDate.classList.add('date');
+  aDate.textContent = date;
+
+  return aDate;
+}
+
+// console.log(aDate());
+
+function articlePara1(firstParagraph){
+  const newPara1 = document.createElement('p');
+  newPara1.textContent = firstParagraph;
+
+  return newPara1;
+}
+
+// console.log(articlePara1());
+
+function articlePara2(secondParagraph){
+  const newPara2 = document.createElement('p');
+  newPara2.textContent = secondParagraph;
+
+  return newPara2;
+}
+
+function articlePara3(thirdParagraph){
+  const newPara3 = document.createElement('p');
+  newPara3.textContent = thirdParagraph;
+
+  return newPara3;
+}
+
+function expandButton(){
+  const expandButton = document.createElement('span');
+  expandButton.classList.add('expandButton');
+
+  return expandButton;
+}
+
+
+function articleCreator(title, date, firstParagraph, secondParagraph, thirdParagraph){
+  const newArticle = document.createElement('section')
+  newArticle.classList.add('article')
+
+  newArticle.appendChild(articleh2(title));
+  newArticle.appendChild(articleDate(date));
+  newArticle.appendChild(articlePara1(firstParagraph));
+  newArticle.appendChild(articlePara2(secondParagraph));
+  newArticle.appendChild(articlePara3(thirdParagraph));
+
+  newArticle.appendChild(expandButton());
+  newArticle.addEventListener('click', e => e.currentTarget.classList.toggle('article-open'));
+  newArticle.addEventListener('toggle', expandButton);
+
+  return newArticle;
+}
+
+// console.log(articleCreator());
+
+const body = document.querySelector('body');
+
+data.forEach((newArticle) =>{
+  body.appendChild(articleCreator(newArticle.title, newArticle.date, newArticle.firstParagraph, newArticle.secondParagraph, newArticle.thirdParagraph, newArticle.expandButton))
+});
