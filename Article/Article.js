@@ -143,7 +143,7 @@ function componentCreator(title, date, firstParagraph, secondParagraph, thirdPar
   // adding the content to the elements
   titleContent.textContent = title;
   titleDate.textContent = date;
-  expandSpan.textContent = 'Expand';
+  expandSpan.textContent = 'Click to Expand';
   paragraphOne.textContent = firstParagraph;
   paragraphTwo.textContent = secondParagraph;
   paragraphThree.textContent = thirdParagraph;
@@ -159,6 +159,28 @@ function componentCreator(title, date, firstParagraph, secondParagraph, thirdPar
   // Span Button Event Listener
   expandSpan.addEventListener('click', (e) => {
     e.target.parentElement.classList.toggle("article-open");
+  });
+
+  expandSpan.addEventListener('mouseenter', (e) => {
+    e.target.style.fontWeight = 'bold';
+    e.target.style.fontSize = '20px';
+  });
+
+  expandSpan.addEventListener('mouseleave', (e) => {
+    e.target.style.fontWeight = '100';
+    e.target.style.fontSize = '12px';
+
+  });
+
+  // Add hover styling to article
+  article.addEventListener('mouseenter', (e) => {
+    e.target.style.border = '1px solid black';
+    e.target.style.boxShadow = '0px 0px 10px 10px lightgrey';
+  });
+
+  article.addEventListener('mouseleave', (e) => {
+    e.target.style.border = '1px solid lightgrey';
+    e.target.style.boxShadow = 'none';
   });
 
   return article;

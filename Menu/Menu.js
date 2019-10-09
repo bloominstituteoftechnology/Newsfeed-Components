@@ -33,4 +33,50 @@ let menuItems = [
   Step 6: add the menu component to the DOM.
   
 */
+// create the header and menu button 
+headerButton = document.querySelector('.header');
+menuButton = document.querySelector('.menu-button');
 
+// function accepts an array
+function openMenu(arr) {
+
+  // create a new div and a new ul
+  const menuDiv = document.createElement('div');
+  const listItems = document.createElement('ul');
+  
+  // ul gets appended to the div
+  menuDiv.appendChild(listItems);
+
+  // map through the menuItems array and create the li's
+  menuItems.forEach( (e) => {
+    const lists = document.createElement('li');
+    lists.textContent = e;
+    listItems.appendChild(lists);
+    lists.style.cursor = 'pointer';
+
+    // add styling to the nav bar
+    lists.addEventListener('mouseenter', (e) => {
+      e.target.style.backgroundColor = 'lightgrey';
+    });
+
+    lists.addEventListener('mouseleave', (e) => {
+      e.target.style.backgroundColor = '#81C784';
+  });
+
+  });
+
+  // add the class to menuDiv
+  menuDiv.classList.add('menu');
+
+  // add the event listener to the hamburger button
+  menuButton.addEventListener('click', (e) => {
+    menuDiv.classList.toggle('menu--open');
+  });
+
+  return menuDiv;
+}
+
+// append the lists to the header by calling the function
+headerButton.appendChild(
+  openMenu(menuItems)
+  );
