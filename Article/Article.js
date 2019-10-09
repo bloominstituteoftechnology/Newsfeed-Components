@@ -103,20 +103,20 @@ const data = [
 
   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
 */
-function articleCreator(title, dateOf, p1, p2, p3) {
+function articleCreator(titleOf, dateOf, p1, p2, p3) {
   const artDiv = document.createElement("div");
   const artH2 = document.createElement("h2");
   const artDate = document.createElement("p");
   const artOne = document.createElement("p");
   const artTwo = document.createElement("p");
   const artThree = document.createElement("p");
-  const artBtn = documet.createElement("span");
+  const artBtn = document.createElement("span");
 
  artDiv.classList.add("article");
  artDate.classList.add("date");
  artBtn.classList.add("expandButton");
- 
- artH2.textContent = title;
+
+ artH2.textContent = titleOf;
  artDate.textContent = dateOf;
  artOne.textContent = p1;
  artTwo.textContent = p2;
@@ -125,26 +125,28 @@ function articleCreator(title, dateOf, p1, p2, p3) {
 
 //  Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
  artBtn.addEventListener("click", () => {
-   artDiv.toggle(".article-open");
+   artDiv.classList.toggle("article-open");
  })
 
 artDiv.appendChild(artH2);
 artDiv.appendChild(artDate);
+artDiv.appendChild(artBtn);
 artDiv.appendChild(artOne);
 artDiv.appendChild(artTwo);
 artDiv.appendChild(artThree);
-artDiv.appendChild(artBtn);
 
  //Step 3: return the entire component.
  return artDiv;
 }
-/*
-  Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
 
-  Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
-*/
+//Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
 const artContent = document.querySelector(".articles");
 
 data.map((item) => {
-  artContent.appendChild(articleCreator(item.title, item.date, item.firstParagraph, item.secondParagraph, item.thirdParagraph))
+  artContent.appendChild(articleCreator(item.title, item.date, item.firstParagraph, item.secondParagraph, item.thirdParagraph));
 });
+
+//Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
+const newArticle = articleCreator("Breaking News", "Oct 8th, 2019", "I created a new article.", "It wasn't that exciting.", "No one was harmed or knew about it.");
+
+artContent.appendChild(newArticle);
