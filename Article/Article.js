@@ -113,7 +113,7 @@ function componentCreator(date, title, fP, sP, tP) {
 
   spanCreator.addEventListener('click', (event) => {
 
-  spanCreator.classList.add('article-open');
+  event.classList.toggle('.article-open');
   });
 
 
@@ -128,6 +128,7 @@ function componentCreator(date, title, fP, sP, tP) {
    divCreator.classList.add('.articles');
 
    container.appendChild(divCreator);
+   container.appendChild(secondHeader);
    container.appendChild(dateParagraphCreator);
    container.appendChild(spanCreator);
    container.appendChild(paragraphElement1);
