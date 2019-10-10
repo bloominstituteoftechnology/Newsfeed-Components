@@ -13,15 +13,15 @@ let menuItems = [
 
   // Step 1: Write a function that will create a menu component as seen below:
 
-  let menuMaker = (data)=>{
-    let menu = document.createElement('div')
-    let ul = document.createElement('ul')
+  const menuMaker = (data)=>{
+    const menu = document.createElement('div')
+    const ul = document.createElement('ul')
 
     menu.classList.add('menu')
 
     
     data.forEach(element=>{
-      let menuItem = document.createElement('li')
+      const menuItem = document.createElement('li')
       menuItem.textContent = element
       ul.appendChild(menuItem)
     })
@@ -31,13 +31,13 @@ let menuItems = [
     return menu
   }
   
-  let menuButton = document.querySelector('.menu-button')
+  const menuButton = document.querySelector('.menu-button')
   menuButton.addEventListener('click', ()=>{
     const menu = document.querySelector('.menu')
     menu.classList.toggle('menu--open')
   })
 
-  let header = document.querySelector('.header')
+  const header = document.querySelector('.header')
   header.append(menuMaker(menuItems))
 
   // <div class="menu">

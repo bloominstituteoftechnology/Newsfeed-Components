@@ -115,7 +115,7 @@ let articleMaker = (data)=>{
   expandButton.classList.add('expandButton')
 
   title.textContent = data.title
-  date.textContent = data.data
+  date.textContent = data.date
   firstParagraph.textContent = data.firstParagraph
   secondParagraph.textContent = data.secondParagraph
   thirdParagraph.textContent = data.thirdParagraph
