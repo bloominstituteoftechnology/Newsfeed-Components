@@ -85,6 +85,13 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: "Coding is Hard",
+    date: "October 8th 2019",
+    firstParagraph: "Coding",
+    secondParagraph: "is",
+    thirdParagraph: "hard"
   }
 ];
 
@@ -112,3 +119,51 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+
+
+  articleCreator = function (title, date, firstParagraph,secondParagraph,thirdParagraph){
+    divArticle = document.createElement("div");
+    titleH2 = document.createElement("h2");
+    dateP = document.createElement("p")
+    p1 = document.createElement('p');
+    p2 = document.createElement('p');
+    p3 = document.createElement('p');
+    button = document.createElement("span");
+
+
+    divArticle.classList.add("article");
+    dateP.classList.add("date");
+    button.classList.add("expandButton");
+
+
+    titleH2.textContent = title;
+    dateP.textContent = date;
+    p1.textContent = firstParagraph;
+    p2.textContent = secondParagraph;
+    p3.textContent = thirdParagraph;
+    button.textContent = "Button";
+
+button.addEventListener("click", (e)=>{
+  let articleToggle = document.querySelector(".article")
+  articleToggle.classList.toggle("article-open");
+})
+
+    divArticle.appendChild(titleH2);
+    titleH2.appendChild(dateP);
+    dateP.appendChild(p1);
+    p1.appendChild(p2);
+    p2.appendChild(p3)
+    p3.appendChild(button);
+   
+
+    return divArticle;
+    
+  } 
+  
+  const articleContainer = document.querySelector(".articles")
+  
+
+ data.map((item)=>{
+    return articleContainer.appendChild(articleCreator(item.title, item.date,item.firstParagraph,item.secondParagraph,item.thirdParagraph))
+  })

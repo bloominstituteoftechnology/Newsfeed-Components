@@ -33,3 +33,60 @@ let menuItems = [
   Step 6: add the menu component to the DOM.
   
 */
+
+// dropDownMenu = function (array){
+// divMenu = document.createElement("div")
+// ul = document.createElement("ul")
+
+// divMenu.appendChild(ul)
+
+// divMenu.classList.add("menu")
+
+ 
+// array.forEach(element => {
+//   listItem = document.createElement("li");
+//   listItem.textContent = element;
+//   ul.appendChild(listItem)
+//   return listItem
+// });
+
+
+// menuButton = document.querySelector(".menu-button")
+
+// menuButton.addEventListener("click", (e)=>{
+//    divMenu.classList.toggle("menu--open")
+// })
+// console.log(divMenu)
+// return divMenu
+// }
+
+
+// menuButton2 = document.querySelector(".menu-button")
+// menuButton2.appendChild(dropDownMenu(menuItems))
+
+
+dropDown = function (array){
+  let menu = document.createElement("div");
+  let listHolder = document.createElement("ul");
+
+  menu.classList.add("menu");
+menu.appendChild(listHolder)
+  array.forEach(element => {
+    let listItem = document.createElement("li")
+    listItem.textContent = element;
+    listHolder.appendChild(listItem)
+    
+  });
+
+ menuButton = document.querySelector(".menu-button")
+ menuButton.addEventListener("click",(e)=>{
+   menu.classList.toggle("menu--open")
+ });
+
+ return menu;
+}
+console.log(dropDown(menuItems))
+menuDrop = document.querySelector(".menu-button")
+menuDrop.appendChild(dropDown(menuItems));
+
+  console.log(menuDrop)
