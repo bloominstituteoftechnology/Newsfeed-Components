@@ -85,6 +85,11 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'JavaScripting',
+    date: 'October 10th, 2019',
+    firstParagraph: 'Not too bad'
   }
 ];
 
@@ -112,3 +117,53 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+function newsfeedCreator(articleTitle, articleDate, paragraphOne, paragraphTwo, paragraphThree) {
+  const article = document.createElement('div');
+  const title = document.createElement('h2');
+  const date = document.createElement('p');
+  const firstParagraph = document.createElement('p');
+  const secondParagraph = document.createElement('p');
+  const thirdParagraph = document.createElement('p');
+  const buttonHolder = document.createElement('span');
+  const buttonOpen = document.createElement('button');
+  const buttonClose = document.createElement('button');
+
+  article.classList.add('article');
+  date.classList.add('date');
+  buttonHolder.classList.add('expandButton')
+  buttonOpen.classList.add('close');
+  buttonClose.classList.add('close');
+
+  const open = '\u25bc';
+  const close = '\u25b2';
+
+  buttonOpen.textContent = open;
+  buttonClose.textContent = close;
+  title.textContent = articleTitle;
+  date.textContent = articleDate;
+  firstParagraph.textContent = paragraphOne;
+  secondParagraph.textContent = paragraphTwo;
+  thirdParagraph.textContent = paragraphThree;
+
+  buttonOpen.addEventListener('click', () => {
+    article.classList.toggle('article-open');
+  });
+
+
+  article.appendChild(title);
+  article.appendChild(date);
+  //article.appendChild(buttonHolder);
+  article.appendChild(buttonOpen);
+  article.appendChild(firstParagraph);
+  article.appendChild(secondParagraph);
+  article.appendChild(thirdParagraph);
+  return article;
+}
+
+const articleHolder = document.querySelector('.articles');
+
+data.forEach((data) => {
+  articleHolder.appendChild(newsfeedCreator(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph));
+})
+
