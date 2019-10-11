@@ -9,19 +9,23 @@ let menuItems = [
   'Log Out'
 ];
 
-let menuButton = document.querySelector('.menu-button');
+const linktoMenu = document.querySelector('.menu');
+
+const menuButton = document.querySelector('.menu-button');
 
 function menuCreator(menuItems) {
 
-   let subMenu = document.createElement('div');
-   let ulCreate = document.creatElement('ul');
+  const div = document.createElement('div');
+  const ulCreate = document.createElement('ul');
+
+  div.classList.add('menu');
    
-   let li1 = document.createElement('li');
-   let li2 = document.createElement('li');
-   let li3 = document.createElement('li');
-   let li4 = document.createElement('li');
-   let li5 = document.createElement('li');
-   let li6 = document.createElement('li');
+   const li1 = document.createElement('li');
+   const li2 = document.createElement('li');
+   const li3 = document.createElement('li');
+   const li4 = document.createElement('li');
+   const li5 = document.createElement('li');
+   const li6 = document.createElement('li');
 
    li1.textContent = menuItems[0];
    li2.textContent = menuItems[1];
@@ -30,25 +34,29 @@ function menuCreator(menuItems) {
    li5.textContent = menuItems[4];
    li6.textContent = menuItems[5];  
 
-   menuButton.appendChild(subMenu);
-   menuButton.appendChild(ulCreate);
-   menuButton.appendChild(li1);
-   menuButton.appendChild(li2);
-   menuButton.appendChild(li3);
-   menuButton.appendChild(li4);
-   menuButton.appendChild(li5);
-   menuButton.appendChild(li6);
+   menuButton.appendChild(div);
+   div.appendChild(ulCreate);
+   ulCreate.appendChild(li1);
+   ulCreate.appendChild(li2);
+   ulCreate.appendChild(li3);
+   ulCreate.appendChild(li4);
+   ulCreate.appendChild(li5);
+   ulCreate.appendChild(li6);
+
+   menuButton.addEventListener('click', () => {
+
+    console.log(div);
+  
+    div.classList.toggle('menu--open');
+  
+  });
+
+   console.log(menuButton);
 
    return menuButton;
 }
 
-menuButton.addEventListener('click', (element) => {
-
-   element.classList.toggle('menu--open');
-
-});
-
-menuButton(menuItems);
+menuCreator(menuItems);
 
 /* 
 
