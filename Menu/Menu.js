@@ -70,7 +70,7 @@ dropDown = function (array){
   let listHolder = document.createElement("ul");
 
   menu.classList.add("menu");
-menu.appendChild(listHolder)
+  menu.appendChild(listHolder)
   array.forEach(element => {
     let listItem = document.createElement("li")
     listItem.textContent = element;
@@ -80,13 +80,16 @@ menu.appendChild(listHolder)
 
  menuButton = document.querySelector(".menu-button")
  menuButton.addEventListener("click",(e)=>{
-   menu.classList.toggle("menu--open")
+    menu.classList.toggle("menu--open")
+    
+    console.log(menuButton)
  });
 
  return menu;
 }
 console.log(dropDown(menuItems))
 menuDrop = document.querySelector(".menu-button")
-menuDrop.appendChild(dropDown(menuItems));
+header = document.querySelector(".header")
+header.appendChild(dropDown(menuItems));
 
-  console.log(menuDrop)
+  
