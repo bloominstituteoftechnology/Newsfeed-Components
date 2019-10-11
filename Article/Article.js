@@ -169,7 +169,7 @@ function articlePara3(thirdParagraph){
 function expandButton(){
   const expandButton = document.createElement('span');
   expandButton.classList.add('expandButton');
-
+  expandButton.textContent = "expand";
   return expandButton;
 }
 
