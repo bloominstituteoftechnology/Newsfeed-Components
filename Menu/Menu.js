@@ -47,28 +47,14 @@ function menuCreator(menuItems) {
 
 
    menuButton.addEventListener('click', () => {
-
-    //console.log(div);
-  
-    //alert("The function successfully manages to get in here");
     div.classList.toggle('menu--open');
-    //div.classList.toggle('menu');
-    console.log(div);
   
   });
-  // items = ['li1', 'li2', 'li3', 'li4', 'li5', 'li6'];
 
    console.log(menuButton);
 
    return div;
 }
-
-// i = 0;
-
-// menuItems.forEach(element => {
-
-   
-//});
 
 header.appendChild(menuCreator(menuItems));
 
