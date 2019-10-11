@@ -13,6 +13,8 @@ const linktoMenu = document.querySelector('.menu');
 
 const menuButton = document.querySelector('.menu-button');
 
+const header = document.querySelector('.header');
+
 function menuCreator(menuItems) {
 
   const div = document.createElement('div');
@@ -43,20 +45,32 @@ function menuCreator(menuItems) {
    ulCreate.appendChild(li5);
    ulCreate.appendChild(li6);
 
+
    menuButton.addEventListener('click', () => {
 
+    //console.log(div);
+  
+    //alert("The function successfully manages to get in here");
+    div.classList.toggle('menu--open');
+    //div.classList.toggle('menu');
     console.log(div);
   
-    div.classList.toggle('menu--open');
-  
   });
+  // items = ['li1', 'li2', 'li3', 'li4', 'li5', 'li6'];
 
    console.log(menuButton);
 
-   return menuButton;
+   return div;
 }
 
-menuCreator(menuItems);
+// i = 0;
+
+// menuItems.forEach(element => {
+
+   
+//});
+
+header.appendChild(menuCreator(menuItems));
 
 /* 
 
