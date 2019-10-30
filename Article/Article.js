@@ -86,13 +86,6 @@ const data = [
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   },
-  {
-    title: 'Hot Dad Developers',
-    date: 'Whenever you want',
-    firstParagraph: "John: I'm a big rad dad looking for some love",
-    secondParagraph: "Bill: oohweeee",
-    thirdParagraph: "Shaquan: date me",
-  }
 ];
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
@@ -121,6 +114,13 @@ const data = [
 //   <span class='expandButton'></span>
 // </div>
 const article = document.querySelector('.articles');
+data.push({
+  title: 'Hot Dad Developers',
+  date: 'Whenever you want',
+  firstParagraph: "John: I'm a big rad dad looking for some love",
+  secondParagraph: "Bill: oohweeee",
+  thirdParagraph: "Shaquan: date me",
+});
 data.forEach(data => {
   article.appendChild(createArticle(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
 })
