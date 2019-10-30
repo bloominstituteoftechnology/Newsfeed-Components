@@ -113,8 +113,8 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
-function article(title, data, firstParagraph, secondParagraph, thirdParagraph){
-  const articleDiv = document.createElement('div');
+function newsFeedCreator(title, data, firstParagraph, secondParagraph, thirdParagraph){
+  const article = document.createElement('div');
   const articleTitle = document.createElement('h2');
   const articleData = document.createElement('p')
   const articleP1 = document.createElement('p');
@@ -124,15 +124,17 @@ function article(title, data, firstParagraph, secondParagraph, thirdParagraph){
   const articleOpen = document.createElement('button');
   const articleClose = document.createElement('button');
 
-  articleDiv.appendChild(articleTitle);
-  articleDiv.appendChild(articleData);
-  articleDiv.appendChild(articleP1);
-  articleDiv.appendChild(articleP2);
-  articleDiv.appendChild(articleP3);
-  articleDiv.appendChild(articleSpan);
-  articleDiv.classList.add('article');
+  article.appendChild(articleTitle);
+  article.appendChild(articleData);
+  article.appendChild(articleP1);
+  article.appendChild(articleP2);
+  article.appendChild(articleP3);
+  article.appendChild(articleSpan);
+
+  article.classList.add('article');
   articleData.classList.add('data');
   articleSpan.classList.add('expandButton');
+  
   articleOpen.textContent = '\u25bc';
   articleClose.textContent = '\u25b2';
   articleTitle.textContent = title;
@@ -141,14 +143,20 @@ function article(title, data, firstParagraph, secondParagraph, thirdParagraph){
   articleP2.textContent = secondParagraph;
   articleP3.textContent = thirdParagraph;
 
-  const viewArticle = document.querySelector('.article');
 
-  data.forEach(elements => {
-    viewArticle.appendChild(article(elements.title, elements.data, elements.firstParagraph, elements.secondParagraph, elements.thirdParagraph))
+  articleOpen.addEventListener('click', ()=> {
+    article.classList.toggle('article-open')
   })
 
+
   
 
   
-  return articleDiv;
+  return article;
 }
+
+const viewArticle = document.querySelector('.articles');
+
+data.forEach((elements) => {
+  viewArticle.appendChild(newsFeedCreator(elements.title, elements.data, elements.firstParagraph, elements.secondParagraph, elements.thirdParagraph))
+})
