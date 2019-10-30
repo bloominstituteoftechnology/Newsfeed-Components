@@ -130,10 +130,12 @@ function newsFeedCreator(title, data, firstParagraph, secondParagraph, thirdPara
   article.appendChild(articleP2);
   article.appendChild(articleP3);
   article.appendChild(articleSpan);
+  articleSpan.appendChild(articleOpen);
 
   article.classList.add('article');
   articleData.classList.add('data');
   articleSpan.classList.add('expandButton');
+
   
   articleOpen.textContent = '\u25bc';
   articleClose.textContent = '\u25b2';
@@ -144,8 +146,9 @@ function newsFeedCreator(title, data, firstParagraph, secondParagraph, thirdPara
   articleP3.textContent = thirdParagraph;
 
 
-  articleOpen.addEventListener('click', ()=> {
-    article.classList.toggle('article-open')
+  articleSpan.addEventListener('click', ()=> {
+    article.classList.toggle('article-open');
+    article.classList.toggle('close');
   })
 
 
