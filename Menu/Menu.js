@@ -44,17 +44,19 @@ function menu(array){
     list.appendChild(menuListItems);
   });
 
-  menuList.classList.add("menu")
+  menuList.classList.add("menu");
   const menuButton = document.querySelector(".menu-button");
   menuButton.addEventListener("click", () => {
-    menu.classList.toggle("menu--open");
+    menuList.classList.toggle("menu--open");
   });
-
+  menuList.appendChild(list);
   return menuList
 }
 
 const header = document.querySelector(".header");
 header.appendChild(menu(menuItems));
+
+
 
 
 
