@@ -121,9 +121,7 @@ data.push({
   secondParagraph: "Bill: oohweeee",
   thirdParagraph: "Shaquan: date me",
 });
-data.forEach(data => {
-  article.appendChild(createArticle(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
-})
+
 function createArticle(title, date, firstParagraph, secondParagraph, thirdParagraph,) {
    // define new elements
     const article = document.createElement('div');
@@ -133,8 +131,6 @@ function createArticle(title, date, firstParagraph, secondParagraph, thirdParagr
     const articleP2 = document.createElement('p');
     const articleP3 = document.createElement('p');
     const expandButton = document.createElement('span');
-
-  
   // Setup structure of elements
   article.appendChild(articleTitle);
   article.appendChild(articleDate);
@@ -142,16 +138,10 @@ function createArticle(title, date, firstParagraph, secondParagraph, thirdParagr
   article.appendChild(articleP2);
   article.appendChild(articleP3);
   article.appendChild(expandButton);
-
-  
-  
   // set class names
  article.classList.add('article');
  articleDate.classList.add('date');
  expandButton.classList.add('expandButton');
-
-  
-
   // set text content
   articleTitle.textContent = title;
   articleDate.textContent = date;
@@ -167,3 +157,6 @@ function createArticle(title, date, firstParagraph, secondParagraph, thirdParagr
   
   return article
 }
+data.forEach(data => {
+  article.appendChild(createArticle(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
+})
