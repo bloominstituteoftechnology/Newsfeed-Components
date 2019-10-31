@@ -32,7 +32,7 @@ const data = [
         knut phoenix feather other minister Azkaban. Hedwig Daily Prophet treacle tart full-moon Ollivanders You-Know-Who cursed.
         Fawkes maze raw-steak Voldemort Goblin Wars snitch Forbidden forest grindylows wool socks`,
 
-    secondParagraph: `Boggarts lavender robes, Hermione Granger Fantastic Beasts and Where to Find Them. Bee in your bonnet Hand of Glory elder
+    secondParagraph: `Boggarts lasvender robes, Hermione Granger Fantastic Beasts and Where to Find Them. Bee in your bonnet Hand of Glory elder
         wand, spectacles House Cup Bertie Bott’s Every Flavor Beans Impedimenta. Stunning spells tap-dancing spider Slytherin’s Heir
         mewing kittens Remus Lupin. Palominos scarlet train black robes, Metamorphimagus Niffler dead easy second bedroom. Padma
         and Parvati Sorting Hat Minister of Magic blue turban remember my last.`,
@@ -99,16 +99,81 @@ const data = [
     <span class='expandButton'></span>
   </div>
 
+  
   Hint: You will need to use createElement more than once here!
 
   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
 
   Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
-
   Step 3: return the entire component.
-
   Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
-
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+const myArticles = document.querySelector('.articles');
+
+
+//loop through data and create articles with title, date and content 
+data.forEach(info => {
+  
+  myArticles.appendChild(createArticle(info.title, info.date, info.firstParagraph, info.secondParagraph, info.thirdParagraph))
+});
+
+
+
+//define function component
+function createArticle(title, date, firstParagraph, secondParagraph, thirdParagraph) {
+
+  //define new elements
+  const menu = document.createElement('div');
+  const myTitle = document.createElement('h2');
+  const myDate = document.createElement('p');
+  const myPOne = document.createElement('p');
+  const myPTwo = document.createElement('p');
+  const myThree = document.createElement('p');
+  const btnSpan = document.createElement('span');
+  
+
+
+
+  //setup structure of elements
+  menu.appendChild(myTitle);
+  menu.appendChild(myDate);
+  menu.appendChild(myPOne);
+  menu.appendChild(myPTwo);
+  menu.appendChild(myThree);
+  menu.appendChild(btnSpan);
+  
+
+
+
+  //set class names
+  menu.classList.add("article");
+  myDate.classList.add("date");
+  myPOne.classList.add("p");
+  myPTwo.classList.add("p");
+  myThree.classList.add("p");
+  btnSpan.classList.add('expandButton');
+  
+
+
+  //set text content
+  myTitle.textContent = title;
+  myDate.textContent = date;
+  myPOne.textContent = firstParagraph;
+  myPTwo.textContent = secondParagraph;
+  myThree.textContent = thirdParagraph;
+  btnSpan.textContent = 'Click me if you dare!';
+ 
+
+  //events
+  btnSpan.addEventListener("click", () => {
+    menu.classList.toggle("article-open");
+  
+
+  })
+
+
+  return menu;
+}
