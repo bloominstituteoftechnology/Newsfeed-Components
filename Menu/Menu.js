@@ -42,6 +42,7 @@ function menu(array){
     const menuListItems = document.createElement('li');
     menuListItems.textContent = item;
     list.appendChild(menuListItems);
+    menuListItems.classList.add("menu-ul-li")
   });
 
   menuList.classList.add("menu");
