@@ -111,4 +111,67 @@ const data = [
 
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
-*/
+
+
+<div class = "article">
+  <h2>{data[0].title}</h2>
+  <p class = "date">{data[0].data}</p>
+  <h2>{data[1].title}</h2>
+  <p class = "date">{data[1].data}</p>
+  <h2>{data[2].title}</h2>
+  <p class = "date">{data[2].data}</p>
+  <span class = "expandButton"></span>
+</div>
+ */
+
+function articleBuilder(articleData) {
+  const article = document.createElement("div");
+  const title = document.createElement("h2");
+  const date = document.createElement("p");
+  const paragraph1 = document.createElement("p");
+  const paragraph2 = document.createElement("p");
+  const paragraph3 = document.createElement("p");
+  const expandButton = document.createElement("span");
+
+  article.classList.add("article");
+  date.classList.add("date");
+  expandButton.classList.add("expandButton");
+
+  article.appendChild(title);
+  article.appendChild(date);
+  article.appendChild(paragraph1);
+  article.appendChild(paragraph2);
+  article.appendChild(paragraph3);
+  article.appendChild(expandButton);
+
+  title.textContent = articleData.title;
+  date.textContent = articleData.date;
+  paragraph1.textContent = articleData.firstParagraph;
+  paragraph2.textContent = articleData.secondParagraph;
+  paragraph3.textContent = articleData.thirdParagraph;
+  expandButton.textContent = "View";
+
+  const handleToggle = () => article.classList.toggle("article-open");
+
+  expandButton.onclick = () => handleToggle();
+
+  expandButton.addEventListener("keyup", event => {
+//BROKEN FIX IT!!
+    if (event.keyCode === 13 || event.keyCode === 32) {
+      handleToggle();
+    }
+  });
+
+  return article;
+}
+
+let articles = data.map(article => {
+  return articleBuilder(article);
+});
+
+const articleDiv = document.querySelector(".articles");
+
+articleDiv.appendChild(articles[0]);
+articleDiv.appendChild(articles[1]);
+articleDiv.appendChild(articles[2]);
+articleDiv.appendChild(articles[3]);
