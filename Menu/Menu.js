@@ -34,7 +34,7 @@ let menuItems = [
   
 */
 
-function createMenu(menuItems) {
+/*function createMenu(menuItems) {
   const newMenu = document.createElement("div")
 
   const menuList = document.createElement("ul")
@@ -49,10 +49,6 @@ function createMenu(menuItems) {
 
   newMenu.classList.add("menu");
 
-  /* let clickHandler = event => {
-    event.target.classList.toggle("menu-open");
-  }; */
-
   menuHidden.addEventListener("click", () => {
     newMenu.classList.toggle("menu--open");
   });
@@ -63,4 +59,25 @@ function createMenu(menuItems) {
 const header = document.querySelector(".header");
 
 header.appendChild(createMenu(menuItems));
+*/
 
+const menuButton = document.querySelector('.menu-button');
+const header = document.querySelector('.header');
+function menuCreate(arr) {
+  // This will define new elements:
+  const menuA = document.createElement('div');
+  const ul = document.createElement('ul');
+  header.appendChild(menuA);
+  menuA.appendChild(ul);
+  menuA.classList.add('menu');
+  arr.forEach(x => {
+    const item = document.createElement('li');
+    item.textContent = x;
+    ul.appendChild(item);
+  });
+  menuButton.addEventListener('click', () => {
+    let menu = document.querySelector('.menu');
+    menu.classList.toggle("menu--open");
+  });
+}
+menuCreate(menuItems);
