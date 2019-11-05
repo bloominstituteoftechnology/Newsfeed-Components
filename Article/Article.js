@@ -112,3 +112,66 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+
+// {/* <div class="article">
+//     <h2>{title of the article}</h2>
+//     <p class="date">{date of the article}</p>
+
+//     {three separate paragraph elements}
+
+//     <span class='expandButton'></span>
+//   </div> */}
+
+
+const articleMaker =(dataInfo)=>{
+
+  // Creating Elements
+ const articleDiv=document.createElement('div');
+ const articleTitle=document.createElement('h2');
+ const articleDate=document.createElement('p');
+ const articleP1=document.createElement('p');
+ const articleP2=document.createElement('p');
+ const articleP3=document.createElement('p');
+ const articleExpBtn=document.createElement('span');
+
+ //adding classes to the elements 
+
+ articleDiv.classList.add('article');
+ articleDate.classList.add('date');
+ articleExpBtn.classList.add('expandButton');
+
+
+ //appending the elements 
+ articleDiv.appendChild(articleTitle);
+ articleDiv.appendChild(articleDate);
+ articleDiv.appendChild(articleP1);
+ articleDiv.appendChild(articleP2);
+ articleDiv.appendChild(articleP3);
+ articleDiv.appendChild(articleExpBtn);
+
+
+
+ //adding content 
+
+ articleTitle.textContent=dataInfo.title;
+ articleDate.textContent=dataInfo.date;
+ articleP1.textContent=dataInfo.p1;
+ articleP2.textContent=dataInfo.p2;
+ articleP3.textContent=dataInfo.p3;
+
+
+
+
+
+ return articleDiv;
+
+
+}
+
+
+const articles = document.querySelector('.articles');
+data.forEach(e=>{
+  articles.appendChild(articleMaker(e))
+})
+

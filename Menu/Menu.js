@@ -31,5 +31,12 @@ let menuItems = [
   Step 5: return the menu component.
 
   Step 6: add the menu component to the DOM.
+
+  
   
 */
+
+const menuMaker=(menuitems)=>{
+  const menu=document.create
+
+}
