@@ -37,6 +37,11 @@
 }
 .articles {
   margin-top: 95px;
+  height: 100%;
+  top: 0;
+  right: 0;
+  object-fit: cover;
+  object-position: top;
 }
 .article {
   margin: 20px 10%;
@@ -73,8 +78,23 @@
   transform: translate(-50%);
   background-color: white;
 }
+.article .closeButton {
+  position: relative;
+  top: 10px;
+  left: 90%;
+  font-size: 12px;
+  color: white;
+  cursor: pointer;
+  background: green;
+  border: 1px solid gray;
+  padding: 5px 10px;
+  border-radius: 8px;
+}
 .article-open {
   height: auto;
+}
+.close-article {
+  display: none;
 }
 .menu-button {
   position: absolute;
@@ -86,10 +106,10 @@
   position: fixed;
   top: 75px;
   left: 0;
-  width: 350px;
-  height: 100vh;
+  width: 250px;
+  height: 100%;
   /* This give the height 100% of the screen or, '100% of View Height' */
-  background-color: #81C784;
+  background-color: #8dbf8d;
   border: 1px solid #004D40;
   border-left: none;
   border-bottom: none;

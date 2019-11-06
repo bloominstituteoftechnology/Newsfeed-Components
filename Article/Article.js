@@ -106,9 +106,12 @@ const data = [
    or 5 separate arguments mapping to each piece of the data object above.
 
  */
-
+/*
+  Step 5: Add a new article to the array. Make sure it is in the same 
+  format as the others. Refresh the page to see the new article.
+*/
 data.push({
-  title: '"New article!"',
+  title: '"Lucas ipsum dolor!"',
   date: 'Jan 5th, 2018',
   firstParagraph: `Lucas ipsum dolor sit amet ben twi'lek padmé darth darth darth moff hutt organa twi'lek. Ben amidala secura skywalker lando
       moff wicket tatooine luke.Solo wampa wampa calrissian yoda moff.Darth grievous darth gonk darth hutt.Darth baba skywalker
@@ -127,14 +130,35 @@ data.push({
       naboo ackbar tatooine. Hutt lars padmé darth. Maul solo darth darth jabba qui-gon chewbacca darth maul. Moff baba wicket
       han. C-3po antilles moff qui-gon ahsoka aayla dooku amidala. Palpatine droid amidala droid k-3po twi'lek padmé wookiee. Leia
       moff calamari mon obi-wan. Solo grievous lando coruscant. Jinn darth palpatine obi-wan mon.`
-});
+},
+ {
+  title: '"What is Lorem Ipsum?"',
+  date: 'Jan 27th, 2018',
+  firstParagraph: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+   standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
+    book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It
+     was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop 
+     publishing software like Aldus PageMaker including versions of Lorem Ipsum`,
+
+  secondParagraph: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed finibus odio. Vivamus laoreet nulla nec ex 
+  ultricies, ac laoreet nunc vestibulum. Morbi neque diam, lacinia quis porttitor quis, posuere at dolor. Donec scelerisque at tortor 
+  eget sodales. Sed a augue facilisis, maximus lorem non, tristique orci. Duis luctus aliquam quam nec varius. Maecenas ornare nec 
+  tortor quis consectetur. Morbi elementum massa justo, vitae volutpat nibh blandit non.`,
+
+  thirdParagraph: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed finibus odio. Vivamus laoreet nulla nec ex 
+  ultricies, ac laoreet nunc vestibulum. Morbi neque diam, lacinia quis porttitor quis, posuere at dolor. Donec scelerisque at tortor 
+  eget sodales. Sed a augue facilisis, maximus lorem non, tristique orci. Duis luctus aliquam quam nec varius. Maecenas ornare nec 
+  tortor quis consectetur. Morbi elementum massa justo, vitae volutpat nibh blandit non.`
+}
+);
 console.log(data);
+
 function firstComponent (componentInfo){
 
   // create all elements
   const component1 = document.createElement('div');
   const title = document.createElement('h2');
-  const date = document. createElement('p');
+  const date = document.createElement('p');
   const paragraph1 = document.createElement('p');
   const paragraph2 = document.createElement('p');
   const paragraph3 = document.createElement('p');
@@ -147,6 +171,22 @@ function firstComponent (componentInfo){
   component1.appendChild(paragraph2);
   component1.appendChild(paragraph3);
   component1.appendChild(componentButton);
+
+//Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
+  componentButton.addEventListener('click', e => {
+    if (component1.classList.contains('article-open')){
+      component1.classList.remove('article-open');
+    componentButton.textContent = "Read Article";
+  }
+  else {
+    component1.classList.add('article-open');
+    componentButton.textContent = "Close Article";
+
+    close.addEventListener('click', e=> {
+      component1.classList.toggle('close-article')
+    })
+  }
+  })
 
   // set the content
   title.textContent = componentInfo.title;
@@ -161,6 +201,11 @@ function firstComponent (componentInfo){
   date.classList.add('date');
   componentButton.classList.add('expandButton');
 
+
+  const close = component1.appendChild(document.createElement('span'))
+  close.textContent='Remove'
+  close.classList.add('closeButton')
+  
   //Step 3: return the entire component.
 
   return component1;
@@ -173,18 +218,12 @@ data.forEach(info => {
   articlesOnPge.appendChild(firstComponent(info));
 })
  
-//Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
+//click anywhere on the component and it will expand.
+// const allButtons = document.querySelectorAll('.article');
+// allButtons.forEach((event)=>{
+//   event.addEventListener('click',(e)=>{
+//     event.classList.toggle('article-open')
+//   })
+// });
 
-const allButtons = document.querySelectorAll('.article');
-
-allButtons.forEach((event)=>{
-  event.addEventListener('click',(e)=>{
-    event.classList.toggle('article-open')
-  })
-});
-
-/*
-  Step 5: Add a new article to the array. Make sure it is in the same 
-  format as the others. Refresh the page to see the new article.
-*/
 
