@@ -42,25 +42,41 @@ let menuItems = [
 */
 
 
-//  Step 1
 
+//  Step 1
 function createMenu(menuItems) {
   // create the menu element
   const menu = document.createElement('div');
   // add the menu class ton the div
   menu.classList.add('menu');
-}
 
 
 //  Step 2 Create Ul element
 const list = document.createElement('ul');
 
+
 // add each list item to an li element and append/prepend to the UL
 menuItems.forEach(item => {
   const li = document.createElement('li');
-  list.textContent = item;
+  li.textContent = item;
   list.appendChild(li);
 });
 
+
 // Step 3 add UL to the menu div
 menu.appendChild(list);
+
+
+// Step 4  add event listener to menu button to toggle the "menu--open" class. 
+const menuButton = document.querySelector('.menu-button');
+menuButton.addEventListener('click', e => {
+  menu.classList.toggle('menu--open');
+});
+
+
+
+return menu;
+}
+
+const header = document.querySelector('.header');
+header.appendChild(createMenu(menuItems));
