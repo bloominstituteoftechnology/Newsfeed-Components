@@ -92,6 +92,13 @@ const data = [
     firstParagraph: 'paragraph 1',
     secondParagraph: 'paragraph 2',
     thirdParagraph: 'paragraph 3',
+  },
+  {
+    title: 'Another big win for Oceania!',
+    date: '1984',
+    firstParagraph: 'Big Brother proves once again to be unstoppable',
+    secondParagraph: 'blah blah blah',
+    thirdParagraph: 'etc etc etc etc etc',
   }
 ];
 
@@ -121,7 +128,6 @@ const data = [
 */
 
 function createArticle(data) {
-  console.log("this is running");
   let article = document.createElement("div");
   let h2 = document.createElement("h2");
   let date = document.createElement("p");
