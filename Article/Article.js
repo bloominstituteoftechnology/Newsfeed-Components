@@ -87,6 +87,44 @@ const data = [
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
 ];
+function articlePanel(data){
+  //create the elements
+  let article=document.createElement('div');
+  let date=document.createElement('p');
+  let title= document.createElement('h2');
+  let firstParagraph=document.createElement('p');
+  let secondParagraph=document.createElement('p');
+  let thirdParagraph=document.createElement('p');
+  let span=document.createElement('span');
+
+  //set classes 
+article.classList.add('article');
+date.classList.add('date');
+span.classList.add('expandButton');
+
+//set content
+  title.textContent = data.title;
+  date.textContent = data.date;
+  firstParagraph.textContent = data.firstParagraph;
+  secondParagraph.textContent = data.secondParagraph;
+  thirdParagraph.textContent = data.thirdParagraph;
+  span.textContent = "Click Here"
+// event.. This event listener should toggle the class 'article-open' on the 'article' div.
+span.addEventListener('click', event => {
+  article.classList.toggle('article-open')
+});
+
+  article.appendChild(title);
+  article.appendChild(date);
+  article.appendChild(firstParagraph);
+  article.appendChild(secondParagraph);
+  article.appendChild(thirdParagraph);
+  article.appendChild(span);
+//return statment
+return article;
+
+
+}
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
@@ -112,3 +150,17 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+
+let newArticles = data.map((arrayItem) => {
+  let newArticle = articlePanel(arrayItem);
+
+  return newArticle;
+})
+
+let articles = document.querySelector('.articles');
+
+data.forEach(component => {
+  let newPanel = articlePanel(component);
+  articles.append(newPanel);
+})
