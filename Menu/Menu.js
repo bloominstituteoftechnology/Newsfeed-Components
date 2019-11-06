@@ -52,3 +52,13 @@ function createMenu(menuItems) {
 }
 
 
+//  Step 2 
+// Create Ul element
+const list = document.createElement('ul');
+
+// add each list item to an li element and append/prepend to the UL
+menuItems.forEach(item => {
+  const li = document.createElement('li');
+  list.textContent = item;
+  list.appendChild(li);
+});
