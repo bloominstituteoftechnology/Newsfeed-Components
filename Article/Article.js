@@ -85,6 +85,13 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Website pwned, watch me rewrite everything hahaha',
+    date: 'ALL OF TIME',
+    firstParagraph: 'paragraph 1',
+    secondParagraph: 'paragraph 2',
+    thirdParagraph: 'paragraph 3',
   }
 ];
 
@@ -112,3 +119,35 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+function createArticle(data) {
+  console.log("this is running");
+  let article = document.createElement("div");
+  let h2 = document.createElement("h2");
+  let date = document.createElement("p");
+  let p1 = document.createElement("p");
+  let p2 = document.createElement("p");
+  let p3 = document.createElement("p");
+  let span = document.createElement("span");
+  
+  article.classList.add("article");
+  date.classList.add("date");
+  span.classList.add("expandButton");
+
+  h2.textContent = data.title;
+  date.textContent = data.date;
+  p1.textContent = data.firstParagraph;
+  p2.textContent = data.secondParagraph;
+  p3.textContent = data.thirdParagraph;
+  span.textContent = "Open/Close";
+  span.addEventListener("click", ev => {
+    article.classList.toggle("article-open");
+  })
+
+  article.append(h2, date, p1, p2, p3, span);
+
+  return article;
+}
+
+let articles = document.querySelector(".articles");
+data.forEach(d => articles.append(createArticle(d)));
