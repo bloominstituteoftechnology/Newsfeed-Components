@@ -156,11 +156,15 @@ const articleMaker =(dataInfo)=>{
 
  articleTitle.textContent=dataInfo.title;
  articleDate.textContent=dataInfo.date;
- articleP1.textContent=dataInfo.p1;
- articleP2.textContent=dataInfo.p2;
- articleP3.textContent=dataInfo.p3;
+ articleP1.textContent=dataInfo.firstParagraph;
+ articleP2.textContent=dataInfo.secondParagraph;
+ articleP3.textContent=dataInfo.thirdParagraph;
+ articleExpBtn.textContent='\u25bc';
 
-
+//Adding an event listener 
+articleExpBtn.addEventListener('click',()=>{
+articleDiv.classList.toggle("article-open");
+})
 
 
 
@@ -174,4 +178,5 @@ const articles = document.querySelector('.articles');
 data.forEach(e=>{
   articles.appendChild(articleMaker(e))
 })
+
 
