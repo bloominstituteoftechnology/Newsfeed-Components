@@ -33,8 +33,45 @@ let menuItems = [
   Step 6: add the menu component to the DOM.
   
 */
-const header = document.querySelector('div.header');
-const menu = document.querySelector('img.menu-button');
+
+// function menuCreator(info) {
+//   const menuI = document.createElement('div');
+//   const list = document.createElement('ul');
+//   const li1 = document.createElement('li');
+//   const li2 = document.createElement('li');
+//   const li3 = document.createElement('li');
+//   const li4 = document.createElement('li');
+//   const li5 = document.createElement('li');
+//   const li6 = document.createElement('li');
+
+//   menuI.append(list);
+//   list.append(li1);
+//   list.append(li2);
+//   list.append(li3);
+//   list.append(li4);
+//   list.append(li5);
+//   list.append(li6);
+
+//   list.textContent = info;
+//   li1.textContent = info;
+//   li2.textContent = info;
+//   li3.textContent = info;
+//   li4.textContent = info;
+//   li5.textContent = info;
+//   li6.textContent = info;
+
+//   menuI.classList.add('.menu');
+//   list.classList.add('.ul');
+
+//   menuI.addEventListener('click', e => menuI.classList.toggle('menu-open'));
+//   return menuI;
+// }
+// const header = document.querySelector('.header');
+// const newMenu = document.querySelector('.menu-button');
+
+// menuItems.forEach(element => {
+//   newMenu.append(menuCreator(element));
+// });
 
 function creatMenu() {
   // creat elements
@@ -57,4 +94,6 @@ function creatMenu() {
   );
   return menuList;
 }
+const header = document.querySelector('.header');
+const menu = document.querySelector('.menu-button');
 header.appendChild(creatMenu());
