@@ -88,6 +88,46 @@ const data = [
   }
 ];
 
+function ArticleCreator(content) {
+  const article = document.createElement('div');
+  article.classList.add('article');
+
+  const h2 = document.createElement('h2');
+  h2.textContent = `${content.title}`;
+  article.appendChild(h2);
+
+  const paragraph = document.createElement('p');
+  paragraph.classList.add('date');
+  paragraph.textContent = `${content.date}`;
+  article.appendChild(paragraph);
+
+  const p1 = document.createElement('p');
+  p1.textContent = `${content.firstParagraph}`;
+  article.appendChild(p1);
+
+  const p2 = document.createElement('p');
+  p2.textContent = `${content.secondParagraph}`;
+  article.appendChild(p2);
+
+  const p3 = document.createElement('p');
+  p3.textContent = `${content.thirdParagraph}`;
+  article.appendChild(p3);
+
+  const span = document.createElement('span');
+  span.classList.add('expandButton');
+  span.textContent = 'Expand';
+  span.addEventListener('click', () => {
+    span.classList.toggle('article-open');
+  })
+  article.appendChild(span);
+
+  return article;
+}
+
+data.map(article => {
+  document.querySelector('.articles').appendChild(ArticleCreator(article));
+})
+
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
   <div class="article">
