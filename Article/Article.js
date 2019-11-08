@@ -117,7 +117,7 @@ function ArticleCreator(content) {
   span.classList.add('expandButton');
   span.textContent = 'Expand';
   span.addEventListener('click', () => {
-    span.classList.toggle('article-open');
+    article.classList.toggle('article-open');
   })
   article.appendChild(span);
 
