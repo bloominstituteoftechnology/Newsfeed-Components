@@ -84,6 +84,23 @@ const data = [{
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Announcing New Mental Health Benefits for Lambda Staff and Students',
+    date: 'Oct 21st, 2019',
+    firstParagraph: `Today Lambda School is announcing a new partnership with Modern Health to give our staff and students access 
+    to resources that help support personal well-being and mental health, including personalized assessment, evidence-based digital 
+    healthcare, and access to licensed coaches and therapists. This partnership will assist our students and staff with eight areas 
+    of wellness: Work Performance, Stress & Anxiety, Healthy Lifestyles, Financial Wellbeing, Belonging and Inclusion, Life Challenges,
+     Mindfulness and Meditation, and Relationships.`,
+
+    secondParagraph: `Every Lambda student and employee will now have access to the Modern Health app, where they can schedule up to 6 virtual 
+    visits a year with a professional coach of their choice, as well as up to 6 visits a year with a licensed therapist, at no cost. The new 
+    benefit plan also includes unlimited texting with a professional coach and full access to a vast library of digital courses for building 
+    resilience and tools for managing stress, as well as crisis prevention services, if needed. `,
+
+    thirdParagraph: `We chose to partner with Modern Health because of the range of options it gives our students and team. Modern Health 
+    takes a personalized approach to mental wellbeing, has resources available on-demand, and includes high-touch engagement and support.`
   }
 ];
 
@@ -112,46 +129,61 @@ const data = [{
 
 */
 
-//  Step 1:  create component function
-function createArticle(subHeader, content, button) {
-  // references 
+function makeArticle(title, date, paragraphs) {
+  //create parent div for elements 
   const article = document.createElement('div');
-  const subHeader = document.createElement('h2');
-  const publishDate = document.createElement('p');
-  const content = [];
-  const button = document.createElement('span');
-
-  // class names 
   article.classList.add('article');
+
+  //create header / title element
+  const articleTitle = document.createElement('h2');
+  articleTitle.textContent = title;
+
+  //create publish date element 
+  const publishDate = document.createElement('p');
   publishDate.classList.add('date');
-  button.classList.addd('expandButton');
+  publishDate.textContent = date;
 
-  // add content
-  subHeader.textContent = title;
-  date.textContent = date;
-  content.forEach((section, i) => {
+  //create paragraph elements 
+  const content = [];
+  paragraphs.forEach((paragraph, i) => {
     content.push(document.createElement('p'));
-    content[i].textContent = section;
+    content[i].textContent = paragraph;
   });
-  button.textContent = "Read More";
 
+  //create article button 
+  const articleButton = document.createElement('span');
+  articleButton.classList.add('expandButton');
 
-  // Step 2:  add event listener to button that toggles the "article-open" class on the article div
-  button.addEventListener('click', e => {
+  articleButton.textContent = "Read More";
+
+  articleButton.addEventListener('click', e => {
     article.classList.toggle('article-open');
   })
 
-  // add elements to the DOM via appendChild
-  article.appendChild(subHeader);
+
+  //add element to the DOM via appendChild 
+  article.appendChild(articleTitle);
+
   article.appendChild(publishDate);
-  article.appendChild(content);
-  article.appendChild(button);
 
-  // Step 3:  return the component
-  return createArticle;
+  content.forEach(pElement => article.appendChild(pElement));
 
-  // Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
+  article.appendChild(articleButton);
 
-  // Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
-
+  //Return article component
+  return article;
 }
+
+
+//  add each component to the DOM as children of the 'articles' div
+const articleContainer = document.createDocumentFragment();
+
+const articles = document.querySelector('.articles');
+
+data.forEach(article => {
+  articleContainer.appendChild(
+    makeArticle(article.title, article.date, [article.firstParagraph, article.secondParagraph, article.thirdParagraph])
+  )
+});
+
+articles.appendChild(articleContainer);
