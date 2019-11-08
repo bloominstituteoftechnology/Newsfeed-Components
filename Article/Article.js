@@ -131,7 +131,7 @@ span.classList.add('expandButton');
   thirdParagraph.textContent = data.thirdParagraph;
   span.textContent = "Click Here"
 // event.. This event listener should toggle the class 'article-open' on the 'article' div.
-span.addEventListener('click', event => {
+span.addEventListener('dblclick', event => {
   article.classList.toggle('article-open')
 });
 
@@ -173,15 +173,16 @@ return article;
 */
 
 // STUDY!!!
-let newArticles = data.map((arrayItem) => {
-  let newArticle = articlePanel(arrayItem);
-
+let newArticles= data.map((arrayItems)=>
+{
+  let newArticle= articlePanel(arrayItems);
   return newArticle;
 })
-
+// assigning articles to articles 
 let articles = document.querySelector('.articles');
 
-data.forEach(component => {
-  let newPanel = articlePanel(component);
-  articles.append(newPanel);
-})
+data.forEach((component)=>
+{
+  let newPanel =articlePanel(component);
+  articles.appendChild(newPanel);
+});
