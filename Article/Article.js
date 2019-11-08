@@ -1,7 +1,6 @@
 /* This is the data we will be using to create our article components */
 /* Look over this data, then proceed to line 91*/
-const data = [
-  {
+const data = [{
     title: 'Lambda School Students: "We\'re the best!"',
     date: 'Nov 5th, 2018',
     firstParagraph: `Lucas ipsum dolor sit amet ben twi'lek padmé darth darth darth moff hutt organa twi'lek. Ben amidala secura skywalker lando
@@ -130,8 +129,7 @@ data.push({
       naboo ackbar tatooine. Hutt lars padmé darth. Maul solo darth darth jabba qui-gon chewbacca darth maul. Moff baba wicket
       han. C-3po antilles moff qui-gon ahsoka aayla dooku amidala. Palpatine droid amidala droid k-3po twi'lek padmé wookiee. Leia
       moff calamari mon obi-wan. Solo grievous lando coruscant. Jinn darth palpatine obi-wan mon.`
-},
- {
+}, {
   title: '"What is Lorem Ipsum?"',
   date: 'Jan 27th, 2018',
   firstParagraph: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
@@ -149,11 +147,10 @@ data.push({
   ultricies, ac laoreet nunc vestibulum. Morbi neque diam, lacinia quis porttitor quis, posuere at dolor. Donec scelerisque at tortor 
   eget sodales. Sed a augue facilisis, maximus lorem non, tristique orci. Duis luctus aliquam quam nec varius. Maecenas ornare nec 
   tortor quis consectetur. Morbi elementum massa justo, vitae volutpat nibh blandit non.`
-}
-);
+});
 console.log(data);
 
-function firstComponent (componentInfo){
+function firstComponent(componentInfo) {
 
   // create all elements
   const component1 = document.createElement('div');
@@ -172,40 +169,39 @@ function firstComponent (componentInfo){
   component1.appendChild(paragraph3);
   component1.appendChild(componentButton);
 
-//Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
+  //Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
   componentButton.addEventListener('click', e => {
-    if (component1.classList.contains('article-open')){
+    if (component1.classList.contains('article-open')) {
       component1.classList.remove('article-open');
-    componentButton.textContent = "Read Article";
-  }
-  else {
-    component1.classList.add('article-open');
-    componentButton.textContent = "Close Article";
+      componentButton.textContent = "Read Article";
+    } else {
+      component1.classList.add('article-open');
+      componentButton.textContent = "Close Article";
 
-    close.addEventListener('click', e=> {
-      component1.classList.toggle('close-article')
-    })
-  }
+      close.addEventListener('click', e => {
+        component1.classList.toggle('close-article')
+      })
+    }
   })
 
   // set the content
   title.textContent = componentInfo.title;
-  date.textContent=componentInfo.date;
-  componentButton.textContent= "Read Article";
-  paragraph1.textContent=componentInfo.firstParagraph;
-  paragraph2.textContent=componentInfo.secondParagraph;
-  paragraph3.textContent=componentInfo.thirdParagraph;
+  date.textContent = componentInfo.date;
+  componentButton.textContent = "Read Article";
+  paragraph1.textContent = componentInfo.firstParagraph;
+  paragraph2.textContent = componentInfo.secondParagraph;
+  paragraph3.textContent = componentInfo.thirdParagraph;
 
-   // apply styles
+  // apply styles
   component1.classList.add('article');
   date.classList.add('date');
   componentButton.classList.add('expandButton');
 
 
   const close = component1.appendChild(document.createElement('span'))
-  close.textContent='Remove'
+  close.textContent = 'Remove'
   close.classList.add('closeButton')
-  
+
   //Step 3: return the entire component.
 
   return component1;
@@ -217,7 +213,7 @@ const articlesOnPge = document.querySelector('.articles');
 data.forEach(info => {
   articlesOnPge.appendChild(firstComponent(info));
 })
- 
+
 //click anywhere on the component and it will expand.
 // const allButtons = document.querySelectorAll('.article');
 // allButtons.forEach((event)=>{
@@ -225,5 +221,3 @@ data.forEach(info => {
 //     event.classList.toggle('article-open')
 //   })
 // });
-
-

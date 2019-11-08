@@ -20,10 +20,10 @@ let menuItems = [
   </div> 
   */
 
- let header = document.querySelector('.header');
- let menuH1 = document.querySelector('.header h1');
- 
-  function menuBar (arr){
+let header = document.querySelector('.header');
+let menuH1 = document.querySelector('.header h1');
+
+function menuBar(arr) {
 
   // create all elements
   const menuBtn = document.querySelector('.menu-button');
@@ -32,53 +32,64 @@ let menuItems = [
   // create structure  
   menuDiv.appendChild(list)
 
-  arr.forEach(element =>{
+  arr.forEach(element => {
     const listItem = document.createElement('li');
     const item = document.createElement('a');
-    item.setAttribute('href','#');
-    item.textContent= element;
-    item.style.textDecoration='none';
-    item.style.fontSize='20px';
-    item.style.color='white';
-    list.style.padding='0', '0';
+    item.setAttribute('href', '#');
+    item.textContent = element;
+    item.style.textDecoration = 'none';
+    item.style.fontSize = '20px';
+    item.style.color = 'white';
+    list.style.padding = '0', '0';
     listItem.appendChild(item);
     list.appendChild(listItem);
- });
-  
-  menuDiv.classList.add('menu');
-  
+  });
 
-menuBtn.addEventListener ('click', event => {
+  menuDiv.classList.add('menu');
+
+
+  menuBtn.addEventListener('click', event => {
     event.stopPropagation();
     menuDiv.classList.toggle("menu--open");
   }, false);
-  
+
 
   return menuDiv;
 }
 
-header.insertBefore(menuBar(menuItems), menuH1); 
+header.insertBefore(menuBar(menuItems), menuH1);
 
 const menuBtn1 = document.querySelector('.menu-button');
 
- const tl = new TimelineLite({ paused : true, reversed : true });
+const tl = new TimelineLite({
+  paused: true,
+  reversed: true
+});
 
- tl.to(".articles", 1,{ width:"80%", x:200, ease:Power2.easeOut, })
- .to(".menu", 1.5, {width:"250px", ease:Power2.easeOut},)
+tl.to(".articles", 1, {
+    width: "80%",
+    x: 200,
+    ease: Power2.easeOut,
+  })
+  .to(".menu", 1.5, {
+    width: "250px",
+    ease: Power2.easeOut
+  }, )
 
- menuBtn1.addEventListener("click",(e)=>{
-   if(tl.isActive()){
-     e.preventDefault();
-     e.stopImmediatePropagation();
-     return false;
-   }
+menuBtn1.addEventListener("click", (e) => {
+  if (tl.isActive()) {
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    return false;
+  }
   toggleTween(tl);
-  
-   console.log('lhkhh')
- });
- function toggleTween(tween) {
-   tween.reversed() ? tween.play() : tween.reverse();
- }
+
+  console.log('lhkhh')
+});
+
+function toggleTween(tween) {
+  tween.reversed() ? tween.play() : tween.reverse();
+}
 /*
   Step 2: Inside this function, iterate over the array creating a list item <li> element for each item in the array. 
   Add those items to the <ul>
