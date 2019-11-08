@@ -43,7 +43,7 @@ let menuItems = [
 
 
 
-//  Step 1
+//  Step 1: Write a function that will create a menu component
 function createMenu(menuItems) {
   // create the menu element
   const menu = document.createElement('div');
@@ -73,10 +73,10 @@ menuButton.addEventListener('click', e => {
   menu.classList.toggle('menu--open');
 });
 
-
-
+// Step 5
 return menu;
 }
 
+// Steo 6 
 const header = document.querySelector('.header');
 header.appendChild(createMenu(menuItems));

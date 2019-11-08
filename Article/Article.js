@@ -1,7 +1,6 @@
 /* This is the data we will be using to create our article components */
 /* Look over this data, then proceed to line 91*/
-const data = [
-  {
+const data = [{
     title: 'Lambda School Students: "We\'re the best!"',
     date: 'Nov 5th, 2018',
     firstParagraph: `Lucas ipsum dolor sit amet ben twi'lek padmé darth darth darth moff hutt organa twi'lek. Ben amidala secura skywalker lando
@@ -112,3 +111,47 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+//  Step 1:  create component function
+function createArticle(subHeader, content, button) {
+  // references 
+  const article = document.createElement('div');
+  const subHeader = document.createElement('h2');
+  const publishDate = document.createElement('p');
+  const content = [];
+  const button = document.createElement('span');
+
+  // class names 
+  article.classList.add('article');
+  publishDate.classList.add('date');
+  button.classList.addd('expandButton');
+
+  // add content
+  subHeader.textContent = title;
+  date.textContent = date;
+  content.forEach((section, i) => {
+    content.push(document.createElement('p'));
+    content[i].textContent = section;
+  });
+  button.textContent = "Read More";
+
+
+  // Step 2:  add event listener to button that toggles the "article-open" class on the article div
+  button.addEventListener('click', e => {
+    article.classList.toggle('article-open');
+  })
+
+  // add elements to the DOM via appendChild
+  article.appendChild(subHeader);
+  article.appendChild(publishDate);
+  article.appendChild(content);
+  article.appendChild(button);
+
+  // Step 3:  return the component
+  return createArticle;
+
+  // Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
+
+  // Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
+
+}
