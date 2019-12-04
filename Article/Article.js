@@ -126,6 +126,12 @@ function createArticles(title,date,firstParagraph,secondParagraph,thirdParagraph
   return Article
 };
 
+const articles = document.querySelector(".articles");
+
+data.forEach(datas =>{
+  articles.appendChild(createArticles(datas.title, datas.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
+})
+
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
