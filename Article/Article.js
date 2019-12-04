@@ -1,7 +1,6 @@
 /* This is the data we will be using to create our article components */
 /* Look over this data, then proceed to line 91*/
-const data = [
-  {
+const data = [{
     title: 'Lambda School Students: "We\'re the best!"',
     date: 'Nov 5th, 2018',
     firstParagraph: `Lucas ipsum dolor sit amet ben twi'lek padmé darth darth darth moff hutt organa twi'lek. Ben amidala secura skywalker lando
@@ -85,6 +84,14 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: ' Writing articles on React.js',
+    date: 'Dec 3rd, 2019',
+    firstParagraph: 'React is used by alot of popular websites. Cum facer nobis mentitum an, facete eripuit inciderint ad nec. Nam munere gubergren ne, qui an erant discere, cum et omnesque vivendum. Quo commune nominati petentium ei, at molestie omittantur pri. Eu sonet laudem petentium duo, ex vim dicant dolorem.',
+
+    secondParagraph: 'Some of these websites include; Walmart and Amazon. Cum facer nobis mentitum an, facete eripuit inciderint ad nec. Nam munere gubergren ne, qui an erant discere, cum et omnesque vivendum. Quo commune nominati petentium ei, at molestie omittantur pri. Eu sonet laudem petentium duo, ex vim dicant dolorem.',
+    thirdParagraph: 'Single page react apps make these websites load faster. Cum facer nobis mentitum an, facete eripuit inciderint ad nec. Nam munere gubergren ne, qui an erant discere, cum et omnesque vivendum. Quo commune nominati petentium ei, at molestie omittantur pri. Eu sonet laudem petentium duo, ex vim dicant dolorem.',
   }
 ];
 
@@ -113,7 +120,7 @@ const data = [
 
 */
 
-function Article (entry) {
+function Article(entry) {
   let newDiv = document.createElement('div');
   let newH2 = document.createElement('h2');
   let newP = document.createElement('p');
@@ -141,8 +148,7 @@ function Article (entry) {
 
 const articleContainer = document.querySelector('.articles');
 
-  data.map((entry) => {
-    let article = Article(entry);
-    articleContainer.appendChild(article);
-  });
-
+data.map((entry) => {
+  let article = Article(entry);
+  articleContainer.appendChild(article);
+});
