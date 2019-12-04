@@ -91,20 +91,24 @@ const data = [
 
 
 //  Step 1: Create a function that creates a component. You will want your component to look like the template below: 
-function articleCreator = (data) {
-  const section = document.createElement('div');
-  const title = document.createElement('h2');
+function createArticle(data) {
+
+  // variables
+
+  // const entryPoint = document.querySelector('body');
+  const article = document.createElement('div');
+  const titles = document.createElement('h2');
   const date = document.createElement('p');
   const p1 = document.createElement('p');
   const p2 = document.createElement('p');
   const p3 = document.createElement('p');
-  const expandBtn = document.createElement('span');
+  const exButton = document.createElement('span');
 
-  // add classes
+  // classes
 
-  section.classList.add('article');
+  article.classList.add('article');
   date.classList.add('date');
-  expandBtn.classList.add('span')
+  exButton.classList.add('exButton');
 
   // append classes
 
@@ -113,44 +117,116 @@ function articleCreator = (data) {
   article.appendChild(p1);
   article.appendChild(p2);
   article.appendChild(p3);
-  article.appendChild(expandBtn);  
+  article.appendChild(exButton);
 
   // text content
 
-  title.textContent = data.title;
+  titles.textContent = data.title;
   date.textContent = data.date;
   p1.textContent = data.firstParagraph;
   p2.textContent = data.secondParagraph;
   p3.textContent = data.thirdParagraph;
-  expandBtn.textContent = 'expand';
+  exButton.textContent = 'Open'
 
-  // append child to parent
+  // event listener
 
-  section.append(title, date, p1, p2, p3, expandBtn);
-
-  // add event listener
-
-  expandBtn.addEventListener('click', () => {
-    article.classList.toggle('.article-open');
-    if(expandBtn.textContent !== 'Expand') {
-      expandBtn.textContent === 'Close'
+  exButton.addEventListener('click', () => {
+    article.classList.toggle('article-open');
+    if(exButton.textContent === 'Open') {
+      exButton.textContent = 'Open'      
     } else {
-      expandBtn.textContent === 'Expand'
-    };    
-  });
+      exButton.textContent = 'Close'
+    }
+  })
 
   return article;
 }
 
-const entryPoint = document.querySelector('.articles');
+data.forEach(function(data) {
+  let newArticle = createArticle(data);
+  entrypoint.append(newArticle)
+});
 
-data.map(function(currentValue) {
-  let newArticle = createArticle(currentValue);
-  entryPoint.appendChild(newArticle);
-})
+console.log()
+
+
+
+
+
 
   
-// console.log(div, h2, p, span)
+
+
+
+
+
+
+
+
+
+
+  // new variables
+
+  // const entryPoint = document.querySelector('body');
+  // const article = document.createElement('div');
+  // const titles = document.createElement('h2');
+  // const date = document.createElement('p');
+  // const p1 = document.createElement('p');
+  // const p2 = document.createElement('p');
+  // const p3 = document.createElement('p');
+  // const exButton = document.createElement('span');
+
+  // add classes
+
+  // article.classList.add('article');
+  // date.classList.add('date');
+  // exButton.classList.add('exButton');
+
+  // append classes
+
+  // article.appendChild(titles);
+  // article.appendChild(date);
+  // article.appendChild(p1);
+  // article.appendChild(p2);
+  // article.appendChild(p3);
+  // article.appendChild(exButton);  
+
+  // text content
+
+  // titles.textContent = data.title;
+  // date.textContent = data.date;
+  // p1.textContent = data.firstParagraph;
+  // p2.textContent = data.secondParagraph;
+  // p3.textContent = data.thirdParagraph;
+  // exButton.textContent = 'Expand'
+
+  // append child to parent
+
+  // section.append(title, date, p1, p2, p3, expandBtn);
+
+  // add event listener
+
+//   exButton.addEventListener('click', event => {
+//     section.classList.toggle('article-open');
+//     if(exButton.textContent === 'Expand') {
+//       exButton.textContent = 'Close'
+//     } else {
+//       exButton.textContent = 'Expand'
+//     };    
+//   });
+  
+// return article;
+// };
+
+
+
+// articleData.forEach(function(data) {
+//   let newArticle = articleCreator(data);
+//   entryPoint.append(newArticle);
+// });
+
+
+  
 
 
   // div classList.add('article');
