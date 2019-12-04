@@ -26,8 +26,8 @@ function createMenu (array) {
 
   Menu.classList.add("menu");
 
-  const Open= document.querySelector("menu-button")
-  Open.addEventListener ("click", () =>{
+  const Open= document.querySelector(".menu-button")
+  Open.addEventListener("click", () =>{
     Menu.classList.toggle("menu--open");
   })
   return Menu
