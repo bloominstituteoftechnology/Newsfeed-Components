@@ -90,6 +90,9 @@ const data = [
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
+
+
+
   <div class="article">
     <h2>{title of the article}</h2>
     <p class="date">{date of the article}</p>
@@ -112,3 +115,72 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+const articles = document.querySelector('.articles');
+
+data.map(d => {
+  console.log('uhhhhhhh', d.title);
+  articles.appendChild(
+    createArticle(
+      d.title,
+      d.date,
+      d.firstParagraph,
+      d.secondParagraph,
+      d.thirdParagraph
+    )
+  );
+});
+//select the articles div, parent
+//step 1
+//create elements
+function createArticle(
+  title,
+  date,
+  firstParagraph,
+  secondParagraph,
+  thirdParagraph
+) {
+  const article = document.createElement('div');
+  const titleText = document.createElement('h2');
+  const dateStamp = document.createElement('p');
+  const p1 = document.createElement('p');
+  const p2 = document.createElement('p');
+  const p3 = document.createElement('p');
+  const btn = document.createElement('span');
+  const btnClose = document.createElement('btn');
+
+  // Setup structure of elements
+  article.appendChild(titleText);
+  article.appendChild(dateStamp);
+  article.appendChild(p1);
+  article.appendChild(p2);
+  article.appendChild(p3);
+  article.appendChild(btn);
+  article.appendChild(btnClose);
+
+  //classes
+  article.classList.add('article');
+  dateStamp.classList.add('date');
+  btn.classList.add('expand-button', 'article-open');
+  btnClose.classList.add('close');
+
+  const expand = '\u25bc';
+  const close = '\u25b2';
+
+  //textContent
+  btn.textContent = expand;
+  btnClose.textContent = close;
+  titleText.textContent = title;
+  dateStamp.textContent = date;
+  p1.textContent = firstParagraph;
+  p2.textContent = secondParagraph;
+  p3.textContent = thirdParagraph;
+
+  //step 2
+  btn.addEventListener('click', e => {
+    btn.classList.toggle('article-open');
+    expandsButton.classList.toggle('article-open');
+    close.classList.toggle('article-open');
+  });
+  console.log(p1, p2, p3);
+  return article;
+}
