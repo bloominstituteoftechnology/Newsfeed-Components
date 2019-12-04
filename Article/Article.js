@@ -112,3 +112,53 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+function articlePanel(data){
+  //create the elements
+  const article=document.createElement('div');
+  const date=document.createElement('p');
+  const title= document.createElement('h2');
+  const firstParagraph=document.createElement('p');
+  const secondParagraph=document.createElement('p');
+  const thirdParagraph=document.createElement('p');
+  const span=document.createElement('span');
+
+  //set classes 
+article.classList.add('article');
+date.classList.add('date');
+span.classList.add('expandButton');
+
+//set content
+  title.textContent = data.title;
+  date.textContent = data.date;
+  firstParagraph.textContent = data.firstParagraph;
+  secondParagraph.textContent = data.secondParagraph;
+  thirdParagraph.textContent = data.thirdParagraph;
+  span.textContent = "Click Here"
+// event.. This event listener should toggle the class 'article-open' on the 'article' div.
+span.addEventListener('click', event => {
+  article.classList.toggle('article-open')
+});
+
+  article.appendChild(title);
+  article.appendChild(date);
+  article.appendChild(firstParagraph);
+  article.appendChild(secondParagraph);
+  article.appendChild(thirdParagraph);
+  article.appendChild(span);
+//return statment
+return article;
+
+
+}
+let newArticles = data.map((arrayItem) => {
+  let newArticle = articlePanel(arrayItem);
+
+  return newArticle;
+})
+
+let articles = document.querySelector('.articles');
+
+data.forEach(component => {
+  let newPanel = articlePanel(component);
+  articles.append(newPanel);
+})
