@@ -85,6 +85,26 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'I love JS!',
+    date: 'Dec 5th, 2019',
+    firstParagraph: `Alohamora wand elf parchment, Wingardium Leviosa hippogriff, house dementors betrayal. Holly, Snape centaur portkey ghost
+        Hermione spell bezoar Scabbers. Peruvian-Night-Powder werewolf, Dobby pear-tickle half-moon-glasses, Knight-Bus. Padfoot
+        snargaluff seeker: Hagrid broomstick mischief managed. Snitch Fluffy rock-cake, 9 ¾ dress robes I must not tell lies. Mudbloods
+        yew pumpkin juice phials Ravenclaw’s Diadem 10 galleons Thieves Downfall. Ministry-of-Magic mimubulus mimbletonia Pigwidgeon
+        knut phoenix feather other minister Azkaban. Hedwig Daily Prophet treacle tart full-moon Ollivanders You-Know-Who cursed.
+        Fawkes maze raw-steak Voldemort Goblin Wars snitch Forbidden forest grindylows wool socks`,
+
+    secondParagraph: `Boggarts lavender robes, Hermione Granger Fantastic Beasts and Where to Find Them. Bee in your bonnet Hand of Glory elder
+        wand, spectacles House Cup Bertie Bott’s Every Flavor Beans Impedimenta. Stunning spells tap-dancing spider Slytherin’s Heir
+        mewing kittens Remus Lupin. Palominos scarlet train black robes, Metamorphimagus Niffler dead easy second bedroom. Padma
+        and Parvati Sorting Hat Minister of Magic blue turban remember my last.`,
+
+    thirdParagraph: `Toad-like smile Flourish and Blotts he knew I’d come back Quidditch World Cup. Fat Lady baubles banana fritters fairy lights 
+        Petrificus Totalus. So thirsty, deluminator firs’ years follow me 12 inches of parchment. Head Boy start-of-term banquet Cleansweep Seven 
+        roaring lion hat. Unicorn blood crossbow mars is bright tonight, feast Norwegian Ridgeback. Come seek us where our voices sound, we cannot 
+        sing above the ground, Ginny Weasley bright red. Fanged frisbees, phoenix tears good clean match.`
   }
 ];
 
@@ -118,8 +138,7 @@ const data = [
 const articles = document.querySelector('.articles');
 
 data.map(d => {
-  console.log('uhhhhhhh', d.title);
-  articles.appendChild(
+  let newArr = articles.appendChild(
     createArticle(
       d.title,
       d.date,
@@ -128,6 +147,8 @@ data.map(d => {
       d.thirdParagraph
     )
   );
+
+  return newArr;
 });
 //select the articles div, parent
 //step 1
@@ -145,8 +166,9 @@ function createArticle(
   const p1 = document.createElement('p');
   const p2 = document.createElement('p');
   const p3 = document.createElement('p');
-  const btn = document.createElement('span');
-  const btnClose = document.createElement('btn');
+  const btnExpand = document.createElement('span');
+  const btnClose = document.createElement('span');
+  const button = document.createElement('button');
 
   // Setup structure of elements
   article.appendChild(titleText);
@@ -154,21 +176,25 @@ function createArticle(
   article.appendChild(p1);
   article.appendChild(p2);
   article.appendChild(p3);
-  article.appendChild(btn);
+  article.appendChild(btnExpand);
   article.appendChild(btnClose);
+  article.appendChild(button);
 
+  /*   article.appendChild(btnClose);
+   */
   //classes
   article.classList.add('article');
   dateStamp.classList.add('date');
-  btn.classList.add('expand-button', 'article-open');
-  btnClose.classList.add('close');
+  btnExpand.classList.add('expand-button');
+  btnClose.classList.add('expand-button', 'close');
+  button.classList.add('expandButton');
 
-  const expand = '\u25bc';
-  const close = '\u25b2';
+  const expand = 'open';
 
   //textContent
-  btn.textContent = expand;
-  btnClose.textContent = close;
+  btnExpand.textContent = expand;
+  button.textContent = 'gjgjgj';
+
   titleText.textContent = title;
   dateStamp.textContent = date;
   p1.textContent = firstParagraph;
@@ -176,11 +202,11 @@ function createArticle(
   p3.textContent = thirdParagraph;
 
   //step 2
-  btn.addEventListener('click', e => {
-    btn.classList.toggle('article-open');
-    expandsButton.classList.toggle('article-open');
-    close.classList.toggle('article-open');
+
+  button.addEventListener('click', event => {
+    console.log('button clicked', event.target, btnExpand);
+    article.classList.toggle('article-open');
   });
-  console.log(p1, p2, p3);
+
   return article;
 }
