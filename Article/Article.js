@@ -119,19 +119,41 @@ function createArticle(title,date,para,para2,para3) {
 
   const article = document.createElement('div');
   const title = document.createElement('h2');
+  const date = document.createElement('p');
   const para = document.createElement('p');
   const para2 = document.createElement('p');
   const para3 = document.createElement('p');
   const span = document.createElement('span');
  
   article.classList.add('article');
-  para.classList.add('date');
+  article.classList.add('article-open')
+  date.classList.add('date');
   span.classList.add('expandButton');
 
   article.appendChild(title);
+  article.appendChild(date);
   article.appendChild(para);
   article.appendChild(para2);
   article.appendChild(para3);
+  article.appendChild(span);
 
+  title.textContent = data.title;
+  date.textContent = data.date;
+  para.textContent = data.firstParagraph;
+  para2.textContent = data.secondParagraph;
+  para3.textContent = data.thirdParagraph;
 
+span.addEventListener('click', (event) =>{
+
+  article.classList.toggle('article-open');
+  if (span.textContent === '\u25b2'){
+    span.textContent = '\u25bc'
+  }
+})
+  return article;
 }
+
+const articleSection = document.querySelector('.articles');
+data.forEach(element => {
+  articleSection.appendChild(createArticle(element));
+})
