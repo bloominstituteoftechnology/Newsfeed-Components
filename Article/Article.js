@@ -85,6 +85,17 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Anthony Streett From Lambda',
+    date: 'May 30, 1999',
+    firstParagraph: `Pokem ipsum dolor sit amet Mantyke gym Spearow Volbeat Ash's mother Beheeyem. Water Gun Marill Gliscor Alakazam Palkia Tentacool but nothing happened. Glitch City Machoke Officer Jenny Kanto Drowzee Toxicroak Joltik. Wartortle Dewgong Fearow Weepinbell Reuniclus Kingler Zoroark. Duis aute irure dolor in reprehenderit in voluptate Team Rocket Leavanny Probopass Simipour Seel Genesect. `,
+
+    secondParagraph: `Growl Loudred Koffing Soul Badge Totodile in a world we must defend Rapidash. Sunt in culpa Geodude Calcium Golbat Ivysaur Illumise Sawk. Strength Virizion Turtwig Red Jesse Kakuna Regice. We're blasting off again Timburr Horsea Rainbow Badge Shellder Qwilfish Taillow. Pewter City Vileplume Lampent Seviper Mewtwo Duosion Fearow. `,
+
+    thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
+          Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
+          Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
 ];
 
@@ -113,8 +124,46 @@ const data = [
 
 */
 
-function makeArticle(data){
-  //elements
-  const article =
-  document.createElement()
+function createArticle(data){
+  const article = document.createElement('div');
+  const title = document.createElement('h2');
+  const date = document.createElement('p');
+  const para1 = document.createElement('p');
+  const para2 = document.createElement('p');
+  const para3 = document.createElement('p');
+  const span = document.createElement('span');
+
+  article.classList.add('article');
+  article.classList.add('article-open');
+  date.classList.add('date');
+  span.classList.add('expandButton');
+
+  article.appendChild(title);
+  article.appendChild(date);
+  article.appendChild(para1);
+  article.appendChild(para2);
+  article.appendChild(para3);
+  article.appendChild(span);
+
+  title.textContent = data.title;
+  date.textContent = data.date;
+  para1.textContent = data.firstParagraph;
+  para2.textContent = data.secondParagraph;
+  para3.textContent = data.thirdParagraph;
+  span.textContent = '\u25b2';
+
+  span.addEventListener('click', (event) =>
+  {
+    article.classList.toggle('article-open');
+    if (span.textContent === '\u25b2'){
+      span.textContent = '\u25bc'
+    }
+  })
+
+  return article;
 }
+const articleSection = document.querySelector('.articles');
+data.forEach(element =>
+  {
+    articleSection.appendChild(createArticle(element));
+  })
