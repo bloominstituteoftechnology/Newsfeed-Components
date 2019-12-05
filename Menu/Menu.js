@@ -34,7 +34,6 @@ let menuItems = [
   
 */
 
-
 // function menuStuff(menuItems){
 //   const menu = document.createElement('div');
 //   menu.classList.add('menu');
@@ -72,15 +71,15 @@ function MenuFunc(args){
     listMenu.appendChild(listItem);  
   });
 
-const btnMenu = document.querySelector('.menu-button');
+  const btnMenu = document.querySelector('.menu-button');
 
-btnMenu.addEventListener('click', event => {
-  console.log('clicked', event.target);
+  btnMenu.addEventListener('click', event => {
+    console.log('clicked', event.target);
 
-  args.classList.toggle('menu--open');
-})
+    args.classList.toggle('menu--open');
+  })
 
-return divMenu;
+  return divMenu;
 }
 
 
