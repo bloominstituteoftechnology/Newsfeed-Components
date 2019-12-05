@@ -107,8 +107,51 @@ const data = [
 
   Step 3: return the entire component.
 
-  Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
+  Step 4: Map over the data, creating a component for each object and add each component to the DOM as children of the 'articles' div.
 
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
-
 */
+
+
+
+
+function components(data){
+
+  //creating elements
+  let article=document.createElement('div');
+  let articleTitle=document.createElement('h2');
+  let articleDate=document.createElement('p');
+  let p1=document.createElement('p');
+  let p2=document.createElement('p');
+  let p3=document.createElement('p');
+  let expandButton=document.createElement('span');
+
+  //giving classnames to elements
+  article.classList.add('article');
+  articleDate.classList.add('date');
+  expandButton.classList.add('expandButton');
+  //creating structure / appending elements
+  article.appendChild(articleTitle);
+  article.appendChild(articleDate);
+  article.appendChild(p1);
+  article.appendChild(p2);
+  article.appendChild(p3);
+  article.appendChild(expandButton);
+  article.addEventListener('click', function(event){
+    article.classList.toggle('article-open');
+    console.log("CLICKED!");
+  });
+
+  //adding content
+  articleTitle.textContent=data.title;
+  articleDate.textContent=data.date;
+  p1.textContent=data.firstParagraph;
+  p2.textContent=data.secondParagraph;
+  p3.textContent=data.thirdParagraph;
+  return article;
+}
+let body=document.querySelector('body');
+let map=data.map(function(items){
+  let newArray=body.appendChild(components(items))
+  return newArray;
+})
