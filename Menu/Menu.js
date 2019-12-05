@@ -40,10 +40,8 @@ function createMenu(array){
   const menuBurger = document.querySelector('.menu-button');
 
   mainMenu.classList.add('menu');
-  // menuItems1.classList.add('lists');
   
   mainMenu.appendChild(mainList);
-  
 
   array.forEach(function (item){
     const menuItems1 = document.createElement('li');
