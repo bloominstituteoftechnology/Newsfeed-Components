@@ -85,6 +85,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'This freaking guy',
+    date: '11/17/1985',
+    firstParagraph: 'P1 here',
+
+    secondParagraph: 'P2 here',
+
+    thirdParagraph: 'P3 here'
   }
 ];
 
@@ -95,7 +104,6 @@ function createArticle(data) {
 
   // variables
 
-  // const entryPoint = document.querySelector('body');
   const article = document.createElement('div');
   const titles = document.createElement('h2');
   const date = document.createElement('p');
@@ -108,7 +116,7 @@ function createArticle(data) {
 
   article.classList.add('article');
   date.classList.add('date');
-  exButton.classList.add('exButton');
+  exButton.classList.add('expandButton');
 
   // append classes
 
@@ -126,28 +134,36 @@ function createArticle(data) {
   p1.textContent = data.firstParagraph;
   p2.textContent = data.secondParagraph;
   p3.textContent = data.thirdParagraph;
-  exButton.textContent = 'Open'
+  exButton.textContent = 'Open';
 
   // event listener
 
   exButton.addEventListener('click', () => {
     article.classList.toggle('article-open');
     if(exButton.textContent === 'Open') {
-      exButton.textContent = 'Open'      
+      exButton.textContent = 'Close'; 
     } else {
-      exButton.textContent = 'Close'
+      exButton.textContent = 'Open';
     }
   })
 
   return article;
 }
 
-data.forEach(function(data) {
-  let newArticle = createArticle(data);
-  entrypoint.append(newArticle)
+const divArticles = document.querySelector('.articles');
+
+data.map(ele => {
+  divArticles.appendChild(createArticle(ele))
 });
 
-console.log()
+// divArticles.appendChild(createArticle(data));
+
+
+
+// data.forEach(function(data) {
+//   let newArticle = createArticle(data);
+// });
+
 
 
 
