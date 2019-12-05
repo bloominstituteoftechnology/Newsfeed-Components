@@ -76,12 +76,13 @@ function MenuFunc(args){
   btnMenu.addEventListener('click', event => {
     console.log('clicked', event.target);
 
-    args.classList.toggle('menu--open');
+    btnMenu.classList.add('menu--open');
   })
 
   return divMenu;
 }
 
+MenuFunc(menuItems);
 
 
 
