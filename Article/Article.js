@@ -115,8 +115,17 @@ const data = [
 
 // step 1 
 
-function createArticle(title,date,para,para2,para3) {
+const articles = document.querySelector('.articles');
 
+function createArticle(objArticle) {
+// content in function 
+  let articleTitle = objArticle.title;
+  let articleDate = objArticle.date;
+  let articlePara1 = objArticle.firstParagraph;
+  let articlePara2 = objArticle.secondParagraph;
+  let articlePara3 = objArticle.thirdParagraph;
+  let articleSpan = objArticle.span;
+//  create elements 
   const article = document.createElement('div');
   const title = document.createElement('h2');
   const date = document.createElement('p');
@@ -124,12 +133,13 @@ function createArticle(title,date,para,para2,para3) {
   const para2 = document.createElement('p');
   const para3 = document.createElement('p');
   const span = document.createElement('span');
- 
+  
+//  create class
   article.classList.add('article');
-  article.classList.add('article-open')
   date.classList.add('date');
   span.classList.add('expandButton');
 
+// location of empty elements
   article.appendChild(title);
   article.appendChild(date);
   article.appendChild(para);
@@ -137,23 +147,36 @@ function createArticle(title,date,para,para2,para3) {
   article.appendChild(para3);
   article.appendChild(span);
 
-  title.textContent = data.title;
-  date.textContent = data.date;
-  para.textContent = data.firstParagraph;
-  para2.textContent = data.secondParagraph;
-  para3.textContent = data.thirdParagraph;
+// specify content in the containers 
+  title.textContent = articleTitle;
+  date.textContent = articleDate;
+  para.textContent = articlePara1;
+  para2.textContent = articlePara2;
+  para3.textContent = articlePara3;
 
-span.addEventListener('click', (event) =>{
+  // creates click to expand / click to close 
+article.addEventListener('click', () =>{
 
   article.classList.toggle('article-open');
-  if (span.textContent === '\u25b2'){
-    span.textContent = '\u25bc'
+  // if (span.textContent === '\u25bc'){
+  //   span.textContent = '\u25b2'
+
+  if (document.querySelector('.article-open')) {
+    span.textContent = 'click to close'; 
   }
-})
+  else {
+    span.textContent = 'click to expland';
+  }
+});
   return article;
 }
+// end of article open and closed
 
-const articleSection = document.querySelector('.articles');
-data.forEach(element => {
-  articleSection.appendChild(createArticle(element));
-})
+// looping through object array for each item in the array and appending it to the .articles div
+  data.forEach(item => {
+    let newArt = createArticle(item);
+   document.querySelector('.articles').appendChild(newArt);
+  });
+
+
+
