@@ -36,7 +36,7 @@ let menuItems = [
 const header = document.querySelector('.header');
 const menuButton = document.querySelector('.menu-button');
 
-function menuFactory(items) {
+function menuCreator(items) {
 
 
   const menu = document.createElement('div');
@@ -59,7 +59,7 @@ function menuFactory(items) {
   return menu;
 }
 
-header.appendChild(menuFactory(menuItems)); 
+header.appendChild(menuCreator(menuItems)); 
 
 const title = document.querySelector('ul');
 title.addEventListener('click', (e) => {
