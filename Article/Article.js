@@ -112,3 +112,51 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+function createArticle(title, date, firstParagraph, secondParagraph, thirdParagraph){
+  const article1 = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+  const articleDate = document.createElement('p');
+  const p1 = document.createElement('p');
+  const p2 = document.createElement('p');
+  const p3 = document.createElement('p');
+  const buttonExp = document.createElement('span');
+  const artBtnOpen = document.createElement('button');
+  const artBtnClose = document.createElement('button');
+
+  article1.classList.add('article');
+  articleDate.classList.add('date');
+  buttonExp.classList.add('expandButton');
+  p1.classList.add('paragraph');
+  p2.classList.add('paragraph');
+  p3.classList.add('paragraph');
+  buttonExp.classList.add('expandButton')
+  artBtnClose.classList.add('.close');
+  artBtnOpen.classList.add('.article-open');
+  
+  article1.append(articleTitle);
+  article1.append(articleDate);
+  article1.append(p1);
+  article1.append(p2);
+  article1.append(p3);
+  article1.append(buttonExp);
+
+  articleTitle.textContent = title;
+  articleDate.textContent = date;
+  p1.textContent = firstParagraph;
+  p2.textContent = secondParagraph;
+  p3.textContent = thirdParagraph;
+  buttonExp.textContent = 'Expand';
+
+  buttonExp.addEventListener('click', event => {
+    artBtnOpen.classList.toggle('article-open');
+    artBtnClose.classList.toggle('close');
+    article1.classList.toggle('article-open');
+  })
+  return article1
+}
+
+const allArticles = document.querySelector('.articles');
+data.forEach(data =>{
+      allArticles.appendChild(createArticle(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
+})
