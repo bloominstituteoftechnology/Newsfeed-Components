@@ -34,37 +34,44 @@ let menuItems = [
   
 */
 
-const menu = document.querySelector('.menu');
+// const menus = document.querySelector('.menu');
 
 function createMenu(objMenu){
   // content in the function 
-  let menuItem = objMenu.menuItems;
+  // let menuItem = objMenu.menuItems;
+
   //  create the elements 
   const nav = document.createElement('div');
-  const navList = document.createdElement('ul');
+  const navList = document.createElement('ul');
+
 // create the class
   nav.classList.add('menu');
 
-  // location for empty elements 
-  menu.appendChild(navList);
+  objMenu.forEach(link => {
+    let menuItem = document.createElement('li');
+    menuItem.textContent = link;
+    navList.appendChild(menuItem);
+    console.log('this works')
+  });
 
-  // specify containers
-  menu.textContent = menuItem;
-
-  
+   
   let menuButton = document.querySelector('.menu-button');
-
 // creates the click to expand 
   menuButton.addEventListener('click', () => {
     nav.classList.toggle('menu--open');
   })
 
+  
+
+  // location for empty elements 
+  // menu.appendChild(navList);
+
+  // specify containers
+  // menu.textContent = menuItem;
+
+ 
   nav.appendChild(navList);
   return nav;
 }
-// looping through object array for each item in array 
-data.forEach(item => {
-  let menuItem = createMenu(item);
-  document.querySelector('.menu').appendChild(menuItem);
-});
 
+document.querySelector('.header').appendChild(createMenu(menuItems));
