@@ -85,6 +85,27 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+
+  {
+    title: 'Game Dev with Raspberry Pi',
+    date: 'Nov 1st, 2019',
+    firstParagraph: `Learning video game development is great fun, and a good way to learn about computing. The Raspberry Pi is packed with tools for learning video game development.
+    Here are some of our favourite video game resources for Raspberry Pi. `,
+
+    secondParagraph: `Python 3 is available with the standard install of Raspbian. To get started writing games quickly on the Raspberry Pi, there are a couple of Python modules that you will want to investigate. The first, Pygame provides all the functions you will need to create a game window, draw to the screen, get input from the player, play sounds – in fact, everything you will need for a good game. Pygame is quite a powerful module which does need a bit of setting up in your code, but this makes it very flexible. `,
+
+    thirdParagraph: `If you want an even quicker result, you can use the Pygame Zero module; this does all the setup behind the scenes and you can have your program running with just a few lines of code. Pygame Zero takes care of most of the graphics handing and input with very simple functions and can be combined with Pygame if needed. Both Pygame and Pygame Zero have had a tutorial series in The MagPi, which introduces all the capabilities of both languages. Start reading at issue 31 for Pygame and issue 71 for Pygame Zero.`
+  },
+
+  {
+    title: 'Using Linux Mint',
+    date: 'Dec 1st, 2019',
+    firstParagraph: `Linux Mint is a popular distro in the Linux community. Owing to the Windows-like UI and a fairly easy learning curve, Linux Mint has been able to generate a decent amount of fan following. Moreover, the availability of all the essential apps which come pre-built with the Linux Mint Installation makes it especially preferable for beginners in the Linux world.`,
+
+    secondParagraph: `We have already covered the complete tutorial on how to install Linux Mint 19, which is the latest Linux Mint version available. So if you have already followed the steps to install it, the next thing on your mind would be what to do after installing Linux Mint 19. So, have a look at our most important 10 things to after Installing Linux Mint Tara.`,
+
+    thirdParagraph: `Linux Mint Cinnamon is one of the more popular desktop environments around. But here, we are using the Linux Mint 19 MATE edition to freshen things up a bit. So, let’s use that edition to look at the important things to do right after you install this popular Linux distribution. If you are having a tough time choosing the best Linux desktop environment, check out our article on Linux desktop environments.`
   }
 ];
 
@@ -112,3 +133,51 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+const container = document.querySelector(".articles")
+
+
+function createArticles(title, date, firstParagraph, secondParagraph, thirdParagraph){
+
+  const article = document.createElement("div");
+  const articleTitle = document.createElement("h2");
+  const articleDate = document.createElement("p");
+  const articleParagraph1 = document.createElement("p");
+  const articleParagraph2 = document.createElement("p");
+  const articleParagraph3 = document.createElement("p");
+  const button = document.createElement("span")
+
+// SET STRUCTURE OF ELEMENTS
+  article.appendChild(articleTitle);
+  article.appendChild(articleDate);
+  article.appendChild(articleParagraph1);
+  article.appendChild(articleParagraph2);
+  article.appendChild(articleParagraph3);
+  article.appendChild(button);
+
+// SET CLASS NAMES
+  article.classList.add("article");
+  articleDate.classList.add("date");
+  button.classList.add("expandButton");
+
+// SET TEXT CONTENT
+  articleTitle.textContent = title;
+  articleDate.textContent = date;
+  articleParagraph1.textContent = firstParagraph;
+  articleParagraph2.textContent = secondParagraph;
+  articleParagraph3.textContent = thirdParagraph;
+  button.textContent = "Read More";
+
+// ADD EVENT LISTENER
+  button.addEventListener("click", (e) => {
+    console.log("clicked");
+    article.classList.toggle("article-open");
+    article.classList.toggle("close");
+  })
+
+  return article;
+}
+
+const newsFeed = data.map(a => {
+  container.appendChild(createArticles(a.title,a.date,a.firstParagraph,a.secondParagraph,a.thirdParagraph));
+})
