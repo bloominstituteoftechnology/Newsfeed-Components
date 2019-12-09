@@ -183,7 +183,17 @@ const newsFeed = data.map(a => {
 })
 
 // gsap.to("h1", {rotation: 360, x: 100, duration:1});
-gsap.from("h1", {rotation: 360, x:100, duration: 1});
+TweenMax.from("h1", {rotation: 360, x:100, duration: 1,});
 
 
+TweenMax.to(".article", 2, {boxShadow:"0px 0px 20px green", color:"purple"});
+// TweenMax.to("h1", 2, {backgroundColor:"#ff0000", width:"50%", top:"100px", ease:Power2.easeInOut});
+// TweenMax.to(".article", 2, {rotation:30, ease:"funWiggle"}); 
+TweenMax.from(".article", 2, {rotation:180, ease:Back.easeOut});
 
+// TweenMax.to(".article", 1, {
+//   x: function(index, target) {
+//     console.log(index, target);
+//     return (index + 1) * 100 // 100, 200, 300
+//   }
+// })
