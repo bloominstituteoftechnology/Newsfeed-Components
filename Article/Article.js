@@ -181,3 +181,9 @@ function createArticles(title, date, firstParagraph, secondParagraph, thirdParag
 const newsFeed = data.map(a => {
   container.appendChild(createArticles(a.title,a.date,a.firstParagraph,a.secondParagraph,a.thirdParagraph));
 })
+
+// gsap.to("h1", {rotation: 360, x: 100, duration:1});
+gsap.from("h1", {rotation: 360, x:100, duration: 1});
+
+
+
