@@ -91,7 +91,7 @@ const data = [
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
   <div class="article">
-    <h2>{title of the article}</h2>
+    <titleNewH2>{title of the article}</titleNewH2>
     <p class="date">{date of the article}</p>
 
     {three separate paragraph elements}
@@ -112,3 +112,37 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+const main = document.querySelector('body');
+function createArticle(data) {
+  const article = document.createElement('div');
+  article.classList.add('article', 'article-open');
+
+  const h2 = document.createElement('h2');
+  h2.textContent = data.title;
+  article.appendChild(h2);
+
+  const date = document.createElement('date');
+  date.classList.add('date');
+  date.textContent = data.date;
+  article.appendChild(date);
+
+  const body = document.createElement('p');
+  body.textContent = data.firstParagraph, data.secondParagraph, data.thirdParagraph;
+  article.appendChild(body);
+
+  const span = document.createElement('span');
+  span.classList.add('expandButton');
+  
+  span.addEventListener('click', (event) => {
+    console.log('Opened', event.target);
+    article.classList.toggle('article-open');
+    article.classList.toggle('article-open')
+  })
+  article.appendChild(span);
+
+  return article;
+}
+
+data.forEach(data => {
+  main.appendChild(createArticle(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph));
+});
