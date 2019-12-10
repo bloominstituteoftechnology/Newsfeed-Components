@@ -103,13 +103,42 @@ const data = [
 
 //   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
 
-const createComponent (title, date, firstParagraph, secondParagraph, thirdParagraph)= {
+function createComponent (title, date, firstParagraph, secondParagraph, thirdParagraph)= {
+
+  //Create Elements
+  const componentArticle = document.createElement('div');
+  const componentTitle = document.createElement('h2');
+  const componentDate = document.createElement('p');
+  const componentPara1 = document.createElement('p');
+  const componentPara2 = document.createElement('p');
+  const componentPara3 = document.createElement('p');
+  const componentExpandButton = document.createElement('span');
+
+  //Append/Nest Elements
+  componentArticle.appendChild(componentTitle);
+  componentArticle.appendChild(componentDate);
+    componentDate.appendChild(componentPara1);
+    componentDate.appendChild(componentPara2);
+    componentDate.appendChild(componentPara3);
+  componentArticle.appendChild(componentExpandButton);
+
+  //Add Classes
+  componentArticle.classList.add('article');
+
+
+
+
+// Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
+
+  componentExpandButton.addEventListener('click', (event) => {
+    componentArticle.classList.toggle('article-open')
+  })
 
 }
 
 
 
-// Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
+
 
 
 
