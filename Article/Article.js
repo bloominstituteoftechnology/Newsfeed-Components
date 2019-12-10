@@ -144,7 +144,12 @@ function createComponent(title, date, firstParagraph, secondParagraph, thirdPara
     componentArticle.classList.toggle('article-open')
   })
 
-
+  //Insert Data
+  componentTitle.textContent = title;
+  componentDate.textContent = date;
+  componentPara1.textContent = firstParagraph;
+  componentPara2.textContent = secondParagraph;
+  componentPara3.textContent = thirdParagraph;
  
 
   // Step 3: return the entire component.
