@@ -103,7 +103,12 @@ const data = [
 
 //   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
 
-function createComponent (title, date, firstParagraph, secondParagraph, thirdParagraph)= {
+//Get '.articles' Element
+const articles = document.querySelector('.articles')
+
+//Function to Create component
+
+function createComponent(title, date, firstParagraph, secondParagraph, thirdParagraph) {
 
   //Create Elements
   const componentArticle = document.createElement('div');
@@ -113,6 +118,7 @@ function createComponent (title, date, firstParagraph, secondParagraph, thirdPar
   const componentPara2 = document.createElement('p');
   const componentPara3 = document.createElement('p');
   const componentExpandButton = document.createElement('span');
+
 
   //Append/Nest Elements
   componentArticle.appendChild(componentTitle);
@@ -130,11 +136,6 @@ function createComponent (title, date, firstParagraph, secondParagraph, thirdPar
   componentPara2.classList.add('p2');
   componentPara3.classList.add('p3');
   componentExpandButton.classList.add('expandButton');
-  
-
-
-
-
 
 
 // Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
@@ -143,25 +144,19 @@ function createComponent (title, date, firstParagraph, secondParagraph, thirdPar
     componentArticle.classList.toggle('article-open')
   })
 
+
+ 
+
+  // Step 3: return the entire component.
+  return componentArticle;
 }
 
 
+// Step 4: Map over the data, creating a component for each object and add each component to the DOM as children of the 'articles' div.
 
-
-
-
-
-
-
-// Step 3: return the entire component.
-
-
-
-
-
-// Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
-
-
+data.forEach((index) => {
+  articles.appendChild(createComponent(index.title, index.date, index.firstParagraph, index.secondParagraph, index.thirdParagraph))
+});
 
 
 
