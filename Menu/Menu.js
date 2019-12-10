@@ -35,12 +35,20 @@ function createMenuComp (menuItems){
   //Add Classes to Elements
   menuCompMenu.classList.add('menu');
 
+// Step 2: Inside this function, iterate over the array creating a list item <li> element for each item in the array. 
+// Add those items to the <ul>
 
+menuItems.forEach((index) => {
+  const menuCompListItems = index.createElement('li');
+  menuCompList.appendChild(menuCompListItems);
+  menuCompListItems.classList.add('menu-list-item');
+});
+
+return menuCompMenu;
 }
 
 
-// Step 2: Inside this function, iterate over the array creating a list item <li> element for each item in the array. 
-// Add those items to the <ul>
+
 
 // Step 3: Using a DOM selector, select the menu button (the element with a class of 'menu-button') currently on the DOM.
 
