@@ -124,6 +124,15 @@ function createComponent (title, date, firstParagraph, secondParagraph, thirdPar
 
   //Add Classes
   componentArticle.classList.add('article');
+  componentTitle.classList.add('title');
+  componentDate.classList.add('date');
+  componentPara1.classList.add('p1');
+  componentPara2.classList.add('p2');
+  componentPara3.classList.add('p3');
+  componentExpandButton.classList.add('expandButton');
+  
+
+
 
 
 
