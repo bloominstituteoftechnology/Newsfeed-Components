@@ -166,7 +166,7 @@ function createArticles(title, date, firstParagraph, secondParagraph, thirdParag
   articleParagraph1.textContent = firstParagraph;
   articleParagraph2.textContent = secondParagraph;
   articleParagraph3.textContent = thirdParagraph;
-  button.textContent = "Read More";
+  button.textContent = "Read More \u25bc";
 
 // ADD EVENT LISTENER
   button.addEventListener("click", (e) => {
