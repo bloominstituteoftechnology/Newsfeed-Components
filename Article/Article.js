@@ -112,14 +112,14 @@ const data = [
 
 //   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
 
-//Get '.articles' Element
+////////////////Get '.articles' Element
 const articles = document.querySelector('.articles')
 
-//Function to Create component
+////////////////Function to Create component
 
 function createComponent(title, date, firstParagraph, secondParagraph, thirdParagraph) {
 
-  //Create Elements
+  ////////////////Create Elements
   const componentArticle = document.createElement('div');
   const componentTitle = document.createElement('h2');
   const componentDate = document.createElement('p');
@@ -129,7 +129,7 @@ function createComponent(title, date, firstParagraph, secondParagraph, thirdPara
   const componentExpandButton = document.createElement('span');
 
 
-  //Append/Nest Elements
+  ////////////////Append/Nest Elements
   componentArticle.appendChild(componentTitle);
   componentArticle.appendChild(componentDate);
     componentDate.appendChild(componentPara1);
@@ -137,7 +137,7 @@ function createComponent(title, date, firstParagraph, secondParagraph, thirdPara
     componentDate.appendChild(componentPara3);
   componentArticle.appendChild(componentExpandButton);
 
-  //Add Classes
+  ////////////////Add Classes
   componentArticle.classList.add('article');
   componentTitle.classList.add('title');
   componentDate.classList.add('date');
@@ -153,7 +153,7 @@ function createComponent(title, date, firstParagraph, secondParagraph, thirdPara
     componentArticle.classList.toggle('article-open')
   })
 
-  //Insert Data
+  ////////////////Insert Data
   componentTitle.textContent = title;
   componentDate.textContent = date;
   componentPara1.textContent = firstParagraph;

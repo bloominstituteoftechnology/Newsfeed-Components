@@ -20,19 +20,18 @@ let menuItems = [
 
 // The function takes an array as its only argument.
 
-//Get the .menu Element
-const menu = document.querySelector('.menu');
 
-//Function to Create Menu Component
+
+////////////////Function to Create Menu Component
 function createMenuComp (menuItems){
-  //Create Elements
+  ////////////////Create Elements
   const menuCompMenu = document.createElement('div');
   const menuCompList = document.createElement('ul');
 
-  //Append/Nest Elements
+  ////////////////Append/Nest Elements
   menuCompMenu.appendChild(menuCompList);
 
-  //Add Classes to Elements
+  ////////////////Add Classes to Elements
   menuCompMenu.classList.add('menu');
 
 
@@ -60,8 +59,7 @@ function createMenuComp (menuItems){
 return menuCompMenu;
 }
 
-
-
-
 // Step 6: add the menu component to the DOM.
-  
+  menuItems.forEach((index) => {
+    
+  })
