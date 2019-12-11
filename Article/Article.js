@@ -91,9 +91,9 @@ const data = [
      date: 'Dec 10, 2019',
      firstParagraph: `What's with all the Hodor in the previous article?`,
  
-     secondParagraph: `Seriously. That's quite enough of the Hodor.`,
+     secondParagraph: `Seriously. I don't understand.`,
  
-     thirdParagraph: `I think that another ipsum could have been better.`
+     thirdParagraph: `There's just something about it.`
    }
 ];
 
@@ -151,7 +151,7 @@ function createComponent(title, date, firstParagraph, secondParagraph, thirdPara
 
 // Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
 
-  componentExpandButton.addEventListener('click', (event) => {
+  componentTitle.addEventListener('click', (event) => {
     componentArticle.classList.toggle('article-open')
   })
 
