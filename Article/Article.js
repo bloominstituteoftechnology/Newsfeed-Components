@@ -153,6 +153,6 @@ function createArticle(title, date, firstParagraph, secondParagraph, thirdParagr
 
 data.map((a) => {
     return articles.appendChild(createArticle
-    (a.articleTitle, a.articleDate, a.paraOne, a.paraTwo, a.paraThree))
+    (a.title, a.date, a.firstParagraph, a.secondParagraph, a.thirdParagraph))
 });
 
