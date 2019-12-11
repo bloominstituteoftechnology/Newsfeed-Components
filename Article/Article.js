@@ -128,8 +128,6 @@ function createComponent(title, date, firstParagraph, secondParagraph, thirdPara
   const componentPara3 = document.createElement('p');
   const componentExpandButton = document.createElement('span');
 
-  console.log(componentArticle);
-
 
   ////////////////Append/Nest Elements
   componentArticle.appendChild(componentTitle);
@@ -148,19 +146,22 @@ function createComponent(title, date, firstParagraph, secondParagraph, thirdPara
   componentPara3.classList.add('p3');
   componentExpandButton.classList.add('expandButton');
 
-
-// Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
-
-  componentTitle.addEventListener('click', (event) => {
-    componentArticle.classList.toggle('article-open')
-  })
-
   ////////////////Insert Data
   componentTitle.textContent = title;
   componentDate.textContent = date;
   componentPara1.textContent = firstParagraph;
   componentPara2.textContent = secondParagraph;
   componentPara3.textContent = thirdParagraph;
+  componentExpandButton.textContent = 'Click to open/close';
+
+
+// Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
+
+  componentArticle.addEventListener('click', (event) => {
+    componentArticle.classList.toggle('article-open')
+  })
+
+
  
 
   // Step 3: return the entire component.
