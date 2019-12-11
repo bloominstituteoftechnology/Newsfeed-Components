@@ -20,7 +20,9 @@ let menuItems = [
 
 // The function takes an array as its only argument.
 
+////////////////Get .menu-button
 
+const menuButton = document.querySelector('.menu-button');
 
 ////////////////Function to Create Menu Component
 function createMenuComp (menuItems){
