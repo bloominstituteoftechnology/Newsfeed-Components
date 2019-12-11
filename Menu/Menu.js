@@ -21,12 +21,12 @@ let menuItems = [
 // The function takes an array as its only argument.
 
 ////////////////Get .menu-button
-
+const header = document.querySelector('.header');
 const menuButton = document.querySelector('.menu-button');
-const header = document.querySelector('header');
+
 
 ////////////////Function to Create Menu Component
-function createMenuComp (menuItems){
+function createMenuComp (array){
   ////////////////Create Elements
   const menuCompMenu = document.createElement('div');
   const menuCompList = document.createElement('ul');
@@ -34,23 +34,24 @@ function createMenuComp (menuItems){
   ////////////////Append/Nest Elements
   menuCompMenu.appendChild(menuCompList);
 
-  ////////////////Add Classes to Elements
-  menuCompMenu.classList.add('menu');
-
 
 // Step 2: Inside this function, iterate over the array creating a list item <li> element for each item in the array. 
 // Add those items to the <ul>
 
   menuItems.forEach((index) => {
-    const menuCompListItems = index.createElement('li');
-    menuCompList.appendChild(menuCompListItems);
-    menuCompListItems.classList.add('menu-list-item');
+    const menuCompListItems = document.createElement('li');
     menuCompListItems.textContent = index;
+    menuCompList.appendChild(menuCompListItems);
+    // menuCompListItems.style.cursor = 'pointer';
   });
+
+  ////////////////Add Classes to Elements
+  menuCompMenu.classList.add('menu');
+  
 
 // Step 3: Using a DOM selector, select the menu button (the element with a class of 'menu-button') currently on the DOM.
 
-  const menuButton = document.querySelector('.menu-button');
+  // const menuButton = document.querySelector('.menu-button');
 
   // Step 4: add a click event listener to the menu button. When clicked it should toggle the class 'menu--open' on the menu (your div with a 'menu' class).
   menuButton.addEventListener('click', (event) => {
@@ -63,8 +64,6 @@ return menuCompMenu;
 };
 
 // Step 6: add the menu component to the DOM.
-const menuButton = document.querySelector('.menu-button');
 
-// menuItems.forEach((index) => {
-//   menuButton.appendChild(createMenuComp(index));
-// });
+header.appendChild(createMenuComp(menuItems));
+

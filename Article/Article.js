@@ -157,7 +157,7 @@ function createComponent(title, date, p1, p2, p3) {
 
 // Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
 
-  componentArticle.addEventListener('click', (event) => {
+  componentExpandButton.addEventListener('click', (event) => {
     componentArticle.classList.toggle('article-open');
     ////////////////TL said that event.target.parentElement.classList.toggle('article-open'); could be a better option. Especially if we don't know yet what the parent element will be.
   });
