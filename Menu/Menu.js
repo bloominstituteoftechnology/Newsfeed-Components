@@ -23,6 +23,7 @@ let menuItems = [
 ////////////////Get .menu-button
 
 const menuButton = document.querySelector('.menu-button');
+const header = document.querySelector('header');
 
 ////////////////Function to Create Menu Component
 function createMenuComp (menuItems){
