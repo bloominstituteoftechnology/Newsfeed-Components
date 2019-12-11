@@ -50,4 +50,14 @@ function openMenu(arr){
     item.textContent = link;
     listOfLinks.appendChild(item);
   })
+
+  navDiv.classList.add('menu');
+
+  menuButton.addEventListener('click', (e) => {
+    navDiv.classList.toggle('menu--open');
+  })
+
+  return navDiv;
 }
+
+header.appendChild(openMenu(menuItems));
