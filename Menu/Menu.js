@@ -62,6 +62,6 @@ return menuCompMenu;
 // Step 6: add the menu component to the DOM.
 const menuButton = document.querySelector('.menu-button');
 
-menuItems.forEach((index) => {
-  menuButton.appendChild(createMenuComp(index));
-});
+// menuItems.forEach((index) => {
+//   menuButton.appendChild(createMenuComp(index));
+// });

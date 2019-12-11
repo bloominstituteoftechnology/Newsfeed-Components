@@ -128,13 +128,15 @@ function createComponent(title, date, firstParagraph, secondParagraph, thirdPara
   const componentPara3 = document.createElement('p');
   const componentExpandButton = document.createElement('span');
 
+  console.log(componentArticle);
+
 
   ////////////////Append/Nest Elements
   componentArticle.appendChild(componentTitle);
   componentArticle.appendChild(componentDate);
-    componentDate.appendChild(componentPara1);
-    componentDate.appendChild(componentPara2);
-    componentDate.appendChild(componentPara3);
+  componentArticle.appendChild(componentPara1);
+  componentArticle.appendChild(componentPara2);
+  componentArticle.appendChild(componentPara3);
   componentArticle.appendChild(componentExpandButton);
 
   ////////////////Add Classes
