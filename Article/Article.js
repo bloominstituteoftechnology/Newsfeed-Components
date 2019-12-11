@@ -158,11 +158,9 @@ function createComponent(title, date, firstParagraph, secondParagraph, thirdPara
 // Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
 
   componentArticle.addEventListener('click', (event) => {
-    componentArticle.classList.toggle('article-open')
-  })
+    componentArticle.classList.toggle('article-open');
+  });
 
-
- 
 
   // Step 3: return the entire component.
   return componentArticle;
@@ -171,11 +169,15 @@ function createComponent(title, date, firstParagraph, secondParagraph, thirdPara
 
 // Step 4: Map over the data, creating a component for each object and add each component to the DOM as children of the 'articles' div.
 
-data.forEach((index) => {
-  articles.appendChild(createComponent(index.title, index.date, index.firstParagraph, index.secondParagraph, index.thirdParagraph))
+data.map((index) => {
+  return articles.appendChild(createComponent(index.title, index.date, index.firstParagraph, index.secondParagraph, index.thirdParagraph));
 });
 
 
+////////////////What I originally coded:
+// data.forEach((index) => {
+//   articles.appendChild(createComponent(index.title, index.date, index.firstParagraph, index.secondParagraph, index.thirdParagraph))
+// });
 
 // Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
