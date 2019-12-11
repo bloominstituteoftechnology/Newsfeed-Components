@@ -117,7 +117,7 @@ const articles = document.querySelector('.articles')
 
 ////////////////Function to Create component
 
-function createComponent(title, date, firstParagraph, secondParagraph, thirdParagraph) {
+function createComponent(title, date, p1, p2, p3) {
 
   ////////////////Create Elements
   const componentArticle = document.createElement('div');
@@ -149,9 +149,9 @@ function createComponent(title, date, firstParagraph, secondParagraph, thirdPara
   ////////////////Insert Data
   componentTitle.textContent = title;
   componentDate.textContent = date;
-  componentPara1.textContent = firstParagraph;
-  componentPara2.textContent = secondParagraph;
-  componentPara3.textContent = thirdParagraph;
+  componentPara1.textContent = p1;
+  componentPara2.textContent = p2;
+  componentPara3.textContent = p3;
   componentExpandButton.textContent = 'Click to open/close';
 
 
@@ -159,6 +159,7 @@ function createComponent(title, date, firstParagraph, secondParagraph, thirdPara
 
   componentArticle.addEventListener('click', (event) => {
     componentArticle.classList.toggle('article-open');
+    ////////////////TL said that event.target.parentElement.classList.toggle('article-open'); could be a better option. Especially if we don't know yet what the parent element will be.
   });
 
 
@@ -172,12 +173,11 @@ function createComponent(title, date, firstParagraph, secondParagraph, thirdPara
 data.map((index) => {
   return articles.appendChild(createComponent(index.title, index.date, index.firstParagraph, index.secondParagraph, index.thirdParagraph));
 });
-
-
 ////////////////What I originally coded:
 // data.forEach((index) => {
 //   articles.appendChild(createComponent(index.title, index.date, index.firstParagraph, index.secondParagraph, index.thirdParagraph))
 // });
+
 
 // Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
