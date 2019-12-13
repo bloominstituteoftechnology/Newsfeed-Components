@@ -120,33 +120,43 @@ data.forEach((item) => {
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
-function create(item) {
+const articles = document.querySelector('.articles');
+
+function createArticle(title, date, firstParagraph, secondParagraph, thirdParagraph) {
+
   const article = document.createElement('div');
-  const title = document.createElement('h2');
-  const date = document.createElement('p');
-  const firstParagraph = document.createElement('p');
-  const secondParagraph = document.createElement('p');
-  const thirdParagraph = document.createElement('p');
-  const expandButton = document.createElement('span');
+  const articleTitle = document.createElement('h2');
+  const articleDate = document.createElement('p');
+  const paraOne = document.createElement('p');
+  const paraTwo = document.createElement('p');
+  const paraThree = document.createElement('p');
+  const button = document.createElement('span');
 
-  articles.appendChild(title);
-  articles.appendChild(date);
-  articles.appendChild(firstParagraph);
-  articles.appendChild(secondParagraph);
-  articles.appendChild(thirdParagraph);
-  articles.appendChild(expandButton);
+  article.appendChild(articleTitle);
+  article.appendChild(articleDate);
+  article.appendChild(paraOne);
+  article.appendChild(paraTwo);
+  article.appendChild(paraThree);
+  article.appendChild(button);
 
-  title.textContent = item.title;
-  date.textContent = item.date;
-  firstParagraph.textContent = item.firstParagraph;
-  secondParagraph.textContent = item.secondParagraph;
-  thirdParagraph.textContent = item.thirdParagraph;
-
-  articles.classList.add('articles');
-  date.classList.add('date');
+  article.classList.add('article');
+  articleDate.classList.add('date');
   button.classList.add('expandButton');
 
-  button.addEventListener('click', () => {
-    expandButton.classList.toggle('article-open');
-  });
+  articleTitle.textContent = title;
+  articleDate.textContent = date;
+  paraOne.textContent = firstParagraph;
+  paraTwo.textContent = secondParagraph;
+  paraThree.textContent = thirdParagraph;
+
+  button.addEventListener('click', (e) => {
+    article.classList.toggle('article-open');
+  })
+
+  return article;
 }
+
+data.forEach((data) => {
+  articles.appendChild(createArticle(data.articleTitle, data.articleDate, data.paraOne, data.paraTwo, data.paraThree));
+})
+
