@@ -36,26 +36,44 @@ let menuItems = [
   
 */
 
-function seeMenu (arr) {
+function seeMenu (data) {
   const aMenu = document.createElement('div');
   const aList = document.createElement('ul');
-  const listItem = document.createElement('li');
+  // const students = document.createElement('li');
+  // const faculty = document.createElement('li');
+  // const whatsNew = document.createElement('li');
+  // const techTrends = document.createElement('li');
+  // const music = document.createElement('li');
+  // const logOut = document.createElement('li');
+  const menuItems = data.map(item => {
+    const listItem = document.createElement('li')
+   listItem.textContent = item
+    return listItem
+  })
 
-  aMenu.appendChild('aList');
-  aList.appendChild('listItem')
-  aList.appendChild('listItem')
-  aList.appendChild('listItem')
-  aList.appendChild('listItem')
-  aList.appendChild('listItem')
-  aList.appendChild('listItem')
+
+  aMenu.appendChild(aList);
+  for (let menuItem of menuItems) {
+    aList.appendChild(menuItem)
+  }
+
+  // aList.appendChild(listItem);
+  // aList.appendChild(listItem);
+  // aList.appendChild(listItem);
+  // aList.appendChild(listItem);
+  // aList.appendChild(listItem);
+  // aList.appendChild(listItem);
 
   aMenu.classList.add('menu');
 
-  const menuButton = document.querySelector('.menu-button');
-  menuButton.addEventListener('click', function (event) {
-    menu.classList.toggle('menu--open')
+  const menuButton = document.querySelector('.header');
+menuButton.addEventListener('click', function (event) {
+    aMenu.classList.toggle('menu--open')
+    console.log('you clicked')
   })
 
 
   return aMenu
 }
+
+document.querySelector('.header').appendChild(seeMenu(menuItems))
