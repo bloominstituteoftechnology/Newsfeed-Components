@@ -125,7 +125,7 @@ function createArticle(title, date, firstParagraph, secondParagraph, thirdParagr
   paraOne.textContent = firstParagraph;
   paraTwo.textContent = secondParagraph;
   paraThree.textContent = thirdParagraph;
-
+  button.textContent = 'Click to Expand';
   button.addEventListener('click', (e) => {
     article.classList.toggle('article-open');
   })
@@ -136,9 +136,6 @@ data.map((a) => {
   return articles.appendChild(createArticle
   (a.title, a.date, a.firstParagraph, a.secondParagraph, a.thirdParagraph))
   })
-data.forEach((data) => {
-  articles.appendChild(createArticle(data.articleTitle, data.articleDate, data.paraOne, data.paraTwo, data.paraThree));
-})
 
   
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
