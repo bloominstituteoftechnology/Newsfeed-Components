@@ -85,7 +85,22 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
-  }
+  }, 
+  {
+    title: 'My Very Own Article',
+    date: 'January 7th, 2020', 
+    firstParagraph: `Gotta catch 'em all Horsea gym Ninjask Absol Sinnoh Poliwag. Gotta catch 'em all Youngster wants to fight Soda Pop Floatzel 
+    Leech Life Seismitoad Ariados. Earthquake Pokemon Glitch City Tail Whip Skitty Ekans Dialga. Ut aliquip ex ea commodo consequat James 
+    Castform Lotad the power that's inside Burnt Berry Makuhita. Ghost Ariados Corphish Dusclops Golbat Gligar Zweilous.`, 
+    secondParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
+    hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
+    hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
+    hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? `,
+    thirdParagraph: `Dagobah hutt jawa leia calamari ventress skywalker yoda. Binks wicket hutt coruscant sidious
+    naboo ackbar tatooine. Hutt lars padmé darth. Maul solo darth darth jabba qui-gon chewbacca darth maul. Moff baba wicket
+    han. C-3po antilles moff qui-gon ahsoka aayla dooku amidala. Palpatine droid amidala droid k-3po twi'lek padmé wookiee. Leia
+    moff calamari mon obi-wan. Solo grievous lando coruscant. Jinn darth palpatine obi-wan mon.`
+}
 ];
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
@@ -112,3 +127,44 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+const articles = document.querySelector('.articles');
+console.log(articles);
+
+data.forEach((pizza) => {
+  articles.appendChild(componentCreator(pizza.title, pizza.date, pizza.firstParagraph, pizza.secondParagraph, pizza.thirdParagraph));
+});
+
+function componentCreator (title, date, firstParagraph, secondParagraph, thirdParagraph) {
+
+  const container = document.createElement('div');
+  const conTitle = document.createElement('h2');
+  const conDate = document.createElement('h2');
+  const first = document.createElement('h2');
+  const second = document.createElement('h2');
+  const third = document.createElement('h2');
+  const span = document.createElement('h2');
+
+  container.classList.add('article', 'article-open');
+  conDate.classList.add('date');
+  span.classList.add('expandButton');
+
+  container.appendChild(conTitle);
+  container.appendChild(conDate);
+  container.appendChild(first);
+  container.appendChild(second);
+  container.appendChild(third);
+  container.appendChild(span);
+
+  conTitle.textContent = title;
+  conDate.textContent = date;
+  first.textContent = firstParagraph;
+  second.textContent = secondParagraph;
+  third.textContent = thirdParagraph;
+  span.textContent = 'open/close';
+
+  span.addEventListener('click', (e) => {
+    container.classList.toggle('article-open');
+  });
+
+  return container;
+};
