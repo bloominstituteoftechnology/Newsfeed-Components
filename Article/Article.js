@@ -109,6 +109,11 @@ cards.append('firstParagraph');
 cards.append('secondParagraph');
 cards.append('thirdParagraph');
 
+titles.textContent('title');
+dates.textContent('date');
+p1.textContent('firstParagraph');
+p2.textContent('secondParagraph');
+p3.textContent('thirdParagraph');
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
   <div class="article">
