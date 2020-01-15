@@ -112,3 +112,59 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+
+//<div class="article">
+/* <h2>{title of the article}</h2>
+<p class="date">{date of the article}</p>
+
+{three separate paragraph elements}
+
+<span class='expandButton'></span>
+</div> */
+
+//Step 1 - function/append/classes/text content
+function stuff(title, date, firstParagraph, secondParagraph, thirdParagraph){
+const articleDiv = document.createElement('div');
+const header = document.createElement('h2');
+const dateParag = document.createElement('p');
+const paragOne = document.createElement('p');
+const paragTwo = document.createElement('p');
+const paragThree = document.createElement('p');
+const expandBtn = document.createElement('span');
+
+//append
+articleDiv.append(header);
+header.append(dateParag);
+dateParag.append(paragOne);
+paragOne.append(paragTwo);
+paragTwo.append(paragThree);
+paragThree.append(expandBtn);
+
+
+//classes
+articleDiv.classList.add('article');
+dateParag.classList.add('date');
+expandBtn.classList.add('expandButton');
+
+//text content
+header.textContent = title;
+dateParag.textContent = date;
+paragOne.textContent = firstParagraph;
+paragTwo.textContent = secondParagraph;
+paragThree.textContent = thirdParagraph;
+
+//Step 2 - add event listener. : Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
+expandBtn.addEventListener('click', e => {
+
+})
+
+//Step 3 - return the entire component
+return articleDiv;
+
+}
+
+
+//Step 4 - Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
+
+//Step 5 - Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
