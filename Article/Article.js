@@ -112,7 +112,7 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
-function createCard(title, date, par1, par2, par3){
+function createCard(title, date, firstParagraph, secondParagraph, thirdParagraph){
   const articleProj = document.createElement('div');
   const titleProj = document.createElement('h2');
   const parProj = document.createElement ('p');
@@ -127,23 +127,30 @@ function createCard(title, date, par1, par2, par3){
 
   articleProj.append(titleProj);
   articleProj.append(parProj);
-  articleProj.append(spanProj);
+ 
   articleProj.append(parProj1);
   articleProj.append(parProj2);
   articleProj.append(parProj3);
+  articleProj.append(spanProj);
 
   titleProj.textContent = title;
   parProj.textContent = date;
-  parProj1.textContent = par1;
-  parProj2.textContent = par2;
-  parProj3.textContent = par3;
+  parProj1.textContent = firstParagraph;
+  parProj2.textContent = secondParagraph;
+  parProj3.textContent = thirdParagraph;
+  spanProj.textContent = "click to expand";
 
+  spanProj.addEventListener('click', (event)=>{
+    articleProj.classList.toggle('article-open');
+    console.log('button clicked', event.target)
+  })
   return articleProj;
+  
 }
 
 const articles = document.querySelector('.articles');
 data.forEach(info =>{
-  articles.append(createCard(info.title, info.date,info.par1,info.par2,info.par3));
-  
+  articles.append(createCard(info.title, info.date,info.firstParagraph,info.secondParagraph,info.thirdParagraph));
+
 
 })
