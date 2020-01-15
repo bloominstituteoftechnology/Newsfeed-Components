@@ -87,7 +87,7 @@ const data = [
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
 ];
-console.log(data[0].title)
+console.log(data[1].title)
 
 function createComponent(title, date, p1, p2, p3) {
 
@@ -104,11 +104,11 @@ function createComponent(title, date, p1, p2, p3) {
   divElement.classList.add('article')
   spanElement.classList.add('expandButton')
 
-  titleElement.textContent = data.title
-  dateElement.textContent = data.date
-  elementPone.textContent = data.firstParagraph
-  elementPtwo.textContent = data.secondParagraph
-  elementPthree.textContent = data.thirdParagraph
+  titleElement.textContent = title
+  dateElement.textContent = date
+  elementPone.textContent = p1
+  elementPtwo.textContent = p2
+  elementPthree.textContent = p3
 
   divElement.append(titleElement)
   divElement.append(dateElement)
@@ -121,20 +121,20 @@ function createComponent(title, date, p1, p2, p3) {
   const thespan = document.querySelector('span')
   console.log(thespan)
 
-  spanElement.addEventListener('click', () => {
-    divElement.classList.toggle('article')
+  divElement.addEventListener('click', event => {
+    // divElement.classList.toggle('article')
     divElement.classList.toggle('article-open')
   })
 
   return divElement
 }
-createComponent(data.title, data.date, data.p1, data.p2, data.p3)
+// createComponent(data.title, data.date, data.p1, data.p2, data.p3)
 
 const body = document.querySelector('body')
 console.log(body)
 
 data.forEach(data => {
-  body.append(createComponent(data.title, data.date, data.p1, data.p2, data.p3))
+  body.append(createComponent(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
 
 
 })
