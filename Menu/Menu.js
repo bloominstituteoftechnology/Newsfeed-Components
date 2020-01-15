@@ -61,4 +61,4 @@ header.append(menuCreator(menuItems));
 //styling-------------------------------------------------------------------------------
 header.style.background = '#D2691E';
 document.querySelector('.menu').style.color = 'brown';
-document.querySelector('.menu').style.background = '#EEE8AA';
+document.querySelector('.menu').style.background = '#DAA520';

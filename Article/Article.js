@@ -176,5 +176,5 @@ data.map(el => {
 
 
 // styling-----------------------------------------------------
-document.querySelector('html').style.background = '#F0E68C';
-document.querySelector('body').style.background = '#F0E68C';
+document.querySelector('html').style.background = 'url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT79DbMbkx9go8f5rIRj87MgPgW7B-9E-HutOgNb9cZveI_Gmft&s)';
+document.querySelector('body').style.background = 'url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT79DbMbkx9go8f5rIRj87MgPgW7B-9E-HutOgNb9cZveI_Gmft&s)';
