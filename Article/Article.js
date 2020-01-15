@@ -87,11 +87,63 @@ const data = [
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
 ];
+console.log(data[0].title)
 
-/* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
-  
+function createComponent(title, date, p1, p2, p3) {
+
+  const titleElement = document.createElement('h2');
+  const dateElement = document.createElement('p')
+  const divElement = document.createElement('div')
+  const elementPone = document.createElement('p')
+  const elementPtwo = document.createElement('p')
+  const elementPthree = document.createElement('p')
+  const spanElement = document.createElement('span')
+
+
+
+  divElement.classList.add('article')
+  spanElement.classList.add('expandButton')
+
+  titleElement.textContent = data.title
+  dateElement.textContent = data.date
+  elementPone.textContent = data.firstParagraph
+  elementPtwo.textContent = data.secondParagraph
+  elementPthree.textContent = data.thirdParagraph
+
+  divElement.append(titleElement)
+  divElement.append(dateElement)
+  divElement.append(elementPone)
+  divElement.append(elementPtwo)
+  divElement.append(elementPthree)
+  divElement.append(spanElement)
+  console.log(divElement)
+
+  const thespan = document.querySelector('span')
+  console.log(thespan)
+
+  spanElement.addEventListener('click', () => {
+    divElement.classList.toggle('article')
+    divElement.classList.toggle('article-open')
+  })
+
+  return divElement
+}
+createComponent(data.title, data.date, data.p1, data.p2, data.p3)
+
+const body = document.querySelector('body')
+console.log(body)
+
+data.forEach(data => {
+  body.append(createComponent(data.title, data.date, data.p1, data.p2, data.p3))
+
+
+})
+
+
+/* Step 1: Create a function that creates a component. You will want your component to look like the template below:
+
   <div class="article">
-    <h2>{title of the article}</h2>
+   <h2>{title of the article}</h2>
     <p class="date">{date of the article}</p>
 
     {three separate paragraph elements}
