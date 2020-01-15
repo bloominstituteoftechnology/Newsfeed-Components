@@ -85,6 +85,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'DOM Components',
+    date: 'Jan 15th, 2020',
+    firstParagraph: 'Do culpa nulla mollit incididunt consequat irure est sint enim elit veniam. Non laborum eiusmod Lorem dolor adipisicing consequat ut. Voluptate officia et officia adipisicing veniam eiusmod minim aliqua culpa cupidatat ea veniam eiusmod nulla. Eu quis officia quis voluptate adipisicing eu amet esse aliquip nulla amet. Laboris dolor consequat consequat labore.',
+
+    secondParagraph: `Deserunt consequat id cupidatat eu. Excepteur amet tempor consequat enim minim Lorem consectetur veniam consequat mollit occaecat nisi ex. Magna eu id laborum ad cupidatat pariatur eiusmod. Fugiat duis fugiat nostrud sunt velit pariatur duis duis. Ut nisi elit dolore culpa nostrud amet nisi Lorem pariatur officia proident aliqua amet.`,
+
+    thirdParagraph: `Ad et Lorem eiusmod anim nisi nulla eu aliquip eiusmod Lorem cupidatat. Quis esse magna eiusmod velit nulla cillum. Mollit eiusmod est irure incididunt voluptate sint. Tempor adipisicing duis anim aute. Deserunt do reprehenderit cupidatat labore.`
   }
 ];
 
@@ -107,8 +116,65 @@ const data = [
 
   Step 3: return the entire component.
 
-  Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
+  Step 4: Map over the data, creating a component for each object and add each component to the DOM as children of the 'articles' div.
 
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+function articleCreator(title, date, prgh1, prgh2, prgh3) {
+  const article = document.createElement('div');
+  const titleA = document.createElement('h2');
+  const dateA = document.createElement('p');
+  const paragraph1 = document.createElement('p');
+  const paragraph2 = document.createElement('p');
+  const paragraph3 = document.createElement('p');
+  const span = document.createElement('span');
+
+  article.append(titleA);
+  article.append(dateA);
+  article.append(paragraph1);
+  article.append(paragraph2);
+  article.append(paragraph3);
+  article.append(span);
+
+  titleA.textContent = title;
+  dateA.textContent = date;
+  paragraph1.textContent = prgh1;
+  paragraph2.textContent = prgh2;
+  paragraph3.textContent = prgh3;
+  span.textContent ='Click to Expand';
+
+  span.addEventListener('click', function(e){
+    article.classList.toggle('article-open')
+    //---------------------------------------
+    //article.style.background = '#F4A460';
+    article.style.color = 'orange';
+    //---------------------------------------
+  } );
+
+  article.classList.add('article');
+  dateA.classList.add('date');
+  span.classList.add('expandButton');
+
+  // styling---------------------------------
+  span.style.padding = '3px';
+  span.style.background = '#FFF8DC';
+  span.style.color = 'red';
+  span.style.fontWeight = 'bold';
+  //-----------------------------------------
+
+  return article;
+
+}
+
+const article = document.querySelector('.articles');
+data.map(el => {
+  article.append(articleCreator(el.title, el.date, el.firstParagraph, el.secondParagraph, el.thirdParagraph));
+  return article;
+})
+
+
+// styling-----------------------------------------------------
+document.querySelector('html').style.background = '#F0E68C';
+document.querySelector('body').style.background = '#F0E68C';
