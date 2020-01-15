@@ -89,12 +89,21 @@ const data = [
 ];
 
 function createCard(title, date, firstParagraph, secondParagraph, thirdParagraph);
-const cards = document.createElement("div");
-const titles = document.createElement("title");
-const dates = document.createElement("date");
-const p1 = document.createElement("firstParagraph");
-const p2 = document.createElement("secondParagraph");
-const p3 = document.createElement("thirdParagraph");
+const cards = document.createElement('div');
+const titles = document.createElement('title');
+const dates = document.createElement('date');
+const p1 = document.createElement('firstParagraph');
+const p2 = document.createElement('secondParagraph');
+const p3 = document.createElement('thirdParagraph');
+
+cards.classList.add('data');
+titles.classList.add('title');
+dates.classList.add('date');
+p1.classList.add('firstParagraph');
+p2.classList.add('secondParagraph');
+p3.classList.add('thirdParagraph');
+
+
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
