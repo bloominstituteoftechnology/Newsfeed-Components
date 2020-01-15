@@ -123,8 +123,9 @@ const data = [
 <span class='expandButton'></span>
 </div> */
 
+const articles = document.querySelector('.articles');
 //Step 1 - function/append/classes/text content
-function stuff(title, date, firstParagraph, secondParagraph, thirdParagraph){
+function articleCreator(title, date, firstParagraph, secondParagraph, thirdParagraph){
 const articleDiv = document.createElement('div');
 const header = document.createElement('h2');
 const dateParag = document.createElement('p');
@@ -135,11 +136,11 @@ const expandBtn = document.createElement('span');
 
 //append
 articleDiv.append(header);
-header.append(dateParag);
-dateParag.append(paragOne);
-paragOne.append(paragTwo);
-paragTwo.append(paragThree);
-paragThree.append(expandBtn);
+articleDiv.append(dateParag);
+articleDiv.append(paragOne);
+articleDiv.append(paragTwo);
+articleDiv.append(paragThree);
+articleDiv.append(expandBtn);
 
 
 //classes
@@ -153,10 +154,11 @@ dateParag.textContent = date;
 paragOne.textContent = firstParagraph;
 paragTwo.textContent = secondParagraph;
 paragThree.textContent = thirdParagraph;
+expandBtn.textContent = "click me!"
 
 //Step 2 - add event listener. : Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
 expandBtn.addEventListener('click', e => {
-
+articleDiv.classList.toggle('article-open')
 })
 
 //Step 3 - return the entire component
@@ -166,5 +168,10 @@ return articleDiv;
 
 
 //Step 4 - Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
+data.map((articleDiv) => {
+  return articles.append(articleCreator(articleDiv.title, articleDiv.date, articleDiv.firstParagraph, articleDiv.secondParagraph, articleDiv.thirdParagraph))
+})
+
+
 
 //Step 5 - Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
