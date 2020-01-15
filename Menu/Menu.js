@@ -35,13 +35,14 @@ let menuItems = [
 */
 
 //Step 1 - function
-function menuCreate(menuItems){
+function menuCreate(){
   const menuDiv = document.createElement('div');
   const unol = document.createElement('ul');
 
-//iteration
-let listItem = document.createElement('li');
+//Step 2 - iteration
+
   menuItems.forEach(item => {
+  let listItem = document.createElement('li');
   listItem.textContent = item
   unol.append(listItem);
   })
@@ -52,10 +53,20 @@ let listItem = document.createElement('li');
   //class
   menuDiv.classList.add('menu');
 
-//menu event listener
+//Step 4 - menu event listener
   const menuBtn = document.querySelector('.menu-button');
   menuBtn.addEventListener('click', () => {
     menuDiv.classList.toggle('menu--open');
   })
   return menuDiv;
 }
+
+//Step 6
+const header = document.querySelector('.header');
+menuItems.forEach(item => {
+header.append(menuCreate())
+})
+
+
+
+
