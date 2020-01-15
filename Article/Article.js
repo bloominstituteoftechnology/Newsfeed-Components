@@ -137,7 +137,7 @@ function createArticle(data) {
   article.append(p3);
   article.append(expandButton);
 
-  article.classList.add('article', 'close');
+  article.classList.add('article');
   articleDate.classList.add('date');
   expandButton.classList.add('expandButton');
   
