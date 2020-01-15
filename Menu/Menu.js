@@ -59,10 +59,12 @@ function menuCreate(menuItems){
   menuBtn.addEventListener('click', () => {
     menuDiv.classList.toggle('menu--open');
   })
+
+ //Step 5 - returns the menu component 
   return menuDiv;
 }
 
-//Step 6
+//Step 6 - adds menu to the DOM
 const header = document.querySelector('.header');
 menuItems.forEach(e => {
 header.append(menuCreate(menuItems))
