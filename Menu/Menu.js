@@ -36,27 +36,24 @@ let menuItems = [
 function menuCreator(array) {
 const newMenu = document.createElement('div');
 const newMenuContainer = document.createElement('ul');
-const newMenuItems = document.createElement('li');
 
 newMenu.classList.add('menu')
 
-newMenu.prepend(newMenuContainer);
-newMenu.prepend(newMenuItems);
+newMenu.appendChild(newMenuContainer);
 
-newMenuContainer.textContent = array;
-newMenuItems.textContent = array
+array.forEach( items => {
 
-return newMenu
-}
-const newbuiltMenu = document.querySelector('.menu');
-menuItems.forEach(data => {
-  newbuiltMenu.append((menuCreator))
+  const menuItem = document.createElement('li');
+  menuItem.textContent = items;
+  newMenuContainer.appendChild(menuItem)
 
-  newbuiltMenu.addEventListener('click', (e) => {
-    console.log('click')
-    
-  })
-  return newbuiltMenu
+});
+
+const menuButton = document.querySelector('.menu-button');
+menuButton.addEventListener('click', () => {
+  newMenu.classList.toggle("menu-open")
 })
-xvc
-console.log(newbuiltMenu)
+
+return newMenu;
+}
+console.log(menuItems)
