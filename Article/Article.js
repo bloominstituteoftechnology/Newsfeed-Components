@@ -85,6 +85,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Malazans Rule',
+    date: 'Jan 1st, 2019',
+    firstParagraph: `T'lan Ipsum Duryl Tarthenal Hurlochel Banaschar Flashwit Dancer's Lament Ibb Kettle Apsalar Fear Anomander Sweetcreek D'rek Sweetest Sufferance K'azz D'Avore Blend Ganrod Uru Hela Torrent Circle Breaker Kulp Lookback Kalam Throatslitter Baruk Green Pig Krute of Talient T'Amber Widdershins Ethume Kuru Qan Telorast Festian Korbal Broach Doan Tiste Edur Gadrobi Thom Tissy Galt Maybe Finadd Gaunt-Eye Humble Measure First Sword of the Empire Cotillion Forkrul Assail Orfantal Tiste Liosan Faradan Sort D'rek Daru Varat Taun Kallor Brys Venaz Gradithan Diligence Squad mage Itkovian Mage cadre. `,
+
+    secondParagraph: `T'lan Ipsum Duryl Tarthenal Hurlochel Banaschar Flashwit Dancer's Lament Ibb Kettle Apsalar Fear Anomander Sweetcreek D'rek Sweetest Sufferance K'azz D'Avore Blend Ganrod Uru Hela Torrent Circle Breaker Kulp Lookback Kalam Throatslitter Baruk Green Pig Krute of Talient T'Amber Widdershins Ethume Kuru Qan Telorast Festian Korbal Broach Doan Tiste Edur Gadrobi Thom Tissy Galt Maybe Finadd Gaunt-Eye Humble Measure First Sword of the Empire Cotillion Forkrul Assail Orfantal Tiste Liosan Faradan Sort D'rek Daru Varat Taun Kallor Brys Venaz Gradithan Diligence Squad mage Itkovian Mage cadre.`,
+
+    thirdParagraph: `T'lan Ipsum Duryl Tarthenal Hurlochel Banaschar Flashwit Dancer's Lament Ibb Kettle Apsalar Fear Anomander Sweetcreek D'rek Sweetest Sufferance K'azz D'Avore Blend Ganrod Uru Hela Torrent Circle Breaker Kulp Lookback Kalam Throatslitter Baruk Green Pig Krute of Talient T'Amber Widdershins Ethume Kuru Qan Telorast Festian Korbal Broach Doan Tiste Edur Gadrobi Thom Tissy Galt Maybe Finadd Gaunt-Eye Humble Measure First Sword of the Empire Cotillion Forkrul Assail Orfantal Tiste Liosan Faradan Sort D'rek Daru Varat Taun Kallor Brys Venaz Gradithan Diligence Squad mage Itkovian Mage cadre.`
   }
 ];
 
@@ -112,3 +121,47 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+function createArticle(data) {
+  const article = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+  const articleDate = document.createElement('p');
+  const p1 = document.createElement('p');
+  const p2 = document.createElement('p');
+  const p3 = document.createElement('p');
+  const expandButton = document.createElement('span');
+
+  article.append(articleTitle);
+  article.append(articleDate);
+  article.append(p1);
+  article.append(p2);
+  article.append(p3);
+  article.append(expandButton);
+
+  article.classList.add('article', 'close');
+  articleDate.classList.add('date');
+  expandButton.classList.add('expandButton');
+  
+
+
+
+  articleTitle.textContent = data.title;
+  articleDate.textContent = data.date;
+  p1.textContent = data.firstParagraph;
+  p2.textContent = data.secondParagraph;
+  p3.textContent = data.thirdParagraph;
+  expandButton.textContent = 'Expand';
+
+
+  expandButton.addEventListener('click', () => {
+    article.classList.toggle('article-open');
+  })
+  
+  return article;
+  
+};
+
+const articleDiv = document.querySelector('.articles');
+
+data.forEach(data => {
+  articleDiv.append(createArticle(data))
+});
