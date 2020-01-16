@@ -112,3 +112,49 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+function createArticle (currentArticle){
+    
+  // - Create Elements -
+  const article = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+  const articleDate = document.createElement('p');
+  const paragraphOne = document.createElement('p');
+  const paragraphTwo = document.createElement('p');
+  const paragraphThree = document.createElement('p');
+  const expandButton = document.createElement('span');
+
+   // - Add Classes for created elements -
+   article.classList.add('article');
+   articleDate.classList.add('date');
+   paragraphOne.classList.add('content');
+   paragraphTwo.classList.add('content');
+   paragraphThree.classList.add('content');
+   expandButton.classList.add('expandButton');
+
+   // - structure and possible appendices -
+   article.append(articleDate, articleTitle, paragraphOne, paragraphTwo, paragraphThree, expandButton);
+
+   // - Set the content 1 -
+  articleTitle.textContent = currentArticle.title;
+  articleDate.textContent = currentArticle.date;
+  paragraphOne.textContent = currentArticle.firstParagraph;
+  paragraphTwo.textContent = currentArticle.secondParagraph;
+  paragraphThree.textContent = currentArticle.thirdParagraph;
+  expandButton.textContent = 'Click Here';
+
+  // -Event Listener action to mouse click-
+  expandButton.addEventListener('click', event => {
+    article.classList.toggle('article-open');
+  })
+
+  return article;
+}
+
+const articles = document.querySelector('.articles');
+
+let newArticles = data.map((current) => {
+  let newArticle = createArticle(current);
+  
+  return articles.appendChild(newArticle);
+})
