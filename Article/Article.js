@@ -145,11 +145,20 @@ function articleCreator(title, date, prgh1, prgh2, prgh3) {
   paragraph3.textContent = prgh3;
   span.textContent ='Click to Expand';
 
+  let i = 1;
   span.addEventListener('click', function(e){
-    article.classList.toggle('article-open')
+    article.classList.toggle('article-open');
     //---------------------------------------
     //article.style.background = '#F4A460';
     article.style.color = 'orange';
+
+    // updates the button text
+    i++;
+    if(i%2===0){
+      span.textContent ='Click to Close';
+    } else {
+      span.textContent ='Click to Expand';
+    }
     //---------------------------------------
   } );
 

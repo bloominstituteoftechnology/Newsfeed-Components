@@ -30,7 +30,20 @@
   position: fixed;
   top: 0;
   z-index: 2;
+  animation-name: example;
+  animation-duration: 4s;
 }
+
+@keyframes example {
+  /* from {color: gold;}
+  to {color: white;} */
+
+  0%   {color: yellow;}
+  25%  {color: rgb(255, 123, 0);}
+  50%  {color: hsl(49, 100%, 50%);}
+  100% {color: white;}
+}
+
 .header h1 {
   margin: 0;
   font-size: 48px;
@@ -54,6 +67,7 @@ body {
   border: 1px solid lightgrey;
   border-radius: 10px;
   background-color: white;
+  color: #A0522D;
   position: relative;
   height: 50px;
   overflow: hidden;
@@ -100,6 +114,7 @@ body {
   height: 100vh;
   /* This give the height 100% of the screen or, '100% of View Height' */
   background-color: #81C784;
+  
   border: 1px solid #004D40;
   border-left: none;
   border-bottom: none;
@@ -109,8 +124,9 @@ body {
 .menu ul li {
   list-style-type: none;
   font-size: 32px;
-  padding: 30px 0;
+  padding: 20px 0;
   text-align: center;
+  background: linear-gradient(rgb(243, 157, 27), orange);
 }
 .menu--open {
   display: block;

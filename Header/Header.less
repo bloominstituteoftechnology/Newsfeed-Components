@@ -9,9 +9,22 @@
   position: fixed;
   top: 0;
   z-index: 2;
+  animation-name: example;
+  animation-duration: 4s;
 
   h1 {
     margin: 0;
     font-size: 48px;
   }
+
+  @keyframes example {
+    // from {color: gold;}
+    // to {color: white;}
+
+    0%   {color: yellow;}
+    25%  {color: rgb(255, 123, 0);}
+    50%  {color: hsl(49, 100%, 50%);}
+    100% {color: white;}
+  }
+
 }

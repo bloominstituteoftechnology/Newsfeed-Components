@@ -46,6 +46,13 @@ function menuCreator(data) {
     const li = document.createElement('li');
     li.textContent = item;
     ul.append(li);
+    li.style.paddingTop = '20px';
+    li.addEventListener('mouseover', () => {
+      li.style.color = 'white';
+    })
+    li.addEventListener('mouseout', () => {
+      li.style.color = 'brown';
+    })
   })
 
   document.querySelector('.menu-button').addEventListener('click', () => {
@@ -61,4 +68,4 @@ header.append(menuCreator(menuItems));
 //styling-------------------------------------------------------------------------------
 header.style.background = '#D2691E';
 document.querySelector('.menu').style.color = 'brown';
-document.querySelector('.menu').style.background = '#DAA520';
+document.querySelector('.menu').style.background = 'linear-gradient(rgb(243, 157, 27), orange)';
