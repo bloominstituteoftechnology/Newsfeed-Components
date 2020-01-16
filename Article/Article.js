@@ -85,6 +85,14 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'First Build Week Experience ',
+    date: 'Jan, 15th, 2020',
+    firstParagraph: `Lorem ipsum dolor, sit amet consectetur adipisicing elit.Sunt sed temporibus cupiditate dolore.Sed eveniet placeat nostrum temporibus blanditiis unde ratione debitis explicabo deleniti quia autem praesentium dignissimos, iure voluptate?`,
+    secondParagraph: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt sed temporibus cupiditate dolore. Sed eveniet placeat nostrum temporibus blanditiis unde ratione debitis explicabo deleniti quia autem praesentium dignissimos, iure voluptate?`,
+    thirdParagraph: `Corrupti eveniet rerum aperiam magnam natus tempora necessitatibus repellendus ipsam sint quos culpa velit tempore doloremque eos facilis dolorem, ducimus sequi a voluptate, ut pariatur odit aliquid autem praesentium. Quaerat!`
+
   }
 ];
 

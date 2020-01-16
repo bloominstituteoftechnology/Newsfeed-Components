@@ -37,7 +37,8 @@ function createComponent(arr) {
 
 createComponent(menuItems)
 const hamburgerHeader = document.querySelector('.header')
-hamburgerHeader.append(menuDiv)
+hamburgerHeader.append(createComponent(menuItems))
+
 
 /*
 
