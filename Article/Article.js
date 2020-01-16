@@ -89,7 +89,7 @@ const data = [
 ];
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
-  
+  fun
   <div class="article">
     <h2>{title of the article}</h2>
     <p class="date">{date of the article}</p>
@@ -112,3 +112,30 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+function createArticle(title, date, firstParagraph, secondParagraph, thirdParagraph){
+  const newArticle = document.createElement('div');
+  const newTitle = document.createElement('h2');
+  const newDate = document.createElement('p');
+  const buttonExpand = document.createElement('span');
+
+  newArticle.classList.add('.article');
+  buttonExpand.c('expandButton')
+
+  newArticle.append(newTitle);
+  newArticle.append(newDate);
+  newArticle.append(buttonExpand);
+
+  newTitle.textContent = title;
+  newDate.textContent = date;
+  buttonExpand.textContent = firstParagraph;
+  buttonExpand.textContent = secondParagraph;
+  buttonExpand.textContent = thirdParagraph;
+
+
+
+  buttonExpand.addEventListener('click', () => {
+    buttonExpand.toggleAttribute('.expandButton')
+  })
+  
+}
