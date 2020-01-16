@@ -85,56 +85,64 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Dessa-Goodlett lorem ipsum',
+    date: 'January 15th, 2020',
+    firstParagraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    secondParagraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    thirdParagraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
   }
 ];
-
-function createCard(title, date, firstParagraph, secondParagraph, thirdParagraph);
-const cards = document.createElement('div');
-const titles = document.createElement('title');
-const dates = document.createElement('date');
-const p1 = document.createElement('firstParagraph');
-const p2 = document.createElement('secondParagraph');
-const p3 = document.createElement('thirdParagraph');
-
-cards.classList.add('data');
-titles.classList.add('title');
-dates.classList.add('date');
-p1.classList.add('firstParagraph');
-p2.classList.add('secondParagraph');
-p3.classList.add('thirdParagraph');
-
-cards.append('title');
-cards.append('date');
-cards.append('firstParagraph');
-cards.append('secondParagraph');
-cards.append('thirdParagraph');
-
-titles.textContent('title');
-dates.textContent('date');
-p1.textContent('firstParagraph');
-p2.textContent('secondParagraph');
-p3.textContent('thirdParagraph');
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
-  
   <div class="article">
     <titleNewH2>{title of the article}</titleNewH2>
     <p class="date">{date of the article}</p>
-
     {three separate paragraph elements}
-
     <span class='expandButton'></span>
   </div>
- 
   Hint: You will need to use createElement more than once here!
+  Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.*/
+  
+function news(title, date, firstParagraph, secondParagraph, thirdParagraph)
+{
+const cards = document.createElement('div');
+const titles = document.createElement('h2');
+const dates = document.createElement('p');
+const para1 = document.createElement('p');
+const para2 = document.createElement('p');
+const para3 = document.createElement('p');
+const spans = document.createElement('span');
 
-  Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
+cards.classList.add('article');
+dates.classList.add('date');
+spans.classList.add('expandButton');
 
-  Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
 
-  Step 3: return the entire component.
+cards.append(titles);
+cards.append(dates);
+cards.append(para1);
+cards.append(para2);
+cards.append(para3);
+cards.append(spans);
 
-  Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
+titles.textContent = title;
+dates.textContent = date;
+para1.textContent = firstParagraph;
+para2.textContent = secondParagraph;
+para3.textContent = thirdParagraph;
+spans.textContent = "expand";
 
-  Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
-
-*/
+spans.addEventListener('click', function(e){
+  cards.classList.toggle('article-open');
+})
+return cards;
+}
+const newArticle = document.querySelector('.articles');
+data.map( info => {
+  newArticle.append(news(info.title, info.date, info.firstParagraph, info.secondParagraph, info.thirdParagraph))
+});
+/*Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.*/
+/*Step 3: return the entire component.*/
+/*Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.*/
+/*Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.*/
