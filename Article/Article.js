@@ -102,13 +102,77 @@ const data = [
   Hint: You will need to use createElement more than once here!
 
   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
-
+  
   Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
 
   Step 3: return the entire component.
-
-  Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
-
-  Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
-
 */
+
+
+function articleCreator(articleInfo) {
+  // define new elements
+  const article = document.createElement("div");
+  const articleTitle = document.createElement("h2");
+  const articleDate = document.createElement("p");
+  const firstP = document.createElement("p");
+  const secondP = document.createElement("p");
+  const thirdP = document.createElement("p");
+  const buttonExpand = document.createElement("span");
+  const buttonCollapse = document.createElement("span");
+
+  // set class names
+  article.classList.add("article");
+  articleDate.classList.add("date");
+  buttonExpand.classList.add("expandButton");
+  buttonCollapse.classList.add("collapseButton", "hide-btn");
+
+  // set up structure of the elements
+  article.appendChild(articleTitle);
+  article.appendChild(articleDate);
+  article.appendChild(firstP);
+  article.appendChild(secondP);
+  article.appendChild(thirdP);
+  article.appendChild(buttonExpand);
+  article.appendChild(buttonCollapse);
+
+  // set text content
+  buttonExpand.textContent = "\u25bc";
+  buttonCollapse.textContent = "\u25b2";
+  articleTitle.textContent = articleInfo.title;
+  articleDate.textContent = articleInfo.date;
+  firstP.textContent = articleInfo.firstParagraph;
+  secondP.textContent = articleInfo.secondParagraph;
+  thirdP.textContent = articleInfo.thirdParagraph;
+
+
+  // add event listener for button
+  buttonExpand.addEventListener("click", event => {
+  console.log("button clicked", event.target);
+
+  buttonExpand.classList.toggle("hide-btn");
+  buttonCollapse.classList.toggle("hide-btn");
+
+  article.classList.toggle("article-open");
+  });
+
+  buttonCollapse.addEventListener("click", event => {
+  console.log("button clicked", event.target);
+
+  buttonCollapse.classList.toggle("hide-btn");
+  buttonExpand.classList.toggle("hide-btn");
+
+  article.classList.toggle("article-open");
+  });
+
+  return article;
+}
+/* Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div. */
+/* Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
+*/
+const articles = document.querySelector(".articles");
+
+data.forEach(obj => {
+articles.appendChild(articleCreator(obj));
+});
+
+
