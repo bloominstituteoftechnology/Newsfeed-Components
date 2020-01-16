@@ -87,7 +87,7 @@ const data = [
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
 ];
-console.log(data[1].title)
+
 
 function createComponent(title, date, p1, p2, p3) {
 
@@ -103,7 +103,7 @@ function createComponent(title, date, p1, p2, p3) {
 
   divElement.classList.add('article')
   spanElement.classList.add('expandButton')
-
+  spanElement.textContent = 'Click to Expand'
   titleElement.textContent = title
   dateElement.textContent = date
   elementPone.textContent = p1
@@ -116,10 +116,9 @@ function createComponent(title, date, p1, p2, p3) {
   divElement.append(elementPtwo)
   divElement.append(elementPthree)
   divElement.append(spanElement)
-  console.log(divElement)
 
-  const thespan = document.querySelector('span')
-  console.log(thespan)
+
+
 
   divElement.addEventListener('click', event => {
     // divElement.classList.toggle('article')
@@ -131,7 +130,7 @@ function createComponent(title, date, p1, p2, p3) {
 // createComponent(data.title, data.date, data.p1, data.p2, data.p3)
 
 const body = document.querySelector('body')
-console.log(body)
+
 
 data.forEach(data => {
   body.append(createComponent(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
