@@ -144,8 +144,8 @@ function createArticle(title, date, firstParagraph, secondParagraph, thirdParagr
   paragraphTwo.classList.add('secondParagraph');
   paragraphThree.classList.add('thirdParagraph')
   buttonSpan.classList.add('expandButton');
-  buttonOpen.classList.add('close', 'article-open');
-  buttonClose.classList.add('close');
+  buttonOpen.classList.add('close');
+  buttonClose.classList.add('article-open');
   
 
 
