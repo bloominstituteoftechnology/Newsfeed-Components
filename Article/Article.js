@@ -112,3 +112,67 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+function createArticle(title, date, firstParagraph, secondParagraph, thirdParagraph){
+  // define new elements
+  const article = document.createElement('div');
+  const titleArticle = document.createElement('h2');
+  const dateArticle = document.createElement('p');
+  const paragraphOne = document.createElement('p');
+  const paragraphTwo = document.createElement('p');
+  const paragraphThree = document.createElement('p');
+  const buttonSpan = document.createElement('span');
+  const buttonOpen = document.createElement('button');
+  const buttonClose = document.createElement('button');
+
+  // setup structure of elements
+  article.append(titleArticle);
+  article.append(dateArticle);
+  article.append(dateArticle);
+  article.append(paragraphOne);
+  article.append(paragraphTwo);
+  article.append(paragraphThree);
+  article.append(buttonSpan);
+  buttonSpan.append(buttonOpen);
+  buttonSpan.append(buttonClose);
+
+  // set class names
+  article.classList.add('article');
+  titleArticle.classList.add('title')
+  dateArticle.classList.add('date');
+  paragraphOne.classList.add('firstParagraph');
+  paragraphTwo.classList.add('secondParagraph');
+  paragraphThree.classList.add('thirdParagraph')
+  buttonSpan.classList.add('expandButton');
+  buttonOpen.classList.add('close', 'article-open');
+  buttonClose.classList.add('close');
+  
+
+
+
+  const open = '\u25bc';
+  const close = '\u25b2';
+  // set text content
+  buttonOpen.textContent = open;
+  buttonClose.textContent = close;
+  titleArticle.textContent = title;
+  dateArticle.textContent = date;
+  paragraphOne.textContent = firstParagraph;
+  paragraphTwo.textcontent = secondParagraph;
+  paragraphThree.textContent = thirdParagraph;
+
+  buttonSpan.addEventListener('click', event => {
+    console.log('button clicked', event.target);
+
+    buttonClose.classList.toggle('article-open');
+    buttonOpen.classList.toggle('article-open');
+    article.classList.toggle('toggle-on');
+  });
+
+  return article;
+};
+
+const newsFeed = document.querySelector('.articles');
+data.forEach(data => {
+  newsFeed.append(createArticle(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph));
+});
