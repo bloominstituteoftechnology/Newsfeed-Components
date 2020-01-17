@@ -93,49 +93,55 @@ const data = [
   <div class="article">
     <h2>{title of the article}</h2>
     <p class="date">{date of the article}</p>
-
     {three separate paragraph elements}
-
     <span class='expandButton'></span>
   </div>
-
   Hint: You will need to use createElement more than once here!
-
   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
-
   Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
-
   Step 3: return the entire component.
 
   Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
-
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
-
 */
 
 function createArticle(title, date, firstParagraph, secondParagraph, thirdParagraph){
+
   const newArticle = document.createElement('div');
   const newTitle = document.createElement('h2');
   const newDate = document.createElement('p');
-  const buttonExpand = document.createElement('span');
+  const button = document.createElement('span');
+  const P1 =document.createElement('p')
+  const P2 =document.createElement('p')
+  const P3 =document.createElement('p')
+ 
 
-  newArticle.classList.add('.article');
-  buttonExpand.c('expandButton')
+  newArticle.classList.add('article')
+  newDate.classList.add('date')
+  button.classList.add('expandButton')
 
-  newArticle.append(newTitle);
-  newArticle.append(newDate);
-  newArticle.append(buttonExpand);
+  newArticle.appendChild(newTitle);
+  newArticle.appendChild(newDate);
+  newArticle.appendChild(button);
+  newArticle.appendChild(P1);
+  newArticle.appendChild(P2);
+  newArticle.appendChild(P3);
+
+ 
 
   newTitle.textContent = title;
   newDate.textContent = date;
-  buttonExpand.textContent = firstParagraph;
-  buttonExpand.textContent = secondParagraph;
-  buttonExpand.textContent = thirdParagraph;
+  P1.textContent = firstParagraph;
+  P2.textContent = secondParagraph;
+  P3.textContent = thirdParagraph;
+  button.textContent = "click to expand"
 
-
-
-  buttonExpand.addEventListener('click', () => {
-    buttonExpand.toggleAttribute('.expandButton')
+  button.addEventListener('click', () => {
+    newArticle.classList.toggle('article-open')
   })
-  
+  return newArticle; 
 }
+data.map(item => {
+  document.querySelector('.articles').append(createArticle( item.title, item.date, item.firstParagraph, item.secondParagraph, item.thirdParagraph))
+});
+
