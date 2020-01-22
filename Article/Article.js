@@ -99,7 +99,7 @@ const data = [
     <span class='expandButton'></span>
   </div>
 
-  Hint: You will need to use createElement more than once here!
+    Hint: You will need to use createElement more than once here!
 
   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
 
@@ -112,3 +112,18 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+function createCard(title, date, firstParagraph, secondParagraph, thirdParagraph) {
+  //define new elements
+const card = document.createElement('div');
+const articleTitle = document.createElement('h2');
+const articleDate = document.createElement('p');
+const expandBtn = document.createElement('span');
+
+  //set class names
+
+  //add content
+
+
+  //return card component
+  return card
+}
