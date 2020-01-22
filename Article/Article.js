@@ -130,3 +130,9 @@ article.appendChild(par1);
 article.appendChild(par2);
 article.appendChild(par3);
 article.appendChild(button);
+
+// 3. Create class names
+article.classList.add("article");
+// title.classList.add('h2');  Maybe it's not is needed; no class mentioned above
+date.classList.add("par1");
+button.classList.add("expandButton");
