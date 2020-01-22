@@ -106,7 +106,7 @@ const data = [
 
   //
   function articleCreator (articleData) { 
-
+    // if I used 5 seperate arguments how would this look?  
     
     const article = document.createElement("div");
     const twoHead = document.createElement("h2");
