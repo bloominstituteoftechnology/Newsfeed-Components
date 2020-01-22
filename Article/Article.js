@@ -87,6 +87,58 @@ const data = [
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
 ];
+const createArticle = (
+  title,
+  date,
+  firstParagraph,
+  secondParagraph,
+  thirdParagraph
+) => {
+  //create element
+  const article = document.createElement('div');
+  const titleOfArticle = document.createElement('h2');
+  const dateOfArticle = document.createElement('p');
+  const articleFirstP = document.createElement('p');
+  const articleSecondP = document.createElement('p');
+  const articleThirdP = document.createElement('p');
+  const articleBtn = document.createElement('span');
+
+  article.appendChild(titleOfArticle);
+  article.appendChild(dateOfArticle);
+  article.appendChild(articleFirstP);
+  article.appendChild(articleSecondP);
+  article.appendChild(articleThirdP);
+  article.appendChild(articleBtn);
+
+  article.classList.add('article');
+  dateOfArticle.classList.add('date');
+  articleBtn.classList.add('expandButton');
+
+  titleOfArticle.textContent = title;
+  dateOfArticle.textContent = date;
+  articleFirstP.textContent = firstParagraph;
+  articleSecondP.textContent = secondParagraph;
+  articleThirdP.textContent = thirdParagraph;
+  articleBtn.textContent = 'Expand';
+
+  articleBtn.addEventListener('click', () => {
+    article.classList.toggle('article-open');
+  });
+  // console.log(article);
+  return article;
+};
+const articleall = document.querySelector('.articles');
+data.forEach(item => {
+  articleall.appendChild(
+    createArticle(
+      item.title,
+      item.date,
+      item.firstParagraph,
+      item.secondParagraph,
+      item.thirdParagraph
+    )
+  );
+});
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
