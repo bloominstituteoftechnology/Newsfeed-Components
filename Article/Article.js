@@ -112,14 +112,35 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
-function createCard(title, date, firstParagraph, secondParagraph, thirdParagraph) {
+function createCard(title, date, firstParagraph, secondParagraph, thirdParagraph) => {
   //define new elements
 const card = document.createElement('div');
 const articleTitle = document.createElement('h2');
 const articleDate = document.createElement('p');
-const expandBtn = document.createElement('span');
+const paragraph1 = document.createElement('p');
+const paragraph2 = document.createElement('p');
+const paragraph3 = document.createElement('p');
+const expandButton = document.createElement('span');
+
+articles.appendChild(card);
+card.appendChild(articleTitle);
+card.appendChild(articleDate);
+card.appendChild(paragraph1);
+card.appendChild(paragraph2);
+card.appendChild(paragraph3);
+card.appendChild(expandButton);
+
 
   //set class names
+card.classList.add('article');
+articleTitle.classList.add('article','h2');
+articleDate.classList.add('article', 'date');
+expandButton.classList.add('article', 'expandButton');
+
+//add event listener
+expandButton.addEventListener('click', () => {
+  
+})
 
   //add content
 
