@@ -112,9 +112,11 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
-// const createArticle = document.querySelector('.articles');
+const createArticle = document.querySelector(".articles");
+
+// 1. Create a Function
 function articleContents(info) {
-  // 1. Create Elements
+  // Create Elements
   const article = document.createElement("div");
   const title = document.createElement("h2");
   const date = document.createElement("p");
@@ -123,7 +125,7 @@ function articleContents(info) {
   const par3 = document.createElement("p");
   const button = document.createElement("span");
 
-  // 2. Tree-like structure for elements
+  // Tree-like structure for elements
   article.appendChild(title);
   article.appendChild(date);
   article.appendChild(par1);
@@ -133,13 +135,13 @@ function articleContents(info) {
 
   // article.appendChild(tittle, date, par1, par2, par3, button);
 
-  // 3. Create class names
+  // Create class names
   article.classList.add("article");
   // title.classList.add('h2');  Maybe it's not is needed; no class mentioned above
   date.classList.add("par1");
   button.classList.add("expandButton");
 
-  // 4. Add content
+  // Add content
   title.textContent = info.title;
   date.textContent = info.date;
   par1.textContent = info.par1;
@@ -147,5 +149,16 @@ function articleContents(info) {
   par3.textContent - info.par3;
   button.textContent = info.button;
 
-  //5. Event listener
+  // 2. Event listener
+  button.addEventListener("click", () => {
+    article.classList.toggle("article-open");
+  });
+
+  // 3. Return component
+  return article;
 }
+
+// 4. Creat component for each object
+data.forEach(info => {
+  createArticle.appendChild(articleContents(info));
+});
