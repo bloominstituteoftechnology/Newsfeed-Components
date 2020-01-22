@@ -85,6 +85,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: "New Article added to the Array in 2019",
+    date: "Jan 22, 2019",
+    firstParagraph: `Blah, blah, blah...blah, blah.`,
+
+    secondParagraph: `Blah, blah, blah...blah, blah!`,
+
+    thirdParagraph: `Blah, blah, blah...blah, blah?`
   }
 ];
 
@@ -112,7 +121,6 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
-const createArticle = document.querySelector(".articles");
 
 // 1. Create a Function
 function articleContents(info) {
@@ -133,7 +141,7 @@ function articleContents(info) {
   article.appendChild(par3);
   article.appendChild(button);
 
-  // article.appendChild(tittle, date, par1, par2, par3, button);
+  // article.appendChild(title, date, par1, par2, par3, button);
 
   // Create class names
   article.classList.add("article");
@@ -159,6 +167,8 @@ function articleContents(info) {
 }
 
 // 4. Creat component for each object
+const createArticle = document.querySelector(".articles");
+
 data.forEach(info => {
   createArticle.appendChild(articleContents(info));
 });
