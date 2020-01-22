@@ -87,13 +87,24 @@ const data = [
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   },
   {
-    title: 'The Life of a Software Engineer',
+    title: 'The Life of a Software Engineer in 2020',
     date: "Jan 22nd, 2020",
-    firstParagraph: 'No the farther the by sorrowsorrow undaunted. Burned soon his ominous whispered shutter visiter silence. Quaint felt the sad our, if whom thy much evilprophet door tapping, croaking soul on and denser just flown my.',
+    firstParagraph: 'Tinkled ancient much still press this as lies we thy. Vainly i in wore of at bird reclining terrors, if i the my a, perched mien cried lamplight the and, and door flitting only some my other the a to, door its of what spoken flown nightly quaint is, but.',
 
-    secondParagraph: 'Ungainly my out seraphim there stock and fancy. Tell this only rare of and lenore. That cried then did name the have above fiend. The weary his take is. Be name quaint or the bust grim in lordly. Betook get the tossed more heart the.',
+    secondParagraph: 'Of startled disaster heard reply balm sculptured darkness lady thinking the. Repeating wide this my cried explore still one. Raven thee entrance heaven decorum to. Lent flown be plainly no the the, stern the fiend no of. All nevermore morrow ever tufted. Demons sitting had into purple, nevermore explore craven the many lonely. Lost head of december air mystery surely. Ah seat i into doubting, implore in wondering oh doubting.',
 
-    thirdParagraph: 'Door on a from bends ungainly i my, muttered the is he heart smiling in at, is the of as i bore and marvelled. Lady a grew is this the saintly name my. Burning fearing.'
+    thirdParagraph: 'Yore vainly bird velvet a explore sir its now upon beguiling. Chamber wrought lenore rapping i maiden, no spoken one mien some and bust uttered then, said ungainly upon lent lattice of spoken, sorrow me with a theeby while name, this then aptly followed plutonian now you, the and the.'
+  },
+  {
+    title: 'To Code or Not to Code',
+    date: 'Jan 22nd, 2020',
+
+    firstParagraph: 'Hauntedtell least you and the radiant undaunted. Faster thing nevermore sad this of that caught only throws. Still the lore each blessed pondered, the it syllable grew raven nevermore as. The front this more that. No i door he by that said back. Into evilprophet tempter came see this more.',
+
+    secondParagraph: 'That burning here this perfumed shorn metell. Mortals i within or moment of nothing, bust agreeing little of be i so madam nearly the. The that implore in raven but back, raven of door sad raven angels visiter, mortals in that the said just into. The till that the demons sad, or tempter unbrokenquit echo a entreating and heard such. Is above door the radiant a is and, back then door rustling for she ghastly.',
+
+    thirdParagraph: 'Raven followed plutonian from decorum the what get so was. And undaunted stillness window stood i lost devil hesitating on, tapping lent air the thrilled separate gently. At still and nameless god enchanted so lattice tis. Door still lore theeby let sad only is store more. Tell least clasp this.'
+
   }
 ];
 
@@ -122,7 +133,8 @@ const data = [
 
 */
 //* The start of my project *//
-function createArticle(title, date, firstParagraph, secondParagraph, thirdParagraph, forthParagraph) {
+
+function createArticle(title, date, firstParagraph, secondParagraph, thirdParagraph, forthParagraph, fifthParagraph) {
   const article = document.createElement('div');
   const artTitle = document.createElement('h2');
   const artDate = document.createElement('p');
@@ -130,9 +142,10 @@ function createArticle(title, date, firstParagraph, secondParagraph, thirdParagr
   const para2 = document.createElement('p');
   const para3 = document.createElement('p'); 
   const para4 = document.createElement('p');
+  const para5 = document.createElement('p')
   const span = document.createElement ('span');
 
-  article.append(artTitle, artDate, para1, para2, para3, para4, span);
+  article.append(artTitle, artDate, para1, para2, para3, para4, para5,span);
   
 
   article.classList.add('article');
@@ -149,6 +162,7 @@ function createArticle(title, date, firstParagraph, secondParagraph, thirdParagr
   para2.textContent = secondParagraph;
   para3.textContent = thirdParagraph;
   para4.textContent = forthParagraph;
+  para5.textContent = fifthParagraph;
   span.textContent = 'Read More';
   
   return article
@@ -156,6 +170,6 @@ function createArticle(title, date, firstParagraph, secondParagraph, thirdParagr
 
   const parent = document.querySelector('.articles');
   data.forEach(info => {
-    const newArticle = createArticle(info.title, info.date, info.firstParagraph, info.secondParagraph, info.thirdParagraph, info.forthParagraph)
+    const newArticle = createArticle(info.title, info.date, info.firstParagraph, info.secondParagraph, info.thirdParagraph, info.forthParagraph, info.fifthParagraph)
     parent.append(newArticle);
   })
