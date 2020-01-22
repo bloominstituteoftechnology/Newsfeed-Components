@@ -112,3 +112,45 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+{/* <div class="article">
+    <h2>{title of the article}</h2>
+    <p class="date">{date of the article}</p>
+
+    {three separate paragraph elements}
+
+    <span class='expandButton'></span>
+  </div> */}
+
+// creating components
+const 
+const createArticle = (data) => {
+  const article = document.createElement("div");
+  const title = document.createElement("h2");
+  const date = document.createElement("p");
+  const p1 = document.createElement("p");
+  const p2 = document.createElement("p");
+  const p2 = document.createElement("p");
+  const expandButton = document.createElement("span");
+
+  // step4
+article.appendChild(article)
+article.appendChild(date)
+article.appendChild(p1)
+article.appendChild(p2)
+article.appendChild(p3)
+article.appendChild(expandButton)
+  
+  // event listener
+  expandButton.addEventListener("click", () => {
+    expandButton.classList.toggle("article-open");
+  })
+  // step 3
+    return article;
+}
+
+
+
+
+
+
+
