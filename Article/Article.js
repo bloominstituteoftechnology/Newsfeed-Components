@@ -115,4 +115,59 @@ const data = [
 
 // start code here
 
+function createArticle(articleTitle, articleDate, ParagraphOne, ParagraphTwo, ParagraphThree){
 
+  // create elements here 
+   const article = document.createElement('div');
+   const title = document.createElement('h2');
+   const date = document.createElement('p');
+   const firstParagraph = document.createElement('p');
+   const secondParagraph = document.createElement('p');
+   const thirdParagraph = document.createElement('p');
+   const span = document.createElement('span');
+   
+   
+   // append child here 
+   article.appendChild(title);
+   article.appendChild(date);
+   article.appendChild(date);
+   article.appendChild(firstParagraph);
+   article.appendChild(secondParagraph);
+   article.appendChild(thirdParagraph);
+   article.appendChild(span);
+
+   //classes here
+   article.classList.add('article');
+   article.classList.add('date');
+   article.classList.add('expandButton');
+   article.classList.add('article-open');
+
+   //text content here 
+
+   title.textContent = articleTitle;
+   date.textContent =  articleDate;
+   firstParagraph.textContent = ParagraphOne;
+   secondParagraph.textContent = ParagraphTwo;
+   thirdParagraph.textContent = ParagraphThree;
+   span.textContent = '\u25b2';
+
+   //toggle here 
+   span.addEventListener('click', (event) =>
+  {
+    article.classList.toggle('article-open');
+    if (span.textContent === '\u25b2'){
+      span.textContent = '\u25bc'
+    }
+  })
+
+
+  
+  
+
+
+}
+
+const articleHolder = document.querySelector('.articles');
+data.forEach((data) => {
+  articleHolder.appendChild(newsfeedCreator(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph));
+}) 
