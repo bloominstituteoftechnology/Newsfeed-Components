@@ -85,6 +85,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'The Life of a Software Engineer',
+    date: "Jan 22nd, 2020",
+    firstParagraph: 'No the farther the by sorrowsorrow undaunted. Burned soon his ominous whispered shutter visiter silence. Quaint felt the sad our, if whom thy much evilprophet door tapping, croaking soul on and denser just flown my.',
+
+    secondParagraph: 'Ungainly my out seraphim there stock and fancy. Tell this only rare of and lenore. That cried then did name the have above fiend. The weary his take is. Be name quaint or the bust grim in lordly. Betook get the tossed more heart the.',
+
+    thirdParagraph: 'Door on a from bends ungainly i my, muttered the is he heart smiling in at, is the of as i bore and marvelled. Lady a grew is this the saintly name my. Burning fearing.'
   }
 ];
 
@@ -113,16 +122,17 @@ const data = [
 
 */
 //* The start of my project *//
-function createArticle(title, date, firstParagraph, secondParagraph, thirdParagraph) {
+function createArticle(title, date, firstParagraph, secondParagraph, thirdParagraph, forthParagraph) {
   const article = document.createElement('div');
   const artTitle = document.createElement('h2');
   const artDate = document.createElement('p');
   const para1 = document.createElement('p');
   const para2 = document.createElement('p');
   const para3 = document.createElement('p'); 
+  const para4 = document.createElement('p');
   const span = document.createElement ('span');
 
-  article.append(artTitle, artDate, para1, para2, para3, span);
+  article.append(artTitle, artDate, para1, para2, para3, para4, span);
   
 
   article.classList.add('article');
@@ -138,6 +148,7 @@ function createArticle(title, date, firstParagraph, secondParagraph, thirdParagr
   para1.textContent = firstParagraph;
   para2.textContent = secondParagraph;
   para3.textContent = thirdParagraph;
+  para4.textContent = forthParagraph;
   span.textContent = 'Read More';
   
   return article
@@ -145,6 +156,6 @@ function createArticle(title, date, firstParagraph, secondParagraph, thirdParagr
 
   const parent = document.querySelector('.articles');
   data.forEach(info => {
-    const newArticle = createArticle(info.title, info.date, info.firstParagraph, info.secondParagraph, info.thirdParagraph)
+    const newArticle = createArticle(info.title, info.date, info.firstParagraph, info.secondParagraph, info.thirdParagraph, info.forthParagraph)
     parent.append(newArticle);
   })
