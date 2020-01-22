@@ -85,6 +85,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Hello World',
+    date: 'September 27th, 2019',
+    firstParagraph: `Do I really have to type a paragraph? Lets do one sentence... `,
+
+    secondParagraph: `Another one? About two sentences. `,
+
+    thirdParagraph: `Okay okay! Jeez! Three sentences!`
   }
 ];
 
@@ -101,14 +110,45 @@ const data = [
 
   Hint: You will need to use createElement more than once here!
 
-  Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
+  Your function should take either an object as it's one argument, or 5 separate arguments mapping to each 
+  piece of the data object above.
 
-  Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
+  Step 2: Add an event listener to the expandButton span. This event listener should toggle the class
+   'article-open' on the 'article' div.
 
   Step 3: return the entire component.
 
-  Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
+  Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children
+   of the 'articles' div.
 
-  Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
+  Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the
+   page to see the new article.
 
 */
+
+function createArticle({ title, date, firstParagraph, secondParagraph, thirdParagraph }) {
+  const div = document.createElement("div")
+  div.className = "article"
+  const objArr = [ title, date, firstParagraph, secondParagraph, thirdParagraph ]
+  objArr.forEach((text, i) => {
+    if (i === 0) {
+      const h2 = document.createElement("h2")
+      h2.textContent = text
+      div.appendChild(h2)
+    }
+    const p = document.createElement("p")
+    p.textContent = text
+    p.setAttribute("class", "date")
+    div.appendChild(p)
+  })
+  const span = document.createElement("span")
+  span.setAttribute("class", "expandButton")
+  div.appendChild(span)
+  return div
+}
+
+data.forEach(data => {
+  document.querySelector(".articles").appendChild(createArticle(data))
+})
+
+
