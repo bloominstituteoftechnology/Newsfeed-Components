@@ -113,26 +113,39 @@ const data = [
 
 */
 // const createArticle = document.querySelector('.articles');
+function articleContents(info) {
+  // 1. Create Elements
+  const article = document.createElement("div");
+  const title = document.createElement("h2");
+  const date = document.createElement("p");
+  const par1 = document.createElement("p");
+  const par2 = document.createElement("p");
+  const par3 = document.createElement("p");
+  const button = document.createElement("span");
 
-// 1. Create Elements
-const article = document.createElement("div");
-const title = document.createElement("h2");
-const date = document.createElement("p");
-const par1 = document.createElement("p");
-const par2 = document.createElement("p");
-const par3 = document.createElement("p");
-const button = document.createElement("span");
+  // 2. Tree-like structure for elements
+  article.appendChild(title);
+  article.appendChild(date);
+  article.appendChild(par1);
+  article.appendChild(par2);
+  article.appendChild(par3);
+  article.appendChild(button);
 
-// 2. Tree-like structure for elements
-article.appendChild(title);
-article.appendChild(date);
-article.appendChild(par1);
-article.appendChild(par2);
-article.appendChild(par3);
-article.appendChild(button);
+  // article.appendChild(tittle, date, par1, par2, par3, button);
 
-// 3. Create class names
-article.classList.add("article");
-// title.classList.add('h2');  Maybe it's not is needed; no class mentioned above
-date.classList.add("par1");
-button.classList.add("expandButton");
+  // 3. Create class names
+  article.classList.add("article");
+  // title.classList.add('h2');  Maybe it's not is needed; no class mentioned above
+  date.classList.add("par1");
+  button.classList.add("expandButton");
+
+  // 4. Add content
+  title.textContent = info.title;
+  date.textContent = info.date;
+  par1.textContent = info.par1;
+  par2.textConent = info.par2;
+  par3.textContent - info.par3;
+  button.textContent = info.button;
+
+  //5. Event listener
+}
