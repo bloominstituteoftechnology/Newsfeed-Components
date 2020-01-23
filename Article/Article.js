@@ -85,11 +85,21 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'waldron',
+    date: 'feb 16th, 1993',
+    firstParagraph: 'fgdfgdghdgd',
+    secondParagraph: 'dgdghcfcf',
+    thirdParagraph: 'dfgdfgdfgfgd'
+
+
+    
   }
 ];
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
-  
+
   <div class="article">
     <h2>{title of the article}</h2>
     <p class="date">{date of the article}</p>
@@ -112,3 +122,39 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+function articleCreator(x){
+  let article = document.createElement("div");
+  let title = document.createElement("h2");
+  let date = document.createElement("p");
+  let p1 = document.createElement("p");
+  let p2 = document.createElement("p");
+  let p3 = document.createElement("p");
+  let expandButton = document.createElement("span");
+
+  article.classList.add("article");
+  date.classList.add("date");
+  expandButton.classList.add("expandButton");
+
+  article.appendChild(title);
+  article.appendChild(date);
+  article.appendChild(p1);
+  article.appendChild(p2);
+  article.appendChild(p3);
+  article.appendChild(expandButton);
+
+  title.textContent = x.title;
+  date.textContent = x.date;
+  p1.textContent = x.firstParagraph;
+  p2.textContent = x.secondParagraph;
+  p3.textContent = x.thirdParagraph;
+  expandButton.textContent = "click";
+
+  expandButton.addEventListener("click", () => {
+    article.classList.toggle("article-open");
+  })
+
+  return article;
+}
+
+const articles = document.querySelector(".articles");
+data.forEach( x => {articles.appendChild(articleCreator(x))})
