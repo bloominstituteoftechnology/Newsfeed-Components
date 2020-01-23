@@ -48,6 +48,7 @@
   height: 50px;
   overflow: hidden;
   box-shadow: 2px 2px 2px lightgrey;
+  cursor: pointer;
 }
 .article h2 {
   font-size: 28px;
@@ -69,12 +70,30 @@
   left: 50%;
   font-size: 12px;
   color: grey;
-  cursor: pointer;
   transform: translate(-50%);
   background-color: white;
 }
 .article-open {
   height: 400px;
+}
+.article-entry-div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 800px;
+  margin: 0 auto;
+}
+.article-entry-div form {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+.article-entry-div form input {
+  margin-bottom: 20px;
+}
+.article-entry-div form textarea {
+  height: 300px;
+  margin-bottom: 20px;
 }
 .menu-button {
   position: absolute;
@@ -82,10 +101,9 @@
   cursor: pointer;
 }
 .menu {
-  display: none;
   position: fixed;
   top: 75px;
-  left: 0;
+  left: -350px;
   width: 350px;
   height: 100vh;
   /* This give the height 100% of the screen or, '100% of View Height' */
@@ -101,9 +119,6 @@
   font-size: 32px;
   padding: 30px 0;
   text-align: center;
-}
-.menu--open {
-  display: block;
 }
 html,
 body {

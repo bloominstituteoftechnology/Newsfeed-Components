@@ -34,15 +34,42 @@ let menuItems = [
   Step 6: add the menu component to the DOM.
   
 */
+let openMenu = false;
+
+function slideMenu() {
+  openMenu = !openMenu
+  if (openMenu) {
+    gsap.to(".menu", {
+      duration: 1,
+      x: 275,
+      ease: "back"
+    })
+    document.addEventListener("click", (e) => {
+      if (e.x >= 275) {
+        openMenu = false
+        gsap.to(".menu", {
+          duration: 1,
+          x: -350
+        })
+      }
+    })
+  } else {
+    gsap.to(".menu", {
+      duration: 1,
+      x: -350
+    })
+  }
+
+}
 function createMenu(arr) {
 
     const div = document.createElement("div")
     div.className = "menu"
     const ul = document.createElement("ul")
     document.querySelector(".menu-button").addEventListener("click", function() {
-      div.classList.toggle("menu--open")
+      slideMenu()
     })
-    arr.forEach(item=> {  
+    arr.forEach(item => {  
       const li = document.createElement("li")
       li.textContent = item
       ul.appendChild(li)

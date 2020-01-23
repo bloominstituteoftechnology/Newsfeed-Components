@@ -126,29 +126,48 @@ const data = [
 
 */
 
-function createArticle({ title, date, firstParagraph, secondParagraph, thirdParagraph }) {
+let articleArr = []
+function slideArticle(article) {
+    if (document.querySelector(article).style.height !== '400px') {
+      gsap.to(article, {
+        height: 400
+      })
+    } else {
+      gsap.to(article, {
+        height: 50
+      })
+    }
+
+}
+
+function createArticle({ title, date, firstParagraph, secondParagraph, thirdParagraph }, i) {
   const div = document.createElement("div")
   div.className = "article"
+  div.classList.add(`article-${i}`)
   const objArr = [ title, date, firstParagraph, secondParagraph, thirdParagraph ]
   objArr.forEach((text, i) => {
     if (i === 0) {
       const h2 = document.createElement("h2")
       h2.textContent = text
       div.appendChild(h2)
+    } else {
+      const p = document.createElement("p")
+      p.textContent = text
+      if (i === 1) {
+        p.setAttribute("class", "date")
+      }
+      div.appendChild(p)
     }
-    const p = document.createElement("p")
-    p.textContent = text
-    p.setAttribute("class", "date")
-    div.appendChild(p)
   })
-  const span = document.createElement("span")
-  span.setAttribute("class", "expandButton")
-  div.appendChild(span)
+  div.addEventListener("click", function () {
+    const article = `.article-${i}`
+    slideArticle(article)
+  })
   return div
 }
 
-data.forEach(data => {
-  document.querySelector(".articles").appendChild(createArticle(data))
+data.forEach((data, i) => {
+  document.querySelector(".articles").appendChild(createArticle(data, i))
 })
 
 
