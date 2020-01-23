@@ -59,12 +59,8 @@ function createMenu(menuItems) {
   });
 
   // 5. Return component
-  return article;
+  return menu;
 }
 
-// 6. Creat component for each object
-const createArticle = document.querySelector(".articles");
-
-data.forEach(newInfo => {
-  createArticle.appendChild(articleContents(newInfo));
-});
+// 6. Creat menu component
+// const header = document.querySelector(".header").appendChild(createArticle(
