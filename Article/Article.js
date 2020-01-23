@@ -85,6 +85,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: "This if my ADDITION TO THE ARRAY OF DATA",
+    date: "Jan 23rd, 2019",
+    firstParagraph: `BATMAN RULES ALL. JOKER SMELLS, KISS IT BATMAN RULES ALL. JOKER SMELLS, KISS IT BATMAN RULES ALL. JOKER SMELLS, KISS ITBATMAN RULES ALL. JOKER SMELLS, KISS IT BATMAN RULES ALL. JOKER SMELLS, KISS IT `,
+
+    secondParagraph: `JUSTICE LEAGUE JUSTICE LEAGUE JUSTICE LEAGUE, BATMAN SUPERMAN AQUAMAN MARTAIN MANHUNTER CYBORG FLASH JUSTICE LEAGUE JUSTICE LEAGUE JUSTICE LEAGUE, BATMAN SUPERMAN AQUAMAN MARTAIN MANHUNTER CYBORG FLASH JUSTICE LEAGUE JUSTICE LEAGUE JUSTICE LEAGUE, BATMAN SUPERMAN AQUAMAN MARTAIN MANHUNTER CYBORG FLASH `,
+
+    thirdParagraph: `KILLER CROC PENGUIN CLAYFACE JOKER MR. FREEZE RIDDLER HARLEY QUINN MAD HATTER KILLER CROC PENGUIN CLAYFACE JOKER MR. FREEZE RIDDLER HARLEY QUINN MAD HATTER KILLER CROC PENGUIN CLAYFACE JOKER MR. FREEZE RIDDLER HARLEY QUINN MAD HATTER KILLER CROC PENGUIN CLAYFACE JOKER MR. FREEZE RIDDLER HARLEY QUINN MAD HATTER KILLER CROC PENGUIN CLAYFACE JOKER MR. FREEZE RIDDLER HARLEY QUINN MAD HATTER`
   }
 ];
 
@@ -112,6 +121,8 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+// could I creat an Object that contains the data as one argument?
+// ask TL FOR ADVICE!!!!!!!!!!!
 
 const articlePanelCreator = (title, date, p1, p2, p3) => {
   // create panel div
@@ -153,7 +164,7 @@ const articlePanelCreator = (title, date, p1, p2, p3) => {
   paragraphThree.textContent = p3;
 
   // add functionality to the expandbutton span
-
+  // added it to article div for better functionality. ASK TL FOR ADVICE
   panelDiv.addEventListener("click", () => {
     panelDiv.classList.toggle("article-open");
   });
