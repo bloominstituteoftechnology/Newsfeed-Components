@@ -89,8 +89,8 @@
   width: 350px;
   height: 100vh;
   /* This give the height 100% of the screen or, '100% of View Height' */
-  background-color: #81C784;
-  border: 1px solid #004D40;
+  background-color: #81c784;
+  border: 1px solid #004d40;
   border-left: none;
   border-bottom: none;
   z-index: 2;
@@ -101,6 +101,15 @@
   font-size: 32px;
   padding: 30px 0;
   text-align: center;
+  width: 100%;
+  -webkit-transition: background-color 2s ease-out;
+  -moz-transition: background-color 2s ease-out;
+  -o-transition: background-color 2s ease-out;
+  transition: background-color 2s ease-out;
+}
+.menu ul li:hover {
+  background-color: green;
+  cursor: pointer;
 }
 .menu--open {
   display: block;
