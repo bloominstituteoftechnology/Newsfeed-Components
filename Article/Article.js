@@ -112,39 +112,53 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
-function createCard(title, date, firstParagraph, secondParagraph, thirdParagraph) => {
+function createCard(title, date, firstParagraph, secondParagraph, thirdParagraph) {
   //define new elements
-const card = document.createElement('div');
-const articleTitle = document.createElement('h2');
-const articleDate = document.createElement('p');
-const paragraph1 = document.createElement('p');
-const paragraph2 = document.createElement('p');
-const paragraph3 = document.createElement('p');
-const expandButton = document.createElement('span');
+  const card = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+  const articleDate = document.createElement('p');
+  const paragraph1 = document.createElement('p');
+  const paragraph2 = document.createElement('p');
+  const paragraph3 = document.createElement('p');
+  const expandButton = document.createElement('span');
+  expandButton.textContent ='expand';
 
-articles.appendChild(card);
-card.appendChild(articleTitle);
-card.appendChild(articleDate);
-card.appendChild(paragraph1);
-card.appendChild(paragraph2);
-card.appendChild(paragraph3);
-card.appendChild(expandButton);
+
+  card.appendChild(articleTitle);
+  card.appendChild(articleDate);
+  card.appendChild(paragraph1);
+  card.appendChild(paragraph2);
+  card.appendChild(paragraph3);
+  card.appendChild(expandButton);
 
 
   //set class names
-card.classList.add('article');
-articleTitle.classList.add('article','h2');
-articleDate.classList.add('article', 'date');
-expandButton.classList.add('article', 'expandButton');
+  card.classList.add('article');
+  articleTitle.classList.add('h2');
+  articleDate.classList.add( 'date');
+  expandButton.classList.add( 'expandButton');
 
-//add event listener
-expandButton.addEventListener('click', () => {
-  
-})
+  //add event listener
+  expandButton.addEventListener('click', () => {
+    card.classList.toggle('article-open');
+    card.classList.toggle('article-close');  
+  })
 
   //add content
+  articleTitle.textContent = title;
+  articleDate.textContent = date;
+  paragraph1.textContent = firstParagraph;
+  paragraph2.textContent = secondParagraph;
+  paragraph3.textContent = thirdParagraph;
 
 
   //return card component
   return card
 }
+
+const articles = document.querySelector('.articles');
+
+data.forEach (item => {
+  const newCard = createCard(item.title, item.date, item.firstParagraph, item.secondParagraph, item.thirdParagraph);
+  articles.appendChild(newCard);
+})
