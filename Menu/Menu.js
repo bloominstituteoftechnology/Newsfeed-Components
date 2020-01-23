@@ -1,12 +1,12 @@
 /* This is the data we will be using, study it but don't change anything, yet. */
 
 let menuItems = [
-  'Students',
-  'Faculty',
+  "Students",
+  "Faculty",
   "What's New",
-  'Tech Trends',
-  'Music',
-  'Log Out'
+  "Tech Trends",
+  "Music",
+  "Log Out"
 ];
 
 /* 
@@ -21,6 +21,7 @@ let menuItems = [
 
   The function takes an array as its only argument.
 
+
   Step 2: Inside this function, iterate over the array creating a list item <li> element for each item in the array. 
   Add those items to the <ul>
 
@@ -31,5 +32,39 @@ let menuItems = [
   Step 5: return the menu component.
 
   Step 6: add the menu component to the DOM.
-  
-*/
+ */
+
+// 1. Create a Function
+function createMenu(menuItems) {
+  // Create Elements
+  const menu = document.createElement("div");
+  const list = document.createElement("ul");
+
+  menuItems.forEach(array => {
+    const items = document.createElement("li");
+    items.textContent = array;
+    list.appendChild(items);
+  });
+
+  // Tree-like structure for elements
+  menu.appendChild(list);
+
+  // Create class names
+  menu.classList.add("menu");
+
+  // 4. Event listener
+  const button = document.querySelector(".menu-button");
+  button.addEventListener("click", () => {
+    menu.classList.toggle("menu--open");
+  });
+
+  // 5. Return component
+  return article;
+}
+
+// 6. Creat component for each object
+const createArticle = document.querySelector(".articles");
+
+data.forEach(newInfo => {
+  createArticle.appendChild(articleContents(newInfo));
+});
