@@ -161,7 +161,7 @@ function createArticle(articleTitle, articleDate, ParagraphOne, ParagraphTwo, Pa
   })
 
 
-  
+  return article;
   
 
 
