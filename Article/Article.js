@@ -147,7 +147,7 @@ function articleContents(info) {
   date.classList.add("par1");
   button.classList.add("expandButton");
 
-  // Add content
+  // Add content = refer to the array, above
   title.textContent = info.title;
   date.textContent = info.date;
   par1.textContent = info.firstParagraph;
@@ -167,6 +167,6 @@ function articleContents(info) {
 // 4. Creat component for each object
 const createArticle = document.querySelector(".articles");
 
-data.forEach(info => {
-  createArticle.appendChild(articleContents(info));
+data.forEach(newInfo => {
+  createArticle.appendChild(articleContents(newInfo));
 });
