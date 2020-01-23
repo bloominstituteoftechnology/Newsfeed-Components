@@ -85,7 +85,17 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'School of Hogwarts Web Development',
+    date: 'Jan 31st, 1509',
+    firstParagraph: `ZAP, ZAP, ZAP, ZAP, ZAP, ZAP,ZAP, ZAP, ZAP,ZAP, ZAP, ZAP! `,
+
+    secondParagraph: `Hermoine, Ron, Harry. Hermoine, Ron, Harry.Hermoine, Ron, Harry.Hermoine, Ron, Harry.Hermoine, Ron, Harry.Hermoine, Ron, Harry.Hermoine, Ron, Harry. `,
+
+    thirdParagraph: `Use your magical wand and you will be a brillant web developer!`
   }
+
 ];
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
@@ -136,7 +146,7 @@ function createCard(title, date, firstParagraph, secondParagraph, thirdParagraph
   card.classList.add('article');
   articleTitle.classList.add('h2');
   articleDate.classList.add( 'date');
-  expandButton.classList.add( 'expandButton');
+  expandButton.classList.add('expandButton');
 
   //add event listener
   expandButton.addEventListener('click', () => {
