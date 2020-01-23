@@ -151,7 +151,7 @@ function createArticleComponent(articleInfo) {
   articleDate.classList.add('date');
   articleButton.classList.add('expandButton');
 
-  // Add evebt handler for button
+  // Add event handler for button
   articleButton.addEventListener('click', () => {
     article.classList.toggle('article-open');
     if (articleButton.innerText === 'Read More') {
