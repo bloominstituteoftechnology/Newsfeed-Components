@@ -86,6 +86,8 @@ const data = [
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   },
+
+  // 5.  Add new article to the array
   {
     title: "New Article added to the Array in 2019",
     date: "Jan 22, 2019",

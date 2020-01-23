@@ -35,12 +35,12 @@ let menuItems = [
  */
 
 // 1. Create a Function
-function createMenu(menuItems) {
+function createMenu(info) {
   // Create Elements
   const menu = document.createElement("div");
   const list = document.createElement("ul");
 
-  menuItems.forEach(array => {
+  info.forEach(array => {
     const items = document.createElement("li");
     items.textContent = array;
     list.appendChild(items);
@@ -62,5 +62,7 @@ function createMenu(menuItems) {
   return menu;
 }
 
-// 6. Creat menu component
-// const header = document.querySelector(".header").appendChild(createArticle(
+// 6. Create menu component
+const header = document
+  .querySelector(".header")
+  .appendChild(createMenu(menuItems));
