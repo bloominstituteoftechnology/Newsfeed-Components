@@ -141,8 +141,6 @@ function articleContents(info) {
   article.appendChild(par3);
   article.appendChild(button);
 
-  // article.appendChild(title, date, par1, par2, par3, button);
-
   // Create class names
   article.classList.add("article");
   // title.classList.add('h2');  Maybe it's not is needed; no class mentioned above
@@ -152,10 +150,10 @@ function articleContents(info) {
   // Add content
   title.textContent = info.title;
   date.textContent = info.date;
-  par1.textContent = info.par1;
-  par2.textConent = info.par2;
-  par3.textContent - info.par3;
-  button.textContent = info.button;
+  par1.textContent = info.firstParagraph;
+  par2.textConent = info.secondParagraph;
+  par3.textContent - info.thirdParagraph;
+  button.textContent = "\u25bc";
 
   // 2. Event listener
   button.addEventListener("click", () => {
