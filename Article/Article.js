@@ -85,8 +85,89 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+
+  {
+    title: 'Gandalf The Wizard ',
+    date: 'The Third Age',
+    firstParagraph: 'Déagol quickened unnatural doing became privilege. Hear my voice. Come back to the light. Stones proof disguised spiders chap gut shells hand unwise consider Thranduil. Sit behalf gold folk gifted cloven dominate. Distant finds hed 4 skins certain trolls firestorm Fellowship. Shirt boned 24th plunge Frodos cold anywhere way ideal cultured low fields? Garrison Probably armor uttered. Unimpeachable reasonable his slow needs poisoning set pantry Ecthelion smoke? Likes sight vine attacked worm torch greedy pool Gollum? Favor rules Kingdom silent undeceased asleep bargemen a rioting dishonor try.',
+
+    secondParagraph: 'Niece Probably judged divine built l ragged? Imladris regained closer passage daylight. Lights subtleties myth absurd hidden God. Many that live deserve death. Some that die deserve life. Armor union Shire-folk fortress flattery rabbit boats. Coins shame arrived time clinging spells tip exile impossible hoped Isen older. Thorin Oakenshield amusing contract games boys find ten anchored threw? Istari trap tasty uncle? Dragged nothings standing causeway invitations withdraw Dwarf-lords parted dagger raising keeps waken.',
+
+    thirdParagraph: 'You are full of surprises, Master Baggins. Sick archer shared land moaning feet work Bagginses join. Riddermark passion hasnt drawing baby cowards pursued survive. Sawing yellowed sprite domain crowned fancy Havens weed. Faramir covers protected! Negotiations tales Home ranges afford way well fruitless another pa razors bosuns. Théoden steps vast stream repel bones old hithlain massing wielder. Sending tested shakes rising Undómiel quickly text wasnt reasonable homeless stabbed lever. Bolgers theyre comfort eyeses blessed them lets homeland settling under surprisingly reforge.'
+
+
+
   }
 ];
+
+
+const articleBuilder = (
+  title,
+  date,
+  firstParagraph,
+  secondParagraph,
+  thirdParagraph 
+) => {
+
+  // Create Elements
+  const article = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+  const articleDate = document.createElement('p');
+  const firstPArticle = document.createElement('p');
+  const secondPArticle = document.createElement('p');
+  const thirdPArticle = document.createElement('p');
+  const btnArticle = document.createElement('p');
+
+
+  //Append Childs
+  article.appendChild(articleTitle);
+  article.appendChild(articleDate)
+  article.appendChild(firstPArticle);
+  article.appendChild(secondPArticle)
+  article.appendChild(thirdPArticle);
+  article.appendChild(btnArticle)
+
+
+  // Add Classes 
+  article.classList.add('article');
+  articleDate.classList.add('date');
+  btnArticle.classList.add('expandButton');
+
+
+
+  articleTitle.textContent = title;
+  articleDate.textContent = date;
+  firstPArticle.textContent = firstParagraph;
+  secondPArticle.textContent = secondParagraph;
+  thirdPArticle.textContent = thirdParagraph;
+  btnArticle.textContent = 'Expand';
+
+  btnArticle.addEventListener('click', () => {
+    article.classList.toggle('article-open')
+  });
+
+  return article;
+
+};
+
+const allArticle = document.querySelector('.articles');
+  data.forEach(item => {
+    allArticle.appendChild(
+      articleBuilder(
+        item.title,
+        item.date,
+        item.firstParagraph,
+        item.secondParagraph,
+        item.thirdParagraph
+      )
+    );
+  });
+
+
+
+
+
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
