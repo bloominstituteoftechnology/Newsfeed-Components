@@ -9,6 +9,29 @@ let menuItems = [
   'Log Out'
 ];
 
+
+
+const createMenu = ( menuItems) => {
+const menu1 = document.createElement('div');
+const ul = document.createElement('ul');
+const li = document.createElement('li');
+
+
+
+menu1.appendChild('ul')
+ul.appendChild('li')
+
+
+menu1.classList.add('menu')
+ul.classList.add('ul')
+li.classList.add('li')
+
+
+
+
+}
+
+
 /* 
 
   Step 1: Write a function that will create a menu component as seen below:
