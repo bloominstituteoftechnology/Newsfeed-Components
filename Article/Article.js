@@ -85,6 +85,23 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'New article',
+  date: 'Jan 29st, 2018',
+  firstParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
+        hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
+        Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `,
+
+  secondParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
+        hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
+        hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
+        hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? `,
+
+  thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
+        Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
+        Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+
   }
 ];
 
@@ -122,32 +139,64 @@ const data = [
   </div> */}
 
 // creating components
-const 
-const createArticle = (data) => {
+const articles = document.querySelector(".articles");
+const open = '\u25bc';
+// const close = '\u25b2';
+
+function createArticle(data) {
   const article = document.createElement("div");
   const title = document.createElement("h2");
+  title.textContent = data.title;
   const date = document.createElement("p");
+  date.textContent = data.date;
   const p1 = document.createElement("p");
+  p1.textContent = data.firstParagraph;
   const p2 = document.createElement("p");
-  const p2 = document.createElement("p");
+  p2.textContent = data.secondParagraph;
+  const p3 = document.createElement("p");
+  p3.textContent = data.thirdParagraph
   const expandButton = document.createElement("span");
+ 
 
   // step4
-article.appendChild(article)
-article.appendChild(date)
-article.appendChild(p1)
-article.appendChild(p2)
-article.appendChild(p3)
-article.appendChild(expandButton)
+  // articles.appendChild(article)
+  article.appendChild(title)
+  article.appendChild(date)
+  article.appendChild(p1)
+  article.appendChild(p2)
+  article.appendChild(p3)
+  article.appendChild(expandButton)
+  
+
+
+  // create classes
+  article.classList.add("article");
+  // article.classList.add("close");
+  date.classList.add("date");
+  expandButton.classList.add("expandButton");
+  title.classList.add("h2");
+  
+  
+
+  // set text content
+  expandButton.textContent = open;
+
+
   
   // event listener
   expandButton.addEventListener("click", () => {
-    expandButton.classList.toggle("article-open");
+    article.classList.toggle("article-open");
+    
+
   })
   // step 3
     return article;
 }
 
+
+data.forEach(data => {
+articles.appendChild(createArticle(data));
+});
 
 
 
