@@ -85,7 +85,16 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
-  }
+  },
+{
+  title: 'The Hokey Pokey - Shakespearean Style',
+  date: 'Aug 16th, 2019',
+  firstParagraph: `O proud left foot, that ventures quick within, then soon upon a backward journey lithe. Anon, once more the gesture, then begin; command sistral pedestal to writhe.`,
+
+  secondParagraph: `Commence thou then the fervid Hokey-Poke. A mad gyration, hips in wanton swirl. To spin! A wilde release from heaven's yoke.Blessed dervish! Surely canst go, girl.`,
+
+  thirdParagraph: `The Hoke, the Poke--banish now thy doubt, Verily I say, 'tis what it is all about.`
+},
 ];
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
@@ -112,3 +121,51 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+const createComponent = content => {
+  const div = document.createElement('div');
+  div.classList.add('article');
+  const h2 = document.createElement('h2');
+  h2.textContent = content.title;
+  const date = document.createElement('p');
+  date.textContent = content.date;
+  date.classList.add('date');
+  const paragraphs = [];
+  for (let i = 0; i < 3; i++) {
+      paragraphs.push(document.createElement('p'))
+  }
+
+  paragraphs[0].textContent = content.firstParagraph;
+  paragraphs[1].textContent = content.secondParagraph;
+  paragraphs[2].textContent = content.thirdParagraph;
+
+  const span = document.createElement('span');
+  span.classList.add('expandButton');
+  span.textContent = "Expand";
+  span.addEventListener('click', event => {
+      event.preventDefault();
+      div.classList.toggle('article-open');
+      span.classList.toggle('hideButton');
+  })
+
+  const span2 = document.createElement('span');
+  span2.classList.add('collapseButton', 'hideButton');
+  span2.textContent = "Collapse";
+  span2.addEventListener('click', event => {
+      event.preventDefault();
+      div.classList.toggle('article-open');
+      span2.classList.toggle('hideButton');
+  })
+
+  div.appendChild(h2);
+  div.appendChild(date);
+  paragraphs.forEach(p => div.appendChild(p))
+  div.appendChild(span);
+
+  return div
+}
+
+
+//Iterate over data
+const articleDiv = document.querySelector('.articles');
+data.forEach(content => articleDiv.append(createComponent(content)));
