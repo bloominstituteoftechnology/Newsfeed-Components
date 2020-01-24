@@ -128,18 +128,17 @@ articleDate.classList.add('p')
 articleFirstParagraph.classList.add('p')
 articleSecondParagraph.classList.add('p')
 articleThirdParagraph.classList.add('p')
-articleSpan.classList.add('expandButton')
+articleSpan.classList.add('span')
 
 articleTitle.textContent = title;
 articleDate.textContent = date;
 articleFirstParagraph.textContent = firstParagraph;
 articleSecondParagraph.textContent = secondParagraph;
 articleThirdParagraph.textContent = thirdParagraph;
-//articleSpan.textContent = open;
 
 
 
-articleSpan.addEventListener('click', event => {
+articleSpan.addEventListener('click', () => {
   console.log('button clicked!');
   article.classList.toggle('article-open');
 });
