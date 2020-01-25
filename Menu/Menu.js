@@ -58,6 +58,8 @@ const menuCreator = array => {
   return menuDiv;
 };
 
-const menuBtn = document.querySelector(".menu-button");
+const menuBtn = document.querySelector(".header");
 const newMenu = menuCreator(menuItems);
 menuBtn.appendChild(newMenu);
+
+// AM NOT ABLE TO SEE ITEMS???? CONSOLE IS TELLING ME THAT THEY ARE SET UP CORRECTLY BUT TOGGLE STYLES ARE NOT WORKING?

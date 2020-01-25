@@ -121,7 +121,8 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
-// could I creat an Object that contains the data as one argument?
+
+// could I create an Object that contains the data as one argument?
 // ask TL FOR ADVICE!!!!!!!!!!!
 
 const articlePanelCreator = (title, date, p1, p2, p3) => {
@@ -147,6 +148,7 @@ const articlePanelCreator = (title, date, p1, p2, p3) => {
   const panelExpandBtn = document.createElement("span");
   // add class name "expandButton"
   panelExpandBtn.classList.add("expandButton");
+  panelExpandBtn.textContent = "click to expand";
 
   // add elements to parent container panelDiv
   panelDiv.appendChild(panelTitle);
@@ -165,7 +167,7 @@ const articlePanelCreator = (title, date, p1, p2, p3) => {
 
   // add functionality to the expandbutton span
   // added it to article div for better functionality. ASK TL FOR ADVICE
-  panelDiv.addEventListener("click", () => {
+  panelExpandBtn.addEventListener("click", () => {
     panelDiv.classList.toggle("article-open");
   });
 
