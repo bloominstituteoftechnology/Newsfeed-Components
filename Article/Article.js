@@ -140,7 +140,7 @@ function slideArticle(article) {
 
 }
 
-function createArticle({ title, date, firstParagraph, secondParagraph, thirdParagraph }, i) {
+function createArticle({ title, date, firstParagraph, secondParagraph=undefined, thirdParagraph=undefined }, i) {
   const div = document.createElement("div")
   div.className = "article"
   div.classList.add(`article-${i}`)
@@ -168,6 +168,18 @@ function createArticle({ title, date, firstParagraph, secondParagraph, thirdPara
 
 data.forEach((data, i) => {
   document.querySelector(".articles").appendChild(createArticle(data, i))
+})
+
+document.querySelector('#article-form').addEventListener("submit", (e) => {
+  e.preventDefault()
+  const inputValue = e.path[0][0].value
+  const textareaValue = e.path[0][1].value
+  let date = new Date
+  date = date.toDateString().slice(4)
+  const articleCount = document.getElementsByClassName("article").length
+  console.log(articleCount)
+  const newArticle = createArticle({ title: inputValue, date: date, firstParagraph: textareaValue }, articleCount)
+  document.querySelector(".articles").appendChild(newArticle)
 })
 
 
