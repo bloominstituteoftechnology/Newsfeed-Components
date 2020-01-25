@@ -115,59 +115,64 @@ const data = [
 
 // start code here
 
-function createArticle(articleTitle, articleDate, ParagraphOne, ParagraphTwo, ParagraphThree){
+const articleBuilder = (
+  title,
+  date,
+  firstParagraph,
+  secondParagraph,
+  thirdParagraph 
+) => {
 
-  // create elements here 
-   const article = document.createElement('div');
-   const title = document.createElement('h2');
-   const date = document.createElement('p');
-   const firstParagraph = document.createElement('p');
-   const secondParagraph = document.createElement('p');
-   const thirdParagraph = document.createElement('p');
-   const span = document.createElement('span');
-   
-   
-   // append child here 
-   article.appendChild(title);
-   article.appendChild(date);
-   article.appendChild(date);
-   article.appendChild(firstParagraph);
-   article.appendChild(secondParagraph);
-   article.appendChild(thirdParagraph);
-   article.appendChild(span);
+  // Create Elements
+  const article = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+  const articleDate = document.createElement('p');
+  const firstPArticle = document.createElement('p');
+  const secondPArticle = document.createElement('p');
+  const thirdPArticle = document.createElement('p');
+  const btnArticle = document.createElement('p');
 
-   //classes here
-   article.classList.add('article');
-   article.classList.add('date');
-   article.classList.add('expandButton');
-   article.classList.add('article-open');
 
-   //text content here 
+  //Append Childs
+  article.appendChild(articleTitle);
+  article.appendChild(articleDate)
+  article.appendChild(firstPArticle);
+  article.appendChild(secondPArticle)
+  article.appendChild(thirdPArticle);
+  article.appendChild(btnArticle)
 
-   title.textContent = articleTitle;
-   date.textContent =  articleDate;
-   firstParagraph.textContent = ParagraphOne;
-   secondParagraph.textContent = ParagraphTwo;
-   thirdParagraph.textContent = ParagraphThree;
-   span.textContent = '\u25b2';
 
-   //toggle here 
-   span.addEventListener('click', (event) =>
-  {
-    article.classList.toggle('article-open');
-    if (span.textContent === '\u25b2'){
-      span.textContent = '\u25bc'
-    }
-  })
+  // Add Classes 
+  article.classList.add('article');
+  articleDate.classList.add('date');
+  btnArticle.classList.add('expandButton');
 
+
+
+  articleTitle.textContent = title;
+  articleDate.textContent = date;
+  firstPArticle.textContent = firstParagraph;
+  secondPArticle.textContent = secondParagraph;
+  thirdPArticle.textContent = thirdParagraph;
+  btnArticle.textContent = 'Expand';
+
+  btnArticle.addEventListener('click', () => {
+    article.classList.toggle('article-open')
+  });
 
   return article;
-  
 
+};
 
-}
-
-const articleHolder = document.querySelector('.articles');
-data.forEach((data) => {
-  articleHolder.appendChild(newsfeedCreator(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph));
-}) 
+const allArticle = document.querySelector('.articles');
+  data.forEach(item => {
+    allArticle.appendChild(
+      articleBuilder(
+        item.title,
+        item.date,
+        item.firstParagraph,
+        item.secondParagraph,
+        item.thirdParagraph
+      )
+    );
+  });
