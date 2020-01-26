@@ -85,6 +85,22 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Cats is a really weird movie',
+    date: 'Jan 20th, 2020',
+    firstParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
+          hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
+          Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `,
+
+    secondParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
+          hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
+          hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
+          hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? `,
+
+    thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
+          Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
+          Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
 ];
 
@@ -112,3 +128,59 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+
+//create component
+const createArt = (artObj) => {
+  //create structure
+  const art = document.createElement('div');
+  const artTitle = document.createElement('h2');
+  const artDate = document.createElement('p');
+  const artPara1 = document.createElement('p');
+  const artPara2 = document.createElement('p');
+  const artPara3 = document.createElement('p');
+  const expBtn = document.createElement('span');
+
+
+  //set class names
+  art.classList.add('.article');
+  artDate.classList.add('.date');
+  expBtn.classList.add('expandButton');
+
+  //build tree
+  art.appendChild(artTitle);
+  art.appendChild(artDate);
+  art.appendChild(artPara1);
+  art.appendChild(artPara2);
+  art.appendChild(artPara3);
+  art.appendChild(expBtn);
+
+  //add content
+  artTitle.textContent = artObj.title;
+  artDate.textContent = artObj.date;
+  artPara1.textContent = artObj.firstParagraph;
+  artPara2.textContent = artObj.secondParagraph;
+  artPara3.textContent = artObj.thirdParagraph;
+
+
+  //functionality
+  expBtn.addEventListener('click', () => {
+    art.classList.toggle('.article-open');
+  })
+
+  return art;
+
+}
+
+
+//populate web page with data
+const parentComponent = document.querySelector('.articles');
+
+data.forEach(info => {
+  const newArt = createArt(info);
+  parentComponent.appendChild(newArt);
+})
+
+
+
+
