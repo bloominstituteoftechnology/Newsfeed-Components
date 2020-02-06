@@ -121,14 +121,14 @@ const data = [
 
 // STEP 1 STARTS HERE//
   //CREATING FUNCTIONS HERE\\
-function articleContents(info) {
-  const article = document.createElement("div");
-  const title = document.createElement("h2");
-  const date = document.createElement("p");
-  const par1 = document.createElement("p");
-  const par2 = document.createElement("p");
-  const par3 = document.createElement("p");
-  const button = document.createElement("span");
+  function articleContents(data) {
+    const article = document.createElement("div");
+    const title = document.createElement("h2");
+    const date = document.createElement("p");
+    const par1 = document.createElement("p");
+    const par2 = document.createElement("p");
+    const par3 = document.createElement("p");
+    const button = document.createElement("span");
 
   //CREATING STRUCTURE 
   article.appendChild(title);
@@ -144,18 +144,18 @@ function articleContents(info) {
   button.classList.add("expandButton");
 
   //ADDING CONTENT
-  title.textContent = info.title;
-  date.textContent = info.date;
-  par1.textContent = info.firstParagraph;
-  par2.textConent = info.secondParagraph;
-  par3.textContent - info.thirdParagraph;
+  title.textContent = data.title;
+  date.textContent = data.date;
+  par1.textContent = data.firstParagraph;
+  par2.textConent = data.secondParagraph;
+  par3.textContent - data.thirdParagraph;
   button.textContent = "\u25bc"; // Emily used with the recorded class.  (MLK day)
 
   //Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
 
 //STEP 2 STARTS HERE\\ 
 //CREATING EVENT LISTENER\\
-button.addEventListener("click" , () =>  {
+button.addEventListener("click", () => {
   article.classList.toggle("article-open");
 });
 
@@ -169,8 +169,8 @@ button.addEventListener("click" , () =>  {
   //Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
   //STEP 4 STARTS HERE\\
   //CREATING COMPONESTS FOR EACH OBJECT\\
-const createArticle = document.querySelector(".articles");
+  const createArticle = document.querySelector(".articles");
 
-data.forEach(freshInfo => {
-  createArticle.appendChild(articleContents(freshInfo));
-});
+  data.forEach(newInfo => {
+    createArticle.appendChild(articleContents(newInfo));
+  });
