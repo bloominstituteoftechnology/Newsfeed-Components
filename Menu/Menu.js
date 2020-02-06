@@ -22,17 +22,17 @@ let menuItems = [
   The function takes an array as its only argument. */
 
 // STEP 1 STARTS HERE//
-  //CREATING FUNCTIONS HERE\\
-function createMenu(data); {
+//CREATING FUNCTIONS HERE\\
+function createMenu(data) {
 
   const menu = document.createElement("div");
-  const list = document.createElement("ul");
+  const list = document.createElement("ul");;
 
-data.forEach (array => {
-  const items = document.createElement("li");
-  items.textContent = array;
-  list.appendChild(items);
-});
+  data.forEach(array => {
+    const items = document.createElement("li");
+    items.textContent = array;
+    list.appendChild(items);
+  });
 
   //CREATING STRUCTURE 
   menu.appendChild(list);
@@ -41,27 +41,25 @@ data.forEach (array => {
 
   menu.classList.add("menu");
 
-
-  // Step 2: Event Listener
-
-// STEP 2 STARTS HERE//
- //CREATING EVENT LISTENER\\
+// Step 4: Event Listener
+// STEP 4 STARTS HERE//
+//CREATING EVENT LISTENER\\
  const button = document.querySelector(".menu-button");
  button.addEventListener("click", () => {
    menu.classList.toggle("menu--open");
  });
 
 
-  // Step 3: return the menu component.
-  
-// STEP 3 STARTS HERE//
- //CREATING RETURN COMPONENT!\\
-return menu
+// Step 5: return the menu component.
+// STEP 5 STARTS HERE//
+//CREATING RETURN COMPONENT!\\
+return menu;
 
 }
 
-  // Step 4: add the menu component to the DOM.
-
-  
-// STEP 4 STARTS HERE//
-  //CREATING MENU COMPONENT\\
+// Step 6: add the menu component to the DOM.
+// STEP 6 STARTS HERE//
+//CREATING MENU COMPONENT\\
+  const header = document
+  .querySelector(".header")
+  .appendChild(createMenu(menuItems));
