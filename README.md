@@ -65,7 +65,7 @@ A few things to check out:
   * Greensock Animation Platform, is by far the most powerful of the three. It is intuitive and easy to use, and you will be amazed at the results.
   * https://greensock.com/gsap
 
-Note: Just a reminder the stretch goals are just extra practice using the tools we have learned. These are not required. Only parts 1-3 are required portions of the project. If you do not get to the stretch goals, don't worry.
+<!-- Note: Just a reminder the stretch goals are just extra practice using the tools we have learned. These are not required. Only parts 1-3 are required portions of the project. If you do not get to the stretch goals, don't worry.
 
 * Animation: There are many ways to animate elements on the screen corresponding to user interactions.  Read the documentation of the animation platform of your choice. Animate all of the components on click.
   * Animation Goal #1. Animate the menu opening: You will need to change the CSS for the menu in order to achieve this. Get the menu to slide in from the left side of the screen. And slide out when the button is clicked. Bonus: Get the menu to slide back out when the user clicks anywhere on the screen other than the menu. 
@@ -79,4 +79,4 @@ Note: Just a reminder the stretch goals are just extra practice using the tools 
   
   Create a function that builds Article components. You are not expected to finish this. This goal is simply an exercise in thinking about how you would implement a function that took some data, created a new Article from it, and appended it to the HTML (without actually writing anything in the HTML file). This is a difficult concept to undertake, but even thinking about how you would implement it will give you a better understanding of how we use frameworks in upcoming sprints. 
 
-* Implement a way to write your own articles using the Component Constructor and some input fields. 
+* Implement a way to write your own articles using the Component Constructor and some input fields.  -->
