@@ -85,6 +85,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Some Other Interesting Article',
+    date: 'Jan 1st, 2019',
+    firstParagraph: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Odio facilisis mauris sit amet massa vitae tortor condimentum. Ipsum a arcu cursus vitae congue mauris rhoncus aenean. Ac feugiat sed lectus vestibulum mattis ullamcorper velit. Aliquam ut porttitor leo a. Consectetur lorem donec massa sapien faucibus et molestie ac feugiat. Ut aliquam purus sit amet. Elit scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique senectus. Odio pellentesque diam volutpat commodo. Amet purus gravida quis blandit turpis cursus in. Tempus urna et pharetra pharetra. Euismod elementum nisi quis eleifend quam. Egestas egestas fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate. Tellus elementum sagittis vitae et leo. Consequat nisl vel pretium lectus. Sed id semper risus in. At imperdiet dui accumsan sit. Mauris sit amet massa vitae tortor condimentum lacinia quis vel. In eu mi bibendum neque egestas congue quisque egestas. Nunc sed augue lacus viverra.` ,
+
+    secondParagraph: `Elit ullamcorper dignissim cras tincidunt. Fermentum et sollicitudin ac orci. Dis parturient montes nascetur ridiculus mus mauris. Urna duis convallis convallis tellus id interdum velit laoreet id. Leo duis ut diam quam nulla porttitor massa. Lacus laoreet non curabitur gravida arcu ac tortor dignissim. Quis ipsum suspendisse ultrices gravida dictum. Mi proin sed libero enim. Lacus laoreet non curabitur gravida arcu ac tortor. Tincidunt id aliquet risus feugiat in.`,
+
+    thirdParagraph: `Pharetra magna ac placerat vestibulum lectus mauris ultrices. Mollis aliquam ut porttitor leo a. Molestie ac feugiat sed lectus vestibulum mattis ullamcorper velit. Duis tristique sollicitudin nibh sit amet. Amet facilisis magna etiam tempor orci eu. Sed arcu non odio euismod. Ipsum nunc aliquet bibendum enim facilisis. Pharetra massa massa ultricies mi. Pulvinar sapien et ligula ullamcorper. Et magnis dis parturient montes. Laoreet sit amet cursus sit amet dictum sit. Lectus proin nibh nisl condimentum id venenatis a condimentum. Id interdum velit laoreet id donec ultrices tincidunt arcu non. Pretium lectus quam id leo in. Congue nisi vitae suscipit tellus mauris a diam. Venenatis tellus in metus vulputate eu scelerisque felis imperdiet proin. Dolor sit amet consectetur adipiscing. Ipsum dolor sit amet consectetur adipiscing elit duis tristique sollicitudin.`
   }
 ];
 
@@ -112,3 +121,28 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+function articleMaker(articleObject){
+  let outerDiv = document.createElement('div');
+  outerDiv.classList.add('article');
+  let articleTitle = document.createElement('h2');
+  articleTitle.textContent = articleObject.title;
+  let date = document.createElement('p');
+  date.classList.add('date');
+  date.textContent = articleObject.date;
+  let firstParagraph = document.createElement('p');
+  firstParagraph.textContent = articleObject.firstParagraph;
+  let secondParagraph = document.createElement('p');
+  secondParagraph.textContent = articleObject.secondParagraph;
+  let thirdParagraph = document.createElement('p');
+  thirdParagraph.textContent = articleObject.thirdParagraph;
+  let expandButton = document.createElement('span');
+  expandButton.classList.add('expandButton');
+  expandButton.textContent = 'test';
+  expandButton.addEventListener('click', () => outerDiv.classList.toggle('article-open'))
+  outerDiv.append(articleTitle, date, firstParagraph, secondParagraph, thirdParagraph, expandButton);
+  return outerDiv;
+}
+
+const articleParent = document.querySelector('.articles')
+let mappedArticles = data.map(item => articleMaker(item));
+articleParent.append(...mappedArticles);
