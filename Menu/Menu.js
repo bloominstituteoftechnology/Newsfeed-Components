@@ -52,3 +52,5 @@ function menuMaker(arr){
 
 const menuParent = document.querySelector('.header');
 menuParent.append(menuMaker(menuItems));
+
+
