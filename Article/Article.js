@@ -117,16 +117,25 @@ const data = [
 title,date,firstParagraph,secondParagraph,thirdParagraph,span class='expandButton'
 */ 
 
-function createArticle(title, content){
+function createArticle(section,title,date,content,expandButton){
   //create the elements
   const article = document.createElement('div');
   const articleTitle = document.createElement('h2');
   const articleDate = document.createElement('p');
-  const paragraphOne = document.createElement('p');
-  const paragraphTwo = document.createElement('p');const paragraphThree = document.createElement('p');
+  const contentParagraph = document.createElement('p');
   const expandBtn = document.createElement('span');
 }
 
 //setup the elements
+article.appendChild(articleTitle);
+article.appendChild(articleTitle);
+article.appendChild(articleDate);
+article.appendChild(contentParagraph);
+article.appendChild(contentParagraph);
+article.appendChild(contentParagraph);
+article.appendChild(expandButton);
+
+
+
 
 
