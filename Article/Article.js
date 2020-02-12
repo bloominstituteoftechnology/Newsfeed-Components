@@ -130,9 +130,9 @@ function createElement(title, date, firstParagraph, secondParagraph, thirdParagr
 	article.append(articleTitle, articleContent, articlePara1, articlePara2, articlePara3, expandButton);
 	
 	//set up classes to the elements
-	article.classList.add('.article');
-	articleContent.classList.add('.date');
-	expandButton.classList.add('.expandButton');
+	article.classList.add('article');
+	articleContent.classList.add('date');
+	expandButton.classList.add('expandButton');
 	
 	//set up text context
 	articleTitle.textContent = title;
@@ -140,6 +140,7 @@ function createElement(title, date, firstParagraph, secondParagraph, thirdParagr
 	articlePara1.textContent = firstParagraph;
 	articlePara2.textContent = secondParagraph;
 	articlePara3.textContent = thirdParagraph;
+	expandButton.textContent = '\u25bc';
 	
 	//Step 2
 	expandButton.addEventListener('click', event => {
