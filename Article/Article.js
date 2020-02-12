@@ -85,10 +85,26 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Cars r fast',
+    date: 'Feb 12th, 2020',
+    firstParagraph: `Vroom Vroom car fast. Vroom Vroom car fast. Vroom Vroom car fast. Vroom Vroom car fast. 
+    Vroom Vroom car fast. Vroom Vroom car fast. Vroom Vroom car fast. Vroom Vroom car fast. Vroom Vroom car fast. 
+    Vroom Vroom car fast. Vroom Vroom car fast. Vroom Vroom car fast. Vroom Vroom car fast. Vroom Vroom car fast. `,
+
+    secondParagraph: `Wow so fast. Wow so fast. Wow so fast. Wow so fast. Wow so fast. 
+    Wow so fast. Wow so fast. Wow so fast. Wow so fast. Wow so fast. Wow so fast. 
+    Wow so fast. Wow so fast. Wow so fast. Wow so fast. Wow so fast. Wow so fast. `,
+
+    thirdParagraph: `Fill up gas, all out. Fill up gas, all out. Fill up gas, all out. Fill up gas, all out. 
+    Fill up gas, all out. Fill up gas, all out. Fill up gas, all out. Fill up gas, all out. Fill up gas, all out. 
+    Fill up gas, all out. Fill up gas, all out. Fill up gas, all out. Fill up gas, all out. Fill up gas, all out. `
   }
+
 ];
 
-/* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
+/*
   
   <div class="article">
     <h2>{title of the article}</h2>
@@ -98,17 +114,62 @@ const data = [
 
     <span class='expandButton'></span>
   </div>
-
-  Hint: You will need to use createElement more than once here!
-
-  Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
-
-  Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
-
-  Step 3: return the entire component.
-
-  Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
-
-  Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
-
 */
+
+function singleArticle(data) 
+{
+
+  //main object
+  const container = document.createElement('div');
+  //create objects
+  const articleTitle = document.createElement('h2');
+  const articleDate = document.createElement('p');
+  const content_one = document.createElement('p');
+  const content_two = document.createElement('p');
+  const content_three = document.createElement('p');
+  const articleButton = document.createElement('button');
+
+  //attach to main object
+  container.appendChild(articleTitle);
+  container.appendChild(articleDate);
+  container.appendChild(content_one);
+  container.appendChild(content_two);
+  container.appendChild(content_three);
+  container.appendChild(articleButton);
+
+  //add content
+  articleTitle.textContent = data.title;
+  articleDate.textContent = data.date;
+  content_one.textContent = data.firstParagraph;
+  content_two.textContent = data.secondParagraph;
+  content_three.textContent = data.thirdParagraph;
+
+  //add style
+  container.classList.add('article');
+  articleDate.classList.add('date');
+  articleButton.classList.add('expandButton');
+
+  //toggle this
+  articleButton.innerHTML = '&#9661;';
+
+
+  //add button functionality
+  articleButton.addEventListener('click', ()=>{
+    container.classList.toggle('article-open');
+
+    //toggle this
+    articleButton.innerHTML = '&#9750';
+  });
+
+  //when container is open/closed, switch the article button HTML
+
+  return container;
+
+}
+
+
+//Display articles format from array
+data.forEach(data => {
+  document.querySelector(".articles").appendChild(singleArticle(data))
+})
+
