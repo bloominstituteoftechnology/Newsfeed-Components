@@ -141,7 +141,6 @@ function articleMaker(articleObject){
   expandButton.addEventListener('click', (event) => {
     outerDiv.classList.contains('article-open') ? expandButton.textContent = 'expand' : expandButton.textContent = 'close';
     outerDiv.classList.toggle('article-open')
-    console.log(outerDiv.classList)
   } )
   outerDiv.append(articleTitle, date, firstParagraph, secondParagraph, thirdParagraph, expandButton);
   return outerDiv;
@@ -150,6 +149,4 @@ function articleMaker(articleObject){
 const articleParent = document.querySelector('.articles')
 data.map(item => articleParent.append(articleMaker(item)));
 
-function menuAnimation(){
 
-}

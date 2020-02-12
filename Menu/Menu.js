@@ -38,13 +38,14 @@ function menuMaker(arr){
   menuDiv.classList.add('menu');
   let listContainer = document.createElement('ul');
   menuDiv.append(listContainer)
-  arr.forEach(function(item) {
+  arr.forEach(item => {
     let menuItem = document.createElement('li');
     menuItem.textContent = item;
     listContainer.appendChild(menuItem);
   });
   let menuButton = document.querySelector('.menu-button');
   menuButton.addEventListener('click', (event) => {
+    console.log(event)
     menuDiv.classList.toggle('menu--open');
   })
   return menuDiv;
@@ -52,5 +53,4 @@ function menuMaker(arr){
 
 const menuParent = document.querySelector('.header');
 menuParent.append(menuMaker(menuItems));
-
 
