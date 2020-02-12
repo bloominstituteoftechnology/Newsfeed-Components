@@ -185,3 +185,7 @@ const articles = document.querySelector('.articles');
 data.map(info => {
   articles.appendChild(createComponent(info))
 })
+
+// ANIMATIONS
+gsap.to(".article", {duration: 2, border: '5px solid black', ease: 'back'});
+gsap.to('.expandButton', {duration: 4, x: '300px', border: '2px solid black', ease: 'back', margin: '0.5%', backgroundColor: 'green', color: 'white'})

@@ -50,6 +50,8 @@ function createMenu(arr) {
   const menuBtn = document.querySelector('.menu-button');
   menuBtn.addEventListener('click', () => {
     menuDiv.classList.toggle('menu--open');
+    // animation
+    gsap.from('.menu--open', {duration: 2, x: -100})
   })
 
   return menuDiv;
@@ -58,3 +60,6 @@ function createMenu(arr) {
 
 document.body.appendChild(createMenu(menuItems))
 
+
+// ANIMATION
+gsap.from('.menu--open', {duration: 4, width:0, border: '5px solid black'})
