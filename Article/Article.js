@@ -117,48 +117,56 @@ const data = [
 title,date,firstParagraph,secondParagraph,thirdParagraph,span class='expandButton'
 */ 
 
-function createArticle(article,title,date,content,expandBtn){
+const articlesDiv = document.querySelector('.articles');
+console.log(articlesDiv);
+
+function createArticle(title,date){
   //create the elements
   const article = document.createElement('div');
   const articleTitle = document.createElement('h2');
   const articleDate = document.createElement('p');
-  const contentParagraph = document.createElement('p');
+  const contentParOne = document.createElement('p');
+  const contentParTwo = document.createElement('p');
+  const contentParThree = document.createElement('p');
   const expandBtn = document.createElement('span');
 
-//setup the elements
-article.appendChild(articleTitle)
-article.appendChild(articleTitle)
-article.appendChild(articleDate)
-article.appendChild(contentParagraph)
-article.appendChild(contentParagraph)
-article.appendChild(contentParagraph)
-article.appendChild(expandButton)
+// //setup the elements
+// articlesDiv.appendChild(article)
+ article.appendChild(articleTitle)
+ article.appendChild(articleDate)
+ article.appendChild(contentParOne)
+ article.appendChild(contentParTwo)
+ article.appendChild(contentParThree)
+ article.appendChild(expandButton)
 
-//set class names
-article.classList.add('article','close');
-articleTitle.classList.add('date');
-expandBtn.classList.add('expandButton');
+// //set class names
+ article.classList.add('article','close');
+ articleTitle.classList.add('date');
+ expandBtn.classList.add('expandButton');
 
 
-//set text content
-articleTitle.textContent = title;
-articleDate.textContent = date;
-contentParagraph = content;
-expandButton.textContent = 'expand';
+// //set text content
+ articleTitle.textContent = title;
+ articleDate.textContent = date;
+ contentParOne.textContent = firstParagraph;
+ contentParTwo.textContent = secondPagagraph;
+ contentParaThree.textContent = thirdParagraph;
+ expandButton.textContent = 'expand';
 
 //span .expandButton event listener
 expandBtn.addEventListener('click', event => {
   article.classList.toggle('article-open');
 })
 
-return article;
+ return article;
 
-}// end createArticle
+ }// end createArticle
 
-const articleContent = document.querySelector('.articles');
 
-articleData.map(data => {
-  articleContent.
-})
+// const articleData =data.map(i => {
+//  return  articlesDiv.appendChild(createArticle(i.title, i.date, i.firstParagraph,i.secondPagagraph, i.thirdParagraph))
+
+
+// })
 
 
