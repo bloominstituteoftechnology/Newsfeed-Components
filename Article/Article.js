@@ -113,36 +113,36 @@ const data = [
 
 */
 
-function createElement(obj){
+function createElement(title, date, firstParagraph, secondParagraph, thirdParagraph){
 	
 	//Step 1
 	
 	//define new elements
 	const article = document.createElement('div');
-	const title = document.createElement('h2');
-	const content = document.createElement('p');
-	const para1 = document.createElement('p');
-	const para2 = document.createElement('p');
-	const para3 = document.createElement('p');
-	const button = document.createElement('span');
+	const articleTitle = document.createElement('h2');
+	const articleContent = document.createElement('p');
+	const articlePara1 = document.createElement('p');
+	const articlePara2 = document.createElement('p');
+	const articlePara3 = document.createElement('p');
+	const expandButton = document.createElement('span');
 	
 	//set up structure of the elements
-	article.append(title, content, para1, para2, para3, button);
+	article.append(articleTitle, articleContent, articlePara1, articlePara2, articlePara3, expandButton);
 	
 	//set up classes to the elements
-	article.classList.add('article');
-	content.classList.add('date');
-	button.classList.add('expandButton');
+	article.classList.add('.article');
+	articleContent.classList.add('.date');
+	expandButton.classList.add('.expandButton');
 	
 	//set up text context
-	title.textContent = obj.title;
-	content.textContent = obj.content;
-	para1.textContent = obj.firstParagraph;
-	para2.textContent = obj.secondParagraph;
-	para3.textContent = obj.thirdParagraph;
+	articleTitle.textContent = title;
+	articleContent.textContent = date;
+	articlePara1.textContent = firstParagraph;
+	articlePara2.textContent = secondParagraph;
+	articlePara3.textContent = thirdParagraph;
 	
 	//Step 2
-	button.addEventListener('click', event => {
+	expandButton.addEventListener('click', event => {
 		article.classList.toggle('article-open');
 	});
 	
