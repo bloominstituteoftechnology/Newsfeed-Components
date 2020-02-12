@@ -135,9 +135,10 @@ article.appendChild(contentParagraph)
 article.appendChild(expandButton)
 
 //set class names
-article.classList.add('article');
+article.classList.add('article','close');
 articleTitle.classList.add('date');
-expandBtn.classList.add('expandButton', 'expandButton-open', 'expandButton-close');
+expandBtn.classList.add('expandButton');
+
 
 //set text content
 articleTitle.textContent = title;
@@ -147,9 +148,17 @@ expandButton.textContent = 'expand';
 
 //span .expandButton event listener
 expandBtn.addEventListener('click', event => {
-
+  article.classList.toggle('article-open');
 })
 
+return article;
+
 }// end createArticle
+
+const articleContent = document.querySelector('.articles');
+
+articleData.map(data => {
+  articleContent.
+})
 
 
