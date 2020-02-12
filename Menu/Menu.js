@@ -44,7 +44,7 @@ function menuMaker(arr){
     listContainer.appendChild(menuItem);
   });
   let menuButton = document.querySelector('.menu-button');
-  menuButton.addEventListener('click', () => {
+  menuButton.addEventListener('click', (event) => {
     menuDiv.classList.toggle('menu--open');
   })
   return menuDiv;

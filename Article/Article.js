@@ -137,12 +137,19 @@ function articleMaker(articleObject){
   thirdParagraph.textContent = articleObject.thirdParagraph;
   let expandButton = document.createElement('span');
   expandButton.classList.add('expandButton');
-  expandButton.textContent = 'test';
-  expandButton.addEventListener('click', () => outerDiv.classList.toggle('article-open'))
+  expandButton.textContent = 'expand';
+  expandButton.addEventListener('click', (event) => {
+    outerDiv.classList.contains('article-open') ? expandButton.textContent = 'expand' : expandButton.textContent = 'close';
+    outerDiv.classList.toggle('article-open')
+    console.log(outerDiv.classList)
+  } )
   outerDiv.append(articleTitle, date, firstParagraph, secondParagraph, thirdParagraph, expandButton);
   return outerDiv;
 }
 
 const articleParent = document.querySelector('.articles')
-let mappedArticles = data.map(item => articleMaker(item));
-articleParent.append(...mappedArticles);
+data.map(item => articleParent.append(articleMaker(item)));
+
+function menuAnimation(){
+
+}
