@@ -128,22 +128,26 @@ function createArticle(title,date,firstParagraph,secondPagagraph,thirdParagraph)
   const contentParTwo = document.createElement('p');
   const contentParThree = document.createElement('p');
   const expandBtn = document.createElement('span');
-  const openBtn = document.createElement('button');
+  const openBtn = document.createElement('button')
+  
 
 // //setup the elements
 // articlesDiv.appendChild(article)
-articlesDiv.appendChild(article)
+ articlesDiv.appendChild(article)
  article.appendChild(articleTitle)
  article.appendChild(articleDate)
  article.appendChild(contentParOne)
  article.appendChild(contentParTwo)
  article.appendChild(contentParThree)
  article.appendChild(expandBtn)
+ expandBtn.appendChild(openBtn)
+ 
 
 // //set class names
- article.classList.add('article','close');
+ article.classList.add('article');
  articleTitle.classList.add('date');
- expandBtn.classList.add('expandButton');
+ openBtn.classList.add('expandButton');
+
  
 
 
@@ -153,14 +157,17 @@ articlesDiv.appendChild(article)
  contentParOne.textContent = firstParagraph;
  contentParTwo.textContent = secondPagagraph;
  contentParThree.textContent = thirdParagraph;
- expandBtn.textContent = 'expand';
+ openBtn.textContent = 'expand';
+ 
+
 
 //span .expandButton event listener
 expandBtn.addEventListener('click', event => {
   article.classList.toggle('article-open');
+ 
 })
 
- return articlesDiv;
+ return article;
 
  }// end createArticle
 
