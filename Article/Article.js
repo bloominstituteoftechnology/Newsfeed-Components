@@ -85,6 +85,22 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Reagan Barrington',
+    date: 'Sep 26th, 1993',
+    firstParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
+          hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
+          Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `,
+
+    secondParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
+          hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
+          hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
+          hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? `,
+
+    thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
+          Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
+          Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
 ];
 
@@ -101,7 +117,7 @@ const data = [
 
   Hint: You will need to use createElement more than once here! */
 
-  function createComponent(title, date, p1, p2, p3) {
+  function createComponent(obj) {
     // define new elements
     const article = document.createElement('div');
     const title = document.createElement('h2');
@@ -109,7 +125,7 @@ const data = [
     const p1 = document.createElement('p');
     const p2 = document.createElement('p');
     const p3 = document.createElement('p');
-    const expandButton = document.createElement('span');
+    const expandButton = document.createElement('button');
     // setup structure
     article.appendChild(title);
     article.appendChild(date);
@@ -121,6 +137,13 @@ const data = [
     article.classList.add('article');
     date.classList.add('date');
     expandButton.classList.add('expandButton');
+    // text content
+    title.textContent = obj.title;
+    date.textContent = obj.date;
+    p1.textContent = obj.firstParagraph;
+    p2.textContent = obj.secondParagraph;
+    p3.textContent = obj.thirdParagraph;
+    expandButton.textContent = 'more';
     // functionality
     expandButton.addEventListener('click', event => {
       article.classList.toggle('article-open');
@@ -144,5 +167,5 @@ const data = [
 const articles = document.querySelector('.articles');
 
 data.map(info => {
-  articles.appendChild(createComponent(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
+  articles.appendChild(createComponent(info))
 })
