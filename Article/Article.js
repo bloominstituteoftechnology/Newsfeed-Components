@@ -117,10 +117,9 @@ const data = [
 title,date,firstParagraph,secondParagraph,thirdParagraph,span class='expandButton'
 */ 
 
-const articlesDiv = document.querySelector('.articles');
-console.log(articlesDiv);
 
-function createArticle(title,date){
+
+function createArticle(title,date,firstParagraph,secondPagagraph,thirdParagraph){
   //create the elements
   const article = document.createElement('div');
   const articleTitle = document.createElement('h2');
@@ -129,20 +128,23 @@ function createArticle(title,date){
   const contentParTwo = document.createElement('p');
   const contentParThree = document.createElement('p');
   const expandBtn = document.createElement('span');
+  const openBtn = document.createElement('button');
 
 // //setup the elements
 // articlesDiv.appendChild(article)
+articlesDiv.appendChild(article)
  article.appendChild(articleTitle)
  article.appendChild(articleDate)
  article.appendChild(contentParOne)
  article.appendChild(contentParTwo)
  article.appendChild(contentParThree)
- article.appendChild(expandButton)
+ article.appendChild(expandBtn)
 
 // //set class names
  article.classList.add('article','close');
  articleTitle.classList.add('date');
  expandBtn.classList.add('expandButton');
+ 
 
 
 // //set text content
@@ -150,23 +152,38 @@ function createArticle(title,date){
  articleDate.textContent = date;
  contentParOne.textContent = firstParagraph;
  contentParTwo.textContent = secondPagagraph;
- contentParaThree.textContent = thirdParagraph;
- expandButton.textContent = 'expand';
+ contentParThree.textContent = thirdParagraph;
+ expandBtn.textContent = 'expand';
 
 //span .expandButton event listener
 expandBtn.addEventListener('click', event => {
   article.classList.toggle('article-open');
 })
 
- return article;
+ return articlesDiv;
 
  }// end createArticle
 
+ const articlesDiv = document.querySelector('.articles');
+ console.log(articlesDiv);
 
-// const articleData =data.map(i => {
+ data.map(i => {
+   articlesDiv.appendChild(createArticle(i.title, i.date, i.firstParagraph, i.secondParagraph, i.thirdParagraph))
+ });
+
+
+
+
+
+
+//  const articleData =data.map(i => {
 //  return  articlesDiv.appendChild(createArticle(i.title, i.date, i.firstParagraph,i.secondPagagraph, i.thirdParagraph))
 
 
-// })
+//  })
+
+
+
+//const articleData = data.map(item)
 
 
