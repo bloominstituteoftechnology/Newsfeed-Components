@@ -59,9 +59,7 @@ function createMenu(array) {
   menuButton.addEventListener('click', () => {
     menu.classList.toggle('menu--open');
   })
-  // array.map(ele => {
-  //   list.textContent = ele;
-  // })
+  
 
   return menu;
 }

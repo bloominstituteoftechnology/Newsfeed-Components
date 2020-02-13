@@ -85,6 +85,13 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Build week is fun',
+    date: 'Jan 12, 2019',
+    firstParagraph: 'It is great to work with someone who like to code as well.',
+    secondParagraph: 'It is amazing to make things happen',
+    thirdParagraph: 'Put all what we learn together and learn new things from team mates and internet.'
   }
 ];
 
