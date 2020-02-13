@@ -98,6 +98,7 @@ const data = [
 
     <span class='expandButton'></span>
   </div>
+  
 
   Hint: You will need to use createElement more than once here!
 
@@ -110,5 +111,39 @@ const data = [
   Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
 
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
-
 */
+
+function createElement(title, date, first, second, third){
+  const article = document.createElement('div');
+  const head = document.createElement('h2');
+  const artDate = document.createElement('p');
+  const firstParagraph = document.createElement('p');
+  const secParagraph = document.createElement('p');
+  const thirParagraph = document.createElement('p');
+  const button = document.createElement('span');
+
+  article.append(head, artDate, firstParagraph, secParagraph, thirParagraph, button);
+
+  article.classList.add('article');
+  artDate.classList.add('date');
+  button.classList.add('expandButton');
+
+  head.textContent = title;
+  artDate.textContent = date;
+  firstParagraph.textContent = first;
+  secParagraph.textContent = second;
+  thirParagraph.textContent = third;
+  button.textContent = "click";
+
+  button.addEventListener('click', () => {
+    article.classList.toggle('article-open');
+  })
+
+
+  return article;
+}
+
+const art = document.querySelector(".articles");
+data.map(info => {
+  art.appendChild(createElement(info.title, info.date, info.firstParagraph, info.secondParagraph, info.thirdParagraph))
+})
