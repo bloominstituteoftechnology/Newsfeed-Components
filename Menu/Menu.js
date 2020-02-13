@@ -9,6 +9,32 @@ let menuItems = [
   'Log Out'
 ];
 
+function createMenu(array){
+  //Create Elements
+  let menu = document.createElement('div');
+  let itemSelection = document.createElement('ul');
+  //Adding Classes
+  menu.classList.add('menu');
+  //Strucure Elemends (appending)
+  menu.append(itemSelection);
+  //Adding Context
+  array.forEach(element => {
+    let item = document.createElement('li');
+    item.textContent = element;
+    itemSelection.append(item);
+  })
+  //Button
+  let button = document.querySelector('.menu-button');
+  button.addEventListener('click', () =>{
+    menu.classList.toggle('menu--open')
+  })
+  return menu;
+}
+
+let header = document.querySelector('.header');
+header.append(createMenu(menuItems));
+
+
 /* 
 
   Step 1: Write a function that will create a menu component as seen below:
@@ -33,41 +59,3 @@ let menuItems = [
   Step 6: add the menu component to the DOM.
   
 */
-
-
-function createMenu(array){
-  //creating elements and adding classes where needed
-  let menu = document.createElement('div');
-  let itemList = document.createElement('ul');
-  // let menu = document.createElement('div').classList.add('menu');
-  // let itemList = document.createElement('ul');
-
-  //element structure
-  menu.append(itemList);
-
-  //add class
-  menu.classList.add('menu');
-
-  //adding context
-  array.forEach(element => {
-    let menuItem = document.createElement('li');
-    menuItem.textContent = element;
-    itemList.append(menuItem)
-  });
-  
-  let button = document.querySelector('.menu-button');
-  button.addEventListener('click', () => {
-    menu.classList.toggle('menu--open');
-  })
-  return menu;
-}
-
-let header = document.querySelector('.header');
-header.append(createMenu(menuItems));
-
-
-/* <div class="menu">
-<ul>
-  {each menu item as a list item}
-</ul>
-</div> */

@@ -87,7 +87,7 @@ const data = [
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   },
   {
-    title: 'Hey, I am getting this~!',
+    title: 'New Title of New Article',
     date: 'Jan 1st, 2019',
     firstParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
           hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
@@ -101,19 +101,53 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
-  },
-  {
-    title: 'Arrays are useful in 2019',
-    date: 'Jan 1st, 2019',
-    firstParagraph: `Arrays are useful Arrays are useful Arrays are useful Arrays are useful Arrays are useful Arrays are useful Arrays are useful Arrays are useful Arrays are useful Arrays are useful Arrays are useful Arrays are useful Arrays are useful Arrays are useful Arrays are useful Arrays are useful Arrays are useful Arrays are useful Arrays are useful Arrays are useful Arrays are useful Arrays are useful Arrays are useful Arrays are useful Arrays are useful Arrays are useful Arrays are useful Arrays are useful Arrays are useful Arrays are useful Arrays are useful Arrays are useful Arrays are useful Arrays are useful Arrays are useful Arrays are useful `,
-
-    secondParagraph: `Arrays are usefulArrays are usefulArrays are usefulArrays are usefulArrays are usefulArrays are usefulArrays are usefulArrays are usefulArrays are usefulArrays are usefulArrays are usefulArrays are usefulArrays are usefulArrays are usefulArrays are usefulArrays are usefulArrays are usefulArrays are usefulArrays are usefulArrays are usefulArrays are usefulArrays are usefulArrays are useful`,
-
-    thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
-          Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
-          Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
 ];
+
+function createArticles(object){
+  //Creating Elements
+  let article = document.createElement('div');
+  let title = document.createElement('h2');
+  let date = document.createElement('p');
+  let p1 = document.createElement('p');
+  let p2 = document.createElement('p');
+  let p3 = document.createElement('p');
+  let button = document.createElement('span');
+
+
+  //Element Structures
+  article.append(title);
+  article.append(date);
+  article.append(p1);
+  article.append(p2);
+  article.append(p3);
+  article.append(button);
+
+  //Adding Classes to elements
+  article.classList.add('article');
+  date.classList.add('date');
+  button.classList.add('expandButton');
+
+  //Adding textContent
+  title.textContent = object.title;
+  date.textContent = object.date;
+  p1.textContent = object.firstParagraph;
+  p2.textContent = object.secondParagraph;
+  p3.textContent = object.thirdParagraph;
+  button.textContent = 'Expand';
+
+  //Button Toggle
+  button.addEventListener('click', (event) =>{
+    article.classList.toggle('article-open');
+  })
+
+  return article;
+}
+
+let articles = document.querySelector('.articles');
+data.map(el =>{
+  articles.append(createArticles(el))
+})
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
@@ -139,62 +173,3 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
-
-function createArticles(title, date, firstParagraph, secondParagraph, thirdParagraph) {
-  //creating new elements
-  
-  let aArticle = document.createElement('div');
-  let aTitle = document.createElement('h2');
-  let aDate = document.createElement('p');
-  let paragraph1 = document.createElement('p');
-  let paragraph2 = document.createElement('p');
-  let paragraph3 = document.createElement('p');
-  let expandButton = document.createElement('span');
-
-  //element structure
-  aArticle.append(aTitle);
-  aArticle.append(aDate);
-  aArticle.append(paragraph1);
-  aArticle.append(paragraph2);
-  aArticle.append(paragraph3);
-  aArticle.append(expandButton);
-
-  //adding classes to each element
-  aArticle.classList.add('article');
-  aDate.classList.add('date');
-  paragraph1.classList.add('p1');
-  paragraph2.classList.add('p2');
-  paragraph3.classList.add('p3');
-  expandButton.classList.add('expandButton');
-
-  //adding text content
-  aTitle.textContent = title;
-  aDate.textContent = date;
-  paragraph1.textContent = firstParagraph;
-  paragraph2.textContent = secondParagraph;
-  paragraph3.textContent = thirdParagraph;
-  expandButton.textContent = "Expand";
-
-  //making button work
-  expandButton.addEventListener('click', (event) => {
-    aArticle.classList.toggle('article-open');
-    aa
-  })
-
-  return aArticle;
-}
-
-const article = document.querySelector('.articles')
-
-data.forEach(element => {
-  article.append(createArticles(element.title, element.date, element.firstParagraph, element.secondParagraph, element.thirdParagraph))
-});
-
-// <div class="article">
-// <h2>{title of the article}</h2>
-// <p class="date">{date of the article}</p>
-
-// {three separate paragraph elements}
-
-// <span class='expandButton'></span>
-// </div>
