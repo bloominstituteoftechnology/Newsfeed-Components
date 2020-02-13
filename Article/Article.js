@@ -172,7 +172,7 @@ expandBtn.addEventListener('click', event => {
  }// end createArticle
 
  const articlesDiv = document.querySelector('.articles');
- console.log(articlesDiv);
+ //console.log(articlesDiv);
 
  data.map(i => {
    articlesDiv.appendChild(createArticle(i.title, i.date, i.firstParagraph, i.secondParagraph, i.thirdParagraph))
@@ -180,17 +180,5 @@ expandBtn.addEventListener('click', event => {
 
 
 
-
-
-
-//  const articleData =data.map(i => {
-//  return  articlesDiv.appendChild(createArticle(i.title, i.date, i.firstParagraph,i.secondPagagraph, i.thirdParagraph))
-
-
-//  })
-
-
-
-//const articleData = data.map(item)
 
 
