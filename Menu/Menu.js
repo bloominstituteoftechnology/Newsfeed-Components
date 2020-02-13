@@ -65,6 +65,5 @@ function createMenu(array) {
 }
 
 const body = document.querySelector('body');
-// header.appendChild(createMenu(menu));
 
 body.appendChild(createMenu(menuItems));
