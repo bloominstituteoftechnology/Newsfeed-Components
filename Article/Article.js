@@ -195,3 +195,15 @@ const container = document.querySelector('.articles');
 data.map( item => {
   container.appendChild(createCard(item))
 })
+
+/////green sock stuff////
+
+const flip = document.querySelector('body').addEventListener("click", () => {
+  gsap.to('.articles', {
+      duration: .5,
+      rotateY: 180,
+      ease: "elastic(1, 0.75)",
+      yoyo: true,
+      repeat: 1
+  });
+})

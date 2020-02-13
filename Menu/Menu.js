@@ -59,3 +59,16 @@ function createMenu(info){
 const menu2 = document.querySelector('.header');
 
 menu2.appendChild(createMenu(menuItems));
+
+
+/////green sock stuff////
+
+const box = document.querySelector('h1').addEventListener("click", () => {
+  gsap.to('h1', {
+    duration: .3,
+    rotateY: 180,
+    ease: "elastic(1, 0.75)",
+    yoyo: true,
+    repeat: 3
+  });
+})
