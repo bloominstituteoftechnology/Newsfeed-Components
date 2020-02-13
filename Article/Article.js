@@ -112,3 +112,48 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+function createArticle(title, date, firstParagraph, secondParagraph, thirdParagraph){
+
+  const article = document.createElement('div');
+  const headline = document.createElement('h2');
+  const dateOfArt = document.createElement('p');
+  const paraOne = document.createElement('p');
+  const paraTwo = document.createElement('p');
+  const paraThree = document.createElement('p');
+  const button = document.createElement('span');
+
+  article.appendChild(headline);
+  article.appendChild(dateOfArt);
+  article.appendChild(paraOne);
+  article.appendChild(paraTwo);
+  article.appendChild(paraThree);
+  article.appendChild(button);
+
+  article.classList.add('article');
+  dateOfArt.classList.add('date');
+  button.classList.add('expandButton');
+
+  headline.textContent = title;
+  dateOfArt.textContent = date;
+  paraOne.textContent = firstParagraph;
+  paraTwo.textContent = secondParagraph;
+  paraThree.textContent = thirdParagraph;
+
+  button.addEventListener('click', () => {
+    article.classList.toggle('article-open')
+  });
+
+  return article;
+}
+
+const parent = document.querySelector('.articles');
+
+data.map(item =>{
+  parent.appendChild(createArticle(item.title, item.date, item.firstParagraph, item.secondParagraph, item.thirdParagraph))
+});
+//Step 1: create all html tags and assign them to a variable
+//Step 2: set up parent/child heirarchy using appendChild
+//Step 3: Assign classes to the html tags using classList.add
+//Step 4: Add text content to the html variables that were declared in step 1. Set them equal to the paramaters of the function.
+//Step 5: Add eventListener to the button
