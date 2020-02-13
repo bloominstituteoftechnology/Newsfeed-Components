@@ -112,56 +112,46 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
-function newsfeedCreator(articleTitle, articleDate, paragraphOne, paragraphTwo, paragraphThree) {
-
+function componentCreate(title, date, paragraph1, paragraph2, paragraph3) {
   const article = document.createElement('div');
-  const title = document.createElement('h2');
-  const date = document.createElement('p');
-  const firstParagraph = document.createElement('p');
-  const secondParagraph = document.createElement('p');
-  const thirdParagraph = document.createElement('p');
-  const buttonHolder = document.createElement('span');
-  const buttonOpen = document.createElement('button');
-  const buttonClose = document.createElement('button');
+  const articleTitle = document.createElement('h2');
+  const articleDate = document.createElement('p');
+  const articleParagraph1 = document.createElement('p');
+  const articleParagraph2 = document.createElement('p');
+  const articleParagraph3 = document.createElement('p');
+  const articleSpan = document.createElement('span');
 
   article.classList.add('article');
-  date.classList.add('date');
-  buttonHolder.classList.add('expandButton')
-  buttonOpen.classList.add('close');
-  buttonClose.classList.add('close');
+  articleDate.classList.add('date');
+  articleSpan.classList.add('expandButton');
 
-  const open = '\u25bc';
-  const close = '\u25b2';
+  article.appendChild(articleTitle);
+  article.appendChild(articleDate);
+  article.appendChild(articleParagraph1);
+  article.appendChild(articleParagraph2);
+  article.appendChild(articleParagraph3);
+  article.appendChild(articleSpan);
+  
 
-
-  buttonOpen.textContent = open;
-  buttonClose.textContent = close;
-  title.textContent = articleTitle;
-  date.textContent = articleDate;
-  firstParagraph.textContent = paragraphOne;
-  secondParagraph.textContent = paragraphTwo;
-  thirdParagraph.textContent = paragraphThree;
-
-
-
-  buttonOpen.addEventListener('click', () => {
-    article.classList.toggle('article-open');
-  });
+  articleTitle.textContent = title;
+  articleDate.textContent = date;
+  articleParagraph1.textContent = paragraph1;
+  articleParagraph2.textContent = paragraph2;
+  articleParagraph3.textContent = paragraph3;
+  articleSpan.textContent ='\u25bc' ;
 
 
-  article.appendChild(title);
-  article.appendChild(date);
-  //article.appendChild(buttonHolder);
+  articleSpan.addEventListener('click', () => {
 
-  article.appendChild(buttonOpen);
-  article.appendChild(firstParagraph);
-  article.appendChild(secondParagraph);
-  article.appendChild(thirdParagraph);
+    article.classList.toggle("article-open")
+   
+
+  })
+
   return article;
 }
 
-const articleHolder = document.querySelector('.articles');
-
-data.forEach((data) => {
-  articleHolder.appendChild(newsfeedCreator(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph));
+const articles = document.querySelector(".articles");
+data.forEach(data => {
+  articles.appendChild(componentCreate(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
 })
