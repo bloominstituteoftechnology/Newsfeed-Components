@@ -133,14 +133,16 @@ function createArticle(title, date, firstParagraph, secondParagraph, thirdParagr
   article.classList.add('article');
   dateOfArt.classList.add('date');
   button.classList.add('expandButton');
+  
 
   headline.textContent = title;
   dateOfArt.textContent = date;
   paraOne.textContent = firstParagraph;
   paraTwo.textContent = secondParagraph;
   paraThree.textContent = thirdParagraph;
+  button.textContent = 'click me'
 
-  button.addEventListener('click', () => {
+  button.addEventListener('click', (event) => {
     article.classList.toggle('article-open')
   });
 
