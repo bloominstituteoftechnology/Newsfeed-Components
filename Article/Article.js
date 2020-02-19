@@ -157,8 +157,10 @@ expBtn.textContent = 'Click To Expand';
     article.classList.toggle('article-open');
     if (expBtn.textContent != 'Close') {
       expBtn.textContent = 'Close';
+      gsap.to('.article', {backgroundColor: '#09bd4e'})
     } else {
       expBtn.textContent = 'Click To Expand';
+      gsap.to('.article', {backgroundColor: 'white'})
     }
   });
 
@@ -219,6 +221,9 @@ additionalArticles.forEach((article) => {
     article.firstParagraph,
     article.secondParagraph,
     article.thirdParagraph
+    
   );
   myArticles.appendChild(articleToAppend);
 })
+
+
