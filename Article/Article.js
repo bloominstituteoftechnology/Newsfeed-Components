@@ -113,8 +113,9 @@ const data = [
 
 */
 
-const articles = document.querySelector('.articles');
-console.log(articles);
+const myArticles = document.querySelector('.articles');
+// myArticles.textContent = 'here my article contents goes.';
+console.log(myArticles);
 
 // Step 1: Create a function that creates a component.
 const componentCreator = (title, date, p1, p2, p3) => {
@@ -174,7 +175,7 @@ data.forEach((article) => {
     article.secondParagraph,
     article.thirdParagraph
   );
-  articles.appendChild(articleToAppend);
+  myArticles.appendChild(articleToAppend);
 })
 
 //  Step 5: Add a new article to the array.
@@ -219,5 +220,5 @@ additionalArticles.forEach((article) => {
     article.secondParagraph,
     article.thirdParagraph
   );
-  articles.appendChild(articleToAppend);
+  myArticles.appendChild(articleToAppend);
 })
