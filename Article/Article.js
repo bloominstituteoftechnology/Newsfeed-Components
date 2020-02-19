@@ -112,3 +112,65 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+// Step 1: Create a function that creates a component.
+const componentCreator = (title, date, p1, p2, p3) => {
+
+// creating elements
+const article = document.createElement('div');
+const articleTitle = document.createElement('h2');
+const paragraph = document.createElement('p');
+const paragraph1 = document.createElement('p');
+const paragraph2 = document.createElement('p');
+const paragraph3 = document.createElement('p');
+const expBtn = document.createElement('span');
+
+
+// adding classes back in
+article.classList.add('article');
+paragraph.classList.add('date');
+expBtn.classList.add('expandButton');
+
+
+// appending to the article div
+article.appendChild(articleTitle);
+article.appendChild(paragraph);
+article.appendChild(paragraph1);
+article.appendChild(paragraph2);
+article.appendChild(paragraph3);
+article.appendChild(expBtn);
+
+// add our content to the elements we created
+articleTitle.textContent = title;
+paragraph.textContent = date;
+paragraph1.textContent = p1;
+paragraph2.textContent = p2;
+paragraph3.textContent = p3;
+expBtn.textContent = 'Click To Expand';
+
+// Step 2: add an event listener to expBtn span.
+  expBtn.addEventListener('click', (event) => {
+    article.classList.toggle('article-open');
+    if (expBtn.textContent != 'Close') {
+      expBtn.textContent = 'Close';
+    } else {
+      expBtn.textContent = 'Click To Expand';
+    }
+  });
+
+// Step 3: return the entire component.
+return article;
+}
+
+// Step 4: Map over
+data.forEach((article) => {
+  const articleToAppend = componentCreator(
+    article.title,
+    article.date,
+    article.firstParagraph,
+    article.secondParagraph,
+    article.thirdParagraph
+  );
+  articles.appendChild(articleToAppend);
+})
+
+// console.log(article);console.log(article);
