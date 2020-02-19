@@ -177,4 +177,47 @@ data.forEach((article) => {
   articles.appendChild(articleToAppend);
 })
 
-// console.log(article);console.log(article);
+//  Step 5: Add a new article to the array.
+const additionalArticles = [
+	{
+		title: 'My First Added Article',
+		date: 'December 12, 2019',
+		firstParagraph:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis congue arcu, ut consectetur justo. Vestibulum id orci in metus dapibus tincidunt vitae sed ligula. Nam vulputate sapien diam, quis ullamcorper erat dignissim non. Pellentesque pellentesque metus sed pharetra mattis. Nulla vel ipsum sed enim ultricies auctor. Mauris nisi felis, interdum quis augue eget, fermentum dictum nunc. Nunc urna odio, tincidunt sed lectus ac, euismod elementum magna. Vivamus eu placerat est, nec porttitor sem. Proin vel sem magna. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
+		secondParagraph:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis congue arcu, ut consectetur justo. Vestibulum id orci in metus dapibus tincidunt vitae sed ligula. Nam vulputate sapien diam, quis ullamcorper erat dignissim non. Pellentesque pellentesque metus sed pharetra mattis. Nulla vel ipsum sed enim ultricies auctor. Mauris nisi felis, interdum quis augue eget, fermentum dictum nunc. Nunc urna odio, tincidunt sed lectus ac, euismod elementum magna. Vivamus eu placerat est, nec porttitor sem. Proin vel sem magna. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
+		thirdParagraph:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis congue arcu, ut consectetur justo. Vestibulum id orci in metus dapibus tincidunt vitae sed ligula. Nam vulputate sapien diam, quis ullamcorper erat dignissim non. Pellentesque pellentesque metus sed pharetra mattis. Nulla vel ipsum sed enim ultricies auctor. Mauris nisi felis, interdum quis augue eget, fermentum dictum nunc. Nunc urna odio, tincidunt sed lectus ac, euismod elementum magna. Vivamus eu placerat est, nec porttitor sem. Proin vel sem magna. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
+	},
+	{
+		title: 'My Second Added Article',
+		date: 'December 12, 2019',
+		firstParagraph:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis congue arcu, ut consectetur justo. Vestibulum id orci in metus dapibus tincidunt vitae sed ligula. Nam vulputate sapien diam, quis ullamcorper erat dignissim non. Pellentesque pellentesque metus sed pharetra mattis. Nulla vel ipsum sed enim ultricies auctor. Mauris nisi felis, interdum quis augue eget, fermentum dictum nunc. Nunc urna odio, tincidunt sed lectus ac, euismod elementum magna. Vivamus eu placerat est, nec porttitor sem. Proin vel sem magna. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
+		secondParagraph:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis congue arcu, ut consectetur justo. Vestibulum id orci in metus dapibus tincidunt vitae sed ligula. Nam vulputate sapien diam, quis ullamcorper erat dignissim non. Pellentesque pellentesque metus sed pharetra mattis. Nulla vel ipsum sed enim ultricies auctor. Mauris nisi felis, interdum quis augue eget, fermentum dictum nunc. Nunc urna odio, tincidunt sed lectus ac, euismod elementum magna. Vivamus eu placerat est, nec porttitor sem. Proin vel sem magna. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
+		thirdParagraph:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis congue arcu, ut consectetur justo. Vestibulum id orci in metus dapibus tincidunt vitae sed ligula. Nam vulputate sapien diam, quis ullamcorper erat dignissim non. Pellentesque pellentesque metus sed pharetra mattis. Nulla vel ipsum sed enim ultricies auctor. Mauris nisi felis, interdum quis augue eget, fermentum dictum nunc. Nunc urna odio, tincidunt sed lectus ac, euismod elementum magna. Vivamus eu placerat est, nec porttitor sem. Proin vel sem magna. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
+	},
+	{
+		title: 'My Third Added Article',
+		date: 'December 12, 2019',
+		firstParagraph:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis congue arcu, ut consectetur justo. Vestibulum id orci in metus dapibus tincidunt vitae sed ligula. Nam vulputate sapien diam, quis ullamcorper erat dignissim non. Pellentesque pellentesque metus sed pharetra mattis. Nulla vel ipsum sed enim ultricies auctor. Mauris nisi felis, interdum quis augue eget, fermentum dictum nunc. Nunc urna odio, tincidunt sed lectus ac, euismod elementum magna. Vivamus eu placerat est, nec porttitor sem. Proin vel sem magna. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
+		secondParagraph:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis congue arcu, ut consectetur justo. Vestibulum id orci in metus dapibus tincidunt vitae sed ligula. Nam vulputate sapien diam, quis ullamcorper erat dignissim non. Pellentesque pellentesque metus sed pharetra mattis. Nulla vel ipsum sed enim ultricies auctor. Mauris nisi felis, interdum quis augue eget, fermentum dictum nunc. Nunc urna odio, tincidunt sed lectus ac, euismod elementum magna. Vivamus eu placerat est, nec porttitor sem. Proin vel sem magna. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
+		thirdParagraph:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis congue arcu, ut consectetur justo. Vestibulum id orci in metus dapibus tincidunt vitae sed ligula. Nam vulputate sapien diam, quis ullamcorper erat dignissim non. Pellentesque pellentesque metus sed pharetra mattis. Nulla vel ipsum sed enim ultricies auctor. Mauris nisi felis, interdum quis augue eget, fermentum dictum nunc. Nunc urna odio, tincidunt sed lectus ac, euismod elementum magna. Vivamus eu placerat est, nec porttitor sem. Proin vel sem magna. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
+	},
+];
+
+additionalArticles.forEach((article) => {
+  const articleToAppend = componentCreator(
+    article.title,
+    article.date,
+    article.firstParagraph,
+    article.secondParagraph,
+    article.thirdParagraph
+  );
+  articles.appendChild(articleToAppend);
+})
