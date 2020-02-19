@@ -85,8 +85,88 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
-  }
+  },
 ];
+
+const articles = document.querySelector('.articles');
+console.log(articles)
+
+function componentCreator(title,date,p1,p2,p3) {
+  //creating elements
+  const article = document.createElement('div');
+  const titleContent = document.createElement('h2');
+  const titleDate = document.createElement('p');
+  const para1 = document.createElement('p');
+  const para2 = document.createElement('p');
+  const para3 = document.createElement('p');
+  const expandSpan = document.createElement('span');
+
+  //appending to the article div
+  article.appendChild(titleContent);
+  article.appendChild(titleDate);
+  article.appendChild(para1);
+  article.appendChild(para2);
+  article.appendChild(para3);
+  article.appendChild(expandSpan);
+
+  //add classes back in
+  article.classList.add('article');
+  titleDate.classList.add('date');
+  expandSpan.classList.add('expandButton');
+
+  //adding the content to elements created
+  titleContent.textContent = title;
+  titleDate.textContent = date;
+  para1.textContent = p1;
+  para2.textContent = p2;
+  para3.textContent = p3;
+  expandSpan.textContent = 'Click to Expand';
+
+  expandSpan.addEventListener('click', (e) => {
+    article.classList.toggle("article-open")
+    //e.target.textContent.toggle("close article")
+  });
+
+  return article;
+}
+
+data.map((article) => {
+  return articles.appendChild(componentCreator(article.title, article.date, article.firstParagraph, article.secondParagraph, article.thirdParagraph))
+})
+
+const addedArticles = [{
+  title: "Cassie's 1st Added Article",
+  date: "Feburary 18, 2020",
+  firstParagraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus ipsum vitae leo consectetur, sed varius diam rhoncus. Aliquam erat volutpat. Etiam pretium egestas lacus a laoreet. Vivamus vitae porttitor neque. Aliquam ornare interdum nulla ac congue. Proin auctor mauris eget ex eleifend consectetur fermentum sed ligula. Phasellus id orci sed dolor ultricies blandit luctus non turpis. Etiam id vestibulum felis, fringilla hendrerit turpis. Proin posuere nisl ut varius sodales. In ac odio non augue pretium vehicula non ac felis. Aliquam sapien nisi, mollis ac faucibus eget, pulvinar eget augue. Cras in sem in nunc aliquet cursus. Quisque vel tempus odio. Cras dapibus, tellus sed commodo suscipit, dui purus ultrices quam, in hendrerit nisl mauris eu risus.",
+
+  secondParagraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus ipsum vitae leo consectetur, sed varius diam rhoncus. Aliquam erat volutpat. Etiam pretium egestas lacus a laoreet. Vivamus vitae porttitor neque. Aliquam ornare interdum nulla ac congue. Proin auctor mauris eget ex eleifend consectetur fermentum sed ligula. Phasellus id orci sed dolor ultricies blandit luctus non turpis. Etiam id vestibulum felis, fringilla hendrerit turpis. Proin posuere nisl ut varius sodales. In ac odio non augue pretium vehicula non ac felis. Aliquam sapien nisi, mollis ac faucibus eget, pulvinar eget augue. Cras in sem in nunc aliquet cursus. Quisque vel tempus odio. Cras dapibus, tellus sed commodo suscipit, dui purus ultrices quam, in hendrerit nisl mauris eu risus.",
+
+  thirdParagraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus ipsum vitae leo consectetur, sed varius diam rhoncus. Aliquam erat volutpat. Etiam pretium egestas lacus a laoreet. Vivamus vitae porttitor neque. Aliquam ornare interdum nulla ac congue. Proin auctor mauris eget ex eleifend consectetur fermentum sed ligula. Phasellus id orci sed dolor ultricies blandit luctus non turpis. Etiam id vestibulum felis, fringilla hendrerit turpis. Proin posuere nisl ut varius sodales. In ac odio non augue pretium vehicula non ac felis. Aliquam sapien nisi, mollis ac faucibus eget, pulvinar eget augue. Cras in sem in nunc aliquet cursus. Quisque vel tempus odio. Cras dapibus, tellus sed commodo suscipit, dui purus ultrices quam, in hendrerit nisl mauris eu risus.",
+},
+{
+  title: "Cassie's 2nd Article",
+  date: "Feburary 18, 2020",
+  firstParagraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus ipsum vitae leo consectetur, sed varius diam rhoncus. Aliquam erat volutpat. Etiam pretium egestas lacus a laoreet. Vivamus vitae porttitor neque. Aliquam ornare interdum nulla ac congue. Proin auctor mauris eget ex eleifend consectetur fermentum sed ligula. Phasellus id orci sed dolor ultricies blandit luctus non turpis. Etiam id vestibulum felis, fringilla hendrerit turpis. Proin posuere nisl ut varius sodales. In ac odio non augue pretium vehicula non ac felis. Aliquam sapien nisi, mollis ac faucibus eget, pulvinar eget augue. Cras in sem in nunc aliquet cursus. Quisque vel tempus odio. Cras dapibus, tellus sed commodo suscipit, dui purus ultrices quam, in hendrerit nisl mauris eu risus.",
+
+  secondParagraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus ipsum vitae leo consectetur, sed varius diam rhoncus. Aliquam erat volutpat. Etiam pretium egestas lacus a laoreet. Vivamus vitae porttitor neque. Aliquam ornare interdum nulla ac congue. Proin auctor mauris eget ex eleifend consectetur fermentum sed ligula. Phasellus id orci sed dolor ultricies blandit luctus non turpis. Etiam id vestibulum felis, fringilla hendrerit turpis. Proin posuere nisl ut varius sodales. In ac odio non augue pretium vehicula non ac felis. Aliquam sapien nisi, mollis ac faucibus eget, pulvinar eget augue. Cras in sem in nunc aliquet cursus. Quisque vel tempus odio. Cras dapibus, tellus sed commodo suscipit, dui purus ultrices quam, in hendrerit nisl mauris eu risus.",
+
+  thirdParagraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus ipsum vitae leo consectetur, sed varius diam rhoncus. Aliquam erat volutpat. Etiam pretium egestas lacus a laoreet. Vivamus vitae porttitor neque. Aliquam ornare interdum nulla ac congue. Proin auctor mauris eget ex eleifend consectetur fermentum sed ligula. Phasellus id orci sed dolor ultricies blandit luctus non turpis. Etiam id vestibulum felis, fringilla hendrerit turpis. Proin posuere nisl ut varius sodales. In ac odio non augue pretium vehicula non ac felis. Aliquam sapien nisi, mollis ac faucibus eget, pulvinar eget augue. Cras in sem in nunc aliquet cursus. Quisque vel tempus odio. Cras dapibus, tellus sed commodo suscipit, dui purus ultrices quam, in hendrerit nisl mauris eu risus.",
+
+},
+{
+  title: "Cassie's 3rd Article",
+  date: "Feburary 18, 2020",
+  firstParagraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus ipsum vitae leo consectetur, sed varius diam rhoncus. Aliquam erat volutpat. Etiam pretium egestas lacus a laoreet. Vivamus vitae porttitor neque. Aliquam ornare interdum nulla ac congue. Proin auctor mauris eget ex eleifend consectetur fermentum sed ligula. Phasellus id orci sed dolor ultricies blandit luctus non turpis. Etiam id vestibulum felis, fringilla hendrerit turpis. Proin posuere nisl ut varius sodales. In ac odio non augue pretium vehicula non ac felis. Aliquam sapien nisi, mollis ac faucibus eget, pulvinar eget augue. Cras in sem in nunc aliquet cursus. Quisque vel tempus odio. Cras dapibus, tellus sed commodo suscipit, dui purus ultrices quam, in hendrerit nisl mauris eu risus.",
+
+  secondParagraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus ipsum vitae leo consectetur, sed varius diam rhoncus. Aliquam erat volutpat. Etiam pretium egestas lacus a laoreet. Vivamus vitae porttitor neque. Aliquam ornare interdum nulla ac congue. Proin auctor mauris eget ex eleifend consectetur fermentum sed ligula. Phasellus id orci sed dolor ultricies blandit luctus non turpis. Etiam id vestibulum felis, fringilla hendrerit turpis. Proin posuere nisl ut varius sodales. In ac odio non augue pretium vehicula non ac felis. Aliquam sapien nisi, mollis ac faucibus eget, pulvinar eget augue. Cras in sem in nunc aliquet cursus. Quisque vel tempus odio. Cras dapibus, tellus sed commodo suscipit, dui purus ultrices quam, in hendrerit nisl mauris eu risus.",
+
+  thirdParagraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus ipsum vitae leo consectetur, sed varius diam rhoncus. Aliquam erat volutpat. Etiam pretium egestas lacus a laoreet. Vivamus vitae porttitor neque. Aliquam ornare interdum nulla ac congue. Proin auctor mauris eget ex eleifend consectetur fermentum sed ligula. Phasellus id orci sed dolor ultricies blandit luctus non turpis. Etiam id vestibulum felis, fringilla hendrerit turpis. Proin posuere nisl ut varius sodales. In ac odio non augue pretium vehicula non ac felis. Aliquam sapien nisi, mollis ac faucibus eget, pulvinar eget augue. Cras in sem in nunc aliquet cursus. Quisque vel tempus odio. Cras dapibus, tellus sed commodo suscipit, dui purus ultrices quam, in hendrerit nisl mauris eu risus.",
+  }
+]
+
+addedArticles.map((article) => {
+  return articles.appendChild(componentCreator(article.title, article.date, article.firstParagraph, article.secondParagraph, article.thirdParagraph))
+})
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
