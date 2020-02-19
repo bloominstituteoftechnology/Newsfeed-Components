@@ -113,27 +113,30 @@ const data = [
 
 */
 
-const articleComponent = () => {
+const articleComponent = (artTitle, artDate, artP, artSp, artTp) => {
   const articleContainer = document.createElement("div");
   articleContainer.classList.add("article");
 
   const title = document.createElement("h2");
-  title.textContent = "Come Back Later Henry";
+  title.textContent = artTitle;
 
   const date = document.createElement("p");
-  date.textContent = "Come Back Later Henry";
+  date.textContent = artDate;
 
   const firstP = document.createElement("p");
-  firstP.textContent = "";
+  firstP.textContent = artP;
 
   const secondP = document.createElement("p");
-  firstP.textContent = "";
+  firstP.textContent = artSp;
 
   const thirdP = document.createElement("p");
-  firstP.textContent = "";
+  firstP.textContent = artTp;
 
   const articleBtn = document.createElement("span");
   articleBtn.classList.add("expandButton");
+  articleBtn.addEventListener("click", () => {
+    articleBtn.classList.toggle("article-open");
+  });
 
   articleContainer.appendChild(title);
   articleContainer.appendChild(date);
@@ -144,3 +147,13 @@ const articleComponent = () => {
 
   return articleComponent;
 };
+
+data.forEach(currentItem => {
+  const newArticle = articleComponent(
+    currentItem.title,
+    currentItem.date,
+    currentItem.firstParagraph,
+    currentItem.secondParagraph,
+    currentItem.thirdParagraph
+  );
+});
