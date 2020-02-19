@@ -55,8 +55,9 @@ function openMenu (arr) {
   navDiv.classList.add('menu');
   menuButton.addEventListener('click', (e) => {
     navDiv.classList.toggle('menu--open');
-    gsap.to('.menu-button', {backgroundColor: 'red', duration: 5, rotation: 360});
+    gsap.to('.menu-button', {backgroundColor: 'red', duration: 1, rotation: 360});
     gsap.to('ul', {backgroundColor: 'darkGreen'});
+    
   })
   return navDiv;
 }
