@@ -114,31 +114,131 @@ const data = [
 */
 
 
-{/* <div class="article">
-    <h2>{title of the article}</h2>
-    <p class="date">{date of the article}</p>
+const myArticles = document.querySelector('.articles');
+// myArticles.textContent = 'here my article contents goes.';
+console.log(myArticles);
+// Step 1: Create a function that creates a component.
+const componentCreator = (title, date, p1, p2, p3) => {
+// creating elements
+const article = document.createElement('div');
+const articleTitle = document.createElement('h2');
+const paragraph = document.createElement('p');
+const paragraph1 = document.createElement('p');
+const paragraph2 = document.createElement('p');
+const paragraph3 = document.createElement('p');
+const expBtn = document.createElement('span');
+// adding classes back in
+article.classList.add('article');
+paragraph.classList.add('date');
+expBtn.classList.add('expandButton');
+// appending to the article div
+article.appendChild(articleTitle);
+article.appendChild(paragraph);
+article.appendChild(paragraph1);
+article.appendChild(paragraph2);
+article.appendChild(paragraph3);
+article.appendChild(expBtn);
+// add our content to the elements we created
+articleTitle.textContent = title;
+paragraph.textContent = date;
+paragraph1.textContent = p1;
+paragraph2.textContent = p2;
+paragraph3.textContent = p3;
+expBtn.textContent = 'Click To Expand';
+// Step 2: add an event listener to expBtn span.
+  expBtn.addEventListener('click', (event) => {
+   
+    article.classList.toggle('article-open');
+    if (expBtn.textContent != 'Close') {
+      expBtn.textContent = 'Close';
+   
+     
+     
+      
+    } else {
+      expBtn.textContent = 'Click To Expand';
+    
+     
+    }
+  });
+  // console.log(componentCreator);
 
-    {three separate paragraph elements}
+// Step 3: return the entire component.
+return article;
+}
+// Step 4: Map over
+data.forEach((article) => {
+  const articleToAppend = componentCreator(
+    article.title,
+    article.date,
+    article.firstParagraph,
+    article.secondParagraph,
+    article.thirdParagraph
+  );
+  myArticles.appendChild(articleToAppend);
+})
+//  Step 5: Add a new article to the array.
+const additionalArticles = [
+	{
+		title: 'My First Added Article',
+		date: 'December 12, 2019',
+		firstParagraph:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis congue arcu, ut consectetur justo. Vestibulum id orci in metus dapibus tincidunt vitae sed ligula. Nam vulputate sapien diam, quis ullamcorper erat dignissim non. Pellentesque pellentesque metus sed pharetra mattis. Nulla vel ipsum sed enim ultricies auctor. Mauris nisi felis, interdum quis augue eget, fermentum dictum nunc. Nunc urna odio, tincidunt sed lectus ac, euismod elementum magna. Vivamus eu placerat est, nec porttitor sem. Proin vel sem magna. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
+		secondParagraph:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis congue arcu, ut consectetur justo. Vestibulum id orci in metus dapibus tincidunt vitae sed ligula. Nam vulputate sapien diam, quis ullamcorper erat dignissim non. Pellentesque pellentesque metus sed pharetra mattis. Nulla vel ipsum sed enim ultricies auctor. Mauris nisi felis, interdum quis augue eget, fermentum dictum nunc. Nunc urna odio, tincidunt sed lectus ac, euismod elementum magna. Vivamus eu placerat est, nec porttitor sem. Proin vel sem magna. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
+		thirdParagraph:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis congue arcu, ut consectetur justo. Vestibulum id orci in metus dapibus tincidunt vitae sed ligula. Nam vulputate sapien diam, quis ullamcorper erat dignissim non. Pellentesque pellentesque metus sed pharetra mattis. Nulla vel ipsum sed enim ultricies auctor. Mauris nisi felis, interdum quis augue eget, fermentum dictum nunc. Nunc urna odio, tincidunt sed lectus ac, euismod elementum magna. Vivamus eu placerat est, nec porttitor sem. Proin vel sem magna. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
+	},
+	{
+		title: 'My Second Added Article',
+		date: 'December 12, 2019',
+		firstParagraph:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis congue arcu, ut consectetur justo. Vestibulum id orci in metus dapibus tincidunt vitae sed ligula. Nam vulputate sapien diam, quis ullamcorper erat dignissim non. Pellentesque pellentesque metus sed pharetra mattis. Nulla vel ipsum sed enim ultricies auctor. Mauris nisi felis, interdum quis augue eget, fermentum dictum nunc. Nunc urna odio, tincidunt sed lectus ac, euismod elementum magna. Vivamus eu placerat est, nec porttitor sem. Proin vel sem magna. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
+		secondParagraph:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis congue arcu, ut consectetur justo. Vestibulum id orci in metus dapibus tincidunt vitae sed ligula. Nam vulputate sapien diam, quis ullamcorper erat dignissim non. Pellentesque pellentesque metus sed pharetra mattis. Nulla vel ipsum sed enim ultricies auctor. Mauris nisi felis, interdum quis augue eget, fermentum dictum nunc. Nunc urna odio, tincidunt sed lectus ac, euismod elementum magna. Vivamus eu placerat est, nec porttitor sem. Proin vel sem magna. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
+		thirdParagraph:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis congue arcu, ut consectetur justo. Vestibulum id orci in metus dapibus tincidunt vitae sed ligula. Nam vulputate sapien diam, quis ullamcorper erat dignissim non. Pellentesque pellentesque metus sed pharetra mattis. Nulla vel ipsum sed enim ultricies auctor. Mauris nisi felis, interdum quis augue eget, fermentum dictum nunc. Nunc urna odio, tincidunt sed lectus ac, euismod elementum magna. Vivamus eu placerat est, nec porttitor sem. Proin vel sem magna. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
+	},
+	{
+		title: 'My Third Added Article',
+		date: 'December 12, 2019',
+		firstParagraph:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis congue arcu, ut consectetur justo. Vestibulum id orci in metus dapibus tincidunt vitae sed ligula. Nam vulputate sapien diam, quis ullamcorper erat dignissim non. Pellentesque pellentesque metus sed pharetra mattis. Nulla vel ipsum sed enim ultricies auctor. Mauris nisi felis, interdum quis augue eget, fermentum dictum nunc. Nunc urna odio, tincidunt sed lectus ac, euismod elementum magna. Vivamus eu placerat est, nec porttitor sem. Proin vel sem magna. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
+		secondParagraph:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis congue arcu, ut consectetur justo. Vestibulum id orci in metus dapibus tincidunt vitae sed ligula. Nam vulputate sapien diam, quis ullamcorper erat dignissim non. Pellentesque pellentesque metus sed pharetra mattis. Nulla vel ipsum sed enim ultricies auctor. Mauris nisi felis, interdum quis augue eget, fermentum dictum nunc. Nunc urna odio, tincidunt sed lectus ac, euismod elementum magna. Vivamus eu placerat est, nec porttitor sem. Proin vel sem magna. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
+		thirdParagraph:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis congue arcu, ut consectetur justo. Vestibulum id orci in metus dapibus tincidunt vitae sed ligula. Nam vulputate sapien diam, quis ullamcorper erat dignissim non. Pellentesque pellentesque metus sed pharetra mattis. Nulla vel ipsum sed enim ultricies auctor. Mauris nisi felis, interdum quis augue eget, fermentum dictum nunc. Nunc urna odio, tincidunt sed lectus ac, euismod elementum magna. Vivamus eu placerat est, nec porttitor sem. Proin vel sem magna. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
+	},
+];
+additionalArticles.forEach((article) => {
+  const articleToAppend = componentCreator(
+    article.title,
+    article.date,
+    article.firstParagraph,
+    article.secondParagraph,
+    article.thirdParagraph
+  );
+  myArticles.appendChild(articleToAppend);
+})
 
-    <span class='expandButton'></span>
-  </div> */}
 
 
-  const articleBar = document.createElement('div');
-  const articleTitle = document.createElement('h2');
-  const articleParagraph = document.createElement('p');
-  const firstParagraph = document.createElement('p');
-  const secondParagraph = document.createElement('p');
-  const thirdParagraph = document.createElement('p');
-  const spnButton = document.createElement('span');
 
 
-  // elements structure
 
 
-  articleBar.appendChild(articleTitle);
-  articleBar.appendChild(articleParagraph);
-  
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
