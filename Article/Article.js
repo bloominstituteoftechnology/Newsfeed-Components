@@ -154,19 +154,21 @@ expBtn.textContent = 'Click To Expand';
 
 // Step 2: add an event listener to expBtn span.
   expBtn.addEventListener('click', (event) => {
+    gsap.to('.article h2', {duration: 1, borderRadius: '5%', x: 10, ease: 'back', stagger: 0.25})
     article.classList.toggle('article-open');
     if (expBtn.textContent != 'Close') {
       expBtn.textContent = 'Close';
       expBtn.style.backgroundColor = '#09bd4e';
       expBtn.style.color = 'white';
       article.style.backgroundColor = '#09bd4e';
-      gsap.to('.article h2', {backgroundColor: 'lightGray', duration: 1, borderRadius: '5%', x: 10, border: '1px solid lightGray', ease: 'back', stagger: 0.25})
-      // gsap.to('.article', {backgroundColor: '#09bd4e'});
+      
+      //gsap.to('.article', {backgroundColor: '#09bd4e'});
     } else {
       expBtn.textContent = 'Click To Expand';
       expBtn.style.backgroundColor = 'white'
       expBtn.style.color = '';
       gsap.to('.article', {backgroundColor: 'white'});
+      gsap.to('.article h2', {duration: 1, borderRadius: '-5%', x: -10, ease: 'back', stagger: -0.25})
     }
   });
 
