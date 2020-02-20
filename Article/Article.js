@@ -112,3 +112,51 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+function newComponent(attr) {
+  const newComp = document.createElement('div')
+  newComp.classList.add('article')
+
+
+  const title = Document.createElement('h2')
+  title.textContent = attr.title
+  newComp.appendChild(title)
+  
+
+  const date = document.createElement('p')
+  date.textContent = attr.date
+  date.classList.add('date')
+  newComp.appendChild(date)
+  
+  const p1 = document.createElement('p')
+  p1.textContent = attr.firstParagraph
+  newComp.appendChild(p1)
+
+  const p2 = document.createElement('p')
+  p2.textContent = attr.secondParagraph
+  newComp.appendChild(p2)
+
+  const p3 = document.createElement('p')
+  p3.textContent = attr.thirdParagraph
+  newComp.appendChild(p3)
+
+  const expButton = document.createElement('span')
+  expButton.classList.add('expandButton')
+  expButton.textContent ='Keep Reading'
+
+  expButton.addEventListener("click", (event) => {
+    newComp.classList.toggle('article-open')
+  })
+
+  newComp.appendChild(expButton)
+
+  console.log(`New component created`)
+  return newComp
+}
+
+const artSection = document.querySelector('.articles')
+
+data.forEach((arrItem) => {
+  let newArticle = newComponent(arrItem)
+  
+  artSection.appendChild(newArticle)
+})
