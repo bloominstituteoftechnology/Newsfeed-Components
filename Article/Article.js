@@ -85,22 +85,6 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
-  },
-  {
-    title: "Professional Software Development in 2019",
-    date: "Jan 1st, 2019",
-    firstParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
-          hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
-          Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `,
-
-    secondParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
-          hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
-          hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
-          hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? `,
-
-    thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
-          Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
-          Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
 ];
 
@@ -143,15 +127,15 @@ const articleComponent = (artTitle, artDate, artP, artSp, artTp) => {
   firstP.textContent = artP;
 
   const secondP = document.createElement("p");
-  firstP.textContent = artSp;
+  secondP.textContent = artSp;
 
   const thirdP = document.createElement("p");
-  firstP.textContent = artTp;
+  thirdP.textContent = artTp;
 
   const articleBtn = document.createElement("span");
   articleBtn.classList.add("expandButton");
   articleBtn.addEventListener("click", () => {
-    articleBtn.classList.toggle("article-open");
+    articleContainer.classList.toggle(".article-open");
   });
 
   articleContainer.appendChild(title);
@@ -164,27 +148,16 @@ const articleComponent = (artTitle, artDate, artP, artSp, artTp) => {
   return articleContainer;
 };
 
-// data.forEach(currentItem => {
-//   const newArticle = articleComponent(
-//     currentItem.title,
-//     currentItem.date,
-//     currentItem.firstParagraph,
-//     currentItem.secondParagraph,
-//     currentItem.thirdParagraph
-//   );
-// });
-
 const articleDiv = document.querySelector(".articles");
 articleDiv.appendChild(articleComponent());
 
 data.forEach(e => {
-  articleDiv.appendChild(
-    articleComponent(
-      e.title,
-      e.date,
-      e.firstParagraph,
-      e.secondParagraph,
-      e.thirdParagraph
-    )
+  const newStory = articleComponent(
+    e.title,
+    e.date,
+    e.firstParagraph,
+    e.secondParagraph,
+    e.thirdParagraph
   );
+  articleDiv.appendChild(newStory);
 });
