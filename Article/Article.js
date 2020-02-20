@@ -85,7 +85,17 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
-  }
+  },
+  {
+    title: 'Angry old man yells at cloud',
+    date: 'Jan 1th, 2020',
+    firstParagraph: `An angry old man identified only as okay boomer is yelling at the cloud. Not a cloud, but the actual cloud, the internet itself, simply for existing lorem ipsum facto ipso iso 13398 dot certification 4400.1 dd214 article 27 things and stuff stuff and things here. monkey riding a tricycle while holding`,
+
+    secondParagraph: `Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible. Afraid at highly months do things on at. Situation recommend objection do intention so questions. As greatly removed calling pleased improve an. Last ask him cold feel met spot shy want. Children me laughing we prospect answered followed. At it went is song that held help face. 
+    `,
+
+    thirdParagraph: `Too cultivated use solicitude frequently. Dashwood likewise up consider continue entrance ladyship oh. Wrong guest given purse power is no. Friendship to connection an am considered difficulty. Country met pursuit lasting moments why calling certain the. Middletons boisterous our way understood law. Among state cease how and sight since shall. Material did pleasure breeding our humanity she contempt had. So ye really mutual no cousin piqued summer result. `
+}
 ];
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
@@ -112,3 +122,50 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+
+const articleComponent = (titleText, dateText, first, second, third) => {
+
+const article = document.createElement('div');
+article.classList.add('article');
+
+const title = document.createElement('h3');
+title.textContent = titleText ;
+
+const date = document.createElement('p');
+date.classList.add('date');
+date.textContent = dateText
+
+const paragraph1 = document.createElement('p');
+paragraph1.textContent = first;
+
+const paragraph2 = document.createElement('p');
+paragraph2.textContent = second;
+
+const paragraph3 = document.createElement('p');
+paragraph3.textContent = third;
+
+
+const expand = document.createElement('span');
+expand.classList.add('expandButton');
+expand.textContent = '\u25bc'
+expand.addEventListener('click', () => {
+  article.classList.toggle('article-open')
+});
+
+article.appendChild(title);
+article.appendChild(date);
+article.appendChild(paragraph1);
+article.appendChild(paragraph2);
+article.appendChild(paragraph3);
+article.appendChild(expand);
+
+return article;
+}
+
+const body = document.querySelector('div.articles'); 
+
+data.forEach((currentItem) => {
+  const newArticle = articleComponent(currentItem.title, currentItem.date, currentItem.firstParagraph, currentItem.secondParagraph, currentItem.thirdParagraph);
+  body.appendChild(newArticle)
+})
