@@ -145,7 +145,7 @@ const articleComponent = (artTitle, artDate, artP, artSp, artTp) => {
   articleContainer.appendChild(thirdP);
   articleContainer.appendChild(articleBtn);
 
-  return articleComponent;
+  return articleContainer;
 };
 
 data.forEach(currentItem => {

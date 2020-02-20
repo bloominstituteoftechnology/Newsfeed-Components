@@ -34,10 +34,17 @@ let menuItems = [
   
 */
 
-const menuComponent = () => {
+const menuComponent = array => {
   const menuContainer = document.createElement("div");
   menuContainer.classList.add("menu");
 
   const menuNav = document.createElement("ul");
-  menuNav = "Add later";
+  menuNav.textContent = array;
+  menuNav.addEventListener("click", () => {
+    menuContainer.classList.toggle("menu--open");
+  });
+
+  menuContainer.appendChild(menuNav);
+
+  return menuComponent;
 };
