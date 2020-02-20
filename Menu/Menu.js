@@ -61,7 +61,7 @@ function openMenu (arr) {
       gsap.to('ul', {backgroundColor: 'darkGreen'});
     } else {
       menuButton.textContent = 'menu-button';
-      gsap.to('.menu-button', {backgroundColor: 'orange', duration: 2, rotation: -360});
+      gsap.to('.menu-button', {backgroundColor: '', duration: 2, rotation: -360});
     }
     
   })
