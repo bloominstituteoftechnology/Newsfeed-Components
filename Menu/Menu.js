@@ -9,6 +9,32 @@ let menuItems = [
   'Log Out'
 ];
 
+const head = document.querySelector('.header');
+const mBtn = document.querySelector('.menu-button');
+
+header.appendChild(createMenu(menuItems));
+
+function createMenu(arr) {
+  const nav = document.createElement('div');
+  const list = document.createElement('ul');
+
+  nav.appendChild(list);
+
+  menuItems.forEach((link) => {
+      const menu =document.createElement('li');
+      menu.textContent = link;
+      list.appendChild(menu);
+  })
+
+  nav.classList.add('menu');
+  mBtn.addEventListener('click', (e) => {
+    nav.classList.toggle('menu--open');
+
+  })
+
+  return nav;
+}
+
 /* 
 
   Step 1: Write a function that will create a menu component as seen below:

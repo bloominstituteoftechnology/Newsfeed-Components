@@ -1,7 +1,6 @@
 /* This is the data we will be using to create our article components */
 /* Look over this data, then proceed to line 91*/
-const data = [
-  {
+const data = [{
     title: 'Lambda School Students: "We\'re the best!"',
     date: 'Nov 5th, 2018',
     firstParagraph: `Lucas ipsum dolor sit amet ben twi'lek padmé darth darth darth moff hutt organa twi'lek. Ben amidala secura skywalker lando
@@ -112,3 +111,58 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+function article(title, date, p1, p2, p3) {
+  //creating elements
+  const article = document.createElement('div');
+  const title = document.createElement('h2');
+  const date = document.createElement('p');
+  const p1 = document.createElement('p');
+  const p2 = document.createElement('p');
+  const p3 = document.createElement('p');
+  const expandSpan = document.createElement('span');
+
+  expandSpan.addEventListener('click', (e) => {
+    article.classList.toggle("article-open")
+
+    article.appendChild(title);
+    article.appendChild(date);
+    article.appendChild(p1);
+    article.appendChild(p2);
+    article.appendChild(p3);
+    article.appendChild(expandSpan);
+
+    article.classList.add('article');
+    date.classList.add('date');
+    expandSpan.classList.add('expandButton');
+
+    title.textContent = title;
+    date.textContent = date;
+    p1.textContent = p1;
+    p2.textContent = p2;
+    p3.textContent = p3;
+    expandSpan.textContent = 'Click to Expand';
+
+  });
+
+  return article;
+}
+
+data.map((article) => {
+  return articles.appendChild(article(article.title, article.date, article.firstParagraph, article.secondParagraph, article.thirdParagraph))
+})
+
+let add = {
+  title: "Briana",
+  date: "May 22, 2001",
+
+  firstParagraph: "lorem",
+
+  secondParagraph: "Lorem ipsum dolor sit amet",
+
+  thirdParagraph: "Lorem ipsum dolor sit amet",
+}
+
+add.map((article) => {
+  return articles.appendChild(componentCreator(article.title, article.date, article.firstParagraph, article.secondParagraph, article.thirdParagraph))
+})
