@@ -168,7 +168,7 @@ expBtn.textContent = 'Click To Expand';
       expBtn.style.backgroundColor = 'white'
       expBtn.style.color = '';
       gsap.to('.article', {backgroundColor: 'white'});
-      gsap.to('.article h2', {duration: 1, borderRadius: '-5%', x: -10, ease: 'back', stagger: -0.25})
+      gsap.to('.article h2', {duration: 1, borderRadius: '-5%', x: -10, ease: '', stagger: -0.25})
     }
   });
 
