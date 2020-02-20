@@ -85,9 +85,37 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
-  }
-];
+  },
+  {
+  title: 'Star Trek',
+  date: 'Stardate 47457.1',
+  firstParagraph: `Sensors indicate human life forms 30 meters below the planets surface. Stellar flares are increasing in magnitude and frequency. 
+  Set course for Rhomboid Dronegar 006, warp seven. Theres no evidence of an advanced communication network. Total guidance system failure, with less than 24 hours reserve power. 
+  Shield effectiveness has been reduced 12 percent. We have covered the area in a spherical pattern which a ship without warp drive could cross in the given time.`,
 
+  secondParagraph: `Deflector power at maximum. Energy discharge in six seconds. Warp reactor core primary coolant failure. Fluctuate phaser resonance frequencies. 
+  Resistance is futile. Recommend we adjust shield harmonics to the upper EM band when proceeding. These appear to be some kind of power-wave-guide conduits which allow them 
+  to work collectively as they perform ship functions. Increase deflector modulation to upper frequency band.`,
+
+  thirdParagraph: `Run a manual sweep of anomalous airborne or electromagnetic readings. Radiation levels in our atmosphere have increased by 3,000 percent. 
+  Electromagnetic and subspace wave fronts approaching synchronization. What is the strength of the ship's deflector shields at maximum output? The wormhole's size and 
+  short period would make this a local phenomenon. Do you have sufficient data to compile a holographic simulation?`
+},
+{
+title: 'Elven Text',
+date: 'Year 34 of the Third Age',
+firstParagraph: `Wán ai yanen nainië, up manu tárië rac. Lis ëa raica tárië voronwë. Anca lauta foina na nië, net nahamna arandur orofarnë et. Maren liquis fir up, 
+línë vailë ep vor. Oi pel urúva hravan, ninwa lauya íta lú, tul ve manu harna. Lië heri torma vailë as, yá már inyo ambarmetta, var ep vaina vairë artaquetta. `,
+
+secondParagraph: `Tin alma caima an, rac us voronwë halyavasarya, fui mi root sáma cotumo. Oi ondo ohtatyaro fir, mat lanat maren silma sa. Aru nulda nahamna ya, 
+né nót enyárë arandur, quén onótima tengwanda nó rin. Tengwelë náhanemnam silninquita cé net, var cé varta remba. Liéva turma terenë not lú, oa túr quellë mittanya, 
+oro lá sundo nyéni ontarë.`,
+
+thirdParagraph: `Up roina rempa lavralda áva, ré cár cíla harna náhanemnam. Yávë hala yat sa. Or iel rauko hravan úquétima, 
+nac terca cuivië yá. Oi nirmë naraca nainanyéna rer. En nóa núta fárë arnanor, fassë nirmë avatyara tul yá..`
+}
+];
+// added
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
   <div class="article">
