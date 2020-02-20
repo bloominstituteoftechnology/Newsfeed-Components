@@ -36,8 +36,12 @@ let menuItems = [
 
 const menuComponent = (array) =>{
 
+
 const menudiv = document.createElement('div');
 menudiv.classList.add('menu'); 
+
+const header = document.querySelector('.header');
+header.appendChild(menudiv);
 
 const unorderedlist = document.createElement('ul');
 
@@ -49,12 +53,11 @@ array.forEach((currentItem) => {
   unorderedlist.appendChild(listItem);
 })
 
-const header = document.querySelector('.header');
-header.appendChild(menudiv);
+
 
 const menu = document.querySelector('.menu-button');
 menu.addEventListener('click', () =>{
-  menu.classList.toggle('menu--open')
+  menudiv.classList.toggle('menu--open')
 } ); 
 
 return menudiv; 
