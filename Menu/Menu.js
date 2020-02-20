@@ -23,8 +23,19 @@ const createMenu = menuItems => {
 
   menu.appendChild(ul);
 
+
+
   const menuBtn = document.querySelector('.menu-button');
   menuBtn.addEventListener('click', () => {
+     //
+     gsap.from('.menu', { duration: 2, x: -300, ease: "bounce" });
+
+     menu.classList.contains('menu--open');
+     gsap.from('li', {
+       duration: 2,
+       opacity: 100,
+       rotationX: '360'
+     });
     menu.classList.toggle('menu--open');
   });
 
