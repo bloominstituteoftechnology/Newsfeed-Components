@@ -9,7 +9,7 @@ let menuItems = [
   'Log Out'
 ];
 
-/* 
+/*
 
   Step 1: Write a function that will create a menu component as seen below:
 
@@ -33,3 +33,40 @@ let menuItems = [
   Step 6: add the menu component to the DOM.
   
 */
+
+const menuCreator = (menuText) => {
+  const menuItem = document.createElement('li');
+  menuItem.textContent = menuText;
+
+  return menuItem;
+};
+
+const header = document.querySelector('.header');
+
+// Create menu <div>
+const menu = document.createElement('div');
+menu.classList.add('menu');
+header.appendChild(menu);
+
+// Create unordered list
+const menuList = document.createElement('ul');
+
+// Adds list to menu
+menu.appendChild(menuList);
+
+// Function to add list items and gives text to them
+menuItems.forEach((currentItem) => {
+  const menuItem = menuCreator(currentItem);
+
+  menuList.appendChild(menuItem);
+});
+
+// Capture menu-button
+const menuButton = document.querySelector('.menu-button');
+
+// Toggle for menu box
+const menuToggle = (event) => {
+  menu.classList.toggle('menu--open');
+}
+
+menuButton.addEventListener('click', menuToggle);
