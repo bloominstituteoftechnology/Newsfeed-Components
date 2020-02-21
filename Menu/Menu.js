@@ -33,3 +33,28 @@ let menuItems = [
   Step 6: add the menu component to the DOM.
   
 */
+
+
+const newMenu = (post) => {
+
+  const menu = document.createElement('div');
+  menu.classList.add('menu');
+
+  const menuItems = document.createElement('ul');
+  // menuItems.classList.add('')
+  
+  const students = document.createElement('li')
+
+  const faculty = document.createElement('li')
+
+  const whatsNew = document.createElement('li')
+
+  const techTrends = document.createElement('li')
+
+  const music = document.createElement('li')
+
+  const logOut = document.createElement('li')
+
+}
+
+console.log(newMenu)
