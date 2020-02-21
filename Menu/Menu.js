@@ -9,31 +9,35 @@ let menuItems = [
   'Log Out'
 ];
 
-const head = document.querySelector('.header');
-const mBtn = document.querySelector('.menu-button');
 
-header.appendChild(createMenu(menuItems));
 
-function createMenu(arr) {
+const header = document.querySelector('.header');
+const menuButton = document.querySelector('.menu-button');
+
+function openMenu(arr) {
+
   const nav = document.createElement('div');
   const list = document.createElement('ul');
-
   nav.appendChild(list);
 
   menuItems.forEach((link) => {
-      const menu =document.createElement('li');
-      menu.textContent = link;
-      list.appendChild(menu);
+    const item = document.createElement('li');
+    item.textContent = link;
+    list.appendChild(item);
+    item.style.cursor = 'pointer';
   })
 
   nav.classList.add('menu');
-  mBtn.addEventListener('click', (e) => {
+  menuButton.addEventListener('click', (e) => {
     nav.classList.toggle('menu--open');
-
   })
 
   return nav;
+
 }
+
+header.appendChild(openMenu(menuItems));
+
 
 /* 
 
