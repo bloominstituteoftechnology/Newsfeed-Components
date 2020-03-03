@@ -33,3 +33,46 @@ let menuItems = [
   Step 6: add the menu component to the DOM.
   
 */
+
+const navCreator = (menuText) => {
+  const listItem = document.createElement('li');
+  listItem.textContent = menuText;
+
+  return listItem;
+};
+
+const header = document.querySelector('.header');
+
+// Create menu <div>
+const menu = document.createElement('div');
+menu.classList.add('menu');
+header.appendChild(menu);
+
+// Create unordered list
+const navList = document.createElement('ul');
+
+// Adds list to menu
+menu.appendChild(navList);
+
+// Function to add list items and gives text to them
+menuItems.forEach((currentItem) => {
+  const listItem = navCreator(currentItem);
+
+  navList.appendChild(listItem);
+});
+
+// Capture menu-button
+const menuButton = document.querySelector('.menu-button');
+
+// Toggle for menu box
+const menuToggle = (event) => {
+  menu.classList.toggle('menu--open');
+}
+
+menuButton.addEventListener('click', menuToggle);
+  
+    
+
+
+
+    
