@@ -112,7 +112,7 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
-
+// function to generate articles
 let contentCreator = (titleText, dateText, paragraphOne, paragraphTwo, paragraphThree) => {
   let article = document.createElement('div');
   article.classList.add('article');
@@ -122,7 +122,7 @@ let contentCreator = (titleText, dateText, paragraphOne, paragraphTwo, paragraph
   articleDate.classList.add('date');
   articleDate.textContent = dateText;
 
-  // Another function needed for creating these 3 paragraphs??
+  // Another function needed for creating paragraph
   let firstParagraph = document.createElement('p');
   firstParagraph.classList.add('content');
   firstParagraph.textContent = paragraphOne;
