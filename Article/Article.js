@@ -127,9 +127,11 @@ const data = [
   article.append(articleSpan);
 
   article.classList.add("article");
-  articleTitle.classList.add("date");
+  // articleTitle.classList.add("date");
   articleContentOne.classList.add("date")
   articleSpan.classList.add("expandButton")
+
+  articleSpan.textContent = "Click Me!"
 
   articleTitle.textContent = title;
   articleContentOne.textContent = date;
@@ -149,13 +151,15 @@ const data = [
 
   // console.log(accordion)
   
-    panelData.forEach( data => {
+  data.forEach( data => {
       // console.log("creating panels", data.title)
-      newArticles.append(newFunction(title, date, firstParagraph, secondParagraph, thirdParagraph))
+      newArticles.append(newFunction(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
     })
 
 
   // Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
+
+
 
   // Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
