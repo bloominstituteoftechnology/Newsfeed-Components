@@ -104,7 +104,7 @@ const data = [
 
   /* define elements*/
 
-function createComponent(title, date, firstParagraph, secondParagraph, thirdParagraph)
+function createArticles(data){
 
 const article = 
 document.createElement('div');
@@ -129,12 +129,32 @@ document.createElement('span');
 
   /*set up structure*/
 
-  article.append(title);
-  article.append(date);
-  article.append(paragraph1);
-  article.append(paragraph2);
-  article.append(paragraph3);
-  article.append(expandButton);
+  article.appendChild(title);
+  article.appendChild(date);
+  article.appendChild(paragraph1);
+  article.appendChild(paragraph2);
+  article.appendChild(paragraph3);
+  article.appendChild(expandButton);
+
+  title.classList.add('artTitle');
+  date.classList.add('artDate');
+  paragraph1.classList.add('artP1');
+  paragraph2.classList.add('artP2');
+  paragraph3.classList.add('artP3');
+  expandButton.classList.add('artButt');
+
+title.textContent = data.title;
+date.textContent = data.date;
+expandButton.textContent = '\u25bc';
+paragraph1.textContent = data.firstParagraph;
+paragraph2.textContent = data.SecondParagraph;
+paragraph3.textContent = data.ThirdParagraph;
+
+
+expandButton.addEventListener('click', (e) => {
+  article.classList.toggle('article-open');
+})
+
 
   /*
 
@@ -146,10 +166,29 @@ document.createElement('span');
 
 
 /*
-  Step 3: return the entire component.
+  Step 3: return the entire component.*/
+return article
 
-  Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
+}
 
+    //this caused the code to break, not sure why. 
+// const accordion = document.querySelector('.accordion');
+//   accordion.append(createArticles(data.firstParagraph, data.secondParagraph, data.thirdParagraph))
+
+
+  /*Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
+*/
+//   const container = document.querySelector('.articles');
+// data.forEach((article) => {
+//   container.appendChild(createArticles(article.title, article.title, article.date, article.paragraph1, article.paragraph2, article.paragraph3, article));
+// });
+
+data.forEach(articleTest => {
+  let articleMaker = createArticles(articleTest)
+  document.body.appendChild(articleMaker)
+})
+
+/*
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */

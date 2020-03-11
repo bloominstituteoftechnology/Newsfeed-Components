@@ -12,7 +12,16 @@ let menuItems = [
 /* 
 
   Step 1: Write a function that will create a menu component as seen below:
+*/ 
+function createMenu(itemList)
 
+const menu = document.createElement('div');
+const ul = document.createElement('ul');
+
+menu.append(ul);
+
+menu
+/*
   <div class="menu">
     <ul>
       {each menu item as a list item}
