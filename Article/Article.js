@@ -136,12 +136,9 @@ document.createElement('span');
   article.appendChild(paragraph3);
   article.appendChild(expandButton);
 
-  title.classList.add('artTitle');
-  date.classList.add('artDate');
-  paragraph1.classList.add('artP1');
-  paragraph2.classList.add('artP2');
-  paragraph3.classList.add('artP3');
-  expandButton.classList.add('artButt');
+  article.classList.add('article');
+  date.classList.add('date');
+  expandButton.classList.add('expandButton');
 
 title.textContent = data.title;
 date.textContent = data.date;
