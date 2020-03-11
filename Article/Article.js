@@ -85,6 +85,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'New Article',
+    date: 'March 3rd, 2020',
+    firstParagraph: `paragraph1 `,
+
+    secondParagraph: `paragraph2 `,
+
+    thirdParagraph: `paragraph3`
   }
 ];
 
@@ -112,3 +121,43 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+function createArticle(data){
+  const article = document.createElement('div');
+  const title = document.createElement('h2');
+  const date = document.createElement('p');
+  const p1 = document.createElement('p');
+  const p2 = document.createElement('p');
+  const p3 = document.createElement('p');
+  const expandButton = document.createElement('span');
+
+  article.append(title);
+  article.append(date);
+  article.append(p1);
+  article.append(p2);
+  article.append(p3);
+  article.append(expandButton);
+
+  title.textContent = data.title;
+  date.textContent = data.date;
+  p1.textContent = data.firstParagraph;
+  p2.textContent = data.secondParagraph;
+  p3.textContent = data.thirdParagraph;
+  expandButton.textContent = 'Expand';
+
+  article.classList.add('article');
+  date.classList.add('date');
+  expandButton.classList.add('expandButton');
+
+  expandButton.addEventListener('click', event=>{
+    article.classList.toggle('article-open');
+  });
+
+  return article;
+
+}
+
+data.map(x=>{
+document.querySelector('.articles').append(createArticle(x));
+});
+
