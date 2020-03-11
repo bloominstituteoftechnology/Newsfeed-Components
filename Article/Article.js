@@ -85,7 +85,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
-  }
+  },
+ {
+   title: `Washington state and San Francisco are banning large gatherings as coronavirus spreads`,
+    date: `March 11th, 2020`,
+    firstParagraph: `Washington state and San Francisco are banning large gatherings to help reduce the spread of the novel coronavirus. The bans are a way to create social distancing, which may help people avoid coming into contact with others who might be sick.`,
+    secondParagraph:`Washington’s ban covers Seattle and its surrounding areas: King, Snohomish, and Pierce counties. Washington currently has more than 260 confirmed cases of the novel coronavirus, which is the highest number in the US, and of the 24 confirmed deaths, many of them have been in or near Seattle.`,
+    thirdParagraph:`The state’s ban, if it is still in place, may affect Microsoft’s Build developer conference, which is currently scheduled to take place in Seattle from May 19th–21st.`
+}
+
 ];
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
@@ -112,3 +120,46 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+ function articleCreator(item){
+   let news = document.createElement(`div`)
+   let title = document.createElement(`h2`)
+   let date = document.createElement(`p`)
+   let para1 = document.createElement(`p`)
+   let para2 = document.createElement(`p`)
+   let para3 = document.createElement(`p`)
+   let button = document.createElement(`span`)
+
+   news.appendChild(title)
+   news.appendChild(date)
+   news.appendChild(para1)
+   news.appendChild(para2)
+   news.appendChild(para3)
+   news.appendChild(button)
+
+   title.textContent = item.title
+   date.textContent = item.date
+   para1.textContent = item.firstParagraph
+   para2.textContent = item.secondParagraph
+   para3.textContent = item.thirdParagraph
+   button.textContent = '\u058D'
+   
+   news.classList.add(`article`)
+   date.classList.add(`date`)
+   button.classList.add(`expandButton`)
+   
+   
+   button.addEventListener(`click`,() => {
+     news.classList.toggle(`article-open`)
+})
+
+   return news
+  }
+  let article = document.querySelector(`.articles`)
+  
+
+  
+  
+  data.forEach( (item) => {
+    article.appendChild(articleCreator(item))
+  })
+     
