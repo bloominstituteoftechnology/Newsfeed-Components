@@ -10,7 +10,6 @@ let menuItems = [
 ];
 
 /* 
-testing testing testing 1234
 
   Step 1: Write a function that will create a menu component as seen below:
 
