@@ -13,14 +13,9 @@ let menuItems = [
 
   Step 1: Write a function that will create a menu component as seen below:
 */ 
-function createMenu(itemList)
+/*
 
-const menu = document.createElement('div');
-const ul = document.createElement('ul');
-
-menu.append(ul);
-
-menu
+}
 /*
   <div class="menu">
     <ul>
@@ -42,3 +37,31 @@ menu
   Step 6: add the menu component to the DOM.
   
 */
+
+
+const header = document.querySelector('.header');
+const menuButton = document.querySelector('.menu-button');
+
+function menuPanel(items) {
+
+  const menu = document.createElement('div');
+  const ul = document.createElement('ul');
+
+ menu.appendChild(ul);
+
+  menuItems.forEach((i) => {
+    const li = document.createElement('li');
+    li.textContent = i; 
+    ul.appendChild(li);
+  })
+
+  menu.classList.add('menu');
+
+  menuButton.addEventListener('click', (e) => {
+    menu.classList.toggle('menu--open');
+  })    
+
+  return menu;
+}
+
+header.appendChild(menuPanel(menuItems));
