@@ -112,3 +112,39 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+function createPanel(data) {
+  const div = document.createElement("div");
+  const panelTitle = document.createElement("h2");
+  const date = document.createElement("p");
+  const par1 = document.createElement("p");
+  const par2 = document.createElement("p");
+  const par3 = document.createElement("p");
+  const panelBtn = document.createElement("span");
+
+  div.append(panelTitle, date, par1, par2, par3, panelBtn);
+
+  div.classList.add("article");
+  date.classList.add("date");
+  panelBtn.classList.add("expandButton");
+
+  panelTitle.textContent = data.title;
+  date.textContent = data.date;
+  par1.textContent = data.firstParagraph;
+  par2.textContent = data.secondParagraph;
+  par3.textContent = data.thirdParagraph;
+  panelBtn.textContent = "Expand / Colapse Article";
+
+  panelBtn.addEventListener("click", event => {
+    div.classList.toggle("article-open");
+  });
+
+  return div;
+}
+
+const final = document.querySelector(".articles");
+
+data.forEach(item => {
+  console.log(createPanel(item));
+  final.append(createPanel(item));
+});
