@@ -55,7 +55,7 @@ function menuPanel(data) {
 
   menu.classList.add('menu');
 
-  list_one.textContent = "click me";
+  list_one.textContent = list_one;
 
 
 
@@ -70,10 +70,10 @@ function menuPanel(data) {
 
 
 
-const menus = document.querySelector('.menus');
+const menus = document.querySelector('.menu');
 menuItems.forEach((item) => {
-  console.log(menuItems);
-  const newMenu = menus(item.list_one);
-  menus.appendChild(newMenu);
+  // console.log(menuItems);
+  const newMenu = menu(item.list_one);
+  menu.appendChild(newMenu);
 
 });
