@@ -109,6 +109,73 @@ const data = [
 
   Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
 
-  Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
+  <div class="article">
+    <h2>{title of the article}</h2>
+    <p class="date">{date of the article}</p>
+
+    {three separate paragraph elements}
+
+    <span class='expandButton'></span>
+  </div>
 */
+
+
+
+function createArticle(title,date,firstParagraph,secondParagraph,thirdParagraph) {
+
+  const div1 = document.createElement('div');
+  const headerDos = document.createElement('h2');
+  const paragraphDate = document.createElement('p');
+  const paragraphOne = document.createElement('p');
+  const paragraphTwo = document.createElement('p');
+  const paragraphThree = document.createElement('p');
+  const button = document.createElement('span');
+
+  div1.append(headerDos);
+  div1.append(paragraphDate);
+  div1.append(paragraphOne);
+  div1.append(paragraphTwo);
+  div1.append(paragraphThree);
+  div1.append(button);
+
+
+  div1.classList.add('article');
+  paragraphDate.classList.add('date');
+  button.classList.add('expandButton');
+
+
+
+headerDos.textContent = title;
+paragraphDate.textContent = date;
+paragraphOne.textContent = firstParagraph;
+paragraphTwo.textContent = secondParagraph;
+paragraphThree.textContent = thirdParagraph;
+button.textContent = 'expand';
+
+
+
+button.addEventListener('click',(event) =>{
+  div1.classList.toggle('article-open');
+});
+return div1;
+}
+
+
+const articles = document.querySelector('.articles'
+)
+
+data.forEach( x =>{
+  articles.append(createArticle(x.title, x.date, x.firstParagraph, x.secondParagraph, x.thirdParagraph))
+});
+
+
+// console.log(articles);
+
+
+// Step 4: Map over the data, creating a component for each oject 
+// and add each component to the DOM as children of the 'articles' div.
+
+// Step 5: Add a new article to the array. 
+// Make sure it is in the same format as the others. 
+// Refresh the page to see the new article.
