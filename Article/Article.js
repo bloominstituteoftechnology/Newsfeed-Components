@@ -85,7 +85,13 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
-  }
+  
+      },
+      {
+        title: 'Im Manuel`s article',
+       date:'march whatver today is 2020',
+       firstParagraph:' hi hello whats up hi  ' 
+      }
 ];
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
@@ -112,3 +118,50 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+const articles = document.querySelector('.articles');
+
+ function makeArticles(articleData) {
+  
+   const article = document.createElement('div');
+   const articleTitle = document.createElement('h2');
+   const articleDate = document.createElement('p');
+   const para1 = document.createElement('p');
+   const para2 = document.createElement('p');
+   const para3 = document.createElement('p');
+   const expandButton = document.createElement('span');
+
+  
+   article.appendChild(articleTitle);
+   article.appendChild(articleDate);
+   article.appendChild(para1);
+   article.appendChild(para2);
+   article.appendChild(para3);
+   article.appendChild(expandButton);
+
+  
+   articleTitle.textContent = articleData.title;
+   articleDate.textContent = articleData.date;
+   para1.textContent = articleData.firstParagraph;
+   para2.textContent = articleData.secondParagraph;
+   para3.textContent = articleData.thirdParagraph;
+   expandButton.textContent = '	\u25C9	';
+
+  
+   article.classList.add('article');
+   articleDate.classList.add('date');
+   expandButton.classList.add('expandButton');
+
+   
+   expandButton.addEventListener('click', (e) => {
+     article.classList.toggle('article-open');
+   })
+
+   return article;
+ }
+
+
+
+
+ 	data.forEach(datam => {
+   articles.appendChild(makeArticles(datam));
+ }) 
