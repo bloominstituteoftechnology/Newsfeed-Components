@@ -149,5 +149,5 @@ function createArticle (title, date, para1, para2, para3) {
 let articles = document.querySelector(".articles");
 
 data.forEach(i => {
-  articles.appendChild(createArticle(i.title, i.date, i.para1, i.para2, i.para3))
+  articles.appendChild(createArticle(i.title, i.date, i.firstParagraph, i.secondParagraph, i.thirdParagraph))
 })
