@@ -85,6 +85,17 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'COVID-19 UPDATE',
+    date: 'Mar 17th, 2020',
+    firstParagraph: `The US is locked-down mode over the worldwide pandemic COVID-19... more commonly known as The Coronavirus.`,
+
+    secondParagraph: `While the virus doesn't have anything to do with the Mexican beer brand Corona, people all over America are staying as far away from
+          the alcoholic beverage as possible. Those are the same people that bought all the toilet paper.`,
+
+    thirdParagraph: `TOILET PAPER?!? Like for real?!? What the crap? (No pun intended.) It's an upper respiratory virus... why is all the toilet paper gone?
+          That doesn't even make sense.`
   }
 ];
 
@@ -113,40 +124,66 @@ const data = [
 
 */
 
-const createComponent = (title, date, firstParagraph, secondParagraph, thirdParagraph) => {
+// Step 1
+const creator = (title, date, firstParagraph, secondParagraph, thirdParagraph) => {
+  
   const article = document.createElement('div');
   const h2text = document.createElement('h2');
   const dates = document.createElement('p');
-  const expand = document.createElement('span');
   const firstpara = document.createElement('p');
   const secondpara = document.createElement('p');
   const thirdpara = document.createElement('p');
+  const expand = document.createElement('span');
 
+
+  // Step 2 start
+  h2text.addEventListener('mouseover', () => {
+    article.classList.toggle('article-open');
+    firstpara.classList.toggle('toggle-on');
+    secondpara.classList.toggle('toggle-on');
+    thirdpara.classList.toggle('toggle-on');
+  })
+
+  h2text.addEventListener('mouseout', () => {
+    article.classList.toggle('article-open');
+    firstpara.classList.toggle('toggle-on');
+    secondpara.classList.toggle('toggle-on');
+    thirdpara.classList.toggle('toggle-on');
+  })
+  // Step 2 end
 
   article.appendChild(h2text)
   article.appendChild(dates)
-  article.appendChild(expand)
   article.appendChild(firstpara)
   article.appendChild(secondpara)
   article.appendChild(thirdpara)
+  article.appendChild(expand)
+  
+  article.classList.add('article'),
+  dates.classList.add('date'),
+  expand.classList.add('expandButton', 'article-open'),
+  h2text.textContent = title,
+  dates.textContent = date,
+  firstpara.textContent = firstParagraph,
+  secondpara.textContent = secondParagraph,
+  thirdpara.textContent = thirdParagraph,
+  expand.textContent = '';
+  
+
+  // Step 3
+  return article;
+
+};
+
+const articles = document.querySelector('.articles');
 
 
-  article.classList.add('article')
-  dates.classList.add('date')
-  expand.classList.add('expandButton')
+// Step 4 (she told u not to use .map?)
+// data.map(data => {
+//   articles.appendChild(creator(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
+// })
 
-  h2.textContent = title
-  date.textcontent = date
-  firstpara.textContent = firstParagraph
-  secondpara.textContent = secondParagraph
-  thirdpara.textContent = thirdParagraph
+data.forEach(data => {
+  articles.appendChild(creator(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
+})
 
-  // expandButton.addEventListener('click', () => {
-  //   article.
-  // })
-
-
-  return article
-}
-
-const articles = document.querySelector('.articles')
