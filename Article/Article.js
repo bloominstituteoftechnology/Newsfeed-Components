@@ -89,14 +89,27 @@ const data = [
   {
     title: 'COVID-19 UPDATE',
     date: 'Mar 17th, 2020',
-    firstParagraph: `The US is locked-down mode over the worldwide pandemic COVID-19... more commonly known as The Coronavirus.`,
+    firstParagraph: `The US is in locked-down mode over the worldwide pandemic COVID-19... more commonly known as The Coronavirus.`,
 
     secondParagraph: `While the virus doesn't have anything to do with the Mexican beer brand Corona, people all over America are staying as far away from
           the alcoholic beverage as possible. Those are the same people that bought all the toilet paper.`,
 
     thirdParagraph: `TOILET PAPER?!? Like for real?!? What the crap? (No pun intended.) It's an upper respiratory virus... why is all the toilet paper gone?
           That doesn't even make sense.`
-  }
+  },
+  {
+    title: 'Disney+',
+    date: 'Mar 17th, 2020',
+    firstParagraph: `Due to the worldwide pandemic COVID-19, and the 'social distancing' that has been requested by US local, state, and national governing
+          bodies... Disney+ (the amazing video streaming service lauched in November 2019) has decided to release Frozen II three months early.`,
+
+    secondParagraph: `Little girls all across the country are giggling with glee as they get to wach the second installment of the beloved Disney Frozen franchise. 
+          Much to the chagrin of their parents (mainly because the songs in this one just aren't as good... But Kristoff's rock ballad... well...)`,
+
+    thirdParagraph: `Now... if the Mandolorian Season 2 (or ANY of the Marvel streaming shows) was ready to release... that would have been awesome! You could 
+          watch all the episodes in one day... and who would care, because you are 'social distancing'... and online video streaming has been causing 'social
+          distancing' for years! This is the way.`
+  },
 ];
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
