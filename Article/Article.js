@@ -147,6 +147,9 @@ const creator = (title, date, firstParagraph, secondParagraph, thirdParagraph) =
   const secondpara = document.createElement('p');
   const thirdpara = document.createElement('p');
   const expand = document.createElement('span');
+  // const buttons = document.createElement('div');
+  // const btnOpen = document.createElement('button')
+  // const btnClose = document.createElement('button')
 
 
   // Step 2 start
@@ -171,6 +174,9 @@ const creator = (title, date, firstParagraph, secondParagraph, thirdParagraph) =
   article.appendChild(secondpara)
   article.appendChild(thirdpara)
   article.appendChild(expand)
+  // article.appendChild(buttons)
+  // buttons.appendChild(btnOpen)
+  // buttons.appendChild(btnClose)
   
   article.classList.add('article'),
   dates.classList.add('date'),
@@ -181,6 +187,15 @@ const creator = (title, date, firstParagraph, secondParagraph, thirdParagraph) =
   secondpara.textContent = secondParagraph,
   thirdpara.textContent = thirdParagraph,
   expand.textContent = '';
+  // buttons.classList.add('button')
+  // btnOpen.classList.add('btn-open')
+  // btnClose.classList.add('btn-close', 'hide btn')
+
+  // buttons.addEventListener('click', () => {
+  //   btnOpen.classList.toggle('hide-btn')
+  //   btnClose.classList.toggle('hide-btn')
+  //   articles.classList.toggle('toggle-on')
+  // })
   
 
   // Step 3
