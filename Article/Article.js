@@ -85,6 +85,26 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'The Life of a Software Engineer in 2020',
+    date: "Jan 22nd, 2020",
+    firstParagraph: 'Tinkled ancient much still press this as lies we thy. Vainly i in wore of at bird reclining terrors, if i the my a, perched mien cried lamplight the and, and door flitting only some my other the a to, door its of what spoken flown nightly quaint is, but.',
+
+    secondParagraph: 'Of startled disaster heard reply balm sculptured darkness lady thinking the. Repeating wide this my cried explore still one. Raven thee entrance heaven decorum to. Lent flown be plainly no the the, stern the fiend no of. All nevermore morrow ever tufted. Demons sitting had into purple, nevermore explore craven the many lonely. Lost head of december air mystery surely. Ah seat i into doubting, implore in wondering oh doubting.',
+
+    thirdParagraph: 'Yore vainly bird velvet a explore sir its now upon beguiling. Chamber wrought lenore rapping i maiden, no spoken one mien some and bust uttered then, said ungainly upon lent lattice of spoken, sorrow me with a theeby while name, this then aptly followed plutonian now you, the and the.'
+  },
+  {
+    title: 'To Code or Not to Code',
+    date: 'Jan 22nd, 2020',
+
+    firstParagraph: 'Hauntedtell least you and the radiant undaunted. Faster thing nevermore sad this of that caught only throws. Still the lore each blessed pondered, the it syllable grew raven nevermore as. The front this more that. No i door he by that said back. Into evilprophet tempter came see this more.',
+
+    secondParagraph: 'That burning here this perfumed shorn metell. Mortals i within or moment of nothing, bust agreeing little of be i so madam nearly the. The that implore in raven but back, raven of door sad raven angels visiter, mortals in that the said just into. The till that the demons sad, or tempter unbrokenquit echo a entreating and heard such. Is above door the radiant a is and, back then door rustling for she ghastly.',
+
+    thirdParagraph: 'Raven followed plutonian from decorum the what get so was. And undaunted stillness window stood i lost devil hesitating on, tapping lent air the thrilled separate gently. At still and nameless god enchanted so lattice tis. Door still lore theeby let sad only is store more. Tell least clasp this.'
+
   }
 ];
 
@@ -108,22 +128,25 @@ const data = [
   Step 3: return the entire component.
 
   Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
-
+ 
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
-
+ 
 */
-//* THIS WILL BE THE START OF MY PROJECT *//
+//* The start of my project *//
 
-function createArticle(title, date, firstParagraph, secondParagraph, thirdParagraph){
+function createArticle(title, date, firstParagraph, secondParagraph, thirdParagraph, forthParagraph, fifthParagraph) {
   const article = document.createElement('div');
   const artTitle = document.createElement('h2');
   const artDate = document.createElement('p');
-  const para1 = document.childElementCount('p');
-  const para2 = document.childElementCount('p');
-  const para3 = document.childElementCount('p');
-  const span = document.createElement('span');
+  const para1 = document.createElement('p');
+  const para2 = document.createElement('p');
+  const para3 = document.createElement('p'); 
+  const para4 = document.createElement('p');
+  const para5 = document.createElement('p')
+  const span = document.createElement ('span');
 
-  article.append(artTitle, artDate, para1, para2, para3, span);
+  article.append(artTitle, artDate, para1, para2, para3, para4, para5,span);
+  
 
   article.classList.add('article');
   artDate.classList.add('date');
@@ -132,4 +155,21 @@ function createArticle(title, date, firstParagraph, secondParagraph, thirdParagr
   span.addEventListener('click', () => {
     article.classList.toggle('article-open');
   })
-}
+
+  artTitle.textContent = title;
+  artDate.textContent = date;
+  para1.textContent = firstParagraph;
+  para2.textContent = secondParagraph;
+  para3.textContent = thirdParagraph;
+  para4.textContent = forthParagraph;
+  para5.textContent = fifthParagraph;
+  span.textContent = 'Read More';
+  
+  return article
+  }
+
+  const parent = document.querySelector('.articles');
+  data.forEach(info => {
+    const newArticle = createArticle(info.title, info.date, info.firstParagraph, info.secondParagraph, info.thirdParagraph, info.forthParagraph, info.fifthParagraph)
+    parent.append(newArticle);
+  })
