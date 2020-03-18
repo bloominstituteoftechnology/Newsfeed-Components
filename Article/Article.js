@@ -90,6 +90,31 @@ const data = [
   
 ];
 
+const createArticle = (stuff =>{
+let article = document.createElement('div');
+let title = document.createElement('h2');
+let date = document.createElement('p');
+let paragraph1 = document.createElement('p');
+let paragraph2 = document.createElement('p');
+let paragraph3 = document.createElement('p');
+let button = document.createElement('span');
+
+article.appendChild();
+article.appendChild(title);
+article.appendChild(date);
+article.appendChild(paragraph1);
+article.appendChild(paragraph2);
+article.appendChild(paragraph3);
+article.appendChild(button);
+
+
+article.classList.add('article');
+date.classList.add('date');
+button.classList.add('expandButton');
+
+return article;
+})
+
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
   <div class="article">
