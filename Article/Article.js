@@ -90,47 +90,47 @@ const data = [
   
 ];
 
-const createArticle = (title, date, paragraph1, paragraph2, paragraph3) =>{
+const createArticle = (title, date, paragraphOne, paragraphTwo, paragraphThree) =>{
+
 let article = document.createElement('div');
 let header = document.createElement('h2');
 let dates = document.createElement('p');
-let p1 = document.createElement('p');
-let p2 = document.createElement('p');
-let p3 = document.createElement('p');
+let pOne = document.createElement('p');
+let pTwo = document.createElement('p');
+let pThree = document.createElement('p');
 let button = document.createElement('span');
 
 
 article.appendChild(header);
 article.appendChild(dates);
-article.appendChild(p1);
-article.appendChild(p2);
-article.appendChild(p3);
+article.appendChild(pOne);
+article.appendChild(pTwo);
+article.appendChild(pThree);
 article.appendChild(button);
 
 header.textContent = title;
 dates.textContent = date;
-p1.textContent = paragraph1;
-p2.textContent = paragraph2;
-p3.textContent = paragraph3;
-
-
-
+pOne.textContent = paragraphOne;
+pTwo.textContent = paragraphTwo;
+pThree.textContent = paragraphThree;
+button.textContent = "button";
 
 article.classList.add('article');
 button.classList.add('expandButton');
+dates.classList.add('date');
 
 button.addEventListener('click', () =>{
-  article.classList.toggle('.article-open');
+  article.classList.toggle('article-open');
 });
 
 
 return article;
 }
-const body = document.querySelector('body');
+const articles = document.querySelector('.articles');
 data.forEach(data =>{
-  body.appendChild(createArticle(data.title, data.date, data.paragraph1, data.paragraph2, data.paragraph3))
+  articles.appendChild(createArticle(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
 
-})
+});
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
