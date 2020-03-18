@@ -112,3 +112,51 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+// function that creates a component
+function articleCreator(obj) {
+  //define new elements
+  const article = document.createElement('div');
+  const title = document.createElement('h2');
+  title.textContent = obj.title;
+  const date = document.createElement('p');
+  date.textContent = obj.date;
+  const firstParagraph = document.createElement('p');
+  firstParagraph.textContent = obj.firstParagraph;
+  const secondParagraph = document.createElement('p');
+  secondParagraph.textContent = obj.secondParagraph;
+  const thirdParagraph = document.createElement('p');
+  thirdParagraph.textContent = obj.thirdParagraph;
+  const button = document.createElement('span');
+  button.textContent = '\u25bc';
+
+  // setup structure of elements
+  article.appendChild(title);
+  article.appendChild(date);
+  article.appendChild(firstParagraph);
+  article.appendChild(secondParagraph);
+  article.appendChild(thirdParagraph);
+  article.appendChild(button);
+
+  // set class names
+  article.classList.add('article');
+  date.classList.add('date');
+  button.classList.add('expandButton');
+
+  // add event listener to expandButton span
+  button.addEventListener('click', () => {
+    console.log("button clicked.");
+    article.classList.toggle('article-open')
+  })
+
+  // return the entire component
+  return article;
+}
+
+// map over the data, creating a component for each object
+// add each component to the DOM as children of the 'articles' div
+data.forEach(data => {
+  let newArticle = articleCreator(data);
+  const articles = document.querySelector('.articles');
+  articles.appendChild(newArticle);
+})
