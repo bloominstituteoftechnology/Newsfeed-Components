@@ -112,3 +112,77 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+const createArticle = (articleData) => {
+  const article = document.createElement('div'),
+        h2 = document.createElement('h2'),
+        pDate = document.createElement('p'),
+        firstP = document.createElement('p'),
+        secondP = document.createElement('p'),
+        thirdP = document.createElement('p'),
+        expandBtn = document.createElement('span'),
+        closeBtn = document.createElement('span')
+
+  article.appendChild(h2)
+  article.appendChild(pDate)
+  article.appendChild(firstP)  
+  article.appendChild(secondP) 
+  article.appendChild(thirdP) 
+  article.appendChild(expandBtn) 
+  article.appendChild(closeBtn)   
+
+  article.classList.add('article')
+  pDate.classList.add('date')
+  expandBtn.classList.add('expandButton')
+  closeBtn.classList.add('closeButton' ,'expandButton', 'btn-hide')
+
+  h2.textContent = articleData.title
+  pDate.textContent = articleData.date
+  expandBtn.textContent = '\u25bc Open'
+  closeBtn.textContent = '\u25b2 Read'  
+  firstP.textContent = articleData.firstParagraph
+  secondP.textContent = articleData.secondParagraph
+  thirdP.textContent = articleData.thirdParagraph
+
+  expandBtn.addEventListener('click', () => {
+    article.classList.toggle('article-open')
+    expandBtn.classList.toggle('btn-hide')
+    closeBtn.classList.toggle('btn-hide')
+  })
+  closeBtn.addEventListener('click', () => {
+    article.classList.toggle('article-open')
+    closeBtn.classList.toggle('btn-hide')
+    expandBtn.classList.toggle('btn-hide')
+  })
+
+  return article
+}
+
+const articles = document.querySelector('.articles'),
+      postBtn = document.querySelector('#createArticleForm .submitBtn'),
+      postTitle = document.querySelector('#createArticleForm #title'),
+      postDate = document.querySelector('#createArticleForm #date'),
+      postP1 = document.querySelector('#createArticleForm #p1'),
+      postP2 = document.querySelector('#createArticleForm #p2'),
+      postP3 = document.querySelector('#createArticleForm #p3')
+      
+
+postBtn.addEventListener('click', (event) => {
+  event.preventDefault();
+  const post = new Article({
+    title: postTitle.value,
+    date: Date(postDate.value),
+    firstParagraph: postP1.value,
+    secondParagraph: postP2.value,
+    thirdParagraph: postP3.value
+  });
+});
+
+data.forEach(articleData => {
+  articles.appendChild(createArticle(articleData))
+})
+
+function Article(articleData){
+  articles.appendChild(createArticle(articleData))
+}
+
