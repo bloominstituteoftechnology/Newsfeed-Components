@@ -112,3 +112,66 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+//mapping out the skeleton and creating the panel component function and caller
+
+
+const createArticle = (title,date,firstParagraph, secondParagraph,thirdParagraph) =>{
+//create all the elements that are in the component. These are florting, unattached, elements
+// {/* <div class="article">
+// <h2>{title of the article}</h2>
+// <p class="date">{date of the article}</p>
+
+// {three separate paragraph elements}
+
+// <span class='expandButton'></span>
+// </div> */}
+
+const article = document.createElement('div');
+const dTitle = document.createElement('h2');
+const dDate = document.createElement('date');
+const articleFirstPara = document.createElement('firstParagraph');
+const articleSecondPara = document.createElement('secondParagraph');
+const articleThirdPara = document.createElement('thirdParagraph');
+const expandButton = document.createElement('span')
+
+//create HTML structure by making some elements children of parent elements. Parent elements can be a child of grandparents
+article.appendChild(dTitle);
+article.appendChild(dDate);
+article.appendChild(articleFirstPara);
+article.appendChild(articleSecondPara);
+article.appendChild(articleThirdPara);
+article.appendChild(expandButton);
+
+//adding classes to style the components
+article.classList.add('article');
+dDate.classList.add('date');
+expandButton.classList.add('btn');
+
+
+//adding content inside of buttons & text elements
+const open = '\u25bc' //unicode triangle
+expandButton.textContent = open;
+
+dTitle.textContent = articleTitle;
+dDate.textContent = articleDate;
+articleFirstPara.textContent = first;
+articleSecondPara.textContent = second;
+articleThirdPara.textContent = third;
+expandButton.textContent = open;
+
+// This event listener is called in the article. When clicked, the buttons will toggle in display.
+
+expandButton.addEventListener('click', ()=>{
+  expandButton.classList.toggle('hide-btn');
+  article.classList.toggle('toggle-on')
+})
+
+  return articles; //returns the article
+}
+//Step 3
+const articles = document.querySelector('.articles')
+//Step 4 and 5
+data.forEach(data =>{
+  articles.appendChild(createArticle(data.articleTitle, data.articleDate, data.first, data.second, data.third))
+})
