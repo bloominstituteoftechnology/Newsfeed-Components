@@ -129,49 +129,49 @@ const createArticle = (title,date,firstParagraph, secondParagraph,thirdParagraph
 
 const article = document.createElement('div');
 const dTitle = document.createElement('h2');
-const dDate = document.createElement('date');
-const articleFirstPara = document.createElement('firstParagraph');
-const articleSecondPara = document.createElement('secondParagraph');
-const articleThirdPara = document.createElement('thirdParagraph');
-const expandButton = document.createElement('span')
+const dDate = document.createElement('p');
+const firstPara = document.createElement('p');
+const secondPara = document.createElement('p');
+const thirdPara = document.createElement('p');
+const button = document.createElement('span')
 
 //create HTML structure by making some elements children of parent elements. Parent elements can be a child of grandparents
 article.appendChild(dTitle);
 article.appendChild(dDate);
-article.appendChild(articleFirstPara);
-article.appendChild(articleSecondPara);
-article.appendChild(articleThirdPara);
-article.appendChild(expandButton);
+article.appendChild(firstPara)
+article.appendChild(secondPara);
+article.appendChild(thirdPara);
+article.appendChild(button);
 
 //adding classes to style the components
 article.classList.add('article');
 dDate.classList.add('date');
-expandButton.classList.add('btn');
+button.classList.add('expandButton');
 
 
 //adding content inside of buttons & text elements
 const open = '\u25bc' //unicode triangle
-expandButton.textContent = open;
+button.textContent = open;
 
-dTitle.textContent = articleTitle;
-dDate.textContent = articleDate;
-articleFirstPara.textContent = first;
-articleSecondPara.textContent = second;
-articleThirdPara.textContent = third;
-expandButton.textContent = open;
+dTitle.textContent = title;
+dDate.textContent = date;
+firstPara.textContent = firstParagraph;
+secondPara.textContent = secondParagraph;
+thirdPara.textContent = thirdParagraph;
+button.textContent = open;
 
 // This event listener is called in the article. When clicked, the buttons will toggle in display.
 
-expandButton.addEventListener('click', ()=>{
-  expandButton.classList.toggle('hide-btn');
+button.addEventListener('click', ()=>{
+  button.classList.toggle('hide-btn');
   article.classList.toggle('toggle-on')
 })
 
   return articles; //returns the article
 }
 //Step 3
-const articles = document.querySelector('.articles')
+const articles = document.querySelector('.articles');
 //Step 4 and 5
-data.forEach(data =>{
-  articles.appendChild(createArticle(data.articleTitle, data.articleDate, data.first, data.second, data.third))
+data.forEach((data)=>{
+  articles.appendChild(createArticle(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
 })
