@@ -36,3 +36,6 @@ const menuComponent = (whatevs => {
 const newHeader = document.querySelector('.header');
 
 newHeader.appendChild(menuComponent(menuItems));
+
+
+
