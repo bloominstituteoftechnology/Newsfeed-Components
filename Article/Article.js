@@ -85,6 +85,22 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Luke Shimkus takes over the world.',
+    date: 'Today',
+    firstParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
+          hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
+          Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `,
+
+    secondParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
+          hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
+          hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
+          hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? `,
+
+    thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
+          Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
+          Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
 ];
 
@@ -112,3 +128,52 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+function createArticle(title, date, content){
+  // Create parent div
+  let div = document.createElement("div");
+  div.setAttribute("class", "article");
+
+  // Create header
+  let h2 = document.createElement("h2");
+  h2.textContent = title;
+  div.append(h2);
+
+  // Create date 
+  let articleDate = document.createElement("p");
+  articleDate.setAttribute("class", "date");
+  articleDate.textContent = date;
+  div.append(articleDate);
+
+  // Content
+  content.forEach((i) => {
+    let p = document.createElement("p");
+    p.textContent = i;
+    div.append(p);
+  });
+
+  // Expand button
+  let expand = document.createElement("span");
+  expand.setAttribute("class", "expandButton");
+  expand.textContent = "+";
+  expand.addEventListener("click", () => {
+    div.classList.toggle("article-open");
+  });
+  div.append(expand);
+
+  // Return the component
+  return div;
+}
+
+function load(){
+  // Call the parent alement
+  let articleParentDiv = document.querySelector(".articles");
+
+  // Add all articles to parent element
+  data.map((i) => {
+    let articleToAppend = createArticle(i.title, i.date, [i.firstParagraph, i.secondParagraph, i.thirdParagraph]);
+    articleParentDiv.append(articleToAppend);
+  });
+}
+
+load();
