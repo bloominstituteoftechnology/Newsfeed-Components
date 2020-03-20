@@ -112,3 +112,61 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+const createArticle = (article)=>{
+  const articleDiv = document.createElement('div')
+  const articleH2 = document.createElement('h2')
+  const articleDate = document.createElement('p')
+  const articleP1 = document.createElement('p')
+  const articleP2 = document.createElement('p')
+  const articleP3 = document.createElement('p')
+  const articleSpanOpen = document.createElement('span')
+  const articleSpanClose = document.createElement('span')
+
+  articleDiv.appendChild(articleH2)
+  articleDiv.appendChild(articleDate)
+  articleDiv.appendChild(articleP1)
+  articleDiv.appendChild(articleP2)
+  articleDiv.appendChild(articleP3)
+  articleDiv.appendChild(articleSpanOpen)
+  articleDiv.appendChild(articleSpanClose)
+
+  articleDiv.classList.add('article')
+  articleDate.classList.add('date')
+  articleSpanOpen.classList.add('expandButton')
+  articleSpanClose.classList.add('expandButton', 'hide-btn')
+
+
+  articleH2.textContent = article.title
+  articleDate.textContent = article.date
+  console.log(article.firstParagraph)
+  articleP1.textContent = article.firstParagraph
+  articleP2.textContent = article.secondParagraph
+  articleP3.textContent = article.thirdParagraph
+
+  const open = '\u25bc' // unicode triangle
+  articleSpanOpen.textContent = open
+
+  const close = '\u25b2'
+  articleSpanClose.textContent = close
+  
+  articleSpanOpen.addEventListener('click', ()=>{
+    articleDiv.classList.toggle('article-open')
+    articleSpanOpen.classList.toggle('hide-btn')
+    articleSpanClose.classList.toggle('hide-btn')
+  })
+
+  articleSpanClose.addEventListener('click', ()=>{
+    articleDiv.classList.toggle('article-open')
+    articleSpanOpen.classList.toggle('hide-btn')
+    articleSpanClose.classList.toggle('hide-btn')
+  })
+
+  return articleDiv
+}
+
+const articlesDiv = document.querySelector('.articles')
+
+data.forEach(articleData => {
+  articlesDiv.appendChild(createArticle(articleData))
+})
