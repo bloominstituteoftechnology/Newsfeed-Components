@@ -9,6 +9,41 @@ let menuItems = [
   'Log Out'
 ];
 
+const buildMenu = menuItems => {
+  const menu = document.createElement('div');
+  const ul = document.createElement('ul');
+
+  menuItems.forEach(el => {
+    let item = document.createElement('li');
+    item.textContent = el;
+    ul.appendChild(item);
+  });
+
+  menu.classList.add('menu');
+
+  menu.appendChild(ul);
+
+  const menuBtn = document.querySelector('.menu-button');
+  menuBtn.addEventListener('click', () => {
+    gsap.from('.menu', { duration: 0.2, opacity: 0, x: '-300' });
+
+    menu.classList.contains('menu--open');
+    gsap.from('li', {
+      duration: 2,
+      opacity: 100,
+      rotation: '360'
+    });
+    menu.classList.toggle('menu--open');
+  });
+
+  return menu;
+};
+
+const header = document.querySelector('.header');
+
+header.prepend(buildMenu(menuItems));
+
+
 /* 
 
   Step 1: Write a function that will create a menu component as seen below:
@@ -33,3 +68,5 @@ let menuItems = [
   Step 6: add the menu component to the DOM.
   
 */
+
+
