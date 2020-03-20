@@ -57,6 +57,10 @@ function menuConstructor(menuArray) {
     menuButton.addEventListener('click', () => {
         div.classList.toggle('menu--open');
     });
+
+    div.addEventListener('mouseleave', () => {
+        div.classList.remove('menu--open');
+    })
     
     const headerDiv = document.querySelector('.header');
     headerDiv.appendChild(div);
@@ -65,3 +69,4 @@ function menuConstructor(menuArray) {
 }
 
 menuConstructor(menuItems);
+

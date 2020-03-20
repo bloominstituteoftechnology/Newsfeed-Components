@@ -201,11 +201,12 @@ function createArticles(someObject) {   //someObject is data[i]
     span.classList.add('expandButton');
 
     // event listener
-    div.addEventListener('click', () => {
+    div.addEventListener('dblclick', () => {
         //could't get the span element to work correctly
         div.classList.toggle('article-open');
-        (document.querySelector('.article-open') === null) ? div.style.overflow = 'hidden' : div.style.overflow = 'scroll';
+        (document.querySelector('.article-open') === null) ? div.style.overflow = 'hidden' : (div.style.overflow = 'scroll');
         div.scroll({top: 0, behavior: 'smooth'});
+
     })
 
     return div;
