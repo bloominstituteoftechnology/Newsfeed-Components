@@ -153,20 +153,13 @@ const creator = (title, date, firstParagraph, secondParagraph, thirdParagraph) =
 
 
   // Step 2 start
-  h2text.addEventListener('mouseover', () => {
+  h2text.addEventListener('click', () => {
     article.classList.toggle('article-open');
     firstpara.classList.toggle('toggle-on');
     secondpara.classList.toggle('toggle-on');
     thirdpara.classList.toggle('toggle-on');
   })
 
-  h2text.addEventListener('mouseout', () => {
-    article.classList.toggle('article-open');
-    firstpara.classList.toggle('toggle-on');
-    secondpara.classList.toggle('toggle-on');
-    thirdpara.classList.toggle('toggle-on');
-  })
-  // Step 2 end
 
   article.appendChild(h2text)
   article.appendChild(dates)
