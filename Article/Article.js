@@ -110,5 +110,51 @@ const data = [
   Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
 
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
-
 */
+
+const createArticle = (title, date, firstParagraph, secondParagraph, thirdParagraph) => {
+
+  const article = document.createElement("div")
+  const headTitle = document.createElement("h2")
+  const banana = document.createElement("p")
+  const pGraph1 = document.createElement("p")
+  const pGraph2 = document.createElement("p")
+  const pGraph3 = document.createElement("p")
+  const button = document.createElement("span")
+  
+
+  article.classList.add("article")
+  banana.classList.add("date")
+  button.classList.add("expandButton")
+
+  article.appendChild(headTitle)
+  article.appendChild(banana)
+  article.appendChild(pGraph1)
+  article.appendChild(pGraph2)
+  article.appendChild(pGraph3)
+  article.appendChild(button)
+
+  headTitle.textContent = title
+  banana.textContent = date
+  pGraph1.textContent = firstParagraph
+  pGraph2.textContent = secondParagraph
+  pGraph3.textContent = thirdParagraph
+
+  article.addEventListener("click", () => {
+    article.classList.toggle("article-open")
+  })  
+
+return article
+}
+
+const articles = document.querySelector(".articles");
+  data.forEach(data => {
+    articles.appendChild(createArticle(
+      data.title,
+      data.date,
+      data.firstParagraph,
+      data.secondParagraph,
+      data.thirdParagraph
+      )
+    )
+  })
