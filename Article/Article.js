@@ -166,7 +166,7 @@ function createArticle(title, date, content){
 }
 
 function load(){
-  // Call the parent alement
+  // Call the parent element
   let articleParentDiv = document.querySelector(".articles");
 
   // Add all articles to parent element
