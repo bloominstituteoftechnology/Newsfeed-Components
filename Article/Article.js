@@ -155,7 +155,7 @@ function createArticle(title, date, content){
   // Expand button
   let expand = document.createElement("span");
   expand.setAttribute("class", "expandButton");
-  expand.textContent = "+";
+  expand.textContent = "More..";
   expand.addEventListener("click", () => {
     div.classList.toggle("article-open");
   });

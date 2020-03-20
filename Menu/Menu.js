@@ -37,7 +37,7 @@ function createMenu(arr){
   // Create menu
   let menu = document.createElement("div");
   menu.setAttribute("class", "menu");
-
+  
   // Create ul
   let ul = document.createElement("ul");
   menu.append(ul);
@@ -58,4 +58,6 @@ function createMenu(arr){
   return menu;
 }
 
-createMenu(menuItems);
+// Append menu to header
+let header = document.querySelector(".header");
+header.append(createMenu(menuItems));
