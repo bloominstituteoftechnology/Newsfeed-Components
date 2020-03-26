@@ -44,36 +44,48 @@ let menuItems = [
 function menuPanel(data) {
 
   const menu = document.createElement('div');
-  const list = document.createelement('ul');
-  const list_one = document.createElement('li');
+  const navList = document.createElement('ul');
 
+  //try data.list_one
+  menuItems.forEach((item) => {
+    // console.log(menuItems);
+    // const newMenu = menuPanel(item);
+    // menu.appendChild(newMenu);
+    let navListItem = document.createElement('li');
+    // menuItems.textContent = item;
+    // navList.append(menuItems);
 
-  menu.append(menu);
-  list.append(list);
-  list_one.append(list_one);
+    navListItem.textContent = item;
+    navList.append(navListItem);
 
+  });
 
   menu.classList.add('menu');
 
-  list_one.textContent = list_one;
+  menu.append(navList);
+  navList.append(menuItems);
+  // list_one.append(list_one);
+  //try appending to list
 
 
 
-  let menuToggle = (item) => {
-    article.classList.toggle('menu--open');
 
-  }
 
-  menu.addEventListener('click', menuToggle);
 
+
+  let menuToggle = document.querySelector('.menu-button');
+  menuToggle.addEventListener('click', event => {
+    menu.classList.toggle('menu--open');
+  })
+
+  return menu;
 }
 
 
 
-const menus = document.querySelector('.menu');
-menuItems.forEach((item) => {
-  // console.log(menuItems);
-  const newMenu = menu(item.list_one);
-  menu.appendChild(newMenu);
 
-});
+
+
+
+const menus = document.querySelector('.header');
+menus.append(menuPanel(menuItems));

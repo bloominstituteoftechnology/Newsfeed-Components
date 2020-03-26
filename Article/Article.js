@@ -172,6 +172,7 @@ data.forEach((item) => {
   // console.log(item.data);
   articles.appendChild(newArticle);
 
+
 });
 
 
