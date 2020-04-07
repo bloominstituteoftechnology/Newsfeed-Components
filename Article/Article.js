@@ -127,21 +127,14 @@ const createArticle = (title,date,firstParagraph, secondParagraph,thirdParagraph
 // <span class='expandButton'></span>
 // </div> */}
 
-const article = document.createElement('div');
-const dTitle = document.createElement('h2');
-const dDate = document.createElement('p');
-const firstPara = document.createElement('p');
-const secondPara = document.createElement('p');
-const thirdPara = document.createElement('p');
-const button = document.createElement('span')
+  const article = document.createElement('div');
+  const dTitle = document.createElement('h2');
+  const dDate = document.createElement('p');
+  const firstPara = document.createElement('p');
+  const secondPara = document.createElement('p');
+  const thirdPara = document.createElement('p');
+  const button = document.createElement('span')
 
-//create HTML structure by making some elements children of parent elements. Parent elements can be a child of grandparents
-article.appendChild(dTitle);
-article.appendChild(dDate);
-article.appendChild(firstPara)
-article.appendChild(secondPara);
-article.appendChild(thirdPara);
-article.appendChild(button);
 
 //adding classes to style the components
 article.classList.add('article');
@@ -160,14 +153,21 @@ secondPara.textContent = secondParagraph;
 thirdPara.textContent = thirdParagraph;
 button.textContent = open;
 
+//create HTML structure by making some elements children of parent elements. Parent elements can be a child of grandparents
+article.appendChild(dTitle);
+article.appendChild(dDate);
+article.appendChild(firstPara)
+article.appendChild(secondPara);
+article.appendChild(thirdPara);
+article.appendChild(button);
+
 // This event listener is called in the article. When clicked, the buttons will toggle in display.
 
 button.addEventListener('click', ()=>{
-  button.classList.toggle('hide-btn');
-  article.classList.toggle('toggle-on')
+  article.classList.toggle('article-open')
 })
 
-  return articles; //returns the article
+  return article; //returns the article
 }
 //Step 3
 const articles = document.querySelector('.articles');

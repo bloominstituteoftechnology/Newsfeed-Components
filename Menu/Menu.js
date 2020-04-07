@@ -8,6 +8,43 @@ let menuItems = [
   'Music',
   'Log Out'
 ];
+// const menu = document.createElement("div");
+// menu.appendChild(null);
+
+const createMenu = (items) => {
+  //create element div
+  const menu = document.createElement("div");
+
+  //add menu class to div
+  menu.classList.add('menu')
+
+  //create element ul
+  const unOrdered = document.createElement("ul");
+
+  //append ul to div
+  menu.appendChild(unOrdered);
+
+  //loop over items and for each element append child a created li
+  items.forEach((item)=>{
+    //create the element of the item
+    const eachItem = document.createElement("li");
+    //set text content
+    eachItem.textContent = item;
+    //append the element to ul
+    unOrdered.appendChild(eachItem);
+  })
+
+  const button = document.querySelector(".menu-button");
+
+  button.addEventListener("click",()=>{
+    menu.classList.toggle("menu--open");
+  })
+
+  return menu;
+}
+
+const bodyElement = document.querySelector(".header");
+bodyElement.appendChild(createMenu(menuItems));
 
 /* 
 
