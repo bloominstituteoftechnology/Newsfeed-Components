@@ -85,7 +85,14 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
-  }
+  },
+  {
+    title:'Cody',
+    date:'4/8/20',
+    firstParagraph: 'this is a fake paragraph',
+    secondParagraph:'this is a fake paragraph',
+    thirdParagraph:'this is a fake paragraph',
+  },
 ];
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below:
@@ -113,35 +120,72 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
-function articleCreator(item){
+
+
+
+
+function articleCreator({title, date, firstParagraph, secondParagraph, thirdParagraph}){
   let article = document.createElement('div')
-  let title = document.createElement('h2')
-  let date = document.createElement('p')
+  let articleTitle = document.createElement('h2')
+  let articleDate = document.createElement('p')
   let firstPar = document.createElement('p')
   let secondPar = document.createElement('p')
   let thirdPar = document.createElement('p')
   let expandButton = document.createElement('span')
 
-  article.appendChild(title)
-  article.appendChild(date)
+  article.appendChild(articleTitle)
+  article.appendChild(articleDate)
   article.appendChild(firstPar)
   article.appendChild(secondPar)
   article.appendChild(thirdPar)
   article.appendChild(expandButton)
 
   article.classList.add('article')
-  title.classList.add('title')
-  date.classList.add('date')
+  articleTitle.classList.add('title')
+  articleDate.classList.add('date')
   firstPar.classList.add('firstPar')
   secondPar.classList.add('secondPar')
   thirdPar.classList.add('thirdPar')
   expandButton.classList.add('expandButton')
 
-  
+  articleTitle.textContent = title
+  articleDate.textContent = date
+  firstPar.textContent = firstParagraph
+  secondPar.textContent = secondParagraph
+  thirdPar.textContent = thirdParagraph
+  expandButton.textContent = 'View More/Less'
+
+
+//Add the event listener
+
+
+expandButton.addEventListener('click', event =>{
+  article.classList.toggle('article-open')
+
+});
 
 
 
 
-
+  return article
 
 }
+
+const articles = document.querySelector('.articles')
+
+
+
+
+const articleElements = data.map(data => articleCreator(data))
+articleElements.forEach(item => {
+  articles.appendChild(item)
+})
+
+// console.log(articleElements)
+
+
+//
+// const panelElements = panelData.map(panelData => makePanel(panelData))
+// panelElements.forEach(panelElement => {
+//   accordion.appendChild(panelElement)
+// })
