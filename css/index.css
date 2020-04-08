@@ -101,6 +101,7 @@
   cursor: pointer;
   transform: translate(-50%);
   background-color: white;
+  padding: 0.4%;
 }
 .article .closeButton {
   position: absolute;
@@ -111,16 +112,17 @@
   cursor: pointer;
   transform: translate(-50%);
   background-color: white;
+  padding: 0.4%;
 }
 .article .expandButton:hover {
   background-color: lightgray;
   color: black;
-  border-radius: 2px;
+  border-radius: 5px;
 }
 .article .closeButton:hover {
   background-color: lightgray;
   color: black;
-  border-radius: 2px;
+  border-radius: 5px;
 }
 .article-open {
   height: 400px;
