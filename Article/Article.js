@@ -1,3 +1,6 @@
+const openbtn = '\u25bc';
+const closebtn = '\u25b2';
+
 /* This is the data we will be using to create our article components */
 /* Look over this data, then proceed to line 91*/
 const data = [
@@ -161,7 +164,9 @@ function createCard(info){
   const firstp = document.createElement('p');
   const secondp = document.createElement('p');
   const thirdp = document.createElement('p');
+  const panelButtons= document.createElement('div')
   const expandButton = document.createElement('span');
+  const closeButton = document.createElement('span');
  
   // setup the structure of our elements
   article.appendChild(title);
@@ -169,12 +174,15 @@ function createCard(info){
   article.appendChild(firstp);
   article.appendChild(secondp);
   article.appendChild(thirdp);
-  article.appendChild(expandButton);
+  article.appendChild(panelButtons)
+  panelButtons.appendChild(expandButton);
+  panelButtons.appendChild(closeButton);
   
   // add classes to elements
   article.classList.add('article');
   date.classList.add('date');
   expandButton.classList.add('expandButton');
+  closeButton.classList.add('closeButton');
   
   // set text content
   title.textContent = info.title;
@@ -182,25 +190,42 @@ function createCard(info){
   firstp.textContent = info.firstParagraph;
   secondp.textContent = info.secondParagraph;
   thirdp.textContent = info.thirdParagraph;
-  expandButton.textContent = 'expand';
+  
+  expandButton.textContent = '\u25bc';
+  closeButton.textContent = '\u25b2';
 
-  expandButton.addEventListener('click', () => {
+  // expandButton.addEventListener('click', () => {
+  //   article.classList.toggle('article-open')
+  // });
+
+  panelButtons.addEventListener('click', event => {
+    expandButton.classList.toggle('hide-btn')
+    closeButton.classList.toggle('hide-btn')
     article.classList.toggle('article-open')
-  });
+  })
+
+  // closeButton.addEventListener('click', () => {
+  //   article.classList.toggle('ariticle-open')
+  // })
   return article;
 }
 // grab the parent element to append our data too
 const container = document.querySelector('.articles');
 
-data.map( item => {
-  container.appendChild(createCard(item))
+const cardElements = data.map( obj => {
+  return createCard(obj)
 })
+
+cardElements.forEach(cardElement => {
+  container.appendChild(cardElement)
+})
+
 
 /////green sock stuff////
 
-const flip = document.querySelector('body').addEventListener("click", () => {
+const flip = document.querySelector('h1').addEventListener("click", () => {
   gsap.to('.articles', {
-      duration: .5,
+      duration: .75,
       rotateY: 180,
       ease: "elastic(1, 0.75)",
       yoyo: true,

@@ -63,12 +63,12 @@ menu2.appendChild(createMenu(menuItems));
 
 /////green sock stuff////
 
-const box = document.querySelector('h1').addEventListener("click", () => {
+const fred = document.querySelector('h1').addEventListener("click", () => {
   gsap.to('h1', {
-    duration: .3,
-    rotateY: 180,
-    ease: "elastic(1, 0.75)",
+    duration: .5,
+    rotateY: 360,
+    ease: "elastic(4, 0.75)",
     yoyo: true,
-    repeat: 3
+    repeat: 1
   });
 })

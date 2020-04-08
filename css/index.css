@@ -102,6 +102,26 @@
   transform: translate(-50%);
   background-color: white;
 }
+.article .closeButton {
+  position: absolute;
+  bottom: 0;
+  left: 52%;
+  font-size: 12px;
+  color: grey;
+  cursor: pointer;
+  transform: translate(-50%);
+  background-color: white;
+}
+.article .expandButton:hover {
+  background-color: lightgray;
+  color: black;
+  border-radius: 2px;
+}
+.article .closeButton:hover {
+  background-color: lightgray;
+  color: black;
+  border-radius: 2px;
+}
 .article-open {
   height: 400px;
 }
