@@ -21,6 +21,10 @@ let menuItems = [
 
   The function takes an array as its only argument.
 
+  
+
+  
+
   Step 2: Inside this function, iterate over the array creating a list item <li> element for each item in the array. 
   Add those items to the <ul>
 

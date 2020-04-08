@@ -92,6 +92,13 @@ const data = [
     firstParagraph:'you have to love it you have to love it you have to love it you have to love it',
     secondParagraph: ' i love  i love i love i love i love i love i love i love i love i love i love',
     thirdParagraph:'you have to love it ou have to love itou have to love itou have to love itou have to love it '
+  },
+  {
+    title: 'Journal Entry',
+    date: 'april 8th',
+    firstParagraph:'you have to love it you have to love it you have to love it you have to love it',
+    secondParagraph: ' i love  i love i love i love i love i love i love i love i love i love i love',
+    thirdParagraph:'you have to love it ou have to love itou have to love itou have to love itou have to love it '
   }
 ];
 
@@ -145,6 +152,7 @@ function compCreator({title,date,firstP,secondP,thirdP}){
   paragraphTwo.textContent = secondP
   paragraphThree.textContent = thirdP
   span.classList.add('expandButton')
+  span.textContent = 'Expand'
 
  
   article.appendChild(h2)
@@ -159,6 +167,19 @@ function compCreator({title,date,firstP,secondP,thirdP}){
 
     
   })
+  article.addEventListener('mouseenter', ()=>{
+    article.classList.add('article-open')
+
+    
+  })
+
+  article.addEventListener('mouseleave', ()=>{
+    article.classList.remove('article-open')
+
+    
+  })
+
+
 
   return article
 
