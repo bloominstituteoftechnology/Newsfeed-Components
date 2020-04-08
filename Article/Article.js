@@ -85,6 +85,13 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'new paragraph',
+    date: 'april 8th',
+    firstParagraph:'you have to love it you have to love it you have to love it you have to love it',
+    secondParagraph: ' i love  i love i love i love i love i love i love i love i love i love i love',
+    thirdParagraph:'you have to love it ou have to love itou have to love itou have to love itou have to love it '
   }
 ];
 
@@ -103,6 +110,8 @@ const data = [
 
   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
 
+  
+
   Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
 
   Step 3: return the entire component.
@@ -112,3 +121,60 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+const articleParent = document.querySelector('.articles')
+
+function compCreator({title,date,firstP,secondP,thirdP}){
+
+  const article = document.createElement('div')
+  const h2 = document.createElement('h2')
+  const dateP = document.createElement('p')
+  const paragraphs = document.createElement('p')
+  const paragraphOne = paragraphs;
+  const paragraphTwo = paragraphs;
+  const paragraphThree = paragraphs;
+  const span = document.createElement('span')
+
+
+  article.classList.add('article')
+
+  h2.textContent = title;
+  dateP.textContent = date;
+  dateP.classList.add='date'
+  
+  paragraphOne.textContent = firstP
+  paragraphTwo.textContent = secondP
+  paragraphThree.textContent = thirdP
+  span.classList.add('expandButton')
+
+ 
+  article.appendChild(h2)
+  article.appendChild(dateP)
+  article.appendChild(paragraphOne)
+  article.appendChild(paragraphTwo)
+  article.appendChild(paragraphThree)
+  article.appendChild(span)
+
+  span.addEventListener('click', ()=>{
+    article.classList.toggle('article-open')
+
+    
+  })
+
+  return article
+
+
+
+}
+
+data.map((e)=>{
+  const values = {
+    title:e.title,
+    date:e.date,
+    firstp:e.firstParagraph,
+    secondP:e.secondParagraph,
+    thirdP:e.thirdParagraph
+
+  }
+  articleParent.append(compCreator(values))
+})
+
