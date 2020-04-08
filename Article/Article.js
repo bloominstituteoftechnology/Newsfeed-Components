@@ -88,6 +88,7 @@ const data = [
   }
 ];
 
+
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
   <div class="article">
@@ -112,43 +113,76 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
-const createComponent = content => {
-  let div = document.createElement('div');
-  div.classList.add('article');
-  
-  let h2 = document.createElement('h2');
-  h2.textContent = content.title;
-  div.appendChild(h2);
 
-  let date = document.createElement('p');
-  date.textContent = content.date;
-  date.classList.add('date');
-  div.appendChild(date);
+function componentCreator(title, date, firstParagraph, secondParagraph, thirdParagraph) {
+  // create elements
+  let articleDiv = document.createElement('div');
+  let addH2 = document.createElement('h1');
+  let addDate = document.createElement('p');
+  let addP1 = document.createElement('p');
+  let addP2 = document.createElement('p');
+  let addP3 = document.createElement('p');
+  let addSpan = document.createElement('span');
+  // close button stretch
+  let closeButton = document.createElement('button');
 
+  // append children
+  articleDiv.appendChild(addH2);
+  articleDiv.appendChild(addDate);
+  articleDiv.appendChild(addP1);
+  articleDiv.appendChild(addP2);
+  articleDiv.appendChild(addP3);
+  articleDiv.appendChild(addSpan);
+  articleDiv.appendChild(closeButton);
 
-  const paragraphs = [];
-  for(let i = 0; i < 3; i++) {
-    paragraphs.push(document.createElement('p'))
+  // add classes
+  articleDiv.classList.add('article');
+  addDate.classList.add('date');
+  addSpan.classList.add('expandButton');
+  closeButton.classList.add('close');
+
+  // add text content
+  addH2.textContent = title;
+  addDate.textContent = date;
+  addP1.textContent = firstParagraph;
+  addP2.textContent = secondParagraph;
+  addP3.textContent = thirdParagraph;
+  addSpan.textContent = 'click for more';
+  closeButton.textContent = 'Remove Article';
+
+  // add event listeners
+  addSpan.addEventListener('click', () => {
+    articleDiv.classList.toggle('article-open');
+    testClosingArticle();
+  })
+
+  closeButton.addEventListener('click', event => {
+    articleDiv.remove();
+  })
+
+  function testClosingArticle() {
+    if (articleDiv.classList.contains('article-open')) {
+      addSpan.textContent = 'click for less';
+    } else {
+      addSpan.textContent = 'click for more';
+    }
   }
 
-  paragraphs[0].textContent = content.firstParagraph;
-  paragraphs[1].textContent = content.secondParagraph;
-  paragraphs[2].textContent = content.thirdParagraph;
-
-  paragraphs.forEach(p => div.appendChild(p));
-
-  let span = document.createElement('span');
-  span.textContent = 'read more';
-  span.classList.add('expandButton');
-  div.appendChild(span);
-
-  span.addEventListener('click', () => {
-    div.classList.toggle('article-open');
-  })
-  
-  return div;
+  return articleDiv;
 }
 
-let articles = document.querySelector('.articles')
+let articlesContainer = document.querySelector('.articles');
 
-data.forEach(content => articles.append(createComponent(content)));
+data.forEach(item => {
+  articlesContainer.appendChild(
+    componentCreator(
+      item.title,
+      item.date,
+      item.firstParagraph,
+      item.secondParagraph,
+      item.thirdParagraph
+    )
+  )
+});
+
+console.log(componentCreator());
