@@ -33,4 +33,3 @@ let menuItems = [
   Step 6: add the menu component to the DOM.
 
 */
-f
