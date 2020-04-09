@@ -114,6 +114,7 @@ const data = [
 
 */
 
+
 function componentCreator(title, date, firstParagraph, secondParagraph, thirdParagraph) {
   // create elements
   let articleDiv = document.createElement('div');
@@ -186,3 +187,4 @@ data.forEach(item => {
 });
 
 console.log(componentCreator());
+
