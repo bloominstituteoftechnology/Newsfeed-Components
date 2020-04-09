@@ -93,6 +93,15 @@ const data = [
     secondParagraph:'this is a fake paragraph',
     thirdParagraph:'this is a fake paragraph',
   },
+  {
+    title: 'This is a New article',
+    date: 'June 17th, 1993',
+    firstParagraph: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    secondParagraph: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    thirdParagraph: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+
+  }
+
 ];
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below:
@@ -163,29 +172,13 @@ expandButton.addEventListener('click', event =>{
   article.classList.toggle('article-open')
 
 });
-
-
-
-
   return article
 
 }
 
 const articles = document.querySelector('.articles')
 
-
-
-
 const articleElements = data.map(data => articleCreator(data))
 articleElements.forEach(item => {
   articles.appendChild(item)
 })
-
-// console.log(articleElements)
-
-
-//
-// const panelElements = panelData.map(panelData => makePanel(panelData))
-// panelElements.forEach(panelElement => {
-//   accordion.appendChild(panelElement)
-// })
