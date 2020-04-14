@@ -88,6 +88,21 @@ const data = [
   }
 ];
 
+const articles = document.querySelector('.articles');
+console.log(articles)
+
+function componentCreator(title,date,p1,p2,p3) {
+  //elements
+  const article = document.createElement('div');
+  const titleContent = document.createElement('h2');
+  const titleDate = docukment.createElement('p');
+  const para1 = document.createElement('p');
+  const para2 = document.createElement('p');
+  const para3 = document.createElement('span');
+
+  
+
+}
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
   <div class="article">
