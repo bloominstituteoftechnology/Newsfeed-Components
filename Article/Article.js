@@ -151,12 +151,22 @@ const articleComponent = (title, date, firstParagraph, secondParagraph, thirdPar
     article.classList.toggle('article-open');
   })
 
+  // stretch
+  const readButton = document.createElement('span');
+  readButton.classList.add('read');
+  readButton.textContent = "Close Article";
+
+  readButton.addEventListener('click', (e) => {
+    article.style.visibility = "hidden";
+  })
+
   article.appendChild(titleArticle);
   article.appendChild(dateArticle); 
   article.appendChild(paragraphOne);
   article.appendChild(paragraphTwo);
   article.appendChild(paragraphThree);
   article.appendChild(button);
+  button.appendChild(readButton);
 
   return article;
 }
