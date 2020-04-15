@@ -57,6 +57,8 @@ function menuComponent(array){
 
   menuDiv.appendChild(unorderList);
 
+  menuDiv.style.transition = '1s';
+
   he.appendChild(menuDiv);
 
   return menuDiv;
@@ -67,7 +69,11 @@ function menuComponent(array){
 let newComponent = menuComponent(menuItems);
 
 menuBtn.addEventListener('click', (event) => {
+
+  newComponent.style.transition = '1s';
   
   newComponent.classList.toggle('menu--open');
+
+  newComponent.style.transition = '1s';
 
 });

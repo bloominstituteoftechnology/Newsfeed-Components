@@ -141,9 +141,11 @@ data.push({title: 'Expand Button Issues halting production',
 function componentCreator(object){
   const articleDiv = document.createElement('div');
   articleDiv.classList.add('article');
+  articleDiv.style.overflowY = 'auto';
 
   const articleTitle = document.createElement('h2');
   articleTitle.textContent = object.title;
+  articleTitle.style.margin ="5px 0px 0px";
 
   const articleDate = document.createElement('p');
   articleDate.classList.add('date');
@@ -161,21 +163,39 @@ function componentCreator(object){
   const expandBtn = document.createElement('span');
   expandBtn.classList.add('expandButton');
 
+  const closeButton = document.createElement('div');
+  closeButton.classList.add('closeBtn');
+  closeButton.style.height = '12px';
+  closeButton.style.width = '100%';
+  closeButton.textContent = 'Close Article';
+
+  closeButton.addEventListener('click', (event) => {
+    articleDiv.style.transform = "translate(200%,0%)";
+    articleDiv.style.transition = '1s';
+    setTimeout(function(){
+      event.target.style.display = 'none';
+    },2000);
+  })
+
   // expandBtn.addEventListener('mouseover',(event) => {
   //   console.log(event.target);
   //   articleDiv.classList.toggle('article-open');
   // });
+
   articleTitle.addEventListener('click',(event) => {
     console.log(event.target);
+    articleDiv.style.transition = '1s';
     articleDiv.classList.toggle('article-open');
   });
 
 
+  articleDiv.appendChild(closeButton);
   articleDiv.appendChild(articleTitle);
   articleDiv.appendChild(articleDate);
   articleDiv.appendChild(p1);
   articleDiv.appendChild(p2);
   articleDiv.appendChild(p3);
+  
   articleDiv.appendChild(expandBtn);
 
   return articleDiv;
