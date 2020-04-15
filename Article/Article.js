@@ -85,6 +85,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'How to Yayaya',
+    date: 'Apr 14th, 2020',
+    firstParagraph: `yayayayayayayayayayayayayayaya`,
+
+    secondParagraph: `yayayayayayayayayayayayayayaya`,
+
+    thirdParagraph: `yayayayayayayayayayayayayayaya`,
   }
 ];
 
@@ -112,3 +121,58 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+//Creating the Function
+function articleComponentCreator(title, date, firstParagraph, secondParagraph, thirdParagraph) {
+
+//Creating the Div
+  let article = document.createElement('div');
+  article.classList.add('article');
+
+//Creating Title and Date
+  let articleTitle = document.createElement('h2');
+  articleTitle.textContent = title;
+
+  let articleDate = document.createElement('p');
+  articleDate.classList.add('date');
+  articleDate.textContent = date;
+
+//Creating Paragraphs  
+  let articlePara1 = document.createElement('p');
+  articlePara1.textContent = firstParagraph;
+
+  let articlePara2 = document.createElement('p');
+  articlePara2.textContent = secondParagraph;
+
+  let articlePara3 = document.createElement('p');
+  articlePara3.textContent = thirdParagraph;
+
+//Creating button
+  let articleButton = document.createElement('span');
+  articleButton.classList.add('expandButton');
+  articleButton.textContent = 'click here';
+  articleButton.addEventListener('click', (event) => {
+    article.classList.toggle('article-open');
+  })
+
+//Appending elements  
+article.appendChild(articleTitle);
+article.appendChild(articleDate);
+article.appendChild(articlePara1);
+article.appendChild(articlePara2);
+article.appendChild(articlePara3);
+article.appendChild(articleButton);
+
+return article;
+
+};
+
+const articles = document.querySelector('.articles');
+
+//Looping through the array to get component data
+data.forEach((articleObj) => {
+  const articleComponent = articleComponentCreator(articleObj.title, articleObj.date, articleObj.firstParagraph, articleObj.secondParagraph, articleObj.thirdParagraph);
+  console.log(articleComponent);
+  articles.appendChild(articleComponent);
+})
+
