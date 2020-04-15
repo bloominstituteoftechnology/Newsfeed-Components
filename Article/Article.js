@@ -109,6 +109,25 @@ article.appendChild(para2);
 article.appendChild(para3);
 article.appendChild(expandSpan);
 
+//adding classes back
+article.classList.add('article');
+titleDate.classList.add('date');
+expandSpan.classList.add('expandButton');
+
+//add content to elements
+titleContent.textContent = title;
+titleDate.textContent = date;
+para1.textContent = p1;
+para2.textContent =p2;
+para3.textContent =p3;
+expandSpan.textContent = 'Click to Expand';
+
+expandSpan.addEventListener('click', (e) => {
+  article.classList.toggle("article-open")
+  e.target.textContent.toggle("close article")
+});
+  return article;
+
 }
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
