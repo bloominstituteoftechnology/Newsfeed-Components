@@ -99,8 +99,15 @@ function componentCreator(title,date,p1,p2,p3) {
   const para1 = document.createElement('p');
   const para2 = document.createElement('p');
   const para3 = document.createElement('span');
+  const expandSpan = document.createElement('span');
 
-  
+//appending 
+article.appendChild(titleContent);
+article.appendChild(titleDate);
+article.appendChild(para1);
+article.appendChild(para2);
+article.appendChild(para3);
+article.appendChild(expandSpan);
 
 }
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
