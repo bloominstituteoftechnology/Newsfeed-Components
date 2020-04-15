@@ -112,3 +112,84 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+data.push({title: 'Expand Button Issues halting production',
+  date: 'April today 2020',
+  firstParagraph: `consectetur adipiscing elit. Ekans Lorem ipsum dolor sit amet, consectetur adipiscing
+        elit. Arbok Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pikachu Lorem ipsum dolor sit amet, consectetur adipiscing
+        elit. Raichu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sandshrew Lorem ipsum dolor sit amet, consectetur adipiscing
+        elit. Sandslash Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nidoran Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit. Nidorina Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nidoqueen Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit. Nidoran Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nidorino Lorem ipsum dolor
+        sit amet, consectetur adipiscing elit. Nidoking Lorem ipsum`,
+  secondParagraph: `consectetur adipiscing elit. Ekans Lorem ipsum dolor sit amet, consectetur adipiscing
+        elit. Arbok Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pikachu Lorem ipsum dolor sit amet, consectetur adipiscing
+        elit. Raichu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sandshrew Lorem ipsum dolor sit amet, consectetur adipiscing
+        elit. Sandslash Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nidoran Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit. Nidorina Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nidoqueen Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit. Nidoran Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nidorino Lorem ipsum dolor
+        sit amet, consectetur adipiscing elit. Nidoking Lorem ipsum`,
+  thirdParagraph: `Alohamora wand elf parchment, Wingardium Leviosa hippogriff, house dementors betrayal. Holly, Snape centaur portkey ghost
+        Hermione spell bezoar Scabbers. Peruvian-Night-Powder werewolf, Dobby pear-tickle half-moon-glasses, Knight-Bus. Padfoot
+        snargaluff seeker: Hagrid broomstick mischief managed. Snitch Fluffy rock-cake, 9 ¾ dress robes I must not tell lies. Mudbloods
+        yew pumpkin juice phials Ravenclaw’s Diadem 10 galleons Thieves Downfall. Ministry-of-Magic mimubulus mimbletonia Pigwidgeon
+        knut phoenix feather other minister Azkaban. Hedwig Daily Prophet treacle tart full-moon Ollivanders You-Know-Who cursed.
+        Fawkes maze raw-steak Voldemort Goblin Wars snitch Forbidden forest grindylows wool socks`
+      });
+
+
+function componentCreator(object){
+  const articleDiv = document.createElement('div');
+  articleDiv.classList.add('article');
+
+  const articleTitle = document.createElement('h2');
+  articleTitle.textContent = object.title;
+
+  const articleDate = document.createElement('p');
+  articleDate.classList.add('date');
+  articleDate.textContent = object.date;
+
+  const p1 = document.createElement('p');
+  p1.textContent = object.firstParagraph;
+
+  const p2 = document.createElement('p');
+  p2.textContent = object.secondParagraph;
+
+  const p3 = document.createElement('p');
+  p3.textContent = object.thirdParagraph;
+
+  const expandBtn = document.createElement('span');
+  expandBtn.classList.add('expandButton');
+
+  // expandBtn.addEventListener('mouseover',(event) => {
+  //   console.log(event.target);
+  //   articleDiv.classList.toggle('article-open');
+  // });
+  articleTitle.addEventListener('click',(event) => {
+    console.log(event.target);
+    articleDiv.classList.toggle('article-open');
+  });
+
+
+  articleDiv.appendChild(articleTitle);
+  articleDiv.appendChild(articleDate);
+  articleDiv.appendChild(p1);
+  articleDiv.appendChild(p2);
+  articleDiv.appendChild(p3);
+  articleDiv.appendChild(expandBtn);
+
+  return articleDiv;
+};
+
+const articlesMain = document.querySelector('.articles');
+
+let newArticles = data.map((arrayItem) => {
+  const artCom = componentCreator(arrayItem);
+  return artCom;
+});
+
+newArticles.forEach((x) => {
+  articlesMain.appendChild(x);
+});
+
+
