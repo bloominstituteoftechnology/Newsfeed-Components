@@ -10,18 +10,21 @@ let menuItems = [
 ];
 
 menuItems.forEach((link) => {
-  const item = document.createElement(li);
+  const item =document.createElement('li');
   item.textContent = link;
   ListOfLinks.appendChild(item);
-  item.style.cursor ='pointer';
+  item.style.cursor = 'pointer';
 })
 
 navDiv.classList.add('menu');
 menuButton.addEventListener('click', (e) => {
-  navDiv.classList.toggle('menu--open');
+navDiv.classList.toggle('menu--open');
 
 })
+
 return navDiv;
+}
+
 /* 
 
   Step 1: Write a function that will create a menu component as seen below:
