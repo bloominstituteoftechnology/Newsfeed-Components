@@ -36,18 +36,23 @@ let menuItems = [
 
 const menuComponent = (menuItems) => {
 
+  // create menu elements
   const menu = document.createElement('div');
+  const linkList = document.createElement('ul');
+  const menuButton = document.querySelector('.menu-button');
+
+  // class list
   menu.classList.add('menu');
 
-  const linkList = document.createElement('ul');
-
+  // append menu child
   menu.appendChild(linkList);
 
-  const menuButton = document.querySelector('.menu-button');
+  // opens menu when clicked
   menuButton.addEventListener('click', (e) => {
     menu.classList.toggle('menu--open');
   })
 
+  // creates item from menu list data
   menuItems.forEach((link) => {
     const item = document.createElement('li');
     item.textContent = link;
@@ -58,5 +63,6 @@ const menuComponent = (menuItems) => {
 
 }
 
+// append menu to header
 const header = document.querySelector('.header');
 header.appendChild(menuComponent(menuItems));

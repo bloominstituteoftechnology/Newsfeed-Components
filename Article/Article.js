@@ -124,42 +124,43 @@ const data = [
 
 const articleComponent = (title, date, firstParagraph, secondParagraph, thirdParagraph) => {
 
+  // creating article elements
   const article = document.createElement('div');
-  article.classList.add('article');
-
   const titleArticle = document.createElement('h2');
-  titleArticle.textContent = title;
-
   const dateArticle = document.createElement('p');
-  dateArticle.classList.add('date');
-  dateArticle.textContent = date;
-
   const paragraphOne = document.createElement('p');
-  paragraphOne.textContent = firstParagraph;
-
   const paragraphTwo = document.createElement('p');
-  paragraphTwo.textContent = secondParagraph;
-
   const paragraphThree = document.createElement('p');
-  paragraphThree.textContent = thirdParagraph;
-
   const button = document.createElement('span');
+
+  // add class lists
+  article.classList.add('article');
+  dateArticle.classList.add('date');
   button.classList.add('expandButton');
+  
+  // text content
+  titleArticle.textContent = title;
+  dateArticle.textContent = date;
+  paragraphOne.textContent = firstParagraph;
+  paragraphTwo.textContent = secondParagraph;
+  paragraphThree.textContent = thirdParagraph;
   button.textContent = 'Read More';
 
+  // opens articles
   button.addEventListener('click', (e) => {
     article.classList.toggle('article-open');
   })
 
-  // stretch
-  const readButton = document.createElement('span');
+  // stretch close button to get rid of read articles
+  const readButton = document.createElement('button');
   readButton.classList.add('read');
   readButton.textContent = "Close Article";
-
+  
   readButton.addEventListener('click', (e) => {
     article.style.visibility = "hidden";
   })
 
+  // appending children to article
   article.appendChild(titleArticle);
   article.appendChild(dateArticle); 
   article.appendChild(paragraphOne);
@@ -171,8 +172,10 @@ const articleComponent = (title, date, firstParagraph, secondParagraph, thirdPar
   return article;
 }
 
+
 const articles = document.querySelector('.articles');
 
+// map data to populate new articles
 data.map((a) => {
   return articles.appendChild(articleComponent(
     a.title, a.date, a.firstParagraph, a.secondParagraph, a.thirdParagraph))
