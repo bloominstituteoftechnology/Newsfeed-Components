@@ -85,7 +85,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
-  }
+  },
+  {
+    title: 'Anam',
+    date: 'March 15, 1991',
+    firstParagraph: `Lambda Student `,
+
+    secondParagraph: ` Colorado `,
+
+    thirdParagraph: ` Female `}
 ];
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
@@ -112,3 +120,49 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+const comp1 = function(data){
+  const comp2 = document.createElement('div')
+  comp2.classList.add('article')
+
+  const title = document.createElement('h2')
+  title.textContent= data.title
+
+  const date = document.createElement('p')
+  date.textContent = data.date
+
+  const p1 = document.createElement('p')
+  p1.textContent = data.firstParagraph
+
+  const p2 = document.createElement('p')
+  p2.textContent = data.secondParagraph
+
+  const p3 = document.createElement('p')
+  p3.textContent = data.thirdParagraph
+
+  const spany = document.createElement('span')
+  spany.classList.add('expandButton')
+  comp2.addEventListener('click', (event)=>{
+    comp2.classList.toggle('article-open')
+  })
+
+
+  comp2.appendChild(title)
+  comp2.appendChild(date)
+  comp2.appendChild(p1)
+  comp2.appendChild(p2)
+  comp2.appendChild(p3)
+  comp2.appendChild(spany)
+
+  return comp2
+
+}
+const indexdiv = document.querySelector('.articles')
+
+
+for(let i = 0; i<data.length; i++){
+  const returny = comp1(data[i])
+  indexdiv.appendChild(returny)
+  
+}
+
