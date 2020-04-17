@@ -38,14 +38,13 @@ let menuItems = [
 function menuComponentCreator(arr) {
 
 //Creating the Div
-  let menu = document.createElement('div');
-  menu.classList.add('menu');
+  let menuPanel = document.createElement('div');
+  menuPanel.classList.add('menu');
 
 //Creating the ul and li elements
   let menuList = document.createElement('ul');
-  menuItems.forEach((arritem) => {
+  arr.forEach((arritem) => {
     let listItem = document.createElement('li');
-    listItem.classList.add('listItem');
     listItem.textContent = arritem;
     menuList.appendChild(listItem);
   })
@@ -53,18 +52,17 @@ function menuComponentCreator(arr) {
 //Grabbing the menuButton
   let menuButton = document.querySelector('.menu-button');
   menuButton.addEventListener('click', () => {
-    menu.classList.toggle('menu--open');
+    menuPanel.classList.toggle('menu--open');
+    console.log('hello');
   })
 
 //Appending elements
-menuButton.appendChild(menuList);
-menuButton.appendChild(menu);
+  menuPanel.appendChild(menuList);
+  
 
-
-  return menu;
+  return menuPanel;
 };
-
+console.log(menuComponentCreator(menuItems));
 const header = document.querySelector('.header');
-const menuActive = menuComponentCreator(menuItems);
 
-header.appendChild(menuActive);
+header.appendChild(menuComponentCreator(menuItems));
