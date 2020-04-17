@@ -112,3 +112,98 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+data.push({title: 'Expand Button Issues halting production',
+  date: 'April today 2020',
+  firstParagraph: `consectetur adipiscing elit. Ekans Lorem ipsum dolor sit amet, consectetur adipiscing
+        elit. Arbok Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pikachu Lorem ipsum dolor sit amet, consectetur adipiscing
+        elit. Raichu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sandshrew Lorem ipsum dolor sit amet, consectetur adipiscing
+        elit. Sandslash Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nidoran Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit. Nidorina Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nidoqueen Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit. Nidoran Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nidorino Lorem ipsum dolor
+        sit amet, consectetur adipiscing elit. Nidoking Lorem ipsum`,
+  secondParagraph: `consectetur adipiscing elit. Ekans Lorem ipsum dolor sit amet, consectetur adipiscing
+        elit. Arbok Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pikachu Lorem ipsum dolor sit amet, consectetur adipiscing
+        elit. Raichu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sandshrew Lorem ipsum dolor sit amet, consectetur adipiscing
+        elit. Sandslash Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nidoran Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit. Nidorina Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nidoqueen Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit. Nidoran Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nidorino Lorem ipsum dolor
+        sit amet, consectetur adipiscing elit. Nidoking Lorem ipsum`,
+  thirdParagraph: `Alohamora wand elf parchment, Wingardium Leviosa hippogriff, house dementors betrayal. Holly, Snape centaur portkey ghost
+        Hermione spell bezoar Scabbers. Peruvian-Night-Powder werewolf, Dobby pear-tickle half-moon-glasses, Knight-Bus. Padfoot
+        snargaluff seeker: Hagrid broomstick mischief managed. Snitch Fluffy rock-cake, 9 ¾ dress robes I must not tell lies. Mudbloods
+        yew pumpkin juice phials Ravenclaw’s Diadem 10 galleons Thieves Downfall. Ministry-of-Magic mimubulus mimbletonia Pigwidgeon
+        knut phoenix feather other minister Azkaban. Hedwig Daily Prophet treacle tart full-moon Ollivanders You-Know-Who cursed.
+        Fawkes maze raw-steak Voldemort Goblin Wars snitch Forbidden forest grindylows wool socks`
+      });
+
+      function componentCreator(object){
+        let artDiv = document.createElement('div');
+        artDiv.classList.add('article');
+        artDiv.style.overflowY = 'auto';
+      
+        let artTitle = document.createElement('h2');
+        artTitle.textContent = object.title;
+        artTitle.style.margin ="5px 0px 0px";
+      
+        let artDate = document.createElement('p');
+        artDate.classList.add('date');
+        artDate.textContent = object.date;
+      
+        let para1 = document.createElement('p');
+        para1.textContent = object.firstParagraph;
+      
+        let para2 = document.createElement('p');
+        para2.textContent = object.secondParagraph;
+      
+        let para3 = document.createElement('p');
+        para3.textContent = object.thirdParagraph;
+      
+        let expandBtn = document.createElement('span');
+        expandBtn.classList.add('expandButton');
+      
+        let closeButton = document.createElement('div');
+        closeButton.classList.add('closeBtn');
+        closeButton.style.height = '12px';
+        closeButton.style.width = '100%';
+        closeButton.textContent = 'Close Article';
+      
+        closeButton.addEventListener('click', (event) => {
+          artDiv.style.transform = "translate(200%,0%)";
+          artDiv.style.transition = '1s';
+          setTimeout(function(){
+            event.target.style.display = 'none';
+          },2000);
+        })
+      
+      
+        artTitle.addEventListener('click',(event) => {
+          console.log(event.target);
+          artDiv.style.transition = '1s';
+          artDiv.classList.toggle('article-open');
+        });
+      
+      
+        artDiv.appendChild(closeButton);
+        artDiv.appendChild(artTitle);
+        artDiv.appendChild(artDate);
+        artDiv.appendChild(para1);
+        artDiv.appendChild(para2);
+        artDiv.appendChild(para3);
+        
+        artDiv.appendChild(expandBtn);
+      
+        return artDiv;
+      };
+      
+      const artMain = document.querySelector('.articles');
+      
+      let newArticles = data.map((arrayItem) => {
+        const artCom = componentCreator(arrayItem);
+        return artCom;
+      });
+      
+      newArticles.forEach((x) => {
+        artMain.appendChild(x);
+      });
+      
