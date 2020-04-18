@@ -85,6 +85,11 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'I hate my dumbass roommate',
+    date: 'April 16, 2020',
+    firstParagraph: 'blalba'
   }
 ];
 
@@ -112,3 +117,58 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+// creating components
+
+  // <div class="article">
+    // <h2>{title of the article}</h2>
+    // <p class="date">{date of the article}</p>
+
+    // {three separate paragraph elements}
+
+    // <span class='expandButton'></span>
+  // </div>
+
+  let componentCreator = (dataObj) => {
+    let component = document.createElement('div');
+    component.classList.add('article')
+  
+    let articleTitle = document.createElement('h2');
+    articleTitle.textContent = dataObj.title;
+  
+    let articleDate = document.createElement('p');
+    articleDate.classList.add('date');
+    articleDate.textContent = dataObj.date;
+  
+    let paragraphOne = document.createElement('p');
+    paragraphOne.textContent = dataObj.firstParagraph;
+  
+    let paragraphTwo = document.createElement('p');
+    paragraphTwo.textContent = dataObj.secondParagraph;
+  
+    let paragraphThree = document.createElement('p');
+    paragraphThree.textContent = dataObj.thirdParagraph;
+
+    let expandButton = document.createElement('button');
+    expandButton.classList.add('expandButton');
+    expandButton.textContent = 'expand for more'
+
+    expandButton.addEventListener('click', () => {
+      component.classList.toggle('article-open');
+    })
+  
+    component.appendChild(articleTitle);
+    component.appendChild(articleDate);
+    component.appendChild(paragraphOne);
+    component.appendChild(paragraphTwo);
+    component.appendChild(paragraphThree);
+    component.appendChild(expandButton);
+
+    return component;
+  };
+
+  data.forEach((obj) => {
+    let component = componentCreator(obj);
+    document.querySelector('.articles').appendChild(component);
+  })
+
