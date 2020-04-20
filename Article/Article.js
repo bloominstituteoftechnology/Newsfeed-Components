@@ -112,3 +112,50 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+function createArticle(title, date, firstParagraph, secondParagraph, thirdParagraph){
+
+  const article = document.createElement('div');
+  const artTitle = document.createElement('h2');
+  const artDate = document.createElement('p');
+  const para1 = document.createElement('p');
+  const para2 = document.createElement('p');
+  const para3 = document.createElement('p');
+  const button = document.createElement('span');
+
+  //append elements
+
+  article.append(artTitle, artDate, button, para1, para2, para3);
+
+  //classes 
+
+  article.classList.add('article');
+  artDate.classList.add('date');
+  button.classList.add('expandButton');
+
+  //set text content
+
+  artTitle.textContent = title;
+  artDate.textContent = date;
+  para1.textContent = firstParagraph;
+  para2.textContent = secondParagraph;
+  para3.textContent = thirdParagraph;
+  button.textContent = `	\u25BC`;
+
+  button.addEventListener('click', () => {
+    article.classList.toggle('article-open');
+    
+  }); return article;
+}
+
+const myArticle = {
+  title:`Batman`,
+  date: 'April 16th 2020',
+  firstParagraph: "No, no, no. A vigilante is just a man lost in scramble for his own gratification. He can be destroyed or locked up. But if you make yourself more than just a man, if you devote yourself to an idel and if they can't stop you then you become something else entirely. Legend, Mr Wayne.",
+  secondParagraph: "Tomorrow, you will be released. If you are bored of brawling with thieves and want to achieve something there is a rare blue flower that grows on the eastern slopes. Pick one of these flowers. If you can carry it to the top of the mountain, you may find what you were looking for in the first place.",
+  thirdParagraph:"I had a vision of a world without Batman. The Mob ground out a little profit and the police tried to shut them down one block at a time. And it was so boring. I've had a change of heart. I don't want Mr Reese spoiling everything but why should I have all the fun? Let's give someone else a chance. If Coleman Reese isn't dead in 60 minutes then I blow up a hospital.",
+};
+data.push(myArticle);
+const body = document.querySelector('body');
+const newArticles = data.map(data => {
+ return body.appendChild(createArticle(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
+}); 
