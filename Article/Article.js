@@ -86,6 +86,22 @@ const data = [
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`,
   },
+
+  {
+    title: "Professionals",
+    date: "2020",
+    firstParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
+    hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
+    Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `,
+
+    secondParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
+    hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
+    Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `,
+
+    thirdParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
+    hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
+    Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `,
+  },
 ];
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
@@ -115,7 +131,13 @@ const data = [
 
 //function
 
-function articleComponent() {
+function articleComponent(
+  title,
+  date,
+  firstParagraph,
+  secondParagraph,
+  thirdParagraph
+) {
   //create element
 
   const newDiv = document.createElement("div");
@@ -134,12 +156,12 @@ function articleComponent() {
 
   // text content
 
-  newTitle.textContent = "title";
-  newDate.textContent = "date";
-  para1.textContent = "firstParaph";
-  para2.textContent = "secondParagraph";
-  para3.textContent = "thirdParagraph";
-  span.textContent = "expandButton";
+  newTitle.textContent = title;
+  newDate.textContent = date;
+  para1.textContent = firstParagraph;
+  para2.textContent = secondParagraph;
+  para3.textContent = thirdParagraph;
+  span.textContent = "Button";
 
   // .appendChild
 
@@ -164,14 +186,14 @@ function articleComponent() {
 // adding to page
 
 const article = document.querySelector(".articles");
-data.forEach((e) => {
+data.map((i) => {
   article.appendChild(
     articleComponent(
-      e.title,
-      e.date,
-      e.firstParagraph,
-      e.secondParagraph,
-      e.thirdParagraph
+      i.title,
+      i.date,
+      i.firstParagraph,
+      i.secondParagraph,
+      i.thirdParagraph
     )
   );
 });
