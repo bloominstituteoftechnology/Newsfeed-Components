@@ -25,7 +25,7 @@ let menuItems = [
 //CREATING FUNCTIONS HERE\\
 function createMenu(data) {
 
-  const menu = document.createElement("div");
+  const menu = documents.createElement("div");
   const list = document.createElement("ul");;
 
   data.forEach(array => {
