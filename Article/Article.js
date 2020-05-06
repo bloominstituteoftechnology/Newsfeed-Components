@@ -142,6 +142,11 @@ function articleMaker(title, date, p1, p2, p3) {
   paragraph3.textContent = p3;
   expandButton.textContent = "expand";
 
+  //
+  expandButton.addEventListener("click", (event) => {
+    article.classList.toggle("article-open");
+  });
+
   return article;
 }
 const newArticles = document.querySelector(".articles");
