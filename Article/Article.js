@@ -1,7 +1,6 @@
 /* This is the data we will be using to create our article components */
 /* Look over this data, then proceed to line 91*/
-const data = [
-  {
+const data = [{
     title: 'Lambda School Students: "We\'re the best!"',
     date: 'Nov 5th, 2018',
     firstParagraph: `Lucas ipsum dolor sit amet ben twi'lek padmé darth darth darth moff hutt organa twi'lek. Ben amidala secura skywalker lando
@@ -88,9 +87,10 @@ const data = [
   }
 ];
 
+
+console.log(data);
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
-  
-  <div class="article">
+  cclass="article">
     <h2>{title of the article}</h2>
     <p class="date">{date of the article}</p>
 
