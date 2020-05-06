@@ -163,3 +163,17 @@ data.forEach((item) => {
     )
   );
 });
+
+// var data = ['mike', 'brian', 'jeff']
+
+// function FriendMaker(name) {
+//   var friend = document.createElement('div')
+//   // set all necessary attributes and nesting of the element...
+//   friend.textContent = `My friend ${name}`
+//   return friend
+// }
+
+// data.forEach(name => {
+//   var friend = FriendMaker(name)
+//   document.body.appendChild(friend)
+// })

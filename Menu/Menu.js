@@ -32,4 +32,20 @@ let menuItems = [
   Step 6: Use 'menuMaker' to create a menu using the 'menuItems' array, and append the returned markup to the DOM.
 */
 
-function menuMaker(menuItems) {}
+function menuMaker(array) {}
+
+//?
+
+// var data = ['mike', 'brian', 'jeff']
+
+// function FriendMaker(name) {
+//   var friend = document.createElement('div')
+//! set all necessary attributes and nesting of the element...
+//   friend.textContent = `My friend ${name}`
+//   return friend
+// }
+
+// data.forEach(name => {
+//   var friend = FriendMaker(name)
+//   document.body.appendChild(friend)
+// })
