@@ -120,6 +120,11 @@ function articleMaker(title, date, p1, p2, p3) {
   const paragraph3 = document.createElement("p");
   const expandButton = document.createElement("span");
 
+  //
+  expandButton.addEventListener("click", (event) => {
+    article.classList.toggle("article-open");
+  });
+
   article.append(
     articleTitle,
     articleDate,
@@ -141,11 +146,6 @@ function articleMaker(title, date, p1, p2, p3) {
   paragraph2.textContent = p2;
   paragraph3.textContent = p3;
   expandButton.textContent = "expand";
-
-  //
-  expandButton.addEventListener("click", (event) => {
-    article.classList.toggle("article-open");
-  });
 
   return article;
 }
