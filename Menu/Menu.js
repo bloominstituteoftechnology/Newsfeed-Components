@@ -1,3 +1,6 @@
+const open = '\u25bc'
+const close = '\u25b2'
+
 /* This is the data we will be using, study it but don't change anything, yet. */
 
 let menuItems = [
@@ -33,3 +36,29 @@ let menuItems = [
   Step 6: add the menu component to the DOM.
   
 */
+
+
+function makeMenu([]) {
+  const {listItem} = []
+
+  const menu = document.createElement('div')
+  const ul = document.createElement('ul')
+  const listItem = document.createElement('li')
+
+  menu.classList.add('menu')
+
+  listItem.textContent = listItem;
+  
+  listItem.appendChild('menu')
+
+  const menuButton = document.querySelector('.menu-button')
+
+  menuButton.addEventListener('click', function(){
+    menuButton.classList.toggle('hide-btn')
+
+  })
+
+}
+
+
+
