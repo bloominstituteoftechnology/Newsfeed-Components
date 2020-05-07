@@ -114,47 +114,52 @@ const data = [
 function articleMaker(title, date, p1, p2, p3) {
   const article = document.createElement("div");
   const articleTitle = document.createElement("h2");
-  const articleDate = document.createElement("p");
+  const articleData = document.createElement("p");
   const paragraph1 = document.createElement("p");
   const paragraph2 = document.createElement("p");
   const paragraph3 = document.createElement("p");
   const expandButton = document.createElement("span");
 
   //
-  expandButton.addEventListener("click", (event) => {
-    article.classList.toggle("article-open");
-  });
 
   article.append(
     articleTitle,
-    articleDate,
+    articleData,
     paragraph1,
     paragraph2,
     paragraph3,
     expandButton
   );
 
+  //
+
   article.classList.add("article");
-  articleDate.classList.add("date");
+  articleData.classList.add("date");
   expandButton.classList.add("expandButton");
 
-  // Assign the content
+  //
 
   articleTitle.textContent = title;
-  articleDate.textContent = date;
+  articleData.textContent = date;
   paragraph1.textContent = p1;
   paragraph2.textContent = p2;
   paragraph3.textContent = p3;
   expandButton.textContent = "expand";
 
+  //
+
+  expandButton.addEventListener("click", (event) => {
+    article.classList.toggle("article-open");
+  });
+
   return article;
 }
+
 const newArticles = document.querySelector(".articles");
-// console.log(articles);
 
 data.forEach((item) => {
   newArticles.appendChild(
-    createArticle(
+    articleMaker(
       item.title,
       item.date,
       item.firstParagraph,
@@ -163,17 +168,3 @@ data.forEach((item) => {
     )
   );
 });
-
-// var data = ['mike', 'brian', 'jeff']
-
-// function FriendMaker(name) {
-//   var friend = document.createElement('div')
-//   // set all necessary attributes and nesting of the element...
-//   friend.textContent = `My friend ${name}`
-//   return friend
-// }
-
-// data.forEach(name => {
-//   var friend = FriendMaker(name)
-//   document.body.appendChild(friend)
-// })
