@@ -168,3 +168,11 @@ data.forEach((item) => {
     )
   );
 });
+
+//* TASK 10- Loop through the panelData in the data folder
+//*  creating panels for each content and title,
+//*  and append them to the DOM
+// panelData.forEach(panelObj => {
+//   const panel = makePanel(panelObj)
+//   accordion.appendChild(panel)
+// })
