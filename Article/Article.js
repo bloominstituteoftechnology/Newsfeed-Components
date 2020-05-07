@@ -89,10 +89,7 @@ const data = [{
 
 console.log(data);
 
-const menuBtn = document.querySelector('.menu-button');
-
-
-function bigList(title, date, firstParagraph, secondParagraph, thirdParagraph) {
+function articleCreator(title, date, firstParagraph, secondParagraph, thirdParagraph) {
   const articleDiv = document.createElement('div');
   const titleHeader = document.createElement('h2');
   const paragraphOne = document.createElement('p');
@@ -101,35 +98,69 @@ function bigList(title, date, firstParagraph, secondParagraph, thirdParagraph) {
   const paragraphDate = document.createElement('p');
   const expandBtn = document.createElement('span');
 
+  //set class names
+  articleDiv.classList.add('article');
+  paragraphDate.classList.add('paragraphDate');
+  expandBtn.classList.add('expandButton');
+
+  //append
   articleDiv.appendChild(titleHeader);
+  articleDiv.appendChild(paragraphDate);
   articleDiv.appendChild(paragraphOne);
   articleDiv.appendChild(paragraphTwo);
   articleDiv.appendChild(paragraphThree);
-  articleDiv.appendChild(paragraphDate);
   articleDiv.appendChild(expandBtn);
 
-  /* Step 1: Create a function that creates a component. You will want your
-   component to look like the template below: 
-    
-    <div class="article">
-      <h2>{title of the article}</h2>
-      <p class="date">{date of the article}</p>
+  //set text content
+  titleHeader.textContent = title;
+  paragraphDate.textContent = date;
+  paragraphOne.textContent = firstParagraph;
+  paragraphTwo.textContent = secondParagraph;
+  paragraphThree.textContent = thirdParagraph;
+  expandBtn.textContent = '\u25bc';
 
-      {three separate paragraph elements}
+  expandBtn.addEventListener('click', event => {
+    articleDiv.classList.toggle('article-open');
+    if (expandBtn.textContent == '\u25bc') {
+      expandBtn.textContent = '\u25b2';
+    } else if (expandBtn.textContent == '\u25b2') {
+      expandBtn.textContent = '\u25bc';
+    }
+  })
 
-      <span class='expandButton'></span>
-    </div>
+  //Add an event listener to the expandButton span. This event listener should toggle the
+  // class 'article-open' on the 'article' div.
 
-    Hint: You will need to use createElement more than once here!
+  return articleDiv;
+}
 
-    Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
+const container = document.querySelector('body');
+data.forEach(item => {
+  container.appendChild(articleCreator(item.title, item.date, item.firstParagraph, item.secondParagraph, item.thirdParagraph))
+})
 
-    Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
+/* Step 1: Create a function that creates a component. You will want your
+ component to look like the template below: 
+  
+  <div class="article">
+    <h2>{title of the article}</h2>
+    <p class="date">{date of the article}</p>
 
-    Step 3: return the entire component.
+    {three separate paragraph elements}
 
-    Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
+    <span class='expandButton'></span>
+  </div>
 
-    Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
+  Hint: You will need to use createElement more than once here!
 
-  */
+  Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
+
+  Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
+
+  Step 3: return the entire component.
+
+  Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
+
+  Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
+
+*/
