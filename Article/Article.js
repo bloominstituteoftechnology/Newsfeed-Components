@@ -92,7 +92,7 @@ console.log(data);
 const menuBtn = document.querySelector('.menu-button');
 
 
-function articleCreator(title, date, firstParagraph, secondParagraph, thirdParagraph) {
+function bigList(title, date, firstParagraph, secondParagraph, thirdParagraph) {
   const articleDiv = document.createElement('div');
   const titleHeader = document.createElement('h2');
   const paragraphOne = document.createElement('p');
@@ -100,6 +100,13 @@ function articleCreator(title, date, firstParagraph, secondParagraph, thirdParag
   const paragraphThree = document.createElement('p');
   const paragraphDate = document.createElement('p');
   const expandBtn = document.createElement('span');
+
+  articleDiv.appendChild(titleHeader);
+  articleDiv.appendChild(paragraphOne);
+  articleDiv.appendChild(paragraphTwo);
+  articleDiv.appendChild(paragraphThree);
+  articleDiv.appendChild(paragraphDate);
+  articleDiv.appendChild(expandBtn);
 
   /* Step 1: Create a function that creates a component. You will want your
    component to look like the template below: 
