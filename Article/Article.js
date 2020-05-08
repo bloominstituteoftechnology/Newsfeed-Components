@@ -116,56 +116,71 @@ const data = [
 
 */
 
-// STEP 1
+
+
+
 function makeArticle (articleAttrs) {
   const {title, date, firstParagraph, secondParagraph, thirdParagraph} = articleAttrs
 
   const article = document.createElement('div')
-  const title = document.createElement('h2')
-  const date = document.createElement('p')
-  const firstParagraph = document.createElement('p')
-  const secondParagraph = document.createElement('p')
-  const thirdParagraph = document.createElement('p')
+  const articleTitle = document.createElement('h2')
+  const articleDate = document.createElement('p')
+  const pOne = document.createElement('p')
+  const pTwo = document.createElement('p')
+  const pThree = document.createElement('p')
   const expandButton = document.createElement('span')
-
-  article.appendChild(title);
-  article.appendChild(date);
-  article.appendChild(firstParagraph);
-  article.appendChild(secondParagraph);
-  article.appendChild(thirdParagraph);
+  
+  article.appendChild(articleTitle);
+  article.appendChild(articleDate);
+  article.appendChild(pOne);
+  article.appendChild(pTwo);
+  article.appendChild(pThree);
   article.appendChild(expandButton);
 
+
   article.classList.add('article')
-  date.classList.add('date')
+  articleDate.classList.add('date')
   expandButton.classList.add('expandButton')
+  expandButton.classList.add('closeButton')
 
-  title.textContent = title;
-  date.textContent = date;
-  firstParagraph.textContent = firstParagraph;
-  secondParagraph.textContent = secondParagraph;
-  thirdParagraph.textContent = thirdParagraph;
-  expandButton.textContent=open;
+  articleTitle.textContent = title;
+  articleDate.textContent = date;
+  pOne.textContent = firstParagraph;
+  pTwo.textContent = secondParagraph;
+  pThree.textContent = thirdParagraph;
+  expandButton.textContent = expandButton;
   
-
-// STEP 2
   expandButton.addEventListener('click', () => {
-  expandButton.classList.toggle('article-open');
+  expandButton.classList.toggle('hide-btn')
+  expandButton.classList.toggle('show-btn')
+  article.classList.toggle('toggle-on')
+
 })
-// STEP 3
+
 return article
 }
 
+const node = document.createElement('div')
+const articles = document.querySelector('.articles')
 
-// STEP 4
+
+
+const newArticle = ({
+  title: 'the title',
+  date: 'the date', 
+  firstParagraph: 'paragraph one', 
+  secondParagraph: 'paragraph two', 
+  thirdParagraph: 'paragraph three', 
+  expandButton: 'expand the button'})
+
+console.log(newArticle)
+articles.appendChild(node)
+
 data.forEach(articleObj => {
-  const article = makePanel(articleObj)
-  articles.appendChild(article)
+  const article = makeArticle(articleObj)
+ articles.appendChild(article)
 });
 
-// STEP 5
 
-const theArticle = ({title: 'the title', date: 'the date', firstParagraph: 'paragraph one', secondParagraph: 'paragraph two', thirdParagraph: 'paragraph three', expandButton: 'expand the button'})
-console.log(theArticle)
-articles.appendChild(theArticle)
 
-export default makeArticle;
+
