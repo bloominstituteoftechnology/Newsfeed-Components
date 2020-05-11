@@ -37,27 +37,47 @@ let menuItems = [
 */
 
 
-function makeMenu([]) {
-  const {listItem} = []
+function menuListCreator(listItem) {
 
-  const menu = document.createElement('div')
-  const ul = document.createElement('ul')
-  const theListItem = document.createElement('li')
 
-  menu.classList.add('menu')
+  const menu = document.createElement('div');
+  const ul = document.createElement('ul');
 
-  theListItem.textContent = listItem;
-  
-  theListItem.appendChild('menu')
-
-  const menuButton = document.querySelector('.menu-button')
-
-  menuButton.addEventListener('click', function(){
-    menuButton.classList.toggle('hide-btn')
-
+  const li = menuItems.map(data => {
+    console.log(data);
+    const menuList = document.createElement('li');
+    menu.appendChild(menuList);
+    menuList.textContent = data;
   })
 
+
+  menu.appendChild(ul);
+
+
+  menu.classList.add('.menu');
+
+
+  
+  const menuButton = document.querySelector('.menu-button');
+
+menuButton.addEventListener('click', () => {
+  menu.classList.toggle('.menu--open')
+})
+return menu;
+ 
 }
 
+document.querySelector('.header').appendChild(menuListCreator(menuItems))
+
+ 
 
 
+
+
+
+
+
+// menuItems.forEach(data => {
+//   const menu = menuListCreator(data)
+// menuButton.appendChild(menu)
+// });
