@@ -85,7 +85,14 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
-  }
+  },
+  {
+    title: "Paulo's Article",
+    date: 'May 12th, 2020',
+    firstParagraph: `Desta maneira, a consolidação das estruturas aponta para a melhoria do investimento em reciclagem técnica.`,
+    secondParagraph: `Do mesmo modo, a necessidade de renovação processual apresenta tendências no sentido de aprovar a manutenção do sistema de participação geral.`,
+    thirdParagraph: `É claro que o consenso sobre a necessidade de qualificação exige a precisão e a definição do orçamento setorial.`,
+  },
 ];
 
 /* Step 1: Write a component called 'articleMaker' to create an article. You want your component to return markup like the template below: 
@@ -101,13 +108,72 @@ const data = [
 
   Hint: You will need to use createElement more than once here!
 
-  Your function should take either an object as its one argument, or 5 separate arguments mapping to each piece of the data object above.
+  Your function should take either an object as its one argument, or 5 separate arguments mapping to each piece 
+  of the data object above.
 
-  Step 2: Add an event listener to the expandButton span. This listener should toggle the class 'article-open' on the 'article' div.
+  Step 2: Add an event listener to the expandButton span. This listener should toggle the class 'article-open' 
+  on the 'article' div.
 
   Step 3: Don't forget to return something from your function!
 
-  Step 4: Outside your function, loop over the data. At each iteration you'll use your component to create an article and append it to the DOM inside the 'articles' div.
+  Step 4: Outside your function, loop over the data. At each iteration you'll use your component to create an 
+  article and append it to the DOM inside the 'articles' div.
 
-  Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
+  Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page 
+  to see the new article.
 */
+
+const articleMaker = (title, date, first, second, third) => {
+  const article = document.createElement('div');
+  const header = document.createElement('h2');
+  const dateArticle = document.createElement('p');
+  const firstParagraph = document.createElement('p');
+  const secondParagraph = document.createElement('p');
+  const thirdParagraph = document.createElement('p');
+  const expandButton = document.createElement('span');
+  
+  const close = '\u25b2';
+
+  article.appendChild(header);
+  article.appendChild(dateArticle);
+  article.appendChild(firstParagraph);
+  article.appendChild(secondParagraph);
+  article.appendChild(thirdParagraph);
+  article.appendChild(expandButton);
+
+  article.classList.add('article');
+  dateArticle.classList.add('date');
+  expandButton.classList.add('expandButton');
+
+  header.textContent = title;
+  dateArticle.textContent = date;
+  firstParagraph.textContent = first;
+  secondParagraph.textContent = second;
+  thirdParagraph.textContent = third;
+  const open = '\u25bc';
+  expandButton.textContent = open;
+
+  expandButton.addEventListener('click', () => {
+    if(expandButton.textContent == '\u25bc') {
+      expandButton.textContent = '\u25b2';
+    } else {
+      expandButton.textContent = '\u25bc';
+    }
+    article.classList.toggle('article-open');
+  });
+
+  return article;
+};
+
+//displaying article content
+const articles = document.querySelector('.articles');
+
+data.forEach((item) => {
+  articles.appendChild(articleMaker(
+    item.title, 
+    item.date, 
+    item.firstParagraph, 
+    item.secondParagraph, 
+    item.thirdParagraph,
+  ));
+});
