@@ -113,17 +113,19 @@ const data = [
 */
 const articleMaker = (data) => {
   let title = document.createElement('h2');
-  title.textContent = data[title];
+  title.textContent = data.title;
   let date = document.createElement('p');
-  date.textContent = data[date];
+  date.textContent = data.date;
   let text1 = document.createElement('p');
-  text1.textContent = data[firstParagraph];
+  text1.textContent = data.firstParagraph;
   let text2 = document.createElement('p');
-  text2.textContent = data[secondParagraph];
+  text2.textContent = data.secondParagraph;
   let text3 = document.createElement('p');
-  text3.textContent = data[thirdParagraph];
+  text3.textContent = data.thirdParagraph;
   let span = document.createElement('span');
   span.classList = ('expandButton');
+  let button = document.createElement('button');
+  button.textContent = 'OPEN/CLOSE';
 
   let article = document.querySelector('.articles');
   article.appendChild(title);
@@ -132,13 +134,14 @@ const articleMaker = (data) => {
   article.appendChild(text2);
   article.appendChild(text3);
   article.appendChild(span);
+  span.appendChild(button);
 
   span.addEventListener('click', (event) => {
     article.classList.toggle('article-open');
-  })
+  });
   return article;
 };
 
 data.forEach(data => {
-  article.appendChild(articleMaker(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph));
+  articleMaker(data);
 });
