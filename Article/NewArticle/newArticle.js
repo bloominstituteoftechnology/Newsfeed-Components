@@ -14,7 +14,7 @@ function newArticleMaker() {
 
 	let newDate = document.createElement('input');
 	newDate.setAttribute('type', 'text');
-	newDate.setAttribute('placeholder', 'date');
+	newDate.setAttribute('placeholder', 'Date:');
 	newArticle.appendChild(newDate);
 
 	let newFirstParagraph = document.createElement('textarea');
