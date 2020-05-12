@@ -111,3 +111,65 @@ const data = [
 
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 */
+
+//1 -3
+
+//create the panel component function and caller
+const  articleMaker = (dataArray) => {
+  
+    //Create Elements
+    const articleDiv = document.createElement('div');
+    const h2Title = document.createElement('h2');
+    const pElementDate = document.createElement('p');
+    const paragraphOne = document.createElement('p');
+    const paragraphTwo = document.createElement('p');
+    const paragraphThree = document.createElement('p');
+    const expandButtons = document.createElement('span');
+    
+
+    // Adding classes to elements
+    articleDiv.classList.add('article');
+    pElementDate.classList.add('date');
+    expandButtons.classList.add('expandButton');
+    paragraphOne.classList.add('paragraph-one');
+    paragraphTwo.classList.add('paragraph-two');
+    paragraphThree.classList.add('paragraph-three');
+    
+
+    // Adding content to elements
+    h2Title.textContent = dataArray.title;
+    pElementDate.textContent = dataArray.date;
+    paragraphOne.textContent = dataArray.firstParagraph;
+    paragraphTwo.textContent = dataArray.secondParagraph;
+    paragraphThree.textContent = dataArray.thirdParagraph;
+
+    //expand button
+    expandButtons.textContent = 'Read Article';
+
+
+    //Create Tree Like Structure of Elements - To be visible on screen
+    articleDiv.append(h2Title,pElementDate,paragraphOne, paragraphTwo,paragraphThree, expandButtons)
+
+
+    console.log(articleDiv)
+
+    //Adding Event Listener(s) to toggle article-open
+    expandButtons.addEventListener('click', () => {
+       articleDiv.classList.toggle('article-open'); 
+    });
+
+      return articleDiv
+  }
+
+
+  // the parent element in HTML. this is what we will hook our newly created DOM elements to
+  const articleContainer = document.querySelector('.articles')
+
+
+
+  // Step 4: Outside your function, loop over the data. At each iteration you'll use your component to create an article and append it to the DOM inside the 'articles' div.
+  data.forEach( arrayItem => {
+    
+   articleContainer.appendChild(articleMaker(arrayItem))
+
+  })
