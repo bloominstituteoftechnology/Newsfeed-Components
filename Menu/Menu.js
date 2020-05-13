@@ -36,4 +36,24 @@ let menuMaker = (menuItems) => {
   container.classList.add('menu');
   let heading = document.createElement('ul');
 
-}
+
+  let parent = document.querySelector('.header');
+  parent.appendChild(container);
+  container.appendChild(heading);
+
+
+  let btnImg = document.querySelector('.menu-button');
+
+  menuItems.forEach(newListItem => {
+    let items = document.createElement('li');
+    items.textContent = newListItem;
+    heading.appendChild(items);
+  });
+
+  btnImg.addEventListener('click', (event) => {
+    container.classList.toggle('menu--open');
+  });
+  return container;
+};
+
+menuMaker(menuItems);
