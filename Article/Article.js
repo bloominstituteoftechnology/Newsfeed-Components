@@ -151,9 +151,9 @@ function articleContents(info) {
   // Add content = refer to the array, above
   title.textContent = info.title;
   date.textContent = info.date;
-  par1.textContent = info.firstParagraph;
-  par2.textConent = info.secondParagraph;
-  par3.textContent - info.thirdParagraph;
+  par1.textContent = info.firstPar;
+  par2.textConent = info.secondPar;
+  par3.textContent - info.thirdPar;
   button.textContent = "\u25bc";
 
   // 2. Event listener
