@@ -103,6 +103,8 @@ const data = [
 
 
  const componentCreator = (title, dates, p01, p02 ,p03) =>{
+  let main = document.querySelector('.articles');
+
   let theDiv = document.createElement('div')
   let h2 = document.createElement('h2')
   let date = document.createElement('p')
@@ -110,20 +112,18 @@ const data = [
   let p2 = document.createElement('p')
   let p3 = document.createElement('p')
   let button = document.createElement('span')
- 
   
   theDiv.classList.add('article');
   date.classList.add('date');
   button.classList.add('expandButton')
   
-
+  main.appendChild(theDiv)
   theDiv.appendChild(h2)
   theDiv.appendChild(date)
   theDiv.appendChild(p1)
   theDiv.appendChild(p2)
   theDiv.appendChild(p3)
   theDiv.appendChild(button)
-
 
   h2.textContent = title;
   date.textContent = dates;
@@ -139,17 +139,21 @@ const data = [
  }
   //Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
 
-     let main = document.querySelector('.articles');
+     
 data.push({title:'Lambda, the New Harvard', date:'10/14/1992', firstParagraph:'Cant forget the witcher', secondParagraph:'the witcher is cool', thirdParagraph: 'hate to be that guy but the books are better'})
- main.appendChild(componentCreator(data[0].title, data[0].date, data[0].firstParagraph, data[0].secondParagraph, data[0].thirdParagraph));
- main.appendChild(componentCreator(data[1].title, data[1].date, data[1].firstParagraph, data[1].secondParagraph, data[1].thirdParagraph));
- main.appendChild(componentCreator(data[2].title, data[2].date, data[2].firstParagraph, data[2].secondParagraph, data[2].thirdParagraph));
- main.appendChild(componentCreator(data[4].title, data[4].date, data[4].firstParagraph, data[4].secondParagraph, data[4].thirdParagraph));
+//  main.appendChild(componentCreator(data[0].title, data[0].date, data[0].firstParagraph, data[0].secondParagraph, data[0].thirdParagraph));
+//  main.appendChild(componentCreator(data[1].title, data[1].date, data[1].firstParagraph, data[1].secondParagraph, data[1].thirdParagraph));
+//  main.appendChild(componentCreator(data[2].title, data[2].date, data[2].firstParagraph, data[2].secondParagraph, data[2].thirdParagraph));
+//  main.appendChild(componentCreator(data[4].title, data[4].date, data[4].firstParagraph, data[4].secondParagraph, data[4].thirdParagraph));
+//  main.appendChild(data.map(arr =>arr.title, arr.date, arr.firstParagraph, arr.secondParagraph, arr.thirdParagraph));
  
+ data.forEach (element =>{ 
+   componentCreator(element.title, element.date, element.firstParagraph, element.secondParagraph, element.thirdParagraph)
+ })
   //Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
 
   //Step 3: return the entire component.
 
-  //Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
+  //Step 4: loop over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
 
 //  Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
