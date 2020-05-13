@@ -68,6 +68,12 @@ function menuMaker(list) {
     }
   }
 
+  gsap.from(header, {
+    opacity: 0,
+    y: 20,
+    duration: 1.2
+  });
+
   return menu;
 }
 
