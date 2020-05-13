@@ -131,8 +131,6 @@ const articleMaker = (title, date, first, second, third) => {
   const secondParagraph = document.createElement('p');
   const thirdParagraph = document.createElement('p');
   const expandButton = document.createElement('span');
-  
-  const close = '\u25b2';
 
   article.appendChild(header);
   article.appendChild(dateArticle);
