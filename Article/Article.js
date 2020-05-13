@@ -154,10 +154,12 @@ const articleMaker = (title, date, first, second, third) => {
   expandButton.addEventListener('click', () => {
     if(expandButton.textContent == '\u25bc') {
       expandButton.textContent = '\u25b2';
+      
     } else {
       expandButton.textContent = '\u25bc';
     }
     article.classList.toggle('article-open');
+    expandButton.style.transition = '1s;';
   });
 
   return article;

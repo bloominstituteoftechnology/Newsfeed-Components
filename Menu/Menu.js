@@ -51,11 +51,22 @@ function menuMaker(list) {
   const header = document.querySelector('.header');
   header.appendChild(menu);
 
-  console.log(menu);
+  menu.style.opacity = '0';
 
   menuContainer.addEventListener('click', () => {
     menu.classList.toggle('menu--open');
+    menu.style.transition = 'all ease-in 1s';
+    menu.style.opacity = '1';
   });
+
+  //gsap animation
+  menuContainer.onclick = function() {
+    TweenLite.to(menu, 0.2, {left: "0", opacity: 0.95});
+
+    if(menu.style.left == "0px") {
+      TweenLite.to(menu, 0.2, {left: "-600px", opacity: 0.5});
+    }
+  }
 
   return menu;
 }
