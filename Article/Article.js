@@ -85,6 +85,13 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Learning at Home through a Pandemic',
+    date: 'May 12, 2020',
+    firstParagraph: 'Be safe/Stay home....Gloves & Masks...No funerals...No weddings...Self-Isolation...Toilet Paper Hording...Social Media...Binge watching Netflix...Learn new crafting...Make your own everything...Wait for Stimulus that never comes...',
+    secondParagraph: 'Join a prayer group in zoom...Study scripture...Pray ALOT...Study Web Dev hard...Create Mock Websites...Eat ice cream...walk the dog AGAIN...Watch the leaves bloom green again...check Face Book AGAIN...check Slack AGAIN...Pray for our country...Pray for the other countries...Pray for more ice cream...watch Disney...',
+    thirdParagraph: 'Give up on coding project...have more ice cream...check Slack again...watch more Disney...Pray more...scream at kids to stop screaming...look at code project...figure it out with help...pass the Sprint...Pray more...cuddle with hubby...repeat'
   }
 ];
 
