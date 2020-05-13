@@ -68,9 +68,10 @@ function menuMaker(list) {
     }
   }
 
+  //header animation
   gsap.from(header, {
     opacity: 0,
-    y: 20,
+    y: -120,
     duration: 1.2
   });
 

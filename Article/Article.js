@@ -162,6 +162,13 @@ const articleMaker = (title, date, first, second, third) => {
     expandButton.style.transition = '1s;';
   });
 
+  //article animation
+  gsap.from(article, {
+    opacity: 0,
+    y: -200,
+    duration: 1.2
+  });
+
   return article;
 };
 
