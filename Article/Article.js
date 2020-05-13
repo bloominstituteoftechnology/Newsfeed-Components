@@ -145,7 +145,7 @@ function articleContents(info) {
 
   // Create class names
   article.classList.add("article");
-  date.classList.add("par1");
+  date.classList.add("date");
   button.classList.add("expandButton");
 
   // Add content = refer to the array, above
