@@ -6,7 +6,7 @@ let menuItems = [
   "What's New",
   "Tech Trends",
   "Music",
-  "Log Out"
+  "Log Out",
 ];
 
 /* 
@@ -40,7 +40,8 @@ function createMenu(info) {
   const menu = document.createElement("div");
   const list = document.createElement("ul");
 
-  info.forEach(array => {
+  // 2. Iterate over the array; create a list item <li> for each item in the array
+  info.forEach((array) => {
     const items = document.createElement("li");
     items.textContent = array;
     list.appendChild(items);
@@ -52,7 +53,7 @@ function createMenu(info) {
   // Create class names
   menu.classList.add("menu");
 
-  // 4. Event listener
+  // 3. & 4. Select the menu button on the DOM & Event listener
   const button = document.querySelector(".menu-button");
   button.addEventListener("click", () => {
     menu.classList.toggle("menu--open");
