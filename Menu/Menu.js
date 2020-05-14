@@ -32,7 +32,6 @@ let menuItems = [
   Step 6: Use 'menuMaker' to create a menu using the 'menuItems' array, and append the returned markup to the DOM.
 */
 
-
 const menuMaker = (dataArray) => {
   //Step 2 iterate and create <li> element for each item in the array
 
@@ -42,37 +41,54 @@ let listArray = dataArray.map( textContent => {
 })
 // Callback Function
 function listCreator(textContent){
-  let listElement = document.createElement('li');
+ let listElement = document.createElement('li');
   listElement.textContent = textContent;
   return listElement;
 }
 
-
-//Step 3: Using a DOM selector, select the menu button (the element with a class of 'menu-button') currently on the DOM.
-let menuContainer = document.querySelector('.menu-button');
-
-// Step 4: add a click event listener to the menu button. When clicked it should toggle the class 'menu--open' on the menu (your div with a 'menu' class).
-menuContainer.addEventListener('click', (e) => {
-  e.target.classList.toggle('menu--open');
-})
-
-return listArray;
-
-}
+//create div with menu class
+// let divElement = document.createElement('div')
 
 
 
+  //Step 3: Using a DOM selector, select the menu button (the element with a class of 'menu-button') currently on the DOM.
+  let menuButton = document.querySelector('.menu-button');
+
+  //Step 4: add a click event listener to the menu button. When clicked it should toggle the class 'menu--open' on the menu (your div with a 'menu' class).
+  menuButton.addEventListener('click', () => {
+  divElement.classList.toggle('menu--open');
+  })
+
+  return listArray;
+
+} // end menuMaker
 
 
+
+//create ul
+let divElement = document.createElement('div')
+let ulElement = document.createElement('ul');
+let menuElement = document.querySelector('.menu-button')
+
+
+// menuElement.append(divElement);
+divElement.append(ulElement);
+
+
+
+
+bodyElement = document.querySelector('body')
+
+bodyElement.append(divElement)
+
+
+divElement.classList.add('menu');
 
 
 // Step 6: Use 'menuMaker' to create a menu using the 'menuItems' array, and append the returned markup to the DOM.
-container = document.querySelector('.menu-button');
-
-
 let newMenu = menuMaker(menuItems);
 
 
-container.append(newMenu)
+ulElement.append(newMenu[0], newMenu[1], newMenu[2], newMenu[3], newMenu[4], newMenu[5])
 
 console.log(newMenu)
