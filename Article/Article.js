@@ -147,11 +147,11 @@ const  articleMaker = (dataArray) => {
     expandButtons.textContent = 'Read Article';
 
 
-    //Create Tree Like Structure of Elements - To be visible on screen
+    //Create Tree Like Structure of Elements
     articleDiv.append(h2Title,pElementDate,paragraphOne, paragraphTwo,paragraphThree, expandButtons)
 
 
-    console.log(articleDiv)
+    // console.log(articleDiv)
 
     //Adding Event Listener(s) to toggle article-open
     expandButtons.addEventListener('click', () => {
@@ -162,7 +162,7 @@ const  articleMaker = (dataArray) => {
   }
 
 
-  // the parent element in HTML. this is what we will hook our newly created DOM elements to
+  // the parent element in HTML. this is what we will hook our newly created DOM elements to. So to be visible on screen
   const articleContainer = document.querySelector('.articles')
 
 
