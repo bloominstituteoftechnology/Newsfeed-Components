@@ -46,7 +46,7 @@ function menuListCreator(listItem) {
   const li = menuItems.map(data => {
     console.log(data);
     const menuList = document.createElement('li');
-    menu.appendChild(menuList);
+    ul.appendChild(menuList);
     menuList.textContent = data;
   })
 
@@ -54,14 +54,14 @@ function menuListCreator(listItem) {
   menu.appendChild(ul);
 
 
-  menu.classList.add('.menu');
+  menu.classList.add('menu');
 
 
   
   const menuButton = document.querySelector('.menu-button');
 
 menuButton.addEventListener('click', () => {
-  menu.classList.toggle('.menu--open')
+  menu.classList.toggle('menu--open')
 })
 return menu;
  
