@@ -85,6 +85,13 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Time Saved Refactoring Vanilla JS To React Components',
+    date: 'Jun 3rd, 2020',
+    firstParagraph: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, natus nihil. Qui magnam rem harum laboriosam architecto earum ullam, molestias maxime nobis vel vero deserunt repudiandae iusto, nemo optio. Debitis provident atque, soluta corrupti itaque unde sed eveniet magni eius minus architecto. Amet voluptatum quae aut, repellat perspiciatis officia nemo. Similique, exercitationem consectetur. Sunt obcaecati, dolorum optio debitis ducimus delectus ipsum praesentium consequuntur eveniet blanditiis pariatur, tenetur repudiandae dolor ex!',
+    secondParagraph: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, natus nihil. Qui magnam rem harum laboriosam architecto earum ullam, molestias maxime nobis vel vero deserunt repudiandae iusto, nemo optio. Debitis provident atque, soluta corrupti itaque unde sed eveniet magni eius minus architecto. Amet voluptatum quae aut, repellat perspiciatis officia nemo. Similique, exercitationem consectetur. Sunt obcaecati, dolorum optio debitis ducimus delectus ipsum praesentium consequuntur eveniet blanditiis pariatur, tenetur repudiandae dolor ex!',
+    thirdParagraph: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, natus nihil. Qui magnam rem harum laboriosam architecto earum ullam, molestias maxime nobis vel vero deserunt repudiandae iusto, nemo optio. Debitis provident atque, soluta corrupti itaque unde sed eveniet magni eius minus architecto. Amet voluptatum quae aut, repellat perspiciatis officia nemo. Similique, exercitationem consectetur. Sunt obcaecati, dolorum optio debitis ducimus delectus ipsum praesentium consequuntur eveniet blanditiis pariatur, tenetur repudiandae dolor ex!'
   }
 ];
 
@@ -144,9 +151,6 @@ function articleMaker(articleData) {
 
   return article
 }
-
-// const articles = articleMaker(data[0])
-// console.log(articles)
 
 const articles = data.map(article => articleMaker(article))
 articles.forEach(article => 
