@@ -115,14 +115,31 @@ function articleMaker(articleData) {
   const article = document.createElement('div')
   const title = document.createElement('h2')
   const date = document.createElement('p')
-
   const paragraphData = [
     articleData.firstParagraph,
     articleData.secondParagraph,
     articleData.thirdParagraph
   ]
-
   const paragraphs = paragraphData.map(paragraph => document.createElement('p'))
+  const expandButton = document.createElement('span')
+
+  article.classList.add('article')
+  date.classList.add('date')
+  expandButton.classList.add('expandButton')
+  
+  title.textContent = articleData.title
+  date.textContent = articleData.date
+  paragraphs.forEach((paragraph, index) => {
+    paragraph.textContent = paragraphData[index]
+  })
+
+  article.appendChild(title)
+  article.appendChild(date)
+  paragraphs.forEach(paragraph => article.appendChild(paragraph))
+  article.appendChild(expandButton)
+
+  return article
 }
 
-const articles = articleMaker(data[0]);
+const articles = articleMaker(data[0])
+console.log(articles)
