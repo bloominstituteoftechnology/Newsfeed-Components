@@ -126,6 +126,10 @@ function articleMaker(articleData) {
   article.classList.add('article')
   date.classList.add('date')
   expandButton.classList.add('expandButton')
+
+  expandButton.addEventListener('click', e => {
+    expandButton.classList.toggle('article-open')
+  })
   
   title.textContent = articleData.title
   date.textContent = articleData.date
@@ -141,5 +145,9 @@ function articleMaker(articleData) {
   return article
 }
 
-const articles = articleMaker(data[0])
-console.log(articles)
+// const articles = articleMaker(data[0])
+// console.log(articles)
+
+const articles = data.map(article => articleMaker(article))
+articles.forEach(article => 
+  document.querySelector('.articles').appendChild(article))
