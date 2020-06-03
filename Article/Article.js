@@ -135,7 +135,7 @@ function articleMaker(articleData) {
   expandButton.classList.add('expandButton')
 
   expandButton.addEventListener('click', e => {
-    expandButton.classList.toggle('article-open')
+    article.classList.toggle('article-open')
   })
   
   title.textContent = articleData.title
@@ -143,6 +143,7 @@ function articleMaker(articleData) {
   paragraphs.forEach((paragraph, index) => {
     paragraph.textContent = paragraphData[index]
   })
+  expandButton.textContent = '<<< >>>'
 
   article.appendChild(title)
   article.appendChild(date)
