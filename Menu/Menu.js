@@ -12,6 +12,23 @@ let menuItems = [
 /* 
   Step 1: Write a component called 'menuMaker' to create a menu like the markup below:
 
+  */
+
+  const menuMaker = function(menuItems) {
+    const menu = document.createElement('div');
+    const ul = document.createElement('ul');
+    const li1 = document.createElement('li'); // Unable to iterate through li?
+    const li2 = document.createElement('li');
+    const li3 = document.createElement('li');
+    const li4 = document.createElement('li');
+    const li5 = document.createElement('li');
+    const li6 = document.createElement('li');
+
+    menu.classList.add("menu");
+  }
+
+  /*
+
   <div class="menu">
     <ul>
       {each menu item as a list item}

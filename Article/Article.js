@@ -85,10 +85,81 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'My New Article',
+    date: 'June 4, 2020',
+    firstParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
+          hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
+          Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `,
+
+    secondParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
+          hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
+          hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
+          hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? `,
+
+    thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
+          Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
+          Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
 ];
 
-/* Step 1: Write a component called 'articleMaker' to create an article. You want your component to return markup like the template below: 
+/* Step 1: Write a component called 'articleMaker' to create an article. You want your component to return markup like
+the template below:
+ */
+
+  const articleMaker = function(title,date,firstParagraph,secondParagraph,thirdParagraph) {
+    const article = document.createElement('div');
+    article.classList.add("article");
+
+    const articleHeading = document.createElement('h2');
+    articleHeading.textContent = `${title}`;
+    article.appendChild(articleHeading);
+
+    const articleDate = document.createElement('p');
+    articleDate.classList.add("date");
+    articleDate.textContent = `${date}`;
+    article.appendChild(articleDate);
+
+    const articleP1 = document.createElement('p');
+    articleP1.textContent = `${firstParagraph}`
+    article.appendChild(articleP1);
+
+    const articleP2 = document.createElement('p');
+    articleP2.textContent = `${secondParagraph}`
+    article.appendChild(articleP2);
+
+    const articleP3 = document.createElement('p');
+    articleP3.textContent = `${thirdParagraph}`
+    article.appendChild(articleP3);
+
+    const span = document.createElement('span'); // 9650 & 9660
+    span.textContent = "expand";
+    span.classList.add('expandButton');
+    article.appendChild(span);
+
+    return article;
+  }
+
+  /* I Think this is supposed to be step 4, but if I move it, nothing else works right */
+  const articles = document.querySelector('.articles');
+
+  for(let i = 0; i < data.length; i++) {
+    articles.appendChild(articleMaker(data[i].title,data[i].date,data[i].firstParagraph,data[i].secondParagraph,data[i].thirdParagraph));
+  }
+
+  // data.forEach(articleMaker2 => {
+  //   const article = articleMaker(articleMaker2);
+  //   articles.appendChild(article);
+  // });
+
+  // data.forEach(articleMaker2 => {
+  //   const article = articleMaker(articleMaker2);
+  //   articles.appendChild(article);
+  // })
+
+
+ /*
 
   <div class="article">
     <h2>{title of the article}</h2>
@@ -101,13 +172,39 @@ const data = [
 
   Hint: You will need to use createElement more than once here!
 
-  Your function should take either an object as its one argument, or 5 separate arguments mapping to each piece of the data object above.
+  Your function should take either an object as its one argument, or 5 separate arguments mapping to each piece of the
+  data object above.
 
-  Step 2: Add an event listener to the expandButton span. This listener should toggle the class 'article-open' on the 'article' div.
+  Step 2: Add an event listener to the expandButton span. This listener should toggle the class 'article-open' on the
+  'article' div.
+  */
+
+  const expandButton = document.querySelectorAll('span');
+  const article = document.querySelectorAll('.article');
+
+  for(let j = 0; j < expandButton.length; j++) 
+  expandButton[j].addEventListener("click", function() {
+    
+    if(expandButton[j].textContent === "expand") {
+      expandButton[j].textContent = "collapse";
+      article[j].classList.toggle("article-open");
+    } else if(expandButton[j].textContent === "collapse") {
+      expandButton[j].textContent = "expand";
+      article[j].classList.toggle("article-open");
+    }
+  
+
+  /*
 
   Step 3: Don't forget to return something from your function!
+  */
+return article;
 
-  Step 4: Outside your function, loop over the data. At each iteration you'll use your component to create an article and append it to the DOM inside the 'articles' div.
+});
+  /*
+  Step 4: Outside your function, loop over the data. At each iteration you'll use your component to create an article and
+  append it to the DOM inside the 'articles' div.
 
-  Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
+  Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the
+  new article.
 */
