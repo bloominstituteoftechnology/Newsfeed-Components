@@ -88,7 +88,8 @@ const data = [
   }
 ];
 
-/* Step 1: Write a component called 'articleMaker' to create an article. You want your component to return markup like the template below: 
+/* Step 1: Write a component called 'articleMaker' to create an article. 
+You want your component to return markup like the template below: 
 
   <div class="article">
     <h2>{title of the article}</h2>
@@ -101,13 +102,57 @@ const data = [
 
   Hint: You will need to use createElement more than once here!
 
-  Your function should take either an object as its one argument, or 5 separate arguments mapping to each piece of the data object above.
+  Your function should take either an object as its one argument, 
+  or 5 separate arguments mapping to each piece of the data object above.
 
-  Step 2: Add an event listener to the expandButton span. This listener should toggle the class 'article-open' on the 'article' div.
+
+  Step 2: Add an event listener to the expandButton span. 
+  This listener should toggle the class 'article-open' on the 'article' div.
 
   Step 3: Don't forget to return something from your function!
 
-  Step 4: Outside your function, loop over the data. At each iteration you'll use your component to create an article and append it to the DOM inside the 'articles' div.
+  Step 4: Outside your function, loop over the data. 
+  At each iteration you'll use your component to create an article and append it to the DOM inside the 'articles' div.
 
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 */
+const articleBody = document.querySelector('.articles');
+
+function articleMaker (fullArticle) {
+  const articleDiv = document.createElement('div');
+  const articleHeader = document.createElement('h2');
+  const paragraphDate = document.createElement('p');
+  const firstP = document.createElement('p');
+  const secondP = document.createElement('p');
+  const thirdP = document.createElement('p');
+  const expandButton = document.createElement('span');
+
+  articleDiv.appendChild(articleHeader);
+  articleDiv.appendChild(paragraphDate);
+  articleDiv.appendChild(firstP);
+  articleDiv.appendChild(secondP);
+  articleDiv.appendChild(thirdP);
+  articleDiv.appendChild(expandButton);
+
+  articleHeader.textContent = fullArticle.title;
+  paragraphDate.textContent = fullArticle.date;
+  firstP.textContent = fullArticle.firstParagraph;
+  secondP.textContent = fullArticle.secondParagraph;
+  thirdP.textContent = fullArticle.thirdParagraph;
+  expandButton.textContent = ' To find out more click here!	';
+  
+  articleDiv.classList.add('article');
+  paragraphDate.classList.add('date');
+  expandButton.classList.add('expandButton');
+
+  expandButton.addEventListener('click', () => {
+    articleDiv.classList.toggle('article-open');
+  })
+  return articleDiv;
+}
+
+
+data.forEach(datam => {
+  articleBody.appendChild(articleMaker(datam));
+}) 
+
