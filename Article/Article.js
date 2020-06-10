@@ -85,6 +85,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Noah Niesen Is...',
+    date: 'Jan 1st, 0001',
+    firstParagraph: `Yoo wuddup??`,
+
+    secondParagraph: `I'm super stoked to be Jesus!`,
+
+    thirdParagraph: `Ok this was fun and all, but I'm dippin'. Peace!`
   }
 ];
 
@@ -111,3 +120,44 @@ const data = [
 
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 */
+
+// step 1
+function articleMaker(ttl, dte, firstP, secondP, thirdP) {
+  const article = document.createElement('div');
+  const title = document.createElement('h2');
+  const date = document.createElement('p');
+  const paragraphOne = document.createElement('p');
+  const paragraphTwo = document.createElement('p');
+  const paragraphThree = document.createElement('p');
+  const expandBtn = document.createElement('span');
+
+  article.appendChild(title);
+  article.appendChild(date);
+  article.appendChild(paragraphOne);
+  article.appendChild(paragraphTwo);
+  article.appendChild(paragraphThree);
+  article.appendChild(expandBtn);
+
+  article.classList.add('article');
+  date.classList.add('date');
+  expandBtn.classList.add('expandButton');
+
+  title.textContent = ttl;
+  date.textContent = dte;
+  paragraphOne.textContent = firstP;
+  paragraphTwo.textContent = secondP;
+  paragraphThree.textContent = thirdP;
+  expandBtn.textContent = "▼";
+
+  expandBtn.addEventListener('click', (event) => {
+    article.classList.toggle('article-open');
+  });
+
+  return article;
+}
+
+const articles = document.querySelector('.articles');
+
+data.forEach((obj) => {
+  articles.appendChild(articleMaker(obj.title, obj.date, obj.firstParagraph, obj.secondParagraph, obj.thirdParagraph));
+});
