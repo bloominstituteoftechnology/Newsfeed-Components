@@ -139,7 +139,15 @@ function articleMaker (fullArticle) {
   firstP.textContent = fullArticle.firstParagraph;
   secondP.textContent = fullArticle.secondParagraph;
   thirdP.textContent = fullArticle.thirdParagraph;
-  expandButton.textContent = ' To find out more click here!	';
+  expandButton.textContent = ' find out more	';
+
+  // expandButton.style.border = '1px solid grey';
+  expandButton.style.fontSize = '1rem';
+  expandButton.style.color = 'black';
+  expandButton.style.borderRadius = '20px';
+  expandButton.style.padding = "5px";
+  expandButton.style.margin = '10px';
+  expandButton.style.boxShadow = '0 8px 10px 0 rgba(0,0,0,0.2), 0 6px 10px 0 rgba(0,0,0,0.19) ';
   
   articleDiv.classList.add('article');
   paragraphDate.classList.add('date');
@@ -155,4 +163,3 @@ function articleMaker (fullArticle) {
 data.forEach(datam => {
   articleBody.appendChild(articleMaker(datam));
 }) 
-
