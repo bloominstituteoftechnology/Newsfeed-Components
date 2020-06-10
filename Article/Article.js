@@ -111,4 +111,58 @@ const data = [
 
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 */
-.
+
+// step 1
+const articles = document.querySelector('.articles')
+
+function create(articleAttrs){
+  const {title, date, firstParagraph, secondParagraph, thirdParagraph} = articleAttrs 
+
+  const article = document.createElement('div')
+  const articleTitle = document.createElement('h2')
+  const articleDate = document.createElement('p')
+  const articleContentOne = document.createElement('p')
+  const articleContentTwo = document.createElement('p')
+  const articleContentThree = document.createElement('p')
+  const articleExpandButton = document.createElement('span')
+
+  article.appendChild(articleTitle)
+  article.appendChild(articleDate)
+  article.appendChild(articleContentOne)
+  article.appendChild(articleContentTwo)
+  article.appendChild(articleContentThree)
+  article.appendChild(articleExpandButton)
+
+  article.classList.add('article')
+  articleDate.classList.add('date')
+  articleExpandButton.classList.add('expandButton')
+
+  articleTitle.textContent = title
+  articleDate.textContent = date
+  articleContentOne.textContent = firstParagraph
+  articleContentTwo.textContent = secondParagraph
+  articleContentThree.textContent = thirdParagraph
+  articleExpandButton.textContent = "expand"
+
+  articleExpandButton.addEventListener('click', event => {
+    article.classList.toggle('article-open')
+  })
+
+ return article 
+}
+
+
+const myArticle = {
+  title: 'My Article',
+  date: 'Today',
+  firstParagraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+  secondParagraph:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+  thirdParagraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+}
+
+data.push(myArticle)
+
+data.forEach(item => {
+  const article = create(item)
+  articles.appendChild(article)
+})
