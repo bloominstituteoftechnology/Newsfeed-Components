@@ -1,7 +1,6 @@
 /* This is the data we will be using to create our articles */
 /* Look over this data, then proceed to line 91*/
-const data = [
-  {
+const data = [{
     title: 'Lambda School Students: "We\'re the best!"',
     date: 'Nov 5th, 2018',
     firstParagraph: `Lucas ipsum dolor sit amet ben twi'lek padmé darth darth darth moff hutt organa twi'lek. Ben amidala secura skywalker lando
@@ -118,7 +117,7 @@ You want your component to return markup like the template below:
 */
 const articleBody = document.querySelector('.articles');
 
-function articleMaker (fullArticle) {
+function articleMaker(fullArticle) {
   const articleDiv = document.createElement('div');
   const articleHeader = document.createElement('h2');
   const paragraphDate = document.createElement('p');
@@ -139,16 +138,15 @@ function articleMaker (fullArticle) {
   firstP.textContent = fullArticle.firstParagraph;
   secondP.textContent = fullArticle.secondParagraph;
   thirdP.textContent = fullArticle.thirdParagraph;
-  expandButton.textContent = ' find out more	';
+  expandButton.textContent = ' Learn More	';
 
   // expandButton.style.border = '1px solid grey';
   expandButton.style.fontSize = '1rem';
-  expandButton.style.color = 'black';
   expandButton.style.borderRadius = '20px';
   expandButton.style.padding = "5px";
   expandButton.style.margin = '10px';
   expandButton.style.boxShadow = '0 8px 10px 0 rgba(0,0,0,0.2), 0 6px 10px 0 rgba(0,0,0,0.19) ';
-  
+
   articleDiv.classList.add('article');
   paragraphDate.classList.add('date');
   expandButton.classList.add('expandButton');
@@ -162,4 +160,4 @@ function articleMaker (fullArticle) {
 
 data.forEach(datam => {
   articleBody.appendChild(articleMaker(datam));
-}) 
+})
