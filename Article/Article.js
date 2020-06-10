@@ -151,6 +151,7 @@ function articleMaker(ttl, dte, firstP, secondP, thirdP) {
 
   expandBtn.addEventListener('click', (event) => {
     article.classList.toggle('article-open');
+    expandBtn.textContent = "▲";
   });
 
   return article;
