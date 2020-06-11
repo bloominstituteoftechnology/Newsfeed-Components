@@ -85,6 +85,21 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+  title: 'Terry for president 2020',
+  date: 'Jun 10th, 2020',
+  firstParagraph: `Dracaris. Dracaris. Dracaris. Dracaris. Dracaris. Dracaris. Dracaris. Dracaris. Dracaris. Dracaris. Dracaris. Dracaris. Dracaris. 
+  Dracaris. Dracaris. Dracaris. Dracaris. Dracaris. Dracaris. Dracaris. Dracaris. Dracaris. Dracaris. Dracaris. Dracaris. Dracaris. Dracaris. Dracaris.
+  Dracaris. Dracaris. Dracaris. Dracaris. Dracaris. Dracaris. Dracaris. Dracaris.`,
+
+  secondParagraph: `Dracaris? Dracaris? Dracaris? Dracaris? Dracaris? Dracaris? Dracaris? Dracaris? Dracaris? Dracaris? Dracaris? Dracaris? Dracaris?
+  Dracaris? Dracaris? Dracaris? Dracaris? Dracaris? Dracaris? Dracaris? Dracaris? Dracaris? Dracaris? Dracaris? Dracaris? Dracaris? Dracaris? Dracaris?
+  Dracaris? Dracaris? Dracaris? Dracaris?`,
+
+  thirdParagraph: `...DRACARIS! ...DRACARIS! ...DRACARIS! ...DRACARIS! ...DRACARIS! ...DRACARIS! ...DRACARIS! ...DRACARIS! ...DRACARIS! ...DRACARIS!
+  ...DRACARIS! ...DRACARIS! ...DRACARIS! ...DRACARIS! ...DRACARIS! ...DRACARIS! ...DRACARIS! ...DRACARIS! ...DRACARIS! ...DRACARIS! ...DRACARIS! ...DRACARIS!
+  ...DRACARIS! ...DRACARIS! ...DRACARIS! ...DRACARIS! ...DRACARIS! ...DRACARIS! ...DRACARIS! ...DRACARIS! ...DRACARIS! ...DRACARIS! ...DRACARIS! ...DRACARIS!`
   }
 ];
 
@@ -111,3 +126,53 @@ const data = [
 
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 */
+
+function articleMaker(title,date,firstParagraph,secondParagraph,thirdParagraph){
+  // creating
+  const art = document.createElement('div');
+  const header = document.createElement('h2');
+  const para = document.createElement('p');
+  const para1 = document.createElement('p');
+  const para2 = document.createElement('p');
+  const para3 = document.createElement('p');
+  const span = document.createElement('span');
+  
+
+
+  // appending
+  art.appendChild(header);
+  art.appendChild(para);
+  art.appendChild(para1);
+  art.appendChild(para2);
+  art.appendChild(para3);
+  art.appendChild(span);
+  
+
+
+  // styling
+  art.classList.add('article');
+  para.classList.add('date');
+  span.classList.add('expandButton');
+  
+ 
+  // update content
+  header.textContent=title;
+  para.textContent=date;
+  para1.textContent=firstParagraph;
+  para2.textContent=secondParagraph;
+  para3.textContent=thirdParagraph;
+  span.textContent='\u25bc';
+  
+  
+
+  // add events
+  span.addEventListener('click',()=>{
+    art.classList.toggle('article-open');
+  })
+
+  return art;
+}
+const articles=document.querySelector('.articles');
+data.forEach((e) => {
+  articles.appendChild(articleMaker(e.title,e.date,e.firstParagraph,e.secondParagraph,e.thirdParagraph))
+});
