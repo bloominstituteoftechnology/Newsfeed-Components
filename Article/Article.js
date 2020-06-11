@@ -112,3 +112,91 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+
+
+
+
+function articleCreator (title,date,firstParagraph,secondParagraph,thirdParagraph){
+
+
+  const article = document.createElement('div')
+  article.classList.add('article')
+
+  const articleTitle = document.createElement('h2')
+  articleTitle.classList.add('articleTitle')
+  articleTitle.textContent= title;
+  article.appendChild(articleTitle)
+
+
+  const articleDate = document.createElement('p')
+  articleDate.classList.add('articleDate')
+  articleDate.textContent = date;
+  article.appendChild(articleDate)
+
+
+
+
+  /// first paragraph
+  const articleFirstParagraph = document.createElement('p')
+  articleFirstParagraph.classList.add('articleFirstParagraph')
+  articleFirstParagraph.textContent = firstParagraph;
+  article.appendChild(articleFirstParagraph)
+
+
+
+
+
+/// second paragraph
+  const articleSecondParagraph = document.createElement('p')
+  articleSecondParagraph.classList.add('articleSecondParagraph')
+  articleSecondParagraph.textContent = secondParagraph;
+  article.appendChild(articleSecondParagraph )
+
+
+
+
+
+ /// third paragraph
+
+ const articleThirdParagraph = document.createElement('p')
+ articleThirdParagraph.classList.add('articleThirdParagraph')
+ articleThirdParagraph.textContent = thirdParagraph;
+ article.appendChild(articleThirdParagraph)
+
+
+
+// Button
+ const expandButton = document.createElement('span')
+ expandButton.classList.add('expandButton')
+ article.appendChild(expandButton)
+ expandButton.textContent = '\u25bc'
+
+
+
+
+ const articleOpen = document.createElement('div')
+ article.appendChild(articleOpen)
+
+
+
+
+ expandButton.addEventListener('click',(e)=>{
+  const articleOpen = document.querySelector('.article-open')
+  article.classList.toggle('article-open')
+})
+
+
+
+
+
+ return article;
+}
+
+
+
+const articles = document.querySelector('.articles')
+
+data.forEach((element) => {
+  articles.appendChild(articleCreator(element.title,element.date,element.firstParagraph,element.secondParagraph,element.thirdParagraph)) 
+});
