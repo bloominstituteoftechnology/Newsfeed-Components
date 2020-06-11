@@ -112,50 +112,55 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 */
 
-function articleMaker(title, date, paragraph1, paragraph2, paragraph3){
+const articlesContainer = document.querySelector('.articles');
+
+data.forEach((obj) => {
+    articlesContainer.appendChild(articleMaker(obj.title, obj.date, obj.firstParagraph, obj.secondParagraph, obj.thirdParagraph))
+  });
+    
+function articleMaker(title, date, firstParagraph, secondParagraph, thirdParagraph){
+
+  
 
   const article = document.createElement('div');
-  const title = document.createElement('h2');
-  const date = document.createElement('p');
+  const artTitle = document.createElement('h2');
+  const artDate = document.createElement('p');
   const paragraph1 = document.createElement('p');
   const paragraph2 = document.createElement('p');
   const paragraph3 = document.createElement('p');
   const expandButton = document.createElement('span');
 
-  
-  article.classList.add('article');
-  title.classList.add('title');
-  date.classList.add('date');
-  expandButton.classList.add('expandButton');
-  
-
-  article.appendChild(title);
-  article.appendChild(date);
+  article.appendChild(artTitle);
+  article.appendChild(artDate);
   article.appendChild(paragraph1);
   article.appendChild(paragraph2);
   article.appendChild(paragraph3);
   article.appendChild(expandButton);
 
+  article.classList.add('article');
+  artTitle.classList.add('title');
+  artDate.classList.add('date');
+  expandButton.classList.add('expandButton');
   
 
-  expandButton.addEventListener('click', (e) => {
-    expandButton.classList.toggle('toggle-on');
+  artTitle.textContent = title;
+  artDate.textContent = date;
+  paragraph1.textContent = firstParagraph;
+  paragraph2.textContent = secondParagraph;
+  paragraph3.textContent = thirdParagraph;
+  expandButton.textContent = 'Click me damit';
+  
+  expandButton.addEventListener('click', () => {
+    article.classList.toggle('article-open');
   });
-
-  // const article = document.createElement(data);
-  // const title = document.createElement(article[0]);
-  // const date = document.createElement(data[1]);
-  // const firstParagraph = document.createElement(data[2]);
-  // const secondParagraph = document.createElement(data[3]);
-  // const thirdParagraph = document.createElement(data[4]);
 
 
   return article;
 
-}
+};
 
-const article = document.querySelector('.articles');
 
-data.forEach((obj) => {
-  article.appendChild(articleMaker(obj.title, obj.date, obj.firstParagraph, obj.secondParagraph, obj.thirdParagraph))
-});
+
+
+
+
