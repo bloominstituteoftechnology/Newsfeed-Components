@@ -37,15 +37,14 @@ function menuMake(menulistitems){
 const menu = document.createElement("div");
 const list = document.createElement("ul");
 
-menu.appendChild(list);
 //step 2 
 menulistitems.forEach((items) =>{
 const listitems = document.createElement("li");
 listitems.textContent = items;
 list.appendChild(listitems);
-
 });
 
+menu.appendChild(list);
 menu.classList.add(menu);
 
 //step 3 & 4
