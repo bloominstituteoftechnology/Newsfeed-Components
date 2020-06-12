@@ -45,7 +45,7 @@ list.appendChild(listitems);
 });
 
 menu.appendChild(list);
-menu.classList.add(menu);
+menu.classList.add("menu");
 
 //step 3 & 4
 const menubut = document.querySelector(".menu-button");
@@ -53,10 +53,11 @@ menubut.addEventListener("click",(e) =>{
 menu.classList.toggle("menu--open");
 });
 
+
 //step 5 
 return menu;
 }
 //step 6 
 const header = document.querySelector(".header");
-header.appendChild(menuMake(menulistitems));
+header.appendChild(menuMake(menuItems));
 
