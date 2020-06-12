@@ -85,6 +85,12 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {title: "Is that a Jojo Reference?!",
+  date: "2001",
+  firstParagraph: "Il vento d'oro",
+  secondParagraph: "Kono Giorno Giovanna niwa yume ga aru ",
+  thirdParagraph: "MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA "
   }
 ];
 
@@ -112,6 +118,7 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 */
 
+//step 1
 function articleMake(title, date, firstParagraph, secondParagraph, thirdParagraph){
   const article = document.createElement("div");
   const articletitle = document.createElement("h2");
@@ -135,14 +142,25 @@ function articleMake(title, date, firstParagraph, secondParagraph, thirdParagrap
   article.classList.add("articledate");
   article.classList.add("spanbutton");
 
-  articletitle.textContent(title);
-  articledate.textContent(date);
-  para1.textContent(firstParagraph);
-  para2.textContent(secondParagraph);
-  para3.textContent(thirdParagraph);
+  articletitle.textContent = title;
+  articledate.textContent = date;
+  para1.textContent = firstParagraph;
+  para2.textContent= secondParagraph;
+  para3.textContent= thirdParagraph;
+  spanbutton.textContent = "\u25bc";
 
+  //step 2 
   spanbutton.addEventListener("click", (e) =>{
-  article.classList.toggle("article-test-open");
+  article.classList.toggle("article-open");
   });
+  
+  //step 3 
   return article;
 }
+
+//step 4 
+const articles = document.querySelector(".articles");
+data.forEach((item) =>{
+  articles.appendChild(articleMake(item.title, item.date, item.firstParagraph, item.secondParagraph, item.thirdParagraph));
+});
+
