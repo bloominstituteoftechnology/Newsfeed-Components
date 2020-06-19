@@ -29,7 +29,7 @@ In this project we are going to be building a news feed reader. The goal is to h
 ### Launching the project
 
 * Run `npm start` from the top level of the Newsfeed-Components folder
-* Open index.html in your browser
+* Navigate Chrome to the URL indicated in the output of the `npm start` command
 
 ### Part 1: The Articles Component
 
