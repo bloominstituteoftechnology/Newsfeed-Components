@@ -28,8 +28,10 @@ In this project we are going to be building a news feed reader. The goal is to h
 
 ### Launching the project
 
-* Run `npm start` from the top level of the Newsfeed-Components folder
-* Navigate Chrome to the URL indicated in the output of the `npm start` command
+* [ ] Navigate to the root of the project with your command line.
+* [ ] Run `npm install` to download any dependencies listed in the `package.json` file.
+* [ ] Run `npm start` to compile your project and launch a development server.
+* [ ] Navigate Chrome to the URL indicated in the output of the `npm start` command
 
 ### Part 1: The Articles Component
 
