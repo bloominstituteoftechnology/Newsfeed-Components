@@ -85,6 +85,13 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'My article',
+    date: "today",
+    firstParagraph: 'Hello first p',
+    secondParagraph: 'Hello again',
+    thirdParagraph: 'Hello one last time'
   }
 ];
 
@@ -149,6 +156,7 @@ console.log('hi')
 
 
 
+
 // //Step 4: Outside your function, loop over the data. At each iteration you'll use your component to create an article and append it to the DOM inside the 'articles' div.looping through json to create articles based on it's data
 data.forEach(object => {
   const newArticles = articleMaker(object)
@@ -160,6 +168,6 @@ data.forEach(object => {
    //Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
  
-
- 
+   //added
+  
 
