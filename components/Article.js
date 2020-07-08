@@ -1,5 +1,3 @@
-/* This is the data we will be using to create our articles */
-/* Look over this data, then proceed to line 91*/
 const data = [
   {
     title: 'Lambda School Students: "We\'re the best!"',
@@ -85,29 +83,99 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Lambda School Students: "We\'re the best!"',
+    date: 'Nov 5th, 2018',
+    firstParagraph: `Lucas ipsum dolor sit amet ben twi'lek padmé darth darth darth moff hutt organa twi'lek. Ben amidala secura skywalker lando
+        moff wicket tatooine luke.Solo wampa wampa calrissian yoda moff.Darth grievous darth gonk darth hutt.Darth baba skywalker
+        watto fett jango maul han.Mon ewok sidious sidious lando kenobi grievous gamorrean solo.Yoda wedge utapau darth calamari.
+        Hutt calamari darth jabba.Darth dooku amidala organa moff.Boba darth binks solo hutt skywalker dantooine skywalker.Qui - gonn
+        jar twi'lek jinn leia jango skywalker mon.`,
+
+    secondParagraph: `Grievous fett calamari anakin skywalker hutt.Alderaan darth kenobi darth r2- d2
+        windu mothma.Sidious darth calamari moff.Wampa mothma sith wedge solo mara.Darth gonk maul sith moff chewbacca palpatine
+        mace amidala.C - 3po solo skywalker anakin yoda leia.Maul wampa bespin watto jade ewok darth jabba.Lando dantooine moff
+        k - 3po dantooine luke.Fisto mandalore darth wedge c - 3p0 ahsoka.Secura moff palpatine fett.Anakin sith darth darth.Moff
+        solo leia ben ponda jade.Binks jango aayla skywalker skywalker cade.Mustafar darth ventress anakin watto.Yavin jawa sebulba
+        owen jinn tatooine sith organa.`,
+
+    thirdParagraph: `Dagobah hutt jawa leia calamari ventress skywalker yoda. Binks wicket hutt coruscant sidious
+        naboo ackbar tatooine. Hutt lars padmé darth. Maul solo darth darth jabba qui-gon chewbacca darth maul. Moff baba wicket
+        han. C-3po antilles moff qui-gon ahsoka aayla dooku amidala. Palpatine droid amidala droid k-3po twi'lek padmé wookiee. Leia
+        moff calamari mon obi-wan. Solo grievous lando coruscant. Jinn darth palpatine obi-wan mon.`
   }
 ];
 
-/* Step 1: Write a component called 'articleMaker' to create an article. You want your component to return markup like the template below: 
+// class articleMaker extends HTMLElement{
+//   constructor(){
+//     super();
+//     this.innerHTML = data.map(articles =>{
+//       return (
+//         `
+//         <div class="article">
+//         <h2>${articles.title}</h2>
+//         <p class="date">${articles.date}</p>
+//         <p>${articles.firstParagraph}</p>
+//         <p>${articles.secondParagraph}</p>
+//         <p>${articles.thirdParagraph}</p>
+//         <span class='expandButton'>+</span>
+//       </div>
+//         `
+//       )
+//     })
+//   };
+//   connectedCallback() {
+//    document.querySelectorAll(".expandButton").forEach(item=>{
+//      item.addEventListener('click', ()=> document.querySelector('.article').className = 'article-open')
+//    })
+  
+//   }
+// };
+// window.customElements.define('article-maker', articleMaker);
 
-  <div class="article">
-    <h2>{title of the article}</h2>
-    <p class="date">{date of the article}</p>
+function articleMaker(obj) {
+  const article = document.createElement('div')
+  article.className = "article"
+  const title = document.createElement('h2')
+  title.innerText = obj.title
+  const date = document.createElement('p')
+  date.className = "date"
+  date.innerText = obj.date
+  const paragraph1 = document.createElement('p')
+  paragraph1.innerText = obj.firstParagraph
+  const paragraph2 = document.createElement('p')
+  paragraph2.innerText = obj.secondParagraph
+  const paragraph3 = document.createElement('p')
+  paragraph3.innerText = obj.thirdParagraph
+  const expandButton = document.createElement('span')
+  expandButton.className = "expandButton"
+  expandButton.innerText ="+"
+  expandButton.addEventListener('click', ()=> article.classList.toggle('article-open'))
+  article.append(title, date, paragraph1, paragraph2, paragraph3, expandButton)
+  return article
+};
+const articles = document.querySelector(".articles");
+data.forEach(obj => articles.appendChild(articleMaker(obj)));
 
-    {three separate paragraph elements}
-
-    <span class='expandButton'>+</span>
-  </div>
-
-  Hint: You will need to use createElement more than once here!
-
-  Your function should take either an object as its one argument, or 5 separate strings mapping to each property of an article object.
-
-  Step 2: Add an event listener to the expandButton span. This listener should toggle the class 'article-open' on the 'article' div.
-
-  Step 3: Don't forget to return something from your function!
-
-  Step 4: Outside your function, loop over the data. At each iteration you'll use your component to create an article and append it to the DOM inside the 'articles' div.
-
-  Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
-*/
+// class menuMaker extends HTMLElement{
+//   constructor(){
+//     super();
+//     this.innerHTML = menuItems.map(item =>{
+//       return (
+//         `
+//         <div class="menu">
+//         <ul>
+//           <li>${item}</li>
+//         </ul>
+//       </div>
+//         `
+//       )
+//     })
+//   };
+//   connectedCallback() {
+//     document.querySelector('.menu-button').addEventListener('click',
+//      ()=>{document.querySelector('.menu').classList.toggle('menu--open')})
+//    }
+// };
+// window.customElements.define('menu-maker', menuMaker);
