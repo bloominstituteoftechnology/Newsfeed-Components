@@ -112,6 +112,7 @@ const data = [
     const par2 = document.createElement('p')
     const par3 = document.createElement('p')
     const span1 = document.createElement('span')
+    const button = document.createElement('button')
 
     //appending elements to html
     subDiv.appendChild(header2)
@@ -120,6 +121,7 @@ const data = [
     subDiv.appendChild(par2)
     subDiv.appendChild(par3)
     subDiv.appendChild(span1)
+    span1.appendChild(button)
 
     //adding class names to elements
     subDiv.className = 'article'
@@ -128,28 +130,36 @@ const data = [
 
     //adding text to new elements
     header2.textContent = object.title
-    data.textContent = object.data
+    date.textContent = object.date
     par1.textContent = object.firstParagraph
     par2.textContent = object.secondParagraph
     par3.textContent = object.thirdParagraph
+    span1.textContent = '\u25bc'
     
-    
+    // //Step 2: Add an event listener to the expandButton span. This listener should toggle the class 'article-open' on the 'article' div.toggle button 'expand' class
+  subDiv.addEventListener('click', () => {
+  subDiv.classList.toggle('article-open')
+
+})
+//Step 3: Don't forget to return something from your function!
     return subDiv
   }
 articleMaker(data)
 console.log('hi')
 
-//looping through json to create articles based on it's data
+
+
+// //Step 4: Outside your function, loop over the data. At each iteration you'll use your component to create an article and append it to the DOM inside the 'articles' div.looping through json to create articles based on it's data
 data.forEach(object => {
   const newArticles = articleMaker(object)
   articles.appendChild(newArticles)
 })
 
-  //Step 2: Add an event listener to the expandButton span. This listener should toggle the class 'article-open' on the 'article' div.
+ 
 
-  //Step 3: Don't forget to return something from your function!
+   //Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
-  //Step 4: Outside your function, loop over the data. At each iteration you'll use your component to create an article and append it to the DOM inside the 'articles' div.
+ 
 
-  //Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
+ 
 
