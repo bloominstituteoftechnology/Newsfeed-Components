@@ -1,5 +1,8 @@
 /* This is the data we will be using to create our articles */
 /* Look over this data, then proceed to line 91*/
+
+
+
 const data = [
   {
     title: 'Lambda School Students: "We\'re the best!"',
@@ -85,9 +88,71 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Campfire Ghost Stories',
+    date: 'October 31st, 2011',
+    firstParagraph: 'string',
+
+    secondParagraph: 'string',
+
+    thirdParagraph: 'string'
   }
 ];
 
+function articleMaker(articleMakerObj){
+  const article = document.createElement('div');
+  const title = document.createElement('h1');
+  const date = document.createElement('p');
+  const firstP = document.createElement('p');
+  const secondP = document.createElement('p');
+  const thirdP = document.createElement('p');
+  const expandButton = document.createElement('span');
+
+  title.style.fontSize = '1.3em'
+
+  article.appendChild(title);
+  article.appendChild(date);
+  article.appendChild(firstP);
+  article.appendChild(secondP);
+  article.appendChild(thirdP);
+  article.appendChild(expandButton);
+
+  article.className = 'article';
+  // article.className = 'article-open';
+  date.className = 'date';
+  expandButton.className = 'expandButton';
+
+  expandButton.textConent = '+';
+
+  title.textContent = articleMakerObj.title;
+  date.textContent  = articleMakerObj.date;
+  firstP.textContent = articleMakerObj.firstParagraph;
+  secondP.textContent = articleMakerObj.secondParagraph;
+  thirdP.textContent = articleMakerObj.thirdParagraph;
+
+  article.addEventListener('click', () => {
+    article.classList.toggle('article-open');
+  })
+
+  return article
+}
+
+
+
+const articles = document.querySelector('.articles');
+
+data.forEach(object => {
+  const articleContent = articleMaker(object);
+  articles.appendChild(articleContent);
+})
+
+// const hOnes = document.querySelectorAll('h1');
+// console.log('sanity check')
+// console.log(hOnes)
+// hOnes.forEach(h1 => {
+//   h1.style.fontSize = '1.3em'
+// })
 /* Step 1: Write a component called 'articleMaker' to create an article. You want your component to return markup like the template below: 
 
   <div class="article">
