@@ -88,26 +88,91 @@ const data = [
   }
 ];
 
-/* Step 1: Write a component called 'articleMaker' to create an article. You want your component to return markup like the template below: 
+// Step 1: Write a component called 'articleMaker' to create an article. You want your component to return markup like the template below: 
 
-  <div class="article">
-    <h2>{title of the article}</h2>
-    <p class="date">{date of the article}</p>
 
-    {three separate paragraph elements}
 
-    <span class='expandButton'>+</span>
-  </div>
 
-  Hint: You will need to use createElement more than once here!
 
-  Your function should take either an object as its one argument, or 5 separate strings mapping to each property of an article object.
 
-  Step 2: Add an event listener to the expandButton span. This listener should toggle the class 'article-open' on the 'article' div.
 
-  Step 3: Don't forget to return something from your function!
 
-  Step 4: Outside your function, loop over the data. At each iteration you'll use your component to create an article and append it to the DOM inside the 'articles' div.
+// <div class="article">
+// <h2>{title of the article}</h2>
+// <p class="date">{date of the article}</p>
 
-  Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
-*/
+// {three separate paragraph elements}
+
+// <span class='expandButton'>+</span>
+// </div>
+
+// Hint: You will need to use createElement more than once here!
+
+//Your function should take either an object as its one argument, or 5 separate strings mapping to each property of an article object.
+
+//Step 2: Add an event listener to the expandButton span. This listener should toggle the class 'article-open' on the 'article' div.
+
+
+
+
+
+
+//Step 3: Don't forget to return something from your function!
+
+
+
+
+//Step 4: Outside your function, loop over the data. At each iteration you'll use your component to create an article and append it to the DOM inside the 'articles' div.
+
+
+
+
+
+//Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
+
+function articleComponent(title, date, firstParagraph, secondParagraph, thirdParagraph) {
+  const article = document.createElement("div");
+  const titleh = document.createElement("h2");
+  const firstPara = document.createElement("p");
+  const secondPara = document.createElement("p");
+  const thirdPara = document.createElement("p");
+  const fourthPara = document.createElement("p");
+  const artSpan = document.createElement("span");
+
+  article.appendChild(titleh);
+  article.appendChild(firstPara);
+  article.appendChild(secondPara);
+  article.appendChild(thirdPara);
+  article.appendChild(fourthPara);
+  article.appendChild(artSpan);
+
+
+  article.classList.add("article");
+  firstPara.classList.add("date");
+  artSpan.classList.add("expandButton");
+
+
+
+  titleh.textContent = title;
+  firstPara.textContent = date;
+  secondPara.textContent = firstParagraph;
+  thirdPara.textContent = secondParagraph;
+  fourthPara.textContent = thirdParagraph;
+  artSpan.textContent = '\u25bc';
+
+
+  artSpan.addEventListener("click", () => {
+    article.classList.toggle("article-open")
+
+  })
+
+  return article;
+
+
+}
+const articles = document.querySelector(".articles");
+
+data.forEach((dataObject) => {
+  const dataComponent = articleComponent(dataObject.title, dataObject.date, dataObject.firstParagraph, dataObject.secondParagraph, dataObject.thirdParagraph);
+  articles.appendChild(dataComponent);
+})
