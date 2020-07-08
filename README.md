@@ -45,6 +45,12 @@ In this project we are going to be building a news feed reader. The goal is to h
 
 * Follow the instructions found in the Menu.js file to complete the JavaScript functionality.
 
+### Part 4: Exit Ticket 
+
+Once you begin, you will have 15 minutes to answer the questions [here](https://app.codesignal.com/public-test/wJnnCcg7nzMWbuptD/uZmuwFasNH3WoC).
+
+The completion of these questions is mandatory for MVP. However, passing the quiz doesn't affect your standing as a Lambda School student whatsoever. This is Lambda School testing itself! Please answer honestly and to the best of your ability without using external references.
+
 ### Stretch Goals
 
 If you complete the main goals of the page let's play around with some cool animation libraries.
