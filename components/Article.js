@@ -85,6 +85,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Winter is coming',
+    date: 'Nov 5th, 2018',
+    firstParagraph: `The Dothraki do things in their own time, for their own reasons. The night is dark and full of terrors. Words are like wind. A dream of Spring. King in the North. Forgive my manners. I don't see many ladies these days. Lucky for the ladies. As High as Honor. As High as Honor. Our Sun Shines Bright. Never Resting.`,
+  
+    secondParagraph: `The Dothraki do things in their own time, for their own reasons. The night is dark and full of terrors. Words are like wind. A dream of Spring. King in the North. Forgive my manners. I don't see many ladies these days. Lucky for the ladies. As High as Honor. As High as Honor. Our Sun Shines Bright. Never Resting.`,
+  
+    thirdParagraph: `The Dothraki do things in their own time, for their own reasons. The night is dark and full of terrors. Words are like wind. A dream of Spring. King in the North. Forgive my manners. I don't see many ladies these days. Lucky for the ladies. As High as Honor. As High as Honor. Our Sun Shines Bright. Never Resting.`
   }
 ];
 
@@ -152,14 +161,14 @@ data.forEach(article => {
 
 //   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
-const myArticleObj =   {
-  title: 'Winter is coming',
-  date: 'Nov 5th, 2018',
-  firstParagraph: `The Dothraki do things in their own time, for their own reasons. The night is dark and full of terrors. Words are like wind. A dream of Spring. King in the North. Forgive my manners. I don't see many ladies these days. Lucky for the ladies. As High as Honor. As High as Honor. Our Sun Shines Bright. Never Resting.`,
+// const myArticleObj =   {
+//   title: 'Winter is coming',
+//   date: 'Nov 5th, 2018',
+//   firstParagraph: `The Dothraki do things in their own time, for their own reasons. The night is dark and full of terrors. Words are like wind. A dream of Spring. King in the North. Forgive my manners. I don't see many ladies these days. Lucky for the ladies. As High as Honor. As High as Honor. Our Sun Shines Bright. Never Resting.`,
 
-  secondParagraph: `The Dothraki do things in their own time, for their own reasons. The night is dark and full of terrors. Words are like wind. A dream of Spring. King in the North. Forgive my manners. I don't see many ladies these days. Lucky for the ladies. As High as Honor. As High as Honor. Our Sun Shines Bright. Never Resting.`,
+//   secondParagraph: `The Dothraki do things in their own time, for their own reasons. The night is dark and full of terrors. Words are like wind. A dream of Spring. King in the North. Forgive my manners. I don't see many ladies these days. Lucky for the ladies. As High as Honor. As High as Honor. Our Sun Shines Bright. Never Resting.`,
 
-  thirdParagraph: `The Dothraki do things in their own time, for their own reasons. The night is dark and full of terrors. Words are like wind. A dream of Spring. King in the North. Forgive my manners. I don't see many ladies these days. Lucky for the ladies. As High as Honor. As High as Honor. Our Sun Shines Bright. Never Resting.`
-}
+//   thirdParagraph: `The Dothraki do things in their own time, for their own reasons. The night is dark and full of terrors. Words are like wind. A dream of Spring. King in the North. Forgive my manners. I don't see many ladies these days. Lucky for the ladies. As High as Honor. As High as Honor. Our Sun Shines Bright. Never Resting.`
+// }
 
-articles.appendChild(articleMaker(myArticleObj))
+// articles.appendChild(articleMaker(myArticleObj))
