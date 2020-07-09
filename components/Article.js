@@ -121,6 +121,7 @@ const p1 = document.createElement('p')
 const p2 = document.createElement('p')
 const p3 = document.createElement('p')
 const expandButton = document.createElement('span')
+const readButton = document.createElement('span')
 
 article.appendChild(articleTitle)
 article.appendChild(articleDate)
@@ -128,22 +129,35 @@ article.appendChild(p1)
 article.appendChild(p2)
 article.appendChild(p3)
 article.appendChild(expandButton)
+article.appendChild(readButton)
 
 article.className = 'article'
 articleDate.className = 'date'
 expandButton.className = 'expandButton'
+readButton.className = 'readButton '
 
 articleTitle.textContent = articleObj.title
 articleDate.textContent = articleObj.date
 p1.textContent = articleObj.firstParagraph
 p2.textContent = articleObj.secondParagraph
 p3.textContent = articleObj.thirdParagraph
-expandButton.textContent = "+"
+expandButton.textContent = "Click to expand"
+readButton.textContent = 'Read'
 
 //   Step 2: Add an event listener to the expandButton span. This listener should toggle the class 'article-open' on the 'article' div.
 
 expandButton.addEventListener('click', () => {
   article.classList.toggle('article-open')
+  if(article.classList.contains('article-open')){
+    expandButton.textContent = 'Click to close'
+  } else {
+    expandButton.textContent = 'Click to expand'
+  }
+  // gsap.from (article, {opacity: 0, y:-50, speed: 1})
+})
+
+readButton.addEventListener('click', () => {
+  article.style.display = 'none'
 })
 
 //   Step 3: Don't forget to return something from your function!
@@ -160,15 +174,4 @@ data.forEach(article => {
 })
 
 //   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
-
-// const myArticleObj =   {
-//   title: 'Winter is coming',
-//   date: 'Nov 5th, 2018',
-//   firstParagraph: `The Dothraki do things in their own time, for their own reasons. The night is dark and full of terrors. Words are like wind. A dream of Spring. King in the North. Forgive my manners. I don't see many ladies these days. Lucky for the ladies. As High as Honor. As High as Honor. Our Sun Shines Bright. Never Resting.`,
-
-//   secondParagraph: `The Dothraki do things in their own time, for their own reasons. The night is dark and full of terrors. Words are like wind. A dream of Spring. King in the North. Forgive my manners. I don't see many ladies these days. Lucky for the ladies. As High as Honor. As High as Honor. Our Sun Shines Bright. Never Resting.`,
-
-//   thirdParagraph: `The Dothraki do things in their own time, for their own reasons. The night is dark and full of terrors. Words are like wind. A dream of Spring. King in the North. Forgive my manners. I don't see many ladies these days. Lucky for the ladies. As High as Honor. As High as Honor. Our Sun Shines Bright. Never Resting.`
-// }
-
-// articles.appendChild(articleMaker(myArticleObj))
+//okay

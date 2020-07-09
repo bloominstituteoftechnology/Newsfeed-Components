@@ -40,8 +40,8 @@ const menuButton = document.querySelector('.menu-button')
 //   Step 4: add a click event listener to the menu button. When clicked it should toggle the class 'menu--open' on the menu (your div with a 'menu' class).
 menuButton.addEventListener('click',() => {
   menu.classList.toggle('menu--open')
+  // gsap.from(menu, {opacity: 0, x:-50, speed: 1})
 })
-
 //   Step 5: return your div with a 'menu' class.
   return menu
 }
