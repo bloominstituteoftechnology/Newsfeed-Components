@@ -85,6 +85,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'New article',
+    date: 'Jul 7th, 2020',
+    firstParagraph: `Something new. `,
+
+    secondParagraph: `More news. `,
+
+    thirdParagraph: `Too much news.`
   }
 ];
 
@@ -111,3 +120,38 @@ const data = [
 
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 */
+
+
+
+function articleMaker(elem){
+
+  const article = document.createElement('div');
+  const title = document.createElement('h2');
+  const date = document.createElement('p');
+  const paragraphOne = document.createElement('p');
+  const paragraphTwo = document.createElement('p');
+  const paragraphThree = document.createElement('p');
+  
+  const expandButton = document.createElement('span');
+
+  date.className = 'date';
+  article.className = 'article';
+
+  date.textContent = elem.date;
+  title.textContent = elem.title;
+  
+  paragraphOne.textContent = elem.firstParagraph;
+  paragraphTwo.textContent = elem.secondParagraph;
+  paragraphThree.textContent = elem.thirdParagraph;
+
+  
+  expandButton.className = 'expandButton';
+  expandButton.textContent = '+';
+
+  expandButton.addEventListener('click', () => article.classList.toggle('article-open'));
+  article.append(title, date, paragraphOne, paragraphTwo, paragraphThree, expandButton);
+  return article;
+}
+const articles = document.querySelector('.articles');
+data.forEach(article => articles.appendChild(articleMaker(article)));
+
