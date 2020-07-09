@@ -85,6 +85,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Array.map method!',
+    date: 'Jan 15th, 2020',
+    firstParagraph: `.map is a handy array method! It creates a new array with the return value of a function executed for each element in the calling array. Which means we get a brand spanking new data set, and don't have to mutate the original!`,
+
+    secondParagraph: `Despite how handy it can be, .map should not be used with abandon. If we are not going to use the new array for anything or no value is returned from the callback function, then we should opt for .forEach, a for-of instead. `,
+
+    thirdParagraph: `Consider all the array methods when deciding how to acheive a task. They're annoying, but helpful sometimes, like a younger sibling, or the common cold`
   }
 ];
 
@@ -111,3 +120,50 @@ const data = [
 
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 */
+const articles = document.querySelector('.articles')
+
+function articleMaker(data) {
+  // build the strucure by creating elements 
+  const article = document.createElement('div')
+  const articleTitle = document.createElement('h2')
+  const dateLine = document.createElement('p')
+  const contentBoxOne = document.createElement('p')
+  const contentBoxTwo = document.createElement('p')
+  const contentBoxThree = document.createElement('p')
+  const expandButton = document.createElement('span')
+
+  // now that the structure elements have a reference - append to the container 
+ article.appendChild(articleTitle)
+ article.appendChild(dateLine)
+ article.appendChild(contentBoxOne)
+ article.appendChild(contentBoxTwo)
+ article.appendChild(contentBoxThree)
+ article.appendChild(expandButton)
+  
+
+  // assign class names to the appropriate elements 
+  article.classList.add('article')
+  dateLine.className = 'date'
+  expandButton.className = 'expandButton'
+
+  // for each iteration we want to assign the text content from a position of the object 
+  articleTitle.textContent = data.title
+  dateLine.textContent = data.date 
+  contentBoxOne.textContent = data.firstParagraph
+  contentBoxTwo.textContent = data.secondParagraph
+  contentBoxThree.textContent = data.thirdParagraph
+  expandButton.textContent = '+'
+  console.log(article)
+
+ article.addEventListener('click', () => {
+   article.classList.toggle('article-open')
+  })
+  return article
+}
+
+articleMaker(data)
+
+data.forEach((item) => {
+ const article = articleMaker(item)
+ document.body.appendChild(article)
+})
