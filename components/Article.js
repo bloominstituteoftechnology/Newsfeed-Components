@@ -85,29 +85,93 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Winter is coming',
+    date: 'Nov 5th, 2018',
+    firstParagraph: `The Dothraki do things in their own time, for their own reasons. The night is dark and full of terrors. Words are like wind. A dream of Spring. King in the North. Forgive my manners. I don't see many ladies these days. Lucky for the ladies. As High as Honor. As High as Honor. Our Sun Shines Bright. Never Resting.`,
+  
+    secondParagraph: `The Dothraki do things in their own time, for their own reasons. The night is dark and full of terrors. Words are like wind. A dream of Spring. King in the North. Forgive my manners. I don't see many ladies these days. Lucky for the ladies. As High as Honor. As High as Honor. Our Sun Shines Bright. Never Resting.`,
+  
+    thirdParagraph: `The Dothraki do things in their own time, for their own reasons. The night is dark and full of terrors. Words are like wind. A dream of Spring. King in the North. Forgive my manners. I don't see many ladies these days. Lucky for the ladies. As High as Honor. As High as Honor. Our Sun Shines Bright. Never Resting.`
   }
 ];
 
-/* Step 1: Write a component called 'articleMaker' to create an article. You want your component to return markup like the template below: 
+// Step 1: Write a component called 'articleMaker' to create an article. You want your component to return markup like the template below: 
 
-  <div class="article">
-    <h2>{title of the article}</h2>
-    <p class="date">{date of the article}</p>
+//   <div class="article">
+//     <h2>{title of the article}</h2>
+//     <p class="date">{date of the article}</p>
 
-    {three separate paragraph elements}
+//     {three separate paragraph elements}
 
-    <span class='expandButton'>+</span>
-  </div>
+//     <span class='expandButton'>+</span>
+//   </div>
 
-  Hint: You will need to use createElement more than once here!
+//   Hint: You will need to use createElement more than once here!
 
-  Your function should take either an object as its one argument, or 5 separate strings mapping to each property of an article object.
+//   Your function should take either an object as its one argument, or 5 separate strings mapping to each property of an article object.
 
-  Step 2: Add an event listener to the expandButton span. This listener should toggle the class 'article-open' on the 'article' div.
+function articleMaker(articleObj){
 
-  Step 3: Don't forget to return something from your function!
+const article = document.createElement('div')
+const articleTitle = document.createElement('h2')
+const articleDate = document.createElement('p')
+const p1 = document.createElement('p')
+const p2 = document.createElement('p')
+const p3 = document.createElement('p')
+const expandButton = document.createElement('span')
+const readButton = document.createElement('span')
 
-  Step 4: Outside your function, loop over the data. At each iteration you'll use your component to create an article and append it to the DOM inside the 'articles' div.
+article.appendChild(articleTitle)
+article.appendChild(articleDate)
+article.appendChild(p1)
+article.appendChild(p2)
+article.appendChild(p3)
+article.appendChild(expandButton)
+article.appendChild(readButton)
 
-  Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
-*/
+article.className = 'article'
+articleDate.className = 'date'
+expandButton.className = 'expandButton'
+readButton.className = 'readButton '
+
+articleTitle.textContent = articleObj.title
+articleDate.textContent = articleObj.date
+p1.textContent = articleObj.firstParagraph
+p2.textContent = articleObj.secondParagraph
+p3.textContent = articleObj.thirdParagraph
+expandButton.textContent = "Click to expand"
+readButton.textContent = 'Read'
+
+//   Step 2: Add an event listener to the expandButton span. This listener should toggle the class 'article-open' on the 'article' div.
+
+expandButton.addEventListener('click', () => {
+  article.classList.toggle('article-open')
+  if(article.classList.contains('article-open')){
+    expandButton.textContent = 'Click to close'
+  } else {
+    expandButton.textContent = 'Click to expand'
+  }
+  // gsap.from (article, {opacity: 0, y:-50, speed: 1})
+})
+
+readButton.addEventListener('click', () => {
+  article.style.display = 'none'
+})
+
+//   Step 3: Don't forget to return something from your function!
+  return article
+}
+
+console.log(articleMaker(data[0]))
+
+
+//   Step 4: Outside your function, loop over the data. At each iteration you'll use your component to create an article and append it to the DOM inside the 'articles' div.
+const articles = document.querySelector('.articles')
+data.forEach(article => {
+  articles.appendChild(articleMaker(article))
+})
+
+//   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
+//okay
