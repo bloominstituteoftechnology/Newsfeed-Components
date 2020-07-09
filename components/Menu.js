@@ -34,21 +34,23 @@ let menuItems = [
 function menuMaker(array){
   const menuDiv = document.createElement('div')
   const list = document.createElement('ul')
-
+  menuDiv.classList.add('menu')
   menuDiv.appendChild(list)
 
   array.forEach(item =>{
-    listItem = document.createElement('li')
+  let listItem = document.createElement('li')
     listItem.textContent = item 
     list.appendChild(listItem)
   })
 
   const menuButton = document.querySelector('.menu-button')
   menuButton.addEventListener('click', () =>{
-    menuButton.classList.toggle('menu open')
+    menuDiv.classList.toggle('menu--open')
   })
   console.log(menuDiv)
-  return menuDiv.classList.add('menu')
+  const header = document.querySelector('.header')
+  header.appendChild(menuDiv)
+  
 }
 
 menuMaker(menuItems)
