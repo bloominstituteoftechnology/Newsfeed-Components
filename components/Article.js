@@ -111,3 +111,33 @@ const data = [
 
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 */
+function articleMaker(){
+  const mainContainer = document.querySelector('.articles')
+  const articleContainer = document.createElement('div')
+  const articleTitle = document.createElement('h2')
+  const articleDate = document.createElement('p')
+  const expandButton = document.createElement('span')  
+  const paraOne = document.createElement('p')
+  const paraTwo = document.createElement('p')
+  const paraThree = document.createElement('p')
+
+  expandButton.classList.add('expandButton')
+
+  articleContainer.classList.add('article')
+
+  articleContainer.appendChild(articleTitle)
+  articleContainer.appendChild(articleDate)
+  articleContainer.appendChild(paraOne)
+  articleContainer.appendChild(paraTwo)
+  articleContainer.appendChild(paraThree)
+  articleContainer.appendChild(expandButton)
+  mainContainer.appendChild(articleContainer)
+
+  return articleContainer
+}
+
+console.log(articleMaker())
+
+data.forEach(item =>{
+  const newPanel = articleMaker(item)
+})
