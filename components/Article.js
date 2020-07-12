@@ -85,6 +85,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+      title: 'Daniel Is the greatest coder of all time',
+    date: 'Jan 17th, 1994',
+    firstParagraph: `Why is he so great? `,
+
+    secondParagraph: `Probably because he was born this way.`,
+
+    thirdParagraph: `And will always remain... The greatest of all time`
   }
 ];
 
@@ -101,9 +110,47 @@ const data = [
 
   Hint: You will need to use createElement more than once here!
 
-  Your function should take either an object as its one argument, or 5 separate strings mapping to each property of an article object.
+  Your function should take either an object as its one argument, or 5 separate strings mapping to each property of an article object.'
+  */
+  //step one
+  function createArticle(article){
+   const parentDiv = document.querySelector('.articles');
+   article.forEach(element => {
+   const newDiv = document.createElement('div');
+  	newDiv.classList.add('article');
+  	const newH2 = document.createElement('h2');
+  	newDiv.appendChild(newH2);
+  	newH2.textContent = element['title'];
+  	const newP = document.createElement('p');
+  	newP.classList.add('date');
+  	const newP1 = document.createElement('p');
+  	const newP2 = document.createElement('p');
+  	const newP3 = document.createElement('p');
+  		newP.textContent = element['date'];
+  	 	newP1.textContent = element['firstParagraph'];
+  		newP2.textContent = element['secondParagraph'];
+  		newP3.textContent = element['thirdParagraph'];
+  		newDiv.appendChild(newP);
+  		newDiv.appendChild(newP1);
+  		newDiv.appendChild(newP2);
+  		newDiv.appendChild(newP3);
+  	const newSpan = document.createElement('span');
+  	 // Step 2: Add an event listener to the expandButton span. This listener should toggle the class 'article-open' on the 'article' div.
+  	newSpan.classList.add('expandButton');
+  	newSpan.textContent = "+";
+  	newSpan.addEventListener("click",event => {
+  	newDiv.classList.toggle('article-open')
+  	});
+  	newDiv.appendChild(newSpan);
+   parentDiv.appendChild(newDiv);
+});
+return parentDiv;
+  }
+console.log(createArticle(data));
 
-  Step 2: Add an event listener to the expandButton span. This listener should toggle the class 'article-open' on the 'article' div.
+/*
+  Step 2: Add an event listener to the expandButton span. This listener should toggle the class 'article-open' on the 'article' div. 
+  line 130
 
   Step 3: Don't forget to return something from your function!
 
@@ -111,3 +158,4 @@ const data = [
 
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 */
+
