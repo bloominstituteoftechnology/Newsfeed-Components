@@ -97,7 +97,7 @@ const data = [
     {three separate paragraph elements}
 
     <span class='expandButton'>+</span>
-  </div>
+  </div
 
   Hint: You will need to use createElement more than once here!
 
@@ -110,4 +110,52 @@ const data = [
   Step 4: Outside your function, loop over the data. At each iteration you'll use your component to create an article and append it to the DOM inside the 'articles' div.
 
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
+    ??does this mean to add to the array a
+
 */
+
+//Start of the function
+function articleMaker(title, date, pOne, pTwo, pThree){
+  //creating the elements
+  const article = document.createElement("div")
+  const articleTitle = document.createElement("h2")
+  const articleDate = document.createElement("p")
+  const para1 = document.createElement("p")
+  const para2 = document.createElement("p")
+  const para3 = document.createElement("p")
+  const expandButton = document.createElement("span")
+
+  //adding Classes
+  article.classList.add("article")
+  articleDate.classList.add("date")
+  expandButton.classList.add("expandButton")
+
+  //Making the structure HTML style
+  article.appendChild(articleTitle)
+  article.appendChild(articleDate)
+  article.appendChild(para1)
+  article.appendChild(para2)
+  article.appendChild(para3)
+
+  //Adding the Content
+  articleTitle.textContent = title
+  articleDate.textContent = date
+  para1.textContent = pOne
+  para2.textContent = pTwo
+  para3.textContent = pThree
+  expandButton.textContent = "+"
+
+  //making the button work
+  expandButton.addEventListener("click", () => {
+    console.log("Trouble shooting button")
+    article.classList.toggle('article-open')
+    expandButton.classList.toggle.apply("expandButton")
+  })
+return article
+}
+
+const articles = document.querySelector('.articles');
+data.forEach(info => {
+  articles.append(articleMaker(info.title, info.date, info.firstParagraph,
+    info.secondParagraph, info.thirdParagraph));
+})
