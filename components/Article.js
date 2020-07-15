@@ -85,6 +85,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'This is a complicated project',
+    date: 'July 14th, 2020',
+    firstParagraph: `Our new instructor is excellent.`,
+
+    secondParagraph: `Her notes are a godsend`,
+
+    thirdParagraph: `I hope we have her forever, even though I know we won't`
   }
 ];
 
@@ -112,8 +121,9 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 */
 const articleMaker = (title, date, firstParagraph, secondParagraph, thirdParagraph) => {
-  const article = document.createElement('div');
-    article.classList.add('article-open');
+  const articleDiv = document.createElement('div');
+    articleDiv.classList.add('article');
+    articleDiv.classList.add('article-open');
 
   const secTitle = document.createElement('h2');
     secTitle.textContent = title;
@@ -131,20 +141,20 @@ const articleMaker = (title, date, firstParagraph, secondParagraph, thirdParagra
 
   const expandButton = document.createElement('span');
     expandButton.classList.add('expandButton');
-    expandButton.textContent = '+';
+    expandButton.textContent = '++++';
 
-  article.appendChild(secTitle)
-  article.appendChild(dates)
-  article.appendChild(pea1)
-  article.appendChild(pea2)
-  article.appendChild(pea3)
-  article.appendChild(expandButton)
+  articleDiv.appendChild(secTitle)
+  articleDiv.appendChild(dates)
+  articleDiv.appendChild(pea1)
+  articleDiv.appendChild(pea2)
+  articleDiv.appendChild(pea3)
+  articleDiv.appendChild(expandButton)
 
   expandButton.addEventListener('click', () => {
     console.log('big button')
-      article.classList.toggle('article-open');
+      articleDiv.classList.toggle('article-open');
   })
-  return article;
+  return articleDiv;
 }
 const flag = document.querySelector('.articles');
 const articleComponent = articleMaker(data[0]);
