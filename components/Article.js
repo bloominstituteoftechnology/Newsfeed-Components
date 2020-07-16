@@ -113,6 +113,8 @@ const data = [
   Your function should take either an object as its one argument, or 5 separate strings mapping to each property of an article object.'
   */
   //step one
+    const parentDiv = document.querySelector('.articles');
+  /*
   function createArticle(article){
    const parentDiv = document.querySelector('.articles');
    article.forEach(element => {
@@ -146,7 +148,42 @@ const data = [
 });
 return parentDiv;
   }
-console.log(createArticle(data));
+  createArticle(data);
+  */
+  
+  function createArticle(element){
+  //making the outer div
+  const newDiv = document.createElement('div');
+  	newDiv.classList.add('article');
+  	//making the headline element
+  	const newH2 = document.createElement('h2');
+  	newH2.textContent = element.title;
+  	//making the date element and other ptags
+  	const newP = document.createElement('p');
+  	newP.classList.add('date');
+  	const newP1 = document.createElement('p');
+  	const newP2 = document.createElement('p');
+  	const newP3 = document.createElement('p');
+  	//adding appropriate data to each p element
+  		newP.textContent = element['date'];
+  	 	newP1.textContent = element['firstParagraph'];
+  		newP2.textContent = element['secondParagraph'];
+  		newP3.textContent = element['thirdParagraph'];
+  	const newSpan = document.createElement('span');
+  	 // Step 2: Add an event listener to the expandButton span. This listener should toggle the class 'article-open' on the 'article' div.
+  	newSpan.classList.add('expandButton');
+  	newSpan.textContent = "+";
+  	newSpan.addEventListener("click",event => {
+  	newDiv.classList.toggle('article-open')
+  	});
+  	//appending all the elements to my outer div
+  		newDiv.append(newH2,newP,newP1,newP2,newP3,newSpan);
+  	return newDiv;
+  	}
+  	//looping each element through
+  	 data.forEach(element => {
+  	  parentDiv.appendChild(createArticle(element));
+  	 });
 
 /*
   Step 2: Add an event listener to the expandButton span. This listener should toggle the class 'article-open' on the 'article' div. 
