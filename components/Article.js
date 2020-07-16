@@ -1,6 +1,5 @@
 /* This is the data we will be using to create our articles */
 
-const ParcelBundler = require("parcel-bundler");
 
 /* Look over this data, then proceed to line 91*/
 const data = [
@@ -21,7 +20,7 @@ const data = [
         owen jinn tatooine sith organa.`,
 
     thirdParagraph: `Dagobah hutt jawa leia calamari ventress skywalker yoda. Binks wicket hutt coruscant sidious
-        naboo ackbar tatooine. Hutt lars padmé darth. Maul solo darth darth jabba qui-gon chewbacca darth maul. Moff baba wicket
+        naboo ackbar tatooine. Hutt lars padmé darth. Maul solo darth darth jabba qui-gon chewbacca darth maul. Moff baba wicketg
         han. C-3po antilles moff qui-gon ahsoka aayla dooku amidala. Palpatine droid amidala droid k-3po twi'lek padmé wookiee. Leia
         moff calamari mon obi-wan. Solo grievous lando coruscant. Jinn darth palpatine obi-wan mon.`
   },
