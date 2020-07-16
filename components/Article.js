@@ -86,6 +86,16 @@ const data = [
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`,
   },
+  {
+    title: "The Last Samurai",
+    date: "March 19, 2002",
+    firstParagraph: `Long ago in a distant land, I, Aku, the shapeshifting master of darkness, unleashed an unspeakable evil. But, a foolish samurai warrior wielding a magic sword stepped forth to opposed me. `,
+
+    secondParagraph: `Before the final blow was struck, I tore open a portal in time and flung him into the future where my evil is law. Now, the fool seeks to return to the past and undo the future that is Aku.`,
+
+    thirdParagraph: `Long ago in a distant land, I, Aku, the shapeshifting master of darkness, unleashed an unspeakable evil. But, a foolish samurai warrior wielding a magic sword stepped forth to opposed me.
+    Before the final blow was struck, I tore open a portal in time and flung him into the future where my evil is law. Now, the fool seeks to return to the past and undo the future that is Aku.`,
+  },
 ];
 
 /* Step 1: Write a component called 'articleMaker' to create an article. You want your component to return markup like the template below: 
@@ -119,7 +129,11 @@ const articleMaker = (object) => {
   const paraOne = document.createElement("p");
   const paraTwo = document.createElement("p");
   const paraThree = document.createElement("p");
-  const expandButton = document.createElelment("span");
+  const expandButton = document.createElement("span");
+
+  expandButton.addEventListener("click", () => {
+    article.classList.toggle("article-open");
+  });
 
   article.classList.add("article");
   articleDate.classList.add("date");
@@ -127,13 +141,23 @@ const articleMaker = (object) => {
 
   article.appendChild(articleTitle);
   article.appendChild(articleDate);
-  article.appendchild(paraOne);
+  article.appendChild(paraOne);
   article.appendChild(paraTwo);
   article.appendChild(paraThree);
   article.appendChild(expandButton);
 
-  expandButton.addEventListener("click");
-  return articleMaker;
+  articleDate.textContent = object.date;
+  articleTitle.textContent = object.title;
+  paraOne.textContent = object.firstParagraph;
+  paraTwo.textContent = object.secondParagraph;
+  paraThree.textContent = object.thirdParagraph;
+  expandButton.textContent = "+";
+
+  return article;
 };
 
-console.log(articleMaker);
+const articlesDiv = document.querySelector(".articles");
+data.forEach((data) => {
+  let articles = articleMaker(data);
+  articlesDiv.appendChild(articles);
+});
