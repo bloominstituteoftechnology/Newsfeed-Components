@@ -91,6 +91,15 @@ const data = [
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`,
   },
+  {
+    title: "Shenandoah Veele, Web Dev student",
+    date: "July 14, 2020",
+    firstParagraph: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
+
+    secondParagraph: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. `,
+
+    thirdParagraph: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
+  },
 ];
 
 /* Step 1: Write a component called 'articleMaker' to create an article. You want your 
@@ -110,57 +119,69 @@ component to return markup like the template below:
   Your function should take either an object as its one argument, or 5 separate strings
    mapping to each property of an article object.*/
 
-//function
-const articleMaker = (
-  title,
-  date,
-  firstParagraph,
-  secondParagraph,
-  thirdParagraph
-) => {
-  //creating elements
-
-  const article = document.createElement.add("div");
-  const artTitle = document.createElement.add("h2");
-  const artDate = document.createElement.add("p");
-  const artFirst = document.createElement.add("p");
-  const artSecond = document.createElement.add("p");
-  const artThird = document.createElement.add("p");
-  const artExpand = document.createElement.add("span");
-
-  //adding elements
-
-  article.appendChild(artTitle);
-  article.appendChild(artDate);
-  article.appendChild(artFirst);
-  article.appendChild(artSecond);
-  article.appendChild(artThird);
-  article.appendChild(artExpand);
-
-  //adding classes
-
-  article.classList.add("article");
-  artDate.classList.add("date");
-  span.classList("expand-button");
-
-  //adding content
-
-  artTitle.textContent = title;
-  artDate.textContent = date;
-  artFirst.textContent = firstParagraph;
-  artSecond.textContent = secondParagraph;
-  artThird.textContent = thirdParagraph;
-
-  return article;
-};
-
-// Step 2: Add an event listener to the expandButton span. This listener should toggle the
-//class 'article-open' on the 'article' div.
+// Step 2: Add an event listener to the expandButton span. This listener should toggle t
+//class 'expand-button' on the 'article' div.
 
 // Step 3: Don't forget to return something from your function!
 
-// Step 4: Outside your function, loop over the data. At each iteration you'll use
+//step 4: Outside your function, loop over the data. At each iteration you'll use
 //your component to create an article and append it to the DOM inside the 'articles' div
 
 // Step 5: Add a new article to the array. Make sure it is in the same format as the others.
-// Refresh the page to see the new article.
+// Refresh the page to see the new article*/
+
+//creating function
+function articleMaker(article) {
+  //defining html placement
+
+  const parentDiv = document.querySelector(".articles");
+
+  //iterating over each article
+
+  article.forEach((element) => {
+    //setting up elements
+
+    const artDiv = document.createElement("div");
+    const artTitle = document.createElement("h2");
+    const artDate = document.createElement("p");
+    const artFirst = document.createElement("p");
+    const artSecond = document.createElement("p");
+    const artThird = document.createElement("p");
+    const artSpan = document.createElement("span");
+
+    //adding classes
+
+    artDiv.classList.add("article");
+    artDate.classList.add("date");
+    artSpan.classList.add("expandButton");
+
+    //adding content
+
+    artTitle.textContent = element["title"];
+    artDate.textContent = element["date"];
+    artFirst.textContent = element["firstParagraph"];
+    artSecond.textContent = element["secondParagraph"];
+    artThird.textContent = element["thirdParagraph"];
+    artSpan.textContent = element["+"];
+
+    //adding to DOM
+
+    artDiv.appendChild(artTitle);
+    artDiv.appendChild(artDate);
+    artDiv.appendChild(artFirst);
+    artDiv.appendChild(artSecond);
+    artDiv.appendChild(artThird);
+    artDiv.appendChild(artSpan);
+
+    //event listener
+    artSpan.addEventListener("click", (event) => {
+      artDiv.classList.toggle("expand-button");
+    });
+
+    // tying to html
+
+    parentDiv.appendChild(artDiv);
+  });
+  return artDiv;
+}
+console.log(articleMaker(data));
