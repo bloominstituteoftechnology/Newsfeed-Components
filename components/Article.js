@@ -1,4 +1,7 @@
 /* This is the data we will be using to create our articles */
+
+const ParcelBundler = require("parcel-bundler");
+
 /* Look over this data, then proceed to line 91*/
 const data = [
   {
@@ -98,16 +101,88 @@ const data = [
 
     <span class='expandButton'>+</span>
   </div>
-
+  */
+ /*
   Hint: You will need to use createElement more than once here!
 
   Your function should take either an object as its one argument, or 5 separate strings mapping to each property of an article object.
-
-  Step 2: Add an event listener to the expandButton span. This listener should toggle the class 'article-open' on the 'article' div.
-
-  Step 3: Don't forget to return something from your function!
-
+/*
+Step 2: Add an event listener to the expandButton span. This listener should toggle the class 'article-open' on the 'article' div.
+ /*
+ Step 3: Don't forget to return something from your function!
+ 
   Step 4: Outside your function, loop over the data. At each iteration you'll use your component to create an article and append it to the DOM inside the 'articles' div.
-
+*/
+/*
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 */
+const articleMaker = (articleObject) => {
+
+
+const article = document.createElement('div')
+const articleTitle  = document.createElement ('h2')
+const articleDate  = document.createElement ('p')
+const articleP1  = document.createElement ('p')
+const articleP2  = document.createElement ('p')
+const articleP3 = document.createElement ('p')
+const expandButton = document.createElement('span')
+
+
+article.appendChild(articleTitle)
+article.appendChild(articleDate)
+article.appendChild(articleP1)
+article.appendChild(articleP2)
+article.appendChild(articleP3)
+article.appendChild(expandButton)
+
+article.className='article' 
+articleDate.className = 'date'
+expandButton.className ='expandButton'
+
+articleTitle.textcontent = articleObject.title
+articleDate.textContent = articleObject.date
+articleP1.textContent = articleObject.firstParagraph
+articleP2.textContent = articleObject.secondParagraph
+articleP3.textContent = articleObject.thirdParagraph
+expandButton.textContent ="+"
+
+
+expandButton.addEventListener('click', () =>{
+  article.classList.toggle('article-open')
+ })
+
+ return article
+ }
+ 
+
+
+ console.log(articleMaker(data[0]))
+
+
+ //   Step 4: Outside your function, loop over the data. At each iteration you'll use your component to create an article and append it to the DOM inside the 'articles' div.
+ const articles = document.querySelector('.articles')
+ data.forEach(article => {
+   articles.appendChild(articleMaker(article))
+ })
+ 
+
+const myArticleObj =   {
+  title: 'All for one',
+  date: 'Oct 31st, 2019',
+  firstParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
+  hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
+  hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
+  hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor?`,
+
+  secondParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
+  hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
+  hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
+  hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor?`,
+
+  thirdParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
+  hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
+  hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
+  hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor?`
+}
+
+f
