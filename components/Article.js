@@ -136,6 +136,7 @@ const data = [
 
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 */
+<<<<<<< HEAD
 
 function articleMaker(title, date, firstParagraph, secondParagraph, thirdParagraph){
   let articleContainer = document.createElement('div');
@@ -178,3 +179,6 @@ let article = document.querySelector(".articles");
 data.forEach((obj) => {
   article.appendChild(articleMaker(obj.title, obj.date, obj.firstParagraph, obj.secondParagraph, obj.thirdParagraph));
 });
+=======
+.
+>>>>>>> 41198c4d67094fb7dd954e74704fe3f067055b7d
