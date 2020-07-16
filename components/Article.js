@@ -86,6 +86,31 @@ const data = [
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
+  ,
+  {
+    title: 'I Need An Adult!',
+    date: 'Mar 20th, 2020',
+    firstParagraph: `Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! 
+    Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! 
+    Kerro keKerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! 
+    Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! 
+    rro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! 
+    Kerro kerro kerro kawaiii! `,
+
+    secondParagraph: `Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! 
+    Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! 
+    Kerro keKerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! 
+    Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! 
+    rro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! 
+    Kerro kerro kerro kawaiii! `,
+
+    thirdParagraph: ` kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! 
+    Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! 
+    Kerro keKerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! 
+    Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! 
+    rro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! 
+    Kerro kerro kerro kawaiii! `  
+  }
 ];
 
 /* Step 1: Write a component called 'articleMaker' to create an article. You want your component to return markup like the template below: 
@@ -111,3 +136,45 @@ const data = [
 
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 */
+
+function articleMaker(title, date, firstParagraph, secondParagraph, thirdParagraph){
+  let articleContainer = document.createElement('div');
+  let articleTitle = document.createElement('h2');
+  let articleDate = document.createElement('p');
+
+  let article1 = document.createElement('p');
+  let article2 = document.createElement('p');
+  let article3 = document.createElement('p');
+
+  let articleButton = document.createElement('span');
+
+  articleContainer.classList.add('article');
+  articleDate.classList.add('date');
+  articleButton.classList.add('expandButton');
+
+  articleTitle.textContent = title;
+  articleDate.textContent = date;
+  article1.textContent = firstParagraph;
+  article2.textContent = secondParagraph;
+  article3.textContent = thirdParagraph;
+  articleButton.textContent = '+';
+
+  articleContainer.appendChild(articleTitle);
+  articleContainer.appendChild(articleDate);
+  articleContainer.appendChild(article1);
+  articleContainer.appendChild(article2);
+  articleContainer.appendChild(article3);
+  articleContainer.appendChild(articleButton);
+
+  articleButton.addEventListener('click', () => {
+    articleContainer.classList.toggle('article-open');
+  });
+
+  return articleContainer;
+}
+
+let article = document.querySelector(".articles");
+
+data.forEach((obj) => {
+  article.appendChild(articleMaker(obj.title, obj.date, obj.firstParagraph, obj.secondParagraph, obj.thirdParagraph));
+});
