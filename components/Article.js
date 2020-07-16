@@ -166,7 +166,7 @@ expandButton.addEventListener('click', () =>{
  })
  
 
-const myArticleObj =   {
+const myArticleObject =   {
   title: 'All for one',
   date: 'Oct 31st, 2019',
   firstParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
@@ -185,4 +185,4 @@ const myArticleObj =   {
   hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor?`
 }
 
-f
+articles.appendChild(articleMaker(myArticleObject)) 
