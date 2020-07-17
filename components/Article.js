@@ -131,6 +131,7 @@ component to return markup like the template below:
 // Refresh the page to see the new article*/
 
 //creating function
+
 function articleMaker(article) {
   //defining html placement
 
@@ -147,13 +148,13 @@ function articleMaker(article) {
     const artFirst = document.createElement("p");
     const artSecond = document.createElement("p");
     const artThird = document.createElement("p");
-    const artSpan = document.createElement("span");
+    // const artSpan = document.createElement("span");
 
     //adding classes
 
     artDiv.classList.add("article");
     artDate.classList.add("date");
-    artSpan.classList.add("expandButton");
+    //artSpan.classList.add("expandButton");
 
     //adding content
 
@@ -162,7 +163,7 @@ function articleMaker(article) {
     artFirst.textContent = element["firstParagraph"];
     artSecond.textContent = element["secondParagraph"];
     artThird.textContent = element["thirdParagraph"];
-    artSpan.textContent = element["+"];
+    //artSpan.textContent = element["+"];
 
     //adding to DOM
 
@@ -171,11 +172,16 @@ function articleMaker(article) {
     artDiv.appendChild(artFirst);
     artDiv.appendChild(artSecond);
     artDiv.appendChild(artThird);
-    artDiv.appendChild(artSpan);
 
     //event listener
-    artSpan.addEventListener("click", (event) => {
-      artDiv.classList.toggle("expand-button");
+    const artSpan = document.createElement("span");
+
+    artSpan.textContent = element["+"];
+    artSpan.classList.add("expandButton");
+    artDiv.appendChild(artSpan);
+
+    artSpan.addEventListener("click", () => {
+      artDiv.classList.toggle("article-open");
     });
 
     // tying to html
