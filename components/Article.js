@@ -126,7 +126,7 @@ const articleMaker = (title, date, firstParagraph, secondParagraph, thirdParagra
   article.classList.add('article');
 
   const articleTitle = document.createElement('h2');
-  articleTitle.textContent = 'Title of Article';
+  articleTitle.textContent = title;
 
   
   
@@ -152,14 +152,19 @@ const articleMaker = (title, date, firstParagraph, secondParagraph, thirdParagra
   article.appendChild(expand);
 
 
-
-
-
-
-  // add to page
-  const articles = document.querySelector('.articles');
-  articles.appendChild(article);
-
-  article.appendChild(articleMaker(data[0].title, data[0].date, data[0].firstParagraph))
+return article;
 
 }
+
+  // add to page
+   const articlescontainer = document.querySelector('.articles');
+  
+   //iterate over each element in data
+  data.forEach(data =>  
+    //create new DOM element and append it to parent
+    articlescontainer.appendChild(articleMaker(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
+    
+    )
+
+  
+
