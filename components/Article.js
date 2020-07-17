@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* This is the data we will be using to create our articles */
 /* Look over this data, then proceed to line 91*/
 const data = [
@@ -111,3 +112,54 @@ const data = [
 
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 */
+
+const articleMaker = (title, date, firstParagraph, secondParagraph, thirdParagraph) => {
+
+  
+
+  // const articlecomponent = articleMaker('title, date, firstParagraph, secondParagraph, thirdParagraph');
+ 
+  
+
+  //create elements and class
+  const article = document.createElement('div');
+  article.classList.add('article');
+
+  const articleTitle = document.createElement('h2');
+  articleTitle.textContent = 'Title of Article';
+
+  
+  
+  const articleContent =document.createElement('p');
+  articleContent.classList.add('date');
+
+  const articleContent2 =document.createElement('p');
+  articleContent2.classList.add('date');
+
+  const articleContent3 =document.createElement('p');
+  articleContent3.classList.add('date');
+
+  const expand =document.createElement('span');
+  expand.classList.add('expandbtn');
+
+
+  // appendchild
+
+  article.appendChild(articleTitle);
+  article.appendChild(articleContent);
+  article.appendChild(articleContent2);
+  article.appendChild(articleContent3);
+  article.appendChild(expand);
+
+
+
+
+
+
+  // add to page
+  const articles = document.querySelector('.articles');
+  articles.appendChild(article);
+
+  article.appendChild(articleMaker(data[0].title, data[0].date, data[0].firstParagraph))
+
+}
