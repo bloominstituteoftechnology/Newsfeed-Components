@@ -159,20 +159,22 @@ const data = [
 */
 
 function articleMaker(title, date, firstParagraph, secondParagraph, thirdParagraph){
+
+  //Creates elements for DOM.
   let articleContainer = document.createElement('div');
   let articleTitle = document.createElement('h2');
   let articleDate = document.createElement('p');
-
   let article1 = document.createElement('p');
   let article2 = document.createElement('p');
   let article3 = document.createElement('p');
-
   let articleButton = document.createElement('span');
 
+  //Adds classes to the elements.
   articleContainer.classList.add('article');
   articleDate.classList.add('date');
   articleButton.classList.add('expandButton');
 
+  //Adds the text content for each element.
   articleTitle.textContent = title;
   articleDate.textContent = date;
   article1.textContent = firstParagraph;
@@ -180,6 +182,7 @@ function articleMaker(title, date, firstParagraph, secondParagraph, thirdParagra
   article3.textContent = thirdParagraph;
   articleButton.textContent = '+';
 
+  //Nests the following elements inside the div container in the DOM
   articleContainer.appendChild(articleTitle);
   articleContainer.appendChild(articleDate);
   articleContainer.appendChild(article1);
@@ -187,6 +190,7 @@ function articleMaker(title, date, firstParagraph, secondParagraph, thirdParagra
   articleContainer.appendChild(article3);
   articleContainer.appendChild(articleButton);
 
+  //Adds an event that toggle collapses the text inside the p elements.
   articleButton.addEventListener('click', () => {
     articleContainer.classList.toggle('article-open');
   });
@@ -194,6 +198,7 @@ function articleMaker(title, date, firstParagraph, secondParagraph, thirdParagra
   return articleContainer;
 }
 
+//Iterates through the array of objects to set values into the component.
 let article = document.querySelector(".articles");
 
 data.forEach((obj) => {

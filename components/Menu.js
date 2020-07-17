@@ -34,13 +34,15 @@ let menuItems = [
 
 function menuMaker(menuItems){
 
+  //Creates elements to set the DOM
   let menuContainer = document.createElement('div');
   let menuList = document.createElement('ul');
   
+  //Nests menu list into the div container and adds a class to the div container.
   menuContainer.appendChild(menuList);
-
   menuContainer.classList.add('menu');
 
+  //Iterates through the menu list and sets each value as a list element and is nested into the unordered list element.
   menuItems.forEach(element => {
     let items = document.createElement('li');
 
@@ -49,6 +51,7 @@ function menuMaker(menuItems){
     menuList.appendChild(items);
   });
 
+  //Sets an event listen that toggle opens the menu list when clicked.
   let menuButton = document.querySelector('.menu-button');
 
   menuButton.addEventListener('click', () => {
@@ -58,6 +61,7 @@ function menuMaker(menuItems){
   return menuContainer;
 }
 
+//Nests the menu into the header container.
 let header = document.querySelector('.header');
 
 header.appendChild(menuMaker(menuItems));
