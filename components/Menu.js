@@ -27,7 +27,7 @@ let menuItems = [
 
   Step 4: Add a click event listener to the menu button. When clicked it should toggle the class 'menu--open' on div.menu (your div with a 'menu' class).
 
-  Step 5: Don't forget to return your div.menu. Components that don't return UI are useless!
+  Step 5: Don't forget to return your div.menu.
 
   Step 6: Use 'menuMaker' to create a menu using the 'menuItems' array, and append the returned menu to the header.
 */
