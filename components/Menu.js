@@ -8,7 +8,17 @@ let menuItems = [
   'Music',
   'Log Out'
 ];
-const pr = a + b ;
+const allParag = document.querySelectorAll('p');
+allParag.forEach(index => {
+    
+    index.addEventListener('mouseover',(event) => {
+
+         event.target.style.fontFamily = 'Indie Flower', 'cursive';
+    });
+    index.addEventListener('mouseleave',(event) => {
+        event.target.style = 'initial';
+   });
+});
 /* 
   Step 1: Write a component called 'menuMaker' to create a menu like the markup below:
   
