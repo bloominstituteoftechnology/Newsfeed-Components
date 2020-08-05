@@ -8,10 +8,10 @@ let menuItems = [
   'Music',
   'Log Out'
 ];
-
+const pr = a + b ;
 /* 
   Step 1: Write a component called 'menuMaker' to create a menu like the markup below:
-
+  
   <div class="menu">
     <ul>
       {each menu item as an <li>}
