@@ -8,17 +8,7 @@ let menuItems = [
   'Music',
   'Log Out'
 ];
-const allParag = document.querySelectorAll('p');
-allParag.forEach(index => {
-    
-    index.addEventListener('mouseover',(event) => {
 
-         event.target.style.fontFamily = 'Indie Flower', 'cursive';
-    });
-    index.addEventListener('mouseleave',(event) => {
-        event.target.style = 'initial';
-   });
-});
 /* 
   Step 1: Write a component called 'menuMaker' to create a menu like the markup below:
   
@@ -41,3 +31,10 @@ allParag.forEach(index => {
 
   Step 6: Use 'menuMaker' to create a menu using the 'menuItems' array, and append the returned menu to the header.
 */
+function menuMaker(menuItems){
+  const menu = document.createElement('div');
+  const menuList = document.createElement('ul');
+  menu.appendChild(menuList)
+  return menu ; 
+}
+ menuMaker(menuItems);
