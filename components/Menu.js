@@ -32,23 +32,57 @@ let menuItems = [
   Step 6: Use 'menuMaker' to create a menu using the 'menuItems' array, and append the returned menu to the header.
 */
 
-function menuMaker(obj){
-  const menu = document.createElement('div');
-  const menuList = document.createElement('ul');
-  
-  menu.appendChild(menuList)
-  menuList.forEach(index => {
-    const list = document.createElement('li');
-    menuList.appendChild(list)
-  });
-  menu.classList.add('menu-bottom')
-  menu.addEventListener('click', () => {
-    menu.classList.toggle('menu--open')
-  });
-  return menu ; 
-}
-const headerMenu = document.querySelector('.menu-button')
-  // headerMenu.appendChild(menuMaker(menuItems))
+// function menuMaker(obj){
+//   const menu = document.createElement('div');
+//   const menuList = document.createElement('ul');
+//   const button = document.querySelector('.menu-button')
 
+//     menu.classList.add('menu')
+//     menu.appendChild(menuList)
+
+//   button.classList.add('menu-button')
+//    button.addEventListener('click', () => {
+//     menu.classList.toggle('menu--open')
+//   });
+  
+//   obj.forEach(item => {
+//     const list = document.createElement('li');
+//     list.textContent= item;
+//     menuList.appendChild(list)
+//   });  
+    
+//   return menu ; 
+// }
+// const headerMenu = document.querySelector('.header')
+//   headerMenu.appendChild(menuMaker(menuItems))
+
+const menuComponent = (whatevs => { 
+  const menu = document.createElement('div');
+  const list = document.createElement('ul');
+  
+  
+  menu.classList.add('menu');
+  menu.appendChild(list);
+ 
+  const button = document.querySelector('.menu-button');
+    
+    // event listeners
+  button.addEventListener('click', () => { 
+    menu.classList.toggle('menu--open');
+  });
+ 
+  whatevs.forEach(item =>{
+  const theList = document.createElement('li');
+  theList.textContent = item
+
+  list.appendChild(theList);
+
+    });
+  return menu;
+})
+
+const newHeader = document.querySelector('.header');
+
+newHeader.appendChild(menuComponent(menuItems));
 
  
