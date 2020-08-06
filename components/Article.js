@@ -126,27 +126,34 @@ data.forEach(obj => {
 function  articleMaker  (object) {
   const articleDiv = document.createElement('div');
   const articleTitle = document.createElement('h2');
-  const articleText = document.createElement('p');
+  const articleDate = document.createElement('p');
+  const articleText1 = document.createElement('p');
+  const articleText2 = document.createElement('p');
+  const articleText3 = document.createElement('p');
   const articleButton = document.createElement('span');
 
   articleDiv.appendChild(articleTitle);
-  articleDiv.appendChild(articleText);
+  articleDiv.appendChild(articleDate);
   articleDiv.appendChild(articleButton);
   articleDiv.classList.add ('article');
-  articleText.classList.add('date');
+  articleDate.classList.add('date');
   articleButton.classList.add('expandButton');
 
 
 
-  articleTitle.textContent = this.title, 
-  articleText.textContent = object.date + object.firstParagraph + object.secondParagraph + object.thirdParagraph
+  articleTitle.textContent = object.title
+  articleDate.textContent = object.date 
+  articleText1.textContent = object.firstParagraph
+  articleText2.textContent = object.secondParagraph
+  articleText3.textContent = object.thirdParagraph  
+
+  articleDate.appendChild(articleText1)
+  articleDate.appendChild(articleText2)
+  articleDate.appendChild(articleText3)
   articleButton.textContent = '+' ;
 
   articleButton.addEventListener('click', () =>{
-    const line = document.createElement('li')
-    articleText.textContent + line
     articleDiv.classList.toggle('article-open')
-    
   })
   
 
@@ -154,7 +161,6 @@ function  articleMaker  (object) {
   return articleDiv;
 }
 
-console.log(articleMaker(data))
 
 
 
