@@ -102,40 +102,53 @@ const data = [{
 // </div>
 
 
-const articleMaker = document.querySelector('.article')
+const selectArticle = document.querySelector('.articles')
 
-function makeArticle(object) {
+function makeArticle(articleObject) {
   const article = document.createElement('div')
   const title = document.createElement('h2')
   const date = document.createElement('p')
-  const paragraph = document.createElement('p')
+  const paragraphOne = document.createElement('p')
+  const paragraphTwo = document.createElement('p')
+  const paragraphThree = document.createElement('p')
   const expandButton = document.createElement('span')
 
 
 
-  title.appendChild(article)
-  date.appendChild(article)
-  paragraph.appendChild(article)
-  expandButton.appendChild(article)
+  article.appendChild(title)
+  article.appendChild(date)
+  article.appendChild(paragraphOne)
+  article.appendChild(paragraphTwo)
+  article.appendChild(paragraphThree)
+  article.appendChild(expandButton)
 
 
-
+  article.classList.add("article")
   title.classList.add("article-title")
-  date.classList.add("date-display")
-  paragraph.classList.add("article-info")
-  expandButton.classList.add("expand-btn")
+  date.classList.add("date")
+  expandButton.classList.add("expandButton")
 
-  title.textContent = object.title;
-  date.textContent = object.date
-  paragraph.textContent = object.firstParagraph
-  expandButton.textContent = "click me"
+
+
+  title.innerHTML = articleObject.title
+  date.innerHTML = articleObject.date
+  paragraphOne.innerHTML = articleObject.firstParagraph
+  paragraphTwo.innerHTML = articleObject.secondParagraph
+  paragraphThree.innerHTML = articleObject.thirdParagraph
+  expandButton.innerHTML= "click me"
 
 
   expandButton.addEventListener('click', event =>{
-
+        article.classList.toggle('article-open')
   })
-  return articleMaker
+  return article
 }
+
+data.forEach(objectData => {
+    let articleCreator = makeArticle(objectData)
+    selectArticle.appendChild(articleCreator)
+})
+
 
 
 // Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
