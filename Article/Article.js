@@ -188,4 +188,4 @@ data.forEach((el) => {
   );
 });
 
-console.log(getArticle);
+
