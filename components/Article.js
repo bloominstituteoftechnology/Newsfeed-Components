@@ -135,7 +135,7 @@ const data = [
 ];
 
 /* Step 1: Write a component called 'articleMaker' to create an article. You want your component to return markup like the template below: 
-
+.
   <div class="article">
     <h2>{title of the article}</h2>
     <p class="date">{date of the article}</p>
