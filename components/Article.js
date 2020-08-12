@@ -87,6 +87,52 @@ const data = [
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
+  ,
+  {
+    title: 'I Need An Adult!',
+    date: 'Mar 20th, 2020',
+    firstParagraph: `Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! 
+    Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! 
+    Kerro keKerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! 
+    Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! 
+    rro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! 
+    Kerro kerro kerro kawaiii! `,
+
+    secondParagraph: `Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! 
+    Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! 
+    Kerro keKerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! 
+    Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! 
+    rro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! 
+    Kerro kerro kerro kawaiii! `,
+
+    thirdParagraph: ` kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! 
+    Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! 
+    Kerro keKerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! 
+    Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! 
+    rro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! Kerro kerro kerro kawaiii! 
+    Kerro kerro kerro kawaiii! `  
+  }
+  ,
+  {
+    title: 'We Can\'t Keep Meeting Like This...!',
+    date: 'Mar 20th, 2020',
+    firstParagraph: `Kanna kotto ii na.. An an an totemo daisuki DoRaEMon...Kanna kotto ii na.. An an an totemo daisuki DoRaEMon...Kanna kotto ii na.. An an an totemo daisuki DoRaEMon...
+    Kanna kotto ii na.. An an an totemo daisuki DoRaEMon...Kanna kotto ii na.. An an an totemo daisuki DoRaEMon...Kanna kotto ii na.. An an an totemo daisuki DoRaEMon...
+    Kanna kotto ii na.. An an an totemo daisuki DoRaEMon...Kanna kotto ii na.. An an an totemo daisuki DoRaEMon...Kanna kotto ii na.. An an an totemo daisuki DoRaEMon...
+   `,
+
+    secondParagraph: `Kanna kotto ii na.. An an an totemo daisuki DoRaEMon...Kanna kotto ii na.. An an an totemo daisuki DoRaEMon...Kanna kotto ii na.. An an an totemo daisuki DoRaEMon...
+    Kanna kotto ii na.. An an an totemo daisuki DoRaEMon...Kanna kotto ii na.. An an an totemo daisuki DoRaEMon...Kanna kotto ii na.. An an an totemo daisuki DoRaEMon...
+    Kanna kotto ii na.. An an an totemo daisuki DoRaEMon...Kanna kotto ii na.. An an an totemo daisuki DoRaEMon...Kanna kotto ii na.. An an an totemo daisuki DoRaEMon...
+    Kanna kotto ii na.. An an an totemo daisuki DoRaEMon...Kanna kotto ii na.. An an an totemo daisuki DoRaEMon...Kanna kotto ii na.. An an an totemo daisuki DoRaEMon...
+ `,
+
+    thirdParagraph: `Kanna kotto ii na.. An an an totemo daisuki DoRaEMon...Kanna kotto ii na.. An an an totemo daisuki DoRaEMon...Kanna kotto ii na.. An an an totemo daisuki DoRaEMon...
+    Kanna kotto ii na.. An an an totemo daisuki DoRaEMon...Kanna kotto ii na.. An an an totemo daisuki DoRaEMon...Kanna kotto ii na.. An an an totemo daisuki DoRaEMon...
+    Kanna kotto ii na.. An an an totemo daisuki DoRaEMon...Kanna kotto ii na.. An an an totemo daisuki DoRaEMon...Kanna kotto ii na.. An an an totemo daisuki DoRaEMon...
+    Kanna kotto ii na.. An an an totemo daisuki DoRaEMon...Kanna kotto ii na.. An an an totemo daisuki DoRaEMon...Kanna kotto ii na.. An an an totemo daisuki DoRaEMon...
+   `  
+  }
 ];
 
 /*
@@ -114,3 +160,50 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+function articleMaker(title, date, firstParagraph, secondParagraph, thirdParagraph){
+
+  //Creates elements for DOM.
+  let articleContainer = document.createElement('div');
+  let articleTitle = document.createElement('h2');
+  let articleDate = document.createElement('p');
+  let article1 = document.createElement('p');
+  let article2 = document.createElement('p');
+  let article3 = document.createElement('p');
+  let articleButton = document.createElement('span');
+
+  //Adds classes to the elements.
+  articleContainer.classList.add('article');
+  articleDate.classList.add('date');
+  articleButton.classList.add('expandButton');
+
+  //Adds the text content for each element.
+  articleTitle.textContent = title;
+  articleDate.textContent = date;
+  article1.textContent = firstParagraph;
+  article2.textContent = secondParagraph;
+  article3.textContent = thirdParagraph;
+  articleButton.textContent = '+';
+
+  //Nests the following elements inside the div container in the DOM
+  articleContainer.appendChild(articleTitle);
+  articleContainer.appendChild(articleDate);
+  articleContainer.appendChild(article1);
+  articleContainer.appendChild(article2);
+  articleContainer.appendChild(article3);
+  articleContainer.appendChild(articleButton);
+
+  //Adds an event that toggle collapses the text inside the p elements.
+  articleButton.addEventListener('click', () => {
+    articleContainer.classList.toggle('article-open');
+  });
+
+  return articleContainer;
+}
+
+//Iterates through the array of objects to set values into the component.
+let article = document.querySelector(".articles");
+
+data.forEach((obj) => {
+  article.appendChild(articleMaker(obj.title, obj.date, obj.firstParagraph, obj.secondParagraph, obj.thirdParagraph));
+});
