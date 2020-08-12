@@ -109,5 +109,34 @@ function articleMaker(title, date, firstParagraph, secondParagraph, thirdParagra
   createArticle.apendChild(paragraphThree);
   createArticle.apendChild(articleButton);
   
+createArticle.classList.add(article);
+createDate.classList.add(date);
+articleButton.classList.add(expandButton);
 
-}
+
+createTitle.textContent = title;
+createDate.textConent = date;
+paragraphOne.textConent = firstParagraph;
+paragraphTwo.textConent = secondParagraph;
+paragraphThree.textConent = thirdParagraph;
+
+articleButton.textContent = expand;
+
+articleButton.addEventListener('click', (e) => {
+  createArticle.classList.toggle('toggle-on');
+  createArticle.classList.toggle('toggle-off');
+  createArticle.classList.toggle('article-open');
+
+});
+
+return article;
+
+};
+
+
+const articleData = document.querySelector('.articles')
+
+
+data.forEach((obj) => {
+  articleData.appendChild(articleMaker(obj.title, obj.date, obj.firstParagraph, obj.secondParagraph, obj.thirdParagraph));
+});
