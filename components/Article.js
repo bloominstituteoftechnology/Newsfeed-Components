@@ -86,8 +86,20 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  //Step 5 add new article
+  {
+    title: 'Cyberpunk are you ready?!',
+    date: 'Nov 19, 2077',
+    firstParagraph: `Cyberpunk 2077 is an upcoming role-playing video game developed and published by CD Projekt. It is scheduled to be released for PlayStation 4, Windows, and Xbox One in November 2020, Stadia by the end of the year, and PlayStation 5 and Xbox Series X in 2021.`,
+
+    secondParagraph: `The Cyberpunk 2077 release date is November 19 2020. This release date has been confirmed after a second delay - initially scheduled to launch on April 16 2020, the game was later delayed until September and now until November.
+    `,
+
+    thirdParagraph: `Make deals with sleazy fixers, desperate celebrities, and renegade artificial intelligences — all fighting tooth and nail to make it big in Night City.`
   }
 ];
+
 
 /*
   Step 1: Write a component called 'articleMaker' to create an article.
