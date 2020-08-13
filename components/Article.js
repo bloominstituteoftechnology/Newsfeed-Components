@@ -115,15 +115,48 @@ const data = [
   Refresh the page to see the new article.
 */
 
-function createArticles(newsData) {
+function articleMarker(newsData) {
+  // Create Elements
+  const article = document.createElement('div');
+  const title = document.createElement('h2');
+  const date = document.createElement('p');
+  const firstPar = document.createElement('p');
+  const secondPar = document.createElement('p');
+  const thirdPar = document.createElement('p');
+  const expand = document.createElement('span');
 
-//  Elements
-const article = document.createElement('div');
-const articleTitle = document.createElement('h2');
-const articleDate = document.createElement('p');
-const articleParFirst = document.createElement('p');
-const articleParSecond = document.createElement('p');
-const articleParThird = document.createElement('p');
-const articleExpand = document.createElement('span');
+  // Create Structure 
+  article.appendChild(title);
+  article.appendChild(date);
+  article.appendChild(firstPar);
+  article.appendChild(secondPar);
+  article.appendChild(thirdPar);
+  article.appendChild(expand);
 
+  // Set Content 
+  title.textContent = newsData.title;
+  date.textContent = newsData.date;
+  firstPar.textContent = newsData.firstParagraph;
+  secondPar.textContent = newsData.secondParagraph;
+  thirdPar.textContent = newsData.thirdParagraph;
+  expand.textContent = '\u25bc';
+
+  // Apply Styles
+  article.classList.add('article');
+  title.classList.add('h2');
+  date.classList.add('date');
+  expand.classList.add('expandButton');
+  
+
+  expand.addEventListener('click', event => {
+    article.classList.toggle('article-open');
+  });
+
+  return article;
 }
+
+const articles = document.querySelector('.articles');
+
+data.forEach(data => {
+  articles.appendChild(articleMarker(data));
+});
