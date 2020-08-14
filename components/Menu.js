@@ -34,14 +34,14 @@ let menuItems = [
 
 function menuMaker() {
   const menu = document.createElement('div');
-  const menulist = document.createElement('ul');
-  const menuButton = document.querySelector('menu-button');
+  const menuList = document.createElement('ul');
+  const menuButton = document.querySelector('.menu-button');
 
   menu.appendChild(menuList);
 
   menuItems.forEach(item => {
     const listItem = document.createElement('li');
-    menulist.appendChild('listItem');
+    menuList.appendChild(listItem);
     listItem.textContent = item;
   });
 
@@ -56,4 +56,4 @@ function menuMaker() {
 
 const header = document.querySelector('.header');
 console.log(header);
-header.appendChild(menuMaker(menuItems));
+header.appendChild(menuMaker());
