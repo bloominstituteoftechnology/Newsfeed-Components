@@ -56,7 +56,6 @@ let menuItems = [
 const menu = document.createElement("div")
 menu.classList.add('menu')
 
-
 const menuUl = document.createElement("ul")
 
 menu.append(menuUl)
@@ -65,7 +64,6 @@ console.log(menu)
 
 let nav = document.querySelector('.header')
 
-
 nav.append(menu)
 
 
@@ -73,27 +71,20 @@ nav.append(menu)
 
 
 const menuMaker = (items) => {
-let button = document.querySelector('.menu-button')
-console.log(button)
-button.addEventListener("click", () => {
-  console.log('clicked')
-  menu.classList.toggle('menu--open')
-
-})
-
-
-  return ( 
-
-
-
-    items.map((item) => {
-     let li = document.createElement("li")
-      li.innerHTML = item
-      menuUl.append(li)
-
+  let button = document.querySelector('.menu-button')
+  console.log(button)
+  button.addEventListener("click", () => {
+    console.log('clicked')
+    menu.classList.toggle('menu--open')
 
   })
+  return (
 
+    items.map((item) => {
+      let li = document.createElement("li")
+      li.innerHTML = item
+      menuUl.append(li)
+    })
   )
 }
 
