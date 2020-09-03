@@ -47,9 +47,19 @@ tech.classList.add('tech')
 music.classList.add('music')
 log.classList.add('log')
 
+students.textContent = menuItems[0]
+whatsnew.textContent = menuItems[1]
+tech.textContent = menuItems[2]
+music.textContent = menuItems[3]
+log.textContent = menuItems[4]
 
+const menuButton = document.querySelector('.menu-button')
 
+menuButton.addEventListener('click', event => {
+  menu.classList.toggle('menu--open')
+    })
 
+    return menu
   }
 
   /*Step 2: Inside the function, iterate over the array creating a list item <li> element for each item in the array.
@@ -63,3 +73,8 @@ log.classList.add('log')
 
   /*Step 6: Use 'menuMaker' to create a menu using the 'menuItems' array, and append the returned menu to the header.
 */
+
+menuItems.forEach(menuObj => {
+  const newmenu = makeMenu(menuObj)
+  document.header.appendChild(newmenu)
+})
