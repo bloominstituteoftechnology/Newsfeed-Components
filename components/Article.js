@@ -125,13 +125,17 @@ console.log(article)
 article.classList.add('article')
 titleElement.classList.add('title')
 pDate.classList.add('date')
-pOne.classList.add('first p')
-pTwo.classList.add('second p')
-pThree.classList.add('third p')
+pOne.classList.add('first')
+pTwo.classList.add('second')
+pThree.classList.add('third')
 expandButton.classList.add('expandButton')
 
 titleElement.textContent = title
-
+pDate.textContent = date
+pOne.textContent = first 
+pTwo.textContent = second
+pThree.textContent = third 
+expandButton.textContent = expandButton
 
 
     /*Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
@@ -147,7 +151,6 @@ article.classList.toggle('article-open')
 
   }
 
-
   /*Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
   to create a div.article element and append it to the DOM inside div.articles (see index.html).*/
 
@@ -162,5 +165,12 @@ data.forEach(articleObj => {
   /*Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+data.forEach(articleObj => {
+  const newarticle = makeArticle(articleObj)
+  document.body.prepend(newarticle)
+})
+
+
 
 
