@@ -101,16 +101,66 @@ const data = [
     {three separate paragraph elements}
 
     <span class="expandButton">+</span>
-  </div>
+  </div>*/
 
-  Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
-  This listener should toggle the class 'article-open' on div.article.
+  function articleMaker({ title, date, firstParagraph, secondParagraph, thirdParagraph }) {
+    const article = document.createElement('div')
+    const titleElement = document.createElement('h2')
+    const pDate = document.createElement('p')
+    const pOne = document.createElement('p')
+    const pTwo = document.createElement('p')
+    const pThree = document.createElement('p')
+    const expandButton = document.createElement('span')
+    
+article.appendChild(article)
+article.appendChild(titleElement)
+article.appendChild(pDate)
+article.appendChild(pOne)
+article.appendChild(pTwo)
+article.appendChild(pThree)
+article.appendChild(expandButton)
 
-  Step 3: Don't forget to return something from your function!
+console.log(article)
 
-  Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
-  to create a div.article element and append it to the DOM inside div.articles (see index.html).
+article.classList.add('article')
+titleElement.classList.add('title')
+pDate.classList.add('date')
+pOne.classList.add('first p')
+pTwo.classList.add('second p')
+pThree.classList.add('third p')
+expandButton.classList.add('expandButton')
 
-  Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
+titleElement.textContent = title
+
+
+
+    /*Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
+  This listener should toggle the class 'article-open' on div.article.*/
+
+expandButton.addEventListener('click', event => {
+article.classList.toggle('article-open')
+  })
+
+    /*Step 3: Don't forget to return something from your function!*/
+
+    return article
+
+  }
+
+
+  /*Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
+  to create a div.article element and append it to the DOM inside div.articles (see index.html).*/
+
+
+
+data.forEach(articleObj => {
+  const element = (articleObj)
+  accordion.appendChild(element)
+})
+
+
+  /*Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+
