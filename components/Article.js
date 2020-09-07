@@ -128,14 +128,16 @@ const artP2 = document.createElement("p")
 artP2.textContent = article.secondParagraph
 const artP3 = document.createElement("p")
 artP3.textContent = article.thirdParagraph
-seperateDiv.append(artP1,artP2,artP3,articleSpan)
+seperateDiv.append(artP1,artP2,artP3)
 
 const articleSpan = document.createElement("span")
 articleSpan.classList.add("expandButton")
-seperateDiv.textContent = "Expand to see Article"
+articleSpan.textContent = "Expand to see Article"
 articleSpan.addEventListener("click", (event) => {
   seperateDiv.classList.toggle("article-open");
 })
+
+seperateDiv.append(articleSpan)
 
 return seperateDiv
 }
