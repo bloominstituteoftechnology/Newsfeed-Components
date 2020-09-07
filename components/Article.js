@@ -156,7 +156,12 @@ articlesDiv.appendChild(articleMaker(article))
   Refresh the page to see the new article.
 */
 
+//Step 4
+data.push(article)
+
+
 data.map(item => {
   document.querySelector(".articles").appendChild(articleMaker(item))
 })
+
 
