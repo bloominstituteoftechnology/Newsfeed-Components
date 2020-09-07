@@ -20,15 +20,14 @@ let menuItems = [
 
   // The 'menuMaker' takes an array of menu items as its only argument.
 
-
- const menusDiv = document.querySelector(".menus");
-
+// step 1
 function menuMaker(menu){
 const firstDiv = document.createElement("div")
 firstDiv.classList.add("menu")
 
 const unorderedList = document.createElement("ul")
 
+//step 2
 menu.forEach((menuItems) => {
   let item = document.createElement("li");
   item.textContent = menuItems
@@ -37,15 +36,18 @@ menu.forEach((menuItems) => {
 
 firstDiv.appendChild(unorderedList);
 
+//step 3
 const menuButton = document.querySelector(".menu-button");
 
+//step 4
 menuButton.addEventListener("click", () => {
   firstDiv.classList.toggle("menu--open")
 })
+//step 5
 return firstDiv
 
 }
-
+// step 6
 document.querySelector(".header").append(menuMaker(menuItems));
 
 
