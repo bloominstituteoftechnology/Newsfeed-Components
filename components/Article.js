@@ -103,6 +103,47 @@ const data = [
     <span class="expandButton">+</span>
   </div>
 
+  */
+ //Root Div that exists in code
+ const articlesDiv = document.querySelector(".articles");
+// Generic Article 
+ let article = { title: "Some String", date: "12/07/95", firstParagraph: "", secondParagraph: "", thirdParagraph: ""};
+// create a card for each article
+function articleMaker(article) {
+const seperateDiv = document.createElement("div")
+seperateDiv.classList.add("article")
+
+const articleH2= document.createElement("h2")
+articleH2.textContent  = article.title
+seperateDiv.appendChild(articleH2)
+
+const articleDate = document.createElement("p")
+articleDate.classList.add("date")
+seperateDiv.appendChild(articleDate)
+articleDate.textContent = article.date
+
+const artP1 = document.createElement("p")
+artP1.textContent = article.firstParagraph
+const artP2 = document.createElement("p")
+artP2.textContent = article.secondParagraph
+const artP3 = document.createElement("p")
+artP3.textContent = article.thirdParagraph
+seperateDiv.append(artP1,artP2,artP3,articleSpan)
+
+const articleSpan = document.createElement("span")
+articleSpan.classList.add("expandButton")
+seperateDiv.textContent = "Expand to see Article"
+articleSpan.addEventListener("click", (event) => {
+  seperateDiv.classList.toggle("article-open");
+})
+
+return seperateDiv
+}
+
+articlesDiv.appendChild(articleMaker(article))
+
+  /*
+
   Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
   This listener should toggle the class 'article-open' on div.article.
 
@@ -114,3 +155,8 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+data.map(item => {
+  document.querySelector(".articles").appendChild(articleMaker(item))
+})
+
