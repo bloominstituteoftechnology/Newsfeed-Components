@@ -133,12 +133,14 @@ seperateDiv.append(artP1,artP2,artP3)
 const articleSpan = document.createElement("span")
 articleSpan.classList.add("expandButton")
 articleSpan.textContent = "Expand to see Article"
+// Step 2
 articleSpan.addEventListener("click", (event) => {
   seperateDiv.classList.toggle("article-open");
 })
 
 seperateDiv.append(articleSpan)
 
+//Step 3
 return seperateDiv
 }
 
@@ -158,10 +160,10 @@ articlesDiv.appendChild(articleMaker(article))
   Refresh the page to see the new article.
 */
 
-//Step 4
+//Step 5
 data.push(article)
 
-
+//Step 4
 data.map(item => {
   document.querySelector(".articles").appendChild(articleMaker(item))
 })
