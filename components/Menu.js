@@ -15,9 +15,7 @@ let menuItems = [
   <div class="menu">
     <ul>
       {each menu item as a list item}
-    </ul>
-  </div>
-
+    </ul> 
   The 'menuMaker' takes an array as its only argument.
 
   Step 2: Inside the function, iterate over the array creating a list item <li> element for each item in the array. 
