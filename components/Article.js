@@ -87,13 +87,13 @@ const data = [
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   },
   {
-    title:'new',
-    date: 'July 14th, 2020',
-    firstParagraph: 'new',
+    title:'Breaking News',
+    date: 'September 8th, 2020',
+    firstParagraph: 'All That you will ever need to know',
 
-    secondParagraph: 'older news',
+    secondParagraph: 'Cheesy Gordida Crunch',
 
-    thirdParagraph: 'oldest news',
+    thirdParagraph: 'Armadillo',
   }
 ];
 
