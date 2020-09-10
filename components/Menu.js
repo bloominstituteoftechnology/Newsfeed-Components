@@ -30,3 +30,59 @@ let menuItems = [
 
   Step 6: Use 'menuMaker' to create a menu using the 'menuItems' array, and append the returned menu to the header.
 */
+const menuMaker=(menuItems)=>{
+
+const menu =document.createElement('div')
+menu.classList.add('menu')
+
+const ulitem=document.createElement('ul')
+
+const listItemStudent=document.createElement('li')
+  listItemStudent.textContent=menuItems[0]
+
+const listItemFaculty=document.createElement('li')
+ listItemFaculty.textContent=menuItems[1]
+
+const listItemWhatsNew=document.createElement('li')
+      listItemWhatsNew.textContent=menuItems[2]
+
+const listItemTechTrends=document.createElement('li')
+      listItemTechTrends.textContent=menuItems[3]
+
+const listItemMusic=document.createElement('li')
+      listItemMusic.textContent=menuItems[4]
+
+const listItemLogOut=document.createElement('li')
+      listItemLogOut.textContent=menuItems[5]
+
+
+menu.appendChild(ulitem);
+ulitem.appendChild(listItemStudent)
+ulitem.appendChild(listItemFaculty);
+ulitem.appendChild(listItemWhatsNew);
+ulitem.appendChild(listItemTechTrends);
+ulitem.appendChild(listItemMusic);
+ulitem.appendChild(listItemLogOut)
+
+
+
+
+const menubutton = document.querySelector('.menu-button')
+
+menubutton.addEventListener('click', ()=>{
+  menu.classList.toggle('menu--open')
+})
+
+return menu;
+console.log(menu)
+}
+
+
+
+const menucontainer = document.querySelector('.header')
+
+// menuItems.forEach(data=>{
+//   menucontainer.appendChild(menuMaker(data.Student, data.Faculty, ))
+// })
+
+menucontainer.appendChild(menuMaker(menuItems))
