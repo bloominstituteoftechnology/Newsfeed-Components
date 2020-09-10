@@ -103,7 +103,12 @@ ff.appendChild(img);
 // ff.append(h1.innerHTML);
 // let hh = document.querySelector('.menu--open');
 ff.addEventListener('click',(e)=>{
-ff.classList.add('menu--open');
+ff.classList.toggle('menu--open');
+let menuD = document.querySelector('.menu');
+let fstyle = ff.getAttribute('style');
+// ff.style.display = 'flex';
+// menuD.style.display = 'block';
+// ff.classList.toggle(fstyle);
 
 },false);
 console.log(ff);
