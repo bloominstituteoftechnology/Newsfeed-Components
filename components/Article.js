@@ -175,4 +175,5 @@ for(let l = 0; l < h.childElementCount; l++){
   thehtml  = thehtml + h.childNodes[l].innerHTML ;
 
 }
+console.log(thehtml);
 document.querySelector('.articles').innerHTML = thehtml;
