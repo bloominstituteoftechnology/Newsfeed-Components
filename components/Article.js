@@ -159,7 +159,7 @@ let nodelist = document.createDocumentFragment();
     span.classList.add('expandButton');
     let button = document.createElement('button');
     button.textContent = '+';
-    // button.onclick = test;
+    button.onclick = test;
     span.appendChild(button);
  
 
@@ -213,11 +213,30 @@ const addE =(h)=>{
   },true)
   console.log('click');
 }
+class _test{
+  constructor(wr){
+    this.wr = wr;
+  }
+  makeEvent(){
+    console.log(this.wr);
+    this.wr[0].onclick = this.makeEvent;
+
+      return this.testit();
+  
+  }
+  testit(){
+    return this.wr[0].addEventListener('click',e = () =>{
+      console.log('justwork');
+    })
+  }
+}
 function test(wr){
-  wr.onclick = true;
-  wr[0].addEventListener('onclick',  e=>{
-     return 'hi';
-  });
+  // wr.onclick = true;
+  // wr[0].addEventListener('onclick',  e=>{
+  //    return 'hi';
+  // });
+  let t = new _test(wr);
+  t.makeEvent();
 }
 // window.span.addEventListener('click',e=>{
 //   console.log('click');
