@@ -20,8 +20,16 @@
 .menu.menu--open{
   display:block;
 }
+.menu{
+  ul{
+    display: none;
+    
+  }
+}
 
-.menu.menu--open ul {
+.menu--open ul {
+  display: flex;
+  flex-direction: column;
   width:30%;
   height:80%;
   background-color: green;
