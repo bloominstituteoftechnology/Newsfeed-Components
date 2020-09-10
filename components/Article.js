@@ -161,8 +161,6 @@ let nodelist = document.createDocumentFragment();
     dv.appendChild(span);
     /// Apend to nodelist
     nodelist.appendChild(dv);
-    console.log(i);
-
   }
     
 return nodelist;
@@ -171,4 +169,10 @@ return nodelist;
 let h = articleMaker(data);
 console.log(h);
 // document.querySelector('.articles').innerHTML = h.outerHTML;
-document.querySelector('.articles').innerHTML = h.firstElementChild.innerHTML;
+let thehtml ;
+for(let l = 0; l < h.childElementCount; l++){
+  
+  thehtml  = thehtml + h.childNodes[l].innerHTML ;
+
+}
+document.querySelector('.articles').innerHTML = thehtml;
