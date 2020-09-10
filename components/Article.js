@@ -117,32 +117,37 @@ const articleMaker=(title, date, firstParagraph, secondParagraph, thirdParagraph
 
   const article = document.createElement('div');
   article.classList.add('article');
-  article.classList.add('article-open');
-  article.classList.add('article-close');
+ 
 
   const articleTitle = document.createElement('h2');
   articleTitle.textContent = title;
-
+  const articleDate = document.createElement('p');
+  articleDate.classList.add('date')
+  articleDate.textContent= date;
 
   const articleContent =document.createElement('p');
-  articleContent.classList.add('date');
+ 
+  
   articleContent.textContent =firstParagraph;
 
   const articleContent2 =document.createElement('p');
-  articleContent2.classList.add('date');
+ 
+  
   articleContent2.textContent =secondParagraph;
 
   const articleContent3 =document.createElement('p');
-  articleContent3.classList.add('date');
+ 
+  
   articleContent3.textContent =thirdParagraph;
 
   const expand =document.createElement('span');
+  expand.textContent= "+"
   expand.classList.add('expandButton');
 
 
    // appendchild
-
    article.appendChild(articleTitle);
+   article.appendChild(articleDate);
    article.appendChild(articleContent);
    article.appendChild(articleContent2);
    article.appendChild(articleContent3);
@@ -151,7 +156,7 @@ const articleMaker=(title, date, firstParagraph, secondParagraph, thirdParagraph
   // expand.addEventListener('click',   )
  
   expand.addEventListener('click', () =>{
-   expand.classList.toggle('article-open')
+   article.classList.toggle('article-open')
   })
   
  return article;
