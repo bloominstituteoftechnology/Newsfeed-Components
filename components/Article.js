@@ -108,9 +108,41 @@ const data = [
 
   Step 3: Don't forget to return something from your function!
 
-  Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
-  to create a div.article element and append it to the DOM inside div.articles (see index.html).
+  Step 4: Outside your function now, loop over the data. At each iteration
+   you'll use your component
+  to create a div.article element and append it to the DOM inside div.articles
+   (see index.html).
 
-  Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
+  Step 5: Try adding new article object to the data array. Make sure it is in 
+  the same format as the others.
   Refresh the page to see the new article.
 */
+
+
+function articleMaker(artObj){
+/*
+Creazte a these
+  <div class="article">
+    <h2>{title of the article}</h2>
+    <p class="date">{date of the article}</p>
+
+    {three separate paragraph elements}
+
+    <span class="expandButton">+</span>
+  </div>
+
+*/
+let nodelist = document.createDocumentFragment();
+let dv = document.createElement('div');
+dv.classList.add('article');
+let h2 = document.createElement('h2');
+h2.innerText = artObj[2]['title'];
+dv.appendChild(h2);
+
+
+nodelist.appendChild(dv);
+return nodelist;
+}
+let h = articleMaker(data).firstElementChild.childNodes[0];
+
+document.querySelector('.articles').innerHTML = h.outerHTML;
