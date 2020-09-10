@@ -17,12 +17,16 @@
   border-bottom: none;
   z-index: 2; /* This set the layer level of the element, it has precendence over initial level of 1*/
 }
+.menu.menu--open{
+  display:block;
+}
 
-.menu ul {
+.menu.menu--open ul {
   width:30%;
   height:80%;
   background-color: green;
   li{
+    background-color: green;
     list-style-type: none;
     font-size: 32px;
     padding: 30px 0;
@@ -30,6 +34,3 @@
   }
 }
 
-.menu--open {
-  display: block;
-}
