@@ -135,14 +135,35 @@ Creazte a these
 let nodelist = document.createDocumentFragment();
 let dv = document.createElement('div');
 dv.classList.add('article');
+// Elements to go in article Div
 let h2 = document.createElement('h2');
-h2.innerText = artObj[2]['title'];
+h2.innerText = artObj[0]['title'];
+let pdate = document.createElement('p');
+pdate.classList.add('date');
+pdate.innerText = artObj[0]['date']
+let p1 = document.createElement('p');
+p1.innerText = artObj[0]['firstParagraph'];
+let p2 = document.createElement('p');
+p2.innerText = artObj[0]['secondParagraph'];
+let p3 = document.createElement('p');
+p3.innerText = artObj[0]['thirdParagraph'];
+let span = document.createElement('span');
+span.classList.add('expandButton');
+span.innerText = '+';
+
+// Apend to div
 dv.appendChild(h2);
-
-
+dv.appendChild(pdate);
+dv.appendChild(p1);
+dv.appendChild(p2);
+dv.appendChild(p3);
+dv.appendChild(span);
+/// Apend to nodelist
 nodelist.appendChild(dv);
 return nodelist;
 }
-let h = articleMaker(data).firstElementChild.childNodes[0];
-
-document.querySelector('.articles').innerHTML = h.outerHTML;
+// let h = articleMaker(data).firstElementChild.childNodes[0];
+let h = articleMaker(data);
+console.log(h);
+// document.querySelector('.articles').innerHTML = h.outerHTML;
+document.querySelector('.articles').innerHTML = h.firstElementChild.innerHTML;
