@@ -117,7 +117,14 @@ const data = [
   the same format as the others.
   Refresh the page to see the new article.
 */
-
+function addMoreArticles(artObj,newArt){
+  for(let i = 0; i <  newArt.length; i++){
+    let s = 0;
+    artObj.push(newArt[s]);
+    s++;
+  }
+  // artObj.push(newArt[0]);
+}
 
 function articleMaker(artObj){
 /*
@@ -165,15 +172,39 @@ let nodelist = document.createDocumentFragment();
     
 return nodelist;
 }
+let moreData = [  {
+  title: 'New Title',
+  date: 'Jan 9th, 2011',
+  firstParagraph: `Made up first paragraph maybe the other one woudl be a copy and paste thing but who knows what I woudl do in this situation 
+  All I know is that i am typing stuff so there is more data in the more data object`,
+
+  secondParagraph: `balah alhal hsldf hk I made stuff up but dont want to use lorum epsum instead i just say things like this and hope it works
+  but when it wont I dont give up and try again until I dont know what to do and stop doing the wrong thing and then it works `,
+
+  thirdParagraph: `Another article once found hrere in this third paraphgra with other stuff instide thie data array going over here and there `
+},{
+  title: 'New Title',
+  date: 'Jan 9th, 2011',
+  firstParagraph: `Made up first paragraph maybe the other one woudl be a copy and paste thing but who knows what I woudl do in this situation 
+  All I know is that i am typing stuff so there is more data in the more data object`,
+
+  secondParagraph: `balah alhal hsldf hk I made stuff up but dont want to use lorum epsum instead i just say things like this and hope it works
+  but when it wont I dont give up and try again until I dont know what to do and stop doing the wrong thing and then it works `,
+
+  thirdParagraph: `Another article once found hrere in this third paraphgra with other stuff instide thie data array going over here and there `
+}]
+addMoreArticles(data,moreData);
+
+
 // let h = articleMaker(data).firstElementChild.childNodes[0];
 let h = articleMaker(data);
 console.log(h);
 // document.querySelector('.articles').innerHTML = h.outerHTML;
-let thehtml ;
+let thehtml = '';
 for(let l = 0; l < h.childElementCount; l++){
   
   thehtml  = thehtml + h.childNodes[l].innerHTML ;
 
 }
-console.log(thehtml);
+console.log(data);
 document.querySelector('.articles').innerHTML = thehtml;
