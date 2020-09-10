@@ -133,33 +133,38 @@ Creazte a these
 
 */
 let nodelist = document.createDocumentFragment();
-let dv = document.createElement('div');
-dv.classList.add('article');
-// Elements to go in article Div
-let h2 = document.createElement('h2');
-h2.innerText = artObj[0]['title'];
-let pdate = document.createElement('p');
-pdate.classList.add('date');
-pdate.innerText = artObj[0]['date']
-let p1 = document.createElement('p');
-p1.innerText = artObj[0]['firstParagraph'];
-let p2 = document.createElement('p');
-p2.innerText = artObj[0]['secondParagraph'];
-let p3 = document.createElement('p');
-p3.innerText = artObj[0]['thirdParagraph'];
-let span = document.createElement('span');
-span.classList.add('expandButton');
-span.innerText = '+';
+  for(let i = 0; i < artObj.length; i++){
+    let dv = document.createElement('div');
+    dv.classList.add('article');
+    // Elements to go in article Div
+    let h2 = document.createElement('h2');
+    h2.innerText = artObj[i]['title'];
+    let pdate = document.createElement('p');
+    pdate.classList.add('date');
+    pdate.innerText =  artObj[i]['date']
+    let p1 = document.createElement('p');
+    p1.innerText =  artObj[i]['firstParagraph'];
+    let p2 = document.createElement('p');
+    p2.innerText =  artObj[i]['secondParagraph'];
+    let p3 = document.createElement('p');
+    p3.innerText =  artObj[i]['thirdParagraph'];
+    let span = document.createElement('span');
+    span.classList.add('expandButton');
+    span.innerText = '+';
 
-// Apend to div
-dv.appendChild(h2);
-dv.appendChild(pdate);
-dv.appendChild(p1);
-dv.appendChild(p2);
-dv.appendChild(p3);
-dv.appendChild(span);
-/// Apend to nodelist
-nodelist.appendChild(dv);
+    // Apend to div
+    dv.appendChild(h2);
+    dv.appendChild(pdate);
+    dv.appendChild(p1);
+    dv.appendChild(p2);
+    dv.appendChild(p3);
+    dv.appendChild(span);
+    /// Apend to nodelist
+    nodelist.appendChild(dv);
+    console.log(i);
+
+  }
+    
 return nodelist;
 }
 // let h = articleMaker(data).firstElementChild.childNodes[0];
