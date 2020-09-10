@@ -120,8 +120,8 @@ const data = [
 function addMoreArticles(artObj,newArt){
   for(let i = 0; i <  newArt.length; i++){
     let s = 0;
-    artObj.push(newArt[s]);
-    s++;
+    artObj.push(newArt[i]);
+    
   }
   // artObj.push(newArt[0]);
 }
@@ -157,7 +157,11 @@ let nodelist = document.createDocumentFragment();
     p3.innerText =  artObj[i]['thirdParagraph'];
     let span = document.createElement('span');
     span.classList.add('expandButton');
-    span.innerText = '+';
+    let button = document.createElement('button');
+    button.textContent = '+';
+    // button.onclick = test;
+    span.appendChild(button);
+ 
 
     // Apend to div
     dv.appendChild(h2);
@@ -168,11 +172,14 @@ let nodelist = document.createDocumentFragment();
     dv.appendChild(span);
     /// Apend to nodelist
     nodelist.appendChild(dv);
+    btn = nodelist.querySelector('button');
+
+
   }
-    
+
 return nodelist;
 }
-let moreData = [  {
+let moreData = [{
   title: 'New Title',
   date: 'Jan 9th, 2011',
   firstParagraph: `Made up first paragraph maybe the other one woudl be a copy and paste thing but who knows what I woudl do in this situation 
@@ -183,22 +190,58 @@ let moreData = [  {
 
   thirdParagraph: `Another article once found hrere in this third paraphgra with other stuff instide thie data array going over here and there `
 },{
-  title: 'New Title',
-  date: 'Jan 9th, 2011',
+  title: 'Thats not the title',
+  date: 'Jan 19th, 2101',
   firstParagraph: `Made up first paragraph maybe the other one woudl be a copy and paste thing but who knows what I woudl do in this situation 
   All I know is that i am typing stuff so there is more data in the more data object`,
 
   secondParagraph: `balah alhal hsldf hk I made stuff up but dont want to use lorum epsum instead i just say things like this and hope it works
   but when it wont I dont give up and try again until I dont know what to do and stop doing the wrong thing and then it works `,
 
-  thirdParagraph: `Another article once found hrere in this third paraphgra with other stuff instide thie data array going over here and there `
-}]
+  thirdParagraph: `Another article from the future thats been repeated after many years. No one knew this existested back in 2011 until 
+  someone in 2101 knew about this once found hrere in this third paraphgra with other stuff instide thie data array going over
+  here and there `
+}];
 addMoreArticles(data,moreData);
+const addE =(h)=>{
+
+  const buttons = h.querySelector("span");
+  buttons.addEventListener('click',e=>{
+  
+    e.target.classList.add('article-open');
+    
+  },true)
+  console.log('click');
+}
+function test(wr){
+  wr.onclick = true;
+  wr[0].addEventListener('onclick',  e=>{
+     return 'hi';
+  });
+}
+// window.span.addEventListener('click',e=>{
+//   console.log('click');
+// // btn.classList.add('article-open');
+  
+// });
 
 
 // let h = articleMaker(data).firstElementChild.childNodes[0];
 let h = articleMaker(data);
-console.log(h);
+// addE(h);
+ console.log(h);
+ let wr = h.querySelectorAll('button');
+//  h.onclick = test(wr);
+
+//  document.test.addEventListener('onclick',(e)=>{
+//    console.log('no')
+//  },true);
+// Onclick will not become anything else but null No action event listen works here. 
+h.childNodes[0].childNodes[5].onclick = test(wr);
+h.childNodes[0].childNodes[5].addEventListener('click',test = (wr)=>{
+  test(wr);
+});
+ console.log(wr);
 // document.querySelector('.articles').innerHTML = h.outerHTML;
 let thehtml = '';
 for(let l = 0; l < h.childElementCount; l++){
@@ -207,4 +250,5 @@ for(let l = 0; l < h.childElementCount; l++){
 
 }
 console.log(data);
+
 document.querySelector('.articles').innerHTML = thehtml;
