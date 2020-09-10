@@ -5,7 +5,7 @@
 }
 
 .menu {
-  display: inline-block;
+  display: none;
   position: fixed;
   top: 75px;
   left: 0;
@@ -18,11 +18,16 @@
   z-index: 2; /* This set the layer level of the element, it has precendence over initial level of 1*/
 }
 
-.menu ul li{
-  list-style-type: none;
-  font-size: 32px;
-  padding: 30px 0;
-  text-align: center;
+.menu ul {
+  width:30%;
+  height:80%;
+  background-color: green;
+  li{
+    list-style-type: none;
+    font-size: 32px;
+    padding: 30px 0;
+    text-align: center;
+  }
 }
 
 .menu--open {

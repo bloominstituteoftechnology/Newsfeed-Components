@@ -92,6 +92,10 @@ let header = document.querySelector('.header');
 let ap = menuMaker(menuItems);
 
 let ff = document.createElement('div');
+let ul = document.createElement('ul');
+let li = document.createElement('li');
+li.textContent = 'test content';
+ul.appendChild(li);
 // ff.classList.add('menu--open');
 ff.classList.add('menu');
 // ff.textContent='hifffff';
@@ -103,7 +107,11 @@ ff.appendChild(img);
 // ff.append(h1.innerHTML);
 // let hh = document.querySelector('.menu--open');
 ff.addEventListener('click',(e)=>{
-ff.classList.toggle('menu--open');
+  ff.appendChild(ul);
+  ff.classList.add('menu--open');
+  let ffmenu = document.querySelector('.menu');
+  ffmenu.style.display = 'block';
+// ff.classList.toggle('menu--open');
 let menuD = document.querySelector('.menu');
 let fstyle = ff.getAttribute('style');
 // ff.style.display = 'flex';
