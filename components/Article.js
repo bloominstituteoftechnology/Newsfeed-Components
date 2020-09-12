@@ -135,3 +135,17 @@ function articleMaker(article) {
 
   return articleDiv
 }
+
+data.push({
+  title: `Going to Lambda school`,
+  date: `September 11, 2020`,
+  firstParagraph: `Lorem Ipsum`,
+  secondParagraph: `Lorem Ipsum`,
+  thirdParagraph: `Lorem Ipsum`
+})
+
+data.forEach((item) => {
+  let articleElement = articleMaker(item)
+  let articles = document.querySelector(".articles")
+  articles.append(articleElement)
+})
