@@ -86,6 +86,26 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'The Philosophy of Programming Languages',
+    date: 'September 13, 2020',
+    firstParagraph: `Was the 2001 blockbuster, feature-film 'The Matrix' actually a metaphor for what it's like to begin learning about the coded,
+      programmatic languages that are used to create and function (no pun intended) many of the elements (pun intended) of our daily environments?
+      Everything from a plastic spoon or a slice of cheese to a commericial airliner or an average frontdoor are all created by a manufacturing
+      processes that utilize coded blueprints to either cut, bend, shape, mould, or otherwise manipulate raw materials into an end product.
+      Increasing proportions of these consumer products are not only created using high-tech mannufacturing machines that run code, but also
+      are created with on-board computers to run a range of functions for the eventual user's benefit. What's being describes could be
+      shortened as, " Humans, creating computerized machines that manufacture computerized machines for the comsumption of humans. `,
+
+    secondParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
+          hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
+          hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
+          hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? `,
+
+    thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
+          Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
+          Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
 ];
 
@@ -140,6 +160,9 @@ const articleMaker = (object) => {
   articlePg3.textContent = object.thirdParagraph;
   button.textContent = "+";
 
+  // style
+  button.style.fontSize = "2rem";
+
   // append children to article div
   articleDiv.appendChild(articleTitle);
   articleDiv.appendChild(articleDate);
@@ -162,9 +185,11 @@ const articleMaker = (object) => {
   const page = document.querySelector('.articles');
   page.appendChild(articleDiv);
 
+  return
+
 
 }
 
 data.forEach((element) => {
   articleMaker(element)
-} );
+},0 );
