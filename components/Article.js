@@ -86,6 +86,26 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'The Philosophy of Programming Languages',
+    date: 'September 13, 2020',
+    firstParagraph: `Was the 2001 blockbuster, feature-film 'The Matrix' actually a metaphor for what it's like to begin learning about the coded,
+      programmatic languages that are used to create and function (no pun intended) many of the elements (pun intended) of our daily environments?
+      Everything from a plastic spoon or a slice of cheese to a commericial airliner or an average frontdoor are all created by manufacturing
+      processes that utilize coded blueprints to either cut, bend, shape, mould, or otherwise manipulate raw materials into an end product.
+      Increasing proportions of these consumer products are not only created using high-tech manufacturing machines that run code, but also
+      are created with on-board computers to run a range of functions for the eventual user's benefit. What's being describes could be
+      shortened as, " Humans, creating computerized machines that manufacture computerized machines for the consumption of humans. `,
+
+    secondParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
+          hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
+          hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
+          hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? `,
+
+    thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
+          Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
+          Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
 ];
 
@@ -114,3 +134,63 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+
+// article maker
+const articleMaker = (object) => {
+
+  const articleDiv = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+  const articleDate = document.createElement('p');
+  const articlePg1 = document.createElement('p');
+  const articlePg2 = document.createElement('p');
+  const articlePg3 = document.createElement('p');
+  const button = document.createElement('span');
+
+  // add classes
+  articleDiv.classList.add('article');
+  articleDate.classList.add('date');
+  button.classList.add('expandButton')
+
+  // inner text
+  articleTitle.textContent = object.title;
+  articleDate.textContent = object.date;
+  articlePg1.textContent = object.firstParagraph;
+  articlePg2.textContent = object.secondParagraph;
+  articlePg3.textContent = object.thirdParagraph;
+  button.textContent = "+";
+
+  // style
+  button.style.fontSize = "2rem";
+
+  // append children to article div
+  articleDiv.appendChild(articleTitle);
+  articleDiv.appendChild(articleDate);
+  articleDiv.appendChild(articlePg1);
+  articleDiv.appendChild(articlePg2);
+  articleDiv.appendChild(articlePg3);
+  articlePg3.appendChild(button);
+
+  // event listener
+  button.addEventListener("click", () => {
+    if (button.textContent === "+") {
+      articleDiv.classList.toggle('article-open');
+      button.textContent = "-";
+    } else if (button.textContent === "-") {
+      articleDiv.classList.toggle('article-open');
+      button.textContent = "+";
+    }
+  });
+
+  // add to DOM
+  const page = document.querySelector('.articles');
+  page.appendChild(articleDiv);
+
+  return articleDiv;
+
+
+}
+
+data.forEach((element) => {
+  articleMaker(element)
+},0 );
