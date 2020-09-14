@@ -38,58 +38,13 @@ let menuItems = [
   'menuItems' array, and append the returned menu to the header.
 */
 const menuMaker = (menu) =>{
-/* 
-
-<div class="menu">
-    <ul>
-      {each menu item as an <li>}
-    </ul>
-  </div>
-*/
-// let theMenu = menu.map((i)=>{
-//   let divM = document.createElement('div');
-//   divM.classList.add('menu');
-//   let ul = document.createElement('ul');
-//   let li = document.createElement('li');
-//   li.textContent = i;
-//   ul.append(li);
-//   divM.append( ul);
-//   /// Class handler
-//   divM.addEventListener('click',(e)=>{
-//     e.target.classList.add('menu--open');
-//   });
-//   return divM;
-// },true);
-
-  // let divM = document.createElement('div');
-  // divM.classList.add('menu');
-  // let ul = document.createElement('ul');
-  // let li = document.createElement('li');
-  // li.textContent = menu[0];
-  // ul.appendChild(li);
-  // divM.appendChild(ul);
-  // /// Class handler
-  // // divM.addEventListener('click',(e)=>{
-  // //   e.target.classList.add('menu--open');
-  // // },true);
-
-let ff = document.createElement('div');
-ff.classList.add('menu--open');
-
-
-return ff;
-
-}
-
-let header = document.querySelector('.header');
-
 // header.appendChild(ap);
 // header.forEach((e)=>{
 //   let ap = menuMaker(menuItems);
 //   e.append(ap);
 // });
 
-let ap = menuMaker(menuItems);
+// let ap = menuMaker(menuItems);
 
 let ff = document.createElement('div');
 let ul = document.createElement('ul');
@@ -123,4 +78,13 @@ ff.classList.toggle('menu--open');
 
 },false);
 console.log(ff);
-  header.appendChild(ff);
+
+
+return ff;
+
+}
+
+let header = document.querySelector('.header');
+
+let fff = menuMaker(menuItems);
+  header.appendChild(fff);
