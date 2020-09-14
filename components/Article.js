@@ -92,11 +92,11 @@ const data = [
     date: 'September 13, 2020',
     firstParagraph: `Was the 2001 blockbuster, feature-film 'The Matrix' actually a metaphor for what it's like to begin learning about the coded,
       programmatic languages that are used to create and function (no pun intended) many of the elements (pun intended) of our daily environments?
-      Everything from a plastic spoon or a slice of cheese to a commericial airliner or an average frontdoor are all created by a manufacturing
+      Everything from a plastic spoon or a slice of cheese to a commericial airliner or an average frontdoor are all created by manufacturing
       processes that utilize coded blueprints to either cut, bend, shape, mould, or otherwise manipulate raw materials into an end product.
-      Increasing proportions of these consumer products are not only created using high-tech mannufacturing machines that run code, but also
+      Increasing proportions of these consumer products are not only created using high-tech manufacturing machines that run code, but also
       are created with on-board computers to run a range of functions for the eventual user's benefit. What's being describes could be
-      shortened as, " Humans, creating computerized machines that manufacture computerized machines for the comsumption of humans. `,
+      shortened as, " Humans, creating computerized machines that manufacture computerized machines for the consumption of humans. `,
 
     secondParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
           hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
@@ -177,7 +177,8 @@ const articleMaker = (object) => {
       articleDiv.classList.toggle('article-open');
       button.textContent = "-";
     } else if (button.textContent === "-") {
-      button.textContent = "+"
+      articleDiv.classList.toggle('article-open');
+      button.textContent = "+";
     }
   });
 
@@ -185,7 +186,7 @@ const articleMaker = (object) => {
   const page = document.querySelector('.articles');
   page.appendChild(articleDiv);
 
-  return
+  return articleDiv;
 
 
 }
