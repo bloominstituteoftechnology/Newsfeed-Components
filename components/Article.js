@@ -2,7 +2,6 @@
 import {data} from '/components/data.js';
 
 //Assignment instructions are at the bottom of this file 
-
 function articleMaker(articleData){
 	const article = document.createElement('div');
 	article.classList.toggle('article');
@@ -31,12 +30,18 @@ function articleMaker(articleData){
 	const expandSpan = document.createElement('span');
 	expandSpan.classList.toggle('expandButton');
 	expandSpan.textContent = '+';
+	expandSpan.addEventListener('click', event => {
+		article.classList.toggle('article-open');
+	});
 	article.appendChild(expandSpan);
 
 	return article;
 }
 
-console.log(articleMaker(data[0]));
+const articleContainer = document.querySelector('.articles');
+data.forEach(articleData => {
+	articleContainer.appendChild(articleMaker(articleData));
+});
 
 /*
 	Step 1: Write a component called 'articleMaker' to create an article.
