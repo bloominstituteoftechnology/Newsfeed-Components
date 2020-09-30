@@ -94,6 +94,7 @@ const data = [
   Your component is a function that takes an article object as its only argument,
   and returns a DOM node looking like the one below:
 
+
   <div class="article">
     <h2>{title of the article}</h2>
     <p class="date">{date of the article}</p>
@@ -102,6 +103,8 @@ const data = [
 
     <span class="expandButton">+</span>
   </div>
+
+
 
   Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
   This listener should toggle the class 'article-open' on div.article.
@@ -114,3 +117,29 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+function articleMaker(art){
+
+  // Instaniate elements for panel
+  const article =  document.createElement('div')
+  const title =  document.createElement('h2')
+  const date =   document.createElement('p')
+  const p1 = document.createElement('p')
+  const p2 =  document.createElement('p')
+  const expandButton = document.createElement('span')
+
+// Structure set up
+article.appendChild(title)
+article.appendChild(date)
+article.appendChild(p1)
+article.appendChild(p2)
+article.appendChild(expandButton)
+
+// class naming
+
+article.classList.add('article')
+date.classList.add('date')
+expandButton.classList.add('expandButton')
+}
+
+console.log(article)
