@@ -86,6 +86,16 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+
+  {
+    title: 'Here you go, lady. There is a quarter',
+    date: 'Jan 1st, 2019',
+    firstParagraph: `Don't say a word. Thanks, thanks a lot. Here you go, lady. There's a quarter. Good. Have a good trip Einstein, watch your head.`,
+
+    secondParagraph: `No, I refuse to except the responsibility. Believe me, Marty, you're better off not having to worry about all the aggravation and headaches of playing at that dance. Doc. That was the day I invented time travel. I remember it vividly. I was standing on the edge of my toilet hanging a clock, the porces was wet, I slipped, hit my head on the edge of the sink. And when I came to I had a revelation, a picture, a picture in my head, a picture of this. This is what makes time travel possible. The flux capacitor. No, Marty, we've already agreed that having information about the future could be extremely dangerous. Even if your intentions are good, they could backfire drastically. Whatever you've got to tell me I'll find out through the natural course of time.`,
+
+    thirdParagraph: `Where's Einstein, is he with you? Don't worry. As long as you hit that wire with the connecting hook at precisely 88 miles per hour, the instance the lightning strikes the tower, everything will be fine. Oh, hi , Marty. I didn't hear you come in. Fascinating device, this video unit. No. Uh, well, I haven't finished those up yet, but you know I figured since they weren't due till-`
   }
 ];
 
@@ -102,15 +112,65 @@ const data = [
 
     <span class="expandButton">+</span>
   </div>
+  */
 
-  Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
-  This listener should toggle the class 'article-open' on div.article.
+const articleMaker = (articleObject) => {
 
-  Step 3: Don't forget to return something from your function!
+  let divArticle = document.createElement('div')
+  divArticle.classList.add('article')
 
-  Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
-  to create a div.article element and append it to the DOM inside div.articles (see index.html).
+  let h2 = document.createElement('h2')
+  h2.innerHTML = articleObject.title
+  divArticle.append(h2)
 
-  Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
-  Refresh the page to see the new article.
+  let date = document.createElement('p')
+  date.classList.add('date')
+  date.innerHTML = articleObject.date
+  divArticle.append(date)
+
+  let firstParagraph = document.createElement('p')
+  firstParagraph.innerHTML = articleObject.firstParagraph
+  divArticle.append(firstParagraph)
+
+  let secondParagraph = document.createElement('p')
+  secondParagraph.innerHTML = articleObject.secondParagraph
+  divArticle.append(secondParagraph)
+
+  let thirdParagraph = document.createElement('p')
+  thirdParagraph.innerHTML = articleObject.thirdParagraph
+  divArticle.append(thirdParagraph)
+
+  let span = document.createElement('span')
+  span.classList.add('expandButton')
+  span.innerHTML = '+'
+  divArticle.append(span)
+  span.addEventListener("click", () => {
+    divArticle.classList.toggle('article-open')
+  })
+
+
+
+  return (
+    divArticle
+  )
+
+
+}
+
+data.map((e) => {
+  let articles = document.querySelector('.articles')
+  articles.append(articleMaker(e))
+
+})
+
+/* Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
+ This listener should toggle the class 'article-open' on div.article.
+
+ Step 3: Don't forget to return something from your function!
+
+ Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
+ to create a div.article element and append it to the DOM inside div.articles (see index.html).
+
+ Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
+ Refresh the page to see the new article.
 */

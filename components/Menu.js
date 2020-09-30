@@ -9,6 +9,24 @@ let menuItems = [
   'Log Out'
 ];
 
+
+
+// let btn = document.querySelector('.menu-button');
+
+// function menuMaker(items){
+//   let menu = document.querySelector('menu-button')
+//   let list = document.createElement('div')
+//   let list = document.createElement('ul')
+//   let menu = menuMaker(menuItems)
+//   menu.classList.add('menu')
+//   for(i in items){
+//     let item = document.createElement('li')
+//     item.textContent = items[i]
+//     list.appendChild(item)
+//   }
+//   menu.appendChild(list)
+//   return menu
+// }
 /* 
   Step 1: Write a component called 'menuMaker' to create a menu like the markup below:
 
@@ -19,6 +37,8 @@ let menuItems = [
   </div>
 
   The 'menuMaker' takes an array of menu items as its only argument.
+
+
 
   Step 2: Inside the function, iterate over the array creating a list item <li> element for each item in the array.
   Add those items to the <ul>
@@ -31,3 +51,41 @@ let menuItems = [
 
   Step 6: Use 'menuMaker' to create a menu using the 'menuItems' array, and append the returned menu to the header.
 */
+
+
+const menu = document.createElement("div")
+menu.classList.add('menu')
+
+const menuUl = document.createElement("ul")
+
+menu.append(menuUl)
+
+console.log(menu)
+
+let nav = document.querySelector('.header')
+
+nav.append(menu)
+
+
+
+
+
+const menuMaker = (items) => {
+  let button = document.querySelector('.menu-button')
+  console.log(button)
+  button.addEventListener("click", () => {
+    console.log('clicked')
+    menu.classList.toggle('menu--open')
+
+  })
+  return (
+
+    items.map((item) => {
+      let li = document.createElement("li")
+      li.innerHTML = item
+      menuUl.append(li)
+    })
+  )
+}
+
+menuMaker(menuItems)
