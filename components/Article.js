@@ -32,8 +32,10 @@ import {data} from './data.js';
 function articleMaker(article) {
   let newArticle = document.createElement("div");
   newArticle.classList.add("article");
+
   let h2 = document.createElement("h2");
   h2.textContent = `${article.title}`;
+  
   function paragraphMaker(text, classToAdd) {
     let p = document.createElement("p"); 
     p.textContent = `${text}`;
@@ -44,6 +46,7 @@ function articleMaker(article) {
   let firstParagraph = paragraphMaker(article.firstParagraph);
   let secondParagraph = paragraphMaker(article.secondParagraph);
   let thirdParagraph = paragraphMaker(article.thirdParagraph);
+  
   let span = document.createElement("span");
   span.classList.add("expandButton");
   span.textContent = "+"
@@ -51,6 +54,7 @@ function articleMaker(article) {
   function openArticle(e) {
     e.target.parentElement.classList.toggle("article-open");
   }
+  
   let components = [h2, date, firstParagraph, secondParagraph, thirdParagraph, span];
   components.forEach(el => newArticle.appendChild(el));
   return newArticle;
@@ -60,3 +64,5 @@ for (let i of data) {
   let articles = document.getElementsByClassName("articles")[0];
   articles.appendChild(articleMaker(i));
 }
+
+console.log($(".articles"));
