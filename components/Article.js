@@ -1,6 +1,43 @@
 //Import article data from external module 
 import {data} from '/components/data.js';
 
+//Assignment instructions are at the bottom of this file 
+
+function articleMaker(articleData){
+	const article = document.createElement('div');
+	article.classList.toggle('article');
+
+	const titleH2 = document.createElement('h2');
+	titleH2.textContent = articleData.title;
+	article.appendChild(titleH2);
+
+	const dateP = document.createElement('p');
+	dateP.classList.toggle('date');
+	dateP.textContent = articleData.date;
+	article.appendChild(dateP);
+
+	const firstP = document.createElement('p');
+	firstP.textContent = articleData.firstParagraph;
+	article.appendChild(firstP);
+
+	const secondP = document.createElement('p');
+	secondP.textContent = articleData.secondParagraph;
+	article.appendChild(secondP);
+
+	const thirdP = document.createElement('p');
+	thirdP.textContent = articleData.thirdParagraph;
+	article.appendChild(thirdP);
+
+	const expandSpan = document.createElement('span');
+	expandSpan.classList.toggle('expandButton');
+	expandSpan.textContent = '+';
+	article.appendChild(expandSpan);
+
+	return article;
+}
+
+console.log(articleMaker(data[0]));
+
 /*
 	Step 1: Write a component called 'articleMaker' to create an article.
 	Your component is a function that takes an article object as its only argument,
@@ -26,3 +63,7 @@ import {data} from '/components/data.js';
 	Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
 	Refresh the page to see the new article.
 */
+
+// This is the data we will be using to create our articles. Look at it, then proceed to line 93.
+// OPTIONAL: if you're feeling adventurous, try to make this data an export from a different module, and import it here.
+// You can read about ES6 modules here: https://exploringjs.com/es6/ch_modules.html#sec_basics-of-es6-modules
