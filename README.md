@@ -17,19 +17,19 @@ In this project we are going to be building a news feed reader. The goal is to h
 * [ ] Add your team lead as collaborator on Github.
 * [X] Clone your OWN version of the repository (Not Lambda's by mistake!).
 * [X] Create a new branch: git checkout -b `<firstName-lastName>`.
-* [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
-* [ ] Push commits: git push origin `<firstName-lastName>`.
+* [X] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
+* [X] Push commits: git push origin `<firstName-lastName>`.
 
 **Follow these steps for completing your project.**
 
-* [ ] Submit a Pull-Request to merge `<firstName-lastName>` Branch into `main` (student's Repo). **Please don't merge your own pull request**
+* [X] Submit a Pull-Request to merge `<firstName-lastName>` Branch into `main` (student's Repo). **Please don't merge your own pull request**
 
 ### Launching the project
 
-* [ ] Navigate to the root of the project with your command line.
-* [ ] Run `npm install` to download any dependencies listed in the `package.json` file.
-* [ ] Run `npm start` to compile your project and launch a development server.
-* [ ] Navigate Chrome to the URL indicated in the output of the `npm start` command.
+* [X] Navigate to the root of the project with your command line.
+* [X] Run `npm install` to download any dependencies listed in the `package.json` file.
+* [X] Run `npm start` to compile your project and launch a development server.
+* [X] Navigate Chrome to the URL indicated in the output of the `npm start` command.
 
 ### Part 1: The Articles Component
 

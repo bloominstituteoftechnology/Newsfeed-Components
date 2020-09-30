@@ -149,7 +149,7 @@ function articleMaker(arrObj){
   articleDiv.appendChild(expBtn)
 
   // Step 2
-  expBtn.addEventListener('click', function(event){
+  expBtn.addEventListener('click', function(){
     articleDiv.classList.toggle('article-open')
   })
   
