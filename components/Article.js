@@ -89,6 +89,30 @@ const data = [
   }
 ];
 
+
+
+
+function articleMaker(obj)
+{
+  const article = doctument.createElement('div')
+  const title = document.createElement('h2')
+  const date = document.createElement('date')
+  const fp = document.createElement('p')
+  const sp = document.createElement('p')
+  const tp = document.createElement('p')
+
+
+  article.classList.add('article')
+  date.classList.add('date')
+  button.classList.add('expandButton')
+
+  title.textContent = obj.title
+  date.textContent = obj.date
+  fp.textContent = obj.firstParagraph
+  sp.textContent = obj.secondParagraph
+  tp.textContent = obj.thirdParagraph
+
+} 
 /*
   Step 1: Write a component called 'articleMaker' to create an article.
   Your component is a function that takes an article object as its only argument,
