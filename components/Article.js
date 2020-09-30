@@ -103,6 +103,7 @@ const data = [
     <span class="expandButton">+</span>
   </div>
 
+
   Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
   This listener should toggle the class 'article-open' on div.article.
 
@@ -114,3 +115,64 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+// Step 1
+function articleMaker(arrObj){
+  const articleDiv = document.createElement('div')
+  articleDiv.classList.add('article')
+
+  const title = document.createElement('h2')
+  title.textContent = arrObj.title
+
+  const date = document.createElement('p')
+  date.classList.add('date')
+  date.textContent = arrObj.date
+
+  const p1 = document.createElement('p')
+  p1.textContent = arrObj.firstParagraph
+
+  const p2 = document.createElement('p')
+  p2.textContent = arrObj.secondParagraph
+
+  const p3 = document.createElement('p')
+  p3.textContent = arrObj.thirdParagraph
+
+  const expBtn = document.createElement('span')
+  expBtn.classList.add('expandButton')
+  expBtn.textContent = '+'
+
+  articleDiv.appendChild(title)
+  articleDiv.appendChild(date)
+  articleDiv.appendChild(p1)
+  articleDiv.appendChild(p2)
+  articleDiv.appendChild(p3)
+  articleDiv.appendChild(expBtn)
+
+  // Step 2
+  expBtn.addEventListener('click', function(event){
+    articleDiv.classList.toggle('article-open')
+  })
+  
+  // Step 3
+  return articleDiv
+}
+
+  // Step 5
+  data.push(
+    {
+      title: 'Javascript Is The DEVIL!',
+      date: 'September 30th, 2020',
+      firstParagraph: `A computer program does what you tell it to do, not what you want it to do. p = np || p != np ... Why do it by hand in ten minutes when you can automate it in ten hours? Don't treat a semi colon as the end of the line, but rather as a possibility of a new beginning. Bleeding edge. // Removing this line breaks everything DONT DO IT.`,
+  
+      secondParagraph: `Programmer, n. Device for converting caffeine into software. A programmer puts two glasses on his bedside table before going to sleep. A full one, in case he gets thirsty, and an empty one, in case he doesn't. C is dead. Merge sort, quick sort, bubble sort, bogo sort, tim sort. Byte, short, int, long, float, double.`,
+  
+      thirdParagraph: 'Real Programmers use C since it is the easiest language to spell. C is dead. Debugging is like being the detective in a crime movie where you are also the murderer. Recursion: see recursion. Git add, git commit, git push.'
+    }
+  )
+
+  // Step 4
+data.forEach(items => {
+  const article = articleMaker(items)
+  document.body.appendChild(article)
+})
+
