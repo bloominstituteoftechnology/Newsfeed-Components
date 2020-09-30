@@ -83,5 +83,14 @@ export const data = [
 		thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
 					Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
 					Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+	},
+	{
+		title: 'Bitter debate taunts overpower Trump’s, Biden’s visions',
+		date: 'Sep 29th, 2020',
+		firstParagraph: `CLEVELAND (AP) — The first debate between President Donald Trump and Democratic challenger Joe Biden deteriorated into bitter taunts and near chaos Tuesday night as Trump repeatedly interrupted his opponent with angry — and personal — jabs that sometimes overshadowed the sharply different visions each man has for a nation facing historic crises.`,
+
+		secondParagraph: `In the most tumultuous presidential debate in recent memory, Trump refused to condemn white supremacists who have supported him, telling one such group known as Proud Boys to “stand back, stand by.” There were also heated clashes over the president’s handling of the pandemic, the integrity of the election results, deeply personal attacks about Biden’s family and how the Supreme Court will shape the future of the nation’s health care.`,
+
+		thirdParagraph: `But it was the belligerent tone that was persistent, somehow fitting for what has been an extraordinarily ugly campaign. The two men frequently talked over each other with Trump interrupting, nearly shouting, so often that Biden eventually snapped at him, “Will you shut up, man?” Source: https://apnews.com/article/election-2020-joe-biden-virus-outbreak-donald-trump-health-aeab14ec95426d4161f1cff966a26a1f`
 	}
 ];
