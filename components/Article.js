@@ -88,7 +88,49 @@ const data = [
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
 ];
+//this is the parent element located in the html file
+const articles = document.querySelector('.articles')
 
+function articleMaker(article) {
+  //Instantiate all elements needed for article
+  const articleDiv = document.createElement('div')
+  const heading = document.createElement('h2')
+  const date = document.createElement('p')
+  const paragraph1 = document.createElement('p')
+  const paragraph2 = document.createElement('p')
+  const paragraph3 = document.createElement('p')
+  const span = document.createElement('span')
+  //Set up structure of elements
+  articleDiv.appendChild(heading)
+  articleDiv.appendChild(date)
+  articleDiv.appendChild(paragraph1)
+  articleDiv.appendChild(paragraph2)
+  articleDiv.appendChild(paragraph3)
+  articleDiv.appendChild(span)
+  //Add class names and text content to elements
+  articleDiv.classList.add('article')
+  date.classList.add('date')
+  span.classList.add('expandButton')
+  heading.textContent = article.title
+  date.textContent = article.date
+  paragraph1.textContent = article.firstParagraph
+  paragraph2.textContent = article.secondParagraph
+  paragraph3.textContent = article.thirdParagraph
+  span.textContent = '+'
+  //Event listener to span.expand button
+  span.addEventListener('click', () => {
+    articleDiv.classList.toggle('article-open')
+  })
+  //Dont forget to return something!
+  return articleDiv
+}
+console.log(articleMaker(data))
+
+//Loop through data
+data.forEach(element => {
+  let articleDiv = articleMaker(element);
+  articles.appendChild(articleDiv)
+});
 /*
   Step 1: Write a component called 'articleMaker' to create an article.
   Your component is a function that takes an article object as its only argument,
