@@ -1,5 +1,4 @@
 // This is the data we will be using, study it but don't change anything, yet.
-
 let menuItems = [
 	'Students',
 	'Faculty',
@@ -8,6 +7,25 @@ let menuItems = [
 	'Music',
 	'Log Out'
 ];
+
+//Assignment instructions are at the bottom of this file 
+function menuMaker(menuArray){
+	const menu = document.createElement('div');
+	menu.classList.toggle('menu');
+
+	const menuList = document.createElement('ul');
+	menu.appendChild(menuList);
+
+	menuArray.forEach(itemString => {
+		const listItem = document.createElement('li');
+		listItem.textContent = itemString;
+		menuList.appendChild(listItem);
+	});
+	
+	return menu;
+}
+
+//console.log(menuMaker(menuItems));
 
 /* 
 	Step 1: Write a component called 'menuMaker' to create a menu like the markup below:
