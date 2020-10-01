@@ -115,63 +115,61 @@ const data = [{
 */
 
 const articles = document.querySelector('.articles');
+const open = '+';
+const close = '-';
 
 function articleMaker(data) {
-    const open = '+';
-    const close = '-';
-
     const article = document.createElement('div');
-    const title = document.createElement('h3');
-    const date = document.createElement('p');
+    const articleTopic = document.createElement('div');
     const articleContent = document.createElement('div');
-    const first = document.createElement('p');
-    const second = document.createElement('p');
-    const third = document.createElement('p');
-    const expandButton = document.createElement('button');
-    const openButton = document.createElement('button');
-    const closeButton = document.createElement('button');
+    const date = document.createElement('p');
+    const firstParagraph = document.createElement('p');
+    const secondParagraph = document.createElement('p');
+    const thirdParagraph = document.createElement('p');
+    const articleTitle = document.createElement('h3');
+    const expandButton = document.createElement('SPAN');
+    const openButton = document.createElement('SPAN');
+    const closeButton = document.createElement('SPAN');
 
-
-
-    article.appendChild(title);
-    article.appendChild(date);
-    article.appendChild(articleContent)
-    articleContent.appendChild(first);
-    articleContent.appendChild(second);
-    articleContent.appendChild(third);
+    article.appendChild(articleTopic);
+    article.appendChild(articleContent);
+    articleTopic.appendChild(articleTitle);
+    articleTopic.appendChild(date);
+    article.appendChild(expandButton);
+    articleContent.appendChild(firstParagraph);
+    articleContent.appendChild(secondParagraph);
+    articleContent.appendChild(thirdParagraph);
     expandButton.appendChild(openButton);
     expandButton.appendChild(closeButton);
 
-
     article.classList.add('article');
+    articleTopic.classList.add('article-topic');
     date.classList.add('date');
-    expandButton.classList.add('expandButton');
-    openButton.classList.add('aritcle-btn-open');
-    closeButton.classList.add('article-btn-close', 'hide-btn');
-    articleContent.classList.add('article-content')
+    expandButton.classList.add('expandButton')
+    openButton.classList.add('open', 'article-open');
+    closeButton.classList.add('close', 'article-close', 'hide-btn');
+    articleContent.classList.add('article-content');
 
-
-
-    title.textContent = data.title;
+    articleTitle.textContent = data.title;
     date.textContent = data.date;
-    first.textContent = data.firstParagraph;
-    second.textContent = data.secondParagraph;
-    third.textContent = data.thirdParagraph;
-    expandButton.textContent = open;
+    firstParagraph.textContent = data.firstParagraph;
+    secondParagraph.textContent = data.secondParagraph;
+    thirdParagraph.textContent = data.thirdParagraph;
+    openButton.textContent = open;
     closeButton.textContent = close;
 
     expandButton.addEventListener('click', () => {
         openButton.classList.toggle('hide-btn');
         closeButton.classList.toggle('hide-btn');
-        expandButton.classList.toggle('toggle-on');
+        articleContent.classList.toggle('toggle-on');
     })
-
 
     return article;
 }
 
 console.log(articleMaker(data));
 
+
 data.forEach((item) => {
-    document.querySelector('.articles').appendChild(articleMaker(item))
-});
+    document.querySelector('.articles').appendChild(articleMaker(item));
+})
