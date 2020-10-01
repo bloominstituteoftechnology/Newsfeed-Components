@@ -92,8 +92,60 @@ const data = [
 /*
   Step 1: Write a component called 'articleMaker' to create an article.
   Your component is a function that takes an article object as its only argument,
-  and returns a DOM node looking like the one below:
+  and returns a DOM node looking like the one below:*/
+  const articleSection = document.querySelector('.articles')
+    
+    function articleMaker(data){
 
+      const article = document.createElement('div')
+      const articleTitle = document.createElement('h2')
+      const para1 = document.createElement('p')
+      const para2 = document.createElement('p')
+      const para3 = document.createElement('p')
+      const date = document.createElement('p')
+      const expandButton = document.createElement('span')
+
+      article.classList.add('article')
+      date.classList.add('date')
+      expandButton.classList.add('expandButton')
+
+      article.appendChild(date)
+      article.appendChild(para1)
+      article.appendChild(para2)
+      article.appendChild(para3)
+      article.appendChild(expandButton)
+      
+      expandButton.addEventListener('click', () => {
+        article.classList.toggle('article-open')
+      })
+
+      return article
+
+    } 
+      data.push({
+        title: "Latest Article",
+        date: "today",
+        firstParagraph: "javascript is litt", 
+        secondParagraph: "javascript is soo litt",
+        thirdParagraph: "javascript is super litt"
+      })
+
+      console.log(data)
+
+      const article = document.querySelector('.articles')
+      data.forEach(item => {
+        const NewArticle = articleMaker(item)
+        NewArticle.children[0].textContent = item.title
+        NewArticle.children[1].textContent = item.date
+        NewArticle.children[2].textContent = item.firstParagraph
+        NewArticle.children[3].textContent = item.secondParagraph
+        NewArticle.children[4].textContent = item.thirdParagraph
+        NewArticle.children[5].textContent = '+'
+
+        article.appendChild(NewArticle)
+
+      })
+/*
   <div class="article">
     <h2>{title of the article}</h2>
     <p class="date">{date of the article}</p>
@@ -110,6 +162,8 @@ const data = [
 
   Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
   to create a div.article element and append it to the DOM inside div.articles (see index.html).
+
+  
 
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
