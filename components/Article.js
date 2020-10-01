@@ -109,23 +109,15 @@ function articleComponents(title, content) {
     newArticle.classList.add('article')
 
     const articleTitle = document.createElement('h2')
-    articleTitle.textContent = title
+    articleTitle.textContent = title, content
 
     newArticle.appendChild(articleTitle)
 
     const articleP = document.createElement('p')
     articleP.classList.add('date')
-    articleP.textContent = 'Date of the articles'
-    const articleP2 = document.createElement('p')
-    articleP2.classList.add('date')
-    articleP2.textContent = 'Date of the articles'
-    const articleP3 = document.createElement('p')
-    articleP3.classList.add('date')
-    articleP3.textContent = 'Date of the articles'
+    articleP.textContent = title, content
 
     newArticle.appendChild(articleP)
-    newArticle.appendChild(articleP2)
-    newArticle.appendChild(articleP3)
 
     const articleSpan = document.createElement('span')
     articleSpan.classList.add('expandButton')
@@ -134,7 +126,7 @@ function articleComponents(title, content) {
     newArticle.appendChild(articleSpan)
 
     newArticle.addEventListener('click', (event) => {
-        articleSpan.classList.toggle('article-open')
+        newArticle.classList.toggle('article-open')
     })
     return newArticle
 }
