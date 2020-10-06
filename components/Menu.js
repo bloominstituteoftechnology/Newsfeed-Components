@@ -35,4 +35,4 @@ let menuItems = [
 
 //step 1
 
-const menuMaker = 
+// const menuMaker = 
