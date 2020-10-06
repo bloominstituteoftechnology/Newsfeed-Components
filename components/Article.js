@@ -143,8 +143,8 @@ const articleMaker = (title, date, firstParagraph, secondParagraph, thirdParagra
   button.classList.add('button')
   
 
-  titles.textContent = titles
-  dates.textContent = dates
+  titles.textContent = title
+  dates.textContent = date
   p1.textContent = firstParagraph
   p2.textContent = secondParagraph
   p3.textContent = thirdParagraph
@@ -159,5 +159,9 @@ const articleMaker = (title, date, firstParagraph, secondParagraph, thirdParagra
 
   return article;
 }
+
+const articles = document.querySelector('.articles');
+data.forEach(data => 
+  articles.appendChild(articleMaker(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph)));
 
 
