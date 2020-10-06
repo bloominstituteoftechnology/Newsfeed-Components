@@ -35,4 +35,20 @@ let menuItems = [
 
 //step 1
 
-// const menuMaker = 
+const menuMaker = (arr) => {
+
+  const menu = document.createElement('div')
+  const menuItems = document.createElement('ul') 
+
+  arr.forEach(data => {
+    const menuList = document.createElement('li')
+    menuItems.appendChild(menuList)
+    menuList.textContent = data
+  })
+
+  return menu
+}
+
+const header = document.querySelector('.header')
+
+header.appendChild(menuMaker(menuItems))
