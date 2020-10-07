@@ -114,3 +114,18 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+function createArticleMaker = (title, date) => {
+  const div = document.createElement ("div");
+  const h2 = document.createElement ("h2");
+  const p1 = document.createElement ("p1");
+  const p2 = document.createElement ("p2");
+  const p3 = document.createElement ("p3");
+  const span = document.createElement ("span");
+
+
+}
+
+//return first element 
+//append at the bottom 
+//forEach const parent = querySelector.articles
