@@ -85,6 +85,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Why is 2020 so bad',
+    date: 'Oct 6th, 2020',
+    firstParagraph: `It's bad. `,
+
+    secondParagraph: `So bad. `,
+
+    thirdParagraph: `Yup.`
   }
 ];
 
@@ -123,7 +132,6 @@ function articleMaker(data){
   //add class list
   articleContainer.classList.add('article');
   articleDate.classList.add('date');
-  articleContent1.classList.add('date');
   articleExpand.classList.add('expandButton',);
   //add content
   articleTitle.textContent = data.title;
@@ -131,16 +139,25 @@ function articleMaker(data){
   articleContent1.textContent = data.firstParagraph;
   articleContent2.textContent = data.secondParagraph;
   articleContent3.textContent = data.thirdParagraph;
+  articleExpand.textContent = '+';
   articleExpand.addEventListener('click', (e) => { 
     articleContainer.classList.toggle('article-open');
 
   });
+  //append content to main div
+  articleContainer.appendChild(articleTitle);
+  articleContainer.appendChild(articleDate);
+  articleContainer.appendChild(articleContent1);
+  articleContainer.appendChild(articleContent2);
+  articleContainer.appendChild(articleContent3);
+  articleContainer.appendChild(articleExpand);
   //return main div of component
       return articleContainer;
 }
-
+//loop array to make article from each object
 data.forEach((articleItem) => {
-  let articleEntry = document.getElementByClassName('articles');
+  let articleEntry = document.querySelector('.articles');
   let newArticle = articleMaker(articleItem);
   articleEntry.appendChild(newArticle);
+
 });
