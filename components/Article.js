@@ -114,3 +114,56 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+function articleMaker (obj){
+  // creating the article
+  const article = document.createElement("div");
+  article.classList.add("article");
+  // title element
+  const artTitle = document.createElement("h2");
+  artTitle.textContent = $`{obj.title}`;
+  article.appendChild(artTitle)
+// creating date elment
+  const date = document.createElement("p")
+  date.classList.add("date");
+  date.textContent = $`{obj.date}`;
+  article.appendChild(date);
+// creating 3 seperate paragrphs
+  const par1 = document.createElement("p");
+  par1.textContent = $`{obj.firstParagraph}`;
+  article.appendChild(par1);
+
+  const par2 = document.createElement("p");
+  par2.textContent = $`{obj.secondParagraph}`;
+  article.appendChild(par2);
+
+  const par3 = document.createElement("p");
+  par3.textContent = $`{obj.thirdParagraph}`;
+  article.appendChild(par3);
+// creating Expand Buttton 
+  const expand = document.createElement('span');
+  expand.classList.add("expandButton");
+  expand.textContent = "Expand";
+  //Step 2
+  expand.addEventListener('click', () => {
+    article.classList.toggle("article-open");
+  });
+
+  return article;
+}
+
+const articles = document.querySelectorAll(".article");
+
+const body = document.querySelector("body");
+// Step 4
+data.push({
+  title: 'My Web Development Journey',
+  date: 'October 6, 2020',
+  firstParagraph: 'I am a Lambda Student',
+  secondParagraph: 'Lambda is hard.',
+  thirdParagraph: ' lorem ipson dlkdfkh dfkshfkdfhkdshfkdshfkdshfkfhdksfhksfhkdshfkdshfkdshfkdsfhkdsf',
+});
+
+data.forEach(article => body.appendChild(articleMaker(article)));
+
+
