@@ -157,10 +157,10 @@ const articleMaker = (title, date, firstParagraph, secondParagraph, thirdParagra
   
 })
 
-  return article;
+  return article
 }
 
-const articles = document.querySelector('.articles');
+const articles = document.querySelector('.articles')
 data.forEach(data => 
   articles.appendChild(articleMaker(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph)));
 
