@@ -132,7 +132,7 @@ function articleMaker(data){
   articleContent2.textContent = data.secondParagraph;
   articleContent3.textContent = data.thirdParagraph;
   articleExpand.addEventListener('click', (e) => { 
-    articleContainer.classList.toggle('articl-open');
+    articleContainer.classList.toggle('article-open');
 
   });
   //return main div of component
@@ -140,6 +140,7 @@ function articleMaker(data){
 }
 
 data.forEach((articleItem) => {
+  let articleEntry = document.getElementByClassName('articles');
   let newArticle = articleMaker(articleItem);
-  parent.appendChild(newArticle);
+  articleEntry.appendChild(newArticle);
 });
