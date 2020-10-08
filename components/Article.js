@@ -129,10 +129,11 @@ function articleMaker(article) {
   span.classList.add("expandButton");
 
   heading.innerHTML = article.title;
-  date.innerHTML = article.date;
-  paragraphOne.innerHTML = article.firstParagraph;
-  paragraphTwo.innerHTML = article.secondParagraph;
-  paragraphThree.innerHTML = article.thirdParagraph;
+  date.textContent = article.date;
+  paragraphOne.textContent = article.firstParagraph;
+  paragraphTwo.textContent = article.secondParagraph;
+  paragraphThree.textContent = article.thirdParagraph;
+  span.innerHTML = "+";
 
   articles.appendChild(div);
   div.appendChild(heading);
@@ -142,11 +143,10 @@ function articleMaker(article) {
   div.appendChild(paragraphThree);
   div.appendChild(span);
 
-  let expand = document.querySelector(".expandButton");
-  expand.addEventListener("click", function () {
+  span.addEventListener("click", function () {
+    console.log("Clicked");
     div.classList.toggle("article-open");
   });
-
   return div;
 }
 
