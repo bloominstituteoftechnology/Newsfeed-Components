@@ -19,18 +19,36 @@ let menuItems = [
   </div>
 
   The 'menuMaker' takes an array of menu items as its only argument.*/
-function menuMaker({ title, content }) {
-  const menu = document.createElement("div");
+function menuMaker(menuArray) {
+  const menuDiv = document.createElement("div");
   const menuList = document.createElement("ul");
-  /*Step 2: Inside the function, iterate over the array creating a list item <li> element for each item in the array.
-  Add those items to the <ul>*/
-  menu.appendChild(menuList);
+  menuArray.forEach((menuListStr) => {
+    const liElement = document.createElement("li");
+    liElement.textContent = menuListStr;
+    menuList.appendChild(liElement);
+  });
+  menuDiv.appendChild(menuList);
+  // console.log(menuDiv);
+  menuDiv.classList.add("menu");
+  const menuButton = document.querySelector(".menu-button");
+  menuButton.addEventListener("click", () => {
+    menuDiv.classList.toggle("menu--open");
+  });
+  return menuDiv;
 }
+const header = document.querySelector(".header");
+const newMenu = menuMaker(menuItems);
+header.append(newMenu);
 
+// menuMaker(menuItems);
+
+/*Step 2: Inside the function, iterate over the array creating a list item <li> element for each item in the array.
+  Add those items to the <ul>*/
+// menu.appendChild(menuList);
 /*
-  Step 3: Still inside your function, select from the DOM the menu button (the element with a class of 'menu-button').
+  Step 3: Still inside your function, select from the DOM the menu button (the element with a class of 'menu-button').*/
 
-  Step 4: Add a click event listener to the menu button. When clicked it should toggle the class 'menu--open' on div.menu (your div with a 'menu' class).
+/*Step 4: Add a click event listener to the menu button. When clicked it should toggle the class 'menu--open' on div.menu (your div with a 'menu' class).
 
   Step 5: Don't forget to return your div.menu.
 
