@@ -85,7 +85,53 @@ const data = [
 
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
-          Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+          Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`,
+    
+
+  },
+  {
+    title: 'John Chamberlin Really Likes Eggs',
+    date: 'Feb 17th, 2001',
+    firstParagraph: `oof ooof oof oof oof oof oof oof oof oof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oof ? `,
+
+    secondParagraph: `oof ooof oof oof oof oof oof oof oof oof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oof  `,
+
+    thirdParagraph: `oof ooof oof oof oof oof oof oof oof oof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oof `,
+    
+
+  },
+  {
+    title: 'John Chamberlin Really Likes Chocolate Milk',
+    date: 'Feb 17th, 2001',
+    firstParagraph: `oof ooof oof oof oof oof oof oof oof oof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oof ? `,
+
+    secondParagraph: `oof ooof oof oof oof oof oof oof oof oof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oof  `,
+
+    thirdParagraph: `oof ooof oof oof oof oof oof oof oof oof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oof `,
+    
+
+  },
+  {
+    title: 'Everything is About John Chamberlin, Now',
+    date: 'Feb 17th, 2001',
+    firstParagraph: `oof ooof oof oof oof oof oof oof oof oof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oof ? `,
+
+    secondParagraph: `oof ooof oof oof oof oof oof oof oof oof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oof  `,
+
+    thirdParagraph: `oof ooof oof oof oof oof oof oof oof oof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oof `,
+    
+
+  },
+  {
+    title: 'I am in Complete Control',
+    date: 'Feb 17th, 2001',
+    firstParagraph: `oof ooof oof oof oof oof oof oof oof oof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oof ? `,
+
+    secondParagraph: `oof ooof oof oof oof oof oof oof oof oof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oof  `,
+
+    thirdParagraph: `oof ooof oof oof oof oof oof oof oof oof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oofoof ooof oof oof oof oof oof oof oof `,
+    
+
   }
 ];
 
@@ -114,3 +160,42 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+const articles = document.querySelector('.articles');
+
+function articleMaker(articleObj){
+  const article = document.createElement('div');
+  const title = document.createElement('h2');
+  const date = document.createElement('p');
+  const para1 = document.createElement('p');
+  const para2 = document.createElement('p');
+  const para3 = document.createElement('p');
+  const expandBtn = document.createElement('span');
+
+  article.appendChild(title);
+  article.appendChild(date);
+  article.appendChild(para1);
+  article.appendChild(para2);
+  article.appendChild(para3);
+  article.appendChild(expandBtn);
+
+  article.classList.add('article');
+  date.classList.add('date');
+  expandBtn.classList.add('expandButton');
+
+  title.textContent = articleObj.title;
+  date.textContent = articleObj.date;
+  para1.textContent = articleObj.firstParagraph;
+  para2.textContent = articleObj.secondParagraph;
+  para3.textContent = articleObj.thirdParagraph;
+  expandBtn.textContent = '+';
+
+
+  expandBtn.addEventListener('click', () => {
+    article.classList.toggle('article-open')
+  });
+
+  return article;
+}
+
+data.forEach(articleObj => articles.appendChild(articleMaker(articleObj)));
