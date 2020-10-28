@@ -89,6 +89,31 @@ const data = [
   }
 ];
 
+
+
+
+const articleDiv=document.createElement("div");
+const articleTitle=document.createElement("h2");
+articleTitle.textContent="{title of the article}";
+
+const articleDateP=document.createElement("p");
+articleDateP.classList.add("date");
+articleDateP.textContent="{date of the article}"
+
+const articleDateP2=document.createElement("p");
+articleDateP2.classList.add("date");
+articleDateP2.textContent="{date of the article}"
+
+const articleDateP3=document.createElement("p");
+articleDateP3.classList.add("date");
+articleDateP3.textContent="{date of the article}"
+
+const expandButtonSpan=document.createElement("span");
+expandButtonSpan.classList.add("expandButton");
+expandButtonSpan.textContent="+";
+
+console.log(expandButtonSpan);
+
 /*
   Step 1: Write a component called 'articleMaker' to create an article.
   Your component is a function that takes an article object as its only argument,
