@@ -86,7 +86,28 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Where are we going?',
+    date: 'Oct 28th, 2020',
+    firstParagraph: `Boggarts lavender robes, Hermione Granger Fantastic Beasts and Where to Find Them. Bee in your bonnet Hand of Glory elder
+    wand, spectacles House Cup Bertie Bott’s Every Flavor Beans Impedimenta. Stunning spells tap-dancing spider Slytherin’s Heir
+    mewing kittens Remus Lupin. Palominos scarlet train black robes, Metamorphimagus Niffler dead easy second bedroom. Padma
+    and Parvati Sorting Hat Minister of Magic blue turban remember my last.`,
+
+    secondParagraph: `Grievous fett calamari anakin skywalker hutt.Alderaan darth kenobi darth r2- d2
+        windu mothma.Sidious darth calamari moff.Wampa mothma sith wedge solo mara.Darth gonk maul sith moff chewbacca palpatine
+        mace amidala.C - 3po solo skywalker anakin yoda leia.Maul wampa bespin watto jade ewok darth jabba.Lando dantooine moff
+        k - 3po dantooine luke.Fisto mandalore darth wedge c - 3p0 ahsoka.Secura moff palpatine fett.Anakin sith darth darth.Moff
+        solo leia ben ponda jade.Binks jango aayla skywalker skywalker cade.Mustafar darth ventress anakin watto.Yavin jawa sebulba
+        owen jinn tatooine sith organa.`,
+
+    thirdParagraph: `Boggarts lavender robes, Hermione Granger Fantastic Beasts and Where to Find Them. Bee in your bonnet Hand of Glory elder
+    wand, spectacles House Cup Bertie Bott’s Every Flavor Beans Impedimenta. Stunning spells tap-dancing spider Slytherin’s Heir
+    mewing kittens Remus Lupin. Palominos scarlet train black robes, Metamorphimagus Niffler dead easy second bedroom. Padma
+    and Parvati Sorting Hat Minister of Magic blue turban remember my last.`,
   }
+
 ];
 
 /*
@@ -114,26 +135,74 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
-function articleMaker (object) {
+const articles = document.querySelector('.articles')
+
+function makePanel ({title, date, firstParagraph, secondParagraph, thirdParagraph}) {
+ 
+  //Instantiate all elements needed
   const article = document.createElement('div')
   const articleTitle = document.createElement('h2')
   const articleDate = document.createElement('p')
-  const para1 = document.createElement('p')
-  const para2 = document.createElement('p')
-  const para3 = document.createElement('p')
-  const span = document.createElement('span')
+  const articleContent1 = document.createElement('p')
+  const articleContent2 = document.createElement('p')
+  const articleContent3 = document.createElement('p')
+  const articleButtonOpen = document.createElement('span')
+  const articleButtonClosed = document.createElement('span')
+  const articleExit = document.createElement('button')
+
+  article.appendChild(articleTitle)
+  article.appendChild(articleDate)
+  article.appendChild(articleContent1)
+  article.appendChild(articleContent2)
+  article.appendChild(articleContent3)
+  article.appendChild(articleButtonOpen)
+  article.appendChild(articleButtonClosed)
+  article.appendChild(articleExit)
 
   article.classList.add('article')
   articleDate.classList.add('date')
-  span.classList.add('expandButton')
-  
-  span.addEventListener('click', (event) => {
+  articleButtonOpen.classList.add('expandButton')
+  articleButtonClosed.classList.add('expandButton', 'hide-btn')
+  articleExit.classList.add('close')
+
+  articleTitle.textContent = title
+  articleDate.textContent = date
+  articleContent1.textContent = firstParagraph
+  articleContent2.textContent = secondParagraph
+  articleContent3.textContent = thirdParagraph
+  articleExit.textContent = 'Mark as Read'
+
+  const open = '\u25bc'
+  articleButtonOpen.textContent = open
+
+  const close = '\u25b2'
+  articleButtonClosed.textContent = close
+
+
+  articleButtonOpen.addEventListener('click', () => {
     article.classList.toggle('article-open')
+    articleButtonOpen.classList.toggle('hide-btn')
+    articleButtonClosed.classLies.toggle('hide-btn')
   })
 
-  articleTitle.textContent = object.title
-  articleDate.textContent = object.date
+  articleButtonClosed.addEventListener('click', () => {
+    article.classList.toggle('article-open')
+    articleButtonOpen.classList.toggle('hide-btn')
+    articleButtonClosed.classLies.toggle('hide-btn')
+  })
+
+  articleExit.addEventListener('click', () => {
+    article.style.display = 'none';
+  })
   
 
-
+  return article
 }
+
+const articleElements = data.map(data => {
+  return makePanel(data)
+})
+
+articleElements.forEach(data => {
+  articles.appendChild(data)
+})
