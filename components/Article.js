@@ -114,7 +114,6 @@ const data = [{
   Refresh the page to see the new article.
 */
 
-const articles = document.querySelector('.articles');
 const open = '+';
 const close = '-';
 
@@ -127,15 +126,15 @@ function articleMaker(data) {
     const secondParagraph = document.createElement('p');
     const thirdParagraph = document.createElement('p');
     const articleTitle = document.createElement('h3');
-    const expandButton = document.createElement('SPAN');
-    const openButton = document.createElement('SPAN');
-    const closeButton = document.createElement('SPAN');
+    const expandButton = document.createElement('span');
+    const openButton = document.createElement('span');
+    const closeButton = document.createElement('span');
 
     article.appendChild(articleTopic);
     article.appendChild(articleContent);
     articleTopic.appendChild(articleTitle);
     articleTopic.appendChild(date);
-    article.appendChild(expandButton);
+    articleTopic.appendChild(expandButton);
     articleContent.appendChild(firstParagraph);
     articleContent.appendChild(secondParagraph);
     articleContent.appendChild(thirdParagraph);
@@ -146,8 +145,8 @@ function articleMaker(data) {
     articleTopic.classList.add('article-topic');
     date.classList.add('date');
     expandButton.classList.add('expandButton')
-    openButton.classList.add('open', 'article-open');
-    closeButton.classList.add('close', 'article-close', 'hide-btn');
+    openButton.classList.add('article-open');
+    closeButton.classList.add('article-open', 'close');
     articleContent.classList.add('article-content');
 
     articleTitle.textContent = data.title;
@@ -158,10 +157,10 @@ function articleMaker(data) {
     openButton.textContent = open;
     closeButton.textContent = close;
 
-    expandButton.addEventListener('click', () => {
-        openButton.classList.toggle('hide-btn');
-        closeButton.classList.toggle('hide-btn');
-        articleContent.classList.toggle('toggle-on');
+    expandButton.addEventListener("click", () => {
+        openButton.classList.toggle('article-open')
+        closeButton.classList.toggle('article-open')
+        articleContent.classList.toggle('close');
     })
 
     return article;
