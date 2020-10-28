@@ -88,6 +88,8 @@ const data = [
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
 ];
+
+data.forEach(function(){
 function articleMaker({article}){
 //Article Div
 const articleDiv=document.createElement("div");
@@ -133,11 +135,10 @@ expandButtonSpan.addEventListener("click", function(){
 const bodyHolder=document.querySelector("body");
 bodyHolder.append(articleDiv);
 
-//Console Logging Article Div
-console.log(articleDiv);
 }
-//Calling the function
-articleMaker(data[1]);
+return articleMaker(data);
+})
+
 /*
   Step 1: Write a component called 'articleMaker' to create an article.
   Your component is a function that takes an article object as its only argument,
