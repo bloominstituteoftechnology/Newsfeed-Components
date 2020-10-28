@@ -89,42 +89,52 @@ const data = [
   }
 ];
 
-for (let i=0; i<data.length; i++){
-function articleMaker({article}){
 //Article Div
 const articleDiv=document.createElement("div");
 articleDiv.classList.add("article");
+
+
+//Article Title
 const articleTitle=document.createElement("h2");
 articleTitle.textContent="{title of the article}";
+articleDiv.append(articleTitle);
 
-//Paragraph1
+//Article Date
 const articleDateP=document.createElement("p");
 articleDateP.classList.add("date");
 articleDateP.textContent="{date of the article}"
+articleDiv.append(articleDateP);
+
+
+//Paragraph 1
+const para1=document.createElement("p");
+articleDiv.append(para1);
 
 //Paragraph 2
-const articleDateP2=document.createElement("p");
-articleDateP2.classList.add("date");
-articleDateP2.textContent="{date of the article}"
+const para2=document.createElement("p");
+articleDiv.append(para2);
 
 //Paragraph 3
-const articleDateP3=document.createElement("p");
-articleDateP3.classList.add("date");
-articleDateP3.textContent="{date of the article}"
+const para3=document.createElement("p");
+articleDiv.append(para3);
 
 //expandButton Span
 const expandButtonSpan=document.createElement("span");
 expandButtonSpan.classList.add("expandButton");
 expandButtonSpan.textContent="+";
+articleDiv.append(expandButtonSpan);
 //toggle article-open class on articleDiv 
 expandButtonSpan.addEventListener("click", function(){
   articleDiv.classList.toggle("article-open");
   return articleDiv;
-})
+});
 
-return null;
-}
-}
+//Appending Article Div to Body
+const bodyHolder=document.querySelector("body");
+bodyHolder.append(articleDiv);
+
+//Console Logging Article Div
+console.log(articleDiv);
 /*
   Step 1: Write a component called 'articleMaker' to create an article.
   Your component is a function that takes an article object as its only argument,
