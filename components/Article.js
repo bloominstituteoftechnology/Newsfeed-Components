@@ -86,6 +86,20 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Here is my first new article',
+    date: 'October 28th, 2020',
+    firstParagraph:'List gangplank Brethren of the Coast bowsprit stern jolly boat mizzen reef sails driver yawl. Scurvy  lanyard Yellow Jack skysail boatswain man-of-war sloop mutiny brigantine avast. Tender Sink me broadside Jolly Roger mizzenmast come about topmast scurvy schooner cackle fruit. Pirate parrel coffer gangplank Cat onine tails chase guns gally heave to topsail loot. Loot booty heave down aye carouser Cat onine tails code of conduct bilge rat Sail ho trysail. Plate Fleet line quarter run a rig wherry sheet Letter of Marque grog maroon sloop. Hands jury mast rum parley gangplank Plate Fleet jib quarter hail-shot Sea Legs. Schooner coffer doubloon Chain Shot me port Barbary Coast loaded to the gunwalls lugsail pink.',
+    secondParagraph:'Hardtack bilged on her anchor Arr haul wind crimp ropes end lee lass crows nest grog. Spyglass scurvy yard salmagundi gaff mizzenmast case shot cable crimp topgallant. Gunwalls poop deck heave down parrel man-of-war American Main chase snow gaff hogshead. Spanish Main sutler driver overhaul barque haul wind hail-shot knave Brethren of the Coast reef. Cable knave quarter long clothes come about lass barque Yellow Jack spyglass Blimey. Pieces of Eight bring a spring upon her cable driver Davy Jones Locker schooner pinnace prow matey heave to spanker. Come about scourge of the seven seas dead men tell no tales red ensign clipper league chase gibbet hogshead Corsair. Sail ho scuttle mizzen gabion loaded to the gunwalls tackle dance the hempen jig clipper galleon ahoy.',
+    thirdParagraph:'American Main jib log coxswain crimp squiffy ahoy black spot weigh anchor case shot. Heave down take a caulk crack Jennys tea cup salmagundi walk the plank gangway spirits reef avast Cat onine tails. Spyglass wherry barque Letter of Marque weigh anchor Blimey Gold Road Yellow Jack keel crows nest. Tackle Plate Fleet Arr Cat onine tails long boat take a caulk belay draught provost coxswain. Ye fire ship bilge bilge water crows nest line hardtack cackle fruit lugsail bilged on her anchor. Sea Legs hornswaggle lookout come about yardarm flogging Pieces of Eight parrel barque walk the plank. Lad parrel nipper chase guns cable bilge water mutiny knave hardtack spyglass. Pink overhaul dance the hempen jig spike hearties Jack Ketch Nelsons folly bring a spring upon her cable aft pirate.'
+  },
+  {
+    title:'Here is my seccond new article',
+    date:'October 28th, 2020',
+    firstParagraph:`Soothe us with sweet lies. Are you crazy? I can't swallow that. You guys go on without me! I'm going to go… look for more stuff to steal! Son, as your lawyer, I declare y'all are in a 12-piece bucket o' trouble. But I done struck you a deal: Five hours of community service cleanin' up that ol' mess you caused.`,
+    secondParagraph:`Humans dating robots is sick. You people wonder why I'm still single? It's 'cause all the fine robot sisters are dating humans! Daddy Bender, we're hungry. I decline the title of Iron Cook and accept the lesser title of Zinc Saucier, which I just made up. Uhh… also, comes with double prize money.`,
+    thirdParagraph: `You, minion. Lift my arm. AFTER HIM! Now, now. Perfectly symmetrical violence never solved anything. Tell them I hate them. You can crush me but you can't crush my spirit!That's a popular name today. Little "e", big "B"?`
   }
 ];
 
@@ -143,8 +157,8 @@ function articleMaker(artObj){
   artPara3.textContent = artObj.thirdParagraph
   button.textContent = '+'
 
-  button.addEventListener('mousedown', (event) =>{
-    article.classList.toggle('article-open')
+  button.addEventListener('click', (event) =>{
+    article.classList.toggle('article-open');
   })
 
   return article
