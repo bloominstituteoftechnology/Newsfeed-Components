@@ -154,12 +154,26 @@ const data = [
  return divArticle;
 }
 
+//needed to connect div class articles so it may work
 const newArticle = document.querySelector('.articles')
-newArticle.appendChild(articleMaker(data[0]));
 
   /*Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
   to create a div.article element and append it to the DOM inside div.articles (see index.html).
   */
+
+  data.forEach(articles => {
+    newArticle.appendChild(articleMaker(articles));
+  });
+
+
   /*Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
   */
+const singleAtricle = {title:'Java',
+ date:'October 28, 2020', 
+ firstParagraph:'This is just going to be random text inserted for length',
+ secondParagraph:'oirewjp eowihepw gpihrg ijskjn vbniutsrhg hui ;twpr eingwejngiuehrw guegrwlk jnegroiuwngrpewi wpuhgi wepoiugh werugskjfdbvkldfsj hglasheljurehfiolryhugfrhg vnbjklfdnvm xfhvbl ius',
+ thirdParagraph:'kjefvnblksedbvflkjsehbrlkvjhbe lhb lferlhvlwhl ruioewhgvbhfevuytbv tiuh gsuhergvsiujnev ersuhg uireh guhergiuwje viuwerghui grliunwveuih riuv'
+}
+  
+ data.push(singleArticle);
