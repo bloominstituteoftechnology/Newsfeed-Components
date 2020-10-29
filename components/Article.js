@@ -89,8 +89,9 @@ const data = [
   }
 ];
 
-data.forEach(function(){
-function articleMaker({article}){
+
+function articleMaker(data){
+  for (let i=0; i<data.length; i++){
 //Article Div
 const articleDiv=document.createElement("div");
 articleDiv.classList.add("article");
@@ -98,26 +99,29 @@ articleDiv.classList.add("article");
 
 //Article Title
 const articleTitle=document.createElement("h2");
-articleTitle.textContent="{title of the article}";
+articleTitle.textContent=data[i].title;
 articleDiv.append(articleTitle);
 
 //Article Date
 const articleDateP=document.createElement("p");
 articleDateP.classList.add("date");
-articleDateP.textContent="{date of the article}"
+articleDateP.textContent=data[i].date;
 articleDiv.append(articleDateP);
 
 
 //Paragraph 1
 const para1=document.createElement("p");
+para1.textContent=data[i].firstParagraph;
 articleDiv.append(para1);
 
 //Paragraph 2
 const para2=document.createElement("p");
+para2.textContent=data[i].secondParagraph;
 articleDiv.append(para2);
 
 //Paragraph 3
 const para3=document.createElement("p");
+para3.textContent=data[i].thirdParagraph;
 articleDiv.append(para3);
 
 //expandButton Span
@@ -136,9 +140,9 @@ const bodyHolder=document.querySelector("body");
 bodyHolder.append(articleDiv);
 
 }
-return articleMaker(data);
-})
 
+}
+return articleMaker(data);
 /*
   Step 1: Write a component called 'articleMaker' to create an article.
   Your component is a function that takes an article object as its only argument,
