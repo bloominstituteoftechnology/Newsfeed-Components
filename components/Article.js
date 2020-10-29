@@ -88,7 +88,68 @@ const data = [
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
 ];
+const articleFive={
+  title: "This Is The Fifth Article",
+  date: "Oct 28, 2020",
+  firstParagraph: "This is just a test paragraph, and it's the first of its kind. A component is a function that allows us to easily replace a section of standalone content and its nodes/elements/tree.",
+  secondParagraph: "This is just the second test paragraph. Code is easy when we're great at it, and hard when we're not. The difference is time and practice.",
+  thirdParagraph: "This is the third test paragraph. Let's see if this worked.",
+}
+data.push(articleFive);
 
+function articleMaker(data){
+  for (let i=0; i<data.length; i++){
+//Article Div
+const articleDiv=document.createElement("div");
+articleDiv.classList.add("article");
+
+
+//Article Title
+const articleTitle=document.createElement("h2");
+articleTitle.textContent=data[i].title;
+articleDiv.append(articleTitle);
+
+//Article Date
+const articleDateP=document.createElement("p");
+articleDateP.classList.add("date");
+articleDateP.textContent=data[i].date;
+articleDiv.append(articleDateP);
+
+
+//Paragraph 1
+const para1=document.createElement("p");
+para1.textContent=data[i].firstParagraph;
+articleDiv.append(para1);
+
+//Paragraph 2
+const para2=document.createElement("p");
+para2.textContent=data[i].secondParagraph;
+articleDiv.append(para2);
+
+//Paragraph 3
+const para3=document.createElement("p");
+para3.textContent=data[i].thirdParagraph;
+articleDiv.append(para3);
+
+//expandButton Span
+const expandButtonSpan=document.createElement("span");
+expandButtonSpan.classList.add("expandButton");
+expandButtonSpan.textContent="+";
+articleDiv.append(expandButtonSpan);
+//toggle article-open class on articleDiv 
+expandButtonSpan.addEventListener("click", function(){
+  articleDiv.classList.toggle("article-open");
+  return articleDiv;
+});
+
+//Appending Article Div to Body
+const bodyHolder=document.querySelector("body");
+bodyHolder.append(articleDiv);
+
+}
+
+}
+return articleMaker(data);
 /*
   Step 1: Write a component called 'articleMaker' to create an article.
   Your component is a function that takes an article object as its only argument,
@@ -114,3 +175,4 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
