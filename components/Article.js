@@ -150,12 +150,12 @@ function articleMaker (artObj) {
   })
   return artDiv;
 }
-const articleElement = data.map((data) => {
-  return articleMaker(data);
+const articleElement = data.map((element) => {
+  return articleMaker(element);
 })
 
-articleElement.forEach(ArticleElement => {
-  articles.appendChild(ArticleElement);
+articleElement.forEach(arrElement => {
+  articles.appendChild(arrElement);
 });
 
 
