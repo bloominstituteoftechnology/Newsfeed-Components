@@ -86,6 +86,13 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'What is life?',
+    date: new Date(),
+    firstParagraph: 'Just trying to have a good day',
+    secondParagraph: 'Slow and steady i guess... but who am i',
+    thirdParagraph: 'Just trying to get through the hard things the easier way'
   }
 ];
 
@@ -114,3 +121,46 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+const articleMaker = (article) =>{
+  
+  const articleDiv = document.createElement('div');
+  articleDiv.classList.add('article')
+
+  const articleH2 = document.createElement('h2')
+  articleH2.textContent = article.title
+  articleDiv.append(articleH2)
+
+  const articleP = document.createElement('p')
+  articleP.classList.add('date')
+  articleP.textContent = article.date
+  articleDiv.append(articleP)
+
+  const p1 = document.createElement('p')
+  p1.textContent = article.firstParagraph
+  articleDiv.append(p1)
+   
+  const p2 = document.createElement('p')
+  p2.textContent = article.secondParagraph
+  articleDiv.append(p2)
+
+  const p3 = document.createElement('p')
+  p3.textContent = article.thirdParagraph
+  articleDiv.append(p3)
+
+  const span = document.createElement('span')
+  span.classList.add('expandButton')
+  span.textContent = '+';
+  articleDiv.append(span)
+  span.addEventListener('click', () => {
+    articleDiv.classList.toggle('article-open')
+  })
+
+
+  return articleDiv
+}
+
+data.map((articleL) => {
+  let articles = document.querySelector('.articles');
+  articles.append(articleMaker(articleL));
+}); 
