@@ -100,9 +100,58 @@ const data = [
 
     {three separate paragraph elements}
 
-    <span class="expandButton">+</span>
+    <span class="expandButton">+</span>   
   </div>
+*/
 
+const articles = document.querySelector('.articles')
+
+  function articleMaker (articleObj) {
+    
+    const article = document.createElement('div');
+    const articleTitle = document.createElement('h2');
+    const articleDate = document.createElement('p');
+    const articleP1 = document.createElement('p');
+    const articleP2 = document.createElement('p');
+    const articleP3 = document.createElement('p');
+    const articleButton = document.createElement('span');
+
+    article.appendChild(articleTitle);
+    article.appendChild(articleDate);
+    article.appendChild(articleP1);
+    article.appendChild(articleP2);
+    article.appendChild(articleP3);
+    article.appendChild(articleButton);
+
+    article.classList.add('article');
+    articleDate.classList.add('date')
+    articleButton.classList.add('expandButton');
+
+    articleTitle.textContent = articleObj.title;
+    articleDate.textContent = articleObj.date;
+    articleP1.textContent = articleObj.firstParagraph;
+    articleP2.textContent = articleObj.secondParagraph;
+    articleP3.textContent = articleObj.thirdParagraph;
+    articleButton.textContent = '+';
+
+    articleButton.addEventListener('click', (event) => {
+      article.classList.toggle('article-open');
+    });
+
+    return article;
+
+  }
+
+data.forEach((artObj) => {
+  const articleComp = articleMaker(artObj);
+  articles.appendChild(articleComp);
+});
+
+
+
+
+
+/*
   Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
   This listener should toggle the class 'article-open' on div.article.
 
@@ -114,3 +163,50 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+//   function articleMaker(dataObject){
+
+//    const art = document.createElement('div')
+//    art.classList.add('article')
+
+//    const artTitle = document.createElement('h2')
+//    artTitle.textContent = dataObject.title
+
+//    const artDate = document.createElement('p')
+//    artDate.classList.add('date')
+//    artDate.textContent = dataObject.date
+
+//    const artContent1 = document.createElement('p')
+//    artContent1.textContent = dataObject.firstParagraph
+
+//    const artContent2 = document.createElement('p')
+//    artContent2.textContent = dataObject.secondParagraph
+
+//    const artContent3 = document.createElement('p')
+//    artContent3.textContent = dataObject.thirdParagraph
+
+//    const artExButton = document.createElement('span')
+//    artExButton.classList.add('expandButton')
+//    artExButton.textContent = '+'
+
+//    art.appendChild(artTitle)
+//    art.appendChild(artDate)
+//    art.appendChild(artContent1)
+//    art.appendChild(artContent2)
+//    art.appendChild(artContent3)
+//    art.appendChild(artExButton)
+
+//    artExButton.addEventListener('click', (event) => {
+//      art.classList.toggle('article-open')
+//    })
+
+//    return art
+
+//  }
+
+//  const articles = document.querySelector('.articles')
+
+//  data.forEach((articleObj) => {
+//    const artcomp = articleMaker(articleObj);
+//    articles.appendChild(artcomp)
+//  })
