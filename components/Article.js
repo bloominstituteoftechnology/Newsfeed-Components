@@ -88,7 +88,14 @@ const data = [
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
 ];
-
+const articleFive={
+  title: "This Is The Fifth Article",
+  date: "Oct 28, 2020",
+  firstParagraph: "This is just a test paragraph, and it's the first of its kind. A component is a function that allows us to easily replace a section of standalone content and its nodes/elements/tree.",
+  secondParagraph: "This is just the second test paragraph. Code is easy when we're great at it, and hard when we're not. The difference is time and practice.",
+  thirdParagraph: "This is the third test paragraph. Let's see if this worked.",
+}
+data.push(articleFive);
 
 function articleMaker(data){
   for (let i=0; i<data.length; i++){
@@ -168,3 +175,4 @@ return articleMaker(data);
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
