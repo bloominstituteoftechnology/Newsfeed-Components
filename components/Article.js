@@ -89,28 +89,54 @@ const data = [
   }
 ];
 
-/*
-  Step 1: Write a component called 'articleMaker' to create an article.
-  Your component is a function that takes an article object as its only argument,
-  and returns a DOM node looking like the one below:
 
-  <div class="article">
-    <h2>{title of the article}</h2>
-    <p class="date">{date of the article}</p>
 
-    {three separate paragraph elements}
+function articleMaker(title, date, firstParagraph, secondParagraph, thirdParagraph){
 
-    <span class="expandButton">+</span>
-  </div>
+  const createArticle = document.createElement(div);
+  const createTitle = document.createElement(h2);
+  const createDate = document.createElement(p);
+  const paragraphOne = document.createElement(p);
+  const paragraphTwo = document.createElement(p);
+  const paragraphThree = document.createElement(p);
+  const articleButton = document.createElement('span');
+  const expand = 'open/close';
 
-  Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
-  This listener should toggle the class 'article-open' on div.article.
+  createArticle.apendChild(createTitle);
+  createArticle.apendChild(createDate);
+  createArticle.apendChild(paragraphOne);
+  createArticle.apendChild(paragraphTwo);
+  createArticle.apendChild(paragraphThree);
+  createArticle.apendChild(articleButton);
+  
+createArticle.classList.add(article);
+createDate.classList.add(date);
+articleButton.classList.add(expandButton);
 
-  Step 3: Don't forget to return something from your function!
 
-  Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
-  to create a div.article element and append it to the DOM inside div.articles (see index.html).
+createTitle.textContent = title;
+createDate.textConent = date;
+paragraphOne.textConent = firstParagraph;
+paragraphTwo.textConent = secondParagraph;
+paragraphThree.textConent = thirdParagraph;
 
-  Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
-  Refresh the page to see the new article.
-*/
+articleButton.textContent = expand;
+
+articleButton.addEventListener('click', (e) => {
+  createArticle.classList.toggle('toggle-on');
+  createArticle.classList.toggle('toggle-off');
+  createArticle.classList.toggle('article-open');
+
+});
+
+return article;
+
+};
+
+
+const articleData = document.querySelector('.articles')
+
+
+data.forEach((obj) => {
+  articleData.appendChild(articleMaker(obj.title, obj.date, obj.firstParagraph, obj.secondParagraph, obj.thirdParagraph));
+});
