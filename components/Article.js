@@ -86,6 +86,13 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'killer AI: is it happening already?',
+    date: 'Nov 32nd, 2069',
+    firstParagraph: 'Skynet Skynet Skynet Skynet Skynet Skynet Skynet Skynet Skynet Skynet Skynet Skynet',
+    secondParagraph: 'Tell them I hate them. Is the Space Pope reptilian!? Tell her she looks thin. Hello, little man. I will destroy you! I\'ve got to find a way to escape the horrible ravages of youth. Suddenly, I\'m going to the bathroom like clockwork, every three hours. And those jerks at Social Security stopped sending me checks. Now I have to pay them',
+    thirdParagraph: 'Lookout flogging bilge rat main sheet bilge water nipper fluke to go on account heave down clap of thunder. Reef sails six pounders skysail code of conduct sloop cog Yellow Jack gunwalls grog blossom starboard. Swab black jack ahoy Brethren of the Coast schooner poop deck main sheet topmast furl marooned.'
   }
 ];
 
@@ -114,3 +121,38 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+function articleMaker(data) {
+  const article = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+  const dateToday = document.createElement('p');
+  const par1 = document.createElement('p');
+  const par2 = document.createElement('p');
+  const par3 = document.createElement('p');
+  const expand = document.createElement('button');
+
+  articleTitle.textContent = data.title;
+  dateToday.textContent = data.date;
+  par1.textContent = data.firstParagraph;
+  par2.textContent = data.secondParagraph;
+  par3.textContent = data.thirdParagraph;
+  expand.textContent = 'expand';
+
+  article.appendChild(articleTitle)
+  article.appendChild(dateToday) 
+  article.appendChild(par1)
+  article.appendChild(par2)
+  article.appendChild(par3)
+  article.appendChild(expand)
+
+  expand.addEventListener('click', e => {
+    article.classList.toggle('article-open')})
+
+  return article
+}
+
+const art = document.querySelector('.articles');
+data.forEach(data => {
+  const article = articleMaker(data)
+  art.appendChild(article)
+})
