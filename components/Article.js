@@ -153,21 +153,22 @@ function articleMaker (article) {
   articleContainer.appendChild(spanButton)
 
   spanButton.addEventListener('click', ()=>{
+
+
+
+    
     if (articleContainer.className === 'article'){
       articleContainer.className = 'article-open'
       spanButton.textContent = "-"
     }
     else if(articleContainer.className = 'article-open'){
       articleContainer.className= 'article'
+      spanButton.textContent="+"
     }
+    
   
   })
 
-  // spanButton.addEventListener("click", ()=>{
-  //   if(articleContainer.className === 'article-open'){
-  //     articleContainer.className= 'article'
-  //     spanButton.textContent = '+'
-  // }})
 
 
 
@@ -178,4 +179,4 @@ function articleMaker (article) {
 return articleContainer
 }
 
-articleMaker(data[0])
+data.forEach(item=> articleMaker(item))
