@@ -86,7 +86,14 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
-  }
+  },
+  {
+    title: 'New Article',
+    date: 'Today',
+    firstParagraph: 'First paragraph',
+    secondParagraph: 'Second paragraph',
+    thirdParagraph: 'Third paragraph',
+  },
 ];
 
 /*
@@ -114,3 +121,24 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+const articleMaker = (article) => {
+  const newArticle = document.createElement('div');
+  let html = `<h2>${article.title ? article.title : 'title'}</h2>
+    <p class = "date">${article.date}</p>
+
+    <p>${article.firstParagraph}</p>
+    <p>${article.secondParagraph}</p>
+    <p>${article.thirdParagraph}</p>
+
+    <span class = "expandButton">+</span>`
+  newArticle.innerHTML = html
+  newArticle.children[5].addEventListener('click', event => {
+    newArticle.classList.toggle('article-open')
+  })
+  return newArticle;
+}
+let articleList = document.getElementsByClassName('articles')[0]
+data.forEach(article => {
+  let newArticle = articleMaker(article)
+  articleList.appendChild(newArticle)
+}) 
