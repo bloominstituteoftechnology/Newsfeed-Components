@@ -105,51 +105,61 @@ const data = [
 
   */
 
- const article = document.querySelector('.articles');
+  function articleMaker(articleObject) {
 
-  function articleMaker(article) {
-    const h2Element = document.createElement('h2');
-    const articleTitle = document.createTextNode('${article.title}');
+    //Article Div
+    
+    const div = document.createElement('div')
+    div.classList.add('article')
+
+    //H2
+
+    const h2 = document.createElement('h2')
+    h2.textContent = articleObject.title;
+
+    //Date
 
     const date = document.createElement('p');
     date.classList.add('date');
-    const articleDate = document.createTextNode('${article.date}');
+    date.textContent = articleObject.date;
 
-    const p1 = document.createElement('p');
+    // Paragraphs
+
+    const p1 = coument.createElement('p');
     p1.textContent = article.firstParagraph;
+
     const p2 = document.createElement('p');
-    p1.textContent = article.secondParagraph;
+    p2.textContent = article.secondParagraph;
+
     const p3 = document.createElement('p');
-    p1.textContent = article.thirdParagraph;
+    p3.textContent = article.thirdParagraph;
 
-    const spanElement = document.createElement('span');
-    spanElement.classList.add('expandButton');
-    const spanText = document.createTextNode('+');
+    // Span
 
-    article.appendChild(h2Element);
-    article.appendChild(date);
-    article.appendChild(p1);
-    article.appendChild(p2);
-    article.appendChild(p3);
-    article.appendChild(spanElement);
-    h2Element.appendChild(articleTitle);
-    date.appendChild(articleDate);
-    spanElement.appendChild(spanText);
+    const span = document.createElement('span')
+    span.classList.add('expandButton');
+    span.textContent = '+';
 
-    spanElement.addEventListener('click', () => {
-      article.classList.toggle('article-open');
-    })
+    // Appends
 
-    return articleMaker;
+    articleObject.appendchild(div);
+    articleObject.appendchild(h2);
+    articleObject.appendchild(p1);
+    articleObject.appendchild(p2);
+    articleObject.appendchild(p3);
+    articleObject.appendchild(span);
+    articleObject.appendchild();
+
+
+
+  
+
+
+
   }
 
-const articleNew = document.querySelector('.articles')
 
-data.forEach(article => {
-  articleNew.appendChild(articleMaker(article))
-})
-
-
+ 
 
 
 
