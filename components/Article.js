@@ -152,6 +152,25 @@ function articleMaker (article) {
   spanButton.textContent = '+'
   articleContainer.appendChild(spanButton)
 
+  spanButton.addEventListener('click', ()=>{
+    if (articleContainer.className === 'article'){
+      articleContainer.className = 'article-open'
+      spanButton.textContent = "-"
+    }
+    else if(articleContainer.className = 'article-open'){
+      articleContainer.className= 'article'
+    }
+  
+  })
+
+  // spanButton.addEventListener("click", ()=>{
+  //   if(articleContainer.className === 'article-open'){
+  //     articleContainer.className= 'article'
+  //     spanButton.textContent = '+'
+  // }})
+
+
+
   const articlesGrid = document.querySelector('.articles')
 
   articlesGrid.appendChild(articleContainer)
