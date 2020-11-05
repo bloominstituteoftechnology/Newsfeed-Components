@@ -10,7 +10,8 @@ let menuItems = [
 ];
 
 /* 
-  Step 1: Write a component called 'menuMaker' to create a menu like the markup below:
+  Step 1: Write a component called 'menuMaker' to create a menu like
+   the markup below:
 
   <div class="menu">
     <ul>
@@ -20,14 +21,70 @@ let menuItems = [
 
   The 'menuMaker' takes an array of menu items as its only argument.
 
-  Step 2: Inside the function, iterate over the array creating a list item <li> element for each item in the array.
+  Step 2: Inside the function, iterate over the array creating a list 
+  item <li> element for each item in the array.
   Add those items to the <ul>
 
-  Step 3: Still inside your function, select from the DOM the menu button (the element with a class of 'menu-button').
+  Step 3: Still inside your function, select from the DOM the
+   menu button (the element with a class of 'menu-button').
 
-  Step 4: Add a click event listener to the menu button. When clicked it should toggle the class 'menu--open' on div.menu (your div with a 'menu' class).
+  Step 4: Add a click event listener to the menu button.
+   When clicked it should toggle the class 'menu--open' 
+   on div.menu (your div with a 'menu' class).
 
   Step 5: Don't forget to return your div.menu.
 
-  Step 6: Use 'menuMaker' to create a menu using the 'menuItems' array, and append the returned menu to the header.
+  Step 6: Use 'menuMaker' to create a menu using the 
+  'menuItems' array, and append the returned menu to the header.
 */
+const menuMaker = (menu) =>{
+// header.appendChild(ap);
+// header.forEach((e)=>{
+//   let ap = menuMaker(menuItems);
+//   e.append(ap);
+// });
+
+// let ap = menuMaker(menuItems);
+
+let ff = document.createElement('div');
+let ul = document.createElement('ul');
+menuItems.forEach((a) =>{
+  
+  let li = document.createElement('li');
+li.textContent = a;
+ul.appendChild(li);
+})
+// ff.classList.add('menu--open');
+ff.classList.add('menu');
+// ff.textContent='hifffff';
+let img = document.querySelector('img.menu-button');
+let h1 = document.querySelector('h1');
+console.log('hi')
+ff.appendChild(h1);
+ff.appendChild(img);
+// ff.append(h1.innerHTML);
+// let hh = document.querySelector('.menu--open');
+ff.addEventListener('click',(e)=>{
+  ff.appendChild(ul);
+  // ff.classList.add('menu--open');
+  // let ffmenu = document.querySelector('.menu');
+  // ffmenu.style.display = 'block';
+ff.classList.toggle('menu--open');
+// let menuD = document.querySelector('.menu');
+// let fstyle = ff.getAttribute('style');
+// ff.style.display = 'flex';
+// menuD.style.display = 'block';
+// ff.classList.toggle(fstyle);
+
+},false);
+console.log(ff);
+
+
+return ff;
+
+}
+
+let header = document.querySelector('.header');
+
+let fff = menuMaker(menuItems);
+  header.appendChild(fff);

@@ -117,83 +117,68 @@ const data = [
     the same format as the others.
     Refresh the page to see the new article.
   */
-
-class Article{
-    constructor(artObj){
-    this.nodelist = document.createDocumentFragment();
-    for(let i = 0; i < artObj.length; i++){
-      this.dv = document.createElement('div');
-      this.dv.classList.add('article');
-      // Elements to go in article Div
-      this.h2 = document.createElement('h2');
-      this.h2.innerText = artObj[i]['title'];
-      this.pdate = document.createElement('p');
-      this.pdate.classList.add('date');
-      this.pdate.innerText =  artObj[i]['date']
-      this.p1 = document.createElement('p');
-      this.p1.innerText =  artObj[i]['firstParagraph'];
-      this.p2 = document.createElement('p');
-      this.p2.innerText =  artObj[i]['secondParagraph'];
-      this.p3 = document.createElement('p');
-      this.p3.innerText =  artObj[i]['thirdParagraph'];
-      this.span = document.createElement('span');
-      this.span.classList.add('expandButton');
-      this.button = document.createElement('button');
-      this.button.textContent = '+';
+  function addMoreArticles(artObj,newArt){
+    for(let i = 0; i <  newArt.length; i++){
+      let s = 0;
+      artObj.push(newArt[i]);
       
-    
-      // this.button.onclick = test;
-      this.span.appendChild(this.button);
+    }
+    // artObj.push(newArt[0]);
+  }
+  
+  function articleMaker(artObj){
+  /*
+  Creazte a these
+    <div class="article">
+      <h2>{title of the article}</h2>
+      <p class="date">{date of the article}</p>
+  
+      {three separate paragraph elements}
+  
+      <span class="expandButton">+</span>
+    </div>
+  
+  */
+  let nodelist = document.createDocumentFragment();
+    for(let i = 0; i < artObj.length; i++){
+      let dv = document.createElement('div');
+      dv.classList.add('article');
+      // Elements to go in article Div
+      let h2 = document.createElement('h2');
+      h2.innerText = artObj[i]['title'];
+      let pdate = document.createElement('p');
+      pdate.classList.add('date');
+      pdate.innerText =  artObj[i]['date']
+      let p1 = document.createElement('p');
+      p1.innerText =  artObj[i]['firstParagraph'];
+      let p2 = document.createElement('p');
+      p2.innerText =  artObj[i]['secondParagraph'];
+      let p3 = document.createElement('p');
+      p3.innerText =  artObj[i]['thirdParagraph'];
+      let span = document.createElement('span');
+      span.classList.add('expandButton');
+      let button = document.createElement('button');
+      button.textContent = '+';
+      button.onclick = test;
+      span.appendChild(button);
    
   
       // Apend to div
-      this.dv.appendChild(this.h2);
-      this.dv.appendChild(this.pdate);
-      this.dv.appendChild(this.p1);
-      this.dv.appendChild(this.p2);
-      this.dv.appendChild(this.p3);
-      this.dv.appendChild(this.span);
+      dv.appendChild(h2);
+      dv.appendChild(pdate);
+      dv.appendChild(p1);
+      dv.appendChild(p2);
+      dv.appendChild(p3);
+      dv.appendChild(span);
       /// Apend to nodelist
-      
-      /// wont work
-    //   this.button.addEventListener("click",   function (){
-    //     this.button.classList.toggle('article-open')
-    // });
-      // this.btn = this.nodelist.children[element.children.length - 1];
-      this.nodelist.appendChild(this.dv);
-      this.expandButton = this.nodelist.children[this.nodelist.children.length -1].
-      childNodes[this.nodelist.children[this.nodelist.children.length -1].childNodes.length -1].lastElementChild;
-      console.log(this.nodelist.children[this.nodelist.children.length -1].
-        childNodes[this.nodelist.children[this.nodelist.children.length -1].childNodes.length -1].lastChild);
-        this.expandArticle.onClick = this.expandArticle;
-      this.expandButton.addEventListener('click', this.expandArticle);
-
-
-    }
+      nodelist.appendChild(dv);
+      btn = nodelist.querySelector('button');
   
   
     }
-    expandArticle() {
-      // Using our reference to the article element, add or remove a class to expand or hide the article.
-  // this.parentNode.classList.toggle("article-open")
-
-  this.expandButton.classList.toggle('article-open');
-  console.log('expand article');
-    }
-     
-}
-
-
-function addMoreArticles(artObj,newArt){
-  for(let i = 0; i <  newArt.length; i++){
-    let s = 0;
-    artObj.push(newArt[i]);
-    
+  
+  return nodelist;
   }
-  // artObj.push(newArt[0]);
-}
-
-
   let moreData = [{
     title: 'New Title',
     date: 'Jan 9th, 2011',
@@ -218,15 +203,71 @@ function addMoreArticles(artObj,newArt){
     here and there `
   }];
   addMoreArticles(data,moreData);
-  let h = new Article(data);
-  let thehtml = '';
-  console.log('article');
-  console.log(h);
-  for(let l = 0; l < h.nodelist.childNodes.length; l++){
+  const addE =(h)=>{
+  
+    const buttons = h.querySelector("span");
+    buttons.addEventListener('click',e=>{
     
-    thehtml  = thehtml + h.nodelist.childNodes[l].innerHTML ;
+      e.target.classList.add('article-open');
+      
+    },true)
+    console.log('click');
+  }
+  class _test{
+    constructor(wr){
+      this.wr = wr;
+    }
+    makeEvent(){
+      console.log(this.wr);
+      this.wr[0].onclick = this.makeEvent;
+  
+        return this.testit();
+    
+    }
+    testit(){
+      return this.wr[0].addEventListener('click',e = () =>{
+        console.log('justwork');
+      })
+    }
+  }
+  function test(wr){
+    // wr.onclick = true;
+    // wr[0].addEventListener('onclick',  e=>{
+    //    return 'hi';
+    // });
+    let t = new _test(wr);
+    t.makeEvent();
+  }
+  // window.span.addEventListener('click',e=>{
+  //   console.log('click');
+  // // btn.classList.add('article-open');
+    
+  // });
+  
+  
+  // let h = articleMaker(data).firstElementChild.childNodes[0];
+  let h = articleMaker(data);
+  // addE(h);
+   console.log(h);
+   let wr = h.querySelectorAll('button');
+  //  h.onclick = test(wr);
+  
+  //  document.test.addEventListener('onclick',(e)=>{
+  //    console.log('no')
+  //  },true);
+  // Onclick will not become anything else but null No action event listen works here. 
+  h.childNodes[0].childNodes[5].onclick = test(wr);
+  h.childNodes[0].childNodes[5].addEventListener('click',test = (wr)=>{
+    test(wr);
+  });
+   console.log(wr);
+  // document.querySelector('.articles').innerHTML = h.outerHTML;
+  let thehtml = '';
+  for(let l = 0; l < h.childElementCount; l++){
+    
+    thehtml  = thehtml + h.childNodes[l].innerHTML ;
   
   }
-
+  console.log(data);
   
   document.querySelector('.articles').innerHTML = thehtml;
