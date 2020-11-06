@@ -33,72 +33,58 @@ let menuItems = [
 */
 
 
-const menuMaker = (menuItems)=>{
+function menuMaker (array){
 
-  //create the div, put the div inside the header
-  const menuContainer= document.createElement("div")
+  //create the div and apply the class
+  const menuContainer = document.createElement('div')
   menuContainer.setAttribute('class','menu')
 
-  /* const header = document.querySelector('.header')
-  header.appendChild(menuContainer) */
+  const header = document.querySelector('.header')
+  header.appendChild(menuContainer)
 
-  //create the list
+  //create the ul and append it to div
+
   const ulMenu = document.createElement('ul')
   menuContainer.appendChild(ulMenu)
 
-  //create list items
+  //links
 
-  const linkArray= []
+  array.forEach(item => {
 
-for (let i=0; i<menuItems.length; i++){
-
-  const link= document.createElement('li')
-  link.textContent = menuItems[i]
-
+    const link = document.createElement('li')
+  link.innerText = item
   ulMenu.appendChild(link)
-   linkArray.push(link)
+    
+  });
 
+  console.log(document.querySelectorAll('li'))
+  /* const link = document.createElement('li')
+  link.innteText = arrayitem
+  ulMenu.appendChild(link) */
 
-}
+  //
 
-
-
-console.log(linkArray)
-
-
-
-linkArray.forEach(item => ulMenu.appendChild(item))
-
-
-
-
-  //  
-  
-
-
- 
-
-  // menu buttton
-
-  const menuButton = document.querySelector(".menu-button")
+  const menuButton = document.querySelector('.header img')
 
   menuButton.addEventListener('click', ()=>{
+    
 
+    console.log('event fired')
+  
+    if (menuContainer.className ==='menu'){
+      menuContainer.className = 'menu menu--open'
+    }
+    else if(menuContainer.className === 'menu menu--open'){
+      menuContainer.className = 'menu'
+    }
 
     
-    if(menuContainer.className = 'menu'){
-      menuContainer.style.display ='block'
-      return menuContainer
-    }
-    else if (menuContainer.className = 'menu menu--open'){
-      menuContainer.style.display = 'none'
-    }
-    console.log("event fired")
   })
-
   return menuContainer
 
 }
 
 menuMaker(menuItems)
+
+
 
