@@ -1,116 +1,231 @@
+// Import the GSAP library
+import { gsap } from "gsap";
+
 // This is the data we will be using to create our articles. Look at it, then proceed to line 93.
 // OPTIONAL: if you're feeling adventurous, try to make this data an export from a different module, and import it here.
 // You can read about ES6 modules here: https://exploringjs.com/es6/ch_modules.html#sec_basics-of-es6-modules
-const data = [
-  {
-    title: 'Lambda School Students: "We\'re the best!"',
-    date: 'Nov 5th, 2018',
-    firstParagraph: `Lucas ipsum dolor sit amet ben twi'lek padmé darth darth darth moff hutt organa twi'lek. Ben amidala secura skywalker lando
-        moff wicket tatooine luke.Solo wampa wampa calrissian yoda moff.Darth grievous darth gonk darth hutt.Darth baba skywalker
-        watto fett jango maul han.Mon ewok sidious sidious lando kenobi grievous gamorrean solo.Yoda wedge utapau darth calamari.
-        Hutt calamari darth jabba.Darth dooku amidala organa moff.Boba darth binks solo hutt skywalker dantooine skywalker.Qui - gonn
-        jar twi'lek jinn leia jango skywalker mon.`,
+const articleData = require("./ArticleData").data;
 
-    secondParagraph: `Grievous fett calamari anakin skywalker hutt.Alderaan darth kenobi darth r2- d2
-        windu mothma.Sidious darth calamari moff.Wampa mothma sith wedge solo mara.Darth gonk maul sith moff chewbacca palpatine
-        mace amidala.C - 3po solo skywalker anakin yoda leia.Maul wampa bespin watto jade ewok darth jabba.Lando dantooine moff
-        k - 3po dantooine luke.Fisto mandalore darth wedge c - 3p0 ahsoka.Secura moff palpatine fett.Anakin sith darth darth.Moff
-        solo leia ben ponda jade.Binks jango aayla skywalker skywalker cade.Mustafar darth ventress anakin watto.Yavin jawa sebulba
-        owen jinn tatooine sith organa.`,
-
-    thirdParagraph: `Dagobah hutt jawa leia calamari ventress skywalker yoda. Binks wicket hutt coruscant sidious
-        naboo ackbar tatooine. Hutt lars padmé darth. Maul solo darth darth jabba qui-gon chewbacca darth maul. Moff baba wicket
-        han. C-3po antilles moff qui-gon ahsoka aayla dooku amidala. Palpatine droid amidala droid k-3po twi'lek padmé wookiee. Leia
-        moff calamari mon obi-wan. Solo grievous lando coruscant. Jinn darth palpatine obi-wan mon.`
-  },
-  {
-    title: 'Javascript and You, ES6',
-    date: 'May 7th, 2019',
-    firstParagraph: `Alohamora wand elf parchment, Wingardium Leviosa hippogriff, house dementors betrayal. Holly, Snape centaur portkey ghost
-        Hermione spell bezoar Scabbers. Peruvian-Night-Powder werewolf, Dobby pear-tickle half-moon-glasses, Knight-Bus. Padfoot
-        snargaluff seeker: Hagrid broomstick mischief managed. Snitch Fluffy rock-cake, 9 ¾ dress robes I must not tell lies. Mudbloods
-        yew pumpkin juice phials Ravenclaw’s Diadem 10 galleons Thieves Downfall. Ministry-of-Magic mimubulus mimbletonia Pigwidgeon
-        knut phoenix feather other minister Azkaban. Hedwig Daily Prophet treacle tart full-moon Ollivanders You-Know-Who cursed.
-        Fawkes maze raw-steak Voldemort Goblin Wars snitch Forbidden forest grindylows wool socks`,
-
-    secondParagraph: `Boggarts lavender robes, Hermione Granger Fantastic Beasts and Where to Find Them. Bee in your bonnet Hand of Glory elder
-        wand, spectacles House Cup Bertie Bott’s Every Flavor Beans Impedimenta. Stunning spells tap-dancing spider Slytherin’s Heir
-        mewing kittens Remus Lupin. Palominos scarlet train black robes, Metamorphimagus Niffler dead easy second bedroom. Padma
-        and Parvati Sorting Hat Minister of Magic blue turban remember my last.`,
-
-    thirdParagraph: `Toad-like smile Flourish and Blotts he knew I’d come back Quidditch World Cup. Fat Lady baubles banana fritters fairy lights 
-        Petrificus Totalus. So thirsty, deluminator firs’ years follow me 12 inches of parchment. Head Boy start-of-term banquet Cleansweep Seven 
-        roaring lion hat. Unicorn blood crossbow mars is bright tonight, feast Norwegian Ridgeback. Come seek us where our voices sound, we cannot 
-        sing above the ground, Ginny Weasley bright red. Fanged frisbees, phoenix tears good clean match.`
-  },
-  {
-    title: 'React vs Angular vs Vue',
-    date: 'June 7th, 2019',
-    firstParagraph: `Bulbasaur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ivysaur Lorem ipsum dolor sit amet, consectetur adipiscing
-        elit. Venusaur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Charmander Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit. Charmeleon Lorem ipsum dolor sit amet, consectetur adipiscing elit. Charizard Lorem ipsum dolor sit amet,
-        consectetur adipiscing elit. Squirtle Lorem ipsum dolor sit amet, consectetur adipiscing elit. Wartortle Lorem ipsum dolor
-        sit amet, consectetur adipiscing elit. Blastoise Lorem ipsum dolor sit amet, consectetur adipiscing elit. Caterpie Lorem
-        ipsum dolor sit amet, consectetur adipiscing elit. Metapod Lorem ipsum dolor sit amet, consectetur adipiscing elit. Butterfree
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Weedle Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Kakuna Lorem ipsum dolor sit amet, consectetur adipiscing elit. Beedrill Lorem ipsum dolor sit amet, consectetur adipiscing
-        elit.`,
-
-    secondParagraph: `Pidgey Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pidgeotto Lorem ipsum dolor sit amet, consectetur adipiscing
-        elit. Pidgeot Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rattata Lorem ipsum dolor sit amet, consectetur adipiscing
-        elit. Raticate Lorem ipsum dolor sit amet, consectetur adipiscing elit. Spearow Lorem ipsum dolor sit amet, consectetur adipiscing
-        elit. Fearow Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ekans Lorem ipsum dolor sit amet, consectetur adipiscing
-        elit. Arbok Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pikachu Lorem ipsum dolor sit amet, consectetur adipiscing
-        elit. Raichu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sandshrew Lorem ipsum dolor sit amet, consectetur adipiscing
-        elit. Sandslash Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nidoran Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit. Nidorina Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nidoqueen Lorem ipsum dolor sit amet,
-        consectetur adipiscing elit. Nidoran Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nidorino Lorem ipsum dolor
-        sit amet, consectetur adipiscing elit. Nidoking Lorem ipsum`,
-
-    thirdParagraph: `Gotta catch 'em all Horsea gym Ninjask Absol Sinnoh Poliwag. Gotta catch 'em all Youngster wants to fight Soda Pop Floatzel 
-        Leech Life Seismitoad Ariados. Earthquake Pokemon Glitch City Tail Whip Skitty Ekans Dialga. Ut aliquip ex ea commodo consequat James 
-        Castform Lotad the power that's inside Burnt Berry Makuhita. Ghost Ariados Corphish Dusclops Golbat Gligar Zweilous.`
-  },
-  {
-    title: 'Professional Software Development in 2019',
-    date: 'Jan 1st, 2019',
-    firstParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
-          hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
-          Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `,
-
-    secondParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
-          hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
-          hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
-          hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? `,
-
-    thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
-          Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
-          Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
-  }
-];
+console.log("Article Data", articleData);
 
 /*
   Step 1: Write a component called 'articleMaker' to create an article.
   Your component is a function that takes an article object as its only argument,
   and returns a DOM node looking like the one below:
-
   <div class="article">
     <h2>{title of the article}</h2>
     <p class="date">{date of the article}</p>
-
     {three separate paragraph elements}
-
     <span class="expandButton">+</span>
   </div>
-
   Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
   This listener should toggle the class 'article-open' on div.article.
-
   Step 3: Don't forget to return something from your function!
-
   Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
   to create a div.article element and append it to the DOM inside div.articles (see index.html).
-
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+function articleMaker(article) {
+  // Declare the variable to create the element
+  const newArticle = document.createElement("div");
+
+  // Add some attributes into the new element
+  newArticle.classList.add("article");
+
+  // Declare the inner HTML elements to add inside the newArticle element
+  const articleTitle = document.createElement("h2");
+  const articleDate = document.createElement("p");
+  const bodyParagraph1 = document.createElement("p");
+  const bodyParagraph2 = document.createElement("p");
+  const bodyParagraph3 = document.createElement("p");
+  const expandBtn = document.createElement("span");
+  const closeBtn = document.createElement("span");
+
+  // Add some attributes to the inner HTML elements
+  articleDate.classList.add("date");
+  expandBtn.classList.add("expandButton");
+  closeBtn.classList.add("close");
+
+  // Add the text content into the HTML elements
+  articleTitle.textContent = article.title;
+  bodyParagraph1.textContent = article.firstParagraph;
+  bodyParagraph2.textContent = article.secondParagraph;
+  bodyParagraph3.textContent = article.thirdParagraph;
+  articleDate.textContent = article.date;
+  expandBtn.textContent = "Click to Expand";
+  closeBtn.textContent = "x";
+
+  // Add an Event Listener to the button
+  expandBtn.addEventListener("click", () => {
+    // Toggle the active class when expand button clicks
+    newArticle.classList.toggle("article-open");
+
+    // Change the text of the expand button, depending on active class
+    expandBtn.textContent = newArticle.classList.contains("article-open")
+      ? "Click to Close"
+      : "Click to Expand";
+
+    if (newArticle.classList.contains("article-open")) {
+      gsap.to(newArticle, { height: "auto", duration: 2 });
+      gsap.to(articleDate, { opacity: 1, x: 0, duration: 2 });
+      gsap.to(bodyParagraph1, { opacity: 1, x: 0, duration: 2 });
+      gsap.to(bodyParagraph2, { opacity: 1, x: 0, duration: 2 });
+      gsap.to(bodyParagraph3, { opacity: 1, x: 0, duration: 2 });
+    } else {
+      gsap.to(newArticle, { height: 60, duration: 2 });
+      gsap.to(articleDate, { opacity: 0, x: -100, duration: 2 });
+      gsap.to(bodyParagraph1, { opacity: 0, x: -100, duration: 2 });
+      gsap.to(bodyParagraph2, { opacity: 0, x: -100, duration: 2 });
+      gsap.to(bodyParagraph3, { opacity: 0, x: -100, duration: 2 });
+    }
+  });
+
+  // Add an event listener to the close button
+  closeBtn.addEventListener("click", (e) => {
+    gsap.to(newArticle, { opacity: 0, display: "none", x: -100, duration: 1 });
+
+    setTimeout(function () {
+      newArticle.parentNode.removeChild(newArticle);
+    }, 1500);
+  });
+
+  // Create an array with all inner elements to add
+  let childElements = [];
+  childElements.push(
+    articleTitle,
+    articleDate,
+    bodyParagraph1,
+    bodyParagraph2,
+    bodyParagraph3,
+    expandBtn,
+    closeBtn
+  );
+
+  // Add the inner HTML inside the article element
+  childElements.forEach((item) => {
+    newArticle.appendChild(item);
+  });
+
+  // Return the new article
+  return newArticle;
+}
+
+// Create a new array of elements that will be added to the DOM
+let allArticlesArr = articleData.map((item) => {
+  let newArticle = articleMaker(item);
+
+  return newArticle;
+});
+
+// Add them to the DOM
+const articlesContainer = document.querySelector(".articles");
+
+allArticlesArr.forEach((article) => {
+  articlesContainer.appendChild(article);
+});
+
+console.log("Elements to insert to DOM", allArticlesArr);
+
+/************************************************
+ *  Function to create new article from form
+ ************************************************/
+
+// Add a form in the front-end
+function addArticleForm() {
+  // Variables for the form content
+  const formContainer = document.createElement("form");
+  const formTitle = document.createElement("h3");
+  const titleField = document.createElement("input");
+  const dateField = document.createElement("input");
+  const paragraphField = document.createElement("textarea");
+  const submitBtn = document.createElement("button");
+  const response = document.createElement("p");
+
+  // Add attributes to elements above
+  formContainer.classList.add("add-article");
+  formTitle.textContent = "Add an Article";
+  titleField.setAttribute("type", "text");
+  titleField.setAttribute("placeholder", "Enter Article Title");
+  titleField.setAttribute("id", "article-name");
+  dateField.setAttribute("type", "text");
+  dateField.setAttribute("placeholder", "Enter Article Date");
+  dateField.setAttribute("id", "article-date");
+  paragraphField.setAttribute("placeholder", "Enter Article Content");
+  paragraphField.setAttribute("id", "article-body");
+  submitBtn.textContent = "Add Article";
+  response.classList.add("response");
+
+  // Create an array with all inner childs
+  let childElements = [];
+  childElements.push(formTitle, titleField, dateField, paragraphField, submitBtn, response);
+
+  // Add the inner HTML inside the article element
+  childElements.forEach((item) => {
+    formContainer.appendChild(item);
+  });
+
+  return formContainer;
+}
+
+// Insert the form in the DOM
+const body = document.querySelector("body");
+body.appendChild(addArticleForm());
+
+// Add an event listener to the submit button
+const addArticleSubmit = document.querySelector(".add-article button");
+addArticleSubmit.addEventListener("click", (event) => {
+  event.preventDefault();
+
+  // Get the values
+  const titleVal = document.getElementById("article-name").value;
+  const dateval = document.getElementById("article-date").value;
+  const paragraphVal = document.getElementById("article-body").value;
+
+  // If some values are empty, throw an error
+  if (titleVal === "") {
+    alert("Please enter a title");
+    return false;
+  } else if (dateval === "") {
+    alert("Please enter a date");
+    return false;
+  } else if (paragraphVal === "") {
+    alert("Please enter body text");
+    return false;
+  }
+
+  // Create an object with the new paragraph
+  const newArticle = {
+    title: titleVal,
+    date: dateval,
+    firstParagraph: paragraphVal,
+  };
+
+  // Use the callback function to make the article
+  const articleToAdd = articleMaker(newArticle);
+
+  // Add some styling prior to creating
+  articleToAdd.style.opacity = 0;
+  articleToAdd.style.transform = "translateX(-100px)";
+
+  // Insert into the DOM
+  articlesContainer.prepend(articleToAdd);
+
+  // Add an animation to come in
+  gsap.to(articleToAdd, { opacity: 1, x: 0, duration: 1 });
+
+  // Clear the form once it is submitted
+  const addArticleForm = document.querySelector(".add-article");
+  addArticleForm.reset();
+
+  // Load in response
+  const responseSection = document.querySelector(".response");
+  gsap.to(responseSection, { height: "auto", duration: 1 });
+  responseSection.textContent = "Article Submitted";
+
+  // Remove the response after 2s
+  setTimeout(function () {
+    gsap.to(responseSection, { height: 0, duration: 1 });
+  }, 2000);
+});
