@@ -114,3 +114,57 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+function articleMaker (obj) {
+  const article = document.createElement(`div`);
+  const articleTitle = document.createElement(`h2`);
+  const articleDate = document.createElement(`p`);
+  const par1 = document.createElement(`p`);
+  const par2 = document.createElement(`p`);
+  const par3 = document.createElement(`p`);
+  const button = document.createElement(`span`);
+
+  article.classList.add(`article`);
+  articleDate.classList.add(`date`);
+  button.classList.add(`expandButton`);
+  par1.classList.add(`text-content`, `par1`);
+  par2.classList.add(`text-contend`, `par2`);
+  par3.classList.add(`text-content`, `par3`);
+
+  article.appendChild(articleTitle);
+  article.appendChild(articleDate);
+  article.appendChild(par1);
+  article.appendChild(par2);
+  article.appendChild(par3);
+  article.appendChild(button);
+
+  articleTitle.textContent = obj.title;
+  articleDate.textContent = obj.date;
+  par1.textContent = obj.firstParagraph;
+  par2.textContent = obj.secondParagraph;
+  par3.textContent = obj.thirdParagraph;
+  button.textContent = `+`
+
+  button.addEventListener(`click`, () => {
+    article.classList.toggle(`article-open`);
+  })
+
+  return article;
+}
+
+data.forEach(obj => {
+  const appendArticle = articleMaker(obj);
+  document.querySelector(`div.articles`).appendChild(appendArticle);
+})
+
+const addData = {
+  title: `All ME`,
+  date: `December, 7th, 1990`,
+  firstParagraph: `MY BIRTHDAY!!!.`,
+
+  secondParagraph: `Ready to CELEBRATE!!!!!`,
+
+  thirdParagraph: `Go Sagittarius!!`
+}
+
+document.querySelector(`.articles`).append(articleMaker(addData));
