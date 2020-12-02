@@ -113,9 +113,9 @@ const data = [
     let p3 = document.createElement('p');
     let expandButton = document.createElement('span');
 
-    //article.classList.add('article');
+    article.classList.add('article');
     articleDate.classList.add('date');
-    expandButton.classList.add('expendButton');
+    expandButton.classList.add('expandButton');
     p2.classList.add('expand')
     p3.classList.add('expand')
 
@@ -138,15 +138,10 @@ const data = [
         p2.classList.toggle('expand')
         p3.classList.toggle('expand')
     })
-
-
-
     return article;
  }
-
  let articles = document.querySelector('.articles')
  data.forEach((data)=> {
- 
    articles.appendChild(articleMaker(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
  })
 
