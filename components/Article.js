@@ -139,7 +139,7 @@ const articleMaker = article => {
   articleDiv.appendChild(articleP3);
   articleDiv.appendChild(articleExpand);
 
-  //add classes and ids
+  //add classes
   articleDiv.classList.add('article');
   articleDate.classList.add('date');
   articleExpand.classList.add('expandButton');
