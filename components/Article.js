@@ -146,6 +146,7 @@ function articleMaker(article){
   parag3.textContent = article.thirdParagraph;
   button.textContent = '+'
 
+  //step 2
   button.addEventListener('click', (event) =>{
     divArticle.classList.toggle('article-open');
   })
