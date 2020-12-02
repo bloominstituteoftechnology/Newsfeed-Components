@@ -1,6 +1,7 @@
 // This is the data we will be using to create our articles. Look at it, then proceed to line 93.
 // OPTIONAL: if you're feeling adventurous, try to make this data an export from a different module, and import it here.
 // You can read about ES6 modules here: https://exploringjs.com/es6/ch_modules.html#sec_basics-of-es6-modules
+
 const data = [
   {
     title: 'Lambda School Students: "We\'re the best!"',
@@ -114,3 +115,41 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+// step 1
+
+function articleMaker (article) {
+  const divArticle = document.createElement('div');
+  const title = document.createElement('h2');
+  const dates = document.createElement('p');
+  const spanExpandButton = document.createElement('span');
+  const p1 = document.createElement('p');
+  const p2 = document.createElement('p');
+  const p3 = document.createElement('p');
+
+  article.appendChild(title);
+  article.appendChild(dates);
+  article.appendChild(p1);
+  article.appendChild(p2);
+  article.appendChild(p3);
+  article.appendChild(spanExpandButton);
+
+  article.classList.add('article');
+  dates.classList.add('date');
+  spanExpandButton.classList.add('expandButton');
+
+  title.textContent = divArticle.title;
+  dates.textContent = divArticle.date;
+  spanExpandButton.textContent = '+';
+
+  p1.textContent = divArticle.firstParagraph;
+  p2.textContent = divArticle.secondParagraph;
+  p3.textContent = divArticle.thirdParagraph;
+
+  spanExpandButton.addEventListener('click', function (event) {
+    divArticle.classList.toggle('article-open');
+  })
+
+  return divArticle;
+}
+
