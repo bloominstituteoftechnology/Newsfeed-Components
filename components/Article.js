@@ -143,7 +143,7 @@ function articleMaker(article){
   divArticle.appendChild(button)
 
   //gave class names
-  divArticle.classList.add('aricle');
+  divArticle.classList.add('article');
   date.classList.add('date')
   button.classList.add('expandButton')
 
