@@ -9,6 +9,11 @@ let menuItems = [
   'Log Out'
 ];
 
+let other = [
+  'Students',
+  'Faculty',
+];
+
 /* 
   Step 1: Write a component called 'menuMaker' to create a menu like the markup below:
 
@@ -31,3 +36,43 @@ let menuItems = [
 
   Step 6: Use 'menuMaker' to create a menu using the 'menuItems' array, and append the returned menu to the header.
 */
+
+function menuMaker(array) {
+  // Creating DOM elements 
+  const menu = document.createElement('div');
+  const unorderedList = document.createElement('ul');
+
+  // Creating DOM Tree
+  menu.appendChild(unorderedList);
+
+  // Adding Class Names
+  menu.classList.add('menu');
+
+  // Step 2: Iterating Over Array To Create List Items, Adding them to <ul>, Creating more of the DOM Tree.
+  array.forEach((items) => {
+    const listItems = document.createElement('li');
+    listItems.textContent = items;
+    unorderedList.appendChild(listItems);
+  });
+
+  // Step 3: Selecting from DOM the element with the class of "menu-button"
+  const menuButton = document.querySelector('.menu-button');
+
+  // Step 4: Adding a Click Event Listener to the menu button. Adding Class 'menu--open' on toggle to div.menu.
+  menuButton.addEventListener('click', () => {
+    menu.classList.toggle('menu--open');
+  });
+
+  // Step 5: Return div.menu
+  return menu;
+
+}
+
+const header = document.querySelector(".header")
+header.appendChild(menuMaker(menuItems));
+
+// OR
+
+// document.querySelector(".header").appendChild(menuMaker(menuItems));
+
+
