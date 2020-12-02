@@ -113,7 +113,7 @@ function articleMaker({ title, date, firstParagraph, secondParagraph, thirdParag
     expand.classList.add('expandButton');
 
 
-    title.textContent = title;
+    titled.textContent = title;
     dates.textContent = date;
     expand.textContent = '+';
     p1.textContent = firstParagraph;
@@ -135,7 +135,7 @@ function articleMaker({ title, date, firstParagraph, secondParagraph, thirdParag
 
 
     expand.addEventListener('click', (event) => {
-        article.classlist.toggle('article-open')
+        article.classList.toggle('article-open')
     });
 
     // ^^^^^^ Step 2: Still inside `articleMaker`,^^^^^^          add an event listener to the span.expandButton.
@@ -146,7 +146,7 @@ function articleMaker({ title, date, firstParagraph, secondParagraph, thirdParag
 
 const art = document.querySelector('.articles')
 const articleFeeds = data.map((data) => {
-    articleMaker(data);
+    return articleMaker(data);
 });
 
 
