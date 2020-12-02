@@ -86,6 +86,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'New Article',
+    date: 'Dec 1st, 2020',
+    firstParagraph: `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi, enim modi provident praesentium inventore earum at facere, unde nesciunt temporibus eaque cupiditate minima! Ut ea, possimus similique quod voluptatibus dolor.`,
+
+    secondParagraph: `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi, enim modi provident praesentium inventore earum at facere, unde nesciunt temporibus eaque cupiditate minima! Ut ea, possimus similique quod voluptatibus dolor. `,
+
+    thirdParagraph: `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi, enim modi provident praesentium inventore earum at facere, unde nesciunt temporibus eaque cupiditate minima! Ut ea, possimus similique quod voluptatibus dolor.`
   }
 ];
 
