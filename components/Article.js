@@ -114,3 +114,61 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+const articles = document.querySelector('.articles')
+// finding the div with a class of .articles and making it equal to a variable we declared called article 
+
+function articleMaker(data){
+  const article = document.createElement('div')
+  const articleTitle = document.createElement('h2')
+  const articleDate = document.createElement('p')
+  const paraOne = document.createElement('p')
+  const paraTwo = document.createElement('p')
+  const paraThree =document.createElement('p')
+  const button = document.createElement('span')
+  button.classList.add('expandButton')
+  button.textContent = '+'
+// creating variables and making them equal to the tag  of the article system were trtying to create
+  button.addEventListener('click',() => {
+    button.classList.toggle('article-open')
+  })
+// creating a event listener so wehn we press
+ article.appendChild(articleTitle)
+ article.appendChild(articleDate)
+ article.appendChild(paraOne)
+ article.appendChild(paraTwo)
+ article.appendChild(paraThree)
+ //appending all of the created elements to the article
+ articleTitle.textContent = data.title
+ articleDate.textContent = data.date
+ paraOne.textContent = data.firstParagraph
+ paraTwo.textContent = data.secondParagraph
+ paraThree.textContent = data.thirdParagraph
+  // making the variables i set above equal to the values of the data being passed in
+
+
+
+  return article
+};
+//console.log(articleMaker(data))
+
+data.forEach(obj => {
+  const article = articleMaker(obj)
+  articles.appendChild(article)
+});
+// looping thru an array and making a new article for every obj
+const moreData = {
+  title: ' Test Article',
+  date: 'July 15th, 2001',
+  firstParagraph: ' this is a test ',
+
+  secondParagraph: 'uhhhhhh hodor hodor' , 
+
+  thirdParagraph:' another test paragraph'
+}
+
+document.querySelector('.articles').appendChild(articleMaker(moreData))
+// appending the new object to the .article
+
+
+// Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
+// This listener should toggle the class 'article-open' on div.article.
