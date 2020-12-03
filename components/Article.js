@@ -86,6 +86,17 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'New Object',
+
+    date: 'Dec 2nd, 2020',
+
+    firstParagraph: `Check check?`,
+
+    secondParagraph: ` Check 1 2 3? `,
+
+    thirdParagraph: `Is this working?`
   }
 ];
 
@@ -114,3 +125,50 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+const articles = document.querySelector("div.articles")
+function articleMaker(data) {
+
+  const article = document.createElement("div");
+  const title = document.createElement("h2");
+  const date = document.createElement("p");
+  const par1 = document.createElement("p");
+  const par2 = document.createElement("p");
+  const par3 = document.createElement("p");
+  const sp = document.createElement("span")
+
+  article.appendChild(title);
+  article.appendChild(date);
+  article.appendChild(par1);
+  article.appendChild(par2);
+  article.appendChild(par3);
+  article.appendChild(sp);
+
+  article.classList.add("article");
+  date.classList.add("date");
+  sp.classList.add("expandButton");
+  // par1.classList.add("a")
+  // par2.classList.add("b")
+  // par3.classList.add("c")
+
+  title.textContent = data.title;
+  date.textContent = data.date;
+  par1.textContent = data.firstParagraph;
+  par2.textContent = data.secondParagraph;
+  par3.textContent = data.thirdParagraph;
+  sp.textContent = "+";
+
+  sp.addEventListener("click", (event) => {
+    article.classList.toggle("article-open")
+  })
+  return article;
+}
+
+articleMaker(data);
+
+const articleCom = data.map((data) => {
+  return articleMaker(data);
+})
+
+articleCom.forEach((articleElement) => {
+  return articles.appendChild(articleElement);
+});
