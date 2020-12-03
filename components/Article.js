@@ -130,16 +130,14 @@ function articleMaker(articles) {
   article.appendChild(paraThree)
   article.appendChild(span)
 
-  span.addEventListener('click'() => {
+  span.addEventListener('click', () => {
     article.classList.toggle('article-open');
-  
-  })
-
-  return articleContainer;
+    })
+    return articleContainer;
 
 };
 
-const articles = document.querySelector('.articles');
+const newArticles = document.querySelector('.articles');
 const firstArticleMaker = articleMaker();
 
 articles.appendChild(firstArticleMaker);
