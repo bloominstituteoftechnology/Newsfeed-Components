@@ -48,10 +48,9 @@ function menuMaker ({ menuItems  }) {
 
 
   menuItems.forEach(element => {
-    li.textContent = [element]
+    li.textContent = element
 
 
-    .appendChild
   });
 
 
@@ -66,6 +65,19 @@ function menuMaker ({ menuItems  }) {
 
 }
 
-menuItems.forEach(element => {
-  menuMaker[element]
+
+const mennnn = document.querySelector(".header")
+const test = menuMaker({ menuItems });
+
+
+mennnn.appendChild(test);
+
+
+
+const element = menuItems.forEach((menuItems) => {
+  return menuMaker(menuItems);
 });
+
+// element.forEach((event) => {
+//   mennnn.appendChild(event);
+// });

@@ -120,7 +120,7 @@ const data = [
 */
 
 
-function articleMaker({data}) {
+function articleMaker({ title, date, firstParagraph, secondParagraph, thirdParagraph }) {
   const Tophead = document.createElement("div");
   const head = document.createElement("h2");
   const paramain = document.createElement("p");
@@ -136,22 +136,34 @@ function articleMaker({data}) {
   paramain.appendChild(para2)
   paramain.appendChild(para3)
 
+
+
+
+
   Tophead.classList.add("article")
   paramain.classList.add("date")
   closeButton.classList.add("expandButton")
+
+
+
+  head.textContent = title
+  paramain.textContent = date
+  para1.textContent = firstParagraph
+  para2.textContent = secondParagraph
+  para3.textContent = thirdParagraph
+
+
+
+
+
 
   var textnode = document.createTextNode("+");
 
   closeButton.appendChild(textnode)
 
- 
-  let expnd = document.querySelector(".expandButton")
-
-
-  // expnd.addEventListener("click", function test () {
-  //   closeButton.classList.toggle("expandButton");
-  //   Tophead.classList.toggle("article-open");
-  // });
+  closeButton.addEventListener("click", function () {
+    Tophead.classList.toggle("article-open");
+  });
   
 
 
@@ -161,9 +173,18 @@ function articleMaker({data}) {
 
 
 
-const test1 = data.map((panelData) => {
-  return articleMaker(panelData);
+// const test1 = data.map((panelData) => {
+//   return articleMaker(panelData);
+// });
+
+art = document.querySelector(".articles")
+
+
+
+const panelElements = data.map((data) => {
+  return articleMaker(data);
 });
 
-
-document.appendChild(articleMaker({data}));
+panelElements.forEach((panelElement) => {
+  art.appendChild(panelElement);
+});
