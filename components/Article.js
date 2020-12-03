@@ -87,7 +87,17 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Test Article #3',
+    date: 'Dec 2nd, 2020',
+    firstParagraph: `first paragraph test test test test`,
+
+    secondParagraph: `second paragraph test test test test`,
+
+    thirdParagraph: `third paragraph test test test test`
   }
+
 ];
 
 /*
@@ -118,8 +128,8 @@ const data = [
 
 // step 1
 
-function articleMaker (article) {
-  const divArticle = document.createElement('div');
+function articleMaker (data) {
+  const article = document.createElement('div');
   const title = document.createElement('h2');
   const dates = document.createElement('p');
   const spanExpandButton = document.createElement('span');
@@ -129,27 +139,35 @@ function articleMaker (article) {
 
   article.appendChild(title);
   article.appendChild(dates);
+  article.appendChild(spanExpandButton);
   article.appendChild(p1);
   article.appendChild(p2);
   article.appendChild(p3);
-  article.appendChild(spanExpandButton);
-
+  
   article.classList.add('article');
   dates.classList.add('date');
   spanExpandButton.classList.add('expandButton');
 
-  title.textContent = divArticle.title;
-  dates.textContent = divArticle.date;
+  title.textContent = data.title;
+  dates.textContent = data.date;
   spanExpandButton.textContent = '+';
 
-  p1.textContent = divArticle.firstParagraph;
-  p2.textContent = divArticle.secondParagraph;
-  p3.textContent = divArticle.thirdParagraph;
+  p1.textContent = data.firstParagraph; //correct?
+  p2.textContent = data.secondParagraph;
+  p3.textContent = data.thirdParagraph;
 
   spanExpandButton.addEventListener('click', function (event) {
-    divArticle.classList.toggle('article-open');
+    article.classList.toggle('article-open');
   })
 
-  return divArticle;
+  return article;
 }
 
+// where we want to insert our component from above
+const container = document.querySelector(".articles"); // <div class="articles"></div>
+console.log(container);
+
+data.forEach((item) => {
+  let newArticle = articleMaker(item);
+  return container.appendChild(newArticle);
+})
