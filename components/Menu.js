@@ -9,18 +9,50 @@ let menuItems = [
   'Log Out'
 ];
 
+function menuMaker(menuItems){
+// creating elements  
+  const menu = document.createElement("div"); 
+  const list = document.createElement("ul"); 
+  const listItem = document.createElement("li"); 
+
+  // select button 
+  const button = document.querySelector(".menu-button");
+  button.addEventListener("click", event => {
+    menu.classList.add("menu--open")
+  })
+
+// appending to DOM 
+  menu.appendChild(list); 
+  // menu.appendChild(listItem);
+
+  // adding classes 
+  menu.classList.add("menu");
+
+// iterating over the array
+const listOfItems = menuItems.map(listItem => {
+  return list.appendChild(listItem);
+}); 
+
+return menu; 
+} 
+
+// const panelElements = panelData.map((panelData) => {
+//   return makePanel(panelData);
+// });
+
+// panelElements.forEach((panelElement) => {
+//   accordion.appendChild(panelElement);
+// });
 
 /* 
   Step 1: Write a component called 'menuMaker' to create a menu like the markup below:
-
   <div class="menu">
     <ul>
       {each menu item as an <li>}
     </ul>
   </div>
-
   The 'menuMaker' takes an array of menu items as its only argument.
-
+  
   Step 2: Inside the function, iterate over the array creating a list item <li> element for each item in the array.
   Add those items to the <ul>
 

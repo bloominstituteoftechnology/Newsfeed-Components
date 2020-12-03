@@ -159,10 +159,10 @@ para3.textContent = data.thirdParagraph;
 expand.textContent = "+";
 // add eventListener to span element
 expand.addEventListener("click", (event) => {
-  expand.classList.toggle("article-open"); 
+  article.classList.toggle("article-open");
 });
 
-return article; 
+return article;  
 }
 
 const articles = document.querySelector(".articles"); 
