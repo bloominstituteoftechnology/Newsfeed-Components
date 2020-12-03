@@ -119,7 +119,6 @@ and returns a DOM node looking like the one below:  */
     para2.appendChild(para3)
     para3.appendChild(para4)
     para4.appendChild(span)
-    para4.appendChild(para4)
     span.addEventListener("click",(event)=>{
      div.classList.toggle("article-open");
     
@@ -151,7 +150,7 @@ and returns a DOM node looking like the one below:  */
   elements.forEach((element) => {
     // const h1 =document.createElement("h2")
     // h1.textContent = "hello"
-   body.appendChild(element);
+  return body.appendChild(element);
   });
   // console.log(elements)
 
