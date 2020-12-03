@@ -103,7 +103,10 @@ const data = [
     <span class="expandButton">+</span>
   </div>
 */
-function articleMaker(articles) {
+
+const articles = document.querySelector('.articles');
+
+function articleMaker(data) {
   const articleContainer = document.createElement("div");
   const title = document.createElement("h2");
   const date = document.createElement("p");
@@ -116,19 +119,19 @@ function articleMaker(articles) {
   date.classList.add('date');
   span.classList.add("expandButton");
   
-  title.textContent = `${articles.title}`;
-  date.textContent = `${articles.date }`;
-  paraOne.textContent = `${articles.firstParagraph}`;
-  paraTwo.textContent = `${articles.secondParagraph}`;
-  paraThree.textContent = `${articles.thirdParagraph}`;
+  title.textContent = data.title;
+  date.textContent = data.date;
+  paraOne.textContent = data.firstParagraph;
+  paraTwo.textContent = data.secondParagraph;
+  paraThree.textContent = data.thirdParagraph;
   span.textContent = "+";
 
-  article.appendChild(title)
-  article.appendChild(date)
-  article.appendChild(paraOne)
-  article.appendChild(paraTwo)
-  article.appendChild(paraThree)
-  article.appendChild(span)
+  article.appendChild(title);
+  article.appendChild(date);
+  article.appendChild(paraOne);
+  article.appendChild(paraTwo);
+  article.appendChild(paraThree);
+  article.appendChild(span);
 
   span.addEventListener('click', () => {
     article.classList.toggle('article-open');
@@ -137,10 +140,31 @@ function articleMaker(articles) {
 
 };
 
-const newArticles = document.querySelector('.articles');
-const firstArticleMaker = articleMaker();
+data.forEach(articles => {
+  const article = articleMaker(articles)
+  articles.appendChild(article)
+})
 
-articles.appendChild(firstArticleMaker);
+const newArticles = document.querySelector('div.articles');
+newArticles.appendChild(
+  articlemaker({
+    title: 'Professional Software Development in 2019',
+    date: 'Jan 1st, 2019',
+    firstParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
+          hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
+          Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `,
+
+    secondParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
+          hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
+          hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
+          hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? `,
+
+    thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
+          Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
+          Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  });
+);
+
 
 
 
