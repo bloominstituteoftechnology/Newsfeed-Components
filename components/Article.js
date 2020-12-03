@@ -106,7 +106,8 @@ const data = [
 
 const articles = document.querySelector('.articles');
 
-function articleMaker(data) {
+console.log("hello")
+function articleMaker(articles) {
   const articleContainer = document.createElement("div");
   const title = document.createElement("h2");
   const date = document.createElement("p");
@@ -116,33 +117,33 @@ function articleMaker(data) {
   const span = document.createElement("span");
 
   articleContainer.classList.add("article");
-  date.classList.add('date');
+  date.classList.add("date");
   span.classList.add("expandButton");
   
-  title.textContent = data.title;
-  date.textContent = data.date;
-  paraOne.textContent = data.firstParagraph;
-  paraTwo.textContent = data.secondParagraph;
-  paraThree.textContent = data.thirdParagraph;
+  title.textContent = articles.title;
+  date.textContent = articles.date;
+  paraOne.textContent = articles.firstParagraph;
+  paraTwo.textContent = articles.secondParagraph;
+  paraThree.textContent = articles.thirdParagraph;
   span.textContent = "+";
 
-  article.appendChild(title);
-  article.appendChild(date);
-  article.appendChild(paraOne);
-  article.appendChild(paraTwo);
-  article.appendChild(paraThree);
-  article.appendChild(span);
+  // articles.appendChild(articleContainer);
+  articleContainer.appendChild(title);
+  articleContainer.appendChild(date);
+  articleContainer.appendChild(paraOne);
+  articleContainer.appendChild(paraTwo);
+  articleContainer.appendChild(paraThree);
+  articleContainer.appendChild(span);
 
   span.addEventListener('click', () => {
-    article.classList.toggle('article-open');
+    articleContainer.classList.toggle('article-open');
     })
     return articleContainer;
-
 };
-
-data.forEach(articles => {
-  const article = articleMaker(articles)
-  articles.appendChild(article)
+//"data" pulled from array, .forEach /naming convention"article"
+data.forEach(article => {
+  const newArticle = articleMaker(article) 
+  articles.appendChild(newArticle);
 })
 
 const newArticles = document.querySelector('div.articles');
@@ -162,11 +163,8 @@ newArticles.appendChild(
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
-  });
+  })
 );
-
-
-
 
 /*
   Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
