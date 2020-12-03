@@ -93,38 +93,48 @@ const data = [
   Step 1: Write a component called 'articleMaker' to create an article.
   Your component is a function that takes an article object as its only argument,
 and returns a DOM node looking like the one below:  */
-
+   const articles = document.querySelector(".articles")
   function articleMaker(articleobj){
-  
+
     const div = document.createElement("div");
-    div.classList.add("article");
+    const date = document.createElement("p")
     const head = document.createElement("h2");
     const para1 = document.createElement("p");
     const para2 = document.createElement("p");
     const para3 = document.createElement("p");
-    const para4 = document.createElement("p")
-    para1.classList.add("date");
-    para2.classList.add("date");
-    para3.classList.add("date");
-    const span = document.createElement("span");
-    span.classList.add("expandButton");
-    head.textContent = articleobj.title
-    para1.textContent = articleobj.date
-    para2.textContent = articleobj.firstParagraph
-    para3.textContent = articleobj.secondParagraph
-    para4.textContent = articleobj.thirdParagraph
-    div.appendChild(div)
-    div.appendChild(head)
-    head.appendChild(para1)
-    para1.appendChild(para2)
-    para2.appendChild(para3)
-    para3.appendChild(para4)
-    para4.appendChild(span)
-    span.addEventListener("click",(event)=>{
-     div.classList.toggle("article-open");
     
+    const span = document.createElement("span")
 
-    });
+    div.appendChild(head)
+    div.appendChild(date)
+    div.appendChild(para1)
+    div.appendChild(para2)
+    div.appendChild(para3)
+    div.appendChild(span)
+    // const para4 = document.createElement("p")
+    div.classList.add("article")
+    date.classList.add("date");
+    span.classList.add("expandButton")
+    span.addEventListener("click",()=>{
+      div.classList.toggle("article-open");
+      
+    }); 
+ 
+
+
+    // para2.classList.add("date");
+    // para3.classList.add("date");
+
+    
+    // const body = document.querySelector(".articles")
+    head.textContent = articleobj.title
+   date.textContent = articleobj.date
+    span.textContent = "More Content"
+    para1.textContent = articleobj.firstParagraph
+    para2.textContent = articleobj.secondParagraph
+     para3.textContent = articleobj.thirdParagraph
+    
+  
     return div;
 
   }
@@ -142,19 +152,18 @@ and returns a DOM node looking like the one below:  */
   // const test = articleMaker({data});
   // article.appendChild(test);
   // debugger
-  const body = document.querySelector(".articles")
-// debugger
-  const elements = data.map((d) => {
-    return articleMaker(d);
-  });
   
-  elements.forEach((element) => {
-    // const h1 =document.createElement("h2")
-    // h1.textContent = "hello"
-  return body.appendChild(element);
+// debugger
+  // const elements = data.map((d) => {
+  //   return articleMaker(d);
+  // });
+  
+  data.forEach(article => {
+     const newArticle = articleMaker(article)
+    articles.appendChild(newArticle)
   });
    
-
+  
 //   Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
 //   This listener should toggle the class 'article-open' on div.article.
 
