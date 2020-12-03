@@ -94,6 +94,10 @@ const data = [
   Your component is a function that takes an article object as its only argument,
   and returns a DOM node looking like the one below:
 
+
+
+
+  
   <div class="article">
     <h2>{title of the article}</h2>
     <p class="date">{date of the article}</p>
@@ -114,3 +118,52 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+
+function articleMaker({data}) {
+  const Tophead = document.createElement("div");
+  const head = document.createElement("h2");
+  const paramain = document.createElement("p");
+  const para1 = document.createElement("p");
+  const para2 = document.createElement("p");
+  const para3 = document.createElement("p");
+  const closeButton = document.createElement("span");
+
+  Tophead.appendChild(head)
+  Tophead.appendChild(paramain)
+  Tophead.appendChild(closeButton)
+  paramain.appendChild(para1)
+  paramain.appendChild(para2)
+  paramain.appendChild(para3)
+
+  Tophead.classList.add("article")
+  paramain.classList.add("date")
+  closeButton.classList.add("expandButton")
+
+  var textnode = document.createTextNode("+");
+
+  closeButton.appendChild(textnode)
+
+ 
+  let expnd = document.querySelector(".expandButton")
+
+
+  // expnd.addEventListener("click", function test () {
+  //   closeButton.classList.toggle("expandButton");
+  //   Tophead.classList.toggle("article-open");
+  // });
+  
+
+
+  return Tophead
+
+}
+
+
+
+const test1 = data.map((panelData) => {
+  return articleMaker(panelData);
+});
+
+
+document.appendChild(articleMaker({data}));
