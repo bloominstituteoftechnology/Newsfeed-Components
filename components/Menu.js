@@ -10,19 +10,34 @@ let menuItems = [
 ];
 
 
-function menuMaker(menuItems){
+function menuMaker(arr){
   debugger
 const container =document.createElement("div")
-container.classList.add("menu")
 const itemlist = document.createElement("ul")
-menuItems.forEach(element => {
-  return document.createElement("li")
+
+
+document.body.appendChild(container)
+container.appendChild(ul)
+
+container.classList.add("menu")
+
+arr.forEach(item=> {
+  let listItem = document.createElement("li")
+  listItem.textContent += item;
+  ul.appendChild("li")
+
 });
 
+const menuButton = document.querySelector(".menu-button")
+menuButton.addEventListener("click",()=>{
+  container.classList.toggle("menu-open")
+})
 
+return container;
 
 
 }
+menuMaker(menuItems)
 /* 
   Step 1: Write a component called 'menuMaker' to create a menu like the markup below:
   

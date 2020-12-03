@@ -113,6 +113,7 @@ and returns a DOM node looking like the one below:  */
     para2.textContent = articleobj.firstParagraph
     para3.textContent = articleobj.secondParagraph
     para4.textContent = articleobj.thirdParagraph
+    div.appendChild(div)
     div.appendChild(head)
     head.appendChild(para1)
     para1.appendChild(para2)
@@ -152,7 +153,7 @@ and returns a DOM node looking like the one below:  */
     // h1.textContent = "hello"
   return body.appendChild(element);
   });
-  // console.log(elements)
+   
 
 //   Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
 //   This listener should toggle the class 'article-open' on div.article.
