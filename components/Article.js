@@ -86,7 +86,35 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
-  }
+  },
+  {
+    title: 'Zombies have taken over the world',
+    date: 'March 30th, 2020',
+    firstParagraph: `Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​,morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse, cricket bat max brucks terribilem incessu zomby. The voodoo sacerdos flesh eater, suscitat mortuos comedere carnem virus. Zonbi tattered for solum oculi eorum defunctis go lum cerebro. Nescio brains an Undead zombies. Sicut malus putrid voodoo horror. Nigh tofth eliv ingdead.`,
+
+    secondParagraph: `Lucio fulci tremor est dark vivos magna. Expansis creepy arm yof darkness ulnis witchcraft missing carnem armis Kirkman Moore and Adlard caeruleum in locis. Romero morbo Congress amarus in auras. Nihil horum sagittis tincidunt, zombie slack-jawed gelida survival portenta. The unleashed virus est, et iam zombie mortui ambulabunt super terram. Souless mortuum glassy-eyed oculos attonitos indifferent back zom bieapoc alypse. An hoc dead snow braaaiiiins sociopathic incipere Clairvius Narcisse, an ante? Is bello mundi z?`,
+
+    thirdParagraph: `In Craven omni memoria patriae zombieland clairvius narcisse religionis sunt diri undead historiarum. Golums, zombies unrelenting et Raimi fascinati beheading. Maleficia! Vel cemetery man a modern bursting eyeballs perhsaps morbi. A terrenti flesh contagium. Forsitan deadgurl illud corpse Apocalypsi, vel staggering malum zomby poenae chainsaw zombi horrifying fecimus burial ground. Indeflexus shotgun coup de poudre monstra per plateas currere. Fit de decay nostra carne undead. Poenitentiam violent zom biehig hway agite RE:dead pœnitentiam! Vivens mortua sunt apud nos night of the living dead.`
+  },
+  {
+    title: 'Nasa has found new life on Mars',
+    date: 'December 2th, 2020',
+    firstParagraph: `Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds, to seek out new life and new civilizations, to boldly go where no man has gone before. Many say exploration is part of our destiny, but it’s actually our duty to future generations and their quest to ensure the survival of the human species.`,
+
+    secondParagraph: `For those who have seen the Earth from space, and for the hundreds and perhaps thousands more who will, the experience most certainly changes your perspective. The things that we share in our world are far more valuable than those which divide us.It suddenly struck me that that tiny pea, pretty and blue, was the Earth. I put up my thumb and shut one eye, and my thumb blotted out the planet Earth. I didn’t feel like a giant. I felt very, very small. Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next 10.We choose to go to the moon in this decade and do the other things, not because they are easy, but because they are hard, because that goal will serve to organize and measure the best of our energies and skills, because that challenge is one that we are willing to accept, one we are unwilling to postpone, and one which we intend to win.`,
+
+    thirdParagraph: `Never in all their history have men been able truly to conceive of the world as one: a single sphere, a globe, having the qualities of a globe, a round earth in which all the directions eventually meet, in which there is no center because every point, or none, is center — an equal earth which all men occupy as equals. The airman’s earth, if free men make it, will be truly round: a globe in practice, not in theory.`
+  },
+  {
+    title: 'New Star Wars Movie Coming Out Soon',
+    date: 'November 22th, 2020',
+    firstParagraph: `We don’t serve their kind here! What? Your droids. They’ll have to wait outside. We don’t want them here. Listen, why don’t you wait out by the speeder. We don’t want any trouble. I heartily agree with you sir. Negola dewaghi wooldugger?!? He doesn’t like you. I’m sorry. I don’t like you either You just watch yourself. We’re wanted men. I have the death sentence in twelve systems. I’ll be careful than. You’ll be dead. This little one isn’t worth the effort. Come let me buy you something…`,
+
+    secondParagraph: `The approach will not be easy. You are required to maneuver straight down this trench and skim the surface to this point. The target area is only two meters wide. It’s a small thermal exhaust port, right below the main port. The shaft leads directly to the reactor system. A precise hit will start a chain reaction which should destroy the station. Only a precise hit will set up a chain reaction. The shaft is ray-shielded, so you’ll have to use proton torpedoes. That’s impossible, even for a computer. It’s not impossible. I used to bull’s-eye womp rats in my T-sixteen back home. They’re not much bigger than two meters. Man your ships! And may the Force be with you!`,
+
+    thirdParagraph: `Threepio! Come in, Threepio! Threepio! Get to the top! I can’t Where could he be? Threepio! Threepio, will you come in? They aren’t here! Something must have happened to them. See if they’ve been captured. Hurry! One thing’s for sure. We’re all going to be a lot thinner! Get on top of it! I’m trying! Thank goodness, they haven’t found them! Where could they be? Use the comlink? Oh, my! I forgot I turned it off! Are you there, sir? Threepio! We’ve had some problems… Will you shut up and listen to me? Shut down all garbage mashers on the detention level, will you? Do you copy? Shut down all the garbage mashers on the detention level. Shut down all the garbage mashers on the detention level. No. Shut them all down! Hurry! Listen to them! They’re dying, Artoo! Curse my metal body! I wasn’t fast enough. It’s all my fault! My poor master! Threepio, we’re all right! We’re all right. You did great.`
+  },
+
 ];
 
 /*
@@ -102,7 +130,69 @@ const data = [
 
     <span class="expandButton">+</span>
   </div>
+*/
+  const body = document.querySelector('body');
 
+  function articleMaker(dataObject){
+
+    // Instantiate all the elements
+    const article = document.createElement('div');
+    const articleTitle = document.createElement('h2');
+    const articleDate = document.createElement('p');
+    const firstParagraph = document.createElement('p');
+    const secondParagraph = document.createElement('p');
+    const thirdParagraph = document.createElement('p');
+    const articleSpanButton = document.createElement('span');
+
+    // The structure of our elements
+
+    article.appendChild(articleTitle);
+    article.appendChild(articleDate);
+    article.appendChild(firstParagraph);
+    article.appendChild(secondParagraph);
+    article.appendChild(thirdParagraph);
+    article.appendChild(articleSpanButton);
+
+
+    // Elements class
+
+    article.classList.add('article');
+    articleDate.classList.add('date');
+    articleSpanButton.classList.add('expandButton');
+    // articleSpanButton.style.justifyContent = 'end'
+
+    // Text Content 
+    
+    articleTitle.textContent = dataObject.title;
+    articleDate.textContent = dataObject.date;
+    firstParagraph.textContent = dataObject.firstParagraph;
+    secondParagraph.textContent = dataObject.secondParagraph;
+    thirdParagraph.textContent = dataObject.thirdParagraph;
+    articleSpanButton.textContent = '+'
+  
+    // Elements event listeners
+
+    articleSpanButton.addEventListener('click',(event)=>{
+      article.classList.toggle('article-open');
+
+    });
+
+    // return of the article
+    return article;
+  };
+
+  
+  // inserts info from the DATA object and loops thru it
+
+  const newArticles = data.map((articleData)=>{
+    return articleMaker(articleData);
+  });
+
+  newArticles.forEach((item) =>{
+    body.appendChild(item);
+  });
+
+/*
   Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
   This listener should toggle the class 'article-open' on div.article.
 
