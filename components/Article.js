@@ -102,7 +102,71 @@ const data = [
 
     <span class="expandButton">+</span>
   </div>
+*/
 
+const articles = document.querySelector('.articles');
+
+console.log("hello")
+function articleMaker(articles) {
+  const articleContainer = document.createElement("div");
+  const title = document.createElement("h2");
+  const date = document.createElement("p");
+  const paraOne = document.createElement("p");
+  const paraTwo = document.createElement("p");
+  const paraThree = document.createElement("p");
+  const span = document.createElement("span");
+
+  articleContainer.classList.add("article");
+  date.classList.add("date");
+  span.classList.add("expandButton");
+  
+  title.textContent = articles.title;
+  date.textContent = articles.date;
+  paraOne.textContent = articles.firstParagraph;
+  paraTwo.textContent = articles.secondParagraph;
+  paraThree.textContent = articles.thirdParagraph;
+  span.textContent = "+";
+
+  // articles.appendChild(articleContainer);
+  articleContainer.appendChild(title);
+  articleContainer.appendChild(date);
+  articleContainer.appendChild(paraOne);
+  articleContainer.appendChild(paraTwo);
+  articleContainer.appendChild(paraThree);
+  articleContainer.appendChild(span);
+
+  span.addEventListener('click', () => {
+    articleContainer.classList.toggle('article-open');
+    })
+    return articleContainer;
+};
+//"data" pulled from array, .forEach /naming convention"article"
+data.forEach(article => {
+  const newArticle = articleMaker(article) 
+  articles.appendChild(newArticle);
+})
+
+const newArticles = document.querySelector('div.articles');
+newArticles.appendChild(
+  articlemaker({
+    title: 'Professional Software Development in 2019',
+    date: 'Jan 1st, 2019',
+    firstParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
+          hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
+          Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `,
+
+    secondParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
+          hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
+          hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
+          hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? `,
+
+    thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
+          Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
+          Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  })
+);
+
+/*
   Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
   This listener should toggle the class 'article-open' on div.article.
 
