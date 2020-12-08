@@ -135,6 +135,7 @@ function articleMaker(articleObject) {
 
   // create span
   let span = document.createElement('span');
+  span.textContent = "+"
   span.classList.add('expandButton');
   article.appendChild(span);
     /*
