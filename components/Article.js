@@ -170,7 +170,7 @@ data.forEach(datum => {
   let article = articleMaker(datum);
   articleContainer.appendChild(article);
 });
-console.log(data)
+// console.log(data)
 
 /*
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
