@@ -101,16 +101,65 @@ const data = [
     {three separate paragraph elements}
 
     <span class="expandButton">+</span>
-  </div>
+  </div>*/
 
-  Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
-  This listener should toggle the class 'article-open' on div.article.
+  function articleMaker(data) {
+    console.log(data)
+  
 
-  Step 3: Don't forget to return something from your function!
+    const articleDiv = document.createElement('div')
+    const articleTitle = document.createElement('h2')
+    const articleDate = document.createElement('p')
+    const para1 = document.createElement('p')
+    const para2 = document.createElement('p')
+    const para3 = document.createElement('p')
+    const span = document.createElement('span')
 
-  Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
-  to create a div.article element and append it to the DOM inside div.articles (see index.html).
 
-  Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
-  Refresh the page to see the new article.
-*/
+    articleDiv.appendChild(articleTitle)
+    articleDiv.appendChild(articleDate)
+    articleDiv.appendChild(para1)
+    articleDiv.appendChild(para2)
+    articleDiv.appendChild(para3)
+    articleDiv.appendChild(span)
+
+    
+    span.addEventListener('click', () => {
+      articleDiv.classList.toggle('article-open')
+    })
+
+    articleDiv.classList.add('article')
+    articleDate.classList.add('date')
+    span.classList.add('expandButton')
+
+    console.log(articleDiv)
+ 
+  return articleDiv
+
+  }
+  
+  console.log(articleMaker)
+
+
+  
+
+
+  //Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
+  //This listener should toggle the class 'article-open' on div.article.
+
+
+  //Step 3: Don't forget to return something from your function!
+
+
+
+  //Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
+  //to create a div.article element and append it to the DOM inside div.articles (see index.html).
+
+
+
+
+
+
+
+  //Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
+  //Refresh the page to see the new article
