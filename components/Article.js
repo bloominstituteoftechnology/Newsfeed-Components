@@ -114,3 +114,64 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+log = console.log;
+
+
+function articleMaker(siteData) {
+  //element grabber
+  //const artContainer = document.querySelector(".articles")
+
+  //element creators
+  const articleDiv = document.createElement('div');
+  const title = document.createElement('h2');
+  const date = document.createElement('p');
+  const paraOne = document.createElement('p');
+  const paraTwo = document.createElement('p');
+  const paraThree = document.createElement('p');
+  const button = document.createElement('expandButton');
+
+  //class adds
+  articleDiv.classList.add('article');
+  date.classList.add('date');
+  button.classList.add('expandButton');
+  paraOne.classList.add('text-content', 'paraOne');
+  paraTwo.classList.add('text-content', 'paraTwo');
+  paraThree.classList.add('text-content', 'paraThree');
+
+  //text adds
+  title.textContent = siteData.title;
+  date.textContent = siteData.date;
+  paraOne.textContent = siteData.firstParagraph;
+  paraTwo.textContent = siteData.secondParagraph;
+  paraThree.textContent = siteData.thirdParagraph;
+  button.textContent = "+";
+
+  //appenders
+  articleDiv.appendChild(title);
+  articleDiv.appendChild(date);
+  articleDiv.appendChild(paraOne);
+  articleDiv.appendChild(paraTwo);
+  articleDiv.appendChild(paraThree);
+  articleDiv.appendChild(button);
+
+//event listener for button
+  button.addEventListener('click', () => {
+    articleDiv.classList.toggle('article-open');
+  });
+
+  return articleDiv;
+
+}
+
+articleMaker(data);
+
+
+data.forEach(element => {
+const articleBuilder = articleMaker(element);
+document.querySelector('div.articles').appendChild(articleBuilder);
+});
+
+
+
+
+
