@@ -122,13 +122,13 @@ function articleMaker(siteData) {
   //const artContainer = document.querySelector(".articles")
 
   //element creators
-  const articleDiv = document.createElement('div');
+   const articleDiv = document.createElement('div');
   const title = document.createElement('h2');
   const date = document.createElement('p');
   const paraOne = document.createElement('p');
   const paraTwo = document.createElement('p');
   const paraThree = document.createElement('p');
-  const button = document.createElement('expandButton');
+  const button = document.createElement('button');
 
   //class adds
   articleDiv.classList.add('article');
@@ -137,6 +137,7 @@ function articleMaker(siteData) {
   paraOne.classList.add('text-content', 'paraOne');
   paraTwo.classList.add('text-content', 'paraTwo');
   paraThree.classList.add('text-content', 'paraThree');
+  button.classList.add('expandButton');
 
   //text adds
   title.textContent = siteData.title;
