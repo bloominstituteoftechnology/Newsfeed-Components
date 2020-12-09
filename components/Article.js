@@ -135,17 +135,16 @@ function articleMaker(articleObject) {
 
   // create span
   let span = document.createElement('span');
-  span.textContent = "+"
+  span.textContent = "+";
   span.classList.add('expandButton');
   article.appendChild(span);
-    /*
+/*
   Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
   This listener should toggle the class 'article-open' on div.article.
 */
   span.addEventListener('click', () => {
   article.classList.toggle('article-open');
   });
-
 // Step 3: Don't forget to return something from your function!
   return article;
 
@@ -154,6 +153,7 @@ function articleMaker(articleObject) {
 /*
   Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
   to create a div.article element and append it to the DOM inside div.articles (see index.html).*/
+// let articleContainer = document.querySelector(".articles");
 let articleContainer = document.querySelector(".articles");
 
 // STEP 5
