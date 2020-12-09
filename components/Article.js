@@ -103,8 +103,7 @@ const data = [
     <span class="expandButton">+</span>
   </div>*/
 
-  function articleMaker(data) {
-    console.log(data)
+  function articleMaker(foo) {
   
 
     const articleDiv = document.createElement('div')
@@ -113,8 +112,9 @@ const data = [
     const para1 = document.createElement('p')
     const para2 = document.createElement('p')
     const para3 = document.createElement('p')
-    const span = document.createElement('span')
+    const span = document.createElement('expandButton')
 
+    
 
     articleDiv.appendChild(articleTitle)
     articleDiv.appendChild(articleDate)
@@ -132,14 +132,19 @@ const data = [
     articleDate.classList.add('date')
     span.classList.add('expandButton')
 
-    console.log(articleDiv)
- 
-  return articleDiv
+    articleTitle.textContent = foo.title
+    articleDate.textContent = foo.date
+    para1.textContent = foo.firstParagraph
+    para2.textContent = foo.secondParagraph
+    para3.textContent = foo.thirdParagraph
+    span.textContent = '[EXPAND]'
+    
+    return articleDiv
 
   }
   
-  console.log(articleMaker)
-
+  
+  articleMaker(data)
 
   
 
@@ -156,8 +161,12 @@ const data = [
   //to create a div.article element and append it to the DOM inside div.articles (see index.html).
 
 
+  data.forEach(element => {
+    const articleLoop = articleMaker(element)
+    
+    document.querySelector('div.articles').appendChild(articleLoop)
 
-
+  })
 
 
 
