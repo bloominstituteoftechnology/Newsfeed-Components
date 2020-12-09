@@ -126,8 +126,8 @@ const articleMaker = (
   thirdParagraph
 ) => {
   const article = document.createElement("div");
-  const title = document.createElement("h2");
-  const date = document.createElement("p");
+  const titles = document.createElement("h2");
+  const dates = document.createElement("p");
   const par1 = document.createElement("p");
   const par2 = document.createElement("p");
   const par3 = document.createElement("p");
@@ -138,9 +138,19 @@ const articleMaker = (
   article.append(title, date, par1, par2, par3, expandButton);
   expandButton.append(btnOpen, btnClose);
 
-  article.classList("article");
-  date.classList("date");
-  expandButton.classList("expandButton");
+  article.classList.add("article");
+  titles.classList.add("article-title");
+  dates.classList.add("date");
+  par1.classList.add("p1");
+  par2.classList.add("p2");
+  par3.classList.add("p3");
+  expandButton.classList.add("expandButton");
+
+  titles.textContent = title;
+  dates.textContent = date;
+  par1.textContent = firstParagraph;
+  par2.textContent = secondParagraph;
+  par3.textContent = thirdParagraph;
 
   return article;
 };
