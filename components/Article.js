@@ -89,12 +89,51 @@ const data = [
   }
 ];
 
+
+
+
+
+
+const divArticles = document.querySelector('.articles');
+
+
+function articleMaker(articleObject){ //this will be the above array we put in as the parameter
+  let titleElement = document.createElement('h2');// title element
+  titleElement.src = articleObject;
+
+  let dateElement = document.createElement('p');//date element
+  dateElement.src = articleObject;
+  dateElement.classList.add('date');
+
+  let textParagraphOne = document.createElement('p') //3 text paragraphs
+  textParagraphOne.src = articleObject;
+  let textParagraphTwo = document.createElement('p')
+  textParagraphTwo.src = articleObject;
+  let textParagraphThree = document.createElement('p');
+  textParagraphThree.src = articleObject;
+
+  let spanElement = document.createElement('span'); //span element
+  spanElement.src = articleObject;
+  //actually adding all of these things to the DOM
+  divArticles.appendChild(titleElement);
+  divArticles.appendChild(dateElement);
+  divArticles.appendChild(textParagraphOne);
+  divArticles.appendChild(textParagraphTwo);
+  divArticles.appendChild(textParagraphThree);
+  divArticles.appendChild(spanElement);
+  
+
+  return titleElement, dateElement, textParagraphOne, textParagraphTwo, textParagraphThree, spanElement;
+}
+articleMaker(data);
+
 /*
   Step 1: Write a component called 'articleMaker' to create an article.
   Your component is a function that takes an article object as its only argument,
   and returns a DOM node looking like the one below:
 
-  <div class="article">
+
+  <div class="articles"> 
     <h2>{title of the article}</h2>
     <p class="date">{date of the article}</p>
 
@@ -102,6 +141,19 @@ const data = [
 
     <span class="expandButton">+</span>
   </div>
+const section = document.querySelector('section');    
+function makeImage(url) {
+  const img = document.createElement('img');
+  img.src = url;
+
+  return img;
+}
+for (let i = 0; i < imageData.length; i++){
+  const url = imageData[i].imageURL;
+  const img = makeImage(url);
+  console.log(img);
+  section.appendChild(img);
+}
 
   Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
   This listener should toggle the class 'article-open' on div.article.
