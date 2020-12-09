@@ -1,12 +1,12 @@
 // This is the data we will be using, study it but don't change anything, yet.
 
 let menuItems = [
-  'Students',
-  'Faculty',
+  "Students",
+  "Faculty",
   "What's New",
-  'Tech Trends',
-  'Music',
-  'Log Out'
+  "Tech Trends",
+  "Music",
+  "Log Out",
 ];
 
 /* 
@@ -31,3 +31,49 @@ let menuItems = [
 
   Step 6: Use 'menuMaker' to create a menu using the 'menuItems' array, and append the returned menu to the header.
 */
+
+// const menuMaker = (arr) => {
+//   const menu = document.createElement("div");
+//   const list = document.createElement("ul");
+
+//   menu.appendChild(list);
+
+//   arr.forEach((data) => {
+//     const menuList = document.createElement("li");
+//     list.appendChild(menuList);
+//     menuList.textContent = data;
+//   });
+
+//   return menu;
+// };
+
+// const header = document.querySelector(".header");
+// header.appendChild(menuMaker(list));
+
+const menuMaker = (arr) => {
+  const menu = document.createElement("div");
+  const menuList = document.createElement("ul");
+  const menuButton = document.createElement("span");
+  const menuOpen = document.createElement("button");
+  const menuClose = document.createElement("button");
+
+  menu.appendChild(menuList, menuButton);
+  menuButton.append(menuOpen, menuClose);
+
+  menuItems.textContent.add(menuItems);
+
+  arr.forEach((arr) => {
+    const itemList = document.createElement("li");
+    menuList.appendChild(itemList);
+    itemList.textContent = arr;
+  });
+
+  return menu;
+};
+
+const header = document.querySelector(".header");
+// header.appendChild(menuMaker);
+
+menuMaker.forEach((arr) => header.appendChild(menuMaker));
+
+// arr.forEach((data) => header.appendChild(menuMaker(data.arr)));
