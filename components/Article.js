@@ -86,8 +86,56 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Gibberish',
+    date: 'Dec 9th, 2020',
+    firstParagraph: `edfgbrtbertynaretntymnedtumsthn muyrfmetynjrgnsfgn `,
+
+    secondParagraph: `dfgertbebadsfgadfgaerbvadfgaergrga `,
+
+    thirdParagraph: `dfgbettym8io,i9o,io,ryujmsrgtawefwegevbtrbsrtjhsrth`
   }
 ];
+
+
+function articleMaker(article){
+  const parentDiv = document.createElement('div')
+  const header = document.createElement('h2')
+  const date = document.createElement('p')
+  const paragraph1 = document.createElement('p')
+  const paragraph2 = document.createElement('p')
+  const paragraph3 = document.createElement('p')
+  const expandButton = document.createElement('span')
+
+  header.textContent = article.title
+  date.textContent = article.date
+  paragraph1.textContent = article.firstParagraph
+  paragraph2.textContent = article.secondParagraph
+  paragraph3.textContent = article.thirdParagraph
+  expandButton.textContent = '+'
+
+  parentDiv.classList.add('article')
+  date.classList.add('date')
+  expandButton.classList.add('expandButton')
+
+  expandButton.addEventListener('click', () => {
+    parentDiv.classList.toggle('article-open')
+  })
+
+  parentDiv.appendChild(header)
+  parentDiv.appendChild(date)
+  parentDiv.appendChild(paragraph1)
+  parentDiv.appendChild(paragraph2)
+  parentDiv.appendChild(paragraph3)
+  parentDiv.appendChild(expandButton)
+
+  return parentDiv
+}
+
+const articles = document.querySelector('.articles')
+
+data.forEach(datum => articles.appendChild(articleMaker(datum)))
 
 /*
   Step 1: Write a component called 'articleMaker' to create an article.
