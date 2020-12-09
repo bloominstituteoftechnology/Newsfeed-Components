@@ -100,6 +100,7 @@ const divArticles = document.querySelector('.articles');
 function articleMaker(articleObject){ //this will be the above array we put in as the parameter
   let divArticle = document.createElement('div');
   divArticle.classList.add('article');
+  
 
   let titleElement = document.createElement('h2');// title element
   titleElement.textContent = articleObject.title;
@@ -129,14 +130,15 @@ function articleMaker(articleObject){ //this will be the above array we put in a
   
 
   //eventlistener for span button
-  spanElement.expandButton.addEventListener('click', (evt) => {
+  spanElement.addEventListener('click', (evt) => {
     console.log('clicking');
-    div.article.classList.toggle('article-open');
+    divArticle.classList.toggle('article-open');
   });
 
   return divArticle;
 }
-articleMaker(data);
+
+
 
 /*
   Step 1: Write a component called 'articleMaker' to create an article.
@@ -167,4 +169,12 @@ articleMaker(data);
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+data.forEach(datum => {
+  const articleComponent = articleMaker(datum);
+  console.log(articleComponent);
+  divArticles.appendChild(articleComponent);
+});
+
+///Here I'm calling the function in the ForEach loop
 
