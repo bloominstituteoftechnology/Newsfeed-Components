@@ -98,32 +98,43 @@ const divArticles = document.querySelector('.articles');
 
 
 function articleMaker(articleObject){ //this will be the above array we put in as the parameter
+  let divArticle = document.createElement('div');
+  divArticle.classList.add('article');
+
   let titleElement = document.createElement('h2');// title element
-  titleElement.src = articleObject;
+  titleElement.textContent = articleObject.title;
 
   let dateElement = document.createElement('p');//date element
-  dateElement.src = articleObject;
+  dateElement.textContent = articleObject.date;
   dateElement.classList.add('date');
 
   let textParagraphOne = document.createElement('p') //3 text paragraphs
-  textParagraphOne.src = articleObject;
+  textParagraphOne.textContent = articleObject.firstParagraph;
   let textParagraphTwo = document.createElement('p')
-  textParagraphTwo.src = articleObject;
+  textParagraphTwo.textContent = articleObject.secondParagraph;
   let textParagraphThree = document.createElement('p');
-  textParagraphThree.src = articleObject;
+  textParagraphThree.textContent = articleObject.thirdParagraph;
 
   let spanElement = document.createElement('span'); //span element
-  spanElement.src = articleObject;
+  spanElement.textContent = '+';
+  spanElement.classList.add('expandButton');
+
   //actually adding all of these things to the DOM
-  divArticles.appendChild(titleElement);
-  divArticles.appendChild(dateElement);
-  divArticles.appendChild(textParagraphOne);
-  divArticles.appendChild(textParagraphTwo);
-  divArticles.appendChild(textParagraphThree);
-  divArticles.appendChild(spanElement);
+  divArticle.appendChild(titleElement);
+  divArticle.appendChild(dateElement);
+  divArticle.appendChild(textParagraphOne);
+  divArticle.appendChild(textParagraphTwo);
+  divArticle.appendChild(textParagraphThree);
+  divArticle.appendChild(spanElement);
   
 
-  return titleElement, dateElement, textParagraphOne, textParagraphTwo, textParagraphThree, spanElement;
+  //eventlistener for span button
+  spanElement.expandButton.addEventListener('click', (evt) => {
+    console.log('clicking');
+    div.article.classList.toggle('article-open');
+  });
+
+  return divArticle;
 }
 articleMaker(data);
 
@@ -133,7 +144,7 @@ articleMaker(data);
   and returns a DOM node looking like the one below:
 
 
-  <div class="articles"> 
+  <div class="article"> 
     <h2>{title of the article}</h2>
     <p class="date">{date of the article}</p>
 
@@ -141,22 +152,12 @@ articleMaker(data);
 
     <span class="expandButton">+</span>
   </div>
-const section = document.querySelector('section');    
-function makeImage(url) {
-  const img = document.createElement('img');
-  img.src = url;
 
-  return img;
-}
-for (let i = 0; i < imageData.length; i++){
-  const url = imageData[i].imageURL;
-  const img = makeImage(url);
-  console.log(img);
-  section.appendChild(img);
-}
+
 
   Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
   This listener should toggle the class 'article-open' on div.article.
+
 
   Step 3: Don't forget to return something from your function!
 
@@ -166,3 +167,4 @@ for (let i = 0; i < imageData.length; i++){
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
