@@ -151,6 +151,26 @@ const articleMaker = (
   par1.textContent = firstParagraph;
   par2.textContent = secondParagraph;
   par3.textContent = thirdParagraph;
+  btnOpen.textContent = "\u25bc";
+  btnClose.textContent = "\u25b2";
+
+  expandButton.addEventListener("click", () => {
+    console.log("clicked", clicked);
+    article.classList.toggle("article-open");
+  });
 
   return article;
 };
+
+const articles = document.querySelector(".articles");
+data.forEach((data) =>
+  articles.appendChild(
+    articleMaker(
+      data.title,
+      data.date,
+      data.firstParagraph,
+      data.secondParagraph,
+      data.thirdParagraph
+    )
+  )
+);
