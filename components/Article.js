@@ -116,22 +116,48 @@ const data = [
 */
 
 // step 1:
+function buttonCreator(article){
 const articleMaker = document.createElement("div")
 articleMaker.classList.add('article')
 const title = document.createElement("h2")
-title.textContent = "Midoriya"
+title.textContent = article.title
 // console.log(title)
-const content = document.createElement("p")
-content.classList.add(content)
-content.textContent("12/9/2020")
+const date = document.createElement("p")
+date.classList.add("date")
+date.textContent = article.date
 
 const content1 = document.createElement("p")
 const content2 = document.createElement("p")
 const content3 = document.createElement("p")
 
+content1.textContent = article.firstParagraph
+content2.textContent = article.secondParagraph
+content3.textContent = article.thirdParagraph
+
 const expandButton = document.createElement("span")
-expandButton.classList.add("ExpandButton")
+expandButton.classList.add("expandButton")
+expandButton.textContent = "+"
+
+articleMaker.append(title)
+articleMaker.append(date)
+articleMaker.append(content1)
+articleMaker.append(content2)
+articleMaker.append(content3)
+articleMaker.append(expandButton)
+
+expandButton.addEventListener("click", () => {
+articleMaker.classList.toggle('article-open')
+})
+
+return articleMaker
+}
 
 let articles = document.querySelector('.articles')
-articles.appendChild(articleMaker)
-console.log(articles.appendChild(articleMaker))
+
+data.forEach((item)=> {
+articles.append(buttonCreator(item))
+})
+
+// articles.appendChild(articleMaker)
+// console.log(articles.appendChild(articleMaker))
+
