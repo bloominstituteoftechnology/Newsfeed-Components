@@ -26,10 +26,10 @@ In this project we are going to be building a news feed reader. The goal is to h
 
 ### Launching the project
 
-* [ ] Navigate to the root of the project with your command line.
-* [ ] Run `npm install` to download any dependencies listed in the `package.json` file.
-* [ ] Run `npm start` to compile your project and launch a development server.
-* [ ] Navigate Chrome to the URL indicated in the output of the `npm start` command.
+* [x ] Navigate to the root of the project with your command line.
+* [ x] Run `npm install` to download any dependencies listed in the `package.json` file.
+* [x ] Run `npm start` to compile your project and launch a development server.
+* [x ] Navigate Chrome to the URL indicated in the output of the `npm start` command.
 
 ### Part 1: The Articles Component
 
@@ -37,7 +37,7 @@ In this project we are going to be building a news feed reader. The goal is to h
 
 ### Part 2: Add Articles
 
-* Now that we have our components built, add a few articles of your own to the data array. Notice how our JavaScript code automatically creates the new articles. Write the code once and add as many components as you want all while maintaining the functionality we built!
+* [x]Now that we have our components built, add a few articles of your own to the data array. Notice how our JavaScript code automatically creates the new articles. Write the code once and add as many components as you want all while maintaining the functionality we built!
 
 ### Part 3: The Menu
 
