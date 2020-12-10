@@ -72,29 +72,92 @@ const data = [
         Castform Lotad the power that's inside Burnt Berry Makuhita. Ghost Ariados Corphish Dusclops Golbat Gligar Zweilous.`
   },
   {
-    title: 'Professional Software Development in 2019',
-    date: 'Jan 1st, 2019',
-    firstParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
-          hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
-          Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `,
+    title: 'Game Of Thrones',
+    date: '2020',
+    firstParagraph: `Tell him it was me.`,
 
-    secondParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
-          hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
-          hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
-          hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? `,
+    secondParagraph: `There\'s too much snow, so lets try burning my daughter`,
 
-    thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
-          Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
-          Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+    thirdParagraph: `You know nothing, Jon Snow.`
+  },
+  {
+    title: 'Winter Solstice',
+    date: 'December 2020',
+    firstParagraph: `New Beginnings`,
+
+    secondParagraph: `Fresh start`,
+
+    thirdParagraph: `Finding your balance`
+  },
+  {
+    title: 'My Girls',
+    date: 'est. 2016',
+    firstParagraph: `Alice Monroe`,
+
+    secondParagraph: `Wrenley Rose`,
+
+    thirdParagraph: `Emilia Winifred`
   }
 ];
+
+
+
+
+
+
+const divArticles = document.querySelector('.articles');
+
+
+function articleMaker(articleObject){ //this will be the above array we put in as the parameter
+  let divArticle = document.createElement('div');
+  divArticle.classList.add('article');
+  
+
+  let titleElement = document.createElement('h2');// title element
+  titleElement.textContent = articleObject.title;
+
+  let dateElement = document.createElement('p');//date element
+  dateElement.textContent = articleObject.date;
+  dateElement.classList.add('date');
+
+  let textParagraphOne = document.createElement('p') //3 text paragraphs
+  textParagraphOne.textContent = articleObject.firstParagraph;
+  let textParagraphTwo = document.createElement('p')
+  textParagraphTwo.textContent = articleObject.secondParagraph;
+  let textParagraphThree = document.createElement('p');
+  textParagraphThree.textContent = articleObject.thirdParagraph;
+
+  let spanElement = document.createElement('span'); //span element
+  spanElement.textContent = '+';
+  spanElement.classList.add('expandButton');
+
+  //actually adding all of these things to the DOM
+  divArticle.appendChild(titleElement);
+  divArticle.appendChild(dateElement);
+  divArticle.appendChild(textParagraphOne);
+  divArticle.appendChild(textParagraphTwo);
+  divArticle.appendChild(textParagraphThree);
+  divArticle.appendChild(spanElement);
+  
+
+  //eventlistener for span button
+  spanElement.addEventListener('click', (evt) => {
+    console.log('clicking');
+    divArticle.classList.toggle('article-open');
+  });
+
+  return divArticle;
+}
+
+
 
 /*
   Step 1: Write a component called 'articleMaker' to create an article.
   Your component is a function that takes an article object as its only argument,
   and returns a DOM node looking like the one below:
 
-  <div class="article">
+
+  <div class="article"> 
     <h2>{title of the article}</h2>
     <p class="date">{date of the article}</p>
 
@@ -103,8 +166,11 @@ const data = [
     <span class="expandButton">+</span>
   </div>
 
+
+
   Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
   This listener should toggle the class 'article-open' on div.article.
+
 
   Step 3: Don't forget to return something from your function!
 
@@ -114,3 +180,12 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+data.forEach(datum => {
+  const articleComponent = articleMaker(datum);
+  console.log(articleComponent);
+  divArticles.appendChild(articleComponent);
+});
+
+///Here I'm calling the function in the ForEach loop
+
