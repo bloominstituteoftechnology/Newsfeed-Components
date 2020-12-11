@@ -38,9 +38,9 @@ const data = [
         mewing kittens Remus Lupin. Palominos scarlet train black robes, Metamorphimagus Niffler dead easy second bedroom. Padma
         and Parvati Sorting Hat Minister of Magic blue turban remember my last.`,
 
-    thirdParagraph: `Toad-like smile Flourish and Blotts he knew I’d come back Quidditch World Cup. Fat Lady baubles banana fritters fairy lights 
-        Petrificus Totalus. So thirsty, deluminator firs’ years follow me 12 inches of parchment. Head Boy start-of-term banquet Cleansweep Seven 
-        roaring lion hat. Unicorn blood crossbow mars is bright tonight, feast Norwegian Ridgeback. Come seek us where our voices sound, we cannot 
+    thirdParagraph: `Toad-like smile Flourish and Blotts he knew I’d come back Quidditch World Cup. Fat Lady baubles banana fritters fairy lights
+        Petrificus Totalus. So thirsty, deluminator firs’ years follow me 12 inches of parchment. Head Boy start-of-term banquet Cleansweep Seven
+        roaring lion hat. Unicorn blood crossbow mars is bright tonight, feast Norwegian Ridgeback. Come seek us where our voices sound, we cannot
         sing above the ground, Ginny Weasley bright red. Fanged frisbees, phoenix tears good clean match.`
   },
   {
@@ -67,8 +67,8 @@ const data = [
         consectetur adipiscing elit. Nidoran Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nidorino Lorem ipsum dolor
         sit amet, consectetur adipiscing elit. Nidoking Lorem ipsum`,
 
-    thirdParagraph: `Gotta catch 'em all Horsea gym Ninjask Absol Sinnoh Poliwag. Gotta catch 'em all Youngster wants to fight Soda Pop Floatzel 
-        Leech Life Seismitoad Ariados. Earthquake Pokemon Glitch City Tail Whip Skitty Ekans Dialga. Ut aliquip ex ea commodo consequat James 
+    thirdParagraph: `Gotta catch 'em all Horsea gym Ninjask Absol Sinnoh Poliwag. Gotta catch 'em all Youngster wants to fight Soda Pop Floatzel
+        Leech Life Seismitoad Ariados. Earthquake Pokemon Glitch City Tail Whip Skitty Ekans Dialga. Ut aliquip ex ea commodo consequat James
         Castform Lotad the power that's inside Burnt Berry Makuhita. Ghost Ariados Corphish Dusclops Golbat Gligar Zweilous.`
   },
   {
@@ -102,7 +102,45 @@ const data = [
 
     <span class="expandButton">+</span>
   </div>
+*/
+  function articleMaker(article) {
+      let articleTitle = article.title
+      let dataText = article.date
 
+      let parent = document.createElement('div')
+      let title = document.createElement('h2')
+      let date = document.createElement('p')
+      let expandButton = document.createElement('span')
+
+      parent.classList.add('article', 'article-open')
+      date.classList.add('date')
+      expandButton.classList.add('expandButton')
+
+      title.textContent = articleTitle
+      date.textContent = dataText
+      expandButton.textContent = '+'
+      let textContent1 = article.firstParagraph
+      let textContent2 = article.secondParagraph
+      let textContent3 = article.thirdParagraph
+
+      parent.append(title)
+      parent.append(date)
+      parent.append(textContent1)
+      parent.append(textContent2)
+      parent.append(textContent3)
+      parent.append(expandButton)
+
+
+
+      expandButton.addEventListener('click', () => {
+        parent.classList.toggle('article-open')
+      })
+
+      return parent
+  }
+
+
+/*
   Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
   This listener should toggle the class 'article-open' on div.article.
 
@@ -114,3 +152,9 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+  for (i = 0; i < data.length; ++i) {
+    const arty = articleMaker(data[i])
+    const child = document.querySelector('div.articles')
+    child.appendChild(arty)
+  }
