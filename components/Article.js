@@ -86,6 +86,22 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'My 20th Birthday!',
+    date: 'Dec 19th, 2020',
+    firstParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
+          hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
+          Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `,
+
+    secondParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
+          hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
+          hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
+          hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? `,
+
+    thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
+          Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
+          Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
 ];
 
@@ -93,6 +109,42 @@ const data = [
   Step 1: Write a component called 'articleMaker' to create an article.
   Your component is a function that takes an article object as its only argument,
   and returns a DOM node looking like the one below:
+
+  */
+ 
+ function articleMaker(array) {
+   let divArticles = document.querySelector(`.articles`);
+   let divArticle = document.createElement('div');
+   let h2 = document.createElement('h2');
+   let p1 = document.createElement('p');
+   let p2 = document.createElement('p');
+   let p3 = document.createElement('p');
+   let p4 = document.createElement('p');
+   let span = document.createElement('span');
+
+   divArticle.classList.add("article");
+   h2.textContent = array.title;
+   p1.classList.add("date");
+   p1.textContent = array.date;
+   p2.textContent = array.firstParagraph;
+   p3.textContent = array.secondParagraph;
+   p4.textContent = array.thirdParagraph;
+   span.classList.add("expandButton");
+   span.textContent = "+";
+   span.addEventListener('click', e => {
+    divArticle.classList.toggle('article-open');
+   });
+
+   divArticles.appendChild(divArticle);
+   divArticle.appendChild(h2);
+   divArticle.appendChild(p1);
+   divArticle.appendChild(p2);
+   divArticle.appendChild(p3);
+   divArticle.appendChild(p4);
+   divArticle.appendChild(span);
+ }
+ 
+  /*
 
   <div class="article">
     <h2>{title of the article}</h2>
@@ -110,7 +162,13 @@ const data = [
 
   Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
   to create a div.article element and append it to the DOM inside div.articles (see index.html).
+*/
 
+  data.forEach(item => {
+    articleMaker(item);
+  })
+
+/*
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
