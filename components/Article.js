@@ -94,16 +94,13 @@ function articleMaker(articleObj) {
    div.classList.add('article');
 
   let h2 = document.createElement('h2');
-  h2.textContent = `${articleObj.title}`
+  h2.textContent = `${articleObj.title}`;
  
-
   let firstParagraph = document.createElement('p');
   firstParagraph.textContent = `${articleObj.firstParagraph}`;
 
-
   let secondParagraph = document.createElement('p');
   secondParagraph.textContent = `${articleObj.secondParagraph}`;
-
 
   let thirdParagraph = document.createElement('p');
   thirdParagraph.textContent = `${articleObj.thirdParagraph}`;
@@ -112,7 +109,7 @@ function articleMaker(articleObj) {
   span.style.fontSize='11px';
   span.classList.add('expandButton');
   span.textContent = "expands";
-
+  
   span.addEventListener('click', function() {
     div.classList.toggle('article-open');
   })
@@ -122,8 +119,7 @@ function articleMaker(articleObj) {
 
  data.forEach(items => {
   let div = document.querySelector('.articles');
- div.append(articleMaker(items))
-
+ div.append(articleMaker(items));
 });
 
 
