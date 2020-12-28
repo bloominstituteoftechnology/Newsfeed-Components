@@ -9,12 +9,12 @@ let menuItems = [
   'Log Out'
 ];
 
-function menuMaker() {
+function menuMaker(items) {
   let div = document.createElement('div');
   div.classList.add('menu');
   let ul = document.createElement('ul');
 
-  menuItems.forEach(item => {
+  items.forEach(item => {
     let li = document.createElement('li');
     li.textContent = `${item}`
    ul.append(li)
