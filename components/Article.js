@@ -1,6 +1,4 @@
-// This is the data we will be using to create our articles. Look at it, then proceed to line 93.
-// OPTIONAL: if you're feeling adventurous, try to make this data an export from a different module, and import it here.
-// You can read about ES6 modules here: https://exploringjs.com/es6/ch_modules.html#sec_basics-of-es6-modules
+
 const data = [
   {
     title: 'Lambda School Students: "We\'re the best!"',
@@ -72,6 +70,21 @@ const data = [
         Castform Lotad the power that's inside Burnt Berry Makuhita. Ghost Ariados Corphish Dusclops Golbat Gligar Zweilous.`
   },
   {
+    title: 'Web Technologies of 2020',
+    date: 'Mar 1st, 2020',
+    firstParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
+          hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
+          Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `,
+
+    secondParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
+          hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
+          hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
+          hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? `,
+
+    thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
+          Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
+          Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },{
     title: 'Professional Software Development in 2019',
     date: 'Jan 1st, 2019',
     firstParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
@@ -89,28 +102,44 @@ const data = [
   }
 ];
 
-/*
-  Step 1: Write a component called 'articleMaker' to create an article.
-  Your component is a function that takes an article object as its only argument,
-  and returns a DOM node looking like the one below:
+function articleMaker(articleObj) {
+  let div = document.createElement('div');
+   div.classList.add('article');
 
-  <div class="article">
-    <h2>{title of the article}</h2>
-    <p class="date">{date of the article}</p>
+  let h2 = document.createElement('h2');
+  h2.textContent = `${articleObj.title}`;
+ 
+  let firstParagraph = document.createElement('p');
+  firstParagraph.textContent = `${articleObj.firstParagraph}`;
 
-    {three separate paragraph elements}
+  let secondParagraph = document.createElement('p');
+  secondParagraph.textContent = `${articleObj.secondParagraph}`;
 
-    <span class="expandButton">+</span>
-  </div>
+  let thirdParagraph = document.createElement('p');
+  thirdParagraph.textContent = `${articleObj.thirdParagraph}`;
 
-  Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
-  This listener should toggle the class 'article-open' on div.article.
+  let span = document.createElement('span');
+  span.style.fontSize='11px';
+  span.classList.add('expandButton');
+  span.textContent = "expands";
+  
+  span.addEventListener('click', function() {
+    div.classList.toggle('article-open');
+  })
+  div.append(h2,firstParagraph,secondParagraph,thirdParagraph,span);
+  return div;
+}
 
-  Step 3: Don't forget to return something from your function!
+ data.forEach(items => {
+  let div = document.querySelector('.articles');
+ div.append(articleMaker(items));
+});
 
-  Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
-  to create a div.article element and append it to the DOM inside div.articles (see index.html).
 
-  Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
-  Refresh the page to see the new article.
-*/
+
+
+
+
+
+
+
