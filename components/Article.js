@@ -1,19 +1,45 @@
-// This is the data we will be using to create our articles. Look at it, then proceed to line 93.
-// OPTIONAL: if you're feeling adventurous, try to make this data an export from a different module, and import it here.
-// You can read about ES6 modules here: https://exploringjs.com/es6/ch_modules.html#sec_basics-of-es6-modules
-import data from "./data"
+import data from "./data";
 
-const articles = document.querySelector(".articles")
+const articles = document.querySelector(".articles");
 
-function articleMaker({ article }) {
+function articleMaker(obj) {
+  // instantiate new elements
+  const article = document.createElement("div");
   const title = document.createElement("h2");
   const date = document.createElement("p");
-  const para1 = document.createElement("p");
-  const para2 = document.createElement("p");
-  const para3 = document.createElement("p");
-  const span = document.createElement("span");
-}
+  const firstParagraph = document.createElement("p");
+  const secondParagraph = document.createElement("p");
+  const thirdParagraph = document.createElement("p");
+  const expandButton = document.createElement("span");
 
+  // set up structure of new elements
+  article.append(title, date, firstParagraph, secondParagraph, thirdParagraph, expandButton);
+
+  // assign classes to new elements
+  article.classList.add("article");
+  date.classList.add("date");
+  expandButton.classList.add("expandButton");
+
+  // add text content
+
+  title.textContent = obj.title;
+  date.textContent = obj.date;
+  firstParagraph.textContent = obj.firstParagraph;
+  secondParagraph.textContent = obj.secondParagraph;
+  thirdParagraph.textContent = obj.thirdParagraph;
+  expandButton.textContent = 'Click Here';
+
+  // add event listener(step 3)
+  expandButton.addEventListener("click", () => {
+    article.classList.toggle("article-open")
+  })
+
+return article
+}
+  // iterate over data and create new articles and append to DOM
+data.forEach(item => {
+  articles.append(articleMaker(item))
+})
 /*
   Step 1: Write a component called 'articleMaker' to create an article.
   Your component is a function that takes an article object as its only argument,
