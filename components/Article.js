@@ -143,7 +143,7 @@ const data = [
     p1.textContent = firstPar;
     p2.textContent = seconPar;
     p3.textContent = thirdPar;
-    expandButton.textContent = '+';
+    expandButton.textContent = 'See More';
   
     article.appendChild(articleTitle);
     article.appendChild(articleDate);
