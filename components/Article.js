@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // This is the data we will be using to create our articles. Look at it, then proceed to line 93.
 // OPTIONAL: if you're feeling adventurous, try to make this data an export from a different module, and import it here.
 // You can read about ES6 modules here: https://exploringjs.com/es6/ch_modules.html#sec_basics-of-es6-modules
@@ -114,3 +115,37 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+function articleMaker({title, date, firstParagraph, secondParagraph, thirdParagraph}) {
+  //create html elements
+  let article = document.createElement('div');
+  let header = document.createElement('h2');
+  let artDate = document.createElement('p');
+  let p1 = document.createElement('p');
+  let p2 = document.createElement('p');
+  let p3 = document.createElement('p');
+  let button = document.createElement('span');
+  //add structure
+  article.appendChild(header);
+  article.appendChild(artDate);
+  article.appendChild(p1);
+  article.appendChild(p2);
+  article.appendChild(p3);
+  article.appendChild(button);
+  //add classes
+  article.classList.add('article');
+  artDate.classList.add('date');
+  button.classList.add('expandButton');
+  //add text
+  header.textContent = title;
+  artDate.textContent = date;
+  p1.textContent = firstParagraph;
+  p2.textContent = secondParagraph;
+  p3.textContent = thirdParagraph;
+  button.textContent = '+';
+  //return article
+  return article;
+}
+
+const test = articleMaker(data[0]);
+console.log(test);
