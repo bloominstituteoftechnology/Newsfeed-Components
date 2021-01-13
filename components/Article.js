@@ -152,5 +152,23 @@ function articleMaker({title, date, firstParagraph, secondParagraph, thirdParagr
 const test = articleMaker(data[0]);
 console.log(test);
 
+const testArt1 = {
+  title: 'Big New Test', 
+  date: 'Jan 13th, 2021',
+  firstParagraph: 'This is the first paragraph.',
+  secondParagraph: 'This is the second paragraph, not to be confused with the first!',
+  thirdParagraph: "Wow, I can't belive we made it to three paragraphs!" };
+
+  const testArt2 = {
+    title: 'Big Old Test', 
+    date: 'Jan 13th, 2021',
+    firstParagraph: 'This is the first paragraph.',
+    secondParagraph: 'This is the second paragraph, not to be confused with the first!',
+    thirdParagraph: "Wow, I can't belive we made it to three paragraphs!" };
+  
+
+data.push(testArt1, testArt2);
+
 let articles = document.querySelector('.articles');
 data.forEach((article) => articles.appendChild(articleMaker(article)));
+
