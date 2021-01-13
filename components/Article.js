@@ -143,9 +143,14 @@ function articleMaker({title, date, firstParagraph, secondParagraph, thirdParagr
   p2.textContent = secondParagraph;
   p3.textContent = thirdParagraph;
   button.textContent = '+';
+  //toggle expand button
+  button.addEventListener('click', () => article.classList.toggle('article-open'));
   //return article
   return article;
 }
 
 const test = articleMaker(data[0]);
 console.log(test);
+
+let articles = document.querySelector('.articles');
+data.forEach((article) => articles.appendChild(articleMaker(article)));
