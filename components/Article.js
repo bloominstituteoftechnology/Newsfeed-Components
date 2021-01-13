@@ -95,14 +95,52 @@ const data = [
   // and returns a DOM node looking like the one below:
 
   function articleMaker({object}){
+
+    // creating html elements for article
     const article = document.createElement("div");
-    const title = document.createElement("h2");
-    const date = document.createElement("p");
+    const textTitle = document.createElement("h2");
+    const dateText = document.createElement("p");
     const firstPara = document.createElement("p");
     const secondPara = document.createElement("p");
     const thirdPara = document.createElement("p");
     const button = document.createElement("span");
+
+    // structureing of elements
+    article.appendChild(textTitle);
+    article.appendChild(dateText);
+    article.appendChild(firstPara);
+    article.appendChild(secondPara);
+    article.appendChild(thirdPara);
+    article.appendChild(button);
+
+    // adding classes to elements
+    article.classList.add("article");
+    dateText.classList.add("date");
+    button.classList.add("expandButton");
+
+    // text context
+    textTitle.textContent = title;
+    dateText.textContent = date;
+    firstPara.textContent = firstParagraph;
+    secondPara.textContent = secondParagraph;
+    thirdPara.textContent = thirdParagraph;
+
+    // event listener
+    button.addEventListener("click", (event) => {
+      article.classList.toggle("article-open");
+    });
+
+    return article 
   }
+
+  // selector for articles div
+  const articles = document.querySelector(".articles");
+
+console.log();
+
+  const test = articleMaker({title: "test title", date: "test content", firstParagraph: "adw", secondParagraph: "awd", thirdParagraph: "2awd"});
+  articles.appendChild(test);
+
 
   // <div class="article">
   //   <h2>{title of the article}</h2>
