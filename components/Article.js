@@ -114,3 +114,55 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+function articleMaker(article){
+  const articleContainer = document.createElement('div')
+  articleContainer.classList.add("article")
+  
+  const articleTitle = document.createElement('h2')
+  articleTitle.textContent = (article.title)
+  articleContainer.appendChild(articleTitle)
+ 
+  const articleDate = document.createElement('p')
+  articleDate.textContent = (article.date)
+  articleContainer.appendChild(articleDate)
+ 
+  const articleFirstParagraph = document.createElement('p')
+  articleFirstParagraph.textContent = (article.firstParagraph)
+  articleContainer.appendChild(articleFirstParagraph)
+ 
+  const articleSecondParagraph = document.createElement('p')
+  articleSecondParagraph.textContent = (article.secondParagraph)
+  articleContainer.appendChild(articleSecondParagraph)
+ 
+  const articleThirdParagraph = document.createElement('p')
+  articleThirdParagraph.textContent = (article.thirdParagraph)
+  articleContainer.appendChild(articleThirdParagraph)
+ 
+  const articleExpand = document.createElement('span')
+  articleExpand.classList.add('expandButton')
+  articleExpand.textContent = "+"
+  articleExpand.addEventListener('click', () => {
+      articleContainer.classList.toggle('article-open')
+  })
+
+  articleContainer.appendChild(articleExpand)
+ 
+  return articleContainer 
+ }
+  data.push({
+    title: `That is gonna leave a Marx!`,
+    date: `January 6, 2021`,
+    firstParagraph: `holy crap did you see that coup attempt?`,
+    secondParagraph: `really did a number on public trust!`,
+    thirdParagraph: `will America ever recover?`,
+  })
+ 
+ data.forEach((item) => {
+   const articleComponent = articleMaker(item)
+   const articles = document.querySelector('.articles')
+   articles.appendChild(articleComponent)
+  })
+
+ 
+
+ 
