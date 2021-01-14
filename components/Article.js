@@ -94,6 +94,10 @@ const data = [
   Your component is a function that takes an article object as its only argument,
   and returns a DOM node looking like the one below:
 
+
+
+
+  
   <div class="article">
     <h2>{title of the article}</h2>
     <p class="date">{date of the article}</p>
@@ -114,3 +118,74 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+
+function articleMaker({ title, date, firstParagraph, secondParagraph, thirdParagraph }) {
+  const Tophead = document.createElement("div");
+  const head = document.createElement("h2");
+  const paramain = document.createElement("p");
+  const para1 = document.createElement("p");
+  const para2 = document.createElement("p");
+  const para3 = document.createElement("p");
+  const closeButton = document.createElement("span");
+
+  Tophead.appendChild(head)
+  Tophead.appendChild(paramain)
+  Tophead.appendChild(closeButton)
+  Tophead.appendChild(para1)
+  Tophead.appendChild(para2)
+  Tophead.appendChild(para3)
+
+
+
+
+
+  Tophead.classList.add("article")
+  paramain.classList.add("date")
+  para1.classList.add("para1")
+  para2.classList.add("para2")
+  para3.classList.add("para3")
+  closeButton.classList.add("expandButton")
+
+  head.textContent = title
+  paramain.textContent = date
+  para1.textContent = firstParagraph
+  para2.textContent = secondParagraph
+  para3.textContent = thirdParagraph
+
+
+
+
+
+
+  var textnode = document.createTextNode("+");
+
+  closeButton.appendChild(textnode)
+
+  closeButton.addEventListener("click", function () {
+    Tophead.classList.toggle("article-open");
+  });
+  
+
+
+  return Tophead
+
+}
+
+
+
+// const test1 = data.map((panelData) => {
+//   return articleMaker(panelData);
+// });
+
+let art = document.querySelector(".articles")
+
+
+
+const panelElements = data.map((data) => {
+  return articleMaker(data);
+});
+
+panelElements.forEach((panelElement) => {
+  art.appendChild(panelElement);
+});
