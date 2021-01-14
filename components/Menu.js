@@ -12,9 +12,38 @@ let menuItems = [
 
   // Step 1: Write a component called 'menuMaker' to create a menu like the markup below:
 
-  function menuMaker({object}) {
+  function menuMaker(array) {
+
     
+    const menu = document.createElement("div");
+    const ul = document.createElement("ul");
+
+    menu.appendChild(ul);
+
+    menu.classList.add("menu");
+    
+    array.forEach((item) => {
+      const listItem = document.createElement("li");
+      listItem.textContent = item;
+      ul.appendChild(listItem);
+    });
+
+    const menuButton = document.querySelector(".menu-button")
+
+    menuButton.addEventListener("click", (event) => {
+      menu.classList.toggle("menu--open");
+    });
+
+    return menu 
+
   }
+
+  const header = document.querySelector(".header")
+
+  const newMenu = menuMaker(menuItems);
+  header.appendChild(newMenu);
+
+  
 
   // <div class="menu">
   //   <ul>
