@@ -94,7 +94,10 @@ const data = [
   // Your component is a function that takes an article object as its only argument,
   // and returns a DOM node looking like the one below:
 
-  function articleMaker({object}){
+  // selector for articles div
+  const articles = document.querySelector(".articles");
+
+  function articleMaker(object){
 
     // creating html elements for article
     const article = document.createElement("div");
@@ -119,11 +122,13 @@ const data = [
     button.classList.add("expandButton");
 
     // text context
-    textTitle.textContent = title;
-    dateText.textContent = date;
-    firstPara.textContent = firstParagraph;
-    secondPara.textContent = secondParagraph;
-    thirdPara.textContent = thirdParagraph;
+    textTitle.textContent = object.title;
+    dateText.textContent = object.date;
+    firstPara.textContent = object.firstParagraph;
+    secondPara.textContent = object.secondParagraph;
+    thirdPara.textContent = object.thirdParagraph;
+    button.textContent = "+";
+
 
     // event listener
     button.addEventListener("click", (event) => {
@@ -132,14 +137,20 @@ const data = [
 
     return article 
   }
+  
 
-  // selector for articles div
-  const articles = document.querySelector(".articles");
 
-console.log();
+  const articleElements = data.map((articleItem) => { 
+    return articleMaker(articleItem); 
+  });
 
-  const test = articleMaker({title: "test title", date: "test content", firstParagraph: "adw", secondParagraph: "awd", thirdParagraph: "2awd"});
-  articles.appendChild(test);
+  articleElements.forEach((element) => {
+    articles.appendChild(element);
+  });
+
+  const art1 = articleMaker({title: "This is a new card"})
+  articles.appendChild(art1)
+  
 
 
   // <div class="article">
