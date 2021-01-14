@@ -33,7 +33,7 @@ let menuItems = [
 */
 
 
-function menuMaker ({ menuItems  }) {
+function menuMaker ({ menuItems }) {
   const men = document.createElement("div");
   const ul = document.createElement("ul");
   const li = document.createElement("li");
@@ -48,9 +48,8 @@ function menuMaker ({ menuItems  }) {
 
 
   menuItems.forEach(element => {
-    li.textContent = element
-
-
+    li.textContent = element;
+    console.log(element)
   });
 
 
@@ -58,7 +57,7 @@ function menuMaker ({ menuItems  }) {
 
   menbut.addEventListener("click", () => {
     men.classList.toggle("menu--open");
-    men.classList.toggle("menu");
+    // men.classList.toggle("menu");
   });
 
   return men
@@ -69,15 +68,16 @@ function menuMaker ({ menuItems  }) {
 const mennnn = document.querySelector(".header")
 const test = menuMaker({ menuItems });
 
+console.log(test)
 
 mennnn.appendChild(test);
 
 
 
-const element = menuItems.forEach((menuItems) => {
-  return menuMaker(menuItems);
-});
+// const elements = menuItems.forEach((menuItem) => {
+//   return menuMaker({menuItem});
+// });
 
-// element.forEach((event) => {
+// elements.forEach((event) => {
 //   mennnn.appendChild(event);
 // });

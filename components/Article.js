@@ -132,9 +132,9 @@ function articleMaker({ title, date, firstParagraph, secondParagraph, thirdParag
   Tophead.appendChild(head)
   Tophead.appendChild(paramain)
   Tophead.appendChild(closeButton)
-  paramain.appendChild(para1)
-  paramain.appendChild(para2)
-  paramain.appendChild(para3)
+  Tophead.appendChild(para1)
+  Tophead.appendChild(para2)
+  Tophead.appendChild(para3)
 
 
 
@@ -142,9 +142,10 @@ function articleMaker({ title, date, firstParagraph, secondParagraph, thirdParag
 
   Tophead.classList.add("article")
   paramain.classList.add("date")
+  para1.classList.add("para1")
+  para2.classList.add("para2")
+  para3.classList.add("para3")
   closeButton.classList.add("expandButton")
-
-
 
   head.textContent = title
   paramain.textContent = date
@@ -177,7 +178,7 @@ function articleMaker({ title, date, firstParagraph, secondParagraph, thirdParag
 //   return articleMaker(panelData);
 // });
 
-art = document.querySelector(".articles")
+let art = document.querySelector(".articles")
 
 
 
