@@ -121,6 +121,8 @@ function articleMaker(articleObj){
  
   const title = document.createElement('h2');
   title.textContent = articleObj.title;
+  const date = document.createElement('p');
+  date.textContent = articleObj.date;
   const para1 = document.createElement('p');
   para1.textContent = articleObj.firstParagraph;
   const para2 = document.createElement('p');
@@ -136,6 +138,7 @@ function articleMaker(articleObj){
   
   
   newArticle.appendChild(title);
+  newArticle.appendChild(date);
   newArticle.appendChild(para1);
   newArticle.appendChild(para2);
   newArticle.appendChild(para3);
@@ -145,6 +148,14 @@ function articleMaker(articleObj){
   return newArticle;
   
 }
+
+data.push({
+  title: 'OMG I did it!',
+  date:'Jan 20, 2021',
+  firstParagraph:'Took me long enough.',
+  secondParagraph:'Should have studied sooner.',
+  thirdParagraph:'It makes sense now at least.',
+})
 
 data.forEach(item => articleMaker(item));
 // console.log(data[0]);
