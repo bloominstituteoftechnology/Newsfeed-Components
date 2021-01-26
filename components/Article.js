@@ -72,5 +72,3 @@ fakeData.forEach(item => {
   const newArticle = articleMaker(item)
   container.appendChild(newArticle)
 })
-
-// console.log(container)
