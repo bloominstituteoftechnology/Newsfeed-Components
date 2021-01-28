@@ -114,3 +114,57 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+function articleMaker (obj) {
+  const article = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+  const articleDate = document.createElement('p');
+  const para1 = document.createElement('p');
+  const para2 = document.createElement('p');
+  const para3 = document.createElement('p');
+  const articleButton = document.createElement('span');
+
+  article.appendChild(articleTitle);
+  article.appendChild(articleDate)
+  article.appendChild(para1);
+  article.appendChild(para2);
+  article.appendChild(para3);
+  article.appendChild(articleButton);
+
+  article.classList.add('article');
+  articleDate.classList.add('date');
+  articleButton.classList.add('expandButton');
+  para1.classList.add('text-content', 'para1');
+  para2.classList.add('text-content', 'para2');
+  para3.classList.add('text-content', 'para3');
+
+  articleTitle.textContent = obj.title;
+  articleDate.textContent = obj.date;
+  para1.textContent = obj.firstParagraph;
+  para2.textContent = obj.secondParagraph;
+  para3.textContent = obj.thirdParagraph;
+  articleButton.textContent = '+'
+
+  articleButton.addEventListener('click', () => {
+    article.classList.toggle("article-open");
+  })
+
+  return article;
+}
+
+data.forEach(obj => {
+  const appendArticle = articleMaker(obj);
+  document.querySelector('div.articles').appendChild(appendArticle);
+})
+   
+const addData = {
+  title: 'The Best/Worst Day Of My Life!',
+  data: 'February, 26th, 2020',
+  firstParagraph: 'The most amazing and worst day of my life....',
+
+  secondParagraph: 'This is the day my daughter Brynlee Lyric was born but also the day she was rushed to our local Childrens Hospital, she spent exactly one month in the NICU.',
+
+  thirdParagraph: 'A few weeks later my father passed away. 2020 was such an amazing and such a horrible year with many ups and downs. Heres to 2021!!'
+}
+
+document.querySelector('.articles').append(articleMaker(addData));
