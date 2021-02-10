@@ -86,7 +86,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title:'When we will get Nerve Gear',
+    date:'Feb 2nd, 2021',
+    firstParagraph:'Nerve Gear is coming, Nerve Gear is coming, Nerve Gear is coming, Nerve Gear is coming, Nerve Gear is coming',
+    secondParagraph:'Nerve Gear is coming, Nerve Gear is coming, Nerve Gear is coming, Nerve Gear is coming, Nerve Gear is coming',
+    thirdParagraph:'Nerve Gear is coming, Nerve Gear is coming, Nerve Gear is coming, Nerve Gear is coming, Nerve Gear is coming'
   }
+
 ];
 
 /*
@@ -114,3 +122,41 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+function articleMaker(theArticle){
+  let article = document.createElement('div');
+  let atitle = document.createElement('h2');
+  let adate = document.createElement('p');
+  let p1 = document.createElement('p');
+  let p2 = document.createElement('p');
+  let p3 = document.createElement('p');
+  let expand = document.createElement('span');
+  article.classList.add('article')  
+  adate.classList.add('date');
+  expand.classList.add('expandButton');
+  article.appendChild(atitle);
+  article.appendChild(adate);
+  article.appendChild(p1);
+  article.appendChild(p2);
+  article.appendChild(p3);
+  article.appendChild(expand);
+  atitle.textContent = theArticle.title;  
+  adate.textContent = theArticle.date;
+  p1.textContent = theArticle.firstParagraph;
+  p2.textContent = theArticle.secondParagraph;
+  p3.textContent = theArticle.thirdParagraph;
+  expand.textContent = '+';
+  expand.addEventListener('click', () => {
+    article.classList.toggle('article-open');
+  });
+  return article; 
+
+}
+
+const articles = document.querySelector('.articles')
+
+data.forEach((item) => {
+  articles.append(articleMaker(item));    
+});
+
+
