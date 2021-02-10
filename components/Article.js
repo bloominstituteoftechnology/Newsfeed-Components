@@ -94,6 +94,8 @@ const data = [
   Your component is a function that takes an article object as its only argument,
   and returns a DOM node looking like the one below:
 
+  
+
   <div class="article">
     <h2>{title of the article}</h2>
     <p class="date">{date of the article}</p>
@@ -114,3 +116,54 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+const articles = document.querySelector('.articles');
+
+function articleMaker(article){
+
+  const articleContainer = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+  const date = document.createElement('p');
+  const pOne = document.createElement('p');
+  const pTwo = document.createElement('p');
+  const pThree = document.createElement('p');
+  const expandButton = document.createElement('span');
+
+  articleContainer.appendChild(articleTitle);
+  articleContainer.appendChild(date);
+  articleContainer.appendChild(pOne);
+  articleContainer.appendChild(pTwo);
+  articleContainer.appendChild(pThree);
+  articleContainer.appendChild(expandButton);
+
+  articleContainer.classList.add('article')
+  date.classList.add('date')
+  expandButton.classList.add('expandButton')
+
+
+
+  articleTitle.textContent = article.title;
+  date.textContent = article.date;
+  pOne.textContent = article.firstParagraph;
+  pTwo.textContent = article.secondParagraph;
+  pThree.textContent = article.thirdParagraph;
+  expandButton.textContent = '➕'
+
+  expandButton.addEventListener('click', (e) => {
+    console.log('its working')
+    articleContainer.classList.toggle('article-open')
+  })
+ 
+  return articleContainer
+}
+
+const articleElement= data.map(artObj => {
+  const art = articleMaker(artObj);
+  return art
+});
+
+console.log(articleElement);
+
+articleElement.forEach(arty => {
+  articles.appendChild(arty)
+})
