@@ -86,6 +86,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'The article to end all articles',
+    date: 'Feb 10, 2021',
+    firstParagraph: ``,
+
+    secondParagraph: ``,
+
+    thirdParagraph: `Yes`
   }
 ];
 
@@ -93,7 +102,6 @@ const data = [
   Step 1: Write a component called 'articleMaker' to create an article.
   Your component is a function that takes an article object as its only argument,
   and returns a DOM node looking like the one below:
-
   <div class="article">
     <h2>{title of the article}</h2>
     <p class="date">{date of the article}</p>
@@ -102,7 +110,37 @@ const data = [
 
     <span class="expandButton">+</span>
   </div>
+*/
+function articleMaker(obj){
+  let strings = Object.values(obj);
+  const article = document.createElement('div');
+  article.classList.add("article");
 
+  addchild(article, "h2",strings[0]);
+  for(i=1; i< strings.length; i++){
+    addchild(article, "p", strings[i]);
+  }
+  article.children[1].classList.add("date");
+
+  addchild(article, "span", "+");
+  article.children[5].classList.add("expandButton");
+  article.children[5].addEventListener('click', (event) => {
+    article.classList.toggle("article-open");
+  });
+
+  return article;
+}
+console.log(articleMaker(data[0]));
+const articles = document.getElementsByClassName("articles")[0];
+data.forEach(element => articles.appendChild(articleMaker(element)));
+
+
+function addchild(obj, str, text){
+  let child = document.createElement(str);
+  child.textContent = text;
+  obj.appendChild(child);
+}
+/*
   Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
   This listener should toggle the class 'article-open' on div.article.
 
