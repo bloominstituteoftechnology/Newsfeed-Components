@@ -117,16 +117,17 @@ const data = [
   Refresh the page to see the new article.
 */
 
-const articles = document.querySelector('.articles')
+const articles = document.querySelector('.articles');
 
 function articleMaker(article){
-  const articleContainer = document.createElement('div')
-  const articleTitle = document.createElement('h2')
-  const date = document.createElement('p')
-  const pOne = document.createElement('p')
-  const pTwo = document.createElement('p')
-  const pThree = document.createElement('p')
-  const expandButton = document.createElement('span')
+
+  const articleContainer = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+  const date = document.createElement('p');
+  const pOne = document.createElement('p');
+  const pTwo = document.createElement('p');
+  const pThree = document.createElement('p');
+  const expandButton = document.createElement('span');
 
   articleContainer.appendChild(articleTitle);
   articleContainer.appendChild(date);
@@ -141,23 +142,28 @@ function articleMaker(article){
 
 
 
-  articleTitle.textContent = title;
-  date.textContent = date;
-  pOne.textContent = firstParagraph;
-  pTwo.textContent = secondParagraph;
-  pThree.textContent = thirdParagraph;
-  expandButton.textContent = '+'
+  articleTitle.textContent = article.title;
+  date.textContent = article.date;
+  pOne.textContent = article.firstParagraph;
+  pTwo.textContent = article.secondParagraph;
+  pThree.textContent = article.thirdParagraph;
+  expandButton.textContent = '➕'
 
   expandButton.addEventListener('click', (e) => {
-    articleContainer.classList.toggle('article.open')
+    console.log('its working')
+    articleContainer.classList.toggle('article-open')
   })
  
-  return article
+  return articleContainer
 }
 
-const articleOne = data.map(artObj => {
-  const art = articleMaker(artObj)
+const articleElement= data.map(artObj => {
+  const art = articleMaker(artObj);
   return art
-})
+});
 
-console.log(articleOne);
+console.log(articleElement);
+
+articleElement.forEach(arty => {
+  articles.appendChild(arty)
+})
