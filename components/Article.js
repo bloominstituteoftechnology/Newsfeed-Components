@@ -153,7 +153,7 @@ const data = [
 
 const article = document.querySelector(".articles");
 
-function createArticle({title, date, firstParagraph, secondParagraph, thirdParagraph}) {
+function articleMaker({title, date, firstParagraph, secondParagraph, thirdParagraph}) {
 
   const article = document.createElement("div");
   const header = document.createElement("h2");
@@ -188,7 +188,7 @@ function createArticle({title, date, firstParagraph, secondParagraph, thirdParag
 }
 
 data.forEach(info => {
-  article.appendChild(createArticle({title: info.title, date: info.date, firstParagraph: info.firstParagraph, secondParagraph: info.firstParagraph, thirdParagraph: info.thirdParagraph}))
+  article.appendChild(articleMaker({title: info.title, date: info.date, firstParagraph: info.firstParagraph, secondParagraph: info.firstParagraph, thirdParagraph: info.thirdParagraph}))
 })
 
 console.log(article);
