@@ -17,6 +17,32 @@ let menuItems = [
       {each menu item as an <li>}
     </ul>
   </div>
+  */
+const menuMaker = function(array){
+  let menu = document.createElement("div")
+  menu.classList.add("menu")
+  menu.style.transition = ".3s"
+
+  let unList = document.createElement("ul")
+
+  array.forEach((element)=>{
+    let item = document.createElement("li")
+    item.textContent = element
+    unList.appendChild(item)
+  })
+
+  let menuButton = document.querySelector(".menu-button")
+  menuButton.addEventListener("click", function(event){
+    menu.classList.toggle("menu--open")
+  })
+  menu.appendChild(unList)
+  return menu
+}
+let header = document.querySelector(".header")
+let menu = menuMaker(menuItems)
+console.log(menu)
+header.appendChild(menu)
+  /*
 
   The 'menuMaker' takes an array of menu items as its only argument.
 
