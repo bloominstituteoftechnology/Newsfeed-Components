@@ -124,7 +124,7 @@ const data = [
 */
 
 
-function articleMaker({title,date,firstParagraph,secondParagraph,thirdParagraph}){
+function articleMaker(data){
 
   const article = document.createElement('div');
   const title1 = document.createElement('h2');
@@ -138,11 +138,11 @@ function articleMaker({title,date,firstParagraph,secondParagraph,thirdParagraph}
   paragraphDate.classList.add('date');
   span.classList.add('expandButton');
 
-  title1.textContent = title;
-  paragraphDate.textContent = date;
-  paragraph1.textContent = firstParagraph;
-  paragraph2.textContent = secondParagraph;
-  paragraph3.textContent = thirdParagraph;
+  title1.textContent = data.title;
+  paragraphDate.textContent = data.date;
+  paragraph1.textContent = data.firstParagraph;
+  paragraph2.textContent = data.secondParagraph;
+  paragraph3.textContent = data.thirdParagraph;
   span.textContent = '+';
 
   article.appendChild(title1);
