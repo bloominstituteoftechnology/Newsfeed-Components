@@ -86,6 +86,14 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },{
+    title: 'Hello World',
+    date: 'Feb 10th, 2021',
+    firstParagraph: `It works `,
+
+    secondParagraph: `It really works!!!! `,
+
+    thirdParagraph: `WOOOOOHOOOOOO!!!!!`
   }
 ];
 
@@ -114,3 +122,50 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+
+function articleMaker({title,date,firstParagraph,secondParagraph,thirdParagraph}){
+
+  const article = document.createElement('div');
+  const title1 = document.createElement('h2');
+  const paragraphDate = document.createElement('p');
+  const paragraph1 = document.createElement('p');
+  const paragraph2 = document.createElement('p');
+  const paragraph3 = document.createElement('p');
+  const span = document.createElement('span');
+
+  article.classList.add('article');
+  paragraphDate.classList.add('date');
+  span.classList.add('expandButton');
+
+  title1.textContent = title;
+  paragraphDate.textContent = date;
+  paragraph1.textContent = firstParagraph;
+  paragraph2.textContent = secondParagraph;
+  paragraph3.textContent = thirdParagraph;
+  span.textContent = '+';
+
+  article.appendChild(title1);
+  article.appendChild(paragraphDate);
+  article.appendChild(paragraph1);
+  article.appendChild(paragraph2);
+  article.appendChild(paragraph3);
+  article.appendChild(span);
+
+  span.addEventListener('click', () =>{
+    article.classList.toggle('article-open');
+  })
+
+  return article;
+
+}
+
+const articles = document.querySelector('.articles');
+
+// const asd =articleMaker(data[0])
+// articles.appendChild(asd) 
+
+data.forEach(article =>{
+  const counter = articleMaker(article);
+  articles.appendChild(counter);
+})
