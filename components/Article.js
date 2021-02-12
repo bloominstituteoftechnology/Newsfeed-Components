@@ -166,12 +166,13 @@ return{
 }
 }
 const articles = document.querySelector(".articles");
-let componentArr = data.map(item =>{
-  articleElements = articleMaker(item);
+for(let i = 0; i < data.length; i++){
+  let articleElements = {};
+  articleElements = articleMaker(data[i]);
   articles.appendChild(articleElements.title);
   articles.appendChild(articleElements.dates);
   articles.appendChild(articleElements.articleParagraph1);
   articles.appendChild(articleElements.articleParagraph2);
   articles.appendChild(articleElements.articleParagraph3);
   articles.appendChild(articleElements.button);
-})
+}
