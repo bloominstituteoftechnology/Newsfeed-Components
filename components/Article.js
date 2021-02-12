@@ -86,6 +86,22 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Finished',
+    date: 'Feb 12th, 2021',
+    firstParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
+          hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
+          Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `,
+
+    secondParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
+          hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
+          hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
+          hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? `,
+
+    thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
+          Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
+          Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
 ];
 
@@ -112,31 +128,51 @@ const data = [
   to create a div.article element and append it to the DOM inside div.articles (see index.html).
 
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
-  Refresh the page to see the new article.
+  Refresh the page to see the new artiarticleObj
 */
 
 //step 1- title
-const articles = document.querySelector(".articles")
+function articleMaker(articleObj){
+  const articles = document.querySelector(".articles")
+
 let title = document.createElement('h2');
-title.textContent = data[0]['title'];
+title.textContent = articleObj['title'];
 title.classList.add('h2');
 //date
 let dates = document.createElement('p');
-dates.textContent = data[0]['date'];
-dates.classList.add('p');
+dates.textContent = articleObj['date'];
 //article paragraphs
 let articleParagraph1 = document.createElement('p');
 let articleParagraph2 = document.createElement('p');
 let articleParagraph3 = document.createElement('p');
-articleParagraph1.textContent = data[0]['firstParagraph'];
-articleParagraph2.textContent = data[0]['secondParagraph'];
-articleParagraph3.textContent = data[0]['thirdParagraph'];
-articleParagraph1.classList.add('p');
-articleParagraph2.classList.add('p');
-articleParagraph3.classList.add('p');
+articleParagraph1.textContent = articleObj['firstParagraph'];
+articleParagraph2.textContent = articleObj['secondParagraph'];
+articleParagraph3.textContent = articleObj['thirdParagraph'];
+//button
+let button = document.createElement('span');
+button.textContent = '+';
+button.addEventListener('click', function(){
+articles.classList.toggle('article-open');
+});
+button.classList.add('expandButton');
 
-articles.appendChild(title);
-articles.appendChild(dates);
-articles.appendChild(articleParagraph1);
-articles.appendChild(articleParagraph2);
-articles.appendChild(articleParagraph3);
+return{
+  title,
+  dates,
+  articleParagraph1,
+  articleParagraph2,
+  articleParagraph3,
+  button
+}
+}
+const articles = document.querySelector(".articles");
+for(let i = 0; i < data.length; i++){
+  let articleElements = {};
+  articleElements = articleMaker(data[i]);
+  articles.appendChild(articleElements.title);
+  articles.appendChild(articleElements.dates);
+  articles.appendChild(articleElements.articleParagraph1);
+  articles.appendChild(articleElements.articleParagraph2);
+  articles.appendChild(articleElements.articleParagraph3);
+  articles.appendChild(articleElements.button);
+}
