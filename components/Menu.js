@@ -61,12 +61,3 @@ let menuList = menuMake(menuItems)
 let theHeader = document.querySelector('div.header')
 
 theHeader.appendChild(menuList);
-
-//	let menubutton = document.querySelector(".menu-button");
-//	menubutton.addEventListener("click", (event) => {
-//		elmenu.classList.toggle("menu--open");
-//	});
-//	return elmenu;
-//}
-//let theHeader = document.querySelector(".header");
-//theHeader.appendChild(menuMaker(menuItems));
