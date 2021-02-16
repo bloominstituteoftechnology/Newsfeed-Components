@@ -1,12 +1,12 @@
 // This is the data we will be using, study it but don't change anything, yet.
 
 let menuItems = [
-  'Students',
-  'Faculty',
-  "What's New",
-  'Tech Trends',
-  'Music',
-  'Log Out'
+    'Students',
+    'Faculty',
+    "What's New",
+    'Tech Trends',
+    'Music',
+    'Log Out'
 ];
 
 /* 
@@ -34,23 +34,39 @@ let menuItems = [
 
 
 const menuMake = (arr) => {
-    const menuDiv = document.createElement('div');
-    const menuUl = document.createElement('ul');
-    const menuItem = document.createElement('li');
-    
+    let menuDiv = document.createElement('div');
+    let menuUl = document.createElement('ul');
+
     menuDiv.appendChild(menuUl)
-    menuUl.appendChild(menuItem)
-    
+
     menuDiv.classList.add('menu')
-    
+
     for (item in arr) {
-        menuItem.push(item)
+        const newItem = document.createElement('li');
+        newItem.textContent = arr[item];
+        menuUl.appendChild(newItem)
     }
+
+    let button = document.querySelector('.menu-button')
+    button.addEventListener('click', (event) => {
+        menuDiv.classList.toggle('menu--open');
+        console.log(menuDiv)
+    })
+
+    return menuDiv
 }
 
-    const menuDiv = document.createElement('div');
-    const menuUl = document.createElement('ul');
-    const menuItem = document.createElement('li');
-    
-    menuDiv.appendChild(menuUl)
-    menuUl.appendChild(menuItem)
+
+let menuList = menuMake(menuItems)
+let theHeader = document.querySelector('div.header')
+
+theHeader.appendChild(menuList);
+
+//	let menubutton = document.querySelector(".menu-button");
+//	menubutton.addEventListener("click", (event) => {
+//		elmenu.classList.toggle("menu--open");
+//	});
+//	return elmenu;
+//}
+//let theHeader = document.querySelector(".header");
+//theHeader.appendChild(menuMaker(menuItems));

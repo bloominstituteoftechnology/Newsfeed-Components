@@ -146,12 +146,11 @@ const articleMaker = ([object]) => {
     articleDiv.appendChild(articlePTwo);
     articleDiv.appendChild(articlePThree);
     articleDiv.appendChild(articleExpand);
-    
+
     articleExpand.addEventListener('click', (e) =>{
-        console.log('clicked!')
         articleDiv.classList.toggle('article-open')
     })
-    
+
 
     return articleDiv//returns the created element with all children
 }
@@ -159,13 +158,12 @@ const articleMaker = ([object]) => {
 //function that adds a new article
 const addArticle = (obj, title, date, p1, p2, p3) => {
     obj.push({
-    title: title,
-    date: date,
-    firstParagraph: p1,
-    secondParagraph: p2,
-    thirdParagraph: p3,
-})
-console.log(data)
+        title: title,
+        date: date,
+        firstParagraph: p1,
+        secondParagraph: p2,
+        thirdParagraph: p3,
+    })
 }
 
 addArticle(data, 'test1', 'yesterday', '1', '2', '3')
