@@ -102,6 +102,7 @@ const data = [
 
     <span class="expandButton">+</span>
   </div>
+  
 
   Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
   This listener should toggle the class 'article-open' on div.article.
@@ -114,3 +115,66 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+const articleMaker = (data) => {
+  // creates elements for the DOM 
+  const article = document.createElement('div');
+  const titlePage = document.createElement('h2');
+  const p1 = document.createElement('p');
+  const p2 = document.createElement('p');
+  const p3 = document.createElement('p');
+  const date = document.createElement('p');
+  const expandButton = document.createElement('span');
+
+// will append them to 'aritle'
+/* <div class="article">
+    <h2>{title of the article}</h2>
+    <p class="date">{date of the article}</p>
+
+    {three separate paragraph elements}
+
+    <span class="expandButton">+</span>
+  </div> */
+
+article.append(titlePage, p1, p2, p3, expandButton);
+
+article.classList.add('article');
+date.classList.add('date');
+expandButton.classList.add('expandButton'); 
+
+// putting text on the page
+titlePage.textContent = data.title;
+p1.textContent = data.firstParagraph;
+p2.textContent = data.secondParagraph;
+p3.textContent = data.thirdParagraph;
+date.textContent = data.date;
+expandButton.textContent = 'click me!'; 
+
+//Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
+//This listener should toggle the class 'article-open' on div.article. 
+
+expandButton.addEventListener('click', (e) => {
+article.classList.toggle('article-open')
+});
+
+
+return article
+
+
+};
+
+const articles = document.querySelector(".articles");
+
+
+data.push({
+  title: 'Jake Linn',
+  date: 'April 20, 1995',
+  firstParagraph: 'this is my first paragraph in the website',
+  secondParagraph: 'this is my second paragraph!',
+  thirdParagraph: 'this is my lasta paragraph.'
+
+});
+
+data.forEach((data) => {
+  articles.appendChild(articleMaker(data));
+});
