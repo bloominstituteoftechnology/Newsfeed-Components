@@ -149,7 +149,7 @@ date.textContent = articleObject.date
 paragraphs.textContent = articleObject.paragraphs
 firstParagraph.textContent = articleObject.firstParagraph
 secondParagraph.textContent = articleObject.secondParagraph
-thirdParagraph.textContent = articleObje.thirdParagraph
+thirdParagraph.textContent = articleObject.thirdParagraph
 expandButton.textContent = "+"
 
 expandButton.addEventListener('click', () =>{
@@ -180,5 +180,4 @@ data.forEach(articleEl => {
         Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
  }
  data.push(newObj)
- console.log(data);
- articleMaker();
+ console.log(data)
