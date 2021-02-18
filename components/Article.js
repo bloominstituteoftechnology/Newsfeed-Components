@@ -150,7 +150,7 @@ secondParagraph.classList.add('secondParagraph')
 thirdParagraph.classList.add('thirdParagraph')
 expandButton.classList.add('expandButton')
 
-//let's set text contentent using arguements as raw material
+//let's set text contentent using arguements from our data
 
 artTitle.textContent = articleInfo.title
 date.textContent = articleInfo.date

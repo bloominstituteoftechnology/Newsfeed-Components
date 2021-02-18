@@ -31,28 +31,28 @@ let menuItems = [
 
   Step 6: Use 'menuMaker' to create a menu using the 'menuItems' array, and append the returned menu to the header.
 */
-const header = document.querySelector('.header')
-function menuMaker(menItems){
-  //let's create each elements needed
-  const menu = document.createElement('div')
-  const ul = document.createElement('ul')
-// let's see some stucture
-menu.appendChild(ul)
- //lets itterate through the array to creat li elements and add it it ul
-menuItems.forEach(el =>{
-const li = el
-//append to parent node
-ul.appendChild(li)
-})
-//select the menue-button
-const theButton = document.querySelector('img.menu-button')
-theButton.addEventListener('click',(){
-  menu.classList.toggle('menu--open')
-  body.style.background = "red"
-})
-return menu;
+
+function menuMaker(array) {
+  //instantiate elements and add classlist 
+  const menueD = document.createElement('div')
+  menueD.classList.add('menu')
+  //creating the unordered list element and attach it to the container menueD
+  const ulList = document.createElement('ul')
+  menueD.appendChild(ulList)
+  //feeding the array through the function to make them list items
+  array.forEach(item => {
+    const liItem = document.createElement('li')
+    liItem.textContent = item
+    ulList.appendChild(liItem)
+  })
+  //giving the menu a click event listener to open and close
+  const menuBtn = document.querySelector('.menu-button')
+  menuBtn.addEventListener('click', () => {
+    menueD.classList.toggle('menu--open')
+  })
+  //hehehe I am not forgetting again hehheheheh
+  return menueD
 }
-menuItems.forEach(menItems => {
-  const menu = menuMaker(menItems)
-  header.appendChild(menu)
-})
+const header = document.querySelector('.header')
+header.appendChild(menuMaker(menuItems))
+//side note: I can still do document.querySelector('.header').appendChild(menuMaker(menuItems))
