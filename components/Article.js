@@ -170,9 +170,10 @@ return article;
 }
 //step4:  Loop through our array:data and ..
 //  creating articles for each object in the array and append them to the DOM.
+const articles = document.querySelector('.articles')
 data.forEach(articleO => {
   const article = articleMaker(articleO)
-  body.appendChild(article)
+  articles.appendChild(article)
 })
 
 //Step 5:let's try adding new article object to the data array. Make sure it is in the same format as the others.
@@ -193,10 +194,6 @@ data.forEach(articleO => {
         Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
         Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
  }
- data.push(newObj)
- console.log(data);
- articleMaker();
- data.forEach(articleO => {
-  const article = articleMaker(articleO)
-  body.appendChild(article)
-})
+
+ const myArt = articleMaker(newObj);
+ articles.appendChild(myArt)
