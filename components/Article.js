@@ -86,7 +86,28 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
-  }
+  },
+  {
+    title: 'Lambda School Students: "We\'re the best!"',
+    date: 'Nov 5th, 2018',
+    firstParagraph: `Lucas ipsum dolor sit amet ben twi'lek padmé darth darth darth moff hutt organa twi'lek. Ben amidala secura skywalker lando
+        moff wicket tatooine luke.Solo wampa wampa calrissian yoda moff.Darth grievous darth gonk darth hutt.Darth baba skywalker
+        watto fett jango maul han.Mon ewok sidious sidious lando kenobi grievous gamorrean solo.Yoda wedge utapau darth calamari.
+        Hutt calamari darth jabba.Darth dooku amidala organa moff.Boba darth binks solo hutt skywalker dantooine skywalker.Qui - gonn
+        jar twi'lek jinn leia jango skywalker mon.`,
+
+    secondParagraph: `Grievous fett calamari anakin skywalker hutt.Alderaan darth kenobi darth r2- d2
+        windu mothma.Sidious darth calamari moff.Wampa mothma sith wedge solo mara.Darth gonk maul sith moff chewbacca palpatine
+        mace amidala.C - 3po solo skywalker anakin yoda leia.Maul wampa bespin watto jade ewok darth jabba.Lando dantooine moff
+        k - 3po dantooine luke.Fisto mandalore darth wedge c - 3p0 ahsoka.Secura moff palpatine fett.Anakin sith darth darth.Moff
+        solo leia ben ponda jade.Binks jango aayla skywalker skywalker cade.Mustafar darth ventress anakin watto.Yavin jawa sebulba
+        owen jinn tatooine sith organa.`,
+
+    thirdParagraph: `Dagobah hutt jawa leia calamari ventress skywalker yoda. Binks wicket hutt coruscant sidious
+        naboo ackbar tatooine. Hutt lars padmé darth. Maul solo darth darth jabba qui-gon chewbacca darth maul. Moff baba wicket
+        han. C-3po antilles moff qui-gon ahsoka aayla dooku amidala. Palpatine droid amidala droid k-3po twi'lek padmé wookiee. Leia
+        moff calamari mon obi-wan. Solo grievous lando coruscant. Jinn darth palpatine obi-wan mon.`
+  },
 ];
 
 /*
@@ -102,15 +123,61 @@ const data = [
 
     <span class="expandButton">+</span>
   </div>
+*/
 
+function articleMaker(article){
+  const articlediv=document.createElement("div");
+  const articleh2=document.createElement("h2");
+  const articlepDate=document.createElement("p");
+  const articlep1=document.createElement("p");
+  const articlep2=document.createElement("p");
+  const articlep3=document.createElement("p");
+  const articlespan=document.createElement("span");
+
+  articlediv.classList.add("article");
+  articlepDate.classList.add("date");
+  articlespan.classList.add("expandButton");
+
+  articleh2.textContent=article.title;
+  articlespan.textContent='+';
+  articlep1.textContent=article.firstParagraph;
+  articlep2.textContent=article.secondParagraph;
+  articlep3.textContent=article.thirdParagraph;
+
+  articlediv.appendChild(articleh2);
+  articlediv.appendChild(articlep1);
+  articlediv.appendChild(articlep2);
+  articlediv.appendChild(articlep3);
+  articlediv.appendChild(articlespan);
+  
+/*
   Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
   This listener should toggle the class 'article-open' on div.article.
+*/
 
+  articlespan.addEventListener('click', (event)=>{
+    articlediv.classList.toggle('article-open')
+  });
+  
+/*
   Step 3: Don't forget to return something from your function!
-
+*/
+  return articlediv;
+}
+/*
   Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
   to create a div.article element and append it to the DOM inside div.articles (see index.html).
+*/
 
+const articles = document.querySelector(".articles");
+
+
+data.forEach((item)=>{
+  articles.append(articleMaker(item));
+})
+
+/*
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+//gg
