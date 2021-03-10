@@ -101,9 +101,11 @@ const data = [
     {three separate paragraph elements}
 
     <span class="expandButton">+</span>
-  </div>
+  </div> &*/
+  
 
-  Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
+
+  /*Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
   This listener should toggle the class 'article-open' on div.article.
 
   Step 3: Don't forget to return something from your function!
@@ -114,3 +116,46 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+function articleMaker(articleObj) {
+  // 1 - Instanciate element (make)
+  let article = document.createElement("div");
+  let articleHeader = document.createElement("h2");
+  let date = document.createElement("p");
+  let paragraphOne = document.createElement("p");
+  let paragraphTwo = document.createElement("p");
+  let paragraphThree = document.createElement("p");
+  let buttonSpan = document.createElement("span");
+
+  // 2 - Set element structure (append)
+  article.appendChild(articleHeader);
+  article.appendChild(date);
+  article.appendChild(paragraphOne);
+  article.appendChild(paragraphTwo);
+  article.appendChild(paragraphThree);
+  article.appendChild(buttonSpan);
+
+  // 3 - Add class names (grab)
+  article.classList.add("article");
+  date.classList.add("date");
+  buttonSpan.classList.add("expandButton");
+
+  // 4 - Set text content
+  articleHeader.textContent = articleObj.title;
+  date.textContent = articleObj.date;
+  paragraphOne.textContent = articleObj.firstParagraph;
+  paragraphTwo.textContent = articleObj.secondParagraph;
+  paragraphThree.textContent = articleObj.thirdParagraph;
+  buttonSpan.textContent = "+";
+
+  // ############## step2
+  buttonSpan.addEventListener("click", () => {
+    article.classList.toggle("article-open");
+  });
+  return article;
+}
+
+let articlesTheOneInsideTheHTML = document.querySelector('.articles');
+data.forEach( item => {
+  let newArticle = articleMaker(item);
+  articlesTheOneInsideTheHTML.appendChild(newArticle);
+}); 
