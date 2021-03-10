@@ -1,6 +1,8 @@
 // This is the data we will be using to create our articles. Look at it, then proceed to line 93.
 // OPTIONAL: if you're feeling adventurous, try to make this data an export from a different module, and import it here.
 // You can read about ES6 modules here: https://exploringjs.com/es6/ch_modules.html#sec_basics-of-es6-modules
+
+console.log('Runs')
 const data = [
   {
     title: 'Lambda School Students: "We\'re the best!"',
@@ -86,6 +88,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Prof',
+    date: 'Jan9',
+    firstParagraph: `Hor? `,
+
+    secondParagraph: `Hodoor? `,
+
+    thirdParagraph: `Hododor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
 ];
 
@@ -94,23 +105,91 @@ const data = [
   Your component is a function that takes an article object as its only argument,
   and returns a DOM node looking like the one below:
 
-  <div class="article">
-    <h2>{title of the article}</h2>
-    <p class="date">{date of the article}</p>
+  // <div class="article">
+  //   <h2>{title of the article}</h2>
+  //   <p class="date">{date of the article}</p>
+  //   {three separate paragraph elements}
+  //   <span class="expandButton">+</span>
+  // </div>
+*/
 
-    {three separate paragraph elements}
+//declaring vars
+function articleMaker(articleObject){
+  const articleBody = document.createElement('div');
+  const titleVar = document.createElement('h2');
+  const dateVar = document.createElement('p');
+  const firstParagraphVar = document.createElement('p');
+  const secondParagraphVar = document.createElement('p');
+  const thirdParagraphVar = document.createElement('p');
+  const articleSpan = document.createElement('span');
 
-    <span class="expandButton">+</span>
-  </div>
+//asign vars/classes
+articleBody.classList.add('article');
+titleVar.textContent = articleObject.title;
+dateVar.classList.add('date');
+dateVar.textContent = articleObject.date;
+firstParagraphVar.textContent = articleObject.firstParagraph;
+secondParagraphVar.textContent = articleObject.secondParagraph;
+thirdParagraphVar.textContent = articleObject.thirdParagraph;
+articleSpan.classList.add('expandButton');
+articleSpan.textContent = '+;'
 
-  Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
-  This listener should toggle the class 'article-open' on div.article.
+/* Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
+  This listener should toggle the class 'article-open' on div.article. */
+articleSpan.addEventListener('click', ev => {
+  articleBody.classList.toggle('article-open'); //CHECK div.span or just div?
+  //div.span.classList.add('article-open');
+//console.log(articleBody);
+});
+/*Step 3: Don't forget to return something from your function!*/
+let returnAllVarsArray = [articleBody, titleVar, dateVar, firstParagraphVar, 
+                          secondParagraphVar, thirdParagraphVar, articleSpan]; //7 elements "Each variable or object in an array is called an element" 
+//console.log(returnAllVarsArray);
+return returnAllVarsArray;
+}; //CHECK how return without array?
+//console.log(returnAllVarsArray); //CHECK why no return/ how/ returnAllVarsArray undefined why?
 
-  Step 3: Don't forget to return something from your function!
+/*{ 
+<head>
+<title>Lambda School Newsfeed</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./styles/index.less">
+<script src="./components/Menu.js" defer></script>
+<script src="./components/Article.js" defer></script>
+</head>
+<body>
+<div class="header">
+  <img class="menu-button" src="./assets/menu.png"/>
+  <h1>Lambda School Newsfeed</h1>
+</div>
+<div class="articles"></div>
+</body>
+</html> 
+}*/
 
+/*
   Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
   to create a div.article element and append it to the DOM inside div.articles (see index.html).
+*/
 
-  Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
+data.forEach(e => {
+  // data being the initial article array, e being each element of said array
+  // make selector for each e 
+  let divArticles = document.querySelector('div.articles');
+  // call function
+  let articleArray = articleMaker(e);
+  // make each item
+  let articleSection = divArticles.appendChild(articleArray[0]); //reminder: start wih 0
+  // appeand, from the outter most to the most inner (most nested one)
+  articleSection.appendChild(articleArray[1]);
+  articleSection.appendChild(articleArray[2]);
+  articleSection.appendChild(articleArray[3]);
+  articleSection.appendChild(articleArray[4]);
+  articleSection.appendChild(articleArray[5]);
+  articleSection.appendChild(articleArray[6]);
+});
+
+/*
+  Step 5: Try adding a new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
