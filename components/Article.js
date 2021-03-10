@@ -1,6 +1,7 @@
 // This is the data we will be using to create our articles. Look at it, then proceed to line 93.
 // OPTIONAL: if you're feeling adventurous, try to make this data an export from a different module, and import it here.
 // You can read about ES6 modules here: https://exploringjs.com/es6/ch_modules.html#sec_basics-of-es6-modules
+console.log('Runs')
 const data = [
   {
     title: 'Lambda School Students: "We\'re the best!"',
@@ -86,8 +87,8 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
-  }
-];
+        },
+        {
 
 /*
   Step 1: Write a component called 'articleMaker' to create an article.
@@ -114,3 +115,87 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+// step 1
+const body = document.querySelector('body')
+function articleMaker(articleInfo){
+
+  const article = document.createElement('div')
+  const artTitle = document.createElement('h2')
+  const date = document.createElement('p')
+  const paragraphs = document.createElement('p')
+  const firstParagraph = document.createElement('p')
+  const secondParagraph = document.createElement('p')
+  const thirdParagraph = document.createElement('p')
+  const expandButton = document.createElement('span')
+
+  article.appendChild(artTitle)
+article.appendChild(date)
+article.appendChild(paragraphs)
+article.appendChild(expandButton)
+article.appendChild(firstParagraph)
+article.appendChild(secondParagraph)
+article.appendChild(thirdParagraph)
+
+article.classList.add('article')
+artTitle.classList.add('art-title')
+date.classList.add('date')
+paragraphs.classList.add('paragraphs')
+firstParagraph.classList.add('firstParagraph')
+secondParagraph.classList.add('secondParagraph')
+thirdParagraph.classList.add('thirdParagraph')
+expandButton.classList.add('expandButton')
+
+artTitle.textContent = articleInfo.title
+date.textContent = articleInfo.date
+paragraphs.textContent = articleInfo.paragraphs
+firstParagraph.textContent = articleInfo.firstParagraph
+secondParagraph.textContent = articleInfo.secondParagraph
+thirdParagraph.textContent = articleInfo.thirdParagraph
+expandButton.textContent = "+"
+
+//step 2
+
+expandButton.addEventListener('click', () =>{
+  article.classList.toggle('article-open')
+  body.style.background = "slategray"
+
+})
+
+//step 3
+
+return article;
+}
+
+//step 4
+
+data.forEach(articleO => {
+  const article = articleMaker(articleO)
+  body.appendChild(article)
+})
+
+//step 5
+
+const newObj = {
+  title: 'My Development in 2021',
+  date: 'Jan 20th, 2021',
+  firstParagraph: `Tatat tat attaaa doratata Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
+        hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
+        Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `,
+
+  secondParagraph: `dadadad kakakak bewbewbew Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
+        hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
+        hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
+        hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? `,
+
+  thirdParagraph: `lalalal lalalal Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
+        Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
+        Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+ }
+ data.push(newObj)
+ console.log(data);
+ articleMaker();
+ data.forEach(articleO => {
+  const article = articleMaker(articleO)
+  body.appendChild(article)
+}) 
