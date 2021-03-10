@@ -86,8 +86,26 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: "Career Advice",
+    date: "Feb 1st, 2021",
+    firstParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
+          hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
+          Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `,
+
+    secondParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
+          hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
+          hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
+          hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? `,
+
+    thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
+          Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
+          Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`,
   }
 ];
+
+
 
 /*
   Step 1: Write a component called 'articleMaker' to create an article.
@@ -101,9 +119,61 @@ const data = [
     {three separate paragraph elements}
 
     <span class="expandButton">+</span>
-  </div>
+  </div>*/
 
-  Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
+  const articles = document.querySelector('.articles')
+  //console.log(articles);
+
+  function articleMaker(articleData){
+    //creating a div for the article
+    const articleDiv = document.createElement('div');
+    articleDiv.classList.add('article');
+    //creating h2 for the title
+    const title = document.createElement('h2');
+    //creating <p> for the date
+    const date = document.createElement('p');
+    date.classList.add('date');
+    //creating <p> for the paragraphs
+    const paragraph1 = document.createElement('p');
+    const paragraph2 = document.createElement('p');
+    const paragraph3 = document.createElement('p');
+    //creating Buttons
+    const button = document.createElement('span');
+    button.classList.add('expandButton');
+    
+
+    //appending title & adding text
+    articleDiv.appendChild(title);
+    title.textContent = articleData.title;
+    //appending date
+    articleDiv.appendChild(date);
+    date.textContent = articleData.date;
+    //appending paragraphs
+    articleDiv.appendChild(paragraph1);
+    paragraph1.textContent = articleData.firstParagraph;
+    articleDiv.appendChild(paragraph2);
+    paragraph2.textContent = articleData.secondParagraph;
+    articleDiv.appendChild(paragraph3);
+    paragraph3.textContent = articleData.thirdParagraph;
+    //appending button & adding EventListener
+    articleDiv.appendChild(button);
+    button.textContent = "Click here to read more";
+    button.addEventListener('click', () => {
+      articleDiv.classList.toggle('article-open')
+    });
+
+    return articleDiv;
+  }
+
+  
+  data.forEach((a)=>{
+    articles.appendChild(articleMaker(a));
+  });
+
+
+  
+
+  /* Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
   This listener should toggle the class 'article-open' on div.article.
 
   Step 3: Don't forget to return something from your function!
