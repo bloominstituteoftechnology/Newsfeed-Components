@@ -89,6 +89,64 @@ const data = [
   }
 ];
 
+const articleDiv = document.querySelector(".articles");
+
+function articleMaker(data) {
+  // element labels //
+
+  // const articleDiv = document.querySelector(".articles");
+  const article = document.createElement("div");
+  const articleTitle = document.createElement("h2");
+  articleTitle.textContent = data.title;
+  const date = document.createElement("p");
+  date.textContent = data.date;
+  const p1 = document.createElement("p");
+  p1.textContent = data.firstParagraph;
+  const p2 = document.createElement("p");
+  p2.textContent = data.secondParagraph;
+  const p3 = document.createElement("p");
+  p3.textContent = data.thirdParagraph;
+  const expandButton = document.createElement("span");
+  const openButton = document.createElement("button");
+  const closeButton = document.createElement("button");
+
+  
+  // heirarchy //
+  articleDiv.appendChild(article);
+  article.appendChild(articleTitle);
+  article.appendChild(date);
+  article.appendChild(p1);
+  article.appendChild(p2);
+  article.appendChild(p3);
+  article.appendChild(expandButton);
+  expandButton.appendChild(openButton);
+  expandButton.appendChild(closeButton);
+
+
+  article.classList.add("article");
+  date.classList.add("date");
+  expandButton.classList.add("expandButton");
+  openButton.classList.add("article-open");
+  closeButton.classList.add("close");
+  
+expandButton.addEventListener("click", (event) => {
+  openButton.classList.toggle("close");
+  closeButton.classList.toggle("close");
+  article.classList.toggle("article-open");
+})
+  // expand/retract buttons //
+
+
+
+
+  return article;
+}
+console.log(articleMaker(data));
+
+data.forEach((articleDataObj) => {
+  const articleData = articleMaker(articleDataObj);
+  articleDiv.appendChild(articleData);
+});
 /*
   Step 1: Write a component called 'articleMaker' to create an article.
   Your component is a function that takes an article object as its only argument,
