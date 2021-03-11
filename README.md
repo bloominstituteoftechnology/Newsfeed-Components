@@ -7,7 +7,7 @@ In this project we are going to be building a news feed reader. The goal is to h
 * Creating DOM elements with Javascript Functions
 * Element selection
 * Basic DOM manipulation
-* Events and event listeners
+* Events and event listeners.
 
 ### Set Up The Project With Git
 
