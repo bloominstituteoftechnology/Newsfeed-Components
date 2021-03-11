@@ -114,3 +114,57 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+const articleMaker = function(obj) {
+  // create all the elements and add them
+  let div = document.createElement("div");
+  div.className = "article";
+  let h2 = document.createElement("h2");
+  div.appendChild(h2);
+  let pDate = document.createElement("p");
+  pDate.className = "date";
+  let p1 = document.createElement("p");
+  let p2 = document.createElement("p");
+  let p3 = document.createElement("p");
+  div.appendChild(pDate);
+  div.appendChild(p1);
+  div.appendChild(p2);
+  div.appendChild(p3);
+  let spanButton = document.createElement("span");
+  spanButton.className = "expandButton";
+  div.appendChild(spanButton);
+  // add text from obj
+  h2.textContent = obj.title;
+  pDate.textContent = obj.date;
+  p1.textContent = obj.firstParagraph;
+  p2.textContent = obj.secondParagraph;
+  p3.textContent = obj.thirdParagraph;
+  // event listener
+  spanButton.addEventListener("click", function() {
+    div.classList.toggle("article-open");
+  })
+  return div;
+}
+
+// get articles element
+
+let articals = document.querySelector(".articles");
+
+// loop through the data set and add the data to articles 
+
+data.forEach(a => {
+  articles.appendChild(articleMaker(a);
+});
+
+// create my own object
+
+let mine = {
+  title: "Emma Read",
+  date: "August 31, 2001",
+  firstParagraph: "Hey",
+  secondParagraph: "Ho",
+  thirdParagraph: "Here We Go!!"
+}
+
+data.push(mine);
+
