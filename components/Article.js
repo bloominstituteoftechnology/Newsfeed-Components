@@ -119,7 +119,7 @@ const data = [
 
 const articles = document.querySelector('.articles');
 
-function articleMaker(articleObj){
+function articleMaker({title,date,firstParagraph,secondParagraph,thirdParagraph}){
   //create elements
   const article = document.createElement('div');
   const articleTitle = document.createElement('h2');
@@ -147,21 +147,26 @@ function articleMaker(articleObj){
   expandButton.classList.add('expandButton');
 
   //set text content
-  articleTitle.textContent = data.title;
-  articleDate.textContent = data.date;
-  para1.textContent = data.firstParagraph;
-  para2.textContent = data.secondParagraph;
-  para3.textContent = data.thirdParagraph;
+  articleTitle.textContent = title;
+  console.log(data.title);
+  articleDate.textContent = date;
+  para1.textContent = firstParagraph;
+  para2.textContent = secondParagraph;
+  para3.textContent = thirdParagraph;
   expandButton.textContent = '+';
 
   //event listener for span.expandButton
   expandButton.addEventListener('click', (e) => {
     article.classList.toggle('article-open');
+    // articleTitle.append(data.title);
   });
+  
 
   return article;
 };
 console.log(articleMaker);
+
+
 
 data.forEach(articleObj => {
   const newArt = articleMaker(articleObj);
