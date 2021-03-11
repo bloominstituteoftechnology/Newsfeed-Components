@@ -114,3 +114,51 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+function component (data){  //when creating a component we first want to define all of the elements
+  const article = document.createElement("div");
+  const title = document.createElement("h2");
+  const date = document.createElement("p");
+  const p1 = document.createElement("p");
+  const p2 = document.createElement("p");
+  const p3 = document.createElement("p");
+  const expandButton = document.createElement("span");
+
+  // setting the class names
+  article.classList.add('article', 'article-open');
+  date.classList.add("date");
+  p1.classList.add("p1");
+  p2.classList.add("p2");
+  p3.classList.add("p3");
+  expandButton.classList.add("expandButton");
+
+  //setting up structure of the elements 
+  article.appendChild(title);
+  article.appendChild(date);
+  article.appendChild(p1);
+  article.appendChild(p2);
+  article.appendChild(p3);
+  article.appendChild(expandButton);
+
+  //setting text context
+  title.textContent = data.title;
+  date.textContent = data.date;
+  p1.textContent = data.firstParagraph;
+  p2.textContent = data.secondParagraph;
+  p3.textContent = data.thirdParagraph;
+  expandButton.textContent = ''     //add expand button
+
+expandButton.addEventListener ('click', event =>{
+  console.log ('button clicked', event.target);
+  article.classList.toggle('article-open');
+
+});
+
+return article;
+
+}
+const articles = document.querySelector(".articles")
+
+data.forEach(data2 => {
+  articles.appendChild(component(data2));
+});
