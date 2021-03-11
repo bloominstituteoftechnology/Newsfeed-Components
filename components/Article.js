@@ -132,7 +132,7 @@ function articleMaker(data) {
 expandButton.addEventListener("click", (event) => {
   openButton.classList.toggle("close");
   closeButton.classList.toggle("close");
-  articleDiv.classList.toggle("article-open");
+  article.classList.toggle("article-open");
 })
   // expand/retract buttons //
 
@@ -140,10 +140,6 @@ expandButton.addEventListener("click", (event) => {
 
 
   return article;
-
-  // expandButton.addEventListener("click", (event) => {
-
-  // })
 }
 console.log(articleMaker(data));
 
