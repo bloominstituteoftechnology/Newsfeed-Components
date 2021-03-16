@@ -87,6 +87,13 @@ const data = [
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`,
 	},
+	{
+		title: 'Oops, I added it using the function, not by adding to the data set',
+		date: 'Still March 15th, 2021',
+		firstParagraph: 'I also love to bake banana bread',
+		secondParagraph: 'But NO WALNUTS or PECANS',
+		thirdParagraph: 'Nay, nay! For I am allergic',
+	},
 ];
 
 /*
@@ -149,9 +156,20 @@ function articleMaker(data) {
 	return article;
 }
 
+const articleSection = document.querySelector('div.articles');
+
 data.forEach(article => {
 	const newArticle = articleMaker(article);
-	const articleSection = document.querySelector('div.articles');
 
-	articleSection.append(newArticle);
+	articleSection.appendChild(newArticle);
 });
+
+const myNewArticle = articleMaker({
+	title: 'Wow I did NOT Think I Could do This Assignment',
+	date: 'March 15th, 2021',
+	firstParagraph: 'I love tacos',
+	secondParagraph: 'Especially lengua tacos',
+	thirdParagraph: 'Have you ever tried lengua tacos?',
+});
+
+articleSection.appendChild(myNewArticle);
