@@ -2,7 +2,7 @@
   "name": "newsfeed-components",
   "version": "1.0.0",
   "scripts": {
-    "start": "parcel index.html"
+    "start": "xdg-open http://localhost:1234; parcel index.html"
   },
   "repository": {
     "type": "git",
