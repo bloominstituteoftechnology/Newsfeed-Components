@@ -1,4 +1,4 @@
-import data from '../modules/data'
+import data from "../modules/data";
 // This is the data we will be using to create our articles. Look at it, then proceed to line 93.
 // OPTIONAL: if you're feeling adventurous, try to make this data an export from a different module, and import it here.
 // You can read about ES6 modules here: https://exploringjs.com/es6/ch_modules.html#sec_basics-of-es6-modules
@@ -16,7 +16,32 @@ import data from '../modules/data'
 
     <span class="expandButton">+</span>
   </div>
+*/
 
+function articleMaker(articleObj) {
+  const articleDiv = document.createElement("div");
+  console.log(articleDiv); //why does this log with all appended children?
+  const articleH2 = document.createElement("h2");
+  articleH2.innerText = articleObj.title;
+  articleDiv.appendChild(articleH2);
+  const articleDate = document.createElement("p");
+  articleDate.innerText = articleObj.date;
+  articleDiv.appendChild(articleDate);
+  const paragraph1 = document.createElement("p");
+  paragraph1.innerText = articleObj.firstParagraph;
+  articleDiv.appendChild(paragraph1);
+  const paragraph2 = document.createElement("p");
+  paragraph2.innerText = articleObj.secondParagraph;
+  articleDiv.appendChild(paragraph2);
+  const paragraph3 = document.createElement("p");
+  paragraph3.innerText = articleObj.thirdParagraph;
+  articleDiv.appendChild(paragraph3);
+  const expandButton = document.createElement("span");
+  expandButton.innerText = "+";
+  articleDiv.appendChild(expandButton);
+}
+articleMaker(data[0]);
+/*
   Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
   This listener should toggle the class 'article-open' on div.article.
 
