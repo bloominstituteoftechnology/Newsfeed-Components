@@ -35,13 +35,20 @@ let menuItems = [
 function menuMaker(items) {
   const menuDiv = document.createElement("div");
   const menuList = document.createElement("ul");
+  //add list items to menu list
   items.forEach((itemData) => {
     const listItem = document.createElement("li");
     listItem.innerText = itemData;
     menuList.appendChild(listItem);
   });
   menuDiv.appendChild(menuList);
+  const menuButton = document.querySelector("img.menu-button");
+  menuButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    menuDiv.classList.toggle("menu--open");
+  });
   return menuDiv;
 }
-
-console.log(menuMaker(menuItems));
+const headerDiv = document.querySelector("div.header");
+const menu = menuMaker(menuItems);
+headerDiv.appendChild(menu);
