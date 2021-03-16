@@ -126,27 +126,24 @@ function articleMaker (title, date, firstPar, secondPar, thirdPar){
   let p2 = document.createElement('p2');
   let p3 = document.createElement('p3');
 
-  let expandButton = document.createElement('span');
-
   article.classList.add('article');
-
   articleDate.classList.add('date');
 
+  let expandButton = document.createElement('span');
   expandButton.classList.add('expandButton');
 
   p2.classList.add('expand')
   p3.classList.add('expand')
+  expandButton.textContent = 'see more';
 
   articleTitle.textContent = title;
-
   articleDate.textContent = date;
 
   p1.textContent = firstPar;
   p2.textContent = secondPar;
   p3.textContent = thirdPar;
 
-  expandButton.textContent = 'see more';
-
+  
   article.appendChild(articleTitle);
 
   article.appendChild(articleDate);
@@ -165,6 +162,8 @@ function articleMaker (title, date, firstPar, secondPar, thirdPar){
 
 return article;
 }
+
+
 let articles = document.querySelector('.articles')
 data.forEach((data)=> {
  articles.appendChild(articleMaker(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
