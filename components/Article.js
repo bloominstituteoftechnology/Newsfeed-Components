@@ -20,7 +20,6 @@ import data from "../modules/data";
 
 function articleMaker(articleObj) {
   const articleDiv = document.createElement("div");
-  console.log(articleDiv); //why does this log with all appended children?
   const articleH2 = document.createElement("h2");
   articleH2.innerText = articleObj.title;
   articleDiv.appendChild(articleH2);
@@ -50,6 +49,7 @@ data.map((item) => {
   const article = articleMaker(item);
   articleWrapper.appendChild(article);
 });
+console.log(articleWrapper);
 /*
   Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
   This listener should toggle the class 'article-open' on div.article.

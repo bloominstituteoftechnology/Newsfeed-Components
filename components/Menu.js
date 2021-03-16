@@ -1,12 +1,12 @@
 // This is the data we will be using, study it but don't change anything, yet.
 
 let menuItems = [
-  'Students',
-  'Faculty',
+  "Students",
+  "Faculty",
   "What's New",
-  'Tech Trends',
-  'Music',
-  'Log Out'
+  "Tech Trends",
+  "Music",
+  "Log Out",
 ];
 
 /* 
@@ -17,7 +17,7 @@ let menuItems = [
       {each menu item as an <li>}
     </ul>
   </div>
-
+  
   The 'menuMaker' takes an array of menu items as its only argument.
 
   Step 2: Inside the function, iterate over the array creating a list item <li> element for each item in the array.
@@ -31,3 +31,17 @@ let menuItems = [
 
   Step 6: Use 'menuMaker' to create a menu using the 'menuItems' array, and append the returned menu to the header.
 */
+
+function menuMaker(items) {
+  const menuDiv = document.createElement("div");
+  const menuList = document.createElement("ul");
+  items.forEach((itemData) => {
+    const listItem = document.createElement("li");
+    listItem.innerText = itemData;
+    menuList.appendChild(listItem);
+  });
+  menuDiv.appendChild(menuList);
+  return menuDiv;
+}
+
+console.log(menuMaker(menuItems));
