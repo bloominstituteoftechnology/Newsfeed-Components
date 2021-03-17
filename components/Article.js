@@ -143,4 +143,12 @@ function articleMaker(articleObject) {
   div.appendChild(p2);
   div.appendChild(p3);
   div.appendChild(span);
+
+  // Adding event listener to span.expandButton
+  span.addEventListener('click', (event) => {
+    div.classList.toggle('article-open');
+    const isOpen = div.classList.contains('article-open');
+    span.textContent = isOpen ? 'Close' : 'Click to Expand';
+  });
+  return div;
 }
