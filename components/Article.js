@@ -1,8 +1,7 @@
 // This is the data we will be using to create our articles. Look at it, then proceed to line 93.
 // OPTIONAL: if you're feeling adventurous, try to make this data an export from a different module, and import it here.
 // You can read about ES6 modules here: https://exploringjs.com/es6/ch_modules.html#sec_basics-of-es6-modules
-const data = [
-  {
+const data = [{
     title: 'Lambda School Students: "We\'re the best!"',
     date: 'Nov 5th, 2018',
     firstParagraph: `Lucas ipsum dolor sit amet ben twi'lek padmé darth darth darth moff hutt organa twi'lek. Ben amidala secura skywalker lando
@@ -86,6 +85,39 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Bacon Ipsum Article Number 1',
+
+    date: 'March 13th, 2019',
+
+    firstParagraph: `Spicy jalapeno short ribs shankle pork belly t-bone burgdoggen alcatra picanha doner tenderloin jowl pancetta shank capicola kevin hamburger. Pork loin pork chop shank bacon. Beef ribs ball tip shankle flank, corned beef landjaeger pork belly short ribs pork chop brisket sirloin salami leberkas. Rump shankle chislic corned beef tail turkey short ribs shoulder alcatra ham hock cow pig strip steak spare ribs capicola. Flank swine porchetta shank bresaola beef ribs jowl brisket chicken short ribs shoulder. Beef chuck ham, turkey biltong kielbasa prosciutto drumstick chicken brisket strip steak sirloin fatback tenderloin. Shank sirloin bacon pork.`,
+
+    secondParagraph: `Landjaeger turkey prosciutto flank strip steak. Filet mignon short ribs meatloaf pancetta picanha. Pig short ribs cupim tongue pork loin kielbasa ham. Turducken beef ribs pancetta sausage, bresaola tail andouille pork chop pork turkey alcatra buffalo.`,
+
+    thirdParagraph: `Meatloaf kevin salami tri-tip jowl doner chuck pancetta sirloin brisket shankle pork belly ball tip ham hock. Kevin frankfurter prosciutto chislic bacon filet mignon tail burgdoggen buffalo doner pork leberkas tongue. Meatloaf frankfurter swine boudin kielbasa chislic tongue bresaola. Meatball cupim strip steak pork loin landjaeger prosciutto buffalo alcatra ground round burgdoggen chislic ham chicken turducken. Prosciutto pig shank porchetta bresaola burgdoggen frankfurter picanha short loin rump venison cow andouille tongue.`
+  },
+  {
+    title: 'Bacon Ipsum Article Number 2',
+
+    date: 'March 13th, 2020',
+
+    firstParagraph: `Spicy jalapeno short ribs shankle pork belly t-bone burgdoggen alcatra picanha doner tenderloin jowl pancetta shank capicola kevin hamburger. Pork loin pork chop shank bacon. Beef ribs ball tip shankle flank, corned beef landjaeger pork belly short ribs pork chop brisket sirloin salami leberkas. Rump shankle chislic corned beef tail turkey short ribs shoulder alcatra ham hock cow pig strip steak spare ribs capicola. Flank swine porchetta shank bresaola beef ribs jowl brisket chicken short ribs shoulder. Beef chuck ham, turkey biltong kielbasa prosciutto drumstick chicken brisket strip steak sirloin fatback tenderloin. Shank sirloin bacon pork.`,
+
+    secondParagraph: `Landjaeger turkey prosciutto flank strip steak. Filet mignon short ribs meatloaf pancetta picanha. Pig short ribs cupim tongue pork loin kielbasa ham. Turducken beef ribs pancetta sausage, bresaola tail andouille pork chop pork turkey alcatra buffalo.`,
+
+    thirdParagraph: `Meatloaf kevin salami tri-tip jowl doner chuck pancetta sirloin brisket shankle pork belly ball tip ham hock. Kevin frankfurter prosciutto chislic bacon filet mignon tail burgdoggen buffalo doner pork leberkas tongue. Meatloaf frankfurter swine boudin kielbasa chislic tongue bresaola. Meatball cupim strip steak pork loin landjaeger prosciutto buffalo alcatra ground round burgdoggen chislic ham chicken turducken. Prosciutto pig shank porchetta bresaola burgdoggen frankfurter picanha short loin rump venison cow andouille tongue.`
+  },
+  {
+    title: 'Bacon Ipsum Article Number 3',
+
+    date: 'March 13th, 2021',
+
+    firstParagraph: `Spicy jalapeno short ribs shankle pork belly t-bone burgdoggen alcatra picanha doner tenderloin jowl pancetta shank capicola kevin hamburger. Pork loin pork chop shank bacon. Beef ribs ball tip shankle flank, corned beef landjaeger pork belly short ribs pork chop brisket sirloin salami leberkas. Rump shankle chislic corned beef tail turkey short ribs shoulder alcatra ham hock cow pig strip steak spare ribs capicola. Flank swine porchetta shank bresaola beef ribs jowl brisket chicken short ribs shoulder. Beef chuck ham, turkey biltong kielbasa prosciutto drumstick chicken brisket strip steak sirloin fatback tenderloin. Shank sirloin bacon pork.`,
+
+    secondParagraph: `Landjaeger turkey prosciutto flank strip steak. Filet mignon short ribs meatloaf pancetta picanha. Pig short ribs cupim tongue pork loin kielbasa ham. Turducken beef ribs pancetta sausage, bresaola tail andouille pork chop pork turkey alcatra buffalo.`,
+
+    thirdParagraph: `Meatloaf kevin salami tri-tip jowl doner chuck pancetta sirloin brisket shankle pork belly ball tip ham hock. Kevin frankfurter prosciutto chislic bacon filet mignon tail burgdoggen buffalo doner pork leberkas tongue. Meatloaf frankfurter swine boudin kielbasa chislic tongue bresaola. Meatball cupim strip steak pork loin landjaeger prosciutto buffalo alcatra ground round burgdoggen chislic ham chicken turducken. Prosciutto pig shank porchetta bresaola burgdoggen frankfurter picanha short loin rump venison cow andouille tongue.`
   }
 ];
 
@@ -114,3 +146,54 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+function articleMaker(articleObj) {
+  // Instantiating the elements
+  const divElement = document.createElement('div')
+  const h2Element = document.createElement('h2')
+  const dateElement = document.createElement('p')
+  const paragraphElement1 = document.createElement('p')
+  const paragraphElement2 = document.createElement('p')
+  const paragraphElement3 = document.createElement('p')
+  const spanElement = document.createElement('span')
+
+  // Organizing HTML elements structure
+  divElement.appendChild(h2Element)
+  divElement.appendChild(dateElement)
+  divElement.appendChild(paragraphElement1)
+  divElement.appendChild(paragraphElement2)
+  divElement.appendChild(paragraphElement3)
+  divElement.appendChild(spanElement)
+
+  // Assigning classes
+  divElement.classList.add('article')
+  // dateElement.classList.add('date')
+  spanElement.classList.add('expandButton')
+
+  // Assigning data from the articleObject
+  h2Element.textContent = articleObj.title
+  dateElement.textContent = articleObj.date
+  paragraphElement1.textContent = articleObj.firstParagraph
+  paragraphElement2.textContent = articleObj.secondParagraph
+  paragraphElement3.textContent = articleObj.thirdParagraph
+
+  // Adding + to span
+  spanElement.textContent = "+"
+
+  // Event listener on span
+  spanElement.addEventListener('click', () => {
+    divElement.classList.toggle('article-open')
+  })
+
+  // returning the created elements
+  return divElement
+}
+
+// Where to append the component in the HTML
+const articles = document.querySelector('.articles')
+
+// Loop over data
+data.forEach(dataObj => {
+  let newArticle = articleMaker(dataObj)
+  articles.append(newArticle)
+})
