@@ -86,6 +86,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {// Adding new article object to data array
+    title: 'Test Title',
+    date: 'Jan 1st, 2021',
+    firstParagraph: `This is a test paragraph1`,
+
+    secondParagraph: `This is a test paragraph2`,
+
+    thirdParagraph: `This is a test paragraph3`
   }
 ];
 
@@ -114,3 +123,46 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+// Creating article component
+function articleMaker(articleObj) {
+  // Adding DOM Elements
+  const div = document.createElement('div');
+  const h2 = document.createElement('h2');
+  const date = document.createElement('p');
+  const p1 = document.createElement('p');
+  const p2 = document.createElement('p');
+  const p3 = document.createElement('p');
+  const span = document.createElement('span');
+
+  // Adding classlist, textcontent to elements and appending them. 
+  div.classList.add('article');
+  h2.textContent = articleObj.title;
+  date.classList.add('date');
+  date.textContent = articleObj.date;
+  p1.textContent = articleObj.firstParagraph;
+  p2.textContent = articleObj.secondParagraph;
+  p3.textContent = articleObj.thirdParagraph;
+  span.classList.add('expandButton');
+  span.textContent = '+ Click to Expand';
+  div.appendChild(h2);
+  div.appendChild(date);
+  div.appendChild(p1);
+  div.appendChild(p2);
+  div.appendChild(p3);
+  div.appendChild(span);
+
+  // Adding event listener to span.expandButton
+  span.addEventListener('click', (event) => {
+    div.classList.toggle('article-open');
+    const isOpen = div.classList.contains('article-open');
+    span.textContent = isOpen ? 'Close' : 'Click to Expand';
+  });
+  return div;
+}
+
+// Loop over and append to div.articles
+const articles = document.querySelector('.articles');
+data.forEach(articleObj => {
+  articles.appendChild(articleMaker(articleObj))
+});
