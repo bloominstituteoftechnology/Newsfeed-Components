@@ -89,6 +89,61 @@ const data = [
   }
 ];
 
+const articlesDiv = document.querySelector('div.articles')
+
+function articleMaker(title, date, firstParagraph, secondParagraph, thirdParagraph) {
+
+  const article = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+  const articleDate = document.createElement('h3');
+  const articleFirst = document.createElement('p');
+  const articleSecond = document.createElement('p');
+  const articleThird = document.createElement('p');
+  // const articleButtons = document.createElement('div')
+  // const openButton = document.createElement('button')
+  // const closeButton = document.createElement('button')
+
+  article.appendChild(articleTitle)
+  article.appendChild(articleDate)
+  article.appendChild(articleFirst)
+  article.appendChild(articleSecond)
+  article.appendChild(articleThird)
+  // article.appendChild(articleButtons)
+  // articleButtons.appendChild(openButton)
+  // articleButtons.appendChild(closeButton)
+
+  // article.classList.add('articles, article')
+  // articleDate.classList.add('date')
+  // openButton.classList.add('article-open')
+  // closeButton.classList.add('close')
+  // articleButtons.classList.add('expandButton')
+
+  articleTitle.textContent = title
+  articleDate.textContent = date
+  articleFirst.textContent = firstParagraph
+  articleSecond.textContent = secondParagraph
+  articleThird.textContent = thirdParagraph
+  // openButton.textContent = open
+  // closeButton.textContent = close
+
+  // panelButtons.addEventListener('click', () => {
+  //   openButton.classList.toggle('expandButton')
+  //   closeButton.classList.toggle('expandButton')
+  //   panelContent.classList.toggle('article-open')
+  // })
+
+  return article
+
+}
+
+
+data.forEach(({ title, date, firstParagraph, secondParagraph, thirdParagraph}) => {
+  const article = articleMaker( title, date, firstParagraph, secondParagraph, thirdParagraph)
+  articlesDiv.appendChild(article)
+})
+
+console.log(articleMaker)
+
 /*
   Step 1: Write a component called 'articleMaker' to create an article.
   Your component is a function that takes an article object as its only argument,
