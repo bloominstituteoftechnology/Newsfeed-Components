@@ -87,7 +87,7 @@ const data = [
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   },
-  {// Adding new articled to data array
+  {// Adding new article object to data array
     title: 'Test Title',
     date: 'Jan 1st, 2021',
     firstParagraph: `This is a test paragraph1`,
@@ -124,8 +124,7 @@ const data = [
   Refresh the page to see the new article.
 */
 
-// Step 1 - Creating article component
-
+// Creating article component
 function articleMaker(articleObj) {
   // Adding DOM Elements
   const div = document.createElement('div');
@@ -162,6 +161,7 @@ function articleMaker(articleObj) {
   return div;
 }
 
+// Loop over and append to div.articles
 const articles = document.querySelector('.articles');
 data.forEach(articleObj => {
   articles.appendChild(articleMaker(articleObj))
