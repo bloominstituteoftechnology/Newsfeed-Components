@@ -114,3 +114,70 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+const body = document.querySelector('body')
+function articleMaker(articleObject){
+  
+  const article = document.createElement('div')
+  const artTitle = document.createElement('h2')
+  const date = document.createElement('p')
+  const paragraphs = document.createElement('p')
+  const firstParagraph = document.createElement('p')
+  const secondParagraph = document.createElement('p')
+  const thirdParagraph = document.createElement('p')
+  const expandButton = document.createElement('span')
+
+article.appendChild(artTitle)
+article.appendChild(date)
+article.appendChild(paragraphs)
+article.appendChild(expandButton)
+article.appendChild(firstParagraph)
+article.appendChild(secondParagraph)
+article.appendChild(thirdParagraph)
+
+article.classList.add('article')
+artTitle.classList.add('art-title')
+date.classList.add('date')
+paragraphs.classList.add('paragraphs')
+firstParagraph.classList.add('firstParagraph')
+secondParagraph.classList.add('secondParagraph')
+thirdParagraph.classList.add('thirdParagraph')
+expandButton.classList.add('expandButton')
+
+artTitle.textContent = articleObject.title
+date.textContent = articleObject.date
+paragraphs.textContent = articleObject.paragraphs
+firstParagraph.textContent = articleObject.firstParagraph
+secondParagraph.textContent = articleObject.secondParagraph
+thirdParagraph.textContent = articleObject.thirdParagraph
+expandButton.textContent = "+"
+
+expandButton.addEventListener('click', () =>{
+  article.classList.toggle('article-open')
+  body.style.background = "lightblue"
+})
+
+return article;
+}
+
+data.forEach(articleEl => {
+  const article = articleMaker(articleEl)
+  body.appendChild(article)
+})
+
+ const newObj = {
+  title: 'My Development',
+  date: 'Dec 20, 2020',
+  firstParagraph: `ghieuhglihugparuhg;i hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
+        hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
+        Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `,
+  secondParagraph: `8rughrgoreHodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
+        hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
+        hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
+        hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? `,
+  thirdParagraph: `64uihliurghlihhodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
+        Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
+        Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+ }
+ data.push(newObj)
+ console.log(data)
