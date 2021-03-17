@@ -1,13 +1,6 @@
 // This is the data we will be using, study it but don't change anything, yet.
 
-let menuItems = [
-  'Students',
-  'Faculty',
-  "What's New",
-  'Tech Trends',
-  'Music',
-  'Log Out'
-];
+let menuItems = ['Students', 'Faculty', "What's New", 'Tech Trends', 'Music', 'Log Out'];
 
 /* 
   Step 1: Write a component called 'menuMaker' to create a menu like the markup below:
@@ -31,3 +24,44 @@ let menuItems = [
 
   Step 6: Use 'menuMaker' to create a menu using the 'menuItems' array, and append the returned menu to the header.
 */
+
+function menuMaker(menuItems) {
+	const nav = document.createElement('div');
+	const menu = document.createElement('ul');
+	const students = document.createElement('li');
+	const faculty = document.createElement('li');
+	const whatsNew = document.createElement('li');
+	const techTrends = document.createElement('li');
+	const music = document.createElement('li');
+	const logout = document.createElement('li');
+	const menuButton = document.querySelector('.menu-button');
+
+	nav.classList.add('menu');
+
+	nav.appendChild(menu);
+
+	menu.appendChild(students);
+	menu.appendChild(faculty);
+	menu.appendChild(whatsNew);
+	menu.appendChild(techTrends);
+	menu.appendChild(music);
+	menu.appendChild(logout);
+
+	students.textContent = menuItems[0];
+	faculty.textContent = menuItems[1];
+	whatsNew.textContent = menuItems[2];
+	techTrends.textContent = menuItems[3];
+	music.textContent = menuItems[4];
+	logout.textContent = menuItems[5];
+
+	menuButton.addEventListener('click', event => {
+		nav.classList.toggle('menu--open');
+	});
+
+	return nav;
+}
+
+const newMenu = menuMaker(menuItems);
+const header = document.querySelector('div.header');
+
+header.appendChild(newMenu);
