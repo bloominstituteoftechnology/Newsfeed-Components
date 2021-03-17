@@ -114,3 +114,51 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+function articleMaker(article0){
+  const article = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+  const articleDate = document.createElement('p');
+  const articleParaOne = document.createElement('p');
+  const articleParaTwo = document.createElement('p');
+  const articleParaThree = document.createElement('p');
+  const button = document.createElement('span');
+  button.classList.add('expandButton');
+  const expand = document.querySelector('.expandButton');
+
+  article.appendChild(articleTitle);
+  article.appendChild(articleDate);
+  article.appendChild(articleParaOne);
+  article.appendChild(articleParaTwo);
+  article.appendChild(articleParaThree);
+  article.appendChild(button);
+
+  article.classList.add('article');
+  article.textContent = article0.Title;
+  articleTitle.classList = add('date');
+  articleDate.textContent = article0.date;
+  articleParaOne.textContent = article0.firstParagraph;
+  articleParaTwo.textContent = article0.secondParagraph;
+  articleParaThree.textContent = article0.thirdParagraph;
+
+  button.textContent = 'clickMe';
+
+  button.addEventListener('click',() => {
+    article.classList.toggle('article-open');
+  })
+  return article
+}
+const articles = document.querySelector('.articles')
+
+data.forEach(article0 => {
+  articles.appendChild(articleMaker(article0));
+})
+
+const newArticle0 ={
+  title:'This is not as difficult as I thought!',
+  date:'03/16/2021'
+  firstParagraph:'You know I got this',
+  secondParagraph:'Easy Peezy',
+  thirdParagraph: 'Lemon Squeezy',
+}
+const articleContent = articleMaker(newArticle0);
+articles.appendChild(articleContent);
