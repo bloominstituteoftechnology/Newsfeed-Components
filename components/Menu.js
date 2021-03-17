@@ -38,13 +38,14 @@ function menuMaker(menuItems) {
 
 	nav.classList.add('menu');
 
-	nav.appendChild('menu');
-	menu.appendChild('students');
-	menu.appendChild('faculty');
-	menu.appendChild('whatsNew');
-	menu.appendChild('techTrends');
-	menu.appendChild('music');
-	menu.appendChild('logout');
+	nav.appendChild(menu);
+
+	menu.appendChild(students);
+	menu.appendChild(faculty);
+	menu.appendChild(whatsNew);
+	menu.appendChild(techTrends);
+	menu.appendChild(music);
+	menu.appendChild(logout);
 
 	students.textContent = menuItems[0];
 	faculty.textContent = menuItems[1];
@@ -54,7 +55,7 @@ function menuMaker(menuItems) {
 	logout.textContent = menuItems[5];
 
 	menuButton.addEventListener('click', event => {
-		nav.classList.toggle('menu-open');
+		nav.classList.toggle('menu--open');
 	});
 
 	return nav;
@@ -63,4 +64,4 @@ function menuMaker(menuItems) {
 const newMenu = menuMaker(menuItems);
 const header = document.querySelector('div.header');
 
-header.appendChild('newMenu');
+header.appendChild(newMenu);
