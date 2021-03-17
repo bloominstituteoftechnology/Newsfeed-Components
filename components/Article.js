@@ -86,6 +86,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {// Adding new articled to data array
+    title: 'Test Title',
+    date: 'Jan 1st, 2021',
+    firstParagraph: `This is a test paragraph1`,
+
+    secondParagraph: `This is a test paragraph2`,
+
+    thirdParagraph: `This is a test paragraph3`
   }
 ];
 
@@ -117,7 +126,7 @@ const data = [
 
 // Step 1 - Creating article component
 
-function articleMaker(articleObject) {
+function articleMaker(articleObj) {
   // Adding DOM Elements
   const div = document.createElement('div');
   const h2 = document.createElement('h2');
@@ -129,12 +138,12 @@ function articleMaker(articleObject) {
 
   // Adding classlist, textcontent to elements and appending them. 
   div.classList.add('article');
-  h2.textContent = articleObject.title;
+  h2.textContent = articleObj.title;
   date.classList.add('date');
-  date.textContent = articleObject.date;
-  p1.textContent = articleObject.firstParagraph;
-  p2.textContent = articleObject.secondParagraph;
-  p3.textContent = articleObject.thirdParagraph;
+  date.textContent = articleObj.date;
+  p1.textContent = articleObj.firstParagraph;
+  p2.textContent = articleObj.secondParagraph;
+  p3.textContent = articleObj.thirdParagraph;
   span.classList.add('expandButton');
   span.textContent = '+ Click to Expand';
   div.appendChild(h2);
@@ -152,3 +161,8 @@ function articleMaker(articleObject) {
   });
   return div;
 }
+
+const articles = document.querySelector('.articles');
+data.forEach(articleObj => {
+  articles.appendChild(articleMaker(articleObj))
+});
