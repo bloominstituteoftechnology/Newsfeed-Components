@@ -105,9 +105,10 @@ const data = [
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
 ];
+  // 1 - create element 
 
 function articleMaker(articleObj) {
-  // 1 - create element 
+
   let article = document.createElement("div");
   let articleHeader = document.createElement("h2");
   let date = document.createElement("p");
@@ -117,7 +118,7 @@ function articleMaker(articleObj) {
   let paragraphFour = document.createElement("p")
   let buttonSpan = document.createElement("span");
 
-//attach 
+//2. attach it
 
 
   article.appendChild(articleHeader);
