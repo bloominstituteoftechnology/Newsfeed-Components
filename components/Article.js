@@ -107,7 +107,7 @@ const data = [
 ];
 
 function articleMaker(articleObj) {
-  // 1 - Instanciate element (make)
+  // 1 - create element 
   let article = document.createElement("div");
   let articleHeader = document.createElement("h2");
   let date = document.createElement("p");
