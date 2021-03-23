@@ -8,6 +8,12 @@ let menuItems = [
   'Music',
   'Log Out'
 ];
+function growMenu() {
+  gsap.to(".menu--open", {duration: 2, fontSize: "20px"});
+}
+function shrinkMenu() {
+  gsap.to(".menu--open", {duration: 2, fontSize: "0px"});
+}
 
 function menuMaker(menuItems) {
   
@@ -22,8 +28,14 @@ function menuMaker(menuItems) {
     menuContainer.append(menuList);
     const menuButton = document.querySelector(".menu-button");
     menuButton.addEventListener("click", () => {
-      menuContainer.className.includes("menu--open") ? menuContainer.className.replace("menu--open", "") : menuContainer.className += "menu--open";
-      gsap.to(".menu--open", {duration: 2, fontSize: 10000});
+      if (menuContainer.className.includes("menu--open")) {
+        menuContainer.className.replace("menu--open","") 
+        growMenu();
+      } else { 
+        menuContainer.className += " menu--open";
+        shrinkMenu();
+      } 
+      
     })
     return menuContainer;
 }
