@@ -23,6 +23,7 @@ function menuMaker(menuItems) {
     const menuButton = document.querySelector(".menu-button");
     menuButton.addEventListener("click", () => {
       menuContainer.className.includes("menu--open") ? menuContainer.className.replace("menu--open", "") : menuContainer.className += "menu--open";
+      gsap.to(".menu--open", {duration: 2, fontSize: 10000});
     })
     return menuContainer;
 }
