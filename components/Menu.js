@@ -34,14 +34,20 @@ const menuMaker = arr => {
   //create nodes
   const menuDiv = document.createElement('div');
   const menuList = document.createElement('ul');
-  const menuListItem = document.createElement('li');
+  const menuListItem = (item) => {
+    const newMenuListItem = document.createElement('li');
+    menuList.appendChild(newMenuListItem);
+    newMenuListItem.textContent = item;
+  }
   //append nodes
-
   menuDiv.appendChild(menuList);
-  menuList.appendChild(menuListItem);
   //apply classes
   menuDiv.classList.add('menu');
   //insert text content
+  arr.forEach(item =>{
+    menuListItem(item);
+  });
+
   return menuDiv;
 }
 
