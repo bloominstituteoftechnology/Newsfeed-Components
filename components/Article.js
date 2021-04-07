@@ -97,9 +97,42 @@ const data = [
   const articles = document.querySelector(".articles");
   function articleMaker(dataobj) {
     const article = document.createElement("div");
-    
+    const articleTitle = document.createElement("h2");
+    const articleDate = document.createElement("p");
+    const articleP1 = document.createElement("p");
+    const articleP2 = document.createElement("p");
+    const articleP3 = document.createElement("p");
+    const articleSpan = document.createElement("span");
+
+    article.appendChild(articleTitle);
+    article.appendChild(articleDate);
+    article.appendChild(articleP1);
+    article.appendChild(articleP2);
+    article.appendChild(articleP3);
+    article.appendChild(articleSpan);
+
+    article.classList.add("article");
+    articleSpan.classList.add("expandButton");
+    articleDate.classList.add("date");
+
+    articleTitle.textContent = dataobj.title;
+    articleDate.textContent = dataobj.date;
+    articleP1.textContent = dataobj.firstParagraph;
+    articleP2.textContent = dataobj.secondParagraph;
+    articleP3.textContent = dataobj.thirdParagraph;
+    articleSpan.textContent = "+";
+
+    articleSpan.addEventListener("click", (event) => {
+      article.classList.toggle("article-open");
+    })
+    return article;
+  
   };
 
+  data.forEach((art) => {
+    const blog = articleMaker(art)
+    articles.appendChild(blog);
+  })
   // <div class="article">
   //   <h2>{title of the article}</h2>
   //   <p class="date">{date of the article}</p>
