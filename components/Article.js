@@ -94,24 +94,37 @@ const data = [
   Your component is a function that takes an article object as its only argument,
   and returns a DOM node looking like the one below:*/
   const articleMaker = obj =>{
-    //<div class="article">
+    //create nodes
     const articleDiv = document.createElement('div');
-    //   <h2>{title of the article}</h2>
     const title = document.createElement('h2');
-    //   <p class="date">{date of the article}</p>
     const date = document.createElement('p');
-    //   {three separate paragraph elements}
     const pElements = document.createElement('p');
-    //   <span class="expandButton">+</span>
     const button = document.createElement('span');
+    // append to parents
+    articleDiv.appendChild(".articles");
+    title.appendChild(articleDiv);
+    date.appendChild(articleDiv);
+    pElements.appendChild(articleDiv);
+    button.appendChild(articleDiv);
+    // add classes
+    articleDiv.classList.add('article');
+    title.classList.add('article');
+    date.classList.add('date');
+    pElements.classList.add('article');
+    button.classList.add('expandButton');
+  // <div class="article">
+  //   <h2>{title of the article}</h2>
+  //   <p class="date">{date of the article}</p>
+  //   {three separate paragraph elements}
+  //   <span class="expandButton">+</span>
+  // </div>
+  return articleDiv;
   }
 
   // <div class="article">
   //   <h2>{title of the article}</h2>
   //   <p class="date">{date of the article}</p>
-
   //   {three separate paragraph elements}
-
   //   <span class="expandButton">+</span>
   // </div>
 /*
