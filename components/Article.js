@@ -115,18 +115,15 @@ const data = [
     dateP.classList.add('date');
     button.classList.add('expandButton');
     //add text content
-   titleH2.textContent = title;
-   dateP.textContent = date;
-   p1.textContent = firstParagraph;
-   p2.textContent = secondParagraph;
-   p3.textContent = thirdParagraph;
-   button.textContent = `+`;
-  // <div class="article">
-  //   <h2>{title of the article}</h2>
-  //   <p class="date">{date of the article}</p>
-  //   {three separate paragraph elements}
-  //   <span class="expandButton">+</span>
-  // </div>
+    titleH2.textContent = title;
+    dateP.textContent = date;
+    p1.textContent = firstParagraph;
+    p2.textContent = secondParagraph;
+    p3.textContent = thirdParagraph;
+    button.textContent = `+`;
+    //ad event listener
+    button.addEventListener('click', e => articleDiv.classList.toggle('article-open'));
+
   return articleDiv;
   }
 console.log(articleMaker(data))
@@ -148,6 +145,10 @@ console.log(articleMaker(data))
   Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
   to create a div.article element and append it to the DOM inside div.articles (see index.html).
   */
+data.forEach(article => {
+  const newArticle = articleMaker(article);
+  document.querySelector('.articles').appendChild(newArticle);
+})
 
 
 /*
