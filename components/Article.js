@@ -89,6 +89,14 @@ const data = [
   }
 ];
 
+function articleMaker(artObj) {
+  const article = document.createElement('div');
+  const artTitle = document.createElement('h2');
+  const date = document.createElement('p');
+  const span = document.createElement('span');
+  
+}
+
 /*
   Step 1: Write a component called 'articleMaker' to create an article.
   Your component is a function that takes an article object as its only argument,
