@@ -90,7 +90,7 @@ const data = [
 ];
 data.push(
   {
-    title: 'Professional Software Development in 2019',
+    title: 'Professional Software Development in 2021',
     date: 'Jan 1st, 2019',
     firstParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
           hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
@@ -121,7 +121,6 @@ data.push(
     const p3 = document.createElement('p');
     const button = document.createElement('span');
     // append to parents
-    // NEED TO RESTRUCTURE PARENTS? CHILDREN
     articleDiv.appendChild(titleH2);
     articleDiv.appendChild(dateP);
     articleDiv.appendChild(p1);
