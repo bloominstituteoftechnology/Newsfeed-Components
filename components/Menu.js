@@ -54,4 +54,4 @@ const menuMaker = arr => {
   return menuDiv;
 }
 
-console.log(menuMaker(menuItems));
+menuMaker(menuItems);
