@@ -38,9 +38,9 @@ const data = [
         mewing kittens Remus Lupin. Palominos scarlet train black robes, Metamorphimagus Niffler dead easy second bedroom. Padma
         and Parvati Sorting Hat Minister of Magic blue turban remember my last.`,
 
-    thirdParagraph: `Toad-like smile Flourish and Blotts he knew I’d come back Quidditch World Cup. Fat Lady baubles banana fritters fairy lights 
-        Petrificus Totalus. So thirsty, deluminator firs’ years follow me 12 inches of parchment. Head Boy start-of-term banquet Cleansweep Seven 
-        roaring lion hat. Unicorn blood crossbow mars is bright tonight, feast Norwegian Ridgeback. Come seek us where our voices sound, we cannot 
+    thirdParagraph: `Toad-like smile Flourish and Blotts he knew I’d come back Quidditch World Cup. Fat Lady baubles banana fritters fairy lights
+        Petrificus Totalus. So thirsty, deluminator firs’ years follow me 12 inches of parchment. Head Boy start-of-term banquet Cleansweep Seven
+        roaring lion hat. Unicorn blood crossbow mars is bright tonight, feast Norwegian Ridgeback. Come seek us where our voices sound, we cannot
         sing above the ground, Ginny Weasley bright red. Fanged frisbees, phoenix tears good clean match.`
   },
   {
@@ -67,8 +67,8 @@ const data = [
         consectetur adipiscing elit. Nidoran Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nidorino Lorem ipsum dolor
         sit amet, consectetur adipiscing elit. Nidoking Lorem ipsum`,
 
-    thirdParagraph: `Gotta catch 'em all Horsea gym Ninjask Absol Sinnoh Poliwag. Gotta catch 'em all Youngster wants to fight Soda Pop Floatzel 
-        Leech Life Seismitoad Ariados. Earthquake Pokemon Glitch City Tail Whip Skitty Ekans Dialga. Ut aliquip ex ea commodo consequat James 
+    thirdParagraph: `Gotta catch 'em all Horsea gym Ninjask Absol Sinnoh Poliwag. Gotta catch 'em all Youngster wants to fight Soda Pop Floatzel
+        Leech Life Seismitoad Ariados. Earthquake Pokemon Glitch City Tail Whip Skitty Ekans Dialga. Ut aliquip ex ea commodo consequat James
         Castform Lotad the power that's inside Burnt Berry Makuhita. Ghost Ariados Corphish Dusclops Golbat Gligar Zweilous.`
   },
   {
@@ -114,3 +114,79 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+const extra = [
+  {
+    title: 'First Test Article',
+    date: 'April 7th, 2021',
+    firstParagraph: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, est ipsa saepe dicta id ipsam! Voluptatem blanditiis aspernatur id saepe ullam. Repellat nostrum magnam quam veniam possimus quod, enim tempore!',
+    secondParagraph: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, est ipsa saepe dicta id ipsam! Voluptatem blanditiis aspernatur id saepe ullam. Repellat nostrum magnam quam veniam possimus quod, enim tempore!',
+    thirstParagraph: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, est ipsa saepe dicta id ipsam! Voluptatem blanditiis aspernatur id saepe ullam. Repellat nostrum magnam quam veniam possimus quod, enim tempore!'
+  },
+  {
+    title: 'Second Test Article',
+    date: 'April 7th, 2021',
+    firstParagraph: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, est ipsa saepe dicta id ipsam! Voluptatem blanditiis aspernatur id saepe ullam. Repellat nostrum magnam quam veniam possimus quod, enim tempore!',
+    secondParagraph: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, est ipsa saepe dicta id ipsam! Voluptatem blanditiis aspernatur id saepe ullam. Repellat nostrum magnam quam veniam possimus quod, enim tempore!',
+    thirstParagraph: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, est ipsa saepe dicta id ipsam! Voluptatem blanditiis aspernatur id saepe ullam. Repellat nostrum magnam quam veniam possimus quod, enim tempore!'
+  },
+  {
+    title: 'Third Test Article',
+    date: 'April 7th, 2021',
+    firstParagraph: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, est ipsa saepe dicta id ipsam! Voluptatem blanditiis aspernatur id saepe ullam. Repellat nostrum magnam quam veniam possimus quod, enim tempore!',
+    secondParagraph: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, est ipsa saepe dicta id ipsam! Voluptatem blanditiis aspernatur id saepe ullam. Repellat nostrum magnam quam veniam possimus quod, enim tempore!',
+    thirstParagraph: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, est ipsa saepe dicta id ipsam! Voluptatem blanditiis aspernatur id saepe ullam. Repellat nostrum magnam quam veniam possimus quod, enim tempore!'
+  }
+];
+
+data.push(...extra);
+
+function articleMaker({ title, date, firstParagraph, secondParagraph, thirdParagraph }) {
+
+  const div = document.createElement('div');
+  div.setAttribute('class', 'articleMaker');
+
+  const h2 = document.createElement('h2');
+  h2.textContent = title;
+
+  const p = document.createElement('p');
+  p.setAttribute('class', 'date');
+  p.textContent = date;
+
+  const first = document.createElement('p');
+  first.textContent = firstParagraph;
+
+  const second = document.createElement('p');
+  second.textContent = secondParagraph;
+
+  const third = document.createElement('p');
+  third.textContent = thirdParagraph;
+
+  const span = document.createElement('span');
+  span.setAttribute('class', 'expandButton');
+  span.textContent = '+';
+
+  div.appendChild(h2);
+  div.appendChild(p);
+  div.appendChild(first);
+  div.appendChild(second);
+  div.appendChild(third);
+  div.appendChild(span);
+
+  span.addEventListener('click', (event) => {
+
+    div.classList.toggle('article-open');
+
+  });
+
+  return div;
+
+}
+
+const articles = document.querySelector('.articles');
+
+data.forEach((data) => {
+
+  articles.appendChild(articleMaker(data));
+
+});
