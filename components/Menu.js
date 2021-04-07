@@ -28,23 +28,38 @@ let menuItems = [
     let ul = document.createElement('ul')
     nav.appendChild(ul);
     
-    menuOptions = menu.forEach(element => {
-     let li = document.createElement('li').textContent = element;
-     ul.appendChild(li);
-      return li
-    });
+
 
  
-  }
+  
 
   // Step 2: Inside the function, iterate over the array creating a list item <li> element for each item in the array.
   // Add those items to the <ul>
 
+  menu.forEach((element) => {
+    let li = document.createElement('li');
+    li.textContent = element;
+    ul.appendChild(li);
+     return li
+   });
+
+   nav.appendChild(ul);
+  //  console.log(ul);
+  //  ul.appendChild(menuOptions);
+
   // Step 3: Still inside your function, select from the DOM the menu button (the element with a class of 'menu-button').
 
+const menuBtn = document.querySelector("img.menu-button");
+
   // Step 4: Add a click event listener to the menu button. When clicked it should toggle the class 'menu--open' on div.menu (your div with a 'menu' class).
-
+menuBtn.addEventListener('click',(event)=>{
+  nav.classList.toggle('menu--open')
+})
   // Step 5: Don't forget to return your div.menu.
-
+  return nav;
+  }
   // Step 6: Use 'menuMaker' to create a menu using the 'menuItems' array, and append the returned menu to the header.
-
+const header = document.querySelector("div.header")
+  let result = menuMaker(menuItems);
+header.appendChild(result);
+  // console.log(header);
