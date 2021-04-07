@@ -93,25 +93,34 @@ const data = [
   Step 1: Write a component called 'articleMaker' to create an article.
   Your component is a function that takes an article object as its only argument,
   and returns a DOM node looking like the one below:*/
-  const articleMaker = obj =>{
+  const articleMaker = ({ title, date, firstParagraph, secondParagraph, thirdParagraph }) =>{
     //create nodes
     const articleDiv = document.createElement('div');
-    const title = document.createElement('h2');
-    const date = document.createElement('p');
-    const pElements = document.createElement('p');
+    const titleH2 = document.createElement('h2');
+    const dateP = document.createElement('p');
+    const p1 = document.createElement('p');
+    const p2 = document.createElement('p');
+    const p3 = document.createElement('p');
     const button = document.createElement('span');
     // append to parents
-    articleDiv.appendChild(".articles");
-    title.appendChild(articleDiv);
-    date.appendChild(articleDiv);
-    pElements.appendChild(articleDiv);
-    button.appendChild(articleDiv);
+    // NEED TO RESTRUCTURE PARENTS? CHILDREN
+    articleDiv.appendChild(titleH2);
+    articleDiv.appendChild(dateP);
+    articleDiv.appendChild(p1);
+    articleDiv.appendChild(p2);
+    articleDiv.appendChild(p3);
+    articleDiv.appendChild(button);
     // add classes
     articleDiv.classList.add('article');
-    title.classList.add('article');
-    date.classList.add('date');
-    pElements.classList.add('article');
+    dateP.classList.add('date');
     button.classList.add('expandButton');
+    //add text content
+   titleH2.textContent = title;
+   dateP.textContent = date;
+   p1.textContent = firstParagraph;
+   p2.textContent = secondParagraph;
+   p3.textContent = thirdParagraph;
+   button.textContent = `+`;
   // <div class="article">
   //   <h2>{title of the article}</h2>
   //   <p class="date">{date of the article}</p>
@@ -120,7 +129,7 @@ const data = [
   // </div>
   return articleDiv;
   }
-
+console.log(articleMaker(data))
   // <div class="article">
   //   <h2>{title of the article}</h2>
   //   <p class="date">{date of the article}</p>
@@ -139,6 +148,7 @@ const data = [
   Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
   to create a div.article element and append it to the DOM inside div.articles (see index.html).
   */
+
 
 /*
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
