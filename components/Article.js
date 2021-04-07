@@ -86,31 +86,90 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },{
+    title: 'How To Not Succeed in 2019',
+    date: 'Feb 6th, 2019',
+    firstParagraph: `Unsuccessful people don’t value their time. They are everywhere, anywhere, anytime because they lack the ability to dedicate their time towards their goals. And year after year they make new promises which never come to fruition simply because they couldn’t be bothered to put in the time required towards their goals. Time management skills, learning how to say no and knowing what commitments to undertake, is a step towards great success in any area of our lives. `,
+
+    secondParagraph: `The more important a goal is, the higher it will be on your hierarchy of values and the more discipline and order you will have associated with it. The less important a goal is, the lower it will be on your hierarchy of values and the less discipline and more disorder you’ll have associated with it. Unsuccessful people have mistaken busyness with productivity. They are a part of everything but nothing which they do is in alignment to their values and their goals. Writing down in a journal what your gaols are and implementing strategies which can get you there will help you identify things that are not on par with where you are going. `,
+
+    thirdParagraph: `So your boss sucks and you really hate your job but this is no reason to slack and produce mediocre work. You’re getting paid to be there so do it right, life has this universal law of giving you what you put in. It’s just maturity and wisdom to pursuit excellence no matter the circumstances. Unsuccessful people are the ones who are okay with getting bad grades and won’t bother finding an effective studying method that will help their learning ability, because after all, being a student of distinction is less about how smart you are but more about how well you can plan and prepare, and that makes you feel smarter and that in itself produces great results.`
   }
 ];
 
-/*
-  Step 1: Write a component called 'articleMaker' to create an article.
-  Your component is a function that takes an article object as its only argument,
-  and returns a DOM node looking like the one below:
 
-  <div class="article">
-    <h2>{title of the article}</h2>
-    <p class="date">{date of the article}</p>
+  // Step 1: Write a component called 'articleMaker' to create an article.
+  // Your component is a function that takes an article object as its only argument,
+  // and returns a DOM node looking like the one below:
 
-    {three separate paragraph elements}
+  // <div class="article">
+  //   <h2>{title of the article}</h2>
+  //   <p class="date">{date of the article}</p>
 
-    <span class="expandButton">+</span>
-  </div>
+  //   {three separate paragraph elements}
 
-  Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
-  This listener should toggle the class 'article-open' on div.article.
+  //   <span class="expandButton">+</span>
+  // </div>
 
-  Step 3: Don't forget to return something from your function!
+  function articleMaker (article){
 
-  Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
-  to create a div.article element and append it to the DOM inside div.articles (see index.html).
+    //linking variables to elements
+    // let mainDiv = document.querySelector('div.articles');
+    let div = document.createElement("div");
+    div.classList.add("article")
 
-  Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
-  Refresh the page to see the new article.
-*/
+    let h2 = document.createElement('h2');
+    h2.textContent = article.title;
+
+    let dateP = document.createElement('p')
+    dateP.classList.add('date');
+    dateP.textContent = article.date;
+
+    let firstP = document.createElement('p')
+    firstP.textContent = article.firstParagraph;
+
+    let secondP = document.createElement('p');
+    secondP.textContent = article.secondParagraph
+
+    let thirdP = document.createElement('p');
+    thirdP.textContent = article.thirdParagraph;
+
+    let span = document.createElement('span');
+    span.classList.add('expandButton');
+    span.textContent = '+';
+
+  //appending 
+    // mainDiv.appendChild(div)
+    div.appendChild(h2);
+    div.appendChild(dateP);
+    div.appendChild(firstP);
+    div.appendChild(secondP);
+    div.appendChild(thirdP);
+    div.appendChild(span);
+
+
+  // Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
+  // This listener should toggle the class 'article-open' on div.article.
+span.addEventListener('click',(event)=>{
+  div.classList.toggle("article-open")
+});
+  // Step 3: Don't forget to return something from your function!
+  return div;
+}
+  // Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
+  // to create a div.article element and append it to the DOM inside div.articles (see index.html).
+
+  let mainDiv = document.querySelector("div.articles");
+
+  let finishedArticles = data.forEach((item)=> {
+  const divArticle = articleMaker(item);
+  console.log(divArticle);
+  mainDiv.appendChild(divArticle);
+  return divArticle;
+})
+    
+
+
+  // Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
+  // Refresh the page to see the new article.
+
