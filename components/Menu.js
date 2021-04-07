@@ -40,6 +40,7 @@ const menuMaker = arr => {
     newMenuListItem.textContent = item;
   }
   //append nodes
+  document.querySelector('.header').appendChild(menuDiv);
   menuDiv.appendChild(menuList);
   //apply classes
   menuDiv.classList.add('menu');
@@ -47,6 +48,8 @@ const menuMaker = arr => {
   arr.forEach(item =>{
     menuListItem(item);
   });
+
+  document.querySelector('.menu-button').addEventListener('click', e => menuDiv.classList.toggle('menu--open'));
 
   return menuDiv;
 }
