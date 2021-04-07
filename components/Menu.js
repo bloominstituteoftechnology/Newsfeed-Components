@@ -44,8 +44,7 @@ let menuItems = [
    });
 
    nav.appendChild(ul);
-  //  console.log(ul);
-  //  ul.appendChild(menuOptions);
+ 
 
   // Step 3: Still inside your function, select from the DOM the menu button (the element with a class of 'menu-button').
 
@@ -62,4 +61,4 @@ menuBtn.addEventListener('click',(event)=>{
 const header = document.querySelector("div.header")
   let result = menuMaker(menuItems);
 header.appendChild(result);
-  // console.log(header);
+  
