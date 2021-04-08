@@ -89,13 +89,59 @@ const data = [
   }
 ];
 
+
 function articleMaker(artObj) {
-  const article = document.createElement('div');
-  const artTitle = document.createElement('h2');
+  const container = document.createElement('div');
+  const h2 = document.createElement('h2');
   const date = document.createElement('p');
-  const span = document.createElement('span');
+  const p1 = document.createElement('p');
+  const p2 = document.createElement('p');
+  const p3 = document.createElement('p');
   
+  const span = document.createElement('span');
+
+  span.addEventListener('click', (event) => {
+    event.target.classList.toggle('expandButton');
+  });
+span.addEventListener('click', (event) =>{
+  event.target.classList.toggle('article-open');
+} );
+
+  container.appendChild(h2);
+  container.appendChild(date);
+  container.appendChild(span);
+  container.appendChild(p1);
+  container.appendChild(p2);
+  container.appendChild(p3);
+
+  container.classList.add('article');
+  date.classList.add('date');
+  span.classList.add('expandButton');
+
+  h2.textContent = artObj.title;
+  date.textContent = artObj.date;
+  p1.textContent = artObj.firstParagraph;
+  p2.textContent = artObj.secondParagraph;
+  p3.textContent = artObj.thirdParagraph;
+  span.textContent = '+';
+return container;
 }
+
+const articleArr = data.map((obj => {
+  console.log(articleMaker(obj));
+  return articleMaker(obj);
+}))
+
+const artContainer = document.querySelector('.articles');
+
+console.log(articleArr);
+articleArr.forEach((articleArr) => {
+  artContainer.appendChild(articleArr);
+});
+
+
+
+console.log(artContainer);
 
 /*
   Step 1: Write a component called 'articleMaker' to create an article.
