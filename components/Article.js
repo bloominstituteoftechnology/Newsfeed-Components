@@ -111,6 +111,10 @@ article.appendChild(paraTwo)
 article.appendChild(paraThree)
 article.appendChild(expandButton)
 
+article.classList.add('article')
+dateArticle.classList.add('date')
+expandButton.classList.add('expandButton')
+
 return article
 }
 console.log(articleMaker())
