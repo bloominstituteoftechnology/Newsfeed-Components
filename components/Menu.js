@@ -37,8 +37,8 @@ function menuMaker(menuItems){
   const list = document.createElement('ul');
   const listItem = document.createElement('li');
 
-  menuArr.forEach(item) => {
-    listItem.appendChild(list);
-  });
+  // menuArr.forEach(item) => {
+  //   listItem.appendChild(list);
+  // });
 
 }
