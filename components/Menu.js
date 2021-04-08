@@ -9,6 +9,54 @@ let menuItems = [
   'Log Out'
 ];
 
+// function menuMaker(arr){
+//   const menu = document.createElement('div')
+//   menu.classList.add('nice-menu')
+//   const listUl = document.createElement('ul')
+//   menu.appendChild(listUl)
+
+//   arr.forEach((element) => {
+//     const menuItems = document.createElement('li')
+//     listUl.append(menuItems)
+//     menuItems.textContent = element;
+//   });
+//   return menu;
+// }
+// console.log(menuMaker(menuItems))
+
+//const divMenu = document.querySelector('.menu-open');
+
+function menuMaker(arr){
+  const menu = document.createElement('div')
+  const listUl = document.createElement('ul')
+  menu.classList.add('menu')
+  menu.appendChild(listUl)
+
+  arr.forEach((element) => {
+    const menuItems = document.createElement('li')
+    menu.appendChild(menuItems)
+    menuItems.textContent = element;
+  });
+  
+  const menuButton = document.querySelector('.menu-button')
+  menuButton.addEventListener('click', function (event) {
+  menu.classList.toggle('menu--open');
+  //menuButton.appendChild(menuItems)
+  console.log('event fire')
+  
+})
+
+
+
+return menu;
+}
+console.log(menuMaker(menuItems))
+
+const header = document.querySelector('.header')
+const menu = menuMaker(menuItems)
+header.appendChild(menu)
+
+
 /* 
   Step 1: Write a component called 'menuMaker' to create a menu like the markup below:
 
