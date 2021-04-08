@@ -103,7 +103,17 @@ const articleMaker = function(articleobject){
   const paraTwo = document.createElement('p')
   const paraThree = document.createElement('p')
   const expandButton = document.createElement('span')
+
+article.appendChild(titleArticle)
+article.appendChild(dateArticle)
+article.appendChild(paraOne)
+article.appendChild(paraTwo)
+article.appendChild(paraThree)
+article.appendChild(expandButton)
+
+return article
 }
+console.log(articleMaker())
   /*
   <div class="article">
     <h2>{title of the article}</h2>
