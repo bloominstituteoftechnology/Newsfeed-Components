@@ -115,9 +115,16 @@ article.classList.add('article')
 dateArticle.classList.add('date')
 expandButton.classList.add('expandButton')
 
+titleArticle.textContent = articleobject.title
+dateArticle.textContent = articleobject.date
+paraOne.textContent = articleobject.firstParagraph
+paraTwo.textContent = articleobject.secondParagraph
+paraThree.textContent = articleobject.thirdParagraph
+expandButton.textContent = "+"
+
 return article
 }
-console.log(articleMaker())
+console.log(articleMaker(data[0]))
   /*
   <div class="article">
     <h2>{title of the article}</h2>
