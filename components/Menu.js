@@ -31,3 +31,27 @@ let menuItems = [
 
   Step 6: Use 'menuMaker' to create a menu using the 'menuItems' array, and append the returned menu to the header.
 */
+function menuMaker(array) {
+  const button = document.querySelector('.menu-button')
+  const divMenu = document.createElement('div')
+  
+  divMenu.classList.add('menu')
+  
+  const ul = document.createElement('ul')
+  
+  divMenu.appendChild(ul)
+  
+    array.forEach(item => {
+      const listItem = document.createElement('li')
+      listItem.textContent = item
+      ul.appendChild(listItem)
+    })
+    button.addEventListener('click', () => {
+        divMenu.classList.toggle('menu--open');
+      })
+    return divMenu
+  }
+  
+  const header = document.querySelector('.header')
+  header.appendChild(menuMaker(menuItems))
+  menuMaker(menuItems) 
