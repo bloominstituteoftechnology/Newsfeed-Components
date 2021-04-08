@@ -90,19 +90,21 @@ const data = [
 ];
 
 
-
-const articleMaker = function(articleobject){
-  
-}
-
-
 /*
   Step 1: Write a component called 'articleMaker' to create an article.
   Your component is a function that takes an article object as its only argument,
   and returns a DOM node looking like the one below:
-
-
-
+*/
+const articleMaker = function(articleobject){
+  const article = document.createElement('div')
+  const titleArticle = document.createElement('h2')
+  const dateArticle = document.createElement('p')
+  const paraOne = document.createElement('p')
+  const paraTwo = document.createElement('p')
+  const paraThree = document.createElement('p')
+  const expandButton = document.createElement('span')
+}
+  /*
   <div class="article">
     <h2>{title of the article}</h2>
     <p class="date">{date of the article}</p>
@@ -112,6 +114,8 @@ const articleMaker = function(articleobject){
     <span class="expandButton">+</span>
   </div>
 
+
+  
   Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
   This listener should toggle the class 'article-open' on div.article.
 
