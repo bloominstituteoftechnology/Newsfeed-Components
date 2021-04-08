@@ -99,10 +99,9 @@ function articleMaker(artObj) {
   const p3 = document.createElement('p');
   
   const span = document.createElement('span');
-
-  span.addEventListener('click', (event) => {
-    event.target.classList.toggle('expandButton');
-  });
+container.addEventListener('click', (event) => {
+  event.target.classList.toggle('article');
+});
 span.addEventListener('click', (event) =>{
   event.target.classList.toggle('article-open');
 } );
