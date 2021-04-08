@@ -119,8 +119,8 @@ const data = [
 
 const articles = document.querySelector('.articles');
 
-function articleMaker(aticleObj){
-  //create elements
+function articleMaker({title,date,firstParagraph,secondParagraph,thirdParagraph}){
+  //created elements
   const article = document.createElement('div');
   const articleTitle = document.createElement('h2');
   const articleDate = document.createElement('p');
@@ -128,6 +128,7 @@ function articleMaker(aticleObj){
   const para2 = document.createElement('p');
   const para3 = document.createElement('p');
   const expandButton = document.createElement('span');
+  
 
   //structure of elements
   article.appendChild(articleTitle);
@@ -136,6 +137,7 @@ function articleMaker(aticleObj){
   article.appendChild(para2);
   article.appendChild(para3);
   article.appendChild(expandButton);
+
 
   //adding class names
   article.classList.add('article');
@@ -146,13 +148,15 @@ function articleMaker(aticleObj){
   para3.classList.add('par3');
   expandButton.classList.add('expandButton');
 
+
   //set text content
-  articleTitle.textContent = data.title;
-  articleDate.textContent = data.date;
-  para1.textContent = data.firstParagraph;
-  para2.textContent = data.secondParagraph;
-  para3.textContent = data.thirdParagraph;
-  expandButton.textContent = '+';
+  articleTitle.textContent = title;
+  console.log(data.title);
+  articleDate.textContent = date;
+  para1.textContent = firstParagraph;
+  para2.textContent = secondParagraph;
+  para3.textContent = thirdParagraph;
+
 
   //event listener for span.expandButton
   expandButton.addEventListener('click', (e) => {
