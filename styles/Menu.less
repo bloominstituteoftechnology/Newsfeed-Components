@@ -27,4 +27,26 @@
 
 .menu--open {
   display: block;
+  animation: out 2.5s;
+}
+
+.menu--close {
+  display: block;
+  animation: in 2.5s;
+}
+
+@keyframes out {
+  0% {
+    color: transparent;
+    width: 0%;
+  }
+  100% {}
+}
+
+@keyframes in {
+  0% {}
+  100% {
+    color: transparent;
+    width: 0%;
+  }
 }

@@ -166,16 +166,26 @@ function articleMaker({ title, date, firstParagraph, secondParagraph, thirdParag
   span.setAttribute('class', 'expandButton');
   span.textContent = '+';
 
+  const button = document.createElement('button');
+  button.textContent = 'read';
+
   div.appendChild(h2);
   div.appendChild(p);
   div.appendChild(first);
   div.appendChild(second);
   div.appendChild(third);
   div.appendChild(span);
+  div.appendChild(button);
 
   span.addEventListener('click', (event) => {
 
     div.classList.toggle('article-open');
+
+  });
+
+  button.addEventListener('click', () => {
+
+    button.parentElement.remove();
 
   });
 

@@ -52,9 +52,25 @@ function menuMaker(menuItems) {
 
   const menuButton = document.querySelector('.menu-button');
 
+  let toggle = false;
+
   menuButton.addEventListener('click', (event) => {
 
-    div.classList.toggle('menu--open');
+    event.preventDefault();
+    event.stopPropagation();
+
+    if (toggle) {
+      div.classList.remove('menu--open');
+      div.classList.add('menu--close');
+      toggle = false;
+      setTimeout(() => {
+        div.classList.remove('menu--close');
+      }, 2500);
+    }
+    else {
+      div.classList.add('menu--open');
+      toggle = true;
+    }
 
   });
 
