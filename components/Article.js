@@ -95,6 +95,8 @@ const data = [
   Your component is a function that takes an article object as its only argument,
   and returns a DOM node looking like the one below:
 */
+const divArticle = document.querySelector('.articles')
+
 const articleMaker = function(articleobject){
   const article = document.createElement('div')
   const titleArticle = document.createElement('h2')
@@ -122,9 +124,18 @@ paraTwo.textContent = articleobject.secondParagraph
 paraThree.textContent = articleobject.thirdParagraph
 expandButton.textContent = "+"
 
+expandButton.addEventListener('click', (event) => {
+  divArticle.classList.toggle('article-open')
+})
+
 return article
 }
-console.log(articleMaker(data[0]))
+
+data.forEach(info => {
+  divArticle.appendChild(articleMaker(info))
+})
+
+
   /*
   <div class="article">
     <h2>{title of the article}</h2>
