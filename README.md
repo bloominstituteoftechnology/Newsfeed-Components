@@ -30,7 +30,7 @@ In this project we are going to be building a news feed reader. The goal is to h
 * [ ] Run `npm start` to compile your project and launch a development server.
 * [ ] Navigate Chrome to the URL indicated in the output of the `npm start` command.
 
-### Part 1: The Articles Component
+### Part 1: The Articles Component d
 
 * Follow the instructions found in the Articles.js file to complete the JavaScript functionality and add the components to the DOM.
 

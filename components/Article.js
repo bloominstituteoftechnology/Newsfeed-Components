@@ -114,3 +114,52 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+// function ArticleMaker(obj) {
+//   const getArticle = document.querySelector('.articles')
+//   const articleDiv = document.createElement('div')
+//   getArticle.appendChild('div')
+//   console.log(getArticle)
+// }
+
+function articleMaker (article) {
+  let divTag = document.createElement("div");
+  let heading = document.createElement("h2");
+  let paraDate = document.createElement("p");
+  let paragraphOne = document.createElement("p");
+  let paragraphTwo = document.createElement("p");
+  let paragraphThree = document.createElement("p");
+  let spanTag= document.createElement("span");
+
+  divTag.appendChild(heading);
+  divTag.appendChild(paraDate);
+  divTag.appendChild(paragraphOne);
+  divTag.appendChild(paragraphTwo);
+  divTag.appendChild(paragraphThree);
+  divTag.appendChild(spanTag);
+
+
+  divTag.classList.add("article");
+  paraDate.classList.add("date");
+  spanTag.classList.add("expandButton");    
+  
+
+  console.log(article);
+  heading.textContent = article.title;
+  paraDate.textContent = article.date;
+  paragraphOne.textContent = article.firstParagraph;
+  paragraphTwo.textContent = article.secondParagraph;
+  paragraphThree.textContent = article.thirdParagraph;
+  spanTag.textContent = "+";
+  spanTag.addEventListener("click", () => {
+    divTag.classList.toggle("article-open");
+    console.log(divtag.classList);
+  })
+
+  return divTag;
+
+}
+data.forEach((article) => {
+  let articleDiv = document.querySelector(".articles");
+  articleDiv.appendChild(articleMaker(article));
+})
