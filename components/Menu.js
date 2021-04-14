@@ -50,15 +50,18 @@ const menuMaker = (data) => {
   //grabs the element with the menuButton class
   const menuButton = document.querySelector('.menu-button');
 
+  //creates the click event listener that will toggle the class on the menuDiv
   menuButton.addEventListener('click', () => {
     menuDiv.classList.toggle('menu--open');
   });
 
+  //appends children
   menuButton.appendChild(menuDiv);
   menuDiv.appendChild(menuList);
 
   return menuDiv;
 };
 
+//grabs the header element from the DOM and then appends the menuItems using the menuMaker function to the element with the header class
 const header = document.querySelector('.header');
 header.appendChild(menuMaker(menuItems))
