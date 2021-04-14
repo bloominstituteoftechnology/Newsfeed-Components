@@ -86,31 +86,96 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
-  }
+  },
+    {
+      title: 'My Added Article',
+      date: 'April 13, 2021',
+      firstParagraph:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis congue arcu, ut consectetur justo. Vestibulum id orci in metus dapibus tincidunt vitae sed ligula. Nam vulputate sapien diam, quis ullamcorper erat dignissim non. Pellentesque pellentesque metus sed pharetra mattis. Nulla vel ipsum sed enim ultricies auctor. Mauris nisi felis, interdum quis augue eget, fermentum dictum nunc. Nunc urna odio, tincidunt sed lectus ac, euismod elementum magna. Vivamus eu placerat est, nec porttitor sem. Proin vel sem magna. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
+      secondParagraph:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis congue arcu, ut consectetur justo. Vestibulum id orci in metus dapibus tincidunt vitae sed ligula. Nam vulputate sapien diam, quis ullamcorper erat dignissim non. Pellentesque pellentesque metus sed pharetra mattis. Nulla vel ipsum sed enim ultricies auctor. Mauris nisi felis, interdum quis augue eget, fermentum dictum nunc. Nunc urna odio, tincidunt sed lectus ac, euismod elementum magna. Vivamus eu placerat est, nec porttitor sem. Proin vel sem magna. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
+      thirdParagraph:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis congue arcu, ut consectetur justo. Vestibulum id orci in metus dapibus tincidunt vitae sed ligula. Nam vulputate sapien diam, quis ullamcorper erat dignissim non. Pellentesque pellentesque metus sed pharetra mattis. Nulla vel ipsum sed enim ultricies auctor. Mauris nisi felis, interdum quis augue eget, fermentum dictum nunc. Nunc urna odio, tincidunt sed lectus ac, euismod elementum magna. Vivamus eu placerat est, nec porttitor sem. Proin vel sem magna. Interdum et malesuada fames ac ante ipsum primis in faucibus.'
+    },
+    {
+      title: 'My Second Article',
+      date: 'April 13, 2021',
+      firstParagraph:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis congue arcu, ut consectetur justo. Vestibulum id orci in metus dapibus tincidunt vitae sed ligula. Nam vulputate sapien diam, quis ullamcorper erat dignissim non. Pellentesque pellentesque metus sed pharetra mattis. Nulla vel ipsum sed enim ultricies auctor. Mauris nisi felis, interdum quis augue eget, fermentum dictum nunc. Nunc urna odio, tincidunt sed lectus ac, euismod elementum magna. Vivamus eu placerat est, nec porttitor sem. Proin vel sem magna. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
+      secondParagraph:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis congue arcu, ut consectetur justo. Vestibulum id orci in metus dapibus tincidunt vitae sed ligula. Nam vulputate sapien diam, quis ullamcorper erat dignissim non. Pellentesque pellentesque metus sed pharetra mattis. Nulla vel ipsum sed enim ultricies auctor. Mauris nisi felis, interdum quis augue eget, fermentum dictum nunc. Nunc urna odio, tincidunt sed lectus ac, euismod elementum magna. Vivamus eu placerat est, nec porttitor sem. Proin vel sem magna. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
+      thirdParagraph:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis congue arcu, ut consectetur justo. Vestibulum id orci in metus dapibus tincidunt vitae sed ligula. Nam vulputate sapien diam, quis ullamcorper erat dignissim non. Pellentesque pellentesque metus sed pharetra mattis. Nulla vel ipsum sed enim ultricies auctor. Mauris nisi felis, interdum quis augue eget, fermentum dictum nunc. Nunc urna odio, tincidunt sed lectus ac, euismod elementum magna. Vivamus eu placerat est, nec porttitor sem. Proin vel sem magna. Interdum et malesuada fames ac ante ipsum primis in faucibus.'
+    }
 ];
 
-/*
-  Step 1: Write a component called 'articleMaker' to create an article.
-  Your component is a function that takes an article object as its only argument,
-  and returns a DOM node looking like the one below:
 
-  <div class="article">
-    <h2>{title of the article}</h2>
-    <p class="date">{date of the article}</p>
+  // Step 1: Write a component called 'articleMaker' to create an article.
+  // Your component is a function that takes an article object as its only argument,
+  // and returns a DOM node looking like the one below:
+  const body = document.querySelector('body');
 
-    {three separate paragraph elements}
+  function articleMaker({title, date, p1, p2, p3}){
 
-    <span class="expandButton">+</span>
-  </div>
 
-  Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
-  This listener should toggle the class 'article-open' on div.article.
 
-  Step 3: Don't forget to return something from your function!
+  //creating the elements needed for structure of article 
+    const article = document.createElement('div');
+    const articleTitle = document.createElement('h2');
+    const articleDate = document.createElement('p');
+    const paragraphOne = document.createElement('p');
+    const paragraphTwo = document.createElement('p');
+    const paragraphThree = document.createElement('p');
+    const button = document.createElement('span');
 
-  Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
-  to create a div.article element and append it to the DOM inside div.articles (see index.html).
+    article.appendChild(articleTitle);
+    article.appendChild(articleDate);
+    article.appendChild(paragraphOne);
+    article.appendChild(paragraphTwo);
+    article.appendChild(paragraphThree);
+    article.appendChild(button);
 
-  Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
-  Refresh the page to see the new article.
-*/
+    article.classList.add('article');
+    articleDate.classList.add('date');
+    button.classList.add('expandButton')
+  // <div class="article">
+  //   <h2>{title of the article}</h2>
+  //   <p class="date">{date of the article}</p>
+
+  //   {three separate paragraph elements}
+
+  //   <span class="expandButton">+</span>
+  // </div>
+
+    articleTitle.textContent = title;
+    articleDate.textContent = date;
+    paragraphOne.textContent = p1;
+    paragraphTwo.textContent = p2;
+    paragraphThree.textContent = p3;
+    button.textContent = 'Click to Expand'
+
+    // console.log(pTwo)
+  // Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
+  // This listener should toggle the class 'article-open' on div.article.
+
+    button.addEventListener('click', () => {
+      article.classList.toggle('article-open');
+    })
+
+  // Step 3: Don't forget to return something from your function!
+  // console.log(article)
+  return article
+} 
+  // Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
+  // to create a div.article element and append it to the DOM inside div.articles (see index.html).
+
+// const articleElements = data.map(dataTwo => articleMaker(dataTwo));
+// articleElements.forEach(el => body.appendChild(el));
+
+data.forEach(dataP => {
+  const dataComp = articleMaker(dataP)
+  body.appendChild(dataComp)
+})
+  // Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
+  // Refresh the page to see the new article.
+
