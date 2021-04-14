@@ -89,7 +89,7 @@ const data = [
   },
     {
       title: 'My Added Article',
-      date: 'December 10, 2019',
+      date: 'April 13, 2021',
       firstParagraph:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis congue arcu, ut consectetur justo. Vestibulum id orci in metus dapibus tincidunt vitae sed ligula. Nam vulputate sapien diam, quis ullamcorper erat dignissim non. Pellentesque pellentesque metus sed pharetra mattis. Nulla vel ipsum sed enim ultricies auctor. Mauris nisi felis, interdum quis augue eget, fermentum dictum nunc. Nunc urna odio, tincidunt sed lectus ac, euismod elementum magna. Vivamus eu placerat est, nec porttitor sem. Proin vel sem magna. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
       secondParagraph:
@@ -99,7 +99,7 @@ const data = [
     },
     {
       title: 'My Second Article',
-      date: 'December 10, 2019',
+      date: 'April 13, 2021',
       firstParagraph:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis congue arcu, ut consectetur justo. Vestibulum id orci in metus dapibus tincidunt vitae sed ligula. Nam vulputate sapien diam, quis ullamcorper erat dignissim non. Pellentesque pellentesque metus sed pharetra mattis. Nulla vel ipsum sed enim ultricies auctor. Mauris nisi felis, interdum quis augue eget, fermentum dictum nunc. Nunc urna odio, tincidunt sed lectus ac, euismod elementum magna. Vivamus eu placerat est, nec porttitor sem. Proin vel sem magna. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
       secondParagraph:
@@ -174,7 +174,7 @@ const data = [
 
 data.forEach(dataP => {
   const dataComp = articleMaker(dataP)
-  document.body.appendChild(dataComp)
+  body.appendChild(dataComp)
 })
   // Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   // Refresh the page to see the new article.
