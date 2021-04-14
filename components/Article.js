@@ -114,3 +114,88 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+
+ 
+function articleMaker(object) {
+  const artcl = document.createElement("div");
+  const artclTitle = document.createElement("h2");
+  const date = document.createElement("p");
+  const par1 = document.createElement("p");
+  const par2 = document.createElement("p");
+  const par3 = document.createElement("p");
+  const expandButton = document.createElement("span");
+
+  artcl.appendChild(artclTitle);
+  artcl.appendChild(date);
+  artcl.appendChild(expandButton);
+  artcl.appendChild(par1);
+  artcl.appendChild(par2);
+  artcl.appendChild(par3);
+
+  artcl.classList.add("article");
+  date.classList.add("date");
+  par1.classList.add("first-Paragraph");
+  par2.classList.add("second-Paragraph");
+  par3.classList.add("third-Paragraph");
+  expandButton.classList.add("expandButton");
+
+  artclTitle.textContent = object.title;
+  date.textContent = object.date;
+  par1.textContent = object.firstParagraph;
+  par2.textContent = object.secondParagraph;
+  par3.textContent = object.thirdParagraph;
+  expandButton.textContent = "+";
+
+  expandButton.addEventListener('click', (event) => {
+    artcl.classList.toggle('article-open');
+  });
+
+  return artcl;
+}
+
+//NEW ARTICLES 
+let articleFive = {
+  
+  title: "Jefferys' Breakfast",
+  date: 'Apr 13th, 2021',
+  firstParagraph: "Jeff ate nothing",
+  secondParagraph:"He is fasting",
+  thirdParagraph: "Muda muda mmuda MUDA!"
+};
+
+ data.push(articleFive);
+ 
+ let articleSix = {
+  
+  title: "My Birthday",
+  date: 'Jan 29th, 1992',
+  firstParagraph: "On this day, Jeff Francois was born",
+  secondParagraph:"Born in Miami and raised in Orlando",
+  thirdParagraph: "He grew up to be a fairly decent young man... well sort of decent."
+};
+
+ data.push(articleSix);
+
+ let articleSeven = {
+  
+  title: "Graphic Designer and Web Developer",
+  date: 'Feb 11, 2016',
+  firstParagraph: "Muda muda mmuda MUDA!Muda muda mmuda MUDA! Muda muda mmuda MUDA! Muda muda mmuda MUDA! Muda muda mmuda MUDA!",
+  secondParagraph:"Muda muda mmuda MUDA! Muda muda mmuda MUDA! Muda muda mmuda MUDA! Muda muda mmuda MUDA!",
+  thirdParagraph: "Mmuda MUDA!"
+};
+
+ data.push(articleSeven);
+
+const articles = document.querySelector(".articles");
+
+//Call the Function
+data.forEach((objItem) => {
+  const allArticles = articleMaker(objItem);
+  articles.appendChild(allArticles);
+});
+console.log(articles);
+
+
+
