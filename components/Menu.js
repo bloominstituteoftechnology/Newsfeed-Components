@@ -60,4 +60,5 @@ const menuMaker = (data) => {
   return menuDiv;
 };
 
-console.log(menuMaker(menuItems));
+const header = document.querySelector('.header');
+header.appendChild(menuMaker(menuItems))
