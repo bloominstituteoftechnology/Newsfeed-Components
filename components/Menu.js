@@ -34,7 +34,7 @@ let menuItems = [
 const header = document.querySelector('.header');
 const menuButton = document.querySelector('.menu-button');
 
-function menuMaker(arr) {
+function menuMaker() {
 	const menuDiv = document.createElement('div');
 	const unOrderList = document.createElement('ul');
 
