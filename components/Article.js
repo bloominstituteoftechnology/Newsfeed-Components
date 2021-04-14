@@ -114,3 +114,48 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+function articleMaker(articleObj){
+  const newArticle = document.createElement('div');
+  newArticle.classList.add('article');
+ 
+  const title = document.createElement('h2');
+  title.textContent = articleObj.title;
+  const date = document.createElement('p');
+  date.textContent = articleObj.date;
+  const para1 = document.createElement('p');
+  para1.textContent = articleObj.firstParagraph;
+  const para2 = document.createElement('p');
+  para2.textContent = articleObj.secondParagraph;
+  const para3 = document.createElement('p');
+  para3.textContent = articleObj.thirdParagraph;
+  const span = document.createElement('span');
+  span.classList.add('expandButton');
+  span.textContent = "+";
+  span.addEventListener('click', event=>{
+    newArticle.classList.toggle('article-open');
+  })
+  
+  
+  newArticle.appendChild(title);
+  newArticle.appendChild(date);
+  newArticle.appendChild(para1);
+  newArticle.appendChild(para2);
+  newArticle.appendChild(para3);
+  newArticle.appendChild(span);
+  document.body.appendChild(newArticle);
+
+  return newArticle;
+  
+}
+
+data.push({
+  title: 'OMG I did it!',
+  date:'Jan 20, 2021',
+  firstParagraph:'Took me long enough.',
+  secondParagraph:'Should have studied sooner.',
+  thirdParagraph:'It makes sense now at least.',
+})
+
+data.forEach(item => articleMaker(item));
+// console.log(data[0]);
