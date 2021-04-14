@@ -122,10 +122,10 @@ const data = [
   Refresh the page to see the new article.
 */
 
-
 const articles = document.querySelector('.articles')
 
 function articleMaker(article) {
+
   const main = document.createElement('div')
   const title = document.createElement('h2')
   const date = document.createElement('p')
@@ -140,20 +140,20 @@ function articleMaker(article) {
   p2.textContent = article.secondParagraph
   p3.textContent = article.thirdParagraph
 
-  
   main.appendChild(title)
   main.appendChild(date)
   main.appendChild(p1)
   main.appendChild(p2)
   main.appendChild(p3)
   main.appendChild(expand)
+
   expand.addEventListener('click', () => {
    panel.classList.toggle('article-open')
   })
-return main
-}
 
-// console.log(articleMaker(data[0]))
+return main
+
+}
 
 data.forEach(article => {
   const panel = articleMaker(article)
