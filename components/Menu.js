@@ -1,3 +1,5 @@
+
+  
 // This is the data we will be using, study it but don't change anything, yet.
 
 let menuItems = [
@@ -31,3 +33,29 @@ let menuItems = [
 
   Step 6: Use 'menuMaker' to create a menu using the 'menuItems' array, and append the returned menu to the header.
 */
+function menuMaker(items){
+  let divMenu = document.createElement("div");
+  let unorderedList = document.createElement("ul")
+  let itemList = document.createElement("li");
+  divMenu.appendChild(unorderedList);
+  
+  menuItems.forEach((items) => {
+    let itemList = document.createElement("li"); 
+    itemList.textContent = items;
+    unorderedList.appendChild(itemList);
+  })
+
+  divMenu.classList.add("menu");
+  selectButton = document.querySelector(".menu-button");
+  selectButton.addEventListener("click",() => {
+    divMenu.classList.toggle("menu--open")
+  })
+  let headerMenu = document.querySelector(".header");
+  headerMenu.appendChild(divMenu);
+return divMenu;
+  
+};
+
+
+
+console.log(menuMaker(menuItems));
