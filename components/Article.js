@@ -86,31 +86,82 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Owen Damron and the Amazing Screech',
+    date: 'Apr 13st, 2021',
+    firstParagraph: `REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE`,
+
+    secondParagraph: `REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE`,
+
+    thirdParagraph: `REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE`
   }
 ];
 
-/*
-  Step 1: Write a component called 'articleMaker' to create an article.
-  Your component is a function that takes an article object as its only argument,
-  and returns a DOM node looking like the one below:
 
-  <div class="article">
-    <h2>{title of the article}</h2>
-    <p class="date">{date of the article}</p>
+  // Step 1: Write a component called 'articleMaker' to create an article.
+  // Your component is a function that takes an article object as its only argument,
+  // and returns a DOM node looking like the one below:
+const articles = document.querySelector('div.articles')
 
-    {three separate paragraph elements}
+  function articleMaker({ title, date, firstParagraph, secondParagraph, thirdParagraph}) {
+    const artDiv = document.createElement('div')
+    const artTitle = document.createElement('h2')
+    const artDate = document.createElement('p')
+    const artFirstP = document.createElement('p')
+    const artSecondP = document.createElement('p')
+    const artThirdP = document.createElement('p')
+    const artExpandButton = document.createElement('span')
 
-    <span class="expandButton">+</span>
-  </div>
+artDiv.appendChild(artTitle)
+artDiv.appendChild(artDate)
+artDiv.appendChild(artFirstP)
+artDiv.appendChild(artSecondP)
+artDiv.appendChild(artThirdP)
+artDiv.appendChild(artExpandButton)
 
-  Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
-  This listener should toggle the class 'article-open' on div.article.
+artDiv.classList.add('article')
+artDate.classList.add('date')
+artFirstP.classList.add('first')
+artSecondP.classList.add('second')
+artThirdP.classList.add('third')
+artExpandButton.classList.add('expandButton')
 
-  Step 3: Don't forget to return something from your function!
+artTitle.textContent = title
+artDate.textContent = date
+artFirstP.textContent = firstParagraph
+artSecondP.textContent = secondParagraph
+artThirdP.textContent = thirdParagraph
+artExpandButton.textContent = "+"
 
-  Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
-  to create a div.article element and append it to the DOM inside div.articles (see index.html).
+// <div class="article">
+  //   <h2>{title of the article}</h2>
+  //   <p class="date">{date of the article}</p>
 
-  Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
-  Refresh the page to see the new article.
-*/
+  //   {three separate paragraph elements}
+
+  //   <span class="expandButton">+</span>
+  // </div>
+
+  // Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
+  // This listener should toggle the class 'article-open' on div.article.
+artExpandButton.addEventListener('click', () => {
+  artDiv.classList.toggle('article-open')
+})
+
+  // Step 3: Don't forget to return something from your function!
+
+  return artDiv
+}
+  // Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
+  // to create a div.article element and append it to the DOM inside div.articles (see index.html).
+data.forEach(data => {
+  const artDiv = articleMaker(data)
+  document.body.appendChild(artDiv)
+})
+  // Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
+  // Refresh the page to see the new article.
+
+
+  
+  
