@@ -132,23 +132,24 @@ function articleMaker(article) {
   const p1 = document.createElement('p')
   const p2 = document.createElement('p')
   const p3 = document.createElement('p')
-  const expand = document.createElement('span')
+  const expButton = document.createElement('span')
 
   title.textContent = article.title
   date.textContent = article.date
   p1.textContent = article.firstParagraph
   p2.textContent = article.secondParagraph
   p3.textContent = article.thirdParagraph
+  expButton.textContent = '+'
 
   main.appendChild(title)
   main.appendChild(date)
   main.appendChild(p1)
   main.appendChild(p2)
   main.appendChild(p3)
-  main.appendChild(expand)
+  main.appendChild(expButton)
 
-  expand.addEventListener('click', () => {
-   panel.classList.toggle('article-open')
+  expButton.addEventListener('click', () => {
+   main.classList.toggle('article-open')
   })
 
 return main
