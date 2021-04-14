@@ -114,3 +114,20 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+function articleMaker(obj){
+let article = document.querySelector('article');
+
+article.addEventListener('span.expandButton')
+console.log(expandButton)
+
+return article;
+}
+
+data.forEach((articleMaker) => {
+  let newDiv = firstDiv('div-article');
+
+  parent.appendChild(newDiv);
+});
+
+articleTitle.textContent = obj.title;
