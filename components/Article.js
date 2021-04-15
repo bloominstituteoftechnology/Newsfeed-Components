@@ -117,12 +117,12 @@ const data = [
 function articleMaker(article){
   const articleDiv = document.createElement('div')
   const articleTitle = document.createElement('h2')
-
   const articlePar1 = document.createElement('p')
   const articlePar2 = document.createElement('p')
   const articlePar3 = document.createElement('p')
+  const toggleButton = document.createElement('span')
 
-  const articleSpan = document.createElement('span')
+  articleTitle.innerText = article.title
+  articlePar1 = article.firstParagraph
 
-  
 }
