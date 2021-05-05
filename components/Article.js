@@ -86,6 +86,13 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Isaac Ellingwood',
+    date: 'May 5th 2021',
+    firstParagraph: 'Star Wars',
+    secondParagraph: 'Pokemon',
+    thirdParagraph: 'Game of Thrones',
   }
 ];
 
@@ -93,7 +100,7 @@ const data = [
   Step 1: Write a component called 'articleMaker' to create an article.
   Your component is a function that takes an article object as its only argument,
   and returns a DOM node looking like the one below:*/
-function articleMaker({articleObj}){
+function articleMaker(articleObj){
   const article = document.createElement('div');
   const articleTitle = document.createElement('h2');
   const articleDate = document.createElement('p');
@@ -114,11 +121,12 @@ function articleMaker({articleObj}){
   p2.classList.add('paragraph');
   p3.classList.add('paragraph');
   button.classList.add('expandButton');
-  articleTitle.textContent = title;
-  articleDate.textContent = date;
-  p1.textContent = firstParagraph;
-  p2.textContent = secondParagraph;
-  p3.textContent = thirdParagraph;
+  articleTitle.textContent = articleObj.title;
+  articleDate.textContent = articleObj.date;
+  p1.textContent = articleObj.firstParagraph;
+  p2.textContent = articleObj.secondParagraph;
+  p3.textContent = articleObj.thirdParagraph;
+  button.textContent = '+';
 
   /*<div class="article">
     <h2>{title of the article}</h2>
@@ -134,20 +142,16 @@ function articleMaker({articleObj}){
   button.addEventListener('click', (event) => {
     article.classList.toggle('article-open')
   })
-  debugger
   /*Step 3: Don't forget to return something from your function!*/
   return article
 }
   /*Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
   to create a div.article element and append it to the DOM inside div.articles (see index.html).*/
-  const art = document.querySelector('div.article')
+  const art = document.querySelector('div.articles')
   data.forEach((articleData) => {
-    const articleItem = articleMaker(articleData);
-    art.appendChild(articleItem)
+    const article = articleMaker(articleData);
+    art.appendChild(article)
   })
+  console.log(data)
   /*Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.*/
-
-  const test = articleMaker({ title: "test title", date: "test content", firstParagraph: "test content", secondParagraph: "test content", thirdParagraph: "test content" });
-console.log(test);
-art.appendChild(test);
