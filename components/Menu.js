@@ -38,7 +38,6 @@ const menu = document.createElement("div.menu");
 const list = document.createElement("ul");
 const menuButton = document.querySelector(".menu-button");
 
-menu.appendChild(list);
 arr.map((item) => {
   const listItem = document.createElement("li");
   list.appendChild(listItem);
@@ -51,7 +50,6 @@ menu.classList.add("menu");
 
 // APPENDING
 menu.appendChild(list);
-
 document.querySelector(".header").appendChild(menu);
 
 menuButton.addEventListener("click", (e) =>
