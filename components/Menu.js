@@ -34,19 +34,24 @@ let menuItems = [
 
 function menuMaker(arr){
 
+  // CREATE ELEMENTS
   const menu = document.createElement('div');
   const list = document.createElement('ul');
   const listItem = (item) =>{
-   const newMenuItem = document.createElement('li');   list.append(newMenuItem);
-    newMenuItem.textContent = item;
+   const menuItem = document.createElement('li');   
+   list.append(menuItem);
+    menuItem.textContent = item;
   };
 
+  // ADDING CLASS
   menu.classList.add('.menu');
 
+  // APPENDING
   menu.append(list);
   list.append(listItem);
   document.querySelector('.header img').append(menu);
 
+  
   arr.forEach(item =>{
     listItem(item);
   });
