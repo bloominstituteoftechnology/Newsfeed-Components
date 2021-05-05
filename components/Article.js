@@ -90,19 +90,20 @@ const data = [
 ];
 
 
-function articleMaker(artObj){
+function articleMaker({title, date, firstParagraph, secondParagraph, thirdParagraph}){
   // CREATING ELEMENTS
   const container = document.createElement('div');
   const h2 = document.createElement('h2');
-  const date = document.createElement('p');
+  const dateP = document.createElement('p');
   const p1 = document.createElement('p');
   const p2 = document.createElement('p');
   const p3 = document.createElement('p');
   const span = document.createElement('span');
 
-  span.addEventListener('click', (event) =>{
-    event.target.classList.toggle('article-open');
-  });
+  span.addEventListener('click', e =>
+    container.classList.toggle('article-open')
+  );
+  
 
   // MAKE STRUCTURE
   container.append(h2);
@@ -114,12 +115,26 @@ function articleMaker(artObj){
 
   // ADDING CLASSES
   container.classList.add('article');
-  date.classList.add('date');
+  dateP.classList.add('date');
   span.classList.add('expandButton');
 
+  // ADDING CONTENT
+  h2.textContent = title;
+  dateP.textContent= date;
+  p1.textContent = firstParagraph;
+  p2.textContent = secondParagraph;
+  p3.textContent = thirdParagraph;
+  span.textContent = '+';
 
-
+  return container;
 }
+
+console.log(articleMaker(data));
+
+data.forEach(article =>{
+  const newArticle = articleMaker(article);
+  document.querySelector('.articles').append(newArticle)
+})
 /*
   Step 1: Write a component called 'articleMaker' to create an article.
   Your component is a function that takes an article object as its only argument,
