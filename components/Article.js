@@ -91,12 +91,34 @@ const data = [
 
 
 function articleMaker(artObj){
+  // CREATING ELEMENTS
   const container = document.createElement('div');
   const h2 = document.createElement('h2');
   const date = document.createElement('p');
   const p1 = document.createElement('p');
   const p2 = document.createElement('p');
   const p3 = document.createElement('p');
+  const span = document.createElement('span');
+
+  span.addEventListener('click', (event) =>{
+    event.target.classList.toggle('article-open');
+  });
+
+  // MAKE STRUCTURE
+  container.append(h2);
+  container.append(date);
+  container.append(p1);
+  container.append(p2);
+  container.append(p3);
+  container.append(span);
+
+  // ADDING CLASSES
+  container.classList.add('article');
+  date.classList.add('date');
+  span.classList.add('expandButton');
+
+
+
 }
 /*
   Step 1: Write a component called 'articleMaker' to create an article.
