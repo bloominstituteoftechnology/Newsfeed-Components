@@ -138,16 +138,31 @@ button.classList.add("expandButton");
 
 button.addEventListener("click",function(event){
   button.classList.toggle("article-open");
+  return articleContainer
 });
-
-
-
-
-
-
-
 }
 
+
+  const articleElements = data.map((articleItem) => {
+  return articleMaker(articleItem)
+});
+
+const articles = document.querySelector('div.articles')
+
+articleElements.forEach((articleElement) => {
+  articles.appendChild(articleElement);
+})
+
+const newArticle = {
+  title: 'Matthias Helvar',
+  date: 'The year the Sun Summoner showed herself',
+  firstParagraph: 'He was a witch Hunter',
+  secondParagraph: 'He loved his people and his country',
+  thirdParagraph: 'But he fell in love with a witch'
+}
+ data.push('newArticle');
+
+ console.log(data)
 
 
 
