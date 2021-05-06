@@ -114,3 +114,56 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+function articleMaker({articleObj}){
+
+const articleContainer = document.createElement("div");
+const title = document.createElement("h2");
+const date = document.createElement("p");
+const firstP = document.createElement("p");
+const secondP = document.createElement("p");
+const thirdP = document.createElement("p");
+const button = document.createElement("span");
+
+articleContainer.appendChild(title);
+articleContainer.appendChild(date);
+articleContainer.appendChild(firstP);
+articleContainer.appendChild(secondP);
+articleContainer.appendChild(thirdP);
+articleContainer.appendChild(button);
+
+articleContainer.classList.add("article");
+date.classList.add("date");
+button.classList.add("expandButton");
+
+button.addEventListener("click",function(event){
+  button.classList.toggle("article-open");
+  return articleContainer
+});
+}
+
+
+  const articleElements = data.map((articleItem) => {
+  return articleMaker(articleItem)
+});
+
+const articles = document.querySelector('div.articles')
+
+articleElements.forEach((articleElement) => {
+  articles.appendChild(articleElement);
+})
+
+const newArticle = {
+  title: 'Matthias Helvar',
+  date: 'The year the Sun Summoner showed herself',
+  firstParagraph: 'He was a witch Hunter',
+  secondParagraph: 'He loved his people and his country',
+  thirdParagraph: 'But he fell in love with a witch'
+}
+ data.push('newArticle');
+
+ console.log(data)
+
+
+
+
