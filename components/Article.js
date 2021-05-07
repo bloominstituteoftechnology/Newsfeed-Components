@@ -117,7 +117,7 @@ const data = [
   Refresh the page to see the new article.
 */
 
-const articleDiv = document.querySelector('.articles');
+
 
 function articleMaker(articleObj){
   const div = document.createElement("div");
@@ -135,7 +135,7 @@ function articleMaker(articleObj){
   div.appendChild(p3);
   div.appendChild(spanOne);
 
-  article.classList.add("article");
+  div.classList.add("article");
   articleDate.classList.add("date");
   spanOne.classList.add("expandButton");
 
@@ -146,18 +146,27 @@ function articleMaker(articleObj){
   p3.textContent = articleObj.p3;
   spanOne.textContent = '+';
 
-  spanOne.addEventListener('click'), function (e){
+  spanOne.addEventListener('click'), e => {
     div.classList.toggle('article-open');
   }
   return div;
 }
 
-data.forEach((item) => {
-  let newArticle = articleMaker(item);
-  articleDiv.appendChild(newArticle);
-});
+const articleDiv = document.querySelector(".articles");
 
-articleDiv.appendChild(articleMaker("New Article"));
+data.forEach((item) => {
+  let div = articleMaker(item);
+  articleDiv.appendChild(div);
+})
+
+articleDiv.appendChild(articleMaker)
+
+
+// data.forEach((item) => {
+//   let newArticle = articleMaker(item);
+//   articleDiv.appendChild(newArticle);
+// });
+
 
 // let articleArray = data.map((item) => {
 //   let newArticle = articleCreator(item);
