@@ -155,12 +155,11 @@ function articleMaker(articleObj){
 const articleDiv = document.querySelector(".articles");
 
 data.forEach((item) => {
-  let div = articleMaker(item);
-  articleDiv.appendChild(div);
+  let divData = articleMaker(item);
+  return articleDiv.appendChild(divData);
 })
 
-articleDiv.appendChild(articleMaker)
-
+console.log(articleMaker(data));
 
 // data.forEach((item) => {
 //   let newArticle = articleMaker(item);
