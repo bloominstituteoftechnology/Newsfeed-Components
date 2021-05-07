@@ -94,6 +94,7 @@ const data = [
   Your component is a function that takes an article object as its only argument,
   and returns a DOM node looking like the one below:
 
+  
   <div class="article">
     <h2>{title of the article}</h2>
     <p class="date">{date of the article}</p>
@@ -102,6 +103,7 @@ const data = [
 
     <span class="expandButton">+</span>
   </div>
+
 
   Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
   This listener should toggle the class 'article-open' on div.article.
@@ -114,3 +116,63 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+
+
+function articleMaker(articleObj){
+  const div = document.createElement("div");
+  const articleTitle = document.querySelector("articleTitle");
+  const articleDate = document.querySelector("")
+  const p1 = document.querySelector("p1");
+  const p2 = document.querySelector("p2");
+  const p3 = document.querySelector("p3");
+  const spanOne = document.querySelector("span");
+
+  div.appendChild(articleTitle);
+  div.appendChild(articleDate);
+  div.appendChild(p1);
+  div.appendChild(p2);
+  div.appendChild(p3);
+  div.appendChild(spanOne);
+
+  div.classList.add("article");
+  articleDate.classList.add("date");
+  spanOne.classList.add("expandButton");
+
+  articleTitle.textContent = articleObj.title;
+  articleDate.textContent = articleObj.date;
+  p1.textContent = articleObj.p1;
+  p2.textContent = articleObj.p2;
+  p3.textContent = articleObj.p3;
+  spanOne.textContent = '+';
+
+  spanOne.addEventListener('click'), e => {
+    div.classList.toggle('article-open');
+  }
+  return div;
+}
+
+const articleDiv = document.querySelector(".articles");
+
+data.forEach((item) => {
+  let divData = articleMaker(item);
+  return articleDiv.appendChild(divData);
+})
+
+console.log(articleMaker(data));
+
+// data.forEach((item) => {
+//   let newArticle = articleMaker(item);
+//   articleDiv.appendChild(newArticle);
+// });
+
+
+// let articleArray = data.map((item) => {
+//   let newArticle = articleCreator(item);
+//   return newArticle;
+// });
+
+// newComponents.forEach(component => {
+//   articleDiv.appendChild(component);
+// });
+
