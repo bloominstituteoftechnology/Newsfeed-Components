@@ -20,8 +20,8 @@ In this project we are going to be building a news feed reader. The goal is to h
 * [ ] Push commits: git push origin `<firstName-lastName>`.
 
 **Follow these steps for completing your project.**
-
-* [ ] Submit a Pull-Request to merge `<firstName-lastName>` Branch into `main` (student's Repo). **Please don't merge your own pull request**
+.
+* [ ] Submit a Pull-Request to merge `<firstName-lastName>` Branch into `main` (student's Repo) **Please don't merge your own pull request**
 
 ### Launching the project
 
