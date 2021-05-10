@@ -1,6 +1,7 @@
 // This is the data we will be using to create our articles. Look at it, then proceed to line 93.
 // OPTIONAL: if you're feeling adventurous, try to make this data an export from a different module, and import it here.
 // You can read about ES6 modules here: https://exploringjs.com/es6/ch_modules.html#sec_basics-of-es6-modules
+
 const data = [
   {
     title: 'Lambda School Students: "We\'re the best!"',
@@ -86,7 +87,17 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Test Article #3',
+    date: 'Dec 2nd, 2020',
+    firstParagraph: `first paragraph test test test test`,
+
+    secondParagraph: `second paragraph test test test test`,
+
+    thirdParagraph: `third paragraph test test test test`
   }
+
 ];
 
 /*
@@ -114,3 +125,49 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+// step 1
+
+function articleMaker (data) {
+  const article = document.createElement('div');
+  const title = document.createElement('h2');
+  const dates = document.createElement('p');
+  const spanExpandButton = document.createElement('span');
+  const p1 = document.createElement('p');
+  const p2 = document.createElement('p');
+  const p3 = document.createElement('p');
+
+  article.appendChild(title);
+  article.appendChild(dates);
+  article.appendChild(spanExpandButton);
+  article.appendChild(p1);
+  article.appendChild(p2);
+  article.appendChild(p3);
+  
+  article.classList.add('article');
+  dates.classList.add('date');
+  spanExpandButton.classList.add('expandButton');
+
+  title.textContent = data.title;
+  dates.textContent = data.date;
+  spanExpandButton.textContent = '+';
+
+  p1.textContent = data.firstParagraph; //correct?
+  p2.textContent = data.secondParagraph;
+  p3.textContent = data.thirdParagraph;
+
+  spanExpandButton.addEventListener('click', function (event) {
+    article.classList.toggle('article-open');
+  })
+
+  return article;
+}
+
+// where we want to insert our component from above
+const container = document.querySelector(".articles"); // <div class="articles"></div>
+console.log(container);
+
+data.forEach((item) => {
+  let newArticle = articleMaker(item);
+  return container.appendChild(newArticle);
+})
