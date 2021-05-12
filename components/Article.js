@@ -86,7 +86,24 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
-  }
+  },
+  {
+    title: '2020: Our Vision is Clear',
+    date: 'December 8th, 2020',
+    firstParagraph: `Alohamora wand elf parchment, Wingardium Leviosa hippogriff, house dementors betrayal. Holly, Snape centaur portkey ghost
+    Hermione spell bezoar Scabbers. Peruvian-Night-Powder werewolf, Dobby pear-tickle half-moon-glasses, Knight-Bus. Padfoot
+    snargaluff seeker: Hagrid broomstick mischief managed. Snitch Fluffy rock-cake, 9 ¾ dress robes I must not tell lies. Mudbloods
+    yew pumpkin juice phials Ravenclaw’s Diadem 10 galleons Thieves Downfall. Ministry-of-Magic mimubulus mimbletonia Pigwidgeon
+    knut phoenix feather other minister Azkaban. Hedwig Daily Prophet treacle tart full-moon Ollivanders You-Know-Who cursed.
+    Fawkes maze raw-steak Voldemort Goblin Wars snitch Forbidden forest grindylows wool socks`,
+    secondParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
+    hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
+    hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
+    hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? `,
+    thirdParagraph: `Toad-like smile Flourish and Blotts he knew I’d come back Quidditch World Cup. Fat Lady baubles banana fritters fairy lights 
+    Petrificus Totalus. So thirsty, deluminator firs’ years follow me 12 inches of parchment. Head Boy start-of-term banquet Cleansweep Seven 
+    roaring lion hat. Unicorn blood crossbow mars is bright tonight, feast Norwegian Ridgeback. Come seek us where our voices sound, we cannot 
+    sing above the ground, Ginny Weasley bright red. Fanged frisbees, phoenix tears good clean match.`}
 ];
 
 /*
@@ -101,16 +118,74 @@ const data = [
     {three separate paragraph elements}
 
     <span class="expandButton">+</span>
-  </div>
+  </div>*/
 
-  Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
-  This listener should toggle the class 'article-open' on div.article.
+  function articleMaker(foo) {
+  
 
-  Step 3: Don't forget to return something from your function!
+    const articleDiv = document.createElement('div')
+    const articleTitle = document.createElement('h2')
+    const articleDate = document.createElement('p')
+    const para1 = document.createElement('p')
+    const para2 = document.createElement('p')
+    const para3 = document.createElement('p')
+    const span = document.createElement('expandButton')
 
-  Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
-  to create a div.article element and append it to the DOM inside div.articles (see index.html).
+    
 
-  Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
-  Refresh the page to see the new article.
-*/
+    articleDiv.appendChild(articleTitle)
+    articleDiv.appendChild(articleDate)
+    articleDiv.appendChild(para1)
+    articleDiv.appendChild(para2)
+    articleDiv.appendChild(para3)
+    articleDiv.appendChild(span)
+
+    
+    span.addEventListener('click', () => {
+      articleDiv.classList.toggle('article-open')
+    })
+
+    articleDiv.classList.add('article')
+    articleDate.classList.add('date')
+    span.classList.add('expandButton')
+
+    articleTitle.textContent = foo.title
+    articleDate.textContent = foo.date
+    para1.textContent = foo.firstParagraph
+    para2.textContent = foo.secondParagraph
+    para3.textContent = foo.thirdParagraph
+    span.textContent = '[EXPAND]'
+    
+    return articleDiv
+
+  }
+  
+  
+  articleMaker(data)
+
+  
+
+
+  //Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
+  //This listener should toggle the class 'article-open' on div.article.
+
+
+  //Step 3: Don't forget to return something from your function!
+
+
+
+  //Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
+  //to create a div.article element and append it to the DOM inside div.articles (see index.html).
+
+
+  data.forEach(element => {
+    const articleLoop = articleMaker(element)
+    
+    document.querySelector('div.articles').appendChild(articleLoop)
+
+  })
+
+
+
+  //Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
+  //Refresh the page to see the new article
