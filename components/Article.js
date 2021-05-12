@@ -137,5 +137,13 @@ function ArticleMaker(articleObject) {
   articleClass.appendChild(articlePara3)
   articleClass.appendChild(articleButton)
 
+  //text content 
+  articleTitle.textContent = articleObject.title
+  articleDate.textContent = articleObject.date
+  articlePara1.textContent = articleObject.firstParagraph
+  articlePara2.textContent = articleObject.secondParagraph
+  articlePara3.textContent = articleObject.thirdParagraph
+  articleButton.textContent = '+'
+
 }
 
