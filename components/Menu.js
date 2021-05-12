@@ -33,25 +33,27 @@ let menuItems = [
 */
 function menuMaker(items) {
   const divMaker = document.createElement('div')
- const button = document.querySelector('.menu-button')
-
-  divMaker.classList.add('menu')
   const ul = document.createElement('ul')
 
-  divMaker.appendChild(ul)
+  
 
   items.forEach(item => {
     const listItem = document.createElement('li')
     listItem.textContent = item
     ul.appendChild(listItem)
   })
-  button.addEventListener('click', () => {
-    divMaker.classList.toggle('menu-open');
-    
-  return divMaker
-})
+  divMaker.classList.add('menu')
+  divMaker.appendChild(ul)
 
+
+  const button = document.querySelector('.menu-button')
+  button.addEventListener('click', () => {
+    divMaker.classList.toggle('menu--open');
+   
+  })
+  button.appendChild(divMaker)
+  return divMaker
+}
 const header = document.querySelector('.header')
 header.appendChild(menuMaker(menuItems))
-menuMaker(menuItems)
-}
+//menuMaker(menuItems)
