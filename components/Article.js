@@ -114,3 +114,5 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+// I need to watch the lecture again. That will be done tomorrow first thing and assignment completed asap.
