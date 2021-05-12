@@ -128,5 +128,14 @@ function ArticleMaker(articleObject) {
   articleClass.classList.add('article')
   articleDate.classList.add('date')
   articleButton.classList.add('expandButton')
+
+  //append elements
+  articleClass.appendChild(articleTitle)
+  articleClass.appendChild(articleDate)
+  articleClass.appendChild(articlePara1)
+  articleClass.appendChild(articlePara2)
+  articleClass.appendChild(articlePara3)
+  articleClass.appendChild(articleButton)
+
 }
 
