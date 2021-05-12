@@ -114,3 +114,55 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+function articleMaker(data){
+  const articleDiv = document.createElement('div')
+  articleDiv.classList.add("article")
+
+  const articleh2 = document.createElement('h2')
+  articleh2.textContent = (data.title)
+  articleDiv.appendChild(articleh2)
+
+  const articleDate = document.createElement('p')
+  articleDate.textContent = (data.date)
+  articleDiv.appendChild(articleDate)
+
+  const para1 = document.createElement('p')
+  para1.textContent = (data.firstParagraph)
+  articleDiv.appendChild(para1)
+
+  const para2 = document.createElement('p')
+  para2.textContent = (data.secondParagraph)
+  articleDiv.appendChild(para2)
+
+  const para3 = document.createElement('p')
+  para3.textContent = (data.thirdParagraph)
+  articleDiv.appendChild(para3)
+
+  const span = document.createElement('span')
+  span.classList.add('expandButton')
+  span.textContent = "+"
+  span.addEventListener('click', () => {
+    articleDiv.classList.toggle('article-open')
+  })
+
+  articleDiv.appendChild(span)
+
+  return articleDiv
+}
+const newArticle = {
+  title: "I have to add something",
+  date: 'May 11th, 2021',
+  firstParagraph: 'Now this is the story all about how my life got flipped, turned upside down and id like to take a minute, just sit right there. ill tell you how i became the prince of a town called bel air',
+  secondParagraph: 'in West Philadelphia born and raised. On the playground is where i spent most of my days. Chillin out, maxing, relaxing all cool, and shooting some bball outside of the school',
+  thirdParagraph: 'When a couple of guys, who were up to no good, started making trouble in my neighborhood. I got in one little fight and my mom got scared, she said youre moving with your aunty and uncle in bel air'
+}
+
+data.push(newArticle)
+
+
+let articles = document.querySelector('.articles')
+
+data.forEach((article) => {
+  articles.appendChild(articleMaker(article))
+})
