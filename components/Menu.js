@@ -1,3 +1,4 @@
+import gsap from "gsap";
 // This is the data we will be using, study it but don't change anything, yet.
 
 let menuItems = [
@@ -46,9 +47,16 @@ function menuMaker(items) {
   menuDiv.appendChild(menuList);
 
   const menuButton = document.querySelector("img.menu-button");
+  // add GSAP animation to open/close menu
   menuButton.addEventListener("click", (event) => {
     event.preventDefault();
-    menuDiv.classList.toggle("menu--open");
+    if (!menuDiv.classList.contains("open")) {
+      gsap.to(menuDiv, { duration: 0.5, ease: "power1.in" , x: 350 });
+      menuDiv.classList.add("open");
+    } else {
+      gsap.to(menuDiv, { duration: 1, ease: "power3.out" , x: 0 });
+      menuDiv.classList.remove("open");
+    }
   });
 
   return menuDiv;
