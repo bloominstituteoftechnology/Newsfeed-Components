@@ -1,4 +1,5 @@
 // This is the data we will be using, study it but don't change anything, yet.
+import { gsap } from 'gsap';
 
 let menuItems = [
   'Students',
@@ -45,7 +46,7 @@ function menuMaker(menuItems) {
 
   //menu class list
   menu.classList.add('menu')
-
+  //menu.classList.toggle('menu--open')
   //append 
   menu.appendChild(menuList)
 
@@ -55,6 +56,7 @@ function menuMaker(menuItems) {
   //add event listener to button 
   menuButton.addEventListener('click', function () {
     menu.classList.toggle('menu--open')
+    gsap.to(".menu ul li", { duration: 2, x: 200 });
   })
   menuButton.appendChild(menu)
 
