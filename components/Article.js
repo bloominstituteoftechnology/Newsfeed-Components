@@ -145,5 +145,9 @@ function ArticleMaker(articleObject) {
   articlePara3.textContent = articleObject.thirdParagraph
   articleButton.textContent = '+'
 
+  //event listener to button
+  articleButton.addEventListener('click', (event) => {
+    articleClass.classList.toggle('article-open')
+  })
 }
 
