@@ -51,4 +51,13 @@ function menuMaker(menuItems) {
 
   //append 
   menuClass.appendChild(menuList)
+
+  //add event listener to button 
+  menuButton.addEventListener('click', function (event) {
+    menuClass.classList.toggle('menu-open')
+  })
+  menuButton.appendChild(menuClass)
+
+  return menuClass
+
 }
