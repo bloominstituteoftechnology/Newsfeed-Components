@@ -123,4 +123,10 @@ function ArticleMaker(articleObject) {
   const articlePara2 = document.createElement('p')
   const articlePara3 = document.createElement('p')
   const articleButton = document.createElement('span')
+
+  //add class list
+  articleClass.classList.add('article')
+  articleDate.classList.add('date')
+  articleButton.classList.add('expandButton')
 }
+
