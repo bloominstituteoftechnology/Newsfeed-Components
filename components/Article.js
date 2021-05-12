@@ -55,14 +55,9 @@ function articleMaker(articleObj) {
   return articleDiv;
 }
 
-const articleWrapper = document.querySelector("div.articles");
-
-data.map((item) => {
-  const article = articleMaker(item);
-  articleWrapper.appendChild(article);
-});
-
-console.log(articleWrapper);
+data.map((item) =>
+  document.querySelector("div.articles").appendChild(articleMaker(item))
+);
 
 /*
   Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
