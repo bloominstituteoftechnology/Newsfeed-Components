@@ -36,9 +36,19 @@ function menuMaker(menuItems) {
   const menuClass = document.createElement('div')
   const menuList = document.createElement('ul')
 
+  //iterate over menuItems
   menuItems.forEach(function (item) {
     const menuListItems = document.createElement('li')
     menuList.appendChild(menuListItems)
     menuListItems.textContent = item
   })
+
+  //selecting button from DOM
+  const menuButton = document.querySelector('.menu-button')
+
+  //menu class list
+  menuClass.classList('menu')
+
+  //append 
+  menuClass.appendChild(menuList)
 }
