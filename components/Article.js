@@ -20,36 +20,50 @@ import data from "../modules/data";
 
 function articleMaker(articleObj) {
   const articleDiv = document.createElement("div");
+  articleDiv.classList.add("article");
+
   const articleH2 = document.createElement("h2");
   articleH2.innerText = articleObj.title;
   articleDiv.appendChild(articleH2);
+
   const articleDate = document.createElement("p");
   articleDate.innerText = articleObj.date;
+  articleDate.classList.add("date");
   articleDiv.appendChild(articleDate);
+
   const paragraph1 = document.createElement("p");
   paragraph1.innerText = articleObj.firstParagraph;
   articleDiv.appendChild(paragraph1);
+
   const paragraph2 = document.createElement("p");
   paragraph2.innerText = articleObj.secondParagraph;
   articleDiv.appendChild(paragraph2);
+
   const paragraph3 = document.createElement("p");
   paragraph3.innerText = articleObj.thirdParagraph;
   articleDiv.appendChild(paragraph3);
+
   const expandButton = document.createElement("span");
   expandButton.innerText = "+";
+  expandButton.classList.add("expandButton");
   expandButton.addEventListener("click", (event) => {
     event.preventDefault();
     articleDiv.classList.toggle("article-open");
   });
   articleDiv.appendChild(expandButton);
+
   return articleDiv;
 }
+
 const articleWrapper = document.querySelector("div.articles");
+
 data.map((item) => {
   const article = articleMaker(item);
   articleWrapper.appendChild(article);
 });
+
 console.log(articleWrapper);
+
 /*
   Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
   This listener should toggle the class 'article-open' on div.article.
