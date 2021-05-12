@@ -53,6 +53,5 @@ function menuMaker(items) {
 
   return menuDiv;
 }
-const headerDiv = document.querySelector("div.header");
-const menu = menuMaker(menuItems);
-headerDiv.appendChild(menu);
+
+document.querySelector("div.header").appendChild(menuMaker(menuItems));
