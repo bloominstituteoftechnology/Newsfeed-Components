@@ -49,4 +49,8 @@ menuArray.forEach(item => {
 })
 
 // Step 3:
+const menuButton = document.querySelector('.menu-button')
+
+// Step 4:
+
 }
