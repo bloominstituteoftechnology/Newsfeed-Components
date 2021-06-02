@@ -52,5 +52,10 @@ menuArray.forEach(item => {
 const menuButton = document.querySelector('.menu-button')
 
 // Step 4:
+menuButton.addEventListener('click', () => {
+  menuDiv.classList.toggle('menu--open');
+})
 
+// Step 5:
+return menuDiv;
 }
