@@ -35,12 +35,18 @@ let menuItems = [
 */
 
 // Step 1:
-function menuMaker(array) {
+function menuMaker(menuArray) {
   const menuDiv = document.createElement('div')
   const list = document.createElement('ul')
   menuDiv.appendChild(list)
   menuDiv.classList.add('menu')
 
   // Step 2:
-  
+menuArray.forEach(item => {
+  const listDiv = document.createElement('li');
+  listDiv.textContent = item;
+  list.appendChild(listDiv);
+})
+
+// Step 3:
 }
