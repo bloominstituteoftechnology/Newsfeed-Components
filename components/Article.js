@@ -150,3 +150,10 @@ function articleMaker(articleObj){
   // Step 3:
   return articleDiv;
 }
+
+// Step 4:
+data.forEach(item => {
+  const article = articleMaker(item);
+  const articleContainer = document.querySelector('div.articles')
+  articleContainer.appendChild(article)
+})
