@@ -40,7 +40,7 @@ function menuMaker(menuArray) {
   const list = document.createElement('ul')
   menuDiv.appendChild(list)
   menuDiv.classList.add('menu')
-
+  
   // Step 2:
 menuArray.forEach(item => {
   const listDiv = document.createElement('li');
@@ -58,4 +58,12 @@ menuButton.addEventListener('click', () => {
 
 // Step 5:
 return menuDiv;
+
 }
+
+// Step 6:
+const menuArr = menuMaker(menuItems)
+const menuHeader = document.querySelector('.header')
+menuHeader.appendChild(menuArr)
+
+console.log(menuMaker(menuItems))
