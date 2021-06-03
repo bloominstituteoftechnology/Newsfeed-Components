@@ -143,6 +143,10 @@ function articleMaker(articleObj){
   p3.textContent = articleObj.thirdParagraph;
 
   // Step 2:
+  span.addEventListener('click', () => {
+    articleDiv.classList.toggle('article-open');
+  })
   
-
+  // Step 3:
+  return articleDiv;
 }
