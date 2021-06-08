@@ -119,10 +119,8 @@ import data from '../data/articles';
 
 
 function articleMaker(articleData){
-  const container = document.querySelector('.articles');
   const article = document.createElement('div');
   article.className = 'article';
-  container.appendChild(article);
   const articleTitle = document.createElement('h2');
   articleTitle.textContent = articleData.title;
   article.appendChild(articleTitle);
@@ -149,8 +147,7 @@ function articleMaker(articleData){
   return article
 }
 
-articleMaker(data.data[1])
-
+const container = document.querySelector('.articles');
 data.data.forEach(article => {
-  articleMaker(article)
+  container.appendChild(articleMaker(article))
 })
