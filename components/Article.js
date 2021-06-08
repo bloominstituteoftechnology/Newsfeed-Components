@@ -86,6 +86,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'testing 1"',
+    date: 'date testing',
+    firstParagraph: `asdfgadfgasfdh`,
+
+    secondParagraph: `adffhfg`,
+
+    thirdParagraph: `gjghnjfgbfb`
   }
 ];
 
@@ -93,7 +102,6 @@ const data = [
   Step 1: Write a component called 'articleMaker' to create an article.
   Your component is a function that takes an article object as its only argument,
   and returns a DOM node looking like the one below:
-
   <div class="article">
     <h2>{title of the article}</h2>
     <p class="date">{date of the article}</p>
@@ -114,3 +122,47 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+function articleMaker(article) {
+  let articleDiv = document.createElement('div')
+  articleDiv.classList.add('article')
+
+  let articleH2 = document.createElement('h2')
+  articleDiv.appendChild(articleH2)
+  articleH2.textContent = article["title"]
+
+  let articleDate = document.createElement('p')
+  articleDate.classList.add('date')
+  articleDate.textContent = article["date"]
+  articleDiv.appendChild(articleDate)
+
+  let articleP1 = document.createElement('p')
+  articleP1.textContent = article["firstParagraph"]
+  articleDiv.appendChild(articleP1)
+  let articleP2 = document.createElement('p')
+  articleP2.textContent = article["secondParagraph"]
+  articleDiv.appendChild(articleP2)
+  let articleP3 = document.createElement('p')
+  articleP3.textContent = article["thirdParagraph"]
+  articleDiv.appendChild(articleP3)
+
+let articleSpan = document.createElement('span')
+articleSpan.classList.add('expandButton')
+articleSpan.textContent = "+"
+articleSpan.addEventListener('click', (e) => {
+  articleDiv.classList.toggle('article-open')
+})
+articleDiv.appendChild(articleSpan)
+
+return articleDiv
+}
+
+console.log(articleMaker(data[0]))
+
+let articles = document.querySelector(".articles")
+
+data.forEach((item) => {
+  articles.appendChild(articleMaker(item))
+})
+
+console.log(articles)
