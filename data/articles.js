@@ -104,5 +104,23 @@ module.exports.data = [
         Inside we both know what's been going on We know the game and we're gonna play it I just want to tell you how I'm feeling 
         Gotta make you understand Never gonna give you up, never gonna let you down Never gonna run around and desert you 
         Never gonna make you cry, never gonna say goodbye Never gonna tell a lie and hurt you`
-      }
+    },
+    {
+        title: 'My Life',
+        date: 'Jan 1st, 1980',
+        firstParagraph: `When it comes to my life I couldn't say more <br>
+        On my fifteenth birthday I was brought to the beach <br>
+        My mom told me to always keep happiness as my core <br>
+        Im always happy which explains my joyful speech`,
+    
+        secondParagraph: `When it comes to my life, it's really a bore <br>
+        On my sixteenth birthday I was brought to work <br>
+        My father told me to always keep anger as my core <br>
+        Im always angry which explains why I seem like a jerk`,
+    
+        thirdParagraph: `On my seventeenth birthday I met you <br>
+        You told me to always keep myself as my core <br>
+        Im always me through and through <br>
+        When it comes to my life, it's much better than before`
+    }
   ];

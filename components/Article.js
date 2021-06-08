@@ -131,13 +131,13 @@ function articleMaker(articleData){
   articleDate.textContent = articleData.date;
   article.appendChild(articleDate);
   const p1 = document.createElement('p');
-  p1.textContent = articleData.firstParagraph;
+  p1.innerHTML = articleData.firstParagraph;
   article.appendChild(p1);
   const p2 = document.createElement('p');
-  p2.textContent = articleData.secondParagraph;
+  p2.innerHTML = articleData.secondParagraph;
   article.appendChild(p2);
   const p3 = document.createElement('p');
-  p3.textContent = articleData.thirdParagraph;
+  p3.innerHTML = articleData.thirdParagraph;
   article.appendChild(p3);
   const expandButton = document.createElement('span');
   expandButton.className = 'expandButton';
