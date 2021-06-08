@@ -117,6 +117,16 @@ const data = [
   Refresh the page to see the new article.
 */
 
+data.push({
+  title: 'Some really fun things you can do at the beach',
+  date: 'Mar 11th, 1948',
+  firstParagraph: `wow look at that crab!`,
+
+  secondParagraph: `oh neat sand tastes delicious`,
+
+  thirdParagraph: `uh oh, you forgot sunscreen`
+})
+
 function articleMaker (articleObj) {
   //create HTML elements
   const articleDiv = document.createElement('div')
@@ -140,5 +150,30 @@ function articleMaker (articleObj) {
   articleDiv.appendChild(p3)
   articleDiv.appendChild(span)
 
+  //fetch data from the articleObj and fill in appropriate elements
+  h2.textContent = articleObj.title;
+  dateP.textContent = articleObj.date;
+  p1.textContent = articleObj.firstParagraph;
+  p2.textContent = articleObj.secondParagraph;
+  p3.textContent = articleObj.thirdParagraph;
+
+  //create an event listener for article-open 
+  span.addEventListener('click', () => {
+    articleDiv.classList.toggle('article-open');
+  })
+ 
+ 
+  //returns the parent element
+  return articleDiv
 
 }
+
+
+data.forEach(thing => {
+  const article = articleMaker(thing);
+  const articleContainer = document.querySelector('div.articles')
+  articleContainer.appendChild(article)
+})
+
+
+
