@@ -114,3 +114,75 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+var MainPage = document.querySelector(".articles");
+
+function articleMaker({
+  title,
+  date,
+  firstParagraph,
+  secondParagraph,
+  thirdParagraph,
+}) {
+  const article = document.createElement("div");
+  article.classList.add("article");
+
+  const articleTitle = document.createElement("h2");
+  articleTitle.textContent = title;
+  article.appendChild(articleTitle);
+
+  const articleDate = document.createElement("p");
+  articleDate.textContent = date;
+  articleDate.classList.add("date");
+  article.appendChild(articleDate);
+  articleDate.style.color = "blue";
+  articleDate.style.fontSize = "15px";
+
+  const paragraph1 = document.createElement("p");
+  paragraph1.textContent = firstParagraph;
+  article.appendChild(paragraph1);
+  paragraph1.style.borderStyle = "solid";
+  paragraph1.style.padding = "1px";
+
+  const paragraph2 = document.createElement("p");
+  paragraph2.textContent = secondParagraph;
+  article.appendChild(paragraph2);
+  paragraph2.style.borderStyle = "solid";
+  paragraph2.style.padding = "1px";
+
+  const paragraph3 = document.createElement("p");
+  paragraph3.textContent = thirdParagraph;
+  article.appendChild(paragraph3);
+  paragraph3.style.borderStyle = "solid";
+  paragraph3.style.padding = "1px";
+
+  const span = document.createElement("span");
+  span.textContent = "+";
+  span.classList.add("expandButton");
+  article.appendChild(span);
+  span.style.color = "red";
+
+  span.addEventListener("click", (e) => {
+    article.classList.toggle("article-open");
+  });
+  // span.addEventListener("blur", (e) => {
+  //   article.classList.remove("article-open");
+  // });
+  return article;
+}
+
+// console.log(data[0]);
+const newArticle = {
+  title: "Bitcoin On The Rise",
+  date: "January 3, 2009",
+  firstParagraph:
+    "Bitcoin is a decentralized digital currency, without a central bank or single administrator, that can be sent from user to user on the peer-to-peer bitcoin network without the need for intermediaries.",
+  secondParagraph:
+    "Bitcoins are created as a reward for a process known as mining. They can be exchanged for other currencies, products, and services,[10] but the real-world value of the coins is extremely volatile.[11] Research produced by the University of Cambridge estimated that in 2017, there were 2.9 to 5.8 million unique users using a cryptocurrency wallet, most of them using bitcoin.[12] Users choose to participate in the digital currency for a number of reasons: ideologies such as commitment to anarchism, decentralization and libertarianism, convenience, using the currency as an investment and pseudonymity of transactions. Increased use has led to a desire among governments for regulation in order to tax, facilitate legal use in trade and for other reasons (such as investigations for money laundering and price manipulation).",
+  thirdParagraph:
+    "Bitcoin has been criticized for its use in illegal transactions, the large amount of electricity (and thus carbon footprint) used by mining, price volatility, and thefts from exchanges. Some economists and commentators have characterized it as a speculative bubble at various times. Bitcoin has also been used as an investment, although several regulatory agencies have issued investor alerts about bitcoin",
+};
+data.push(newArticle);
+for (let i = 0; i < data.length; i++) {
+  MainPage.appendChild(articleMaker(data[i]));
+}
