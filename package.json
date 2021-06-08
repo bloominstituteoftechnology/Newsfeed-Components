@@ -19,5 +19,10 @@
     "eslint": "^7.6.0",
     "less": "^3.12.2",
     "parcel-bundler": "^1.12.4"
+  },
+  "dependencies": {
+    "components": "^0.1.0",
+    "datalib": "^1.9.3",
+    "lib": "^4.3.3"
   }
 }
