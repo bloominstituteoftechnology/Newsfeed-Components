@@ -127,6 +127,8 @@ data.push({
   thirdParagraph: `uh oh, you forgot sunscreen`
 })
 
+
+
 function articleMaker (articleObj) {
   //create HTML elements
   const articleDiv = document.createElement('div')
@@ -156,11 +158,20 @@ function articleMaker (articleObj) {
   p1.textContent = articleObj.firstParagraph;
   p2.textContent = articleObj.secondParagraph;
   p3.textContent = articleObj.thirdParagraph;
+  span.textContent = "+"
 
   //create an event listener for article-open 
+// const articleButton = document.querySelector('.span.expandButton')
+
   span.addEventListener('click', () => {
     articleDiv.classList.toggle('article-open');
   })
+
+//   const articleButton = document.querySelector('.expandButton')
+
+// articleButton.addEventListener('click', () => {
+//   articleDiv.classList.toggle('article-open');
+// })
  
  
   //returns the parent element

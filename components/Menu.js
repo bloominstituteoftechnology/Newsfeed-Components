@@ -44,9 +44,9 @@ menuDiv.appendChild(ls)
 menuDiv.classList.add('menu')
 
 //iterate over array and create list items
-array.forEach(element => {
+array.forEach(thing => {
   const list = document.createElement('li');
-  list.textContent = element;
+  list.textContent = thing;
   ls.appendChild(list);
 });
 
