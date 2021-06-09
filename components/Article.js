@@ -86,6 +86,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Omg Here Is A New Title',
+    date: 'June 8th, 2021',
+    firstParagraph: `Test para1`,
+
+    secondParagraph: `Test para2`,
+
+    thirdParagraph: `Test para3`
   }
 ];
 
@@ -93,6 +102,7 @@ const data = [
   Step 1: Write a component called 'articleMaker' to create an article.
   Your component is a function that takes an article object as its only argument,
   and returns a DOM node looking like the one below:
+/*
 
   <div class="article">
     <h2>{title of the article}</h2>
@@ -114,3 +124,41 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+function articleMaker({ title, date, firstParagraph, secondParagraph, thirdParagraph }){
+
+  const divContainer = document.createElement('div')
+  const articleTitle = document.createElement('h2')
+  const articleDate = document.createElement('p')
+  const paragraph1 = document.createElement('p')
+  const paragraph2 = document.createElement('p')
+  const paragraph3 = document.createElement('p')
+  const expandButton = document.createElement('span')
+
+  divContainer.appendChild(articleTitle)
+  divContainer.appendChild(articleDate)
+  divContainer.appendChild(paragraph1)
+  divContainer.appendChild(paragraph2)
+  divContainer.appendChild(paragraph3)
+  divContainer.appendChild(expandButton)
+
+  articleTitle.textContent = title
+  articleDate.textContent = date
+  paragraph1.textContent = firstParagraph
+  paragraph2.textContent = secondParagraph
+  paragraph3.textContent = thirdParagraph
+
+  divContainer.classList.add('article')
+  expandButton.classList.add('expandButton')
+  expandButton.textContent = '+'
+
+  expandButton.addEventListener('click', () => {
+    divContainer.classList.toggle('article-open')
+  })
+  return divContainer
+}
+
+data.forEach(articleObj => {
+  const articleStart = document.querySelector('.articles')
+  const fullArticle = articleMaker(articleObj)
+  articleStart.appendChild(fullArticle)
+})
