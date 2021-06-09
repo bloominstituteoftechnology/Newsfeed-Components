@@ -48,4 +48,36 @@ function menuMaker(menuItems
     const music1 = document.createElement('li')
 
     const logOut = document.createElement('li')
+
+    menu.appendChild(ul)
+
+    ul.appendChild(students1)
+
+    ul.appendChild(faculty1)
+
+    ul.appendChild(whatsNew1)
+
+    ul.appendChild(trends)
+
+    ul.appendChild(music1)
+
+    ul.appendChild(logOut)
+
+    menu.textContent = 'Menu'
+
+    students1.textContent = 'Students'
+
+    faculty1.textContent = 'Faculty'
+
+    whatsNew1.textContent = "What's New"
+
+    trends.textContent = 'Trends'
+
+    music1.textContent = 'Music'
+
+    logOut.textContent = 'Log Out'
+
+    menu.classList.add('menu--open')
+
+    return menu
  }
