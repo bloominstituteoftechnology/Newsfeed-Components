@@ -90,9 +90,9 @@ const data = [
 ];
 
 /*
-  Step 1: Write a component called 'articleMaker' to create an article.
-  Your component is a function that takes an article object as its only argument,
-  and returns a DOM node looking like the one below:
+  Step 1: Write a component called 'articleMaker' to create an article. - OK
+  Your component is a function that takes an article object as its only argument, - OK, named 'data'
+  and returns a DOM node looking like the one below: - ok returned 'div'
 
   <div class="article">
     <h2>{title of the article}</h2>
@@ -104,13 +104,67 @@ const data = [
   </div>
 
   Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
-  This listener should toggle the class 'article-open' on div.article.
+  This listener should toggle the class 'article-open' on div.article. - OK
 
-  Step 3: Don't forget to return something from your function!
+  Step 3: Don't forget to return something from your function! - OK
 
   Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
-  to create a div.article element and append it to the DOM inside div.articles (see index.html).
+  to create a div.article element and append it to the DOM inside div.articles (see index.html). - OK
 
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
+
+  // ??? Not sure how to do step 5 ???
 */
+
+//creating a component function called 'articleMaker'
+
+const articleMaker = (data) => {
+
+  // creating DOM elements
+ const div = document.createElement('div')
+ const h2 = document.createElement('h2')
+ const pdate = document.createElement('p')
+ const p2 = document.createElement('p2')
+ const p3 = document.createElement('p3')
+ const p4 = document.createElement('p4')
+ const span = document.createElement('span')
+
+  // setting up structure with appends to the div
+  div.appendChild(h2)
+  div.appendChild(pdate)
+  div.appendChild(p2)
+  div.appendChild(p3)
+  div.appendChild(p4)
+  div.appendChild(span)
+
+  // adding classes to div, p class & span
+  div.classList.add('article')
+  pdate.classList.add('date')
+  span.classList.add('expandButton')
+  
+  // add text content
+  h2.textContent = data.title
+  pdate.textContent = data.date
+  p2.textContent = data.firstParagraph
+  p3.textContent = data.secondParagraph
+  p4.textContent = data.thirdParagraph
+  span.textContent = '+'
+
+  // adding event listener to 'articleMaker'
+  // Need to do this again, don't really get it
+  span.addEventListener('click', () => div.classList.toggle('article-open'))
+
+  //returning DOM node div
+  return div
+}
+
+// looping over 'data' array with forEach
+data.forEach((item) => {
+  // grabbing .article class from HTML and appending function to HTML for the DOM
+  const mainDiv = document.querySelector('.articles')
+  // append the function articleMaker to mainDiv
+  mainDiv.appendChild(articleMaker(item))
+
+})
+
