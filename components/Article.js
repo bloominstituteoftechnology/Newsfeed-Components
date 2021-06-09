@@ -110,13 +110,19 @@ function articleMaker({title, date, firstParagraph, secondParagraph, thirdParagr
   paragraphOne.textContent = firstParagraph
   paragraphTwo.textContent = secondParagraph
   paragraphThree.textContent = thirdParagraph
-
+  expandButton.textContent = '+'
+  expandButton.addEventListener('click', () => {
+   paragraphOne.classList.toggle('article-open')
+   paragraphTwo.classList.toggle('article-open')
+   paragraphThree.classList.toggle('article-open')
+  })
   return article
 }
 
 data.forEach(articleObj => {
+  const articleStart = document.querySelector('.articles')
   const newArticle = articleMaker(articleObj)
-  return newArticle
+  articleStart.appendChild(newArticle)
 })
 /*
   Step 1: Write a component called 'articleMaker' to create an article.
