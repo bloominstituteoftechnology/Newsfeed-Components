@@ -86,6 +86,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Local software developer learns how to loop through data',
+    date: 'June 9th 2021',
+
+    firstParagraph: 'I have been at lambda for almost 6 months now and every day I have to remind myself that all I need is to take it one day at a time. My learning curve is steep and I learn better some days than others. ',
+
+    secondParagraph: 'Just remember to be nice to yourself and don\'t give up!!!'
+
   }
 ];
 
@@ -112,7 +121,7 @@ const articleMaker = (data) => {
   thirdPar.textContent = data.thirdParagraph
 
   const articleButton = document.createElement("span");
-  articleButton.className = "expandButton"
+  articleButton.className = "expandButton";
   articleButton.innerHTML = "+"
   
   articleButton.addEventListener("click", () => {
