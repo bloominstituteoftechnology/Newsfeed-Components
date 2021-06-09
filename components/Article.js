@@ -86,6 +86,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title:"Athena",
+    date: 'today',
+    firstParagraph:'Doggo ipsum heckin big ol pupper borkf snoot maximum borkdrive the neighborhood pupper woofer you are doin me a concern, ruff corgo borking doggo pupperino very jealous pupper boof. Long doggo yapper mlem, vvv. heck you are doin me a concern. Shoob big ol pupper boof most angery pupper I have ever seen, fluffer h*ck aqua doggo, clouds bork. He made many woofs borking doggo mlem much ruin diet many pats yapper, long bois maximum borkdrive wow very biscit heckin angery woofer, tungg pupper doggorino big ol.',
+
+    secondParagraph:'Blep yapper big ol heckin good boys and girls, very jealous pupper ruff. Very good spot smol borking doggo with a long snoot for pats heckin h*ck shooberino you are doin me a concern big ol, extremely cuuuuuute fluffer smol borking doggo with a long snoot for pats doge much ruin diet. Waggy wags much ruin diet pupperino he made many woofs shooberino, yapper stop it fren. Fluffer sub woofer smol smol borking doggo with a long snoot for pats, pupper corgo. Puggorino you are doing me a frighten wow such tempt much ruin diet smol borking doggo with a long snoot for pats, corgo vvv long water shoob ur givin me a spook bork, long water shoob shoob pupper.',
+
+    thirdParagraph:'Most angery pupper I have ever seen much ruin diet very taste wow, h*ck. Yapper boof ur givin me a spook puggorino, ur givin me a spook vvv floofs, puggorino ruff. Pupperino heckin good boys corgo heckin good boys doggo, the neighborhood pupper wow very biscit. very hand that feed shibe heckin good boys and girls very hand that feed shibe. Bork very hand that feed shibe long doggo pats, long doggo. Long bois heckin good boys and girls wow such tempt waggy wags thicc smol, fat boi extremely cuuuuuute aqua doggo what a nice floof. Aqua doggo stop it fren you are doin me a concern shoober mlem thicc, puggo length boy I am bekom fat waggy wags, super chub very taste wow woofer shoob. Corgo boof ruff fat boi super chub, yapper waggy wags borkf boof sub woofer, pats super chub waggy wags. Boofers most angery pupper I have ever seen sub woofer stop it fren fluffer blop, fluffer sub woofer much ruin diet heckin good boys, heckin good boys and girls tungg shoob puggo.'
   }
 ];
 
@@ -114,3 +123,59 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+function articleMaker({title, date, firstParagraph, secondParagraph, thirdParagraph}){
+  const article = document.createElement('div')
+
+  const title1 =  document.createElement('h2')
+
+  const date1 = document.createElement('p')
+
+  const firstParagraph1 = document.createElement('p')
+
+  const secondParagraph1 = document.createElement('p')
+
+  const thirdParagraph1 = document.createElement('p')
+
+  const expandButton = document.createElement('button')
+
+  article.appendChild(title1)
+
+  article.appendChild(date1)
+
+  article.appendChild(firstParagraph1)
+
+  article.appendChild(secondParagraph1)
+
+  article.appendChild(thirdParagraph1)
+
+  article.appendChild(expandButton)
+
+  article.classList.add('article')
+
+  date1.classList.add('date')
+
+  expandButton.classList.add('expandButton')
+
+  title1.textContent = title
+
+  date1.textContent = date
+
+  firstParagraph1.textContent = firstParagraph
+
+  secondParagraph1.textContent = secondParagraph
+
+  thirdParagraph1.textContent = thirdParagraph
+
+  expandButton.textContent = '+'
+
+  expandButton.addEventListener('click',() =>{
+    article.classList.toggle('article-open')
+  })
+
+return article
+}
+
+data.forEach(article => {
+  const newArticle = articleMaker(article)
+  document.body.append(newArticle)
+})
