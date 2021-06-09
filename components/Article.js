@@ -94,6 +94,8 @@ const data = [
   Your component is a function that takes an article object as its only argument,
   and returns a DOM node looking like the one below:
 
+
+
   <div class="article">
     <h2>{title of the article}</h2>
     <p class="date">{date of the article}</p>
@@ -114,3 +116,57 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+const articles = document.querySelector(".articles");
+
+function articleMaker({
+	title,
+	date,
+	firstParagraph,
+	secondParagraph,
+	thirdParagraph,
+}) {
+	const article = document.createElement("div");
+	const articleTitle = document.createElement("h2");
+	const articleDate = document.createElement("p");
+	const p1 = document.createElement("p");
+	const p2 = document.createElement("p");
+	const p3 = document.createElement("p");
+	const expandButton = document.createElement("span");
+
+	article.appendChild(articleTitle);
+	article.appendChild(articleDate);
+	article.appendChild(p1);
+	article.appendChild(p2);
+	article.appendChild(p3);
+	article.appendChild(expandButton);
+
+	article.classList.add("article");
+	articleTitle.classList.add("h2");
+	articleDate.classList.add("date");
+	p1.classList.add("par1");
+	p2.classList.add("par2");
+	p3.classList.add("par3");
+	expandButton.classList.add("expandButton");
+
+	articleTitle.textContent = title;
+	console.log(data.title);
+	articleDate.textContent = date;
+	p1.textContent = firstParagraph;
+	p2.textContent = secondParagraph;
+	p3.textContent = thirdParagraph;
+	expandButton.textContent = "+";
+
+	expandButton.addEventListener("click", () => {
+		article.classList.toggle("article-open");
+		console.log(article.classList);
+	});
+
+	return article;
+}
+console.log(articleMaker);
+
+data.forEach((articleObj) => {
+	const newArt = articleMaker(articleObj);
+	articles.appendChild(newArt);
+}); 
