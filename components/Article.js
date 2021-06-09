@@ -86,8 +86,48 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
-  }
+  },
+
 ];
+
+const articleMaker = function ({ title, date, firstParagraph, secondParagraph, thirdParagraph }) {
+  const div = document.createElement('div');
+  div.classList.add('article')
+  const h2 = document.createElement('h2');
+  h2.textContent = title;
+  const dateMark = document.createElement('p')
+  dateMark.classList.add('date')
+  dateMark.textContent = date;
+  const firstP = document.createElement('p')
+  firstP.textContent = firstParagraph;
+  const secondP = document.createElement('p')
+  secondP.textContent = secondParagraph;
+  const thirdP = document.createElement('p')
+  thirdP.textContent = thirdParagraph;
+  const expandButton = document.createElement('span')
+  expandButton.textContent = '+'
+  expandButton.classList.add('expandButton')
+  div.appendChild(h2);
+  div.appendChild(dateMark)
+  div.appendChild(firstP)
+  div.appendChild(secondP)
+  div.appendChild(thirdP)
+  div.appendChild(expandButton)
+  expandButton.addEventListener('click', () => {
+    div.classList.toggle('article-open')
+  })
+  return div
+}
+
+
+
+data.forEach(el => {
+  const parent = document.querySelector('.articles');
+  console.log(parent)
+  const fullArticle = articleMaker(el);
+  parent.appendChild(fullArticle)
+})
+
 
 /*
   Step 1: Write a component called 'articleMaker' to create an article.
@@ -102,6 +142,7 @@ const data = [
 
     <span class="expandButton">+</span>
   </div>
+
 
   Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
   This listener should toggle the class 'article-open' on div.article.
