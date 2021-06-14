@@ -89,6 +89,8 @@ const data = [
   }
 ];
 
+const mountingPoint = document.querySelector('.articles')
+
 /*
   Step 1: Write a component called 'articleMaker' to create an article.
   Your component is a function that takes an article object as its only argument,
@@ -114,3 +116,49 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+//Step One - Creating function
+
+const articleMaker = ({title, date, firstparagraph, secondparagraph, thirdparagraph}) => {
+  const topArticle = document.createElement('div') //naming my outer element
+  const titleName = document.createElement('h2') //naming my other elements
+  const dates = document.createElement('p')
+  const Para1 = document.createElement('p')
+  const Para2 = document.createElement('p')
+  const Para3 = document.createElement('p')
+  const spanButton = document.createElement('span')
+
+  topArticle.appendChild(titleName)
+  topArticle.appendChild(dates)
+  topArticle.appendChild(Para1)
+  topArticle.appendChild(Para2)
+  topArticle.appendChild(Para3)
+  topArticle.appendChild(spanButton)
+
+  topArticle.classList.add('article')
+  dates.classList.add('date')
+  spanButton.classList.add('expandButton')
+
+  titleName.textContent = title
+  dates.textContent = date
+  Para1.textContent = firstparagraph
+  Para2.textContent = secondparagraph
+  Para3.textContent = thirdparagraph
+  spanButton.textContent = '\u25bc'
+
+  //Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
+  //This listener should toggle the class 'article-open' on div.article.
+
+  // spanButton.addEventListener
+
+  return topArticle //don't return itself ], return something defined
+}
+
+// Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
+// to create a div.article element and append it to the DOM inside div.articles (see index.html).
+
+data.forEach(article => {
+  const articleDom = articleMaker(article)
+  mountingPoint.appendChild(articleDom)
+})
+
