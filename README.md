@@ -4,10 +4,19 @@
 
 ## Contents
 
-- [Contents](#contents)
 - [Newsfeed](#newsfeed)
-
--
+  - [Contents](#contents)
+  - [Need to know](#need-to-know)
+    - [Set Up The Project With Git](#set-up-the-project-with-git)
+    - [Launching the project](#launching-the-project)
+    - [Part 1: The Articles Component](#part-1-the-articles-component)
+    - [Part 2: Add Articles](#part-2-add-articles)
+    - [Part 3: The Menu](#part-3-the-menu)
+    - [Stretch Goals](#stretch-goals)
+      - [Native CSS Animations](#native-css-animations)
+      - [jQuery](#jquery)
+      - [GSAP](#gsap)
+  - [My Pull Request](#my-pull-request)
 
 In this project we are going to be building a news feed reader. The goal is to have a collapsing menu, and expandable news articles. The styles and some of the HTML is already done for you.
 
@@ -86,3 +95,7 @@ Note: Just a reminder the stretch goals are just extra practice using the tools 
   Create a function that builds Article components. You are not expected to finish this. This goal is simply an exercise in thinking about how you would implement a function that took some data, created a new Article from it, and appended it to the HTML (without actually writing anything in the HTML file). This is a difficult concept to undertake, but even thinking about how you would implement it will give you a better understanding of how we use frameworks in upcoming sprints.
 
 - Implement a way to write your own articles using the Component Constructor and some input fields.
+
+## My Pull Request
+
+- [pull request](https://github.com/LambdaSchool/Newsfeed-Components/pull/1115)
