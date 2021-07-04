@@ -102,15 +102,53 @@ const data = [
 
     <span class="expandButton">+</span>
   </div>
+*/ 
+// function articleMaker(article){
+  const div = document.createElement('div');
+  const divArticles = document.querySelector('div.articles');
+  divArticles.appendChild(div);
 
+  const h2 = document.createElement('h2');
+  divArticles.appendChild(h2);
+  h2.textContent = `${"title of the article"}`;
+
+  const pDate = document.createElement('p');
+  divArticles.appendChild(pDate);
+  pDate.classList.add("date");
+  pDate.textContent = `${"date"}`;
+
+  const p1 = document.createElement('p');
+  divArticles.appendChild(p1);
+  p1.textContent = `${"paragraph 1"}`;
+
+  const p2 = document.createElement('p');
+  p1.appendChild(p2);
+  p2.textContent = `${"paragraph 2"}`;
+  console.log(p2);
+
+  const p3 = document.createElement('p');
+  p1.appendChild(p3);
+  p3.textContent = `${"paragraph 3"}`;
+
+
+
+
+
+
+
+// };
+/*
   Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
   This listener should toggle the class 'article-open' on div.article.
-
+*/
+/*
   Step 3: Don't forget to return something from your function!
-
+*/
+/*
   Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
   to create a div.article element and append it to the DOM inside div.articles (see index.html).
-
+*/
+/*
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
