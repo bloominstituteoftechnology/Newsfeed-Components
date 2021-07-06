@@ -86,13 +86,23 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },{
+    title:"coolest People I Know",
+    date: "August 15th 1988",
+    firstParagraph:"lorem ipsum",
+    secondParagraph:"lorem ipsum",
+    thirdParagraph:"lorem ipsum"
   }
+
+
 ];
 
 /*
   Step 1: Write a component called 'articleMaker' to create an article.
   Your component is a function that takes an article object as its only argument,
   and returns a DOM node looking like the one below:
+
+
 
   <div class="article">
     <h2>{title of the article}</h2>
@@ -114,3 +124,58 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+
+function articleMaker(obj){
+
+  const article = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+  const articleDate = document.createElement('p');
+  const articleP1 = document.createElement('p');
+  const articleP2 = document.createElement('p');
+  const articleP3 = document.createElement('p');
+  const expandButton = document.createElement('span')
+
+
+  article.appendChild(articleTitle);
+  article.appendChild(articleDate);
+  article.appendChild(articleP1);
+  article.appendChild(articleP2);
+  article.appendChild(articleP3);
+  article.appendChild(expandButton);
+
+  article.className = 'article'
+  articleDate.className = 'date'
+  expandButton.className = 'expandButton'
+  
+  articleTitle.textContent = obj.title
+  articleDate.textContent = obj.date
+  articleP1.textContent = obj.firstParagraph
+  articleP2.textContent = obj.secondParagraph
+  articleP3.textContent = obj.thirdParagraph
+  expandButton.textContent = '+'
+
+  expandButton.addEventListener('click' , () => {
+    article.classList.toggle('article-open');
+  })
+
+return article
+}
+
+
+ console.log(articleMaker(data))
+
+const articles = document.querySelector('.articles');
+data.forEach(curr => {
+  articles.appendChild(articleMaker(curr));
+})
+
+
+/* <div class="article">
+<h2>{title of the article}</h2>
+<p class="date">{date of the article}</p>
+
+{three separate paragraph elements}
+
+<span class="expandButton">+</span>
+</div> */
