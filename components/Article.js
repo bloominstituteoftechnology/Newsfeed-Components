@@ -144,7 +144,7 @@ function articleMaker(articleObj) {
 return article;
 }
 
-const newArt = {title: "this is stff", date: "July 7th, 2021", firstParagraph: "Stuff",secondParagraph: "More stuff",thirdParagraph: "Even more stuff" };
+const newArt = {title: "This is stff", date: "July 7th, 2021", firstParagraph: "Stuff",secondParagraph: "More stuff",thirdParagraph: "Even more stuff" };
 
 data.push(newArt);
 
@@ -155,5 +155,3 @@ const articleElements = data.map(data => {
 })
 
 articleElements.forEach(elem => articles.appendChild(elem));
-
-console.log(articleElements);
