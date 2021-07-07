@@ -22,9 +22,9 @@ let articleHTML = data.map((article) => {
     const button = document.createElement("span");
     button.className = "expandButton";
     button.innerText = "+";
-    button.addEventListener("click", () => {
-        articleContainer.className.includes("article-open") ? articleContainer.className.replace("article-open","") : articleContainer.className += "article-open";
-    });
+    button.onclick = () => {
+        articleContainer.classList.toggle("article-open")  
+    };
     articleContainer.append(articleTitle, articleDate, paragraph1, paragraph2, paragraph3, button);
     return articleContainer;
 })
