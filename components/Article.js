@@ -101,7 +101,7 @@ const data = [
     {three separate paragraph elements}
 
     <span class="expandButton">+</span>
-  </div>
+  </div> 
 
   Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
   This listener should toggle the class 'article-open' on div.article.
@@ -114,3 +114,74 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+const articleMaker = (articleObject) => {
+
+
+  const article = document.createElement('div')
+  const articleTitle  = document.createElement ('h2')
+  const articleDate  = document.createElement ('p')
+  const articleP1  = document.createElement ('p')
+  const articleP2  = document.createElement ('p')
+  const articleP3 = document.createElement ('p')
+  const expandButton = document.createElement('span')
+  
+  
+  article.appendChild(articleTitle)
+  article.appendChild(articleDate)
+  article.appendChild(articleP1)
+  article.appendChild(articleP2)
+  article.appendChild(articleP3)
+  article.appendChild(expandButton)
+  
+  article.className='article' 
+  articleDate.className = 'date'
+  expandButton.className ='expandButton'
+  
+  articleTitle.textcontent = articleObject.title
+  articleDate.textContent = articleObject.date
+  articleP1.textContent = articleObject.firstParagraph
+  articleP2.textContent = articleObject.secondParagraph
+  articleP3.textContent = articleObject.thirdParagraph
+  expandButton.textContent ="+"
+  
+  
+  expandButton.addEventListener('click', () =>{
+    article.classList.toggle('article-open')
+   })
+  
+   return article
+   }
+   
+  
+  
+   console.log(articleMaker(data[0]))
+  
+  
+   //   Step 4: Outside your function, loop over the data. At each iteration you'll use your component to create an article and append it to the DOM inside the 'articles' div.
+   const articles = document.querySelector('.articles')
+   data.forEach(article => {
+     articles.appendChild(articleMaker(article))
+   })
+   
+  
+  const myArticleObject =   {
+    title: 'All for one',
+    date: 'Oct 31st, 2019',
+    firstParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
+    hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
+    hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
+    hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor?`,
+  
+    secondParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
+    hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
+    hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
+    hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor?`,
+  
+    thirdParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
+    hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
+    hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
+    hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor?`
+  }
+  
+  articles.appendChild(articleMaker(myArticleObject)) 
