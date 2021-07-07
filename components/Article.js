@@ -86,13 +86,20 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
-  }
+  },
+  {title: 'test article!',
+   date: 'July 7th, 2021',
+  firstParagraph: 'im just going to type stuff in here to fill up the space as best i can. bla bla bla bla bla bla bla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla bla',
+  secondParagraph: 'bla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla bla',
+  thirdParagraph: 'bla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla bla'}
+
 ];
 
 /*
   Step 1: Write a component called 'articleMaker' to create an article.
   Your component is a function that takes an article object as its only argument,
   and returns a DOM node looking like the one below:
+
 
   <div class="article">
     <h2>{title of the article}</h2>
@@ -102,7 +109,53 @@ const data = [
 
     <span class="expandButton">+</span>
   </div>
+*/
 
+function articleMaker(article){
+  const div = document.createElement('div')
+  const articleDiv = document.querySelector('div.articles')
+  articleDiv.appendChild(div)
+
+  const articleTitle = document.createElement('h2')
+  articleDiv.appendChild(articleTitle)
+  articleTitle.textContent = article.title 
+
+  const articleDate = document.createElement('p')
+  articleDiv.appendChild(articleDate)
+  articleDate.classList.add('date')
+  articleDate.textContent = article.date
+
+  const paragraph1 = document.createElement('p')
+  articleDiv.appendChild(paragraph1)
+  paragraph1.textContent = article.firstParagraph
+
+  const paragraph2 = document.createElement('p')
+  articleDiv.appendChild(paragraph2)
+  paragraph2.textContent = article.secondParagraph
+
+  const paragraph3 = document.createElement('p')
+  articleDiv.appendChild(paragraph3)
+  paragraph3.textContent = article.thirdParagraph
+
+  const articleSpan = document.createElement('span')
+  articleDiv.appendChild(articleSpan)
+  articleSpan.textContent = '+'
+  articleSpan.classList.add('expandButton')
+
+  articleSpan.addEventListener('click', () => {
+    articleDiv.classList.toggle('article-open')
+  })
+
+}
+data.forEach(e => {
+  const article = articleMaker(e);
+  document.querySelector('.articles').append(article);
+
+  return article
+})
+
+
+/*
   Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
   This listener should toggle the class 'article-open' on div.article.
 
