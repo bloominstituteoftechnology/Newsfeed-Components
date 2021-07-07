@@ -94,14 +94,14 @@ const data = [
   Your component is a function that takes an article object as its only argument,
   and returns a DOM node looking like the one below:
 
-  <div class="article">
-    <h2>{title of the article}</h2>
-    <p class="date">{date of the article}</p>
+  + <div class="article">
+  +   <h2>{title of the article}</h2>
+  +     <p class="date">{date of the article}</p>
 
-    {three separate paragraph elements}
+  +  {three separate paragraph elements}
 
-    <span class="expandButton">+</span>
-  </div>
+  +     <span class="expandButton">+</span>
+  + </div>
 
   Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
   This listener should toggle the class 'article-open' on div.article.
@@ -114,3 +114,54 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+//Define the articleMakerFunction(), pass in article as an object
+function articleMakerFunction(article)
+{
+  //---div---//
+  //Create element div and assign to articleDiv
+  const articleDiv = document.createElement("div");
+  //Add article to article class
+  articleDiv.classList.add("article");
+  //Append to document
+  articleDiv.appendChild(div);
+
+  //---h2---//
+  //Create element h2 and assign to articleH2
+  const articleH2 = document.createElement("h2");
+  //add h2 to articleH2
+  articleH2.classList.add("h2");
+  //Append to document
+  articleDiv.appendChild(h2);
+
+  //---p date---//
+  //Create element p and assign to articlePdate
+  const articlePdate = document.createElement("p");
+  //Add date to articlePdate
+  articlePdate.classList.add("date");
+  //Append to document
+  articleDiv.appendChild(p);
+
+  //---paragraphs---//
+  //Declare an array to hold the p elements
+  const paraArray = [];
+  //For loop to iterate the array and create p elements
+  for (let i = 0; i < paraArray.length; i++)
+  {
+    //Each iteration, create a new p element
+    paraArray.push(document.createElement("p"));
+  }
+
+  //ForEach loop to append to docs
+  paraArray.forEach(p => articleDiv.appendChild(p));
+  
+  //---span---//
+  //Create element span and assign to articleSpan
+  const articleSpan = document.createElement("span");
+  //Add span to articleSpan
+  articleSpan.classList.add("span");
+  //Append to document
+  articleDiv.appendChild(span);
+
+  
+}
