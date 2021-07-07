@@ -86,8 +86,18 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
-  }
+  },
+  {
+    title: 'stuf and thing',
+    date: 'yesterday',
+    firstParagraph: ` am in love with a goat? `,
+
+    secondParagraph: `this is the third paragraph`,
+
+    thirdParagraph: `that last guy is a liar`
+  },
 ];
+export default data;
 
 /*
   Step 1: Write a component called 'articleMaker' to create an article.

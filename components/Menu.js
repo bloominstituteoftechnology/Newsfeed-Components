@@ -8,6 +8,41 @@ let menuItems = [
   'Music',
   'Log Out'
 ];
+function growMenu() {
+  gsap.to(".menu--open", {duration: 1, fontSize: "20px"});
+}
+function shrinkMenu() {
+  gsap.to(".menu--close", {duration: 1, fontSize: "0px"});
+}
+
+function menuMaker(menuItems) {
+  
+    const menuContainer = document.createElement("div");
+    menuContainer.className = "menu";
+    const menuList = document.createElement("ul");
+    menuItems.forEach(item => {
+      const menuItem = document.createElement("li");
+      menuItem.innerText = item;
+      menuList.append(menuItem);
+    });
+    menuContainer.append(menuList);
+    const menuButton = document.querySelector(".menu-button");
+    menuContainer.classList.toggle("menu--close");
+    menuButton.style.width="10px";
+    menuButton.style.height="10px";
+    menuButton.style.backgroundColor="black";
+    menuButton.addEventListener("click", () => {
+      menuContainer.classList.toggle("menu--open");
+      menuContainer.classList.toggle("menu--close");
+      growMenu()
+      shrinkMenu()
+    })
+    return menuContainer;
+}
+
+const menu = menuMaker(menuItems);
+const header = document.querySelector(".header");
+header.append(menu);
 
 /* 
   Step 1: Write a component called 'menuMaker' to create a menu like the markup below:
