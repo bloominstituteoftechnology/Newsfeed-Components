@@ -9,17 +9,49 @@ let menuItems = [
   'Log Out'
 ];
 
-/* 
-  Step 1: Write a component called 'menuMaker' to create a menu like the markup below:
 
+  // Step 1: Write a component called 'menuMaker' to create a menu like the arkup below:
+/*
   <div class="menu">
     <ul>
       {each menu item as an <li>}
     </ul>
   </div>
+  */
 
-  The 'menuMaker' takes an array of menu items as its only argument.
+/*
+The 'menuMaker' takes an array of menu items as its only argument.
+*/
+  function menuMaker(array){
+    const menuNode = document.createElement('div');
+    const ul = document.createElement('ul');
 
+    menuNode.appendChild(ul);
+
+    menuNode.classList.add('menu-node');
+
+    array.forEach(e => {
+      // const menuThing = document.createElement('li');
+      // ul.appendChild(menuThing);
+      let menuThing = document.createElement('li');
+      menuThing.textContent = e;
+      ul.appendChild(menuThing);
+    });
+      
+      const menuBtnImg = document.querySelector('.menu-button');
+
+      menuBtnImg.addEventListener('click', () => {
+        menuNode.classList.toggle('menu-open');
+      });
+
+    return menuNode;
+  }
+  const header = document.querySelector('.header');
+  const menu1 = menuMaker(menuItems);
+  header.appendChild(menu1);
+
+  console.log(menuMaker(menuItems));
+/* 
   Step 2: Inside the function, iterate over the array creating a list item <li> element for each item in the array.
   Add those items to the <ul>
 
