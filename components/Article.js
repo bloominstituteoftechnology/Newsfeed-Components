@@ -111,50 +111,44 @@ const data = [
   </div>
 */
 
-function articleMaker(article){
-  const div = document.createElement('div')
-  const articleDiv = document.querySelector('div.articles')
-  articleDiv.appendChild(div)
+function articleMaker({ title, date, firstParagraph, secondParagraph, thirdParagraph }){
+  const article = document.createElement('div');
+  const hTitle = document.createElement('h2');
+  const pDate = document.createElement('p');
+  const fP = document.createElement('p');
+  const sP = document.createElement('p');
+  const tP = document.createElement('p');
+  const span = document.createElement('span');
 
-  const articleTitle = document.createElement('h2')
-  articleDiv.appendChild(articleTitle)
-  articleTitle.textContent = article.title 
+  article.classList.add('article');
+  pDate.classList.add('date');
+  span.classList.add('expandButton');
 
-  const articleDate = document.createElement('p')
-  articleDiv.appendChild(articleDate)
-  articleDate.classList.add('date')
-  articleDate.textContent = article.date
+  hTitle.textContent = title;
+  pDate.textContent = date;
+  fP.textContent = firstParagraph;
+  sP.textContent = secondParagraph;
+  tP.textContent = thirdParagraph;
+  span.textContent = '+';
 
-  const paragraph1 = document.createElement('p')
-  articleDiv.appendChild(paragraph1)
-  paragraph1.textContent = article.firstParagraph
+  article.append(hTitle);
+  article.append(pDate);
+  article.append(fP);
+  article.append(sP);
+  article.append(tP);
+  article.append(span);
 
-  const paragraph2 = document.createElement('p')
-  articleDiv.appendChild(paragraph2)
-  paragraph2.textContent = article.secondParagraph
-
-  const paragraph3 = document.createElement('p')
-  articleDiv.appendChild(paragraph3)
-  paragraph3.textContent = article.thirdParagraph
-
-  const articleSpan = document.createElement('span')
-  articleDiv.appendChild(articleSpan)
-  articleSpan.textContent = '+'
-  articleSpan.classList.add('expandButton')
-
-  articleSpan.addEventListener('click', () => {
-    articleDiv.classList.toggle('article-open')
+  span.addEventListener('click', () => {
+    article.classList.toggle('article-open');
   })
 
+  return article;
 }
+
 data.forEach(e => {
   const article = articleMaker(e);
   document.querySelector('.articles').append(article);
-
-  return article
 })
-
-
 /*
   Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
   This listener should toggle the class 'article-open' on div.article.
