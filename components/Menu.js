@@ -42,9 +42,11 @@ function menuMaker(arr) {
 
   divMenu.classList.add("menu");
 
-  const list = arr.map(arr => {
-    return list;
+  const list = menuItems.map(arr => {
+    return menuMaker(arr);
   })
+  list.forEach(elem => li.appendChild(elem))
+  ul.appendChild(li);
 
   const button = document.querySelector(".menu-button")
 
