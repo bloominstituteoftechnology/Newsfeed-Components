@@ -90,7 +90,7 @@ const data = [
 ];
 
 /*
-  Step 1: Write a component called 'articleMaker' to create an article.
+  + Step 1: Write a component called 'articleMaker' to create an article.
   Your component is a function that takes an article object as its only argument,
   and returns a DOM node looking like the one below:
 
@@ -106,41 +106,49 @@ const data = [
   Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
   This listener should toggle the class 'article-open' on div.article.
 
-  Step 3: Don't forget to return something from your function!
+  + Step 3: Don't forget to return something from your function!
 
-  Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
+  + Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
   to create a div.article element and append it to the DOM inside div.articles (see index.html).
 
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
 
+//Articles class
+const articlesClass = document.querySelector(".articles");
+
 //Define the articleMakerFunction(), pass in article as an object
-function articleMakerFunction(article)
+function articleMakerFunction(dataParam)
 {
   //---div---//
   //Create element div and assign to articleDiv
   const articleDiv = document.createElement("div");
   //Add article to article class
   articleDiv.classList.add("article");
-  //Append to document
-  articleDiv.appendChild(div);
 
+  
   //---h2---//
   //Create element h2 and assign to articleH2
   const articleH2 = document.createElement("h2");
   //add h2 to articleH2
   articleH2.classList.add("h2");
-  //Append to document
+  //Assign the title value from the object
+  articleH2.textContent = dataParam.title;
+  //Append the h2 to the div
   articleDiv.appendChild(h2);
+ 
 
   //---p date---//
   //Create element p and assign to articlePdate
   const articlePdate = document.createElement("p");
   //Add date to articlePdate
   articlePdate.classList.add("date");
-  //Append to document
-  articleDiv.appendChild(p);
+  //Assign the date value from the object paramter
+  articlePdate.textContent = dataParam.date;
+  //Append the date to the div
+  articleDiv.appendChild(date);
+  
 
   //---paragraphs---//
   //Declare an array to hold the p elements
@@ -152,18 +160,40 @@ function articleMakerFunction(article)
     paraArray.push(document.createElement("p"));
   }
 
-  //ForEach loop to append to docs
+  //ForEach with arrow to append to docs
   paraArray.forEach(p => articleDiv.appendChild(p));
+
+  //ForEach without arrow
+  // paraArray.forEach(function(p)
+  // {
+  //   articleDiv.appendChild(p);
+  // });
+ 
   
   //---span---//
   //Create element span and assign to articleSpan
   const articleSpan = document.createElement("span");
-  //Add span to articleSpan
-  articleSpan.classList.add("span");
-  //Append to document
+  //Add this span to articleSpan assign "expandButton" class
+  articleSpan.classList.add("expandButton");
+  //Append the span to the div
   articleDiv.appendChild(span);
+  //Span click-event listener, pass in click event
+  articleSpan.addEventListener("click", function()
+  {
+    //Toggle article-open
+    articleDiv.classList.toggle("article-open")
+  });
 
-  return article;
+  //Function return statement, return the dataParam
+  return dataParam;
 }
 
-articleMakerFunction();
+//---Function call---//
+
+//Use forEach to iterate over the component and call the articleMakerFunction
+//For each item in dataArg argument...
+data.forEach(function(dataArg)
+{
+  //Call the articleMakerFunction() and appendChild() to articlesClass
+  articlesClass.appendChild(articleMakerFunction(dataArg));
+});
