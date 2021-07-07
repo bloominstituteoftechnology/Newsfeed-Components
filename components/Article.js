@@ -1,6 +1,7 @@
 // This is the data we will be using to create our articles. Look at it, then proceed to line 93.
 // OPTIONAL: if you're feeling adventurous, try to make this data an export from a different module, and import it here.
 // You can read about ES6 modules here: https://exploringjs.com/es6/ch_modules.html#sec_basics-of-es6-modules
+
 const data = [
   {
     title: 'Lambda School Students: "We\'re the best!"',
@@ -88,6 +89,46 @@ const data = [
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
 ];
+
+data.push({title: 'Worst Artile', date: 'Jan 1st, 2019', firstParagraph: 'This is the worst article ever.', secondParagraph: 'The very worst.', thirdParagraph: 'Dont beleive me? Ask the dishes.'})
+
+
+function articleMaker(obj){
+  let node = document.createElement('div');
+  let heading = document.createElement('h2');
+  let p1 = document.createElement('p1');
+  let p2 = document.createElement('p2');
+  let p3 = document.createElement('p3');
+  let p4 = document.createElement('p4');
+  let span = document.createElement('span');
+  node.classList.add('article');
+  heading.textContent = obj.title;
+  p1.textContent = obj.date;
+  p1.classList.add('date');
+  p2.textContent = obj.firstParagraph;
+  p3.textContent = obj.secondParagraph;
+  p4.textContent = obj.thirdParagraph;
+  span.textContent = '+';
+  span.classList.add('expandButton');
+  span.addEventListener('click', function(){
+    node.classList.toggle("article-open")
+  })
+  node.appendChild(heading);
+  node.appendChild(p1);
+  node.appendChild(p2);
+  node.appendChild(p3);
+  node.appendChild(p4);
+  node.appendChild(span);
+  return node;  
+}
+console.log('Yes');
+const articles = document.querySelector('.articles');
+
+
+data.forEach(function(a){
+  articles.appendChild(articleMaker(a));
+});
+console.log('no');
 
 /*
   Step 1: Write a component called 'articleMaker' to create an article.
