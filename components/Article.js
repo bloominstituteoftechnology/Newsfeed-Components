@@ -163,5 +163,7 @@ function articleMakerFunction(article)
   //Append to document
   articleDiv.appendChild(span);
 
-  
+  return article;
 }
+
+articleMakerFunction();
