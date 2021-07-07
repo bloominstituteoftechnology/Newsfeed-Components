@@ -103,7 +103,7 @@ const data = [
   +     <span class="expandButton">+</span>
   + </div>
 
-  Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
+  + Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
   This listener should toggle the class 'article-open' on div.article.
 
   + Step 3: Don't forget to return something from your function!
@@ -115,9 +115,10 @@ const data = [
   Refresh the page to see the new article.
 */
 
-//Articles class
+//---Articles class---//
 const articlesClass = document.querySelector(".articles");
 
+//---Function---//
 //Define the articleMakerFunction(), pass in article as an object
 function articleMakerFunction(dataParam)
 {
@@ -136,7 +137,7 @@ function articleMakerFunction(dataParam)
   //Assign the title value from the object
   articleH2.textContent = dataParam.title;
   //Append the h2 to the div
-  articleDiv.appendChild(h2);
+  articleDiv.appendChild(articleH2);
  
 
   //---p date---//
@@ -147,7 +148,7 @@ function articleMakerFunction(dataParam)
   //Assign the date value from the object paramter
   articlePdate.textContent = dataParam.date;
   //Append the date to the div
-  articleDiv.appendChild(date);
+  articleDiv.appendChild(articlePdate);
   
 
   //---paragraphs---//
@@ -158,11 +159,20 @@ function articleMakerFunction(dataParam)
   {
     //Each iteration, create a new p element
     paraArray.push(document.createElement("p"));
+
   }
+
+  //---Paragraph text---//
+  //Assign the text data from each of the object item's paragraphs
+  //to array item by element number using textContent()
+  // paraArray[0].textContent = dataParam.firstParagraph;
+  // paraArray[1].textContent = dataParam.secondParagraph;
+  // paraArray[2].textContent = dataParam.thirdParagraph;
 
   //ForEach with arrow to append to docs
   paraArray.forEach(p => articleDiv.appendChild(p));
 
+  
   //ForEach without arrow
   // paraArray.forEach(function(p)
   // {
@@ -175,8 +185,10 @@ function articleMakerFunction(dataParam)
   const articleSpan = document.createElement("span");
   //Add this span to articleSpan assign "expandButton" class
   articleSpan.classList.add("expandButton");
+  //Assign "+" to the content for expansion
+  articleSpan.textContent = "+";
   //Append the span to the div
-  articleDiv.appendChild(span);
+  articleDiv.appendChild(articleSpan);
   //Span click-event listener, pass in click event
   articleSpan.addEventListener("click", function()
   {
@@ -184,8 +196,9 @@ function articleMakerFunction(dataParam)
     articleDiv.classList.toggle("article-open")
   });
 
-  //Function return statement, return the dataParam
-  return dataParam;
+
+  //Function return statement, return articleDiv
+  return articleDiv;
 }
 
 //---Function call---//
