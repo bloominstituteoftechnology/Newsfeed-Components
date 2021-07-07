@@ -9,10 +9,10 @@ let menuItems = [
   'Log Out'
 ];
 function growMenu() {
-  gsap.to(".menu--open", {duration: 2, fontSize: "20px"});
+  gsap.to(".menu--open", {duration: 1, fontSize: "20px"});
 }
 function shrinkMenu() {
-  gsap.to(".menu--open", {duration: 2, fontSize: "0px"});
+  gsap.to(".menu--close", {duration: 1, fontSize: "0px"});
 }
 
 function menuMaker(menuItems) {
@@ -27,15 +27,15 @@ function menuMaker(menuItems) {
     });
     menuContainer.append(menuList);
     const menuButton = document.querySelector(".menu-button");
+    menuContainer.classList.toggle("menu--close");
+    menuButton.style.width="10px";
+    menuButton.style.height="10px";
+    menuButton.style.backgroundColor="black";
     menuButton.addEventListener("click", () => {
-      if (menuContainer.className.includes("menu--open")) {
-        menuContainer.className.replace("menu--open","") 
-        growMenu();
-      } else { 
-        menuContainer.className += " menu--open";
-        shrinkMenu();
-      } 
-      
+      menuContainer.classList.toggle("menu--open");
+      menuContainer.classList.toggle("menu--close");
+      growMenu()
+      shrinkMenu()
     })
     return menuContainer;
 }
