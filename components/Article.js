@@ -87,6 +87,12 @@ const data = [
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`,
   },
+  {
+    title: "Testing new article.",
+    date: "June 1 2077",
+    firstParagraph:
+      "Car rides are evil spend all night ensuring people don't sleep sleep all day but leave hair on owner's clothes love me! but poop on the floor, break a planter, sprint, eat own hair, vomit hair, hiss, chirp at birds, eat a squirrel, hide from fireworks, lick toe beans, attack christmas tree destroy house in 5 seconds. Relentlessly pursues moth. Attack feet claw at curtains stretch and yawn nibble on tuna ignore human bite human hand so toy mouse squeak roll over scratch the postman wake up lick paw wake up owner meow meow yet love to play with owner's hair tie or poop on the floor, break a planter, sprint, eat own hair, vomit hair, hiss, chirp at birds, eat a squirrel, hide from fireworks, lick toe beans, attack christmas tree, lick arm hair. Bite off human's toes you call this cat food plan steps for world domination for i see a bird i stare at it i meow at it i do a wiggle come here birdy. Mewl for food at 4am go into a room to decide you didn't want to be in there anyway and leave dead animals as gifts, so this human feeds me, i should be a god hack pee in human's bed until he cleans the litter box for look at dog hiiiiiisssss.",
+  },
 ];
 
 /*
@@ -118,49 +124,40 @@ const data = [
   Refresh the page to see the new article.
 */
 
-const articles = document.querySelector(".articles");
-
-//Step one
-
-function articleMaker(obj) {
-  const article = document.createElement("div");
-  const title = document.createElement("h2");
+function articleMaker(articleObj) {
+  const div = document.createElement("div");
+  const h2 = document.createElement("h2");
   const date = document.createElement("p");
-  const firstParagraph = document.createElement("p");
-  const secondParagraph = document.createElement("p");
-  const thirdParagraph = document.createElement("p");
-  const button = document.createElement("span");
+  const p1 = document.createElement("p");
+  const p2 = document.createElement("p");
+  const p3 = document.createElement("p");
+  const span = document.createElement("span");
 
-  title.textContent = obj.title;
-  date.textContent = obj.date;
-  firstParagraph.textContent = obj.firstParagraph;
-  secondParagraph.textContent = obj.secondParagraph;
-  thirdParagraph.textContent = obj.thirdParagraph;
-
-  article.classList.add("article");
+  div.classList.add("article");
+  h2.textContent = articleObj.title;
   date.classList.add("date");
-  button.classList.add("expandButton");
+  date.textContent = articleObj.date;
+  p1.textContent = articleObj.firstParagraph;
+  p2.textContent = articleObj.secondParagraph;
+  p3.textContent = articleObj.thirdParagraph;
+  span.classList.add("expandButton");
+  span.textContent = "+ Click to Expand";
+  div.appendChild(h2);
+  div.appendChild(date);
+  div.appendChild(p1);
+  div.appendChild(p2);
+  div.appendChild(p3);
+  div.appendChild(span);
 
-  article.appendChild(title);
-  article.appendChild(date);
-  article.appendChild(firstParagraph);
-  article.appendChild(secondParagraph);
-  article.appendChild(thirdParagraph);
-  article.appendChild(button);
-
-  //Step two
-
-  button.addEventListener("click", () => {
-    article.classList.toggle("article-open");
+  span.addEventListener("click", (event) => {
+    div.classList.toggle("article-open");
+    const isOpen = div.classList.contains("article-open");
+    span.textContent = isOpen ? "Close" : "Click to Expand";
   });
-
-  //Step three
-  return article;
+  return div;
 }
 
-//Step four
-
-data.forEach((title) => {
-  const divsData = articleMaker(title);
-  return articles.appendChild(divsData);
+const articles = document.querySelector(".articles");
+data.forEach((articleObj) => {
+  articles.appendChild(articleMaker(articleObj));
 });
