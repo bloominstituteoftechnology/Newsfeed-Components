@@ -86,6 +86,13 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'How low-code programming can help your organization create apps quickly and easily',
+    date: 'Oct 27, 2020',
+    firstParagraph: 'As a system administrator I\'ve often been impressed—yet a bit intimidated—by the breadth and depth of complexity surrounding traditional programming. Among the developers I have worked with for years it is very much a life-embedded culture of details.',
+    secondParagraph: 'I discussed low code with Matteo Henking, application product owner at consulting provider Constellation, Inc. and Anthony Licona, director of innovation and technology at Edge OFS, an oil and energy company, to get their takes on the experiences they\'ve had.',
+    thirdParagraph: 'From evaluating the other low-code platforms, we saw that most of them were more of a no-code platform than a low-code platform. One of the key metrics involved in the decision was assessing how development velocity could remain high as the complexity increased.'
   }
 ];
 
@@ -114,3 +121,53 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+const articleMaker = (articleObject) => {
+
+    // create article element
+    const article = document.createElement('div');
+    article.classList.add('article');
+
+    // append h2 element
+    const h2 = document.createElement('h2');
+    h2.innerHTML = articleObject.title;
+    article.append(h2);
+
+    // append date element
+    const date = document.createElement('p');
+    date.classList.add('date');
+    date.innerHTML = articleObject.date;
+    article.append(date);
+
+    // append first paragraph element
+    const firstParagraph = document.createElement('p');
+    firstParagraph.innerHTML = articleObject.firstParagraph;
+    article.append(firstParagraph);
+
+    // append second paragraph element
+    const secondParagraph = document.createElement('p');
+    secondParagraph.innerHTML = articleObject.secondParagraph;
+    article.append(secondParagraph);
+
+    // append third paragraph element
+    const thirdParagraph = document.createElement('p');
+    thirdParagraph.innerHTML = articleObject.thirdParagraph;
+    article.append(thirdParagraph);
+
+    // append expand button element
+    const expandButton = document.createElement('span');
+    expandButton.classList.add('expandButton');
+    expandButton.textContent = '+';
+    article.append(expandButton);
+    expandButton.addEventListener('click', () => {
+      article.classList.toggle('article-open');
+    });
+    
+    return article;
+}
+
+// map articles into elements and append them to DOM
+data.map((article) => {
+  let articles = document.querySelector('.articles');
+  articles.append(articleMaker(article));
+});
