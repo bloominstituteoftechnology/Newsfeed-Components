@@ -34,24 +34,20 @@ let menuItems = [
 
 function menuMaker(array){
 
-
   const menuN = document.createElement('div')
-  const list = document.createElement('ul')
-  const  lists = document.createElement('li')
+  const uList = document.createElement('ul')
   
   menuN.classList.add('menu')
-  menuN.appendChild(list);
+  menuN.appendChild(uList);
+
   array.forEach(item =>{
-    
-    return item;
+    const listItem = document.createElement('li')
+    listItem.textContent = item
+    uList.appendChild(listItem)
+   console.log(listItem)
     
    })
-   lists.textContent = item;
-
-   console.log(lists)
-  list.appendChild(lists)
  
-
   const menubutton = document.querySelector('img.menu-button');
   menubutton.addEventListener('click', () =>{
     menuN.classList.toggle('menu--open')
