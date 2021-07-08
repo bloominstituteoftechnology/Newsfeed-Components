@@ -132,7 +132,7 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
-function createArticle(data) {
+function articleMaker(data) {
   //Create the article elements
   const article = document.createElement('div');
   const articleTitle = document.createElement('h2');
@@ -174,5 +174,5 @@ function createArticle(data) {
 const articles = document.querySelector('.articles');
 
 data.forEach(element => {
-  articles.appendChild(createArticle(element));
+  articles.appendChild(articleMaker(element));
 })
