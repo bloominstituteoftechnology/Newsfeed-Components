@@ -86,6 +86,24 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Doggo codes Cat themed crypto token',
+    date: 'Nov 16th, 2021',
+    firstParagraph: `Doggo ipsum clouds floofs corgo the neighborhood pupper ur givin me a spook floofs, shoob many pats adorable doggo. stop it fren. Big ol pupper pupper doggo blep heckin good boys and girls h*ck boof, big ol pupper smol puggo snoot noodle horse pats, snoot many pats dat tungg tho boof very hand that feed shibe. very taste wow floofs. Very good spot doggo wow such tempt puggo ur givin me a spook blop shoober, clouds pupperino heckin angery woofer puggo noodle horse. Pats wow very biscit adorable doggo shoober vvv, wow very biscit very good spot. H*ck big ol long woofer floofs long doggo, I am bekom fat clouds pupperino. Stop it fren very hand that feed shibe doing me a frighten ruff, he made many woofs adorable doggo. Lotsa pats porgo woofer noodle horse shoober shooberino, wrinkler you are doin me a concern sub woofer I am bekom fat, bork boof dat tungg tho doggorino. `,
+
+    secondParagraph: `Heckin good boys and girls yapper I am bekom fat big ol, much ruin diet. very hand that feed shibe what a nice floof extremely cuuuuuute. Long water shoob lotsa pats smol sub woofer shoob many pats very jealous pupper most angery pupper I have ever seen, I am bekom fat boofers heckin good boys long woofer the neighborhood pupper. Puggo doggo yapper long bois woofer puggorino, super chub you are doing me the shock the neighborhood pupper. Long bois big ol super chub length boy, heck. Clouds doing me a frighten ruff waggy wags shoob smol boofers pats lotsa pats, clouds long water shoob boof the neighborhood pupper wow such tempt much ruin diet bork. `,
+
+    thirdParagraph: `Very taste wow heckin good boys and girls I am bekom fat the neighborhood pupper long doggo long woofer, floofs yapper lotsa pats. ur givin me a spook puggo borkf. borking doggo puggo borking doggo. Shibe borkdrive fluffer mlem smol borking doggo with a long snoot for pats, wrinkler ruff borking doggo. Many pats lotsa pats borkdrive h*ck wrinkler dat tungg tho shibe, clouds fat boi bork very good spot.`
+  },
+  {
+    title: 'Taco cat backwards spells taco cat',
+    date: 'Feb 21st, 2007',
+    firstParagraph: `Nyan fluffness ahh cucumber! push your water glass on the floor sees bird in air, breaks into cage and attacks creature so bird bird bird bird bird bird human why take bird out i could have eaten that i’m so hungry i’m so hungry but ew not for that and grab pompom in mouth and put in water dish. Trip owner up in kitchen i want food catch small lizards, bring them into house, then unable to find them on carpet, slap owner's face at 5am until human fills food dish and try to jump onto window and fall while scratching at wall steal the warm chair right after you get up. Drink from the toilet i just saw other cats inside the house and nobody ask me before using my litter box litter kitter kitty litty little kitten big roar roar feed me yet spend all night ensuring people don't sleep sleep all day. Your pillow is now my pet bed. Pushes butt to face stare at the wall, play with food and get confused by dust but tweeting a baseball so run in circles, fight own tail climb into cupboard and lick the salt off rice cakes. Cough furball into food bowl then scratch owner for a new one. `,
+
+    secondParagraph: `Make it to the carpet before i vomit mmmmmm plan steps for world domination and purr when give birth suddenly go on wild-eyed crazy rampage yet love blinks and purr purr purr purr yawn yet annoy the old grumpy cat, start a fight and then retreat to wash when i lose, but nyan nyan goes the cat, scraaaaape scraaaape goes the walls when the cat murders them with its claws. When owners are asleep, cry for no apparent reason swat turds around the house whenever a door is opened, rush in before the human lick master's hand at first then bite because im moody. `,
+
+    thirdParagraph: `I show my fluffy belly but it's a trap! if you pet it i will tear up your hand meow and walk away yet hit you unexpectedly but get video posted to internet for chasing red dot, but bawl under human beds. Crash against wall but walk away like nothing happened spend six hours per day washing, but still have a crusty butthole do doodoo in the litter-box, clickityclack on the piano, be frumpygrumpy so spend all night ensuring people don't sleep sleep all day. Cat jumps and falls onto the couch purrs and wakes up.`
   }
 ];
 
@@ -114,3 +132,47 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+function articleMaker(data) {
+  //Create the article elements
+  const article = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+  const articleDate = document.createElement('p');
+  const articleParOne = document.createElement('p');
+  const articleParTwo = document.createElement('p');
+  const articleParThree = document.createElement('p');
+  const articleExpander = document.createElement('span');
+
+  //Nest elements into the div
+  article.appendChild(articleTitle);
+  article.appendChild(articleDate);
+  article.appendChild(articleParOne);
+  article.appendChild(articleParTwo);
+  article.appendChild(articleParThree);
+  article.appendChild(articleExpander);
+
+  //Pull values from data object
+  articleTitle.textContent = data.title;
+  articleDate.textContent = data.date;
+  articleParOne.textContent = data.firstParagraph;
+  articleParTwo.textContent = data.secondParagraph;
+  articleParThree.textContent = data.thirdParagraph;
+  articleExpander.textContent = 'Expand';
+
+  //Adding classes to the article compenents
+  article.classList.add('article');
+  articleDate.classList.add('date');
+  articleExpander.classList.add('expandButton');
+
+  //Adding listener 
+  articleExpander.addEventListener('click', event => {
+    article.classList.toggle('article-open');
+  })
+
+  return article;
+}
+
+const articles = document.querySelector('.articles');
+
+data.forEach(element => {
+  articles.appendChild(articleMaker(element));
+})
