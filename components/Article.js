@@ -86,6 +86,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'When Will Common Cents Get More Rogue Wintergreen 6mg??',
+    date: 'RIGHT NOW',
+    firstParagraph: `I want it I need it I want it I need it and I want it `,
+
+    secondParagraph: `Also it need it real bad. `,
+
+    thirdParagraph: `I would murder a breakfast burrito right now`
   }
 ];
 
@@ -114,3 +123,43 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+function articleMaker(title, date, p1, p2, p3) {
+  const article = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+  const articleDate = document.createElement('p');
+  const paragraph1 = document.createElement('p');
+  const paragraph2 = document.createElement('p');
+  const paragraph3 = document.createElement('p');
+  const articleSpan = document.createElement('span');
+
+  article.appendChild(articleTitle);
+  article.appendChild(articleDate);
+  article.appendChild(paragraph1);
+  article.appendChild(paragraph2);
+  article.appendChild(paragraph3);
+  article.appendChild(articleSpan);
+
+  article.classList.add('article');
+  articleDate.classList.add('date');
+  articleSpan.classList.add('expandButton');
+
+  articleTitle.textContent = title;
+  articleDate.textContent = date;
+  paragraph1.textContent = p1;
+  paragraph2.textContent = p2;
+  paragraph3.textContent = p3;
+  articleSpan.textContent = '+';
+
+  articleSpan.addEventListener('click', (e) => {
+    article.classList.toggle('article-open');
+  });
+
+  return article;
+};
+
+const articles = document.querySelector('.articles');
+
+data.map((data) => {
+  articles.appendChild(articleMaker(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph));
+});
