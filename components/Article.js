@@ -152,34 +152,53 @@ function articleMakerFunction(dataParam)
   
 
   //---paragraphs---//
+  /* This loop creates the p elements, but it doesn't populate text */
+
   //Declare an array to hold the p elements
-  const paraArray = [];
-  //For loop to iterate the array and create p elements
-  for (let i = 0; i < paraArray.length; i++)
-  {
-    //Each iteration, create a new p element
-    paraArray.push(document.createElement("p"));
-
-  }
-
-  //---Paragraph text---//
-  //Assign the text data from each of the object item's paragraphs
-  //to array item by element number using textContent()
-  // paraArray[0].textContent = dataParam.firstParagraph;
-  // paraArray[1].textContent = dataParam.secondParagraph;
-  // paraArray[2].textContent = dataParam.thirdParagraph;
-
-  //ForEach with arrow to append to docs
-  paraArray.forEach(p => articleDiv.appendChild(p));
-
-  
-  //ForEach without arrow
-  // paraArray.forEach(function(p)
+  // let paraArray = [];
+  // //for loop to iterate dataParam and...
+  // for (let i = 0; i < dataParam.length; i++)
   // {
-  //   articleDiv.appendChild(p);
-  // });
+  //   //...push a new element to paraArray
+  //   paraArray.push(document.createElement("p"));
+  //   //
+  //   paraArray[i].textContent = dataParam.firstParagraph;
+  //   paraArray[i].textContent = dataParam.secondParagraph;
+  //   paraArray[i].textContent = dataParam.thirdParagraph;
+  // }
+
+    
+  // //Append the p elements
+  // paraArray.forEach(p => articleDiv.appendChild(p));
+
  
+
+
+  //---Paragraph 1---//
+  //Create a p element
+  const para1 = document.createElement('p');
+  //Apply the text from the object's firstParagraph
+  para1.textContent = dataParam.firstParagraph;
+  //Append to the doc
+  articleDiv.appendChild(para1);
+
+  //---Paragraph 2---//
+  //Create a p element
+  const para2 = document.createElement('p');
+  //Apply the text from the object's secondParagraph
+  para2.textContent = dataParam.secondParagraph;
+  //Append to the doc
+  articleDiv.appendChild(para2);
+
+  //---Paragraph 3---//
+  //Create a p element
+  const para3 = document.createElement('p');
+  //Apply the text from the object's thirdParagraph
+  para3.textContent = dataParam.thirdParagraph;
+  //Append to the doc
+  articleDiv.appendChild(para3);
   
+
   //---span---//
   //Create element span and assign to articleSpan
   const articleSpan = document.createElement("span");

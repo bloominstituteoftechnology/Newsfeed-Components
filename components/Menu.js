@@ -29,7 +29,7 @@ let menuItems = [
 
   + Step 5: Don't forget to return your div.menu.
 
-  Step 6: Use 'menuMaker' to create a menu using the 'menuItems' array, and append the returned menu to the header.
+  + Step 6: Use 'menuMaker' to create a menu using the 'menuItems' array, and append the returned menu to the header.
 */
 
 //
@@ -84,6 +84,6 @@ function menuMakerFunction(arrayParam)
 }
 
 
-
+//Call the function, pass in the menu items, append to doc
 menuHeader.appendChild(menuMakerFunction(menuItems));
 
