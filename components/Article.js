@@ -102,15 +102,69 @@ const data = [
 
     <span class="expandButton">+</span>
   </div>
+  */
+ function articleMaker(article){
+   const articleElement = document.createElement('div');
+   articleElement.classList.add("article");
 
-  Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
-  This listener should toggle the class 'article-open' on div.article.
 
-  Step 3: Don't forget to return something from your function!
+   const h2 = document.createElement('h2');
+   articleElement.appendChild(h2);
+   h2.textContent = article.title;
 
-  Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
-  to create a div.article element and append it to the DOM inside div.articles (see index.html).
+   const date = document.createElement('p');
+   articleElement.appendChild(date);
+   date.classList.add("date");
+   date.textContent = article.date;
 
-  Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
-  Refresh the page to see the new article.
-*/
+   const paragraph1 = document.createElement('p');
+   articleElement.appendChild(paragraph1);
+   paragraph1.textContent = article.firstParagraph;
+
+   const paragraph2 = document.createElement('p');
+   paragraph1.appendChild(paragraph2);
+   paragraph2.textContent = article.secondParagraph;
+   console.log(paragraph2);
+
+   const paragraph3 = document.createElement('p');
+   paragraph1.appendChild(paragraph3);
+   paragraph3.textContent = article.thirdParagraph;
+
+   const span = document.createElement('span');
+   articleElement.appendChild(span);
+   span.textContent = "+";
+   span.classList.add("expandButton");
+
+
+
+  /*Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
+  This listener should toggle the class 'article-open' on div.article.*/
+  span.addEventListener('click', () => {
+    articleElement.classList.toggle("article-open");
+  });
+  
+  /* Step 3: Don't forget to return something from your function!*/
+ return articleElement;
+ }
+  /* Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
+  to create a div.article element and append it to the DOM inside div.articles (see index.html).*/
+// data.forEach(element => {
+//   document.querySelector('.articles').append(articleMaker(element));
+// })
+
+  /* Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
+  Refresh the page to see the new article.*/
+
+  data.push({
+    title: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...',
+    date: 'Jul 10th, 1987',
+    firstParagraph: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod sapien eget tincidunt porta. Donec fringilla ex lectus, sit amet vulputate metus posuere id. Mauris sed odio sed nulla volutpat scelerisque. Donec lacinia nisi est, in pretium quam luctus in. Nulla felis erat, accumsan et lectus vel, vulputate maximus nisl. Vestibulum ultrices at sapien eu pretium. Quisque in justo malesuada, convallis arcu at, accumsan sem. Phasellus at purus sed dui faucibus consequat.`,
+
+    secondParagraph: `Aenean malesuada ornare magna, vitae pharetra sem consequat ac. Cras luctus ante sed lectus eleifend, vitae viverra risus lobortis. Ut consequat urna sapien, faucibus maximus tortor sollicitudin in. Phasellus posuere leo arcu, id lacinia justo fringilla a. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum id nunc enim. Nulla sollicitudin ut leo ac dapibus.`,
+
+    thirdParagraph: `Sed rutrum egestas felis eget accumsan. Nam tempor enim ante, ut eleifend turpis aliquam a. Vestibulum imperdiet nunc eget erat eleifend convallis. Nunc facilisis gravida nisi ut dictum. Duis a porttitor nisl. Nulla facilisi. Donec porta enim nec quam consequat, eu sollicitudin nunc eleifend. Mauris sapien dui, suscipit ut massa ut, pellentesque ultricies risus. Maecenas ac rutrum nisl. Donec sollicitudin ligula justo, ut vehicula odio volutpat eu. Sed commodo, risus eu malesuada tempus, felis dolor sodales lorem, sit amet euismod lectus sem ut ipsum. Suspendisse tristique metus cursus risus aliquam vehicula ut eu felis. Pellentesque tristique vitae nibh id egestas. Nam nec placerat nunc, vel blandit dolor. Etiam lacus augue, egestas sed libero et, sagittis mollis massa. Quisque vehicula pharetra dolor.`
+  })
+
+  data.forEach(element => {
+    document.querySelector('.articles').append(articleMaker(element));
+  })
