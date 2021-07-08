@@ -86,13 +86,20 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
-  }
+  },
+  {title: 'test article!',
+   date: 'July 7th, 2021',
+  firstParagraph: 'im just going to type stuff in here to fill up the space as best i can. bla bla bla bla bla bla bla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla bla',
+  secondParagraph: 'bla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla bla',
+  thirdParagraph: 'bla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla bla'}
+
 ];
 
 /*
   Step 1: Write a component called 'articleMaker' to create an article.
   Your component is a function that takes an article object as its only argument,
   and returns a DOM node looking like the one below:
+
 
   <div class="article">
     <h2>{title of the article}</h2>
@@ -102,7 +109,47 @@ const data = [
 
     <span class="expandButton">+</span>
   </div>
+*/
 
+function articleMaker({ title, date, firstParagraph, secondParagraph, thirdParagraph }){
+  const article = document.createElement('div');
+  const hTitle = document.createElement('h2');
+  const pDate = document.createElement('p');
+  const fP = document.createElement('p');
+  const sP = document.createElement('p');
+  const tP = document.createElement('p');
+  const span = document.createElement('span');
+
+  article.classList.add('article');
+  pDate.classList.add('date');
+  span.classList.add('expandButton');
+
+  hTitle.textContent = title;
+  pDate.textContent = date;
+  fP.textContent = firstParagraph;
+  sP.textContent = secondParagraph;
+  tP.textContent = thirdParagraph;
+  span.textContent = '+';
+
+  article.append(hTitle);
+  article.append(pDate);
+  article.append(fP);
+  article.append(sP);
+  article.append(tP);
+  article.append(span);
+
+  span.addEventListener('click', () => {
+    article.classList.toggle('article-open');
+  })
+
+  return article;
+}
+
+data.forEach(e => {
+  const article = articleMaker(e);
+  document.querySelector('.articles').append(article);
+})
+/*
   Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
   This listener should toggle the class 'article-open' on div.article.
 
