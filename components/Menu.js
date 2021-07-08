@@ -1,6 +1,6 @@
 // This is the data we will be using, study it but don't change anything, yet.
 
-let menuItems = [ '1' , '2' , '3' , '4' , '5' , '6'];
+const menuItems = [1, 2, 3, 4, 5, 6];
 
 /* 
   Step 1: Write a component called 'menuMaker' to create a menu like the markup below:
@@ -29,24 +29,12 @@ function menuMaker(menuItems){
   const header = document.querySelector('.header');
   const div = document.createElement('div');
   const ulElement = document.createElement('ul');
-  
+
   div.classList.add('menu');
+  ulElement.classList.add('ul');
 
   header.appendChild(div);
   div.appendChild(ulElement);
-  
-
-  function liMaker(i){
-    const li = document.createElement('li');
-    li.textContent = menuItems[i]
-    return li;
-  }
-
-  for(let i = 0; i < menuItems.length; i++){
-    const li = document.createElement('li')
-    li.textContent = menuItems[i];
-    ulElement.appendChild(li);
-  }
 
   const menuButton = document.querySelector('.menu-button')
 
@@ -62,4 +50,12 @@ menuItems.forEach(e=> {
   document.querySelector('.menu').append(menu);
 })
 
+function liMaker (i){
+    const li = document.createElement('li')
+    li.textContent = menuItems[i];
+};
 
+menuItems.forEach(e=>{
+  const liElement = liMaker(e);
+  document.querySelector('.ul').appendChild(liElement);
+})
