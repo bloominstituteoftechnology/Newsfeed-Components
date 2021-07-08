@@ -45,12 +45,7 @@ const header = document.querySelector('.header');
 
     return menuNode;
   }
-
-  // const menu1 = menuMaker(menuItems);
-  // header.appendChild(menu1);
-// menuMaker(menuItems);
 console.log(menuMaker(menuItems));
-  // console.log(menuMaker(menuItems));
 /* 
   Step 2: Inside the function, iterate over the array creating a list item <li> element for each item in the array.
   Add those items to the <ul>
