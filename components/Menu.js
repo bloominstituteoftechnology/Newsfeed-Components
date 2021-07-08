@@ -22,35 +22,35 @@ let menuItems = [
 /*
 The 'menuMaker' takes an array of menu items as its only argument.
 */
+const header = document.querySelector('.header');
+
   function menuMaker(array){
-    const menuNode = document.createElement('div');
-    const ul = document.createElement('ul');
-
+    let menuNode = document.createElement('div');
+    menuNode.classList.add('menu');
+    let ul = document.createElement('ul');
+    header.appendChild(menuNode);
     menuNode.appendChild(ul);
-
-    menuNode.classList.add('menu-node');
+   
 
     array.forEach(e => {
-      // const menuThing = document.createElement('li');
-      // ul.appendChild(menuThing);
       let menuThing = document.createElement('li');
       menuThing.textContent = e;
-      ul.appendChild(menuThing);
+      menuNode.appendChild(menuThing);
     });
       
-      const menuBtnImg = document.querySelector('.menu-button');
-
-      menuBtnImg.addEventListener('click', () => {
-        menuNode.classList.toggle('menu-open');
-      });
+    const menuBtnImg = document.querySelector('.menu-button');
+    menuBtnImg.addEventListener('click', () => {
+      menuNode.classList.toggle('menu--open');
+    });
 
     return menuNode;
   }
-  const header = document.querySelector('.header');
-  const menu1 = menuMaker(menuItems);
-  header.appendChild(menu1);
 
-  console.log(menuMaker(menuItems));
+  // const menu1 = menuMaker(menuItems);
+  // header.appendChild(menu1);
+// menuMaker(menuItems);
+console.log(menuMaker(menuItems));
+  // console.log(menuMaker(menuItems));
 /* 
   Step 2: Inside the function, iterate over the array creating a list item <li> element for each item in the array.
   Add those items to the <ul>
