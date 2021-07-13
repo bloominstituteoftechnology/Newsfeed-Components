@@ -7,24 +7,79 @@
 .menu {
   display: none;
   position: fixed;
-  top: 75px;
+  top: 70px;
   left: 0;
+  margin:5px;
   width: 350px;
   height: 100vh; /* This give the height 100% of the screen or, '100% of View Height' */
   background-color: #81C784;
   border: 1px solid #004D40;
   border-left: none;
+  padding-right:3%;
+  text-align: center;
   border-bottom: none;
   z-index: 2; /* This set the layer level of the element, it has precendence over initial level of 1*/
+  animation-name: example;
+  animation-duration: 5s;
 }
-
+.menu:hover{
+  transform: scale(1.02);
+  transition-duration: 5s;
+  transform: rotate(360deg);
+  cursor: pointer;
+ 
+  transition: 3s;
+}
 .menu ul li{
   list-style-type: none;
   font-size: 32px;
-  padding: 30px 0;
+  padding: 40px 10px;
   text-align: center;
+  border: 2px solid wheat;
+  background-color: white; 
+  transform: translateY(35px);
+  margin:2px;
+  background-color: linear-gradient( red, blue);
+  
+}
+.menu ul li:hover{
+  font-size: large;
+  transform: scale(1.2);
+  transition-duration: 5s;
+  
+}
+@keyframes example {
+  0%{background-color: whitesmoke; left:100px; top:50px;}
+  50%  {background-color: wheat; left:100px; top:0px;}
+  100%  {background-color:gray; left:200px; top:200px;}
+}
+.menu--open {
+  width: 24%;
+  transform: width 30px;
+   display: block;
+   
 }
 
-.menu--open {
-  display: block;
+#myDiv{
+border: 1px solid black;
+background-color: lightblue;
+width: 270px;
+height: 200px;
+overflow: auto;
+transition: all 5s;
+}
+
+#myDIV:hover {
+background-color: coral;
+width: 570px;
+height: 500px;
+padding: 100px;
+border-radius: 50px;
+}
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100vh;
+  
 }
