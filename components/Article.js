@@ -136,7 +136,7 @@ function articleMaker(articleObj) {
 
   // 4 - Set text content in the individual boxes
   articleHeader.textContent = articleObj.title;
-  date.textContent = articleObj.date;
+   date.textContent = articleObj.date;
   paragraphOne.textContent = articleObj.firstParagraph;
   paragraphTwo.textContent = articleObj.secondParagraph;
   paragraphThree.textContent = articleObj.thirdParagraph;
