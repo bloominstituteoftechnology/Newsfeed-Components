@@ -114,3 +114,57 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+function articleMaker(obj) {
+  const content = document.createElement('div');
+  content.classList.add('article');
+  const h2 = document.createElement('h2');
+  h2.textContent = obj.title;
+  const dateP = document.createElement('p');
+  dateP.classList.add("date");
+  dateP.textContent = obj.date;
+  const firstP = document.createElement('p');
+  firstP.textContent = obj.firstParagraph;
+  const secondP = document.createElement('p');
+  secondP.textContent = obj.secondParagraph;
+  const thirdP = document.createElement('p');
+  thirdP.textContent = obj.thirdParagraph;
+  const span = document.createElement('span');
+  span.classList.add("expandButton");
+  span.textContent = '+';
+  content.appendChild(h2);
+  content.appendChild(dateP);
+  content.appendChild(firstP);
+  content.appendChild(secondP);
+  content.appendChild(thirdP);
+  
+  span.addEventListener('click', () => {
+    content.classList.toggle("article-open");
+    if (span.textContent == '+') {
+      span.textContent = '-';
+    } else {
+      span.textContent = '+';
+    }
+  })
+  content.appendChild(span);
+  return content;
+}
+
+let container = document.querySelector('.articles');
+
+newObj = {
+  title: 'Crazy Cat Facts',
+  date: 'Aug 4th, 2021',
+  firstParagraph: `On average, cats spend 2/3 of everyday sleeping and use 1/3 of their awake time cleaning themselves. `,
+
+  secondParagraph: `Cats are North America’s most popular pets: cats outnumber dogs 73 million to 63 million. Over 30% of North American homes have a cat. `,
+
+  thirdParagraph: `A cat’s brain is biologically more similar to a human brain than it is to a dog’s. Both humans and cats have identical regions in their brains that are responsible for emotions. `
+}
+
+data.push(newObj);
+
+data.forEach(item => {
+  const content = articleMaker(item);
+  container.appendChild(content);
+});
