@@ -149,6 +149,7 @@ function articleMaker({ title, date, firstParagraph, secondParagraph, thirdParag
   article.appendChild(exButton);
 
   article.classList.add('article');
+  article.classList.add('close')
   dates.classList.add('date');
   exButton.classList.add('expandButton');
 
