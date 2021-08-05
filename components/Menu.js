@@ -9,7 +9,6 @@ let menuItems = [
     'Log Out'
 ];
 
-
 function menuMaker(array)
 {
     /*
@@ -27,56 +26,32 @@ function menuMaker(array)
     const newMenu = document.createElement("div");
     const itemsList = document.createElement("ul");
 
-    const menuItem1 = document.createElement("li");
-    const menuItem2 = document.createElement("li");
-    const menuItem3 = document.createElement("li");
-    const menuItem4 = document.createElement("li");
-    const menuItem5 = document.createElement("li");
-    const menuItem6 = document.createElement("li");
-
-    newMenu.appendChild(itemsList);
-
-    newMenu.appendChild(menuItem1);
-    newMenu.appendChild(menuItem2);
-    newMenu.appendChild(menuItem3);
-    newMenu.appendChild(menuItem4);
-    newMenu.appendChild(menuItem5);
-    newMenu.appendChild(menuItem6);
-
-    newMenu.classList.add("menu", "menu-open");
-    itemsList.classList.add("item-list", "menu-open");
-
-    menuItem1.classList.add("menu-item");
-    menuItem2.classList.add("menu-item");
-    menuItem3.classList.add("menu-item");
-    menuItem4.classList.add("menu-item");
-    menuItem5.classList.add("menu-item");
-    menuItem6.classList.add("menu-item");
-
-    menuItem1.textContent = array[0];
-    menuItem2.textContent = array[1];
-    menuItem3.textContent = array[2];
-    menuItem4.textContent = array[3];
-    menuItem5.textContent = array[4];
-    menuItem6.textContent = array[5];
-
     /*
       Step 2: Inside the function, iterate over the array creating a list item <li> element for each item in the array.
       Add those items to the <ul>
     */
 
+    const menuItems = array.map(menuItem =>
+    {
+        const li = document.createElement("li");
+        li.textContent = menuItem;
+        return li;
+    });
 
-    // array.forEach(menuItem =>
-    // {
-    //     const li = document.createElement("li");
-    //     newMenu.appendChild(li);
-    //     newMenu.classList.add("menu");
-    //     // itemsList.classList.add("menu-item");
-    //     li.textContent = menuItem;
-    // });
+    newMenu.appendChild(itemsList);
 
-    // newMenu.appendChild(itemsList);
+    menuItems.forEach(menuItem =>
+    {
+        itemsList.appendChild(menuItem);
+    });
 
+    newMenu.classList.add("menu", "menu--open");
+    itemsList.classList.add("menu-list");
+
+    menuItems.forEach(menuItem =>
+    {
+        menuItem.classList.add("menu-item");
+    });
 
     /*
       Step 3: Still inside your function, select from the DOM the menu button (the element with a class of 'menu-button').
@@ -84,15 +59,13 @@ function menuMaker(array)
 
     const menuButton = document.querySelector(".menu-button");
 
-
-
     /*
       Step 4: Add a click event listener to the menu button. When clicked it should toggle the class 'menu--open' on div.menu (your div with a 'menu' class).
     */
 
     menuButton.addEventListener("click", () =>
     {
-        menuButton.classList.toggle("menu-open");
+        newMenu.classList.toggle("menu--open");
     });
 
     /*
@@ -108,6 +81,5 @@ function menuMaker(array)
 
 const menu = menuMaker(menuItems);
 
-
-const menuButton = document.querySelector(".menu-button");
-menuButton.appendChild(menu);
+const header = document.querySelector(".header");
+header.appendChild(menu);

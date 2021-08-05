@@ -189,9 +189,9 @@ const article =
 {
     title: 'Learning To Add New Articles',
     date: 'Aug 4th, 2021',
-    firstParagraph: `This was very confusing. `,
+    firstParagraph: `This was very confusing.`,
 
-    secondParagraph: `But we tried our best. `,
+    secondParagraph: `But we tried our best.`,
 
     thirdParagraph: `And we finally got it!`
 };
