@@ -170,7 +170,6 @@ function articleMaker({ title, date, firstParagraph, secondParagraph, thirdParag
 
     spanButton.addEventListener("click", () =>
     {
-        // spanButton.classList.toggle("article-open");
         panel.classList.toggle("article-open");
     });
 
