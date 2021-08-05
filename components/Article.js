@@ -118,15 +118,16 @@ const data = [
 function createArticle({title, date, firstParagraph, secondParagraph, thirdParagraph}) {
 
   // this is creating the elements for each article
+  const expandingButton = document.createElement('span');
   const article = document.createElement('div');
   const articleTitle = document.createElement('h2');
   const articleDate = document.createElement('p');
   const p1 = document.createElement('p');
   const p2 = document.createElement('p');
   const p3 = document.createElement('p');
-  const expandingButton = document.createElement('span');
 
   //adding the content to the div container that we already created above
+  article.appendChild(expandingButton);
   article.appendChild(articleTitle);
   article.appendChild(articleDate);
   article.appendChild(p1);
@@ -135,6 +136,23 @@ function createArticle({title, date, firstParagraph, secondParagraph, thirdParag
 
   //adding the classes to each element that requires one
   article.classList.add('article');
-  .classLisst.add();
-  .classLisst.add();
-}
+  articleDate.classList.add('date');
+  expandingButton.classList.add('expandButton');
+
+  //add the content
+  articleTitle.textContent = title;
+  articleDate.textContent = date;
+  expandingButton.textContent = '+';
+  p1.textContent = firstParagraph;
+  p2.textContent = secondParagraph;
+  p3.textContent = thirdParagraph;
+
+  expandingButton.addEventListener('click', (e) => {
+    article.classList.toggle('article-open')
+  });
+  return article;
+};
+
+data.forEach(item => {
+  document.querySelector('.articles').appendChild(createArticle(item));
+});
