@@ -86,6 +86,20 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Why "Raisin" Should Just Be Dry Grape', 
+    date: 'June 23rd 2020',
+    firstParagraph: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet posuere nibh. Integer sodales pharetra erat a rutrum. In at dolor quis orci pulvinar lacinia nec ut massa. Duis pretium lacinia blandit. Quisque malesuada vitae orci ut consectetur. Duis.`,
+    secondParagraph: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet posuere nibh. Integer sodales pharetra erat a rutrum. In at dolor quis orci pulvinar lacinia nec ut massa. Duis pretium lacinia blandit. Quisque malesuada vitae orci ut consectetur. Duis.`,
+    thirdParagraph: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet posuere nibh. Integer sodales pharetra erat a rutrum. In at dolor quis orci pulvinar lacinia nec ut massa. Duis pretium lacinia blandit. Quisque malesuada vitae orci ut consectetur. Duis.`
+  },
+  {
+    title: '10 Reasons I Need More Vitamin D', 
+    date: 'December 15th 2020',
+    firstParagraph: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet posuere nibh. Integer sodales pharetra erat a rutrum. In at dolor quis orci pulvinar lacinia nec ut massa. Duis pretium lacinia blandit. Quisque malesuada vitae orci ut consectetur. Duis.`,
+    secondParagraph: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet posuere nibh. Integer sodales pharetra erat a rutrum. In at dolor quis orci pulvinar lacinia nec ut massa. Duis pretium lacinia blandit. Quisque malesuada vitae orci ut consectetur. Duis.`,
+    thirdParagraph: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet posuere nibh. Integer sodales pharetra erat a rutrum. In at dolor quis orci pulvinar lacinia nec ut massa. Duis pretium lacinia blandit. Quisque malesuada vitae orci ut consectetur. Duis.`
   }
 ];
 
@@ -114,3 +128,45 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+function createArticle({title, date, firstParagraph, secondParagraph, thirdParagraph}) {
+
+  // this is creating the elements for each article
+  const expandingButton = document.createElement('span');
+  const article = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+  const articleDate = document.createElement('p');
+  const p1 = document.createElement('p');
+  const p2 = document.createElement('p');
+  const p3 = document.createElement('p');
+
+  //adding the content to the div container that we already created above
+  article.appendChild(expandingButton);
+  article.appendChild(articleTitle);
+  article.appendChild(articleDate);
+  article.appendChild(p1);
+  article.appendChild(p2);
+  article.appendChild(p3);
+
+  //adding the classes to each element that requires one
+  article.classList.add('article');
+  articleDate.classList.add('date');
+  expandingButton.classList.add('expandButton');
+
+  //add the content
+  articleTitle.textContent = title;
+  articleDate.textContent = date;
+  expandingButton.textContent = '+';
+  p1.textContent = firstParagraph;
+  p2.textContent = secondParagraph;
+  p3.textContent = thirdParagraph;
+
+  expandingButton.addEventListener('click', (e) => {
+    article.classList.toggle('article-open')
+  });
+  return article;
+};
+
+data.forEach(item => {
+  document.querySelector('.articles').appendChild(createArticle(item));
+});
