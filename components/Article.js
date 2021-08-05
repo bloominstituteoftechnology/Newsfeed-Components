@@ -101,20 +101,73 @@ const data = [
     {three separate paragraph elements}
 
     <span class="expandButton">+</span>
-  </div>
+  </div>*/
 
-  Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
-  This listener should toggle the class 'article-open' on div.article.
+function articleMaker({ title, date, firstParagraph, secondParagraph, thirdParagraph })
+{
+    const panel = document.createElement("div");
+    const panelTitle = document.createElement("h2");
+    const panelDate = document.createElement("p");
+    const panelContent1 = document.createElement("p");
+    const panelContent2 = document.createElement("p");
+    const panelContent3 = document.createElement("p");
+    const spanButton = document.createElement("span");
+    panel.appendChild(panelTitle);
+    panel.appendChild(panelDate);
+    panel.appendChild(panelContent1);
+    panel.appendChild(panelContent2);
+    panel.appendChild(panelContent3);
+    panel.appendChild(spanButton);
+    panel.classList.add("article", "article-open");
+    panelDate.classList.add("date");
+    panelContent1.classList.add("content");
+    panelContent2.classList.add("content");
+    panelContent3.classList.add("content");
+    spanButton.classList.add("expandButton");
+    panelTitle.textContent = title;
+    panelDate.textContent = date;
+    panelContent1.textContent = firstParagraph;
+    panelContent2.textContent = secondParagraph;
+    panelContent3.textContent = thirdParagraph;
+    spanButton.textContent = "+";
+    spanButton.style.fontSize = "1em";
+    spanButton.style.color = "purple";
+    spanButton.style.background = "none";
 
-  Step 3: Don't forget to return something from your function!
-
-  Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
-  to create a div.article element and append it to the DOM inside div.articles (see index.html).
-
+    /*
+            Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
+            This listener should toggle the class 'article-open' on div.article.
+        */
+    spanButton.addEventListener("click", () =>
+    {
+        // spanButton.classList.toggle("article-open");
+        panel.classList.toggle("article-open");
+    });
+    /*
+        Step 3: Don't forget to return something from your function!
+    */
+    return panel;
+}
+/*
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
-function articleMaker({ title, date, firstParagraph, secondParagraph, thirdParagraph })
+const article =
 {
+    title: 'Learning To Add New Articles',
+    date: 'Aug 4th, 2021',
+    firstParagraph: `This was very confusing. `,
+    secondParagraph: `But we tried our best. `,
+    thirdParagraph: `And we finally got it!`
+};
+data.push(article);
+/*
+  Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
+  to create a div.article element and append it to the DOM inside div.articles (see index.html).*/
 
-}
+const articles = document.querySelector(".articles");
+data.forEach(article =>
+{
+    const panel = articleMaker(article);
+    articles.appendChild(panel);
+});
