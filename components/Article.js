@@ -88,11 +88,18 @@ const data = [
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   },
   {
-    title: '', 
-    date: '',
-    firstParagraph: ``,
-    secondParagraph: ``,
-    thirdParagraph: ``
+    title: 'Why "Raisin" Should Just Be Dry Grape', 
+    date: 'June 23rd 2020',
+    firstParagraph: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet posuere nibh. Integer sodales pharetra erat a rutrum. In at dolor quis orci pulvinar lacinia nec ut massa. Duis pretium lacinia blandit. Quisque malesuada vitae orci ut consectetur. Duis.`,
+    secondParagraph: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet posuere nibh. Integer sodales pharetra erat a rutrum. In at dolor quis orci pulvinar lacinia nec ut massa. Duis pretium lacinia blandit. Quisque malesuada vitae orci ut consectetur. Duis.`,
+    thirdParagraph: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet posuere nibh. Integer sodales pharetra erat a rutrum. In at dolor quis orci pulvinar lacinia nec ut massa. Duis pretium lacinia blandit. Quisque malesuada vitae orci ut consectetur. Duis.`
+  },
+  {
+    title: '10 Reasons I Need More Vitamin D', 
+    date: 'December 15th 2020',
+    firstParagraph: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet posuere nibh. Integer sodales pharetra erat a rutrum. In at dolor quis orci pulvinar lacinia nec ut massa. Duis pretium lacinia blandit. Quisque malesuada vitae orci ut consectetur. Duis.`,
+    secondParagraph: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet posuere nibh. Integer sodales pharetra erat a rutrum. In at dolor quis orci pulvinar lacinia nec ut massa. Duis pretium lacinia blandit. Quisque malesuada vitae orci ut consectetur. Duis.`,
+    thirdParagraph: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet posuere nibh. Integer sodales pharetra erat a rutrum. In at dolor quis orci pulvinar lacinia nec ut massa. Duis pretium lacinia blandit. Quisque malesuada vitae orci ut consectetur. Duis.`
   }
 ];
 
