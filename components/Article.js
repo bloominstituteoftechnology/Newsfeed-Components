@@ -23,6 +23,8 @@ const data = [
         han. C-3po antilles moff qui-gon ahsoka aayla dooku amidala. Palpatine droid amidala droid k-3po twi'lek padmé wookiee. Leia
         moff calamari mon obi-wan. Solo grievous lando coruscant. Jinn darth palpatine obi-wan mon.`
   },
+
+
   {
     title: 'Javascript and You, ES6',
     date: 'May 7th, 2019',
@@ -113,4 +115,58 @@ const data = [
 
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
-*/
+
+*/ 
+const additionArticle = {
+  title: 'DOGE',
+  date: 'TIME TO DOGE ',
+  firstParagraph: `INVEST INTO COIN MUCH SAVING VERY WOW`,
+
+  secondParagraph: `MUCH WOW VERY COOL`,
+
+  thirdParagraph: `AMAZING TIME MUCH NEEDED`
+}
+
+data.push(additionArticle)
+
+function articleMaker({title, date, firstParagraph, secondParagraph, thirdParagraph}) {
+  const divy = document.createElement('div')
+  const h2 = document.createElement('h2')
+  const p = document.createElement('p')
+  const paraOne = document.createElement('p')
+  const paraTwo = document.createElement('p')
+  const paraThree = document.createElement('p')
+  const span = document.createElement('span')
+
+  divy.appendChild(h2)
+  divy.appendChild(p)
+  divy.appendChild(paraOne)
+  divy.appendChild(paraTwo)
+  divy.appendChild(paraThree)
+  divy.appendChild(span)
+
+ span.textContent = 'Check this out'
+ h2.textContent = title
+ p.textContent = date
+ paraOne.textContent = firstParagraph
+ paraTwo.textContent = secondParagraph
+ paraThree.textContent = thirdParagraph
+
+ divy.classList.add('article')
+ p.classList.add('date')
+ span.classList.add('expandButton')
+
+ span.addEventListener('click' , () => {
+    divy.classList.toggle('article-open')
+ 
+ })
+
+ return divy
+}
+
+const container = document.querySelector('div.articles')
+
+data.forEach(datum => {
+  const newArticle = articleMaker(datum)
+  container.appendChild(newArticle)
+})
