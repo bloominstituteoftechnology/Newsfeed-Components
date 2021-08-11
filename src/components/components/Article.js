@@ -2,10 +2,8 @@
 // OPTIONAL: if you're feeling adventurous, try to make this data an export from a different module, and import it here.
 // You can read about ES6 modules here: https://exploringjs.com/es6/ch_modules.html#sec_basics-of-es6-modules
 import data from '../dummydata'
-import menuMaker from './Menu'
 
 const articleDiv = document.querySelector('div.articles')
-const expandingbutton = document.querySelector('.expandButton')
 
 const articleMaker = ({ title, date, firstParagraph, secondParagraph, thirdParagraph }) => {
 
@@ -29,13 +27,14 @@ const articleMaker = ({ title, date, firstParagraph, secondParagraph, thirdParag
   paragraph1.textContent = firstParagraph
   paragraph2.textContent = secondParagraph
   paragraph3.textContent = thirdParagraph
+  spanButton.textContent = '+'
 
   panel.classList.add('article')
   theDate.classList.add('date')
   spanButton.classList.add('expandButton')
 
-  expandingbutton.addEventListener('click', () => {
-    expandingbutton.classList.add('article-open')
+  spanButton.addEventListener('click', () => {
+    panel.classList.toggle('article-open')
   })
 
   return panel

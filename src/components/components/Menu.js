@@ -33,13 +33,18 @@ const menuMaker = (obj) => {
   
 
   listitem1.textContent = obj[0]
-  listitem1.textContent = obj[1]
-  listitem1.textContent = obj[2]
-  listitem1.textContent = obj[3]
-  listitem1.textContent = obj[4]
-  listitem1.textContent = obj[5]
+  listitem2.textContent = obj[1]
+  listitem3.textContent = obj[2]
+  listitem4.textContent = obj[3]
+  listitem5.textContent = obj[4]
+  listitem6.textContent = obj[5]
 
   panel.classList.add('menu')
+
+  const menuButton = document.querySelector('.menu-button')
+  menuButton.addEventListener('click', () => {
+    panel.classList.toggle('menu--open')
+  })
   
   return panel
 }
