@@ -88,7 +88,7 @@ const data = [
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
 ];
-
+const articles = document.querySelector('.articles');
 /*
   Step 1: Write a component called 'articleMaker' to create an article.
   Your component is a function that takes an article object as its only argument,
@@ -105,24 +105,51 @@ const data = [
     <span class="expandButton">+</span>
   </div>
 */
+function articleMaker({ data }){
+  const article = document.createElement('div');
+  const title = document.createElement('h2');
+  const date = document.createElement('p');
+  const paragraph1 = document.createElement('p');
+  const paragraph2 = document.createElement('p');
+  const paragraph3 = document.createElement('p');
+  const expandButton = document.createElement('span')
 
+  title.appendChild(h2);
+  date.appendChild(date);
+  paragraph1.appendChild(paragraph1);
+  paragraph2.appendChild(paragraph2);
+  paragraph3.appendChild(paragraph3);
 
+  article.classList.add('article');
+  title.classList.add(data.title);
+  date.classList.add('date');
+  expandButton.classList.add('expandButton');
 
+  title.textContent.add('title');
+  date.textContent.add('date')
+  paragraph1.textContent.add('firstParagraph');
+  paragraph2.textContent.add('secondParagraph');
+  paragraph3.textContent.add('thirdPargraph')
 
-
-/*
+  /*
   Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
   This listener should toggle the class 'article-open' on div.article.
 */
+ span.expandButton.addEventListener('click', () => {
+   article.classList.toggle('article-open');
+ })
 
-/*
-  Step 3: Don't forget to return something from your function!
+ /*
+  //Step 3: Don't forget to return something from your function!
 */
+ return articleMaker()
+}
 
 /*
   Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
   to create a div.article element and append it to the DOM inside div.articles (see index.html).
 */
+
 
 /*
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
