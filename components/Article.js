@@ -86,8 +86,55 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'yay!',
+    date: '1 sep 2021',
+    firstParagraph: 'BOOM',
+    secondParagraph: 'done with this',
+    thirdParagraph: 'on to the next challenge'
   }
 ];
+
+function articleMaker(article){
+
+  const articleDiv = document.createElement('div');
+  const h2 = document.createElement('h2');
+  const pDate = document.createElement('p');
+  const p1 = document.createElement('p');
+  const p2 = document.createElement('p');
+  const p3 = document.createElement('p');
+  const span = document.createElement('span');
+
+  articleDiv.appendChild(h2);
+  articleDiv.appendChild(pDate);
+  articleDiv.appendChild(p1);
+  articleDiv.appendChild(p2);
+  articleDiv.appendChild(p3);
+  articleDiv.appendChild(span);
+
+  articleDiv.className = 'article';
+  pDate.className = 'date';
+  span.className = 'expandButton';
+
+  h2.textContent = article.title;
+  pDate.textContent = article.date;
+  p1.textContent = article.firstParagraph;
+  p2.textContent = article.secondParagraph;
+  p3.textContent = article.thirdParagraph;
+  span.textContent = '+';
+
+  span.addEventListener('click', event => {
+    articleDiv.classList.toggle('article-open');
+  })
+
+  return articleDiv;
+}
+
+data.forEach(article => {
+  const articleDiv = articleMaker(article);
+  document.querySelector('.articles').appendChild(articleDiv);
+})
 
 /*
   Step 1: Write a component called 'articleMaker' to create an article.
