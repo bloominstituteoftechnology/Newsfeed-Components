@@ -86,6 +86,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Test Article Lambda',
+    date: '2nd March 2022',
+    firstParagraph: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cras pulvinar mattis nunc sed blandit libero volutpat sed. Enim nulla aliquet porttitor lacus luctus accumsan tortor. Aliquam etiam erat velit scelerisque in dictum. Nam libero justo laoreet sit. Bibendum at varius vel pharetra vel turpis nunc eget. Diam ut venenatis tellus in metus vulputate. Odio eu feugiat pretium nibh ipsum consequat nisl. Dolor sit amet consectetur adipiscing. Consectetur adipiscing elit pellentesque habitant morbi tristique. Consequat nisl vel pretium lectus quam. Quis risus sed vulputate odio ut. Ut etiam sit amet nisl purus in mollis. Proin sagittis nisl rhoncus mattis rhoncus. Et odio pellentesque diam volutpat commodo sed egestas egestas fringilla. Iaculis nunc sed augue lacus viverra vitae. Bibendum enim facilisis gravida neque convallis a cras semper.`,
+
+    secondParagraph: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cras pulvinar mattis nunc sed blandit libero volutpat sed. Enim nulla aliquet porttitor lacus luctus accumsan tortor. Aliquam etiam erat velit scelerisque in dictum. Nam libero justo laoreet sit. Bibendum at varius vel pharetra vel turpis nunc eget. Diam ut venenatis tellus in metus vulputate. Odio eu feugiat pretium nibh ipsum consequat nisl. Dolor sit amet consectetur adipiscing. Consectetur adipiscing elit pellentesque habitant morbi tristique. Consequat nisl vel pretium lectus quam. Quis risus sed vulputate odio ut. Ut etiam sit amet nisl purus in mollis. Proin sagittis nisl rhoncus mattis rhoncus. Et odio pellentesque diam volutpat commodo sed egestas egestas fringilla. Iaculis nunc sed augue lacus viverra vitae. Bibendum enim facilisis gravida neque convallis a cras semper.`,
+
+    thirdParagraph: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cras pulvinar mattis nunc sed blandit libero volutpat sed. Enim nulla aliquet porttitor lacus luctus accumsan tortor. Aliquam etiam erat velit scelerisque in dictum. Nam libero justo laoreet sit. Bibendum at varius vel pharetra vel turpis nunc eget. Diam ut venenatis tellus in metus vulputate. Odio eu feugiat pretium nibh ipsum consequat nisl. Dolor sit`
   }
 ];
 
@@ -94,23 +103,75 @@ const data = [
   Your component is a function that takes an article object as its only argument,
   and returns a DOM node looking like the one below:
 
-  <div class="article">
-    <h2>{title of the article}</h2>
-    <p class="date">{date of the article}</p>
-
-    {three separate paragraph elements}
-
-    <span class="expandButton">+</span>
-  </div>
-
-  Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
-  This listener should toggle the class 'article-open' on div.article.
-
-  Step 3: Don't forget to return something from your function!
-
-  Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
-  to create a div.article element and append it to the DOM inside div.articles (see index.html).
-
-  Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
-  Refresh the page to see the new article.
 */
+
+  const articleSec = document.querySelector('.articles');
+
+
+  function articleMaker({title, date, firstParagraph, secondParagraph, thirdParagraph}) {
+
+    const articleDiv = document.createElement("div");
+    const articleH2 = document.createElement("h2");
+    const articlePDate = document.createElement("p");
+    const articleP1 = document.createElement("p");
+    const articleP2 = document.createElement("p");
+    const articleP3 = document.createElement("p");
+    const articleSpan = document.createElement("span");
+
+    articleDiv.appendChild(articleH2);
+    articleDiv.appendChild(articlePDate);
+    articleDiv.appendChild(articleP1);
+    articleDiv.appendChild(articleP2);
+    articleDiv.appendChild(articleP3);
+    articleDiv.appendChild(articleSpan);
+
+    articleDiv.classList.add("article");
+    articlePDate.classList.add("date");
+    articleSpan.classList.add("expandButton");
+
+    articleSpan.addEventListener('click', function() {
+      articleDiv.classList.toggle("article-open")
+    });
+
+    articleH2.textContent = title;
+    articlePDate.textContent= date;
+    articleP1.textContent = firstParagraph;
+    articleP2.textContent = secondParagraph;
+    articleP3.textContent = thirdParagraph;
+    articleSpan.textContent = "+";
+
+
+    return articleDiv;
+  }
+
+  const articleElements = data.map(elem => {
+    return articleMaker(elem);
+  })
+
+  articleElements.forEach(arts => {
+    articleSec.appendChild(arts);
+  })
+
+
+
+
+  // <div class="article">
+  //   <h2>{title of the article}</h2>
+  //   <p class="date">{date of the article}</p>
+
+  //   {three separate paragraph elements}
+
+  //   <span class="expandButton">+</span>
+  // </div>
+
+  // Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
+  // This listener should toggle the class 'article-open' on div.article.
+
+  // Step 3: Don't forget to return something from your function!
+
+  // Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
+  // to create a div.article element and append it to the DOM inside div.articles (see index.html).
+
+  // Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
+  // Refresh the page to see the new article.
+
