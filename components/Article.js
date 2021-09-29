@@ -127,6 +127,23 @@ const data = [
       articleDiv.classList.toggle('article-open')
     })
 
+    articleDiv.classList.add('article')
+    articleDate.classList.add('date')
+    plusMark.classList.add('expandButton')
+    
+    //adding div to body
+    document.body.appendChild(articleDiv)
+
+    //adding all elements to new div
+    articleDiv.appendChild(heading)
+    articleDiv.appendChild(articleDate)
+    articleDiv.appendChild(firstp)
+    articleDiv.appendChild(secondp)
+    articleDiv.appendChild(thirdp)
+    articleDiv.appendChild(plusMark)
+
+    return articleDiv
+    
   }
 
   /*
