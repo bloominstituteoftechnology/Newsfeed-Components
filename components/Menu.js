@@ -10,7 +10,7 @@ let menuItems = [
 ];
 
 /* 
-  Step 1: Write a component called 'menuMaker' to create a menu like the markup below:
+  Step 1: Write a component called 'menuMaker' to create a menu like the markup below: x
 
   <div class="menu">
     <ul>
@@ -31,3 +31,44 @@ let menuItems = [
 
   Step 6: Use 'menuMaker' to create a menu using the 'menuItems' array, and append the returned menu to the header.
 */
+
+// <!DOCTYPE html>
+// <html>
+//   <head>
+//     <title>Lambda School Newsfeed</title>
+//     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+//     <link rel="stylesheet" href="./styles/index.less">
+//     <script src="./components/Menu.js" defer></script>
+//     <script src="./components/Article.js" defer></script>
+//   </head>
+//   <body>
+//     <div class="header">
+//       <img class="menu-button" src="./assets/menu.png"/>
+//       <h1>Lambda School Newsfeed</h1>
+//     </div>
+//     <div class="articles"></div>
+//   </body>
+// </html>
+
+const header = document.querySelector('.header');
+
+function menuMaker(data) {
+  const outerDiv = document.createElement('div');
+  outerDiv.classList.add('menu');
+  const item = document.createElement('ul');
+  outerDiv.appendChild(item);
+
+  const button = document.querySelector('.menu-button');
+  button.addEventListener('click', () => outerDiv.classList.toggle('menu--open'));
+
+  data.forEach((element) => {
+    const li = document.createElement('li');
+    li.textContent = element;
+    item.appendChild(li);
+  });
+  
+  button.appendChild(outerDiv);
+  return outerDiv;
+};
+
+header.appendChild(menuMaker(menuItems));
