@@ -121,21 +121,21 @@ function articleMaker(article) {
   const post = document.createElement('div')
   const title = document.createElement('h2')
   const date = document.createElement('p')
-  const para1 = document.createElement('p')
-  const para2 = document.createElement('p')
-  const para3 = document.createElement('p')
+  const firstParagraph = document.createElement('p')
+  const secondParagraph = document.createElement('p')
+  const thirdParagraph = document.createElement('p')
   const expandButton = document.createElement('span')
 
   post.appendChild(title)
   post.appendChild(date)
-  post.appendChild(para1)
-  post.appendChild(para2)
-  post.appendChild(para3)
+  post.appendChild(firstParagraph)
+  post.appendChild(secondParagraph)
+  post.appendChild(thirdParagraph)
   post.appendChild(expandButton)
 
   expandButton.addEventListener('click', event => {
-    para2.classList.toggle('.article-open')
-    para3.classList.toggle('.article-open')
+    secondParagraph.classList.toggle('.article-open')
+    thirdParagraph.classList.toggle('.article-open')
   })
   return post
 }
