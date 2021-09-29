@@ -1,7 +1,4 @@
-// This is the data we will be using to create our articles. Look at it, then proceed to line 93.
-// OPTIONAL: if you're feeling adventurous, try to make this data an export from a different module, and import it here.
-// You can read about ES6 modules here: https://exploringjs.com/es6/ch_modules.html#sec_basics-of-es6-modules
- const data = [
+export  const data = [
   {
     title: 'Lambda School Students: "We\'re the best!"',
     date: 'Nov 5th, 2018',
@@ -72,19 +69,6 @@
         Castform Lotad the power that's inside Burnt Berry Makuhita. Ghost Ariados Corphish Dusclops Golbat Gligar Zweilous.`
   },
   {
-    title: 'you vs me vs we',
-    date: 'ass badit, 2019',
-    firstParagraph: `Bulbasaur Lorem ipsum dolor sit amet, consectetur adipiscing no non onon ono nono nonononnonoo no no on on on olzjfgpSJnvoLJSDno;v jS O;jN :SOVjdfnO:SJDnovSJNFl;jSN;ofg USNDVO;jSN:Olkfuj NSIOUDn iSd
-        elit.`,
-
-    secondParagraph: `
-    'ALJMAF'p;ckm]kae f'OPInpaic "kfPIozxC'L;ksOLFJdSOCA SE;RFJmdOsz:lOGJFaslVKNO;szdjngF;Ojsldn:cvoJsn:dlJFN;LVZS;DKLFJVn:skdjVN;szjdNVjszdv;Ljsdnv;KJlnd:lkvJZXC;KLVJN:sdjFGN;jzvN;Kjsdnf;KJsdvn;Kjvnd;ZJKXCVN;oksujdNV;OzxjcvN;ZSokUJNFV;szojvN;ZXOJCV/Lzsj ;ODFGVNZ:odvu;zosNDFG;Kjnsd;GOIUznFIPUVN:zkjcvN;ksjdGN;OKjnvIPUCVNzlkjxnV;ZKOJNCXPVIUJZNsRIGVJNPZIoucV;LZJXCNVKO;AUSNRVIPUnkjlcVNZIOXJCNVIUASNR;FVKOJnsdiVUN;ZXjvNIZUSNDV;KjnsdvIUZXCNVipsum`,
-
-    thirdParagraph: `Gotta catch 'em all Horsea gym Ninjask Absol Sinnoh Poliwag. Gotta catch 'em all Youngster wants to fight Soda Pop Floatzel 
-        Leech Life Seismitoad Ariados. Earthquake Pokemon Glitch City Tail Whip Skitty Ekans Dialga. Ut aliquip ex ea commodo consequat James 
-        Castform Lotad the power that's inside Burnt Berry Makuhita. Ghost Ariados Corphish Dusclops Golbat Gligar Zweilous.`
-  },
-  {
     title: 'Professional Software Development in 2019',
     date: 'Jan 1st, 2019',
     firstParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
@@ -101,70 +85,3 @@
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
 ];
-
-
-  // Step 1: Write a component called 'articleMaker' to create an article.
-  // Your component is a function that takes an article object as its only argument,
-  // and returns a DOM node looking like the one below:
-
-  // <div class="article">
-  //   <h2>{title of the article}</h2>
-  //   <p class="date">{date of the article}</p>
-
-  //   {three separate paragraph elements}
-
-  //   <span class="expandButton">+</span>
-  // </div>
-
-  let art = document.querySelector('.articles');
-
- function articleMaker(article){
-   const div = document.createElement('div');
-    div.classList.add('article')
-
-   const h2 = document.createElement('h2');
-    h2.textContent = article.title
-
-   let p = document.createElement('p');
-
-   let p1 = document.createElement('p');
-    p1.textContent = article.firstParagraph;
-
-   let p2 = document.createElement('p');
-    p2.textContent = article.secondParagraph;
-
-   let p3 = document.createElement('p');
-     p3.textContent = article.thirdParagraph;
-
-   p.classList.add('date');
-   p.textContent = `${article.date}`;
-
-   let span = document.createElement('span');
-    span.classList.add('expandButton');
-    span.textContent = '+';
-
-  //  let expandButton = document.querySelector('.expandButton');
-   div.addEventListener('click', ()=>{
-     div.classList.toggle('article-open');
-   })
-
-   div.append(h2, p1, p2, p3, span);
-   return div;
- }
-
- data.forEach(item =>{
-  art.appendChild(articleMaker(item));
- })
- 
-
-  // Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
-  // This listener should toggle the class 'article-open' on div.article.
-
-  // Step 3: Don't forget to return something from your function!
-
-  // Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
-  // to create a div.article element and append it to the DOM inside div.articles (see index.html).
-
-  // Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
-  // Refresh the page to see the new article.
-
