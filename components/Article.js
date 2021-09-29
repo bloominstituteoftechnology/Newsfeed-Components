@@ -115,7 +115,18 @@ const data = [
     const secondp = document.createElement('p')
     const thirdp = document.createElement('p')
     const plusMark = document.createElement('span') 
-    
+
+    heading.textContent = title
+    articleDate.textContent = date
+    firstp.textContent = firstParagraph
+    secondp.textContent = secondParagraph
+    thirdp.textContent = thirdParagraph
+    plusMark.textContent = "+"
+
+    plusMark.addEventListener('click', () => {
+      articleDiv.classList.toggle('article-open')
+    })
+
   }
 
   /*
