@@ -103,6 +103,7 @@ const data = [
     <span class="expandButton">+</span>
   </div>
 
+  
   Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
   This listener should toggle the class 'article-open' on div.article.
 
@@ -114,3 +115,66 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+
+// Step 1
+
+const articleMaker = function({ title, date, firstParagraph, secondParagraph, thirdParagraph }) {
+  
+  // div
+  const divClass = document.createElement('div');
+  divClass.classList.add('article');
+
+  // header
+  const headerTwo = document.createElement('h2');
+  headerTwo.textContent = title;
+
+  // date
+  const dateClass =  document.createElement('p');
+  dateClass.classList.add('date');
+  dateClass.textContent = date;
+
+  // first paragraph
+  const first = document.createElement('p');
+  first.textContent = firstParagraph;
+
+  // second paragraph
+  const second = document.createElement('p');
+  second.textContent = secondParagraph;
+
+  // third paragraph
+  const third = document.createElement('p');
+  third.textContent = thirdParagraph;
+
+  // span
+  const expandButton = document.createElement('span');
+  expandButton.textContent = '+';
+
+  // append
+  divClass.appendChild(headerTwo);
+  divClass.appendChild(dateClass);
+  divClass.appendChild(first);
+  divClass.appendChild(second);
+  divClass.appendChild(third);
+  divClass.appendChild(expandButton);
+
+  // Step 2
+  expandButton.addEventListener('click', () => {
+
+    // toggle + 'article-open'
+    divClass.classList.toggle('article-open');
+  });
+
+  // Step 3
+  return divClass;
+}
+
+// Step 4
+data.forEach(element => {
+  const data = document.querySelector('.articles');
+  console.log( data);
+
+  // Step 5
+  const allArticle = articleMaker(element);
+  data.appendChild(allArticle)
+})
