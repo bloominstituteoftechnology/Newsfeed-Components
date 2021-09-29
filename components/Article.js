@@ -132,4 +132,16 @@ function articleMaker(article) {
   post.appendChild(para2)
   post.appendChild(para3)
   post.appendChild(expandButton)
+
+  expandButton.addEventListener('click', event => {
+    para2.classList.toggle('.article-open')
+    para3.classList.toggle('.article-open')
+  })
+  return post
 }
+
+const articleElements = data.map(elem =>
+  {
+    return articleMaker(elem)
+  })
+  console.log(articleElements)
