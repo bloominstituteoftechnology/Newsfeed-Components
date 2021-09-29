@@ -118,7 +118,6 @@ const data = [
 
 
 // Step 1
-
 const articleMaker = function({ title, date, firstParagraph, secondParagraph, thirdParagraph }) {
   
   // div
