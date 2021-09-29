@@ -116,7 +116,7 @@ function articleMaker(article){
   const pOne = document.createElement('p')
   const pTwo = document.createElement('p')
   const pThree = document.createElement('p')
-  const button = document.createElement('button');
+  
   const expand = document.createElement('span');
 
   //apend elements to article
@@ -125,14 +125,13 @@ function articleMaker(article){
   divArticle.appendChild(pOne);
   divArticle.appendChild(pTwo);
   divArticle.appendChild(pThree);
-  divArticle.appendChild(button);
-  button.appendChild(expand);
+  divArticle.appendChild(expand);
 
 
  //add proper class names for the elementsv
- divArticle.classList.add('.article', '.article-open');
- date.classList.add('.date');
- expand.classList.add('.expandButton');
+ divArticle.classList.add('article');
+ date.classList.add('date');
+ expand.classList.add('expandButton');
 
 
 
@@ -146,15 +145,13 @@ function articleMaker(article){
 
   //eventlistener for expand button
   expand.addEventListener('click',evt => {
-    divArticle.classList.toggle('.article-open')
-    divArticle.classList.toggle('.close');
+    divArticle.classList.toggle('article-open')
   })
 
   return divArticle;
 }
-articleMaker(data);
 
-
+//adding data to articles 
 const articleElements = data.map(elem => {
   return articleMaker(elem);
 })
@@ -162,6 +159,7 @@ const articleElements = data.map(elem => {
 console.log(articleElements);
 
 
+//adding articles to html
 articleElements.forEach(elem => {
     main.appendChild(elem);
 })
