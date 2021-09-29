@@ -86,6 +86,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Learning to program is fun!',
+    date: 'Sep 29th, 2021',
+    firstParagraph: `You don't frighten us, English pig-dogs! Go and boil your bottoms, sons of a silly person! I blow my nose at you, so-called Ah-thoor Keeng, you and all your silly English K-n-n-n-n-n-n-n-niggits! Now, look here, my good man.`,
+
+    secondParagraph: `Well, I got better. Well, Mercia's a temperate zone! A newt? Ni! Ni! Ni! Ni!`,
+
+    thirdParagraph: `Well, Mercia's a temperate zone! I don't want to talk to you no more, you empty-headed animal food trough water! I fart in your general direction! Your mother was a hamster and your father smelt of elderberries! Now leave before I am forced to taunt you a second time!`,
   }
 ];
 
@@ -150,12 +159,15 @@ expndBtn.addEventListener('click', event => {article.classList.toggle('article-o
 return article;
 };
 
+// map data items to articlemaker function
 const articleElements = data.map(elem => {
   return articleMaker(elem);
 })
 
+// declare var for the container on page to contain articles. 
 const articlesFeed = document.querySelector(".articles");
-console.log(articlesFeed);
+
+// append each article made to container.
 articleElements.forEach(elemToAdd => {
   articlesFeed.appendChild(elemToAdd);
 })
