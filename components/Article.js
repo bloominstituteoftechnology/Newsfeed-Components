@@ -156,7 +156,6 @@ const articleElements = data.map(elem => {
   return articleMaker(elem);
 })
 
-console.log(articleElements);
 
 
 //adding articles to html
