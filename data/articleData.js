@@ -70,19 +70,12 @@ const data = [
     },
     {
       title: 'My beautiful dark twisted fantasy',
-      date: 'november 10th 2011',
-      firstParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
-            hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
-            Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `,
+      date: 'november 22th 2010',
+      firstParagraph: `My Beautiful Dark Twisted Fantasy is the fifth studio album by American rapper and producer Kanye West. It was released on November 22, 2010, by Def Jam Recordings and Roc-A-Fella Records following a period of public and legal controversy for West. Retreating to a self-imposed exile in Hawaii in 2009, he recorded the album at Honolulu's Avex Studio in a communal environment involving numerous contributing musicians. Additional recording sessions took place at Glenwood Place Studios in Burbank, California, and at Electric Lady Studios and Platinum Sound Studios in New York City.`,
   
-      secondParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
-            hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
-            hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
-            hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? `,
+      secondParagraph: `The album was produced primarily by West, alongside a variety of high-profile producers such as Mike Dean, No I.D., Jeff Bhasker, RZA, S1, Bink, and DJ Frank E. Critical commentaries note the resulting music's maximalist aesthetic and opulent production style that utilizes various elements from West's previous work, including soul, pop, baroque, electro, and symphonic sounds, as well as progressive rock influences. Thematically, My Beautiful Dark Twisted Fantasy explores West's status as a celebrity, consumer culture, race, and the idealism of the American Dream. Guest vocalists on the album include Nicki Minaj, Rihanna, Bon Iver, Jay-Z, Pusha T, Rick Ross, Kid Cudi, John Legend, Elton John and Raekwon.`,
   
-      thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
-            Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
-            Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+      thirdParagraph: `To help market the album, West released free songs through his weekly GOOD Fridays series and four singles – "Power", "Runaway", "Monster", and "All of the Lights" – all of which were top 40 hits on the Billboard Hot 100. West also released a musical short film, Runaway (2010), set to music from the album. In its first week of release, My Beautiful Dark Twisted Fantasy debuted at number one on the US Billboard 200 and sold 496,000 copies, eventually registering three million units for a triple platinum certification from the Recording Industry Association of America (RIAA). It has also been played at least one billion times through the music streaming service Spotify.`
     },
     {
         title: 'Professional Software Development in 2019',
