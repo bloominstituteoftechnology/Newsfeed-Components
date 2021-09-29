@@ -122,6 +122,7 @@ const data = [
     secondp.textContent = secondParagraph
     thirdp.textContent = thirdParagraph
     plusMark.textContent = "+"
+    plusMark.style.fontSize = '30px';
 
     plusMark.addEventListener('click', () => {
       articleDiv.classList.toggle('article-open')
@@ -143,7 +144,7 @@ const data = [
     articleDiv.appendChild(plusMark)
 
     return articleDiv
-    
+
   }
 
   /*
@@ -159,6 +160,15 @@ const data = [
   Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
   to create a div.article element and append it to the DOM inside div.articles (see index.html).
   */
+
+  const articleFeed = document.querySelector('.articles')
+
+
+  data.forEach(art => {
+    const newArt = articleMaker(art)
+    articleFeed.appendChild(newArt)
+  }) 
+
 
   /*
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
