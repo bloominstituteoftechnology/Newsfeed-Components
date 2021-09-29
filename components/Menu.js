@@ -27,7 +27,7 @@ let header = document.querySelector('.header');
     div.appendChild(ul)
     let mButton = document.querySelector('.menu-button');
     arr.forEach(el => {
-     let il = document.createElement('il');
+     let il = document.createElement('li');
      il.textContent = el;
     ul.appendChild(il); 
   });
