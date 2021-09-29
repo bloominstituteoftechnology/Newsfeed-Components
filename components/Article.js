@@ -177,4 +177,4 @@ data.forEach(element => {
   // Step 5
   const allArticle = articleMaker(element);
   data.appendChild(allArticle)
-})
+});
