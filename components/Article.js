@@ -114,3 +114,22 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+//step one Step 1: Write a component called 'articleMaker' to create an article.
+  // Your component is a function that takes an article object as its only argument
+
+  function articleMaker({title,date,firstParagraph,secondParagraph,thirdParagraph}){
+    let titleV=document.createElement('h2');
+    titleV.src =title;
+
+    let dateV = document.createElement('.date');
+    dateV.src = date;
+
+    let firstParagraphV = document.createElement('p');
+    firstParagraphV.src = firstParagraph;
+
+    let secondParagraphV = document.createElement('p');
+    secondParagraphV.src = secondParagraph;
+
+    let thirdParagraphV = document.createElement('p');
+    thirdParagraphV.src = thirdParagraph;
+  }
