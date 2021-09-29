@@ -56,14 +56,16 @@ function menuMaker(arr){
   return menu;
 }
 
+//selecting dom header
+const header = document.querySelector('.header');
 
+//creating div with all menu items
 const realMenu = menuMaker(menuItems);
 
-console.log(realMenu);
-
-const header = document.querySelector('header');
-
+//appending div menu items to header
 header.appendChild(realMenu);
+
+
 
 
 
