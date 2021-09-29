@@ -33,29 +33,31 @@ let menuItems = [
 */
 
 
-let header = document.querySelector(".header")
+let menuHeader = document.querySelector(".header")
+
 function menuMaker(data) {
-  let outerDiv = document.createElement("div")
-  outerDiv.classList.add("menu")
-  let item = document.createElement('ul')
+let outDiv = document.createElement("div")
+outDiv.classList.add("menu")
+let item = document.createElement("ul")
 
-  outerDiv.appendChild(item)
+outDiv.appendChild(item)
 
-  let button = document.querySelector(".menu-button")
+let button = document.querySelector(".menu-button")
 
-  button.addEventListener("click", () => {
-    outerDiv.classList.toggle("menu-open")
-  })
+button.addEventListener("click", () => {
+  outDiv.classList.toggle("menu--open")
+})
 
-  data.forEach((element) => {
-    let li = document.createElement("li")
-    li.textContent = element
-    item.appendChild(li)
-  })
+data.forEach((element) => {
+  let li = document.createElement("li")
+  li.textContent = element
+  item.appendChild(li)
+})
 
-  button.appendChild(outerDiv)
+button.appendChild(outDiv)
 
-  return outerDiv
+return outDiv
 }
 
-header.appendChild(menuMaker(menuItems))
+menuHeader.appendChild(menuMaker(menuItems))
+

@@ -116,34 +116,34 @@ const data = [
 */
 
 // component for articlemaker
-let articlesList = document.querySelector(".articles")
+let articlesList = document.querySelector(".articles")  // slecting the empty div
 
-function articleMaker(data) {
+function articleMaker(data) {                             // creating a function
   let article = document.createElement('div')
   article.classList.add('article')
 
-  let dataH2 = document.createElement('h2')
+  let dataH2 = document.createElement('h2')                  // creating an element for h2
   dataH2.textContent = data.title
 
-  let dataP = document.createElement('p')
+  let dataP = document.createElement('p')                   //creating an elemnt for the dates
   dataP.classList.add("date")
   dataP.textContent = data.date
 
-  let p1 = document.createElement('p')
+  let p1 = document.createElement('p')                      //creating an elemnt for the first paragraph
   p1.textContent = data.firstParagraph
 
-  let p2 = document.createElement('p')
+  let p2 = document.createElement('p')                      //creating an elemnt for the second paragraph
   p1.textContent = data.secondParagraph
 
-  let p3 = document.createElement('p')
+  let p3 = document.createElement('p')                        //creating an elemnt for the third paragraph
   p3.textContent = data.thirdParagraph
 
-  let span = document.createElement('span')
+  let span = document.createElement('span')                  //creating an elemnt for the button
   span.classList.add('expandButton')
   article.append(dataH2, dataP, p1, p2, p3, span)
 
 
-  span.addEventListener('click', () => article.classList.toggle('article-open'))
+  span.addEventListener('click', () => article.classList.toggle('article-open'))           // adding functionailibility to the butt
   return article
 
 }
