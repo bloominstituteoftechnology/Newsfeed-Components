@@ -137,5 +137,15 @@ const data = [
 
     let para3 = document.createElement('p');
     para2.textContent = data.thirdParagraph;
+
+    let spanr = document.createElement('span');
+    spanr.classList.add('expandButton');
+
+    spanr.expandButton.addEventListener('click',event =>{
+      article.classList.toggle('article-open');
+    });
     
+    return article;
+
   }
+  
