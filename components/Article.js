@@ -148,4 +148,13 @@ const data = [
     return article;
 
   }
-  
+
+  let dataElems = data.map(elem =>{
+    return data(elem);
+  });
+
+  dataElems.forEach(elemToAdd =>{
+   article.appendChild(elemToAdd);
+  });
+
+ console.log(articleMaker(dataElems));
