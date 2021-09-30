@@ -89,28 +89,74 @@ const data = [
   }
 ];
 
-/*
-  Step 1: Write a component called 'articleMaker' to create an article.
-  Your component is a function that takes an article object as its only argument,
-  and returns a DOM node looking like the one below:
+// /*
+//   Step 1: Write a component called 'articleMaker' to create an article.
+//   Your component is a function that takes an article object as its only argument,
+//   and returns a DOM node looking like the one below:
 
-  <div class="article">
-    <h2>{title of the article}</h2>
-    <p class="date">{date of the article}</p>
+  // <div class="article">
+  //   <h2>{title of the article}</h2>
+  //   <p class="date">{date of the article}</p>
 
-    {three separate paragraph elements}
+  //   {three separate paragraph elements}
 
-    <span class="expandButton">+</span>
-  </div>
+  //   <span class="expandButton">+</span>
+  // </div>
 
-  Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
-  This listener should toggle the class 'article-open' on div.article.
+//   Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
+//   This listener should toggle the class 'article-open' on div.article.
 
-  Step 3: Don't forget to return something from your function!
+//   Step 3: Don't forget to return something from your function!
 
-  Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
-  to create a div.article element and append it to the DOM inside div.articles (see index.html).
+//   Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
+//   to create a div.article element and append it to the DOM inside div.articles (see index.html).
 
-  Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
-  Refresh the page to see the new article.
-*/
+//   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
+//   Refresh the page to see the new article.
+// */
+
+// Step 1
+
+const articleMaker = function({ title, date, firstParagraph, secondParagraph, thirdParagraph }) {
+
+  const divClass = document.createElement('div');
+  divClass.classList.add('article');
+
+  const headerTwo = document.createElement('h2');
+  headerTwo.textContent = title;
+
+  const dateClass =  document.createElement('p');
+  dateClass.classList.add('date');
+  dateClass.textContent = date;
+  
+  const first = document.createElement('p');
+  first.textContent = firstParagraph;
+  
+  const second = document.createElement('p');
+  second.textContent = secondParagraph;
+  
+  const third = document.createElement('p');
+  third.textContent = thirdParagraph;
+  
+  const expandButton = document.createElement('span');
+  expandButton.textContent = '+';
+  
+  divClass.appendChild(headerTwo);
+  divClass.appendChild(dateClass);
+  divClass.appendChild(first);
+  divClass.appendChild(second);
+  divClass.appendChild(third);
+  divClass.appendChild(expandButton);
+  
+  expandButton.addEventListener('click', () => {
+    divClass.classList.toggle('article-open');
+  });
+  return divClass;
+}
+
+data.forEach(element => {
+  const data = document.querySelector('.articles');
+  console.log( data);
+  const allArticle = articleMaker(element);
+  data.appendChild(allArticle)
+});
