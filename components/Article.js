@@ -87,6 +87,7 @@ const data = [
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
+
 ];
 
 /*
@@ -114,3 +115,125 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+// const articles = document.querySelector('.articles')
+// function articleMaker({title, date, firstParagraph, secondParagraph,thirdParagraph  }) {
+//   const article = document.createElement('div');
+//   const articleTitle = document.createElement('h2');
+//   const expandButton = document.createElement('span');
+//   const articleDate = document.createElement('p');
+//   const articleParagraph = document.createElement('p');
+//   const articleParagraphTwo = document.createElement('p');
+//   const articleParagraphThree = document.createElement('p');
+
+//   articles.appendChild(article)
+//   article.appendChild(articleTitle);
+//   article.appendChild(articleDate);
+//   article.appendChild(articleParagraph);
+//   article.appendChild(articleParagraphTwo);
+//   article.appendChild(articleParagraphThree);
+   
+//   article.appendChild(expandButton);
+
+//   article.classList.add('artical');
+//   articleDate.classList.add('date');
+//   expandButton.classList.add('expandButton')
+
+//   articleTitle.textContent = title;
+//   articleDate.textContent = date;
+//   articleParagraph.textContent = firstParagraph;
+//   articleParagraphTwo.textContent = secondParagraph;
+//   articleParagraphThree.textContent = thirdParagraph;
+//   expandButton.textContent = '+'
+
+//   expandButton.addEventListener('click', evt => {
+//     article.classList.toggle('article-open')
+//   })
+
+
+//  return article
+// }
+
+// data.forEach((article) => {
+//   return articleMaker(article)
+// })
+
+//const articleElements = data.map(elem => {
+  //return articleMaker(elem);
+//})
+//articleElements.forEach(elemToAdd => {
+  //article.appendChild(elemToAdd);
+//})
+
+const myArticle = {
+  title: 'My Article',
+  date: 'Jan 1st, 2222',
+  firstParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
+        hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
+        Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? Yews Hodor! `,
+
+  secondParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
+        hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
+        hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
+        hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? `,
+
+  thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
+        Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
+        Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+}
+
+data.push(myArticle)
+
+const article = document.querySelector('.articles');
+
+  function articleMaker (data) {
+
+   
+
+    const div = document.createElement('div');
+    const header = document.createElement('h2');
+    const paraDate = document.createElement('p')
+    const para1 = document.createElement('p')
+    const para2 = document.createElement('p')
+    const para3 = document.createElement('p')
+    const span = document.createElement('span')
+
+    
+
+    div.classList.add('article');
+    paraDate.classList.add('date');
+    span.classList.add('expandButton');
+
+    
+    
+    header.textContent = data.title
+    paraDate.textContent = data.date
+    para1.textContent = data.firstParagraph
+    para2.textContent = data.secondParagraph
+    para3.textContent = data.thirdParagraph
+    span.textContent = '+'
+
+    
+    div.appendChild(header);
+    div.appendChild(paraDate);
+    div.appendChild(para1);
+    div.appendChild(para2);
+    div.appendChild(para3);
+    div.appendChild(span);
+    
+
+    
+    span.addEventListener('click', () => {
+      div.classList.toggle('article-open');
+    })
+
+    return div;
+
+  }
+
+  
+
+  data.forEach(item => {
+    article.appendChild(articleMaker(item));
+  })
+
+ 
