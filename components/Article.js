@@ -117,19 +117,25 @@ const data = [
 //step one Step 1: Write a component called 'articleMaker' to create an article.
   // Your component is a function that takes an article object as its only argument
 
-  function articleMaker({title,date,firstParagraph,secondParagraph,thirdParagraph}){
-    let titleV=document.createElement('h2');
-    titleV.src =title;
+  function articleMaker({data}){ //I'm a genius sometimes
 
-    let dateV = document.createElement('.date');
-    dateV.src = date;
+    let article = document.createElement('div');
+    article.classList.add('article');
 
-    let firstParagraphV = document.createElement('p');
-    firstParagraphV.src = firstParagraph;
+    let title =document.createElement('h2');
+    title.textContent = data.title;
 
-    let secondParagraphV = document.createElement('p');
-    secondParagraphV.src = secondParagraph;
+    let date = document.createElement('p');
+    date.classList.add('date');
+    date.textContent = data.date;
 
-    let thirdParagraphV = document.createElement('p');
-    thirdParagraphV.src = thirdParagraph;
+    let para1 = document.createElement('p');
+    para1.textContent = data.firstParagraph;
+
+    let para2 = document.createElement('p');
+    para2.textContent = data.secondParagraph;
+
+    let para3 = document.createElement('p');
+    para2.textContent = data.thirdParagraph;
+    
   }
