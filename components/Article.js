@@ -86,7 +86,24 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Professional Software Development in 2019',
+    date: 'Jan 1st, 2019',
+    firstParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
+          hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
+          Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `,
+
+    secondParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
+          hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
+          hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
+          hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? `,
+
+    thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
+          Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
+          Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
+
 ];
 
 /*
@@ -117,10 +134,12 @@ const data = [
 const articleContainer = document.querySelector(".articles")
 
 function articleMaker(data){
-  let article = document.createElement('div').classList.add('article')
+  let article = document.createElement('div')
+    article.classList.add('article')
   let h2 = document.createElement('h2')
     h2.textContent = data.title;
-  let pDate = document.createElement('p').classList.add('date')
+  let pDate = document.createElement('p')
+  pDate.classList.add('date')
     pDate.textContent = data.date;
   let p1 = document.createElement('p')
     p1.textContent =data.firstParagraph;
@@ -128,8 +147,9 @@ function articleMaker(data){
     p2.textContent =data.secondParagraph;
   let p3 = document.createElement('p')
     p3.textContent =data.thirdParagraph;
-  let span =  document.createElement('span').classList.add('expandButton')
-
+  let span =  document.createElement('span')
+  span.classList.add('expandButton')
+  span.textContent = '+'
 
 
 article.appendChild(h2)
@@ -146,6 +166,8 @@ span.addEventListener('click', ()=>{
 
 return article
 }
+
+//console.log(articleMaker(data))
 data.forEach(elm =>{
   articleContainer.appendChild(articleMaker(elm))
 })

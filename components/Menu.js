@@ -50,5 +50,4 @@ return menu;
 
 console.log(menuMaker(menuItems))
 
-const mainMenu = menuMaker(menuItems);
-header.appendChild(mainMenu);
+header.appendChild(menuMaker(menuItems));
