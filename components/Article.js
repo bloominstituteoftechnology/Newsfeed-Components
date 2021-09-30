@@ -23,11 +23,8 @@ function articleMaker(data) {
     articleDate.textContent = data.date;
     paragraphs.innerHTML = ` 
     <div>   
-    
       <div>${data.firstParagraph}</div>
-
       <div>${data.secondParagraph}</div>
-
       <div>${data.thirdParagraph}<div>
     </div>`;
     expandButton.textContent = '+';
@@ -93,7 +90,7 @@ console.log('testArticle: ', testArticle);
   };
 
     const newAddelement = {
-      title: 'The future of the React, Angular, Vue',
+      title: 'The Future of the React, Angular, Vue',
       date: 'June 7th, 2019',
       firstParagraph: `Bulbasaur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ivysaur Lorem ipsum dolor sit amet, consectetur adipiscing
           elit. Venusaur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Charmander Lorem ipsum dolor sit amet, consectetur
@@ -122,13 +119,14 @@ console.log('testArticle: ', testArticle);
 
   }
 
-  console.log('articleData: ', addArticle (articleData, newAddelement));
+  const newData = addArticle (articleData, newAddelement); 
+  // console.log('articleData: ', newData);
   
   const articleElements = articleData.map(elem => {
     return articleMaker(elem);
   })
   
-  console.log(articleElements);
+  // console.log(articleElements);
   
   articleElements.forEach(elemToAdd => {
     articles.appendChild(elemToAdd);
