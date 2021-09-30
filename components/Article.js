@@ -117,31 +117,47 @@ const data = [
   Refresh the page to see the new article.
 */
 
-function articleMaker(article) {
-  const post = document.createElement('div')
-  const title = document.createElement('h2')
-  const date = document.createElement('p')
-  const firstParagraph = document.createElement('p')
-  const secondParagraph = document.createElement('p')
-  const thirdParagraph = document.createElement('p')
+const articles = document.querySelector('.articles')
+
+function articleMaker({ title, date, firstParagraph, secondParagraph, thirdParagraph }) {
+  const theArticle = document.createElement('div')
+  const theTitle = document.createElement('h2')
+  const theDate = document.createElement('p')
+  const p1 = document.createElement('p')
+  const p2 = document.createElement('p')
+  const p3 = document.createElement('p')
   const expandButton = document.createElement('span')
 
-  post.appendChild(title)
-  post.appendChild(date)
-  post.appendChild(firstParagraph)
-  post.appendChild(secondParagraph)
-  post.appendChild(thirdParagraph)
-  post.appendChild(expandButton)
+  theArticle.appendChild(theTitle)
+  theArticle.appendChild(theDate)
+  theArticle.appendChild(p1)
+  theArticle.appendChild(p2)
+  theArticle.appendChild(p3)
+  theArticle.appendChild(expandButton)
+
+  theArticle.classList.add('article')
+  theDate.classList.add('date')
+  expandButton.classList.add('expandButton')
 
   expandButton.addEventListener('click', event => {
     secondParagraph.classList.toggle('.article-open')
     thirdParagraph.classList.toggle('.article-open')
   })
-  return post
+
+  theTitle.textContent = title
+  theDate.textContent  = date
+  p1.textContent = firstParagraph
+  p2.textContent = secondParagraph
+  p3.textContent = thirdParagraph
+
+  return theArticle
 }
 
-const articleElements = data.map(elem =>
+const theArticle = data.map(elem =>
   {
     return articleMaker(elem)
   })
-  console.log(articleElements)
+
+theArticle.forEach(elem => {
+  articles.appendChild(elem)
+})
