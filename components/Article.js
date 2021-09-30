@@ -114,3 +114,47 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+//step one Step 1: Write a component called 'articleMaker' to create an article.
+  // Your component is a function that takes an article object as its only argument
+
+  function articleMaker({data}){ //I'm a genius sometimes
+
+    let article = document.createElement('div');
+    article.classList.add('article');
+
+    let title =document.createElement('h2');
+    title.textContent = data.title;
+
+    let date = document.createElement('p');
+    date.classList.add('date');
+    date.textContent = data.date;
+
+    let para1 = document.createElement('p');
+    para1.textContent = data.firstParagraph;
+
+    let para2 = document.createElement('p');
+    para2.textContent = data.secondParagraph;
+
+    let para3 = document.createElement('p');
+    para2.textContent = data.thirdParagraph;
+
+    let spanr = document.createElement('span');
+    spanr.classList.add('expandButton');
+
+    spanr.expandButton.addEventListener('click',event =>{
+      article.classList.toggle('article-open');
+    });
+    
+    return article;
+
+  }
+
+  let dataElems = data.map(elem =>{
+    return data(elem);
+  });
+
+  dataElems.forEach(elemToAdd =>{
+   article.appendChild(elemToAdd);
+  });
+
+ console.log(articleMaker(dataElems));
