@@ -142,7 +142,7 @@ function articleMaker({ title, date, firstParagraph, secondParagraph, thirdParag
   articlePart3.textContent = thirdParagraph;
   expandButton.textContent = 'PUSH HERE PLS :)';
 
-  expandButton.addEventListener('click', event => {
+  expandButton.addEventListener ('click', event => {
     article.classList.toggle('article-open');
   })
   return article;
