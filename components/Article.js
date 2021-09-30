@@ -139,22 +139,21 @@ function articleMaker({ title, date, firstParagraph, secondParagraph, thirdParag
   theDate.classList.add('date')
   expandButton.classList.add('expandButton')
 
-  expandButton.addEventListener('click', event => {
-    secondParagraph.classList.toggle('.article-open')
-    thirdParagraph.classList.toggle('.article-open')
-  })
-
   theTitle.textContent = title
   theDate.textContent  = date
   p1.textContent = firstParagraph
   p2.textContent = secondParagraph
   p3.textContent = thirdParagraph
+  expandButton.textContent = "More..."
+
+  expandButton.addEventListener('click', event => {
+    theArticle.classList.toggle('article-open')
+  })
 
   return theArticle
 }
 
-const theArticle = data.map(elem =>
-  {
+const theArticle = data.map(elem => {
     return articleMaker(elem)
   })
 
