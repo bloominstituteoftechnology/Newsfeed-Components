@@ -74,10 +74,3 @@ const menuElements = menuMaker(menuItems);
 console.log('menuElements: ', menuElements);
 
 menuItem.appendChild(menuElements);
-
-
-// const headerDiv = document.querySelector('.header');
-// // console.log(headerDiv)
-// const menuEl = menuMaker(menuItems);
-// //console.log(menuEl)
-// headerDiv.appendChild(menuEl);
