@@ -115,35 +115,70 @@ const data = [
   // Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   // Refresh the page to see the new article.
 
-  let container = document.querySelector('.articles');
+  // let container = document.querySelector('.articles');
 
-  function articleMaker(data){
-    let article = document.createElement('div');
-    article.classList.add('article');
+  // function articleMaker(data){
+  //   let article = document.createElement('div');
+  //   article.classList.add('article');
 
-    let titleH2 = document.createElement('h2');
-    titleH2.textContent = data.title;
+  //   let titleH2 = document.createElement('h2');
+  //   titleH2.textContent = data.title;
 
-    let dateP = document.createElement('p');
-    dateP.classList.add('date');
-    dateP.textContent = data.date;
+  //   let dateP = document.createElement('p');
+  //   dateP.classList.add('date');
+  //   dateP.textContent = data.date;
 
-    let p1 = document.createElement('p');
-    p1.textContent = data.firstParagraph;
+  //   let p1 = document.createElement('p');
+  //   p1.textContent = data.firstParagraph;
 
-    let p2 = document.createElement('p');
-    p2.textContent = data.thirdParagraph;
+  //   let p2 = document.createElement('p');
+  //   p2.textContent = data.thirdParagraph;
 
-    let p3 = document.createElement('p');
-    p3.textContent = data.thirdParagraph;
+  //   let p3 = document.createElement('p');
+  //   p3.textContent = data.thirdParagraph;
 
-    let span = document.createElement('span');
-    span.classList.add('expandButton');
-    article.append(titleH2, dateP, p1, p2, p3, span);
-    span.addEventListener('click', () => article.classList.toggle('article-open'));
-    return article;
-  };
+  //   let span = document.createElement('span');
+  //   span.classList.add('expandButton');
+  //   article.append(titleH2, dateP, p1, p2, p3, span);
+  //   span.addEventListener('click', () => article.classList.toggle('article-open'));
+  //   return article;
+  // };
 
-  data.forEach(element => {
-    container.appendChild(articleMaker(element));
+  // data.forEach(element => {
+  //   container.appendChild(articleMaker(element));
+  // });
+
+const articles = document.querySelector('.articles');
+function articleMaker({ title, date, firstParagraph, secondParagraph, thirdParagraph}) {
+  const article = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+  const articleDate = document.createElement('p');
+  const articlePart1 = document.createElement('p');
+  const articlePart2 = document.createElement('p');
+  const articlePart3 = document.createElement('p');
+  const expandButton = document.createElement('span');
+  article.appendChild(articleTitle);
+  article.appendChild(articleDate);
+  article.appendChild(articlePart1);
+  article.appendChild(articlePart2);
+  article.appendChild(articlePart3);
+  article.appendChild(expandButton);
+  article.classList.add('article');
+  articleDate.classList.add('date');
+  expandButton.classList.add('expandButton');
+  articleTitle.textContent = title;
+  articleDate.textContent = date;
+  articlePart1.textContent = firstParagraph;
+  articlePart2.textContent = secondParagraph;
+  articlePart3.textContent = thirdParagraph;
+  expandButton.textContent = 'Expand';
+  expandButton.addEventListener('click', event => {
+    article.classList.toggle('article-open');
   });
+  return article;
+};
+const testArticle = articleMaker({ title: 'HI', date: '1995', firstParagraph: 'Expand', secondParagraph: 'Expand', thirdParagraph: 'Expand'});
+console.log(testArticle);
+data.forEach(element => {
+  articles.appendChild(articleMaker(element));
+});
