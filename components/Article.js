@@ -119,23 +119,23 @@ const data = [
 function articleMaker({title, date, firstParagraph, secondParagraph, thirdParagraph}){
 const article = document.createElement('div');
       article.classList.add('article');
-    const artTitle= document.createElement('h2');
+  const artTitle= document.createElement('h2');
       artTitle.classList.add('h2')
-    const para = document.createElement('p');
+  const para = document.createElement('p');
       para.classList.add('date')
-    const para1 = document.createElement('p');
-    const para2 = document.createElement('p'); 
-    const para3 = document.createElement('p');
-    const btn = document.createElement('span');
-      btn.classList.add('expandButton');
+  const para1 = document.createElement('p');
+  const para2 = document.createElement('p'); 
+  const para3 = document.createElement('p');
+  const btn = document.createElement('span');
+     btn.classList.add('expandButton');
 
-      article.appendChild(titleCup);
-      article.appendChild(theDate);
-      article.appendChild(paragraph1);
-      article.appendChild(paragraph2);
-      article.appendChild(paragraph3);
-      article.appendChild(button);
-      
+      article.appendChild();
+      article.appendChild();
+      article.appendChild();
+      article.appendChild();
+      article.appendChild();
+      article.appendChild();
+
     btn.addEventListener('click', function(){
       article.classList.toggle('article-open');
     })
@@ -150,5 +150,6 @@ const article = document.createElement('div');
   }
   
   const htmlarticles = document.querySelector('.article');
+  
   
   
