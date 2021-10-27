@@ -26,6 +26,13 @@ function articleMaker({ title, date, firstParagraph, secondParagraph, thirdParag
   articleDate.classList.add('.date');
   button.classList.add('.expandButton');
 
+  header.textContent = title;
+  articleDate.textContent = date;
+  p1.textContent = firstParagraph;
+  p2.textContent = secondParagraph;
+  p3.textContent = thirdParagraph;
+  button.textContent = '+';
+
   button.addEventListener('click', () => {
     article.classList.toggle('.article-open');
   });
