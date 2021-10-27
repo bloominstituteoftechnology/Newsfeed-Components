@@ -133,4 +133,10 @@ function articleMaker({ title, date, firstParagraph, secondParagraph, thirdParag
   article.classList.add('article');
   articleDate.classList.add('date');
   expandButton.classList.add.apply('expandButton');
+  articleTitle.textContent = title;
+  articleDate.textContent = date;
+  articlePart1.textContent = firstParagraph;
+  articlePart2.textContent = secondParagraph;
+  articlePart3.textContent = thirdParagraph;
+  expandButton.textContent = 'Expand';
 }
