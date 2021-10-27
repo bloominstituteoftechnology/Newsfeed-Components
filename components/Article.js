@@ -134,25 +134,34 @@ const btn = document.createElement('span');
       article.appendChild(btn);
 
 
-      article.classList.add('article');
-      para.classList.add('date');
-      btn.classList.add('expandButton');
+    article.classList.add('article');
+    para.classList.add('date');
+    btn.classList.add('expandButton');
 
-
-      btn.addEventListener('click', () => {
-        article.classList.toggle('article-open');
-    
-    })
 
     artTitle.textContent = title;
     para.textContent = date;
     para1.textContent = firstParagraph;
     para2.textContent = secondParagraph;
     para3.textContent = thirdParagraph;
-    btn.textContent = "expand"
-    return article;
-  }
+    btn.textContent = "+"
+    
+    btn.addEventListener('click', () => {
+      article.classList.toggle('article-open');
   
+  })
+  return article;
+
+  }
+  window.addEventListener("load", () => {
+    
+    wrapper = document.querySelector(".articles");
+
+    data.map(data => {
+      wrapper.appendChild(articleMaker(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
+    });
+  
+  })
   
   
   
