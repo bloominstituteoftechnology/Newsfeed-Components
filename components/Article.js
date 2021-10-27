@@ -139,7 +139,7 @@ function articleMaker({ title, date, firstParagraph, secondParagraph, thirdParag
   articlePart2.textContent = secondParagraph;
   articlePart3.textContent = thirdParagraph;
   expandButton.textContent = 'Expand';
-  expandButton.addEventListener('click', e => {
+  expandButton.addEventListener('click', () => {
     article.classList.toggle('article-open');
   });
   return article;
