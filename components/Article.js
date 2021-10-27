@@ -145,8 +145,8 @@ function articleMaker({ title, date, firstParagraph, secondParagraph, thirdParag
   return article;
 }
 
-const testArticle = articleMaker({ title: 'Suh dude', date: '4/20/69', firstParagraph: 'Minimize', secondParagraph: 'Expand', thirdParagraph: 'Expand' });
-console.log(testArticle);
+// const testArticle = articleMaker({ title: 'Suh dude', date: '4/20/69', firstParagraph: 'Minimize', secondParagraph: 'Expand', thirdParagraph: 'Expand' });
+// console.log(testArticle);
 
 data.forEach(element => {
   articles.appendChild(articleMaker(element));
