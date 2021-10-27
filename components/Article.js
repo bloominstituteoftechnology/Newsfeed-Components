@@ -22,9 +22,9 @@ function articleMaker({ title, date, firstParagraph, secondParagraph, thirdParag
   article.appendChild(p3);
   article.appendChild(button);
 
-  article.classList.add('.article');
-  articleDate.classList.add('.date');
-  button.classList.add('.expandButton');
+  article.classList.add('article');
+  articleDate.classList.add('date');
+  button.classList.add('expandButton');
 
   header.textContent = title;
   articleDate.textContent = date;
@@ -34,7 +34,7 @@ function articleMaker({ title, date, firstParagraph, secondParagraph, thirdParag
   button.textContent = '+';
 
   button.addEventListener('click', () => {
-    article.classList.toggle('.article-open');
+    article.classList.toggle('article-open');
   });
 
   console.log(article);

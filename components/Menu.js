@@ -23,12 +23,12 @@ function menuMaker(menuItems) {
   })
 
   menu.appendChild(list);
-  menu.classList.add('.menu');
+  menu.classList.add('menu');
 
   const menuButton = document.querySelector('.menu-button');
   menuButton.addEventListener('click', () => {
     // alert('clickkingggg');
-    menu.classList.toggle('.menu-open');
+    menu.classList.toggle('menu--open');
   })
 
   console.log(menu);
