@@ -88,7 +88,49 @@ const data = [
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
 ];
+const aricles = document.querySelector('articles');
 
+function articleMaker({title, date, firstParagraph, secondParagraph, thirdParagraph}){
+  const div = document.createElement('div');
+  const h2 = document.createElement('h2');
+  const datep = document.createElement('p');
+  const par1 = document.createElement('p');
+  const par2 = document.createElement('p');
+  const par3 = document.createElement('p');
+  const span = document.createElement('span')
+
+  div.appendChild(h2);
+  div.appendChild(datep);
+  div.appendChild(par1);
+  div.appendChild(par2);
+  div.appendChild(par3);
+  div.appendChild(span);
+
+  div.classList.add('article');
+  datep.classList.add('date');
+  span.classList.add('expandButton');
+
+  h2.textContent = title;
+  datep.textContent = date;
+  par1.textContent = firstParagraph;
+  par2.textContent = secondParagraph;
+  par3.textContent = thirdParagraph;
+  span.textContent = 'click me!';
+
+  span.addEventListener('click', () => {
+    div.classList.toggle('article-open')
+  })
+  return span;
+
+}
+
+const articleElement = data.map(datA =>{
+  return articleMaker(datA)
+})
+
+articleElement.forEach(elem => {
+  articles.appendChild(elem);
+})
 /*
   Step 1: Write a component called 'articleMaker' to create an article.
   Your component is a function that takes an article object as its only argument,
