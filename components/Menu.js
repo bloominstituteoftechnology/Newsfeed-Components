@@ -33,14 +33,19 @@ const menuMaker = function(menuArray){
 
 const menuButton = document.querySelector('.menu-button');
 menuButton.addEventListener('click', () => {
-  menuDiv.classList.toggle('menu-open')
-})
+  menuDiv.classList.toggle('.menu-open')
+});
 
-  return menuDiv.innerHTML
+  return menuDiv
 }
 
-console.log(menuMaker(menuItems))
+const pageHeader = document.querySelector('.header');
+const newMenu = menuMaker(menuItems);
+pageHeader.appendChild(newMenu)
 
+// console.log(pageHeader)
+
+console.log(newMenu)
 
 // The 'menuMaker' takes an array of menu items as its only argument.
 
