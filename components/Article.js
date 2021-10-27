@@ -117,5 +117,11 @@ const data = [
 
 const articles = document.querySelector('.articles');
 function articleMaker({ title, date, firstParagraph, secondParagraph, thirdParagraph }) {
-
+  const article = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+  const articleDate = document.createElement('p');
+  const articlePart1 = document.createElement('p');
+  const articlePart2 = document.createElement('p');
+  const articlePart3 = document.createElement('p');
+  const expandButton = document.createElement('span');
 }
