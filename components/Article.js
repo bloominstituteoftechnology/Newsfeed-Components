@@ -118,26 +118,30 @@ const data = [
 //Step 1
 function articleMaker({title, date, firstParagraph, secondParagraph, thirdParagraph}){
 const article = document.createElement('div');
+const artTitle= document.createElement('h2');
+const para = document.createElement('p');
+const para1 = document.createElement('p');
+const para2 = document.createElement('p'); 
+const para3 = document.createElement('p');
+const btn = document.createElement('span');
+     
+
+      article.appendChild(artTitle);
+      article.appendChild(para);
+      article.appendChild(para1);
+      article.appendChild(para2);
+      article.appendChild(para3);
+      article.appendChild(btn);
+
+
       article.classList.add('article');
-  const artTitle= document.createElement('h2');
-      artTitle.classList.add('h2')
-  const para = document.createElement('p');
-      para.classList.add('date')
-  const para1 = document.createElement('p');
-  const para2 = document.createElement('p'); 
-  const para3 = document.createElement('p');
-  const btn = document.createElement('span');
-     btn.classList.add('expandButton');
+      para.classList.add('date');
+      btn.classList.add('expandButton');
 
-      article.appendChild();
-      article.appendChild();
-      article.appendChild();
-      article.appendChild();
-      article.appendChild();
-      article.appendChild();
 
-    btn.addEventListener('click', function(){
-      article.classList.toggle('article-open');
+      btn.addEventListener('click', () => {
+        article.classList.toggle('article-open');
+    
     })
 
     artTitle.textContent = title;
@@ -145,11 +149,11 @@ const article = document.createElement('div');
     para1.textContent = firstParagraph;
     para2.textContent = secondParagraph;
     para3.textContent = thirdParagraph;
-    btn.textContent = "+"
+    btn.textContent = "expand"
     return article;
   }
   
-  const htmlarticles = document.querySelector('.article');
+  
   
   
   
