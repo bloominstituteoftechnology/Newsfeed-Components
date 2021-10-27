@@ -117,6 +117,38 @@ const data = [
 
 //Step 1
 function articleMaker({title, date, firstParagraph, secondParagraph, thirdParagraph}){
-  const divv = document.createElement('div');
-  const h2 = document.createElement('h2');
-}
+const article = document.createElement('div');
+      article.classList.add('article');
+    const artTitle= document.createElement('h2');
+      artTitle.classList.add('h2')
+    const para = document.createElement('p');
+      para.classList.add('date')
+    const para1 = document.createElement('p');
+    const para2 = document.createElement('p'); 
+    const para3 = document.createElement('p');
+    const btn = document.createElement('span');
+      btn.classList.add('expandButton');
+
+    article.appendChild(artTitle);
+    article.appendChild(para);
+    article.appendChild(para1);
+    article.appendChild(para2);
+    article.appendChild(para3);
+    article.appendChild(btn);
+
+    btn.addEventListener('click', function(){
+      article.classList.toggle('article-open');
+    })
+
+    artTitle.textContent = title;
+    para.textContent = date;
+    para1.textContent = firstParagraph;
+    para2.textContent = secondParagraph;
+    para3.textContent = thirdParagraph;
+    btn.textContent = "+"
+    return article;
+  }
+  
+  const htmlarticles = document.querySelector('.article');
+  
+  
