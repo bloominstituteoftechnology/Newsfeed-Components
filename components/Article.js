@@ -142,6 +142,17 @@ function articleMaker(article){
   newArticleExpand.classList.add('expandButton');
   newArticleExpand.textContent = "+";
   newArticle.appendChild(newArticleExpand);
-
+  console.log(newArticle);
   return newArticle;
 }
+// articleMaker(data[0]);
+// let articles = document.querySelector('articles')
+
+
+
+data.forEach(function(item){
+  let newArticle = articleMaker(item);
+  let articles = document.querySelector('.articles');
+  articles.appendChild(newArticle);
+  console.log(articles);
+});
