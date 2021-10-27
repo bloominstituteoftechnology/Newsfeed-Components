@@ -124,4 +124,9 @@ function articleMaker({ title, date, firstParagraph, secondParagraph, thirdParag
   const articlePart2 = document.createElement('p');
   const articlePart3 = document.createElement('p');
   const expandButton = document.createElement('span');
+  article.appendChild(articleTitle);
+  article.appendChild(articleDate);
+  article.appendChild(articlePart1);
+  article.appendChild(articlePart2);
+  article.appendChild(articlePart3);
 }
