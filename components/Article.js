@@ -129,13 +129,13 @@ const article = document.createElement('div');
     const btn = document.createElement('span');
       btn.classList.add('expandButton');
 
-    article.appendChild(artTitle);
-    article.appendChild(para);
-    article.appendChild(para1);
-    article.appendChild(para2);
-    article.appendChild(para3);
-    article.appendChild(btn);
-
+      article.appendChild(titleCup);
+      article.appendChild(theDate);
+      article.appendChild(paragraph1);
+      article.appendChild(paragraph2);
+      article.appendChild(paragraph3);
+      article.appendChild(button);
+      
     btn.addEventListener('click', function(){
       article.classList.toggle('article-open');
     })
