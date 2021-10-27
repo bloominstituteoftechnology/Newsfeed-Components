@@ -112,7 +112,7 @@ function articleMaker({ title, date, firstParagraph, secondParagraph, thirdParag
   article.appendChild(onePara).textContent = firstParagraph;
   article.appendChild(twoPara).textContent = secondParagraph;
   article.appendChild(threePara).textContent = thirdParagraph;
-  article.appendChild(expandButton);
+  article.appendChild(expandButton).textContent = 'Click for info';
 
   article.classList.add('article');
   dates.classList.add('date');
