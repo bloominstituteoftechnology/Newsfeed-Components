@@ -132,11 +132,22 @@ function articleMaker({ title, date, firstParagraph, secondParagraph, thirdParag
   article.appendChild(expandButton);
   article.classList.add('article');
   articleDate.classList.add('date');
-  expandButton.classList.add.apply('expandButton');
+  expandButton.classList.add('expandButton');
   articleTitle.textContent = title;
   articleDate.textContent = date;
   articlePart1.textContent = firstParagraph;
   articlePart2.textContent = secondParagraph;
   articlePart3.textContent = thirdParagraph;
   expandButton.textContent = 'Expand';
+  expandButton.addEventListener('click', e => {
+    article.classList.toggle('article-open');
+  });
+  return article;
 }
+
+const testArticle = articleMaker({ title: 'Suh dude', date: '4/20/69', firstParagraph: 'Minimize', secondParagraph: 'Expand', thirdParagraph: 'Expand' });
+console.log(testArticle);
+
+data.forEach(element => {
+  articles.appendChild(articleMaker(element));
+});
