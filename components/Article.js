@@ -114,3 +114,66 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+//adding new article to data (must go first)
+let addArticle = {
+  title: 'Hello World',
+  date: '1984',
+  firstParagraph: `If you want to keep a secret, you must also hide it from yourself.`,
+
+  secondParagraph: `Now I will tell you the answer to my question. It is this. The Party seeks power entirely for its own sake. We are not interested in the good of others; we are interested solely in power, pure power. What pure power means you will understand presently. We are different from the oligarchies of the past in that we know what we are doing. All the others, even those who resembled ourselves, were cowards and hypocrites. The German Nazis and the Russian Communists came very close to us in their methods, but they never had the courage to recognize their own motives. They pretended, perhaps they even believed, that they had seized power unwillingly and for a limited time, and that just around the corner there lay a paradise where human beings would be free and equal. We are not like that. We know that no one ever seizes power with the intention of relinquishing it. Power is not a means; it is an end. One does not establish a dictatorship in order to safeguard a revolution; one makes the revolution in order to establish the dictatorship. The object of persecution is persecution. The object of torture is torture. The object of power is power. Now you begin to understand me.`,
+
+  thirdParagraph: `Big Brother is Watching You.`
+}
+data.push(addArticle);
+
+function articleMaker(article){
+  //create div 
+  const newArticle = document.createElement('div');
+  newArticle.classList.add('article');
+  //create h2 title
+  const newArticleTitle = document.createElement('h2');
+  newArticleTitle.textContent = article.title;
+  newArticle.appendChild(newArticleTitle);
+  //create p date
+  const newArticleDate = document.createElement('p');
+  newArticleDate.classList.add('date');
+  newArticleDate.textContent = article.date;
+  newArticle.appendChild(newArticleDate);
+  //create p 1-3
+  const newArticlep1 = document.createElement('p');
+  newArticlep1.textContent = article.firstParagraph;
+  newArticle.appendChild(newArticlep1);
+  const newArticlep2 = document.createElement('p');
+  newArticlep2.textContent = article.secondParagraph;
+  newArticle.appendChild(newArticlep2);
+  const newArticlep3 = document.createElement('p');
+  newArticlep3.textContent = article.thirdParagraph;
+  newArticle.appendChild(newArticlep3);
+  //create expand button
+  const newArticleExpand = document.createElement('span');
+  newArticleExpand.classList.add('expandButton');
+  newArticleExpand.textContent = "+";
+  newArticle.appendChild(newArticleExpand);
+  console.log(newArticle);
+  return newArticle;
+}
+
+data.forEach(function(item){
+  let newArticle = articleMaker(item);
+  let articles = document.querySelector('.articles');
+  articles.appendChild(newArticle);
+  console.log(articles);
+});
+
+//adding new article to data
+
+// let addArticle = {
+//   title: 'Hello World',
+//   date: '1984',
+//   firstParagraph: `If you want to keep a secret, you must also hide it from yourself.`,
+
+//   secondParagraph: `Now I will tell you the answer to my question. It is this. The Party seeks power entirely for its own sake. We are not interested in the good of others; we are interested solely in power, pure power. What pure power means you will understand presently. We are different from the oligarchies of the past in that we know what we are doing. All the others, even those who resembled ourselves, were cowards and hypocrites. The German Nazis and the Russian Communists came very close to us in their methods, but they never had the courage to recognize their own motives. They pretended, perhaps they even believed, that they had seized power unwillingly and for a limited time, and that just around the corner there lay a paradise where human beings would be free and equal. We are not like that. We know that no one ever seizes power with the intention of relinquishing it. Power is not a means; it is an end. One does not establish a dictatorship in order to safeguard a revolution; one makes the revolution in order to establish the dictatorship. The object of persecution is persecution. The object of torture is torture. The object of power is power. Now you begin to understand me.`,
+
+//   thirdParagraph: `Big Brother is Watching You.`
+// }
+// data.push(addArticle);
