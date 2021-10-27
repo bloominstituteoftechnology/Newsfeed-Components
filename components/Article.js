@@ -88,6 +88,10 @@ const data = [
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
 ];
+//Step 1
+function articleMaker(article){
+
+}
 
 /*
   Step 1: Write a component called 'articleMaker' to create an article.
@@ -102,6 +106,28 @@ const data = [
 
     <span class="expandButton">+</span>
   </div>
+
+
+  function buttonCreator(buttonText){
+    const button = document.createElement('button');
+
+    button.textContent = buttonText;
+
+    button.classList.add('button');
+
+    button.addEventListener('click', (e) => {
+        console.log('clicked!');
+    });
+
+    return button;
+}
+
+let firstButton = buttonCreator('Button 1');
+
+let secondButton = buttonCreator('Button 2');
+
+parent.appendChild(firstButton);
+parent.appendChild(secondButton);
 
   Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
   This listener should toggle the class 'article-open' on div.article.
