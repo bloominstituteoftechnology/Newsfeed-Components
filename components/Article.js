@@ -93,6 +93,7 @@ const data = [
   Step 1: Write a component called 'articleMaker' to create an article.
   Your component is a function that takes an article object as its only argument,
   and returns a DOM node looking like the one below:
+  
 
   <div class="article">
     <h2>{title of the article}</h2>
@@ -114,3 +115,41 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+function articleMaker (article) {
+  const titleElem = article[0].title.createElement('h2')
+  const titleElem2 = article[1].title.createElement('h2')
+  const titleElem3 = article[2].title.createElement('h2')
+  const titleElem4 = article[3].title.createElement('h2')
+
+  const dateElem = article[0].date.createElement('p')
+  const dateElem2 = article[1].date.createElement('p')
+  const dateElem3 = article[2].date.createElement('p')
+  const dateElem4 = article[3].date.createElement('p')
+
+  const paraElem = article[0].firstParagraph.createElement('p');
+  const paraElem2 = article[0].secondParagraph.createElement('p')
+  const paraElem3 = article[0].thirdParagraph.createElement('p')
+  const paraElem4 = article[1].firstParagraph.createElement('p')
+  const paraElem5 = article[1].secondParagraph.createElement('p')
+  const paraElem6 = article[1].thirdParagraph.createElement('p')
+  const paraElem7 = article[2].firstParagraph.createElement('p')
+  const paraElem8 = article[2].secondParagraph.createElement('p')
+  const paraElem9 = article[2].thirdParagraph.createElement('p')
+  const paraElem10 = article[3].firstParagraph.createElement('p')
+  const paraElem11 = article[3].secondParagraph.createElement('p')
+  const paraElem12 = article[3].thirdParagraph.createElement('p')
+
+  const spanElem = article.createElement('span')
+  spanElem.classList.add('expandButton')
+  spanElem.textContent('+')
+
+  const divEl = article.createElement('div');
+  divEl.classList.add('article')
+
+  spanElem.expandButton.addEventListener('toggle', evt => {
+    divEl.classList.toggle('article-open');
+  })
+  return divEl;
+}
+
+articleMaker(data);
