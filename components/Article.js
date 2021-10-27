@@ -115,54 +115,49 @@ const data = [
   Refresh the page to see the new article.
 */
 
-//Step 1
 function articleMaker({title, date, firstParagraph, secondParagraph, thirdParagraph}){
-const article = document.createElement('div');
-const artTitle= document.createElement('h2');
-const para = document.createElement('p');
-const para1 = document.createElement('p');
-const para2 = document.createElement('p'); 
-const para3 = document.createElement('p');
-const btn = document.createElement('span');
-     
-
-      article.appendChild(artTitle);
-      article.appendChild(para);
-      article.appendChild(para1);
-      article.appendChild(para2);
-      article.appendChild(para3);
-      article.appendChild(btn);
-
-
-    article.classList.add('article');
-    para.classList.add('date');
-    btn.classList.add('expandButton');
-
-
-    artTitle.textContent = title;
-    para.textContent = date;
-    para1.textContent = firstParagraph;
-    para2.textContent = secondParagraph;
-    para3.textContent = thirdParagraph;
-    btn.textContent = "+"
+  const article = document.createElement('div');
+  const artTitle= document.createElement('h2');
+  const para = document.createElement('p');
+  const para1 = document.createElement('p');
+  const para2 = document.createElement('p'); 
+  const para3 = document.createElement('p');
+  const btn = document.createElement('span');
+       
+  
+        article.appendChild(artTitle);
+        article.appendChild(para);
+        article.appendChild(para1);
+        article.appendChild(para2);
+        article.appendChild(para3);
+        article.appendChild(btn);
+  
+  
+      article.classList.add('article');
+      para.classList.add('date');
+      btn.classList.add('expandButton');
+  
+  
+      artTitle.textContent = title;
+      para.textContent = date;
+      para1.textContent = firstParagraph;
+      para2.textContent = secondParagraph;
+      para3.textContent = thirdParagraph;
+      btn.textContent = "+"
+      
+      btn.addEventListener('click', () => {
+        article.classList.toggle('article-open');
     
-    btn.addEventListener('click', () => {
-      article.classList.toggle('article-open');
+    })
+    return article;
   
-  })
-  return article;
-
-  }
-  window.addEventListener("load", () => {
+    }
+    window.addEventListener("load", () => {
+      
+      wrapper = document.querySelector(".articles");
+  
+      data.map(data => {
+        wrapper.appendChild(articleMaker(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
+      });
     
-    wrapper = document.querySelector(".articles");
-
-    data.map(data => {
-      wrapper.appendChild(articleMaker(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
-    });
-  
-  })
-  
-  
-  
-  
+    })
