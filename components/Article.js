@@ -86,6 +86,28 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Professional Software Development in 2019',
+    date: 'Jan 1st, 2019',
+    firstParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
+          hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
+          Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `,
+
+    secondParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
+          hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
+          hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
+          hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? `,
+
+    thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
+          Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
+          Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {title: 'blajidofas',
+  date: 'fdjaiofasd',
+  firstParagraph: 'ajfioafawe',
+  secondParagraph: 'ajfiofjasio',
+  thirdParagraph: 'ajfieofae'
   }
 ];
 
@@ -103,27 +125,54 @@ const data = [
   //   <span class="expandButton">+</span>
   // </div>
 
+  //making the elements and giving them classes
 const articleMaker = function (articleObject){
   const articlediv =document.createElement('div');
-    articlediv.className = 'article';
+    articlediv.classList.add('article')
   const articleh2 =document.createElement('h2');
-    articleh2.textContent = articleObject['date'];
+    // articleh2.textContent = articleObject['date'];
   const articlepdate =document.createElement('p');
-    articlepdate.className = 'date';
+    articlepdate.classList.add ('date')
   const articlep1 =document.createElement('p');
   const articlep2 =document.createElement('p');
   const articlep3 =document.createElement('p');
   const articlespan =document.createElement('span');
-    articlespan.className = 'expandButton';
+    articlespan.classList.add ('expandButton')
+  //done making the elements and giving them classes
 
+
+    //putting all the elements together now
   articlediv.appendChild(articleh2);
-  articlediv.appendChild(articlepdate);
-  articlediv.appendChild(articlep1);
-  articlediv.appendChild(articlep2);
-  articlediv.appendChild(articlep3);
-  articlediv.appendChild(articlespan);
-  return articlediv;
+    articlediv.appendChild(articlepdate);
+    articlediv.appendChild(articlep1);
+    articlediv.appendChild(articlep2);
+    articlediv.appendChild(articlep3);
+    articlediv.appendChild(articlespan);
+   //Done putting all the elements together 
+
+
+  articleh2.textContent = articleObject.title;
+  articlepdate.textContent = articleObject.date;
+  articlep1.textContent = articleObject.firstParagraph;
+  articlep2.textContent = articleObject.secondParagraph;
+  articlep3.textContent = articleObject.thirdParagraph;
+
+articlespan.addEventListener('expandButton', function(){
+  articlediv.classList.toggle('article-open')
+});
+
+return articlediv;
 }
+
+data.forEach(arr=>{
+const newDiv = articleMaker(arr);
+const blahblah = document.querySelector('.articles')
+blahblah.appendChild(newDiv);
+});
+
+// console.log(articleMaker(data));
+
+
 
   // Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
   // This listener should toggle the class 'article-open' on div.article.
