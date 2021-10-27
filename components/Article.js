@@ -114,3 +114,43 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+function articleMaker(titleContent, date, bodyParagraph1Content, bodyParagraph2Content, bodyParagraph3Content) {
+  let containerDiv = document.createElement('div');
+  let title = document.createElement('h2');
+  let dateParagraph = document.createElement('p');
+  let bodyParagraph1 = document.createElement('p');
+  let bodyParagraph2 = document.createElement('p');
+  let bodyParagraph3 = document.createElement('p');
+  let expandButton = document.createElement('span')
+
+  containerDiv.classList.add('article');
+  dateParagraph.classList.add('date');
+  expandButton.classList.add('expandButton');
+
+  containerDiv.appendChild(title);
+  containerDiv.appendChild(dateParagraph);
+  containerDiv.appendChild(bodyParagraph1);
+  containerDiv.appendChild(bodyParagraph2);
+  containerDiv.appendChild(bodyParagraph3);
+  containerDiv.appendChild(expandButton);
+
+  expandButton.addEventListener('click', (e) => {
+    console.log('toggle entered', e.target.classList) 
+    containerDiv.classList.toggle('article-open')
+  })
+
+  title.textContent = titleContent;
+  dateParagraph.textContent = date;
+  bodyParagraph1.textContent = bodyParagraph1Content;
+  bodyParagraph2.textContent = bodyParagraph2Content;
+  bodyParagraph3.textContent = bodyParagraph3Content;
+  expandButton.textContent = '+';
+
+  return containerDiv
+};
+
+const articlesContainer = document.querySelector('.articles');
+data.forEach(item);
+  console.log('items:', item)
+  let article = articleMaker(item.title, item.date, item.firstParagraph, item.secondParagraph, item.ThirdParagraph)
+  articlesContainer.appendChild(article)
