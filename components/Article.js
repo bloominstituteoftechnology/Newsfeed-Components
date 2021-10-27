@@ -114,3 +114,56 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+const addArticle = {
+  title: `I Am Groot`,
+  date:`I Am Groot`,
+  firstParagraph: `I am Groot I am Groot, I am Groot.`,
+
+  secondParagraph: `I am Groot I am Groot I am Groot I am Groot, I am Groot. I  AM GROOT!`,
+
+  thirdParagraph: `I am Groot I am Groot I am Groot I am Groot I am Groot I am Groot, I am Groot I am Groot I am Groot I am Groot I am Groot.`,
+}
+
+data.push(addArticle)
+
+function articleMaker({title, date, firstParagraph, secondParagraph, thirdParagraph}) {
+  const divy = document.createElement('div')
+  const h2 = document.createElement('h2')
+  const p = document.createElement('p')
+  const paraOne = document.createElement('p')
+  const paraTwo = document.createElement('p')
+  const paraThree = document.createElement('p')
+  const span = document.createElement('span')
+  divy.appendChild(h2)
+  divy.appendChild(p)
+  divy.appendChild(paraOne)
+  divy.appendChild(paraTwo)
+  divy.appendChild(paraThree)
+  divy.appendChild(span)
+
+  span.textContent = 'Read Me'
+  h2.textContent = title
+  p.textContent = date
+  paraOne.textContent = firstParagraph
+  paraTwo.textContent = secondParagraph
+  paraThree.textContent = thirdParagraph
+
+  divy.classList.add('article')
+  p.classList.add('date')
+  span.classList.add('expandButton')
+
+  span.addEventListener('click' , () => {
+    divy.classList.toggle('article-open')
+
+ })
+
+  return divy
+}
+
+const container = document.querySelector('div.articles')
+
+data.forEach(datum => {
+  const newArticle = articleMaker(datum)
+  container.appendChild(newArticle)
+})
