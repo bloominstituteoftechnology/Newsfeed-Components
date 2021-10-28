@@ -115,5 +115,4 @@ const data = [
   Refresh the page to see the new article.
 */
 const articleMaker(){
-  
 }
