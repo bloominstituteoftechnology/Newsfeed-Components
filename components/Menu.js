@@ -34,26 +34,28 @@ let menuItems = [
 */
 
  function menuMaker (array){
-   array.forEach(item => {
+  const ulElem = document.createElement('ul');
+  const divElem = document.createElement('div');
+
+      array.forEach(item => {
 
       const listElem = document.createElement('li');
-      const ulElem = document.createElement('ul');
-      const divElem = document.createElement('div');
+      listElem.textContent = item;
+      ulElem.appendChild(listElem);
+      
+      });
+      
       divElem.classList.add('menu');
 
-      listElem.textContent = item;
-
-
       divElem.appendChild(ulElem);
-      ulElem.appendChild(listElem);
-
+      
       const menuButton = document.querySelector('.menu-button');
       
       menuButton.addEventListener('click', evt => {
         divElem.classList.toggle('.menu--open');
-      });
-      return divElem;
+      
    });
+   return divElem;
  };
 
  const headerElem = document.querySelector('body .header');
