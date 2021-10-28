@@ -116,40 +116,44 @@ const data = [
   Refresh the page to see the new article.
 */
 function articleMaker (article) {
-  const titleElem = article[0].title.createElement('h2')
-  const titleElem2 = article[1].title.createElement('h2')
-  const titleElem3 = article[2].title.createElement('h2')
-  const titleElem4 = article[3].title.createElement('h2')
+  const titleElem = document.createElement('h2');
+  const dateElem = document.createElement('p');
+  const paraElem = document.createElement('p');
+  const paraElem2 = document.createElement('p');
+  const paraElem3 = document.createElement('p');
 
-  const dateElem = article[0].date.createElement('p')
-  const dateElem2 = article[1].date.createElement('p')
-  const dateElem3 = article[2].date.createElement('p')
-  const dateElem4 = article[3].date.createElement('p')
+  const spanElem = document.createElement('span');
+  spanElem.classList.add('expandButton');
 
-  const paraElem = article[0].firstParagraph.createElement('p');
-  const paraElem2 = article[0].secondParagraph.createElement('p')
-  const paraElem3 = article[0].thirdParagraph.createElement('p')
-  const paraElem4 = article[1].firstParagraph.createElement('p')
-  const paraElem5 = article[1].secondParagraph.createElement('p')
-  const paraElem6 = article[1].thirdParagraph.createElement('p')
-  const paraElem7 = article[2].firstParagraph.createElement('p')
-  const paraElem8 = article[2].secondParagraph.createElement('p')
-  const paraElem9 = article[2].thirdParagraph.createElement('p')
-  const paraElem10 = article[3].firstParagraph.createElement('p')
-  const paraElem11 = article[3].secondParagraph.createElement('p')
-  const paraElem12 = article[3].thirdParagraph.createElement('p')
+  const divEl = document.createElement('div');
+  divEl.classList.add('article');
 
-  const spanElem = article.createElement('span')
-  spanElem.classList.add('expandButton')
-  spanElem.textContent('+')
+  titleElem.textContent = article.title;
+  dateElem.textContent = article.date;
+  paraElem.textContent = article.firstParagraph;
+  paraElem2.textContent = article.secondParagraph;
+  paraElem3.textContent = article.thirdParagraph;
+  spanElem.textContent = '+';
 
-  const divEl = article.createElement('div');
-  divEl.classList.add('article')
+  divEl.appendChild(titleElem);
+  divEl.appendChild(dateElem);
+  divEl.appendChild(paraElem);
+  divEl.appendChild(paraElem2);
+  divEl.appendChild(paraElem3);
 
-  spanElem.expandButton.addEventListener('toggle', evt => {
+  divEl.appendChild(spanElem);
+
+  spanElem.addEventListener('toggle', evt => {
     divEl.classList.toggle('article-open');
-  })
+  });
   return divEl;
 }
+const bod = document.querySelector('body');
 
 articleMaker(data);
+
+
+data.forEach(item => {
+  const el = articleMaker(item);
+  bod.appendChild(el);
+});
