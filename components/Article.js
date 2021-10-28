@@ -130,13 +130,14 @@ function articleMaker(article){
 
   articleContainer.classList.add('article');
   date.classList.add('date');
-  expandButton.classList('expandButton');
+  expandButton.classList.add('expandButton');
 
   expandButton.addEventListener('click', () => {
     articleContainer.classList.toggle('article-open');
   })
   return articleContainer;
 }
+
 const articles = document.querySelector('.articles'); 
 data.forEach(article => {
   articles.appendChild(articleMaker(article));
