@@ -88,7 +88,7 @@ const data = [
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
 ];
-const aricles = document.querySelector('articles');
+const articles = document.querySelector('.articles');
 
 function articleMaker({title, date, firstParagraph, secondParagraph, thirdParagraph}){
   const div = document.createElement('div');
@@ -120,8 +120,7 @@ function articleMaker({title, date, firstParagraph, secondParagraph, thirdParagr
   span.addEventListener('click', () => {
     div.classList.toggle('article-open')
   })
-  return span;
-
+  return div;
 }
 
 const articleElement = data.map(datA =>{
