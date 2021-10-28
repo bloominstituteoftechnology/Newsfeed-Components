@@ -86,6 +86,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: `I'm actually learning`,
+    date: `Oct 27th, 2021`,
+    firstParagraph: `Not going to lie this was very refreshing. I thought I was going to want to quit when we first started this javascript portion. Just going to leave this here for later in the program.`,
+
+    secondParagraph: `If you want to know who you are, you have to look at your real self and acknowledge what you see. -Itachi Uchiha. Itachi is the greatest anime character of all time.`,
+
+    thirdParagraph: `If you want happiness for an hour — take a nap. If you want happiness for a day — go fishing. If you want happiness for a year — inherit a fortune. If you want happiness for a life time — help someone else. - Chinese Proverb`
   }
 ];
 
@@ -114,3 +123,57 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+
+function articleMaker(arr) {
+const article = document.createElement('div');
+const articleTitle = document.createElement('h2');
+const articleDate = document.createElement('p');
+const p1 = document.createElement('p');
+const p2 = document.createElement('p');
+const p3 = document.createElement('p');
+const expand = document.createElement('span');
+
+article.appendChild(articleTitle);
+article.appendChild(articleDate);
+article.appendChild(p1);
+article.appendChild(p2);
+article.appendChild(p3);
+article.appendChild(expand);
+
+article.classList.add('article');
+expand.classList.add('expandButton');
+articleDate.classList.add('date');
+
+//Title
+articleTitle.textContent = arr.title;
+//Date
+articleDate.textContent = arr.date;
+//Paragraph One
+p1.textContent = arr.firstParagraph;
+//Paragraph Two
+p2.textContent = arr.secondParagraph;
+//Paragraph Three
+p3.textContent = arr.thirdParagraph
+//Span Text
+expand.textContent = '+'
+
+expand.addEventListener('click', function(evt){
+  article.classList.toggle('article-open');
+})
+ return article;
+}
+
+
+
+const articlesDiv = document.querySelector('.articles');
+
+const articleLoop = data.map(item => {
+  return articleMaker(item);
+})
+
+articleLoop.forEach(function(e) {
+  articlesDiv.appendChild(e);
+})
+
+
