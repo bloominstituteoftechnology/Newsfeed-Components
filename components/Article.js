@@ -143,7 +143,7 @@ function articleMaker({title, date, firstParagraph, secondParagraph, thirdParagr
       para1.textContent = firstParagraph;
       para2.textContent = secondParagraph;
       para3.textContent = thirdParagraph;
-      btn.textContent = "+"
+      btn.textContent = "expand"
       
       btn.addEventListener('click', () => {
         article.classList.toggle('article-open');
@@ -152,12 +152,11 @@ function articleMaker({title, date, firstParagraph, secondParagraph, thirdParagr
     return article;
   
     }
-    window.addEventListener("load", () => {
-      
-      wrapper = document.querySelector(".articles");
-  
-      data.map(data => {
-        wrapper.appendChild(articleMaker(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
-      });
     
-    })
+    const devArticles= document.querySelector('.articles');
+  
+  data.forEach(article => {
+   const make =  articleMaker(article);
+   devArticles.appendChild(make);
+  })
+
