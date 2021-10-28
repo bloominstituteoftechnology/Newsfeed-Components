@@ -25,15 +25,15 @@ const menuMaker = function(menuArray){
     const menuUl= document.createElement('ul');
     menuDiv.appendChild(menuUl);
 
-    for (let i= 0; i<menuArray.length; i++){
-     let liChild = document.createElement('li');
-     liChild.textContent = menuArray[i];
-      menuUl.appendChild(liChild)
-    }
+    menuArray.forEach(menuItem=>{
+     const liChild = document.createElement('li');
+     liChild.textContent = menuItem;
+     menuUl.appendChild(liChild)
+    })
 
 const menuButton = document.querySelector('.menu-button');
 menuButton.addEventListener('click', () => {
-  menuDiv.classList.toggle('.menu-open')
+  menuDiv.classList.toggle('.menu--open')
 });
 
   return menuDiv
@@ -43,7 +43,7 @@ const pageHeader = document.querySelector('.header');
 const newMenu = menuMaker(menuItems);
 pageHeader.appendChild(newMenu)
 
-// console.log(pageHeader)
+console.log(pageHeader)
 
 console.log(newMenu)
 
