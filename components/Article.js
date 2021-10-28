@@ -142,7 +142,7 @@ function articleMaker({title, date, firstParagraph, secondParagraph, thirdParagr
   par1.textContent = firstParagraph;
   par2.textContent = secondParagraph;
   par3.textContent = thirdParagraph;
-  span.textContent = 'click me!';
+  span.textContent = '+';
 
   span.addEventListener('click', () => {
     div.classList.toggle('article-open')
