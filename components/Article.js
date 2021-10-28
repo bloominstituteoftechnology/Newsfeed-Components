@@ -86,6 +86,22 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Professional Software Development in 2011',
+    date: 'Oct 28, 2021',
+    firstParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
+          hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
+          Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `,
+
+    secondParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
+          hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
+          hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
+          hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? `,
+
+    thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
+          Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
+          Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.` 
   }
 ];
 
@@ -102,15 +118,66 @@ const data = [
 
     <span class="expandButton">+</span>
   </div>
+*/
+// const {title, date, firstParagraph, secondParagraph, thirdParagraph};
 
+function articleMaker({title, date, firstParagraph, secondParagraph, thirdParagraph}) {
+
+//This creates new elements from the example
+const article = document.createElement('div');
+const h2Title = document.createElement('h2');
+const pDate = document.createElement('p');
+const firstPgraph = document.createElement('p');
+const secondPgraph = document.createElement('p');
+const thirdPgraph = document.createElement('p');
+const spanButton = document.createElement('span');
+
+//This tells HTML which element is child to each parent from the example
+article.appendChild(h2Title);
+article.appendChild(pDate);
+article.appendChild(firstPgraph)
+article.appendChild(secondPgraph)
+article.appendChild(thirdPgraph)
+article.appendChild(spanButton)
+
+//Adding three classes to DOM from CSS to the respective elements
+article.classList.add('article'); 
+pDate.classList.add('date'); //this is wrong
+spanButton.classList.add('expandButton'); //this is wrong
+
+//Adding the text from the Array 
+h2Title.textContent = title;
+pDate.textContent = date;
+firstPgraph.textContent = firstParagraph;
+secondPgraph.textContent = secondParagraph;
+thirdPgraph.textContent = thirdParagraph;
+spanButton.textContent = 'expand';  //I made up the expand for the button
+
+/*
   Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
   This listener should toggle the class 'article-open' on div.article.
+*/
 
+spanButton.addEventListener('click', () => {
+  article.classList.toggle('article-open');
+})
+
+/*
   Step 3: Don't forget to return something from your function!
+*/
 
+return article;
+}
+/*
   Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
   to create a div.article element and append it to the DOM inside div.articles (see index.html).
+*/
+const articles = document.querySelector('.articles')
+data.map(item => {
+  articles.appendChild(articleMaker(item))
+})
 
+/*
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
-*/
+  */
