@@ -93,7 +93,7 @@ const data = [
   Step 1: Write a component called 'articleMaker' to create an article.
   Your component is a function that takes an article object as its only argument,
   and returns a DOM node looking like the one below:
-
+ 
   <div class="article">
     <h2>{title of the article}</h2>
     <p class="date">{date of the article}</p>
@@ -114,3 +114,49 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+function articleMaker({title, date, firstParagraph, secondParagraph, thirdParagraph}){
+  const article = document.createElement('div');
+  const artTitle= document.createElement('h2');
+  const para = document.createElement('p');
+  const para1 = document.createElement('p');
+  const para2 = document.createElement('p'); 
+  const para3 = document.createElement('p');
+  const btn = document.createElement('span');
+       
+  
+        article.appendChild(artTitle);
+        article.appendChild(para);
+        article.appendChild(para1);
+        article.appendChild(para2);
+        article.appendChild(para3);
+        article.appendChild(btn);
+  
+  
+      article.classList.add('article');
+      para.classList.add('date');
+      btn.classList.add('expandButton');
+  
+  
+      artTitle.textContent = title;
+      para.textContent = date;
+      para1.textContent = firstParagraph;
+      para2.textContent = secondParagraph;
+      para3.textContent = thirdParagraph;
+      btn.textContent = "expand"
+      
+      btn.addEventListener('click', () => {
+        article.classList.toggle('article-open');
+    
+    })
+    return article;
+  
+    }
+    
+    const devArticles= document.querySelector('.articles');
+  
+  data.forEach(article => {
+   const make =  articleMaker(article);
+   devArticles.appendChild(make);
+  })
+
