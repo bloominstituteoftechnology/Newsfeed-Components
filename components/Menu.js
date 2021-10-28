@@ -45,7 +45,7 @@ function menuMaker(array) {
     menuList.appendChild(itemMenu);
   }
   const menuButton = document.querySelector('.menu-button');
-  
+
   menuButton.addEventListener("click", () => {
     menuDiv.classList.toggle("menu--open");
     console.log('clicked')
@@ -54,12 +54,12 @@ function menuMaker(array) {
   return menuDiv;
 }
 
-window.addEventListener('load', () => {
-  
-  const menu = document.querySelector('.header');
-  menu.appendChild(menuMaker(menuItems));
+  const menuDiv = menuMaker(menuItems);
+  const header = document.querySelector('.header');
+  header.appendChild(menuDiv);
+    
 
-}) 
+
 
   
   
