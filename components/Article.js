@@ -86,6 +86,22 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Halloween News',
+    date: 'Oct 31st, 2019',
+    firstParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
+          hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
+          Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `,
+
+    secondParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
+          hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
+          hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
+          hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? `,
+
+    thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
+          Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
+          Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
 ];
 
@@ -103,7 +119,50 @@ const data = [
     <span class="expandButton">+</span>
   </div>
 
-  Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
+  */
+
+  function articleMaker (article){
+    let article1 = document.createElement('div');
+    article1.setAttribute('class', 'article');
+
+    let head2 = document.createElement('h2');
+    head2.textContent= article['title'];
+    article1.appendChild(head2);
+
+    let contentP = document.createElement('p');
+    contentP.setAttribute('class', 'date');
+    contentP.textContent = article['date'];
+    article1.appendChild(contentP);
+
+    let para1 = document.createElement('p');
+    para1.textContent= article['firstParagraph'];
+    article1.appendChild(para1);
+
+    let para2 = document.createElement('p');
+    para2.textContent= article['secondParagraph'];
+    article1.appendChild(para2);
+    let para3 = document.createElement('p');
+    para3.textContent= article['thirdParagraph'];
+    article1.appendChild(para3);
+
+    let span = document.createElement('span')
+    span.setAttribute('class', 'expandButton');
+
+    article1.appendChild(span);
+    span.addEventListener('click', function(){
+      article1.toggle('article-open');
+
+    })
+    console.log(article1);
+  return article1;
+  }
+data.forEach(element => {
+  let articlesElement = document.querySelector('.articles')
+  articlesElement.appendChild(articleMaker(element));
+
+});
+
+  /*Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
   This listener should toggle the class 'article-open' on div.article.
 
   Step 3: Don't forget to return something from your function!
