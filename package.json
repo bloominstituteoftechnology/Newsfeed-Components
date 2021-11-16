@@ -6,15 +6,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LambdaSchool/Newsfeed-Components.git"
+    "url": "git+https://github.com/BloomInstituteOfTechnology/Newsfeed-Components.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/LambdaSchool/Newsfeed-Components/issues"
+    "url": "https://github.com/BloomInstituteOfTechnology/Newsfeed-Components/issues"
   },
-  "homepage": "https://github.com/LambdaSchool/Newsfeed-Components#readme",
+  "homepage": "https://github.com/BloomInstituteOfTechnology/Newsfeed-Components#readme",
   "devDependencies": {
     "eslint": "^7.6.0",
     "less": "^3.12.2",
