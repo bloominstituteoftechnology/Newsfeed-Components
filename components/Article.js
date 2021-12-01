@@ -145,17 +145,29 @@ function articleMaker(article){
  const newArticleSpan = document.createElement('span');
  newArticleSpan.classList.add('expandButton');
  newArticleDiv.appendChild(newArticleSpan);
+ newArticleSpan.textContent = '+';
 
- newArticleSpan.addEventListener('click', (e) => {
+ function openArticle() {
   newArticleDiv.classList.toggle('article-open');
- });
+ }
+
+ newArticleSpan.addEventListener('click', openArticle);
 
  return newArticleDiv;
 }
+
+function newArticle({title, date, firstParagraph, secondParagraph, thirdParagraph}){
+  this.title = title;
+  this.date = date;
+  this.firstParagraph = firstParagraph;
+  this.secondParagraph = secondParagraph;
+  this.thirdParagraph = thirdParagraph;
+}
+const article = new newArticle({title: 'Jess is the Best Programmer in BloomTech!', date: 'Dec 1st, 2021', firstParagraph: 'I don’t care if it works on your machine! We are not shipping your machine! (Vidiu Platon) There are two ways to write error-free programs; only the third one works. (Alan J. Perlis) The question of whether computers can think is like the question of whether submarines can swim. (Edsger W. Dijkstra) Controlling complexity is the essence of computer programming. (Brian Kernigan)', secondParagraph: 'The trouble with programmers is that you can never tell what a programmer is doing until it’s too late. (Seymour Cray) Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live. (Martin Golding) It’s not a bug – it’s an undocumented feature. (Anonymous) If it keeps up, man will atrophy all his limbs but the push-button finger. (Frank Lloyd Wright)', thirdParagraph: 'We are Microsoft. Resistance Is Futile. You Will Be Assimilated. (Bumper sticker) I don’t care if it works on your machine! We are not shipping your machine! (Vidiu Platon) If debugging is the process of removing software bugs, then programming must be the process of putting them in. (Edsger Dijkstra) We will never become a truly paper-less society until the Palm Pilot folks come out with WipeMe 1.0. (Andy Pierson) If debugging is the process of removing bugs, then programming must be the process of putting them in. (Edsger W. Dijkstra)'});
+
+data.push(article);
 
 data.forEach(item => {
   const newArticle = articleMaker(item);
   articleDiv.appendChild(newArticle);
 })
-
-const newArticle1 = articleMaker({title: 'Jess is the Best Programmer in BloomTech!', date: 'Dec 1st, 2021', firstParagraph: 'I don’t care if it works on your machine! We are not shipping your machine! (Vidiu Platon) There are two ways to write error-free programs; only the third one works. (Alan J. Perlis) The question of whether computers can think is like the question of whether submarines can swim. (Edsger W. Dijkstra) Controlling complexity is the essence of computer programming. (Brian Kernigan)', secondParagraph: 'The trouble with programmers is that you can never tell what a programmer is doing until it’s too late. (Seymour Cray) Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live. (Martin Golding) It’s not a bug – it’s an undocumented feature. (Anonymous) If it keeps up, man will atrophy all his limbs but the push-button finger. (Frank Lloyd Wright)', thirdParagraph: 'We are Microsoft. Resistance Is Futile. You Will Be Assimilated. (Bumper sticker) I don’t care if it works on your machine! We are not shipping your machine! (Vidiu Platon) If debugging is the process of removing software bugs, then programming must be the process of putting them in. (Edsger Dijkstra) We will never become a truly paper-less society until the Palm Pilot folks come out with WipeMe 1.0. (Andy Pierson) If debugging is the process of removing bugs, then programming must be the process of putting them in. (Edsger W. Dijkstra)'});
