@@ -143,6 +143,8 @@ function articleMaker(articleObject) {
   }
   div.addEventListener("onClick", toggleOpen);
   return div
+
+  
 }
 console.log("working");
 const dataArr = Array.from(data);
