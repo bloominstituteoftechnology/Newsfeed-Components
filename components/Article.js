@@ -159,3 +159,5 @@ data.forEach(item => {
   const elem = articleMaker(item);
   bod.appendChild(elem);
 });
+
+articleMaker(data);
