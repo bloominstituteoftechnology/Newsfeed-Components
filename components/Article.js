@@ -114,3 +114,37 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+function artickleMaker(obj) {
+
+  const article = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+  const articlePara1 = document.createElement('p');
+  const articlePara2 = document.createElement('p');
+  const articlePara3 = document.createElement('p');
+  const articleSpan = document.createElement('span');
+
+  article.appendChild(articleTitle);
+  article.appendChild(articlePara1);
+  article.appendChild(articlePara2);
+  article.appendChild(articlePara3);
+  article.appendChild(articleSpan);
+
+  article.classList.add('article');
+  articlePara1.classList.add('date');
+  articlePara2.classList.add('date');
+  articlePara3.classList.add('date');
+  articleSpan.classList.add('expandButton');
+
+  articleSpan.textContent = '+'
+  
+  expandButton.addEventListener('click', () => {
+    article.classList.toggle('article-open');
+  });
+
+  return article;
+
+}
+const articleElements = data.map(data => {
+  return artickleMaker(data);
+})
