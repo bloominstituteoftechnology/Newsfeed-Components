@@ -136,10 +136,12 @@ function articleMaker(obj){
   const nSpan = document.createElement('span')
   nSpan.textContent = '+'
   nSpan.classList.add('expandButton')
+  nSpan.addEventListener('click', () =>{
+    nDiv.classList.toggle('article-open')
+  })
   nDiv.appendChild(nSpan)
   return nDiv
 }
 data.forEach(obj =>{
-  document.querySelector('.articles').appendChild(articleMaker(obj))
+  document.querySelector('div.articles').appendChild(articleMaker(obj))
 })
-// document.body.append(articleMaker({title: 'yes', date: 'yeah', firstParagraph: 'ye', secondParagraph: 'pooo', thirdParagraph: 'yuuuu'}))
