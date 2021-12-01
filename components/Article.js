@@ -86,6 +86,13 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Andrew Gary',
+    date: 'December 1st 2021',
+    firstParagraph: 'blllaaaldfjkalsdjf;lakdjf;lajdoifadgha;ohg;oaerihg;oriehafgo;ihdfa;oghdfa;ga;d',
+    secondParagraph: 'this is the second paragraph ;aldkjfo;iasgv;oiafgo;ija;oifj',
+    thirdParagraph: 'this is the third paragraphodsghaoisdhng;oaeihnrg;oaierhng;oia;'
   }
 ];
 
@@ -101,9 +108,49 @@ const data = [
     {three separate paragraph elements}
 
     <span class="expandButton">+</span>
-  </div>
+  </div>*/
 
-  Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
+function articleMaker(articleObj){
+  const panel = document.createElement('div');
+  const panelTitle = document.createElement('h2');
+  panelTitle.textContent = articleObj['title'];
+  const panelDate = document.createElement('p');
+  panelDate.textContent = articleObj['date'];
+  const panelData1 = document.createElement('p');
+  panelData1.textContent = articleObj['firstParagraph'];
+  const panelData2 = document.createElement('p');
+  panelData2.textContent = articleObj['secondParagraph'];
+  const panelData3 = document.createElement('p');
+  panelData3.textContent = articleObj['thirdParagraph'];
+  const panelButton = document.createElement('span');
+
+  panel.appendChild(panelTitle);
+  panel.appendChild(panelDate);
+  panel.appendChild(panelData1);
+  panel.appendChild(panelData2);
+  panel.appendChild(panelData3);
+  panel.appendChild(panelButton);
+
+  panel.classList.add('article');
+  panelDate.classList.add('date');
+  panelButton.classList.add('expandButton');
+ 
+
+  panelButton.addEventListener('click', function(e){
+    e.target.toggle('article-open');
+  });
+  console.log(panel);
+  return panel;
+}
+
+const articles = document.querySelector('.articles');
+console.log(articles);
+data.forEach(dataPoint =>{
+  const articleToAdd = articleMaker(dataPoint);
+  articles.appendChild(articleToAdd);
+  
+})
+  /*Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
   This listener should toggle the class 'article-open' on div.article.
 
   Step 3: Don't forget to return something from your function!
