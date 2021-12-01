@@ -148,6 +148,7 @@ function articleMaker(article){
 
 data.forEach((item) => {
   let newArticle = articleMaker(item);
+  const articleDiv = document.querySelector('div.articles')
 
-  div.articles.appendChild(newArticle);
+  articleDiv.appendChild(newArticle);
 })
