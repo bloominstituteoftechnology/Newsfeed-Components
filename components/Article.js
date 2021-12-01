@@ -103,6 +103,9 @@ const data = [
     <span class="expandButton">+</span>
   </div>*/
 
+   // grab the parent element so we can put everything else into it
+   const articlesDiv = document.querySelector('.articles');
+
   function articleMaker(artObj) {
 
     // create the elements 
@@ -114,11 +117,8 @@ const data = [
     const artP3 = document.createElement('p');
     const expBtn = document.createElement('span');
 
-    // grab the parent element so we can put everything else into it
-    const articlesDiv = document.querySelector('.articles');
-
     // append the bbys
-      // articlesDiv.appendChild(article); --- goes outside, I think
+       //articlesDiv.appendChild(article); //--- goes outside, I think
     article.appendChild(artTitle);
     article.appendChild(artDate);
     article.appendChild(artP1);
@@ -139,15 +139,42 @@ const data = [
     artP3.textContent = artObj.thirdParagraph;
     expBtn.textContent = '+';
 
+    // expBtn could use some styling
+    expBtn.style.width = '3em';
+    expBtn.style.fontSize = '2em';
+    expBtn.style.textAlign = 'center';
+
+
 /*Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
   This listener should toggle the class 'article-open' on div.article.*/
   expBtn.addEventListener('click', () => {
-    
+    article.classList.toggle('article-open');
+    //console.log('this is the toggle thing');
   })
 
 /*Step 3: Don't forget to return something from your function!*/
+  return article;
   }
 
+  // TEST ARTICLE
+  const testArt = articleMaker({
+    title: 'Professional Software Development in 2019',
+    date: 'Jan 1st, 2019',
+    firstParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
+          hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
+          Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `,
+
+    secondParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
+          hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
+          hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
+          hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? `,
+
+    thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
+          Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
+          Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  });
+
+  articlesDiv.appendChild(testArt);
 
   /*Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
   to create a div.article element and append it to the DOM inside div.articles (see index.html).*/
