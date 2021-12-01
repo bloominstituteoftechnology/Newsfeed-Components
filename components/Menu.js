@@ -1,5 +1,7 @@
 // This is the data we will be using, study it but don't change anything, yet.
 
+// const { arrayBuffer } = require("stream/consumers");
+
 let menuItems = [
   'Students',
   'Faculty',
@@ -31,3 +33,35 @@ let menuItems = [
 
   Step 6: Use 'menuMaker' to create a menu using the 'menuItems' array, and append the returned menu to the header.
 */
+// STEP 1 and 2
+function menuMaker(array){
+const menu = document.createElement('div');
+const ul = document.createElement('ul');
+const li = document.createElement('li')
+
+array.forEach(item => {
+  li.textContent = item;
+  ul.appendChild(li);
+})
+
+menu.classList.add('menu');
+menu.appendChild(li)
+
+// STEP 3
+const menuBtn = document.querySelector('.menu-button');
+
+// STEP 4
+menuBtn.addEventListener('click', event => {
+  menu.classList.toggle('.menu--open');
+})
+
+return menu;
+};
+
+const newMenu = menuMaker(menuItems);
+const header = document.querySelector('.header');
+
+header.appendChild(newMenu);
+
+console.log(menuMaker(menuItems));
+
