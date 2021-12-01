@@ -115,6 +115,8 @@ const data = [
   Refresh the page to see the new article.
 */
 function articleMaker (obj) {
+
+  //STEP 1
   const divElem = document.createElement('div');
   const titleElem = document.createElement('h2');
   const dateElem = document.createElement('p');
@@ -140,4 +142,20 @@ function articleMaker (obj) {
   divElem.appendChild(parElem2);
   divElem.appendChild(parElem3);
   divElem.appendChild(spanElem);
+
+  //STEP 2
+  spanElem.addEventListener('toggle', evt => {
+    divElem.classList.toggle('article-open');
+  });
+
+  //STEP 3
+  return divElem;
 }
+
+//STEP 4
+const bod = document.querySelector('body');
+
+data.forEach(item => {
+  const elem = articleMaker(item);
+  bod.appendChild(elem);
+});
