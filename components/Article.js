@@ -141,12 +141,17 @@ function articleMaker(articleObject) {
   function toggleOpen() {
     div.classList.toggle("article-open");
   }
-  div.addEventListener("onClick", toggleOpen);
+  div.addEventListener("click", toggleOpen);
   return div
 
-  
+
 }
 console.log("working");
-const dataArr = Array.from(data);
-dataArr.forEach(obj => document.body.appendChild(articleMaker(dataArr[obj])));
+const articlesEntryPoint = document.querySelector(".articles")
+const articleElements = data.map(data => {
+  return articleMaker(data);
+})
+articleElements.forEach(obj => {
+  articlesEntryPoint.appendChild(obj);
+});
 
