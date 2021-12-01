@@ -1,7 +1,7 @@
 // This is the data we will be using to create our articles. Look at it, then proceed to line 93.
 // OPTIONAL: if you're feeling adventurous, try to make this data an export from a different module, and import it here.
 // You can read about ES6 modules here: https://exploringjs.com/es6/ch_modules.html#sec_basics-of-es6-modules
-const data = [
+const articleData = [
   {
     title: 'BloomTech Students: "We\'re the best!"',
     date: 'Nov 5th, 2018',
@@ -86,31 +86,102 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'New Article',
+    date: 'Dec 1st, 2021',
+    firstParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
+          hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
+          Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `,
+
+    secondParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
+          hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
+          hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
+          hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? `,
+
+    thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
+          Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
+          Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
 ];
 
-/*
-  Step 1: Write a component called 'articleMaker' to create an article.
-  Your component is a function that takes an article object as its only argument,
-  and returns a DOM node looking like the one below:
+  // Step 1: Write a component called 'articleMaker' to create an article.
+  // Your component is a function that takes an article object as its only argument,
+  // and returns a DOM node looking like the one below:
 
-  <div class="article">
-    <h2>{title of the article}</h2>
-    <p class="date">{date of the article}</p>
+  const articleMaker = ({ title, date, firstParagraph, secondParagraph, thirdParagraph }) => {
+    // Create Elements
+    const articleDiv = document.createElement("div");
+    const closeButton = document.createElement("div");
+    const articletitle = document.createElement("h2");
+    const articledate = document.createElement("p");
+    const articlepara1 = document.createElement("p");
+    const articlepara2 = document.createElement("p");
+    const articlepara3 = document.createElement("p");
+    const expandButton = document.createElement("span");
 
-    {three separate paragraph elements}
+    // Append elements to parent elements
+    articleDiv.append(articletitle);
+    articleDiv.append(closeButton);
+    articleDiv.append(articledate);
+    articleDiv.append(articlepara1);
+    articleDiv.append(articlepara2);
+    articleDiv.append(articlepara3);
+    articleDiv.append(expandButton);
 
-    <span class="expandButton">+</span>
-  </div>
+    // Add classes to elements
+    articleDiv.classList.add("article");
+    articledate.classList.add("date");
+    expandButton.classList.add("expandButton");
+    closeButton.classList.add("close")
 
-  Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
-  This listener should toggle the class 'article-open' on div.article.
+    // text for article
+    articletitle.textContent = title;
+    articledate.textContent = date;
+    articlepara1.textContent = firstParagraph;
+    articlepara2.textContent = secondParagraph;
+    articlepara3.textContent = thirdParagraph;
+    expandButton.textContent = "Expand";
+    closeButton.textContent = "Close";
 
-  Step 3: Don't forget to return something from your function!
+    // Event Listener for expanding the menu
+    expandButton.addEventListener("click", () => {
+      articleDiv.classList.toggle("article-open");
+      articledate.classList.toggle("show")
+      articlepara1.classList.toggle("show")
+      articlepara2.classList.toggle("show")
+      articlepara3.classList.toggle("show")
+    })
 
-  Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
-  to create a div.article element and append it to the DOM inside div.articles (see index.html).
+    closeButton.addEventListener("click", () => {
+      articleDiv.classList.add("hidden");
+    })
 
-  Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
-  Refresh the page to see the new article.
-*/
+    return articleDiv;
+  }
+
+  articleData.forEach(element => {
+    const articles = document.querySelector(".articles");
+    const articleContent = articleMaker(element);
+    articles.appendChild(articleContent);
+  })
+
+  // <div class="article">
+  //   <h2>{title of the article}</h2>
+  //   <p class="date">{date of the article}</p>
+
+  //   {three separate paragraph elements}
+
+  //   <span class="expandButton">+</span>
+  // </div>
+
+  // Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
+  // This listener should toggle the class 'article-open' on div.article.
+
+  // Step 3: Don't forget to return something from your function!
+
+  // Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
+  // to create a div.article element and append it to the DOM inside div.articles (see index.html).
+
+  // Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
+  // Refresh the page to see the new article.
