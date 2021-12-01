@@ -101,16 +101,57 @@ const data = [
     {three separate paragraph elements}
 
     <span class="expandButton">+</span>
-  </div>
+  </div>*/
 
-  Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
-  This listener should toggle the class 'article-open' on div.article.
+  function articleMaker(artObj) {
 
-  Step 3: Don't forget to return something from your function!
+    // create the elements 
+    const article = document.createElement('div');
+    const artTitle = document.createElement('h2');
+    const artDate = document.createElement('p');
+    const artP1 = document.createElement('p');
+    const artP2 = document.createElement('p');
+    const artP3 = document.createElement('p');
+    const expBtn = document.createElement('span');
 
-  Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
-  to create a div.article element and append it to the DOM inside div.articles (see index.html).
+    // grab the parent element so we can put everything else into it
+    const articlesDiv = document.querySelector('.articles');
 
-  Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
+    // append the bbys
+      // articlesDiv.appendChild(article); --- goes outside, I think
+    article.appendChild(artTitle);
+    article.appendChild(artDate);
+    article.appendChild(artP1);
+    article.appendChild(artP2);
+    article.appendChild(artP3);
+    article.appendChild(expBtn);
+
+    // add all of the classes
+    article.classList.add('article');
+    artDate.classList.add('date');
+    expBtn.classList.add('expandButton');
+
+    // add any text content
+    artTitle.textContent = artObj.title;
+    artDate.textContent = artObj.date;
+    artP1.textContent = artObj.firstParagraph;
+    artP2.textContent = artObj.secondParagraph;
+    artP3.textContent = artObj.thirdParagraph;
+    expBtn.textContent = '+';
+
+/*Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
+  This listener should toggle the class 'article-open' on div.article.*/
+  expBtn.addEventListener('click', () => {
+    
+  })
+
+/*Step 3: Don't forget to return something from your function!*/
+  }
+
+
+  /*Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
+  to create a div.article element and append it to the DOM inside div.articles (see index.html).*/
+
+  /*Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
