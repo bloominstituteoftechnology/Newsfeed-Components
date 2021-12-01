@@ -114,3 +114,56 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+//function to create component
+function articleMaker(obj){
+  //create elements
+  const article = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+  const articleDate = document.createElement('p');
+  const articlePara1 = document.createElement('p');
+  const articlePara2 = document.createElement('p');
+  const articlePara3 = document.createElement('p');
+  const articleSpan = document.createElement('span');
+
+  //organize elements
+  article.appendChild(articleTitle);
+  article.appendChild(articleDate);
+  article.appendChild(articlePara1);
+  article.appendChild(articlePara2);
+  article.appendChild(articlePara3);
+  article.appendChild(articleSpan);
+
+  //add classes
+  article.classList.add('article');
+  articleDate.classList.add('date');
+  articleSpan.classList.add('expandButton');
+
+  //add content 
+  articleTitle.textContent = obj.title;
+  articleDate.textContent = obj.date;
+  articlePara1.textContent = obj.firstParagraph
+  articlePara2.textContent = obj.secondParagraph
+  articlePara3.textContent = obj.thirdParagraph
+  articleSpan.textContent = '+';
+
+  //eventListenr for span (toggles )
+  articleSpan.addEventListener('click', () =>{
+    article.classList.toggle('article-open');
+  })
+
+  // console.log(article);
+  return article 
+
+}
+
+//loop over the data
+const articleElements = data.map(dta => {
+  return articleMaker(dta);
+})
+
+//add to dom
+const articlesDiv = document.querySelector('div.articles');
+articleElements.forEach(elem => {
+  articlesDiv.appendChild(elem);
+})
