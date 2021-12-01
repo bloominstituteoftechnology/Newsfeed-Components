@@ -115,51 +115,47 @@ const data = [
   Refresh the page to see the new article.
 */
 
-function articleMaker (object){
+function articleMaker (obj) {
+
   // STEP 1
   const div = document.createElement('div');
   const title = document.createElement('h2');
   const date = document.createElement('p');
-  const paras2 = document.createElement('p');
-  const paras3 = document.createElement('p');
-  const span = document.createAttribute('span');
+  const para1 = document.createElement('p');
+  const para2 = document.createElement('p');
+  const para3 = document.createElement('p');
+  const span = document.createElement('span');
 
-  div.classList.add('div');
-  title.classList.add('title');
+  div.classList.add('article');
   date.classList.add('date');
-  paras2.classList.add('paras2');
-  paras3.classList.add('paras3');
-  span.classList.add('span');
+  span.classList.add('expandButton');
 
-  // title.textContent = obj.title;
-  // date.textContent = obj.date;
-  // paras1.textContent = obj.firstParas;
-  // paras2.textContent = obj.secondParas;
-  // paras3.textContent = obj.thirdParas;
+  title.textContent = obj.title;
+  date.textContent = obj.date;
+  para1.textContent = obj.firstParagraph;
+  para2.textContent = obj.secondParagraph;
+  para3.textContent = obj.thirdParagraph;
   span.textContent = '+';
 
   div.appendChild(title);
   div.appendChild(date);
-  div.appendChild(paras1);
-  div.appendChild(paras2);
-  div.appendChild(paras3);
+  div.appendChild(para1);
+  div.appendChild(para2);
+  div.appendChild(para3);
   div.appendChild(span);
-
   // STEP 2
-  span.expandButton.addEventListener('toggle', event => {
+  span.addEventListener('click', event => {
     div.classList.toggle('article-open');
   });
   // STEP 3
   return div;
 }
-// Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
-//   to create a div.article element and append it to the DOM inside div.articles (see index.html).
 // STEP 4
 const body = document.querySelector('body');
 
 data.forEach(item => {
-  const element = articleMaker(item);
-  body.appendChild(element);
-})
-articleMaker(data);
+  const elem = articleMaker(item);
+  body.appendChild(elem);
+});
 
+articleMaker(data);

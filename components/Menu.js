@@ -1,6 +1,6 @@
 // This is the data we will be using, study it but don't change anything, yet.
 
-const { arrayBuffer } = require("stream/consumers");
+// const { arrayBuffer } = require("stream/consumers");
 
 let menuItems = [
   'Students',
@@ -33,17 +33,37 @@ let menuItems = [
 
   Step 6: Use 'menuMaker' to create a menu using the 'menuItems' array, and append the returned menu to the header.
 */
-
+function menuMaker(array){
 const menu = document.createElement('div');
 const ul = document.createElement('ul');
+const li = document.createElement('li')
 
-array.forEach(item => {
-  const li = document.createElement('li');
-  li.textContent = item;
-  ul.appendChild('li');
-})
+menu.appendChild(ul);
+ul.appendChild(li);
 
 menu.classList.add('menu');
-menu.appendChild('ul');
+ul.classList.add('menu-button');
 
-const menuBtn = document.querySelector('.menu-button');
+// array.forEach(item => {
+//   li.appendChild(item);
+// })
+
+// STEP 3
+ul.addEventListener('click', event => {
+  li.classList.toggle('.menu--open');
+})
+
+return menu;
+};
+
+const newMenu = menuMaker(menuItems);
+const header = document.querySelector('.header');
+
+header.appendChild(newMenu);
+
+console.log(menuMaker(menuItems));
+
+// menuItems.forEach(menuItems => {
+//   const newMenu = menuMaker(menuItems);
+//   document.querySelector('.menu-button').appendChild(newMenu);
+// })
