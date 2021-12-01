@@ -149,9 +149,8 @@ function articleMaker (articleObj) {
       div.appendChild(secondParagraph);
       div.appendChild(thirdParagraph);
       div.appendChild(button);
-      return div
-      
-};
+      return div      
+}
 
 let articles = document.querySelector(".articles")
 data.forEach((e)=> {
