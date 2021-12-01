@@ -119,7 +119,7 @@ const data = [
     <span class="expandButton">+</span>
   </div>
 */
-const articles = document.querySelector("div.article");
+const articles = document.querySelector("div.articles");
 
 function articleMaker(obj) {
   const articleDiv = document.createElement("div");
@@ -137,7 +137,7 @@ function articleMaker(obj) {
   articleDiv.appendChild(paragraphThree);
   articleDiv.appendChild(expand);
 
-  articleDiv.classList.add("article");
+  articleDiv.classList.add("article", "article-open");
   paragraphDate.classList.add("date");
   paragraphOne.classList.add("one");
   paragraphTwo.classList.add("two");
@@ -150,8 +150,8 @@ function articleMaker(obj) {
   paragraphTwo.textContent = obj.secondParagraph;
   paragraphThree.textContent = obj.thirdParagraph;
 
-  expand.addEventListener("click", (e) => {
-    e.target.classList.toggle("article-open");
+  expand.addEventListener("click", () => {
+    articleDiv.classList.toggle("article-open");
   });
 
   return articleDiv;
