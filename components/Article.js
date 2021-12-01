@@ -116,7 +116,6 @@ const data = [
 */
 
 function articleMaker(articleObject) {
-  console.log(articleObject);
   const div = document.createElement("div");
   div.classList = ("article");
   const h2 = document.createElement("h2");
@@ -146,7 +145,6 @@ function articleMaker(articleObject) {
 
 
 }
-console.log("working");
 const articlesEntryPoint = document.querySelector(".articles")
 const articleElements = data.map(data => {
   return articleMaker(data);
