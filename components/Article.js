@@ -144,7 +144,7 @@ function articleMaker (obj) {
   divElem.appendChild(spanElem);
 
   //STEP 2
-  spanElem.addEventListener('toggle', evt => {
+  spanElem.addEventListener('click', evt => {
     divElem.classList.toggle('article-open');
   });
 

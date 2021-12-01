@@ -52,7 +52,7 @@ function menuMaker (arr)
 
   //STEP 4
   menuButton.addEventListener('click', evt => {
-    menuDiv.classList.toggle('.menu--open');
+    menuDiv.classList.toggle('menu--open');
   });
 
   //STEP 5
