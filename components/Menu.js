@@ -34,20 +34,24 @@ let menuItems = [
 
 
   const menuMaker = (array) => {
+    // Create Elements
     const menu = document.createElement("div");
     const menuList = document.createElement("ul");
 
+    // Append elements to parent elements
     menu.appendChild(menuList);
 
-
+    // Add classes
     menu.classList.add("menu");
 
+    // Loop over array and create a "li" item for each item in array
     array.forEach(item => {
       const menuItem = document.createElement("li");
       menuItem.textContent = item;
       menuList.appendChild(menuItem);
     })
 
+    // Event Listener for menu button when clicked
     const menuButton = document.querySelector('.menu-button');
     menuButton.addEventListener("click", () => {
       menu.classList.toggle("menu--open");

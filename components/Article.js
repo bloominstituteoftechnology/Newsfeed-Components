@@ -86,6 +86,22 @@ const articleData = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'New Article',
+    date: 'Dec 1st, 2021',
+    firstParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
+          hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
+          Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `,
+
+    secondParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
+          hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
+          hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
+          hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? `,
+
+    thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
+          Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
+          Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
 ];
 
@@ -96,6 +112,7 @@ const articleData = [
   const articleMaker = ({ title, date, firstParagraph, secondParagraph, thirdParagraph }) => {
     // Create Elements
     const articleDiv = document.createElement("div");
+    const closeButton = document.createElement("div");
     const articletitle = document.createElement("h2");
     const articledate = document.createElement("p");
     const articlepara1 = document.createElement("p");
@@ -105,6 +122,7 @@ const articleData = [
 
     // Append elements to parent elements
     articleDiv.append(articletitle);
+    articleDiv.append(closeButton);
     articleDiv.append(articledate);
     articleDiv.append(articlepara1);
     articleDiv.append(articlepara2);
@@ -115,7 +133,7 @@ const articleData = [
     articleDiv.classList.add("article");
     articledate.classList.add("date");
     expandButton.classList.add("expandButton");
-
+    closeButton.classList.add("close")
 
     // text for article
     articletitle.textContent = title;
@@ -123,11 +141,20 @@ const articleData = [
     articlepara1.textContent = firstParagraph;
     articlepara2.textContent = secondParagraph;
     articlepara3.textContent = thirdParagraph;
-    expandButton.textContent = "+";
+    expandButton.textContent = "Expand";
+    closeButton.textContent = "Close";
 
     // Event Listener for expanding the menu
     expandButton.addEventListener("click", () => {
       articleDiv.classList.toggle("article-open");
+      articledate.classList.toggle("show")
+      articlepara1.classList.toggle("show")
+      articlepara2.classList.toggle("show")
+      articlepara3.classList.toggle("show")
+    })
+
+    closeButton.addEventListener("click", () => {
+      articleDiv.classList.add("hidden");
     })
 
     return articleDiv;

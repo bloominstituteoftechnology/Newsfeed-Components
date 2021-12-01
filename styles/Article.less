@@ -3,12 +3,12 @@
 }
 .article {
   margin: 20px 10%;
-  padding: 0 20px 25px;
+  padding: 0 20px 40px;
   border: 1px solid lightgrey;
   border-radius: 10px;
   background-color: white;
   position: relative;
-  height: 70px;
+  height: auto;
   overflow: hidden;
   box-shadow: 2px 2px 2px lightgrey;
 
@@ -20,16 +20,23 @@
 
   .date {
     margin: 0;
-    padding-top: 20px;
     font-size: 14px;
+    display: none;
+  }
+
+  p{
+    display: none;
+  }
+
+  .show{
+    display: block;
   }
 
   .expandButton {
     position: absolute;
-    bottom: 0;
+    bottom: 10px;
     left: 50%;
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 16px;
     color: grey;
     cursor: pointer;
     transform: translate(-50%);
@@ -45,6 +52,9 @@
   position: absolute;
   top: 10px;
   right: 10px;
+  cursor: pointer;
 }
 
-
+.hidden{
+  display: none;
+}
