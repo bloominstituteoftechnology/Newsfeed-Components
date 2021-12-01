@@ -153,7 +153,14 @@ span.addEventListener('click', () => {
 
 return containerDiv;
 
-}
+};
+
+const containerDiv = document.querySelector('.articles')
+
+data.forEach(item => {
+  const newArticle = articleMaker(item);
+  containerDiv.appendChild(newArticle);
+});
 
 
 
