@@ -119,6 +119,7 @@ const data = [
     <span class="expandButton">+</span>
   </div>
 */
+const articles = document.querySelector("div.article");
 
 function articleMaker(obj) {
   const articleDiv = document.createElement("div");
@@ -127,22 +128,36 @@ function articleMaker(obj) {
   const paragraphOne = document.createElement("p");
   const paragraphTwo = document.createElement("p");
   const paragraphThree = document.createElement("p");
-  const button = document.createElement("span");
+  const expand = document.createElement("span");
 
   articleDiv.appendChild(articleTitle);
   articleDiv.appendChild(paragraphDate);
   articleDiv.appendChild(paragraphOne);
   articleDiv.appendChild(paragraphTwo);
   articleDiv.appendChild(paragraphThree);
-  articleDiv.appendChild(button);
+  articleDiv.appendChild(expand);
 
   articleDiv.classList.add("article");
   paragraphDate.classList.add("date");
   paragraphOne.classList.add("one");
   paragraphTwo.classList.add("two");
   paragraphThree.classList.add("three");
-  button.classList.add("expandButton");
+  expand.classList.add("expandButton");
 
   articleTitle.textContent = obj.title;
   paragraphDate.textContent = obj.date;
+  paragraphOne.textContent = obj.firstParagraph;
+  paragraphTwo.textContent = obj.secondParagraph;
+  paragraphThree.textContent = obj.thirdParagraph;
+
+  expand.addEventListener("click", (e) => {
+    e.target.classList.toggle("article-open");
+  });
+
+  return articleDiv;
 }
+
+data.forEach((article) => {
+  const articlesFromData = articleMaker(article);
+  articles.appendChild(articlesFromData);
+});
