@@ -115,6 +115,7 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+const articleDiv = document.querySelector('div.articles')
 
 function articleMaker(article){
  const newArticleDiv = document.createElement('div');
@@ -122,22 +123,28 @@ function articleMaker(article){
 
  const newArticleHead = document.createElement('h2');
  newArticleHead.textContent = article.title;
+ newArticleDiv.appendChild(newArticleHead);
 
- const newArticleText = document.createElement('p');
- newArticleText.classList.add('date');
- newArticleText.textContent = article.date;
+ const newArticleDate = document.createElement('p');
+ newArticleDate.classList.add('date');
+ newArticleDate.textContent = article.date;
+ newArticleDiv.appendChild(newArticleDate);
 
  const newArticleParas1 = document.createElement('p');
  newArticleParas1.textContent = article.firstParagraph;
+ newArticleDiv.appendChild(newArticleParas1);
  
  const newArticleParas2 = document.createElement('p');
  newArticleParas2.textContent = article.secondParagraph;
+ newArticleDiv.appendChild(newArticleParas2);
  
  const newArticleParas3 = document.createElement('p');
  newArticleParas3.textContent = article.thirdParagraph;
+ newArticleDiv.appendChild(newArticleParas3);
 
  const newArticleSpan = document.createElement('span');
  newArticleSpan.classList.add('expandButton');
+ newArticleDiv.appendChild(newArticleSpan);
 
  newArticleSpan.addEventListener('click', (e) => {
   newArticleDiv.classList.toggle('article-open');
@@ -146,9 +153,7 @@ function articleMaker(article){
  return newArticleDiv;
 }
 
-data.forEach((item) => {
-  let newArticle = articleMaker(item);
-  const articleDiv = document.querySelector('div.articles')
-
+data.forEach(item => {
+  const newArticle = articleMaker(item);
   articleDiv.appendChild(newArticle);
 })
