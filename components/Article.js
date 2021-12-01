@@ -114,3 +114,47 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+const accordion = document.querySelector('div.articles');
+
+
+ function articleMaker({ title, date, firstParagraph, secondParagraph, thirdParagraph }) {
+
+   const article = document.createElement('div');
+   const titles = document.createElement('h2');
+   const dates = document.createElement('p');
+   const firstP = document.createElement('p');
+   const secondP = document.createElement('p');
+   const thirdP = document.createElement('p');
+   const exButton = document.createElement('span');
+
+   article.appendChild(titles);
+   article.appendChild(dates);
+   article.appendChild(firstP);
+   article.appendChild(secondP);
+   article.appendChild(thirdP);
+   article.appendChild(exButton);
+
+   article.classList.add('article');
+   article.classList.add('close')
+   dates.classList.add('date');
+   exButton.classList.add('expandButton');
+
+   titles.textContent = title;
+   dates.textContent = date;
+   firstP.textContent = firstParagraph;
+   secondP.textContent = secondParagraph;
+   thirdP.textContent = thirdParagraph;
+   exButton.textContent = '+';
+
+   exButton.addEventListener('click', event => {
+       article.classList.toggle('article-open');
+   })
+
+   return article;
+ }
+
+ data.forEach(article => {
+   const newArticle = articleMaker(article);
+   accordion.appendChild(newArticle)
+ })
+
