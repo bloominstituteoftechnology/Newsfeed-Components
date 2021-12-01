@@ -88,12 +88,18 @@ const data = [
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
 ];
-
+data.push({
+  title: 'Testing article',
+  date: 'Dec 1st 2021',
+  firstParagraph: "There was a time when this wouldn't have bothered her. The fact that it did actually bother her bothered her even more. What had changed in her life that such a small thing could annoy her so much for the entire day? She knew it was ridiculous that she even took notice of it, yet she was still obsessing over it as she tried to fall asleep.",
+  secondParagraph: "Frank knew there was a correct time and place to reveal his secret and this wasn't it. The issue was that the secret might be revealed despite his best attempt to keep it from coming out. At this point, it was out of his control and completely dependant on those around him who also knew the secret. They wouldn't purposely reveal it, or at least he believed that, but they could easily inadvertently expose it. It was going to be a long hour as he nervously eyed everyone around the table hoping they would keep their mouths shut.",
+  thirdParagraph: "The box sat on the desk next to the computer. It had arrived earlier in the day and business had interrupted her opening it earlier. She didn't who had sent it and briefly wondered who it might have been. As she began to unwrap it, she had no idea that opening it would completely change her life."
+});
 /*
   Step 1: Write a component called 'articleMaker' to create an article.
   Your component is a function that takes an article object as its only argument,
   and returns a DOM node looking like the one below:
-
+  
   <div class="article">
     <h2>{title of the article}</h2>
     <p class="date">{date of the article}</p>
@@ -114,3 +120,44 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+const articleMaker = (obj) => {
+  const article = document.createElement('div');
+  const title = document.createElement('h2');
+  const date = document.createElement('p');
+  const paragraph1 = document.createElement('p');
+  const paragraph2 = document.createElement('p');
+  const paragraph3 = document.createElement('p');
+  const span = document.createElement('span');
+
+  article.classList.add('article');
+  span.classList.add('expandButton');
+
+
+  article.appendChild(title);
+  article.appendChild(date);
+  article.appendChild(paragraph1);
+  article.appendChild(paragraph2);
+  article.appendChild(paragraph3);
+  article.appendChild(span);
+
+  title.textContent = obj.title;
+  date.textContent = obj.date;
+  paragraph1.textContent = obj.firstParagraph;
+  paragraph2.textContent = obj.secondParagraph;
+  paragraph3.textContent = obj.thirdParagraph;
+  span.textContent = '+';
+
+  span.addEventListener('click', () => article.classList.toggle('article-open'));
+
+  return article;
+}
+
+const article = document.querySelector('div.articles');
+
+const siteArticles = data.map( dataset => {return articleMaker(dataset)});
+siteArticles.forEach( dataset => article.appendChild(dataset));
+
+console.log(siteArticles);
+
+
+
