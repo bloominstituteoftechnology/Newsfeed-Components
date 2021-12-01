@@ -146,7 +146,7 @@ function articleMaker(obj){
     article.classList.toggle("article-open");
   });
 
-  return article
+  return article;
 }
 
 const articles = document.querySelector(".articles");
