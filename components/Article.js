@@ -101,16 +101,93 @@ const data = [
     {three separate paragraph elements}
 
     <span class="expandButton">+</span>
-  </div>
+  </div>*/
 
-  Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
-  This listener should toggle the class 'article-open' on div.article.
+   // grab the parent element so we can put everything else into it
+   const articlesDiv = document.querySelector('.articles');
 
-  Step 3: Don't forget to return something from your function!
+  function articleMaker(artObj) {
 
-  Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
-  to create a div.article element and append it to the DOM inside div.articles (see index.html).
+    // create the elements 
+    const article = document.createElement('div');
+    const artTitle = document.createElement('h2');
+    const artDate = document.createElement('p');
+    const artP1 = document.createElement('p');
+    const artP2 = document.createElement('p');
+    const artP3 = document.createElement('p');
+    const expBtn = document.createElement('span');
 
-  Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
+    // append the bbys
+       //articlesDiv.appendChild(article); //--- goes outside, I think
+    article.appendChild(artTitle);
+    article.appendChild(artDate);
+    article.appendChild(artP1);
+    article.appendChild(artP2);
+    article.appendChild(artP3);
+    article.appendChild(expBtn);
+
+    // add all of the classes
+    article.classList.add('article');
+    artDate.classList.add('date');
+    expBtn.classList.add('expandButton');
+
+    // add any text content
+    artTitle.textContent = artObj.title;
+    artDate.textContent = artObj.date;
+    artP1.textContent = artObj.firstParagraph;
+    artP2.textContent = artObj.secondParagraph;
+    artP3.textContent = artObj.thirdParagraph;
+    expBtn.textContent = '+';
+
+    // expBtn could use some styling
+    expBtn.style.width = '1em';
+    expBtn.style.fontSize = '2em';
+    expBtn.style.textAlign = 'center';
+
+
+/*Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
+  This listener should toggle the class 'article-open' on div.article.*/
+  expBtn.addEventListener('click', () => {
+    article.classList.toggle('article-open');
+    //console.log('this is the toggle thing');
+  })
+
+/*Step 3: Don't forget to return something from your function!*/
+  return article;
+  }
+
+  // TEST ARTICLE
+  /*const testArt = articleMaker({
+    title: 'Professional Software Development in 2019',
+    date: 'Jan 1st, 2019',
+    firstParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
+          hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
+          Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `,
+
+    secondParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
+          hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
+          hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
+          hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? `,
+
+    thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
+          Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
+          Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  });*/
+
+  //articlesDiv.appendChild(testArt);
+
+  /*Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
+  to create a div.article element and append it to the DOM inside div.articles (see index.html).*/
+  const artElems = data.map(d => {
+    return articleMaker(d);
+  })
+
+
+  /*Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+  artElems.forEach(elem => {
+    articlesDiv.appendChild(elem);
+  })
+
+  
