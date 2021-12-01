@@ -140,7 +140,7 @@ const data = [
     expBtn.textContent = '+';
 
     // expBtn could use some styling
-    expBtn.style.width = '3em';
+    expBtn.style.width = '1em';
     expBtn.style.fontSize = '2em';
     expBtn.style.textAlign = 'center';
 
@@ -157,7 +157,7 @@ const data = [
   }
 
   // TEST ARTICLE
-  const testArt = articleMaker({
+  /*const testArt = articleMaker({
     title: 'Professional Software Development in 2019',
     date: 'Jan 1st, 2019',
     firstParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
@@ -172,13 +172,22 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
-  });
+  });*/
 
-  articlesDiv.appendChild(testArt);
+  //articlesDiv.appendChild(testArt);
 
   /*Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
   to create a div.article element and append it to the DOM inside div.articles (see index.html).*/
+  const artElems = data.map(d => {
+    return articleMaker(d);
+  })
+
 
   /*Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+  artElems.forEach(elem => {
+    articlesDiv.appendChild(elem);
+  })
+
+  
