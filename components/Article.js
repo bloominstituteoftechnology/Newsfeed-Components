@@ -138,9 +138,17 @@ function artickleMaker(obj) {
 
   articleSpan.textContent = '+'
   
+  // articleSpan.expandButton.addEventListener('click', () => {
+  //   article.classList.toggle('article-open');
+  // });
+
+  const expandButton = document.querySelector('.expandButton');
   expandButton.addEventListener('click', () => {
-    article.classList.toggle('article-open');
-  });
+    expandButton.classList.toggle('article-open');
+  })
+  // newarticleSpan.addEventListener('click', (e) => {
+  //   newArticleDiv.classList.toggle('article-open');
+  //  });
 
   return article;
 
