@@ -143,9 +143,9 @@ function articleMaker(obj) {
   articleparagprah3.textContent = obj.thirdParagraph;
   articleExpandButton.textContent = "+";
   //adding event listener
-  const articles = document.querySelector("div.articles");
+  // const articles = document.querySelector("div.articles");
   articleExpandButton.addEventListener("click", () => {
-    articles.classList.toggle("article-open");
+    article.classList.toggle("article-open");
   });
 
   return article;
