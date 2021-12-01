@@ -143,8 +143,9 @@ function articleMaker(obj) {
   articleparagprah3.textContent = obj.thirdParagraph;
   articleExpandButton.textContent = "+";
   //adding event listener
+  const articles = document.querySelector("div.articles");
   articleExpandButton.addEventListener("click", () => {
-    articleExpandButton.classList.toggle("article-open");
+    articles.classList.toggle("article-open");
   });
 
   return article;
@@ -154,4 +155,4 @@ data.forEach((el) => {
   const article = articleMaker(el);
   document.body.appendChild(article);
 });
-//console.log(articleMaker(data));
+console.log(articleMaker(data));
