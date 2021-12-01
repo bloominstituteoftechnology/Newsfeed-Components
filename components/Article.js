@@ -139,7 +139,19 @@ date.classList.add('date');
 span.classList.add('expandButton');
 
 // content
+title.textContent = articleObj.title;
+date.textContent = articleObj.date;
+para1.textContent = articleObj.firstParagraph;
+para2.textContent = articleObj.secondParagraph;
+para3.textContent = articleObj.thirdParagraph;
+span.textContent = '+';
 
+// event listener
+span.addEventListener('click', () => {
+  containerDiv.classList.toggle('article-open');
+});
+
+return containerDiv;
 
 }
 
