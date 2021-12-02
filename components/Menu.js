@@ -44,7 +44,7 @@ function menuMaker (menuItems){
   menuItems.forEach(element => {
     const menuLi = document.createElement('li');
     menuLi.textContent = element;
-    menuUl.appendChild(menuLi)
+    menuUl.appendChild(menuLi);
     
   });  
 }
