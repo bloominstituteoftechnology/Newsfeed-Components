@@ -86,7 +86,7 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
-  }
+  },
 ];
 
 /*
@@ -114,3 +114,62 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+//Step 1
+
+const articles = document.querySelector('.articles')
+
+function articleMaker(obj) {
+
+//instantiate elements needed for article
+
+const article = document.createElement('div');
+const articleTitle = document.createElement('h2');
+const articleDate = document.createElement('p');
+const firstParagraph = document.createElement('p');
+const secondParagraph = document.createElement('p');
+const thirdParagraph = document.createElement('p');
+const span = document.createElement('span');
+
+// set up the structure of our elements 
+
+article.appendChild(articleTitle);
+article.appendChild(articleDate);
+article.appendChild(firstParagraph);
+article.appendChild(secondParagraph);
+article.appendChild(thirdParagraph);
+article.appendChild(span);
+
+//add classnames to our elements
+article.classList.add('article');
+articleTitle.classList.add('h2');
+articleDate.classList.add('date');
+span.classList.add('expandButton');
+
+//set text content using obj
+
+articleTitle.textContent = obj.title;
+articleDate.textContent = obj.date;
+firstParagraph.textContent = obj.firstParagraph;
+secondParagraph.textContent = obj.secondParagraph;
+thirdParagraph.textContent = obj.thirdParagraph;
+span.textContent = 'Expand Article'
+
+//Open or close article
+span.addEventListener('click', () => {
+  article.classList.toggle('article-open')
+
+})
+
+
+return article
+}
+
+const articleElements = data.map(data => {
+  return articleMaker(data)
+});
+
+articleElements.forEach(elem => {
+  articles.appendChild(elem);
+})
+

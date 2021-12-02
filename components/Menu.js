@@ -1,5 +1,7 @@
 // This is the data we will be using, study it but don't change anything, yet.
 
+// const { Linter } = require("eslint");
+
 let menuItems = [
   'Students',
   'Faculty',
@@ -31,3 +33,40 @@ let menuItems = [
 
   Step 6: Use 'menuMaker' to create a menu using the 'menuItems' array, and append the returned menu to the header.
 */
+
+
+function menuMaker(arr = []) {
+  console.log(arr)
+
+  //instantiate elements needed for menu
+  const menu = document.createElement('div');
+  const menuItems = document.createElement('ul');
+ 
+//
+arr.forEach(item => {
+  const li = document.createElement('li');
+  li.textContent = item;
+  menuItems.appendChild(li);
+});
+
+//set up structure of elements
+  menu.appendChild(menuItems);
+
+//add appropriate styles to elements
+
+menuItems.classList.add('menu');
+
+//get menu button from DOM
+const menuButton = document.querySelector('.menu-button');
+menuButton.appendChild(menu)
+
+menuButton.addEventListener('click', () => {
+  menuItems.classList.toggle('menu--open')
+})
+
+return menu
+}
+
+const newMenu = menuMaker(menuItems)
+const header = document.querySelector('.header');
+header.appendChild(newMenu);
