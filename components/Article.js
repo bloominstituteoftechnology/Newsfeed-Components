@@ -87,11 +87,13 @@ const data = [
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   },
-  {title: 'The Date',
-  date: 'September 21, 1998',
-  firstParagraph: 'This is the first paragraph',
-  secondParagraph: 'This is the second paragraph',
-  thirdParagraph: 'This is the third paragraph',
+  {
+    title: 'The Date',
+    date: 'September 21, 1998',
+    firstParagraph: 'This is the first paragraph',
+    secondParagraph: 'This is the second paragraph',
+    thirdParagraph: 'This is the third paragraph',
+    
 }
   
 ];
