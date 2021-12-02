@@ -68,3 +68,24 @@ document.querySelector(".header").appendChild(menuMaker(menuItems));
 
   Step 6: Use 'menuMaker' to create a menu using the 'menuItems' array, and append the returned menu to the header.
 */
+
+//const head = document.querySelector(".header");
+const mainTitle = document.querySelector("h1");
+
+mainTitle.addEventListener("mouseover", (evt) => {
+  evt.target.style.fontSize = "60px";
+});
+
+mainTitle.addEventListener("mouseleave", (evt) => {
+  evt.target.style.fontSize = "57px";
+});
+
+const button = document.querySelector("img");
+
+button.addEventListener("mouseover", (evt) => {
+  evt.target.style.width = "55px";
+});
+
+button.addEventListener("mouseleave", (evt) => {
+  evt.target.style.width = "48px";
+});
