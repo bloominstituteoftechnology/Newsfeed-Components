@@ -7,6 +7,7 @@ let menuItems = [
   'Tech Trends',
   'Music',
   'Log Out'
+  
 ];
 
 /* 
@@ -45,10 +46,17 @@ function menuMaker (menuItems){
     const menuLi = document.createElement('li');
     menuLi.textContent = element;
     menuUl.appendChild(menuLi);
-    
   });  
+
+  const menuBtn = document.querySelector('.menu-button');
+  menuBtn.addEventListener('click', () =>{
+    menuDiv.classList.toggle('menu--open');
+  });
+
+  return menuDiv;
 }
 
+const header = document.querySelector('.header');
 
-menuMaker(menuItems)
+header.appendChild(menuMaker(menuItems))
 

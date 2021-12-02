@@ -115,7 +115,7 @@ const data = [
   Refresh the page to see the new article.
 */
 
-function articaleMaker (articale){
-  
+// function articaleMaker (articale){
 
-}
+
+// }
