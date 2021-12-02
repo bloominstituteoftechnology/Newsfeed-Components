@@ -1,13 +1,32 @@
 // This is the data we will be using, study it but don't change anything, yet.
 
 let menuItems = [
-  'Students',
-  'Faculty',
+  "Students",
+  "Faculty",
   "What's New",
-  'Tech Trends',
-  'Music',
-  'Log Out'
+  "Tech Trends",
+  "Music",
+  "Log Out",
 ];
+function menuMaker(linksArray) {
+  const menuWrapper = document.createElement("div");
+  const menuList = document.createElement("ul");
+
+  menuWrapper.appendChild(menuList);
+  menuWrapper.classList.add("menu");
+
+  linksArray.forEach((linkText) => {
+    const link = document.createElement("li");
+    link.textContent = linkText;
+    menuList.appendChild(link);
+  });
+  const menuButton = document.querySelector(".menu-button");
+  menuButton.addEventListener("click", () => {
+    document.querySelector("div.menu").classList.toggle("menu--open");
+  });
+
+  return menuWrapper;
+}
 
 /* 
   Step 1: Write a component called 'menuMaker' to create a menu like the markup below:
