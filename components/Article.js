@@ -128,12 +128,12 @@ function articleMaker(articleObj) {
   articleDate.classList.add('date');
   expandButton.classList.add('expandButton');
 
-  articleWrapper.appendChild('articleTitle');
-  articleWrapper.appendChild('articleDate');
-  articleWrapper.appendChild('p1');
-  articleWrapper.appendChild('p2');
-  articleWrapper.appendChild('p3');
-  articleWrapper.appendChild('expandButton');
+  articleWrapper.appendChild(articleTitle);
+  articleWrapper.appendChild(articleDate);
+  articleWrapper.appendChild(p1);
+  articleWrapper.appendChild(p2);
+  articleWrapper.appendChild(p3);
+  articleWrapper.appendChild(expandButton);
 
   articleTitle.textContent = articleObj.title;
   articleDate.textContent = articleObj.date;
