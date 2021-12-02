@@ -86,7 +86,14 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
-  }
+  },
+  {title: 'The Date',
+  date: 'September 21, 1998',
+  firstParagraph: 'This is the first paragraph',
+  secondParagraph: 'This is the second paragraph',
+  thirdParagraph: 'This is the third paragraph',
+}
+  
 ];
 
 /*
@@ -115,7 +122,52 @@ const data = [
   Refresh the page to see the new article.
 */
 
-// function articaleMaker (articale){
+function articaleMaker (article){
+  const articleDiv = document.createElement('div');
+  const articleH2 = document.createElement('h2');
+  const articleDate = document.createElement('p');
+  const articlePara = document.createElement('p');
+  const articlePara2 = document.createElement('p');
+  const articlePara3 = document.createElement('p');
+  const articleSpan = document.createElement('span');
+
+  articleDiv.appendChild(articleH2);
+  articleDiv.appendChild(articleDate);
+  articleDiv.appendChild(articlePara);
+  articleDiv.appendChild(articlePara2);
+  articleDiv.appendChild(articlePara3);
+  articleDiv.appendChild(articleSpan);
+  
+  articleDiv.classList.add('article');
+  articleDate.classList.add('date');
+  articleSpan.classList.add('expandButton');
+
+  articleH2.textContent = article.title;
+  articleDate.textContent = article.date;
+  articlePara.textContent = article.firstParagraph;
+  articlePara2.textContent = article.secondParagraph;
+  articlePara3.textContent = article.thirdParagraph;
+  articleSpan.textContent = '+'
 
 
-// }
+  articleSpan.addEventListener('click', ()=>{
+    articleDiv.classList.toggle('article-open');
+  });
+  
+  return articleDiv;
+}
+
+console.log(articaleMaker(data));
+
+
+data.forEach(element =>{ 
+  const theArticle = document.querySelector('.articles');
+  theArticle.appendChild(articaleMaker(element))
+});
+
+// title: 'BloomTech Students: "We\'re the best!"',
+//     date: 'Nov 5th, 2018',
+//     firstParagraph: `Lucas ipsum dolor sit a
+
+// Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
+// to create a div.article element and append it to the DOM inside div.articles (see index.html).
