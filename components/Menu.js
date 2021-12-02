@@ -9,25 +9,84 @@ let menuItems = [
   'Log Out'
 ];
 
-/* 
-  Step 1: Write a component called 'menuMaker' to create a menu like the markup below:
 
-  <div class="menu">
-    <ul>
-      {each menu item as an <li>}
-    </ul>
-  </div>
 
-  The 'menuMaker' takes an array of menu items as its only argument.
+// /* 
+//   Step 1: Write a component called 'menuMaker' to create a menu like the markup below:
 
-  Step 2: Inside the function, iterate over the array creating a list item <li> element for each item in the array.
-  Add those items to the <ul>
+//   <div class="menu">
+//     <ul>
+//       {each menu item as an <li>}
+//     </ul>
+//   </div>
 
-  Step 3: Still inside your function, select from the DOM the menu button (the element with a class of 'menu-button').
+//   The 'menuMaker' takes an array of menu items as its only argument.
 
-  Step 4: Add a click event listener to the menu button. When clicked it should toggle the class 'menu--open' on div.menu (your div with a 'menu' class).
+//   Step 2: Inside the function, iterate over the array creating a list item <li> element for each item in the array.
+//   Add those items to the <ul>
 
-  Step 5: Don't forget to return your div.menu.
+//   Step 3: Still inside your function, select from the DOM the menu button (the element with a class of 'menu-button').
 
-  Step 6: Use 'menuMaker' to create a menu using the 'menuItems' array, and append the returned menu to the header.
-*/
+//   Step 4: Add a click event listener to the menu button. When clicked it should toggle the class 'menu--open' on div.menu (your div with a 'menu' class).
+
+//   Step 5: Don't forget to return your div.menu.
+
+//   Step 6: Use 'menuMaker' to create a menu using the 'menuItems' array, and append the returned menu to the header.
+// */
+// function menuMaker(array) {
+//   const menu = document.createElement('div.menu');
+//   const uList = document.createElement('ul');
+//   const list = document.createElement('li');
+
+//   menu.appendChild(ulist);;
+//   uList.appendChild(menuItems);
+
+//   menu.classList.add('menu');
+//   uList.classList.add('menu-button');
+
+//   array.forEach(item => {
+//     list.appendChild(item);
+//   });
+
+// uList.addEventListener('click', () => {
+//   list.classList.toggle('menu==open');
+// });
+
+// return menu;
+
+// }
+
+// menuItems.forEach(menuItems => {
+// const newMenu = menuMaker(menuItems);
+// document.querySelector('.menu-button').appendChild(newMenu);
+// });
+
+const menuMaker = menuArr => {
+  //make elements
+  const menuDiv = document.createElement('div');
+  const ul = document.createElement('ul');
+
+  //create loop to create items
+  menuArr.forEach(item => {
+    const li = document.createElement('li');
+    li.textContent = item;
+    ul.appendChild(li);
+  });
+
+  //structure rest of elements
+  menuDiv.appendChild(ul);
+
+  //add classNames
+  menuDiv.classList.add('menu');
+
+//create button with toggle event
+  const MenuBtn = document.querySelector('.menu-button');
+  MenuBtn.addEventListener('click', () => {
+    menuDiv.classList.toggle('menu--open');
+  })
+  return menuDiv;
+}
+
+const newMenu = menuMaker(menuItems);
+const header = document.querySelector('.header');
+header.appendChild(newMenu);
