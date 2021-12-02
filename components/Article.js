@@ -114,3 +114,64 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+const articleMaker = artObj => {
+  const article = document.createElement('div');
+  const title = document.createElement('h2');
+  const date = document.createElement('p');
+  const paraOne = document.createElement('p');
+  const paraTwo = document.createElement('p');
+  const paraThree = document.createElement('p');
+  const expandButton = document.createElement('span');
+
+
+  article.classList.add('article');
+  date.classList.add('date');
+  expandButton.classList.add('expandButton');
+  
+  article.appendChild(title);
+  article.appendChild(date);
+  article.appendChild(paraOne);
+  article.appendChild(paraTwo);
+  article.appendChild(paraThree);
+  article.appendChild(expandButton);
+
+  title.textContent = artObj.title;
+  date.textContent = artObj.date;
+  paraOne.textContent = artObj.firstParagraph;
+  paraTwo.textContent = artObj.secondParagraph;
+  paraThree.textContent = artObj.thirdParagraph;
+  expandButton.textContent = '+';
+
+  // Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
+  // This listener should toggle the class 'article-open' on div.article.
+  
+  expandButton.addEventListener('click', () => {
+    article.classList.toggle('article-open');
+  });
+  // Step 3: Don't forget to return something from your function!
+
+  return article;
+}
+
+
+const brittsArticle = data.push({
+  title: 'Britt\'s New Article',
+  date: 'Dec 1, 2021',
+  firstParagraph: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
+
+  secondParagraph: `At tellus at urna condimentum mattis pellentesque. Orci dapibus ultrices in iaculis. A scelerisque purus semper eget duis. Turpis in eu mi bibendum neque egestas congue. Id faucibus nisl tincidunt eget nullam non nisi est. Dictum varius duis at consectetur lorem donec massa sapien. Placerat orci nulla pellentesque dignissim enim sit. Purus sit amet luctus venenatis. Fermentum iaculis eu non diam phasellus vestibulum. Euismod quis viverra nibh cras pulvinar mattis nunc sed. Interdum velit laoreet id donec ultrices tincidunt arcu. `,
+
+  thirdParagraph: `Ut faucibus pulvinar elementum integer enim neque. Semper risus in hendrerit gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Feugiat nisl pretium fusce id velit ut tortor pretium viverra. Commodo odio aenean sed adipiscing diam donec adipiscing tristique risus. Vitae tortor condimentum lacinia quis vel eros. Risus sed vulputate odio ut enim. Quis varius quam quisque id diam vel. Fringilla urna porttitor rhoncus dolor purus non enim praesent. Morbi enim nunc faucibus a pellentesque sit. Semper feugiat nibh sed pulvinar. Vitae proin sagittis nisl rhoncus mattis rhoncus urna neque viverra. Amet est placerat in egestas erat.`
+})
+
+  // Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
+  // to create a div.article element and append it to the DOM inside div.articles (see index.html).
+
+data.forEach(elem => {
+  const newArticle = articleMaker(elem)
+  const articles = document.querySelector('.articles');
+  articles.appendChild(newArticle);
+})
+
+  // Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
+  // Refresh the page to see the new article.
