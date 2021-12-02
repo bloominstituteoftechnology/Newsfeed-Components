@@ -115,44 +115,48 @@ const data = [
   Refresh the page to see the new article.
 */
 
-function artickleMaker(obj) {
+function articleMaker(articleObj) {
 
-  const article = document.createElement('div');
+  const articleWrapper = document.createElement('div');
   const articleTitle = document.createElement('h2');
-  const articlePara1 = document.createElement('p');
-  const articlePara2 = document.createElement('p');
-  const articlePara3 = document.createElement('p');
-  const articleSpan = document.createElement('span');
+  const articleDate = document.createElement('p');
+  const articleParagraphOne = document.createElement('p');
+  const articleParagraphTwo = document.createElement('p');
+  const articleParagraphThree = document.createElement('p');
+  const expandButton = document.createElement('span');
 
-  article.appendChild(articleTitle);
-  article.appendChild(articlePara1);
-  article.appendChild(articlePara2);
-  article.appendChild(articlePara3);
-  article.appendChild(articleSpan);
+  articleWrapper.classList.add('article');
+  articleDate.classList.add('date');
+  expandButton.classList.add('expandButton');
 
-  article.classList.add('article');
-  articlePara1.classList.add('date');
-  articlePara2.classList.add('date');
-  articlePara3.classList.add('date');
-  articleSpan.classList.add('expandButton');
+  articleWrapper.appendChild(articleTitle);
+  articleWrapper.appendChild(articleDate);
+  articleWrapper.appendChild(articleParagraphOne);
+  articleWrapper.appendChild(articleParagraphTwo);
+  articleWrapper.appendChild(articleParagraphThree);
+  articleWrapper.appendChild(expandButton);
 
-  articleSpan.textContent = '+'
-  
-  // articleSpan.expandButton.addEventListener('click', () => {
-  //   article.classList.toggle('article-open');
-  // });
 
-  const expandButton = document.querySelector('.expandButton');
+
+  articleTitle.textContent = articleObj.title;
+  articleDate.textContent = article.Obj.date;
+  articlePara1.textContent = articleObj.firstParagrph;
+  articlePara2.textContent = articleObj.secondParagraph;
+  articlePara3.textContent = articleObj.thirdParagraph;
+  expandButton.textContent = '+';
+
+
   expandButton.addEventListener('click', () => {
-    expandButton.classList.toggle('article-open');
+    articleWrapper.classList.toggle('article-open');
   })
-  // newarticleSpan.addEventListener('click', (e) => {
-  //   newArticleDiv.classList.toggle('article-open');
-  //  });
 
-  return article;
-
+  return articleWrapper;
 }
-const articleElements = data.map(data => {
-  return artickleMaker(data);
+  
+data.forEach(article => {
+  document.querySelector('div.articles').appendChild(articleMaker(article));
 })
+  
+
+ 
+
