@@ -58,7 +58,5 @@ function menuMaker(array) {
   return menuBar;
 }
 
-menuItems.forEach((element) => {
-  const menuElements = menuMaker(element);
-  header.appendChild(menuElements);
-});
+const menuElements = menuMaker(menuItems);
+header.appendChild(menuElements);

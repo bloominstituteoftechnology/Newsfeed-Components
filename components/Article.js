@@ -149,6 +149,7 @@ function articleMaker(obj) {
   paragraphOne.textContent = obj.firstParagraph;
   paragraphTwo.textContent = obj.secondParagraph;
   paragraphThree.textContent = obj.thirdParagraph;
+  expand.textContent = "+";
 
   expand.addEventListener("click", () => {
     articleDiv.classList.toggle("article-open");
