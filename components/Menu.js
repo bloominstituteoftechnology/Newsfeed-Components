@@ -8,30 +8,43 @@ let menuItems = [
   "Music",
   "Log Out",
 ];
-const menuButton = document.querySelector(".menu-button");
+
 function menuMaker(items) {
   const table = document.createElement("div");
-  const uli = document.createElement("ul");
-  const stuff = document.createElement("li");
+  const list = document.createElement("ul");
+  //const stuff = document.createElement("li");
 
-  table.appendChild(uli);
-  uli.appendChild(stuff);
+  //const itemButton = document.createElement("button");
 
+  table.appendChild(list);
   table.classList.add("menu");
+  //list.appendChild(stuff);
+  //stuff.appendChild(itemButton);
 
-  stuff.textContent = items;
+  items.forEach((linkText) => {
+    const link = document.createElement("li");
+    link.textContent = linkText;
+    list.appendChild(link);
+  });
 
+  //uli.classList.add("menu--open");
+
+  //stuff.textContent = items;
+
+  const menuButton = document.querySelector(".menu-button");
   menuButton.addEventListener("click", () => {
-    table.classList.toggle("menu");
+    table.classList.toggle("menu--open");
   });
 
   return table;
 }
+console.log(menuMaker(menuItems));
 
-menuItems.forEach((elem) => {
-  let newElem = menuMaker(elem);
-  document.querySelector("div").appendChild(newElem);
-});
+document.querySelector(".header").appendChild(menuMaker(menuItems));
+// menuItems.forEach((elem) => {
+//   let newElem = menuMaker(elem);
+//   document.querySelector(".header").appendChild(newElem);
+// });
 
 /* 
   Step 1: Write a component called 'menuMaker' to create a menu like the markup below:
