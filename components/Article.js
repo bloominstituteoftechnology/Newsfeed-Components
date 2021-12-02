@@ -121,11 +121,11 @@ const data = [
     p1.textContent = obj.firstParagraph;
     p2.textContent = obj.secondParagraph;
     p3.textContent = obj.thirdParagraph;
-    span.textContent = '+';
+    span.textContent = '|?|';
 
 
     span.addEventListener('click', () => {
-      articleCont.classList.toggle('menu--open');
+      articleCont.classList.toggle('article-open');
     });
     return articleCont;
   }  
