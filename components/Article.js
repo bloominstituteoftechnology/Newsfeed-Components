@@ -120,6 +120,7 @@ const articleDiv = document.querySelector('div.articles')
 function articleMaker(article){
  const newArticleDiv = document.createElement('div');
  newArticleDiv.classList.add('article');
+ 
 
  const newArticleHead = document.createElement('h2');
  newArticleHead.textContent = article.title;
@@ -144,11 +145,14 @@ function articleMaker(article){
 
  const newArticleSpan = document.createElement('span');
  newArticleSpan.classList.add('expandButton');
- newArticleDiv.appendChild(newArticleSpan);
+ newArticleDiv.classList.add('article-slide-out');
  newArticleSpan.textContent = '+';
+ newArticleDiv.appendChild(newArticleSpan);
+ 
 
  function openArticle() {
   newArticleDiv.classList.toggle('article-open');
+  
  }
 
  newArticleSpan.addEventListener('click', openArticle);
