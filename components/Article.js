@@ -103,6 +103,7 @@ const data = [
     <span class="expandButton">+</span>
   </div>
 
+
   Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
   This listener should toggle the class 'article-open' on div.article.
 
@@ -114,3 +115,63 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+const articleDiv = document.querySelector('div.articles')
+
+function articleMaker(article){
+ const newArticleDiv = document.createElement('div');
+ newArticleDiv.classList.add('article');
+ 
+
+ const newArticleHead = document.createElement('h2');
+ newArticleHead.textContent = article.title;
+ newArticleDiv.appendChild(newArticleHead);
+
+ const newArticleDate = document.createElement('p');
+ newArticleDate.classList.add('date');
+ newArticleDate.textContent = article.date;
+ newArticleDiv.appendChild(newArticleDate);
+
+ const newArticleParas1 = document.createElement('p');
+ newArticleParas1.textContent = article.firstParagraph;
+ newArticleDiv.appendChild(newArticleParas1);
+ 
+ const newArticleParas2 = document.createElement('p');
+ newArticleParas2.textContent = article.secondParagraph;
+ newArticleDiv.appendChild(newArticleParas2);
+ 
+ const newArticleParas3 = document.createElement('p');
+ newArticleParas3.textContent = article.thirdParagraph;
+ newArticleDiv.appendChild(newArticleParas3);
+
+ const newArticleSpan = document.createElement('span');
+ newArticleSpan.classList.add('expandButton');
+ newArticleDiv.classList.add('article-slide-out');
+ newArticleSpan.textContent = '+';
+ newArticleDiv.appendChild(newArticleSpan);
+ 
+
+ function openArticle() {
+  newArticleDiv.classList.toggle('article-open');
+  
+ }
+
+ newArticleSpan.addEventListener('click', openArticle);
+
+ return newArticleDiv;
+}
+
+function newArticle({title, date, firstParagraph, secondParagraph, thirdParagraph}){
+  this.title = title;
+  this.date = date;
+  this.firstParagraph = firstParagraph;
+  this.secondParagraph = secondParagraph;
+  this.thirdParagraph = thirdParagraph;
+}
+const article = new newArticle({title: 'Jess is the Best Programmer in BloomTech!', date: 'Dec 1st, 2021', firstParagraph: 'I don’t care if it works on your machine! We are not shipping your machine! (Vidiu Platon) There are two ways to write error-free programs; only the third one works. (Alan J. Perlis) The question of whether computers can think is like the question of whether submarines can swim. (Edsger W. Dijkstra) Controlling complexity is the essence of computer programming. (Brian Kernigan)', secondParagraph: 'The trouble with programmers is that you can never tell what a programmer is doing until it’s too late. (Seymour Cray) Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live. (Martin Golding) It’s not a bug – it’s an undocumented feature. (Anonymous) If it keeps up, man will atrophy all his limbs but the push-button finger. (Frank Lloyd Wright)', thirdParagraph: 'We are Microsoft. Resistance Is Futile. You Will Be Assimilated. (Bumper sticker) I don’t care if it works on your machine! We are not shipping your machine! (Vidiu Platon) If debugging is the process of removing software bugs, then programming must be the process of putting them in. (Edsger Dijkstra) We will never become a truly paper-less society until the Palm Pilot folks come out with WipeMe 1.0. (Andy Pierson) If debugging is the process of removing bugs, then programming must be the process of putting them in. (Edsger W. Dijkstra)'});
+
+data.push(article);
+
+data.forEach(item => {
+  const newArticle = articleMaker(item);
+  articleDiv.appendChild(newArticle);
+})

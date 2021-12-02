@@ -25,9 +25,9 @@
 
   .expandButton {
     position: absolute;
-    bottom: 0;
-    left: 50%;
-    font-size: 12px;
+    top: 15px;
+    left: 90%;
+    font-size: 20px;
     color: grey;
     cursor: pointer;
     transform: translate(-50%);
@@ -39,10 +39,21 @@
   height: 400px;
 }
 
+@keyframes slideIn {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(400px);
+  }
+}
+
+.article-slide-out {
+  animation: slideIn 0.5s ease-out backwards;
+}
+
 .close {
   position: absolute;
   top: 10px;
   right: 10px;
 }
-
-
