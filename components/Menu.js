@@ -36,6 +36,7 @@ function menuMaker(array){
 
   const menuDiv = document.createElement('div');
   menuDiv.classList.add('menu');
+  menuDiv.classList.add('menu-slide-in');
 
   const list = document.createElement('ul');
   menuDiv.appendChild(list);
@@ -47,11 +48,12 @@ function menuMaker(array){
   });
 
   const menuButton = document.querySelector('.menu-button');
+  
 
   function openMenu(){
     menuDiv.classList.toggle('menu--open');
   }
-console.log(openMenu());
+
   menuButton.addEventListener('click', openMenu);
 
   return menuDiv;
@@ -59,5 +61,5 @@ console.log(openMenu());
 
 const header = document.querySelector('.header');
 const menu = menuMaker(menuItems);
-
 header.appendChild(menu);
+
