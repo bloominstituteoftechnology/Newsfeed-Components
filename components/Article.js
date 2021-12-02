@@ -115,20 +115,39 @@ const data = [
   Refresh the page to see the new article.
 */
 
-
 function articleMaker(articleObj) {
-  const article = document.createElement('.article');
-  const title = document.createElement('h2');
-  const date = document.createElement('.date');
+  const articleWrapper = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+  const articleDate = document.createElement('p');
   const p1 = document.createElement('p');
   const p2 = document.createElement('p');
   const p3 = document.createElement('p');
-  const expandButton = document.createElement('.expandButton');
+  const expandButton = document.createElement('span');
 
-  title.textContent(articleObj)
+  articleWrapper.classList.add('article');
+  articleDate.classList.add('date');
+  expandButton.classList.add('expandButton');
+
+  articleWrapper.appendChild('articleTitle');
+  articleWrapper.appendChild('articleDate');
+  articleWrapper.appendChild('p1');
+  articleWrapper.appendChild('p2');
+  articleWrapper.appendChild('p3');
+  articleWrapper.appendChild('expandButton');
+
+  articleTitle.textContent = articleObj.title;
+  articleDate.textContent = articleObj.date;
+  p1.textContent = articleObj.firstParagraph;
+  p2.textContent = articleObj.secondParagraph;
+  p3.textContent = articleObj.thirdParagraph;
+  expandButton.textContent = '+';
 
   expandButton.addEventListener('click', () => {
-    article.classList.toggle('.article-open');
+    articleWrapper.classList.toggle('article-open');
   });
-  return articleObj
+  return articleWrapper;
+
 }
+data.forEach(article => {
+  document.querySelector('div.articles').appendChild(articleMaker(article));
+})
