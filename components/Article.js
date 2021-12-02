@@ -93,9 +93,8 @@ const data = [
     firstParagraph: 'This is the first paragraph',
     secondParagraph: 'This is the second paragraph',
     thirdParagraph: 'This is the third paragraph',
-    
+
 }
-  
 ];
 
 /*
@@ -166,10 +165,3 @@ data.forEach(element =>{
   const theArticle = document.querySelector('.articles');
   theArticle.appendChild(articaleMaker(element))
 });
-
-// title: 'BloomTech Students: "We\'re the best!"',
-//     date: 'Nov 5th, 2018',
-//     firstParagraph: `Lucas ipsum dolor sit a
-
-// Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
-// to create a div.article element and append it to the DOM inside div.articles (see index.html).
