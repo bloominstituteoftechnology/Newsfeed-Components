@@ -86,6 +86,24 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Marcel Rodriguez Test Article',
+    date: 'December 1, 2021',
+    firstParagraph: `lorem lorem lorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem lorem
+    lorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem lorem
+    lorem loremlorem loremlorem loremlorem loremlorem loremlorem lorem lorem loremlorem loremlorem loremlorem loremlorem lorem
+    lorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem lorem `,
+
+    secondParagraph: `lorem lorem lorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem lorem
+    lorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem lorem
+    lorem loremlorem loremlorem loremlorem loremlorem loremlorem lorem lorem loremlorem loremlorem loremlorem loremlorem lorem
+    lorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem lorem `,
+
+    thirdParagraph: `lorem lorem lorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem lorem
+    lorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem lorem
+    lorem loremlorem loremlorem loremlorem loremlorem loremlorem lorem lorem loremlorem loremlorem loremlorem loremlorem lorem
+    lorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem lorem `
   }
 ];
 
@@ -114,3 +132,58 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+
+function articleMaker(data){
+  
+  const articleDiv = document.createElement('div')
+  articleDiv.classList.add('article')
+
+  const titleH2 = document.createElement('h2')
+  titleH2.textContent = data.title
+
+  const pDate = document.createElement('p')
+  pDate.classList.add('date')
+  pDate.textContent = data.date
+
+  const articleP = document.createElement('p')
+  articleP.textContent = data.firstParagraph
+
+  const articleP2 = document.createElement('p')
+  articleP2.textContent = data.secondParagraph
+
+  const articleP3 = document.createElement('p')
+  articleP3.textContent = data.thirdParagraph
+
+
+  const exSpan = document.createElement('span')
+  exSpan.className = 'expandButton'
+  exSpan.textContent = 'Show More'
+
+  articleDiv.appendChild(titleH2)
+  articleDiv.appendChild(pDate)
+  articleDiv.appendChild(articleP)
+  articleDiv.appendChild(articleP2)
+  articleDiv.appendChild(articleP3)
+  articleDiv.appendChild(exSpan)
+
+  exSpan.addEventListener('click', () => {
+    articleDiv.classList.toggle('article-open')
+    // if(articleDiv.className.includes('article-open')){
+    //   exSpan.textContent = 'Show Less'
+    // } else {
+    //   exSpan.textContent = 'Show More'
+    // }
+  })
+  
+  return articleDiv
+}
+
+let mainArticlesDiv = document.querySelector('body .articles')
+
+ data.forEach(item => {
+  const articles = articleMaker(item)
+  mainArticlesDiv.appendChild(articles)
+  });
+
+
