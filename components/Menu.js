@@ -10,8 +10,28 @@ let menuItems = [
 ];
 
 
-function menuMaker() {
-  
+function menuMaker(items) {
+
+  const menuDiv = document.createElement('div');
+  const ul = document.createElement('ul');
+
+  menuDiv.classList.add('menu');
+  let liElement; 
+  items.forEach(element => {
+        liElement = document.createElement('li');
+        liElement.textContent = element;
+        ul.prepend(liElement);
+  });
+
+  menuDiv.prepend(ul);
+
+  const menuButton = document.querySelector('.menu-button');
+
+  menuButton.addEventListener('click', function() {
+    menuDiv.classList.toggle('menu--open');
+  });
+
+  return menuDiv;
 }
 /* 
   Step 1: Write a component called 'menuMaker' to create a menu like the markup below:
@@ -35,3 +55,7 @@ function menuMaker() {
 
   Step 6: Use 'menuMaker' to create a menu using the 'menuItems' array, and append the returned menu to the header.
 */
+
+const header = document.querySelector('.header');
+header.prepend(menuMaker(menuItems));
+
