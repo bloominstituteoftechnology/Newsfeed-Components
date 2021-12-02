@@ -86,7 +86,26 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
-  }
+  },   
+  {
+    title: 'My Own Article',
+    date: 'Dec First 2021',
+    firstParagraph: `This is my first paragraph`,
+
+    secondParagraph: `This is my second paragraph `,
+
+    thirdParagraph: `And this is my third paragraph`,
+  }  
+  ,   
+  {
+    title: 'My Second Article',
+    date: 'Dec First 2021',
+    firstParagraph: `This is my first paragraph in the second article`,
+
+    secondParagraph: `This is my second paragraph in the second article`,
+
+    thirdParagraph: `And this is my third paragraph in the second article`,
+  }  
 ];
 
 /*
